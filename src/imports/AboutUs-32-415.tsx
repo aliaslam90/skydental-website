@@ -241,18 +241,18 @@ function BackgroundColor() {
 
 function Frame48() {
   return (
-    <div className="content-stretch flex flex-col gap-[16px] items-center justify-center relative shrink-0 w-full">
+    <div className="content-stretch flex flex-col gap-[12px] md:gap-[16px] items-center justify-center relative shrink-0 w-full">
       <BackgroundColor />
-      <p className="font-['Gilda_Display:Regular',sans-serif] leading-[1.2] not-italic relative shrink-0 text-[48px] text-black text-center tracking-[-1.44px] w-full max-w-full px-4">Caring for You, Every Step of the Way</p>
+      <p className="font-['Gilda_Display:Regular',sans-serif] leading-[1.2] not-italic relative shrink-0 text-[28px] md:text-[36px] lg:text-[48px] text-black text-center tracking-[-1.44px] w-full max-w-full px-2 md:px-4">Caring for You, Every Step of the Way</p>
     </div>
   );
 }
 
 function Frame61() {
   return (
-    <div className="content-stretch flex flex-col gap-[16px] items-center relative shrink-0 w-full">
+    <div className="content-stretch flex flex-col gap-[12px] md:gap-[16px] items-center relative shrink-0 w-full">
       <Frame48 />
-      <p className="font-['Arial:Regular',sans-serif] leading-[28px] not-italic relative shrink-0 text-[#1b1b1b] text-[18px] text-center w-full">We combine advanced medical technology with compassionate care to ensure your health journey is smooth, effective, and personalized.</p>
+      <p className="font-['Arial:Regular',sans-serif] leading-[1.5] md:leading-[28px] not-italic relative shrink-0 text-[#1b1b1b] text-[14px] md:text-[16px] lg:text-[18px] text-center w-full px-2 md:px-4">We combine advanced medical technology with compassionate care to ensure your health journey is smooth, effective, and personalized.</p>
     </div>
   );
 }
@@ -331,7 +331,7 @@ function Btn2() {
 
 function Container() {
   return (
-    <div className="content-stretch flex gap-[16px] items-center relative shrink-0" data-name="Container">
+    <div className="content-stretch flex flex-col sm:flex-row gap-[12px] md:gap-[16px] items-center justify-center relative shrink-0 w-full" data-name="Container">
       <Btn1 />
       <Btn2 />
     </div>
@@ -340,7 +340,7 @@ function Container() {
 
 function Frame51() {
   return (
-    <div className="content-stretch flex flex-col gap-[32px] items-center justify-center relative shrink-0 w-full max-w-[828px] px-[20px] mx-auto">
+    <div className="content-stretch flex flex-col gap-[24px] md:gap-[32px] items-center justify-center relative shrink-0 w-full max-w-[828px] px-4 md:px-6 lg:px-[20px] mx-auto">
       <Frame61 />
       <Container />
     </div>
@@ -349,7 +349,7 @@ function Frame51() {
 
 function Frame49() {
   return (
-    <div className="absolute content-stretch flex items-center justify-center left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%] w-full max-w-[1262.83px] px-4">
+    <div className="absolute content-stretch flex items-center justify-center left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%] w-full max-w-[1262.83px] px-4 md:px-6 lg:px-8">
       <Frame51 />
     </div>
   );
@@ -357,8 +357,8 @@ function Frame49() {
 
 function Frame71() {
   return (
-    <div className="content-stretch flex flex-col gap-[10px] h-[500px] items-start overflow-clip relative rounded-[25px] shrink-0 w-[1390px]">
-      <div className="h-[500px] rounded-[25px] shrink-0 w-full" data-name="Image" style={{ backgroundImage: "linear-gradient(160.216deg, rgb(224, 237, 255) 0%, rgb(255, 255, 255) 50%, rgb(224, 237, 255) 100%)" }} />
+    <div className="content-stretch flex flex-col gap-[10px] h-[400px] md:h-[450px] lg:h-[500px] items-start overflow-clip relative rounded-[20px] md:rounded-[25px] shrink-0 w-full max-w-[1390px] mx-auto">
+      <div className="h-full rounded-[20px] md:rounded-[25px] shrink-0 w-full" data-name="Image" style={{ backgroundImage: "linear-gradient(160.216deg, rgb(224, 237, 255) 0%, rgb(255, 255, 255) 50%, rgb(224, 237, 255) 100%)" }} />
       <Frame50 />
       <ContainerShadowBackgroundColor />
       <ContainerShadowBackgroundColor1 />
@@ -1862,7 +1862,7 @@ function Section3() {
 
 function Frame27() {
   return (
-    <div className="content-stretch flex flex-col gap-[70px] items-center relative shrink-0 w-[1390px]">
+    <div className="content-stretch flex flex-col gap-[40px] md:gap-[50px] lg:gap-[70px] items-center relative shrink-0 w-full max-w-[1390px] mx-auto px-4 md:px-6 lg:px-8">
       <Frame71 />
       <Section />
       <Section2 />
@@ -1877,7 +1877,7 @@ function Frame27() {
 
 export default function AboutUs() {
   return (
-    <div className="bg-white content-stretch flex items-center p-[25px] relative size-full" data-name="About Us">
+    <div className="bg-white content-stretch flex items-center p-0 md:p-[20px] lg:p-[25px] relative w-full max-w-full overflow-x-hidden" data-name="About Us">
       <Frame27 />
     </div>
   );
