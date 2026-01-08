@@ -370,24 +370,24 @@ function Frame71() {
 function Frame32() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full">
-      <p className="capitalize font-['Gilda_Display:Regular',sans-serif] leading-[1.2] not-italic relative shrink-0 text-[48px] text-black text-nowrap tracking-[-1.44px]">{`Our Vision & Mission`}</p>
+      <p className="capitalize font-['Gilda_Display:Regular',sans-serif] leading-[1.2] not-italic relative shrink-0 text-[32px] md:text-[40px] lg:text-[48px] text-black tracking-[-1.44px]">{`Our Vision & Mission`}</p>
     </div>
   );
 }
 
 function Frame31() {
   return (
-    <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0">
+    <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full">
       <Frame32 />
-      <p className="font-['Arial:Regular',sans-serif] leading-[1.2] not-italic relative shrink-0 text-[#202020] text-[16px] w-[525px]">Our treatments are crafted to ease tension, restore balance, and bring calm to your day.</p>
+      <p className="font-['Arial:Regular',sans-serif] leading-[1.2] not-italic relative shrink-0 text-[#202020] text-[16px] w-full lg:w-[525px]">Our treatments are crafted to ease tension, restore balance, and bring calm to your day.</p>
     </div>
   );
 }
 
 function Frame35() {
   return (
-    <div className="content-stretch flex gap-[72px] items-center relative shrink-0">
-      <div className="h-[374px] relative rounded-[20px] shrink-0 w-[549px]" data-name="Image">
+    <div className="content-stretch flex flex-col lg:flex-row gap-[32px] lg:gap-[72px] items-center relative shrink-0 w-full">
+      <div className="h-[250px] md:h-[300px] lg:h-[374px] relative rounded-[20px] shrink-0 w-full lg:w-[549px]" data-name="Image">
         <div aria-hidden="true" className="absolute inset-0 pointer-events-none rounded-[20px]">
           <div className="absolute bg-[#c4c4c4] inset-0 rounded-[20px]" />
           <img alt="" className="absolute max-w-none object-50%-50% object-cover rounded-[20px] size-full" src={imgImage} />
@@ -400,25 +400,25 @@ function Frame35() {
 
 function Dat() {
   return (
-    <div className="basis-0 content-stretch flex flex-col gap-[15px] grow items-start min-h-px min-w-px not-italic relative shrink-0 text-[#202020]" data-name="Dat01">
-      <p className="font-['Gilda_Display:Regular',sans-serif] leading-[1.15] relative shrink-0 text-[24px] text-nowrap">Mission</p>
-      <p className="font-['Arial:Regular',sans-serif] leading-[1.55] relative shrink-0 text-[16px] w-[295px]">To deliver comprehensive, high-quality dental care using advanced technology and evidence-based clinical practices. We are committed to creating healthy, confident smiles through personalised, safe, and comfortable treatment experiences.</p>
+    <div className="basis-0 content-stretch flex flex-col gap-[15px] grow items-start min-h-px min-w-px not-italic relative shrink-0 text-[#202020] w-full" data-name="Dat01">
+      <p className="font-['Gilda_Display:Regular',sans-serif] leading-[1.15] relative shrink-0 text-[20px] md:text-[24px]">Mission</p>
+      <p className="font-['Arial:Regular',sans-serif] leading-[1.55] relative shrink-0 text-[14px] md:text-[16px] w-full lg:w-[295px]">To deliver comprehensive, high-quality dental care using advanced technology and evidence-based clinical practices. We are committed to creating healthy, confident smiles through personalised, safe, and comfortable treatment experiences.</p>
     </div>
   );
 }
 
 function Dat1() {
   return (
-    <div className="basis-0 content-stretch flex flex-col gap-[15px] grow items-start min-h-px min-w-px not-italic relative shrink-0 text-[#202020]" data-name="Dat02">
-      <p className="font-['Gilda_Display:Regular',sans-serif] leading-[1.15] relative shrink-0 text-[24px] text-nowrap">Vision</p>
-      <p className="font-['Arial:Regular',sans-serif] leading-[1.55] min-w-full relative shrink-0 text-[16px] w-[min-content]">To be the UAE’s most trusted and distinguished dental centre, recognised for excellence in patient care, medical innovation, and superior treatment outcomes.</p>
+    <div className="basis-0 content-stretch flex flex-col gap-[15px] grow items-start min-h-px min-w-px not-italic relative shrink-0 text-[#202020] w-full" data-name="Dat02">
+      <p className="font-['Gilda_Display:Regular',sans-serif] leading-[1.15] relative shrink-0 text-[20px] md:text-[24px]">Vision</p>
+      <p className="font-['Arial:Regular',sans-serif] leading-[1.55] min-w-full relative shrink-0 text-[14px] md:text-[16px] w-full">To be the UAE's most trusted and distinguished dental centre, recognised for excellence in patient care, medical innovation, and superior treatment outcomes.</p>
     </div>
   );
 }
 
 function Frame33() {
   return (
-    <div className="basis-0 content-stretch flex gap-[32px] grow items-start min-h-px min-w-px relative shrink-0">
+    <div className="basis-0 content-stretch flex flex-col md:flex-row gap-[24px] md:gap-[32px] grow items-start min-h-px min-w-px relative shrink-0 w-full">
       <Dat />
       <Dat1 />
     </div>
@@ -427,9 +427,9 @@ function Frame33() {
 
 function Frame34() {
   return (
-    <div className="content-stretch flex gap-[64px] items-center relative shrink-0 w-full">
+    <div className="content-stretch flex flex-col lg:flex-row gap-[32px] lg:gap-[64px] items-center relative shrink-0 w-full">
       <Frame33 />
-      <div className="h-[295px] relative rounded-[20px] shrink-0 w-[623px]" data-name="Image">
+      <div className="h-[250px] md:h-[280px] lg:h-[295px] relative rounded-[20px] shrink-0 w-full lg:w-[623px]" data-name="Image">
         <div aria-hidden="true" className="absolute inset-0 pointer-events-none rounded-[20px]">
           <div className="absolute bg-[#c4c4c4] inset-0 rounded-[20px]" />
           <img alt="" className="absolute max-w-none object-50%-50% object-cover rounded-[20px] size-full" src={imgImage1} />
@@ -441,7 +441,7 @@ function Frame34() {
 
 function Frame36() {
   return (
-    <div className="[grid-area:1_/_1] content-stretch flex flex-col items-start ml-0 mt-0 relative w-[1308px]">
+    <div className="[grid-area:1_/_1] content-stretch flex flex-col items-start ml-0 mt-0 relative w-full max-w-[1308px]">
       <Frame35 />
       <Frame34 />
     </div>
@@ -458,11 +458,11 @@ function Section() {
 
 function Frame28() {
   return (
-    <div className="content-stretch flex flex-col gap-[18px] items-center not-italic relative shrink-0 text-center w-[1259px]">
-      <div className="flex flex-col font-['Gilda_Display:Regular',sans-serif] justify-center leading-[0] min-w-full relative shrink-0 text-[48px] text-black tracking-[-1.44px] w-[min-content]">
+    <div className="content-stretch flex flex-col gap-[18px] items-center not-italic relative shrink-0 text-center w-full max-w-[1259px] px-4">
+      <div className="flex flex-col font-['Gilda_Display:Regular',sans-serif] justify-center leading-[0] min-w-full relative shrink-0 text-[32px] md:text-[40px] lg:text-[48px] text-black tracking-[-1.44px]">
         <p className="leading-[1.2]">Our Core Values</p>
       </div>
-      <p className="font-['Arial:Regular',sans-serif] leading-[28px] relative shrink-0 text-[#1f1f1f] text-[16px] text-nowrap">These principles guide our actions and shape the culture of care we provide to our community every single day.</p>
+      <p className="font-['Arial:Regular',sans-serif] leading-[28px] relative shrink-0 text-[#1f1f1f] text-[14px] md:text-[16px]">These principles guide our actions and shape the culture of care we provide to our community every single day.</p>
     </div>
   );
 }
@@ -506,7 +506,7 @@ function Frame53() {
 
 function Frame54() {
   return (
-    <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-[214px]">
+    <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full md:w-[214px]">
       <ContainerBackgroundColor />
       <Frame53 />
     </div>
@@ -515,7 +515,7 @@ function Frame54() {
 
 function BackgroundColor1() {
   return (
-    <div className="bg-white content-stretch flex items-center p-[24px] relative rounded-[12px] shrink-0" data-name="+BackgroundColor">
+    <div className="bg-white content-stretch flex items-center p-[20px] md:p-[24px] relative rounded-[12px] shrink-0 w-full md:w-auto" data-name="+BackgroundColor">
       <Frame54 />
     </div>
   );
@@ -560,7 +560,7 @@ function Frame55() {
 
 function Frame56() {
   return (
-    <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-[214px]">
+    <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full md:w-[214px]">
       <ContainerBackgroundColor1 />
       <Frame55 />
     </div>
@@ -569,7 +569,7 @@ function Frame56() {
 
 function BackgroundColor2() {
   return (
-    <div className="bg-white content-stretch flex items-start p-[24px] relative rounded-[12px] self-stretch shrink-0" data-name="+BackgroundColor">
+    <div className="bg-white content-stretch flex items-start p-[20px] md:p-[24px] relative rounded-[12px] self-stretch shrink-0 w-full md:w-auto" data-name="+BackgroundColor">
       <Frame56 />
     </div>
   );
@@ -615,7 +615,7 @@ function Frame57() {
 
 function Frame58() {
   return (
-    <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-[214px]">
+    <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full md:w-[214px]">
       <ContainerBackgroundColor2 />
       <Frame57 />
     </div>
@@ -624,7 +624,7 @@ function Frame58() {
 
 function BackgroundColor3() {
   return (
-    <div className="bg-white content-stretch flex items-center p-[24px] relative rounded-[12px] shrink-0" data-name="+BackgroundColor">
+    <div className="bg-white content-stretch flex items-center p-[20px] md:p-[24px] relative rounded-[12px] shrink-0 w-full md:w-auto" data-name="+BackgroundColor">
       <Frame58 />
     </div>
   );
@@ -681,7 +681,7 @@ function Frame60() {
 
 function BackgroundColor4() {
   return (
-    <div className="bg-white content-stretch flex flex-col items-start p-[24px] relative rounded-[12px] self-stretch shrink-0 w-[280px]" data-name="+BackgroundColor">
+    <div className="bg-white content-stretch flex flex-col items-start p-[20px] md:p-[24px] relative rounded-[12px] self-stretch shrink-0 w-full md:w-[280px]" data-name="+BackgroundColor">
       <Frame60 />
     </div>
   );
@@ -689,7 +689,7 @@ function BackgroundColor4() {
 
 function Container1() {
   return (
-    <div className="content-stretch flex gap-[32px] items-start relative shrink-0" data-name="Container">
+    <div className="content-stretch flex flex-col md:flex-row flex-wrap gap-[24px] md:gap-[32px] items-start relative shrink-0 w-full" data-name="Container">
       <BackgroundColor1 />
       <BackgroundColor2 />
       <BackgroundColor3 />
@@ -700,7 +700,7 @@ function Container1() {
 
 function Frame29() {
   return (
-    <div className="content-stretch flex flex-col gap-[48px] items-center relative shrink-0 w-[1294px]">
+    <div className="content-stretch flex flex-col gap-[32px] md:gap-[48px] items-center relative shrink-0 w-full max-w-[1294px] px-4">
       <Frame28 />
       <Container1 />
     </div>
@@ -709,7 +709,7 @@ function Frame29() {
 
 function Frame30() {
   return (
-    <div className="[grid-area:1_/_1] bg-[#e0edff] content-stretch flex flex-col items-start ml-0 mt-0 overflow-clip p-[48px] relative rounded-[25px]">
+    <div className="[grid-area:1_/_1] bg-[#e0edff] content-stretch flex flex-col items-start ml-0 mt-0 overflow-clip p-[24px] md:p-[36px] lg:p-[48px] relative rounded-[25px] w-full">
       <Frame29 />
     </div>
   );
