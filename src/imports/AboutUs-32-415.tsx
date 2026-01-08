@@ -175,7 +175,7 @@ function Square() {
 function Btn() {
   return (
     <div className="bg-[#cbff8f] content-stretch flex gap-[24px] items-center justify-center pl-[24px] pr-[10px] py-[8px] relative rounded-[35px] shrink-0" data-name="Btn">
-      <p className="font-['Arial:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#97c4ff] text-[16px] text-nowrap">Book Appoitment</p>
+      <p className="font-['Arial:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#97c4ff] text-[16px] text-nowrap">Book Appointment</p>
       <Square />
     </div>
   );
@@ -243,7 +243,7 @@ function Frame48() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-center justify-center relative shrink-0 w-full">
       <BackgroundColor />
-      <p className="font-['Gilda_Display:Regular',sans-serif] leading-[1.2] min-w-full not-italic relative shrink-0 text-[48px] text-black text-center tracking-[-1.44px] w-[min-content]">Caring for You, Every Step of the Way</p>
+      <p className="font-['Gilda_Display:Regular',sans-serif] leading-[1.2] not-italic relative shrink-0 text-[48px] text-black text-center tracking-[-1.44px] w-full max-w-full px-4">Caring for You, Every Step of the Way</p>
     </div>
   );
 }
@@ -349,7 +349,7 @@ function Frame51() {
 
 function Frame49() {
   return (
-    <div className="absolute content-stretch flex items-center justify-between left-[calc(50%+0.41px)] top-[152px] translate-x-[-50%] w-[1262.83px]">
+    <div className="absolute content-stretch flex items-center justify-center left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%] w-full max-w-[1262.83px] px-4">
       <Frame51 />
     </div>
   );

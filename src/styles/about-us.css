@@ -54,6 +54,38 @@
   align-items: center !important;
   padding: 0 20px !important;
   box-sizing: border-box !important;
+  overflow: visible !important;
+}
+
+/* Fix text overflow in hero section */
+[data-name="About Us"] .text-\[48px\] {
+  overflow: visible !important;
+  text-overflow: clip !important;
+  white-space: normal !important;
+  word-wrap: break-word !important;
+  max-width: 100% !important;
+}
+
+[data-name="About Us"] .text-\[18px\] {
+  overflow: visible !important;
+  text-overflow: clip !important;
+  white-space: normal !important;
+  word-wrap: break-word !important;
+  max-width: 100% !important;
+}
+
+/* Ensure Frame51 container doesn't clip content */
+[data-name="About Us"] [data-name="Container"] {
+  overflow: visible !important;
+}
+
+/* Fix Frame61 and Frame48 to prevent text clipping */
+[data-name="About Us"] .content-stretch.flex.flex-col.gap-\[16px\].items-center {
+  overflow: visible !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 0 20px !important;
+  box-sizing: border-box !important;
 }
 
 /* Remove justify-between that's causing left alignment */
