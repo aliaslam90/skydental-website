@@ -2,8 +2,8 @@
 
 import { motion, useReducedMotion, useInView } from 'motion/react'
 import { useRef, useState, useCallback, useEffect } from 'react'
-import imgFeP2ZzQx9VG9AjMrPfeb0N3UDkJpg from 'figma:asset/088aac21103ad32cfae40ab80743ee00c733ec5e.png'
-import img3WwYqzhCzeuAa0TSlhUw9W1OcJpeg from 'figma:asset/c25fd727883742a604968c2f6e0b9b6946936405.png'
+import imgFeP2ZzQx9VG9AjMrPfeb0N3UDkJpg from '../../assets/088aac21103ad32cfae40ab80743ee00c733ec5e.png'
+import img3WwYqzhCzeuAa0TSlhUw9W1OcJpeg from '../../assets/c25fd727883742a604968c2f6e0b9b6946936405.png'
 
 export default function ResultsSection() {
   const ref = useRef(null)

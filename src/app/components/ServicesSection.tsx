@@ -3,7 +3,7 @@
 import { motion, useReducedMotion, useInView } from 'motion/react'
 import { useRef } from 'react'
 import svgPaths from '../../imports/svg-p4rwj0t9df'
-import imgImage from 'figma:asset/4fafeb49b310a78e44a5f2d40f54b8605c5129d1.png'
+import imgImage from '../../assets/4fafeb49b310a78e44a5f2d40f54b8605c5129d1.png'
 
 export default function ServicesSection() {
   const ref = useRef(null)
