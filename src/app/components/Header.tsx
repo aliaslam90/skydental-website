@@ -131,7 +131,7 @@ export default function Header() {
             </button>
 
             {/* Desktop Navigation - Hidden on tablets and mobile */}
-            <nav className="hidden xl:flex items-center gap-8 ml-8">
+            <nav className="hidden xl:flex items-center gap-8">
               <button
                 onClick={handleHomeClick}
                 className={`px-[14px] py-[4px] rounded-full text-[14px] transition-all whitespace-nowrap ${
@@ -275,7 +275,7 @@ export default function Header() {
             </nav>
 
             {/* Right side - Book Appointment Button + Mobile Menu */}
-            <div className="flex items-center gap-4 ml-8">
+            <div className="flex items-center gap-4">
               {/* CTA Button - Always visible */}
               <button className="bg-[#cbff8f] flex items-center gap-3 xl:gap-6 pl-4 xl:pl-6 pr-[10px] py-2 rounded-[35px] group hover:bg-[#B1FF57] transition-colors">
                 <span className="text-[#97c4ff] font-bold text-[14px] xl:text-[16px] whitespace-nowrap">Book Appoitment</span>
