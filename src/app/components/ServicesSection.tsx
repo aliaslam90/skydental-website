@@ -39,6 +39,9 @@ export default function ServicesSection() {
   const [selectedService, setSelectedService] = useState('General Dentistry')
   
   const currentService = servicesData[selectedService as keyof typeof servicesData]
+  
+  // Debug: Log the image path
+  console.log('Current service image path:', currentService.image)
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -161,8 +164,13 @@ export default function ServicesSection() {
                   src={currentService.image}
                   alt={`${currentService.title} procedure`}
                   className="absolute inset-0 w-full h-full object-cover"
+                  loading="eager"
+                  onLoad={() => {
+                    console.log('Image loaded successfully:', currentService.image)
+                  }}
                   onError={(e) => {
                     console.error('Image failed to load:', currentService.image)
+                    console.error('Full path attempted:', window.location.origin + currentService.image)
                     console.error('Error:', e)
                   }}
                 />
