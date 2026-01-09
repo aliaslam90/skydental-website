@@ -61,8 +61,7 @@ export default function ContactSection() {
   const shouldReduceMotion = useReducedMotion()
 
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
+    fullName: '',
     email: '',
     countryCode: '+971',
     phone: '',
@@ -73,12 +72,10 @@ export default function ContactSection() {
     message: ''
   })
 
-  const [showDatePicker, setShowDatePicker] = useState(false)
-  const [showTimePicker, setShowTimePicker] = useState(false)
+  const [showDateTimePicker, setShowDateTimePicker] = useState(false)
   const [showCountryCodeDropdown, setShowCountryCodeDropdown] = useState(false)
   const [availableDoctors, setAvailableDoctors] = useState<string[]>([])
-  const datePickerRef = useRef<HTMLDivElement>(null)
-  const timePickerRef = useRef<HTMLDivElement>(null)
+  const dateTimePickerRef = useRef<HTMLDivElement>(null)
   const countryCodeRef = useRef<HTMLDivElement>(null)
 
   // Update available doctors when service changes
@@ -98,11 +95,8 @@ export default function ContactSection() {
   // Close dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (datePickerRef.current && !datePickerRef.current.contains(event.target as Node)) {
-        setShowDatePicker(false)
-      }
-      if (timePickerRef.current && !timePickerRef.current.contains(event.target as Node)) {
-        setShowTimePicker(false)
+      if (dateTimePickerRef.current && !dateTimePickerRef.current.contains(event.target as Node)) {
+        setShowDateTimePicker(false)
       }
       if (countryCodeRef.current && !countryCodeRef.current.contains(event.target as Node)) {
         setShowCountryCodeDropdown(false)
@@ -136,8 +130,7 @@ export default function ContactSection() {
     alert('Appointment request sent successfully!')
     // Reset form
     setFormData({
-      firstName: '',
-      lastName: '',
+      fullName: '',
       email: '',
       countryCode: '+971',
       phone: '',
@@ -212,184 +205,141 @@ export default function ContactSection() {
               transition={{ delay: shouldReduceMotion ? 0 : 0.5, duration: shouldReduceMotion ? 0 : 0.8 }}
               className="flex-1"
             >
+              <h3 className="text-[28px] font-bold text-black mb-6" style={{ fontFamily: "'Gilda Display', serif" }}>
+                Book an Appointment
+              </h3>
               <form onSubmit={handleSubmit} className="flex flex-col gap-[25px]">
-                <div className="grid grid-cols-2 gap-[21px]">
-                  <input
-                    type="text"
-                    name="firstName"
-                    value={formData.firstName}
-                    onChange={handleInputChange}
-                    placeholder="First Name"
-                    required
-                    className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black"
-                  />
-                  <input
-                    type="text"
-                    name="lastName"
-                    value={formData.lastName}
-                    onChange={handleInputChange}
-                    placeholder="Last Name"
-                    required
-                    className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black"
-                  />
-                </div>
+                <input
+                  type="text"
+                  name="fullName"
+                  value={formData.fullName}
+                  onChange={handleInputChange}
+                  placeholder="Enter full name"
+                  required
+                  className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black"
+                />
 
-                <div className="grid grid-cols-2 gap-[21px]">
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    placeholder="E-mail"
-                    required
-                    className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black"
-                  />
-                  <div className="flex gap-2">
-                    {/* Country Code Selector */}
-                    <div className="relative flex-shrink-0" ref={countryCodeRef}>
-                      <button
-                        type="button"
-                        onClick={() => setShowCountryCodeDropdown(!showCountryCodeDropdown)}
-                        className="bg-[#f1f1f1] h-[55px] px-[12px] py-[16px] rounded-[12px] text-[14px] text-black flex items-center gap-1 min-w-[90px]"
-                      >
-                        <span>{countryCodes.find(c => c.code === formData.countryCode)?.flag}</span>
-                        <span>{formData.countryCode}</span>
-                        <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                        </svg>
-                      </button>
-                      {showCountryCodeDropdown && (
-                        <div className="absolute top-full left-0 mt-1 bg-white rounded-[12px] shadow-lg border border-gray-200 z-50 max-h-[200px] overflow-y-auto">
-                          {countryCodes.map((country) => (
-                            <button
-                              key={country.code}
-                              type="button"
-                              onClick={() => {
-                                setFormData(prev => ({ ...prev, countryCode: country.code }))
-                                setShowCountryCodeDropdown(false)
-                              }}
-                              className="w-full px-4 py-2 text-left hover:bg-[#f1f1f1] flex items-center gap-2 text-[14px]"
-                            >
-                              <span>{country.flag}</span>
-                              <span>{country.code}</span>
-                              <span className="text-gray-500 text-xs">({country.country})</span>
-                            </button>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                    {/* Phone Input */}
-                    <input
-                      type="tel"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      placeholder="Phone"
-                      required
-                      className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black flex-1 min-w-0"
-                    />
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  placeholder="Email ID"
+                  required
+                  className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black"
+                />
+
+                <div className="flex gap-2">
+                  {/* Country Code Selector */}
+                  <div className="relative flex-shrink-0" ref={countryCodeRef}>
+                    <button
+                      type="button"
+                      onClick={() => setShowCountryCodeDropdown(!showCountryCodeDropdown)}
+                      className="bg-[#f1f1f1] h-[55px] px-[12px] py-[16px] rounded-[12px] text-[14px] text-black flex items-center gap-1 min-w-[90px]"
+                    >
+                      <span>{countryCodes.find(c => c.code === formData.countryCode)?.flag}</span>
+                      <span>{formData.countryCode}</span>
+                      <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                    {showCountryCodeDropdown && (
+                      <div className="absolute top-full left-0 mt-1 bg-white rounded-[12px] shadow-lg border border-gray-200 z-50 max-h-[200px] overflow-y-auto">
+                        {countryCodes.map((country) => (
+                          <button
+                            key={country.code}
+                            type="button"
+                            onClick={() => {
+                              setFormData(prev => ({ ...prev, countryCode: country.code }))
+                              setShowCountryCodeDropdown(false)
+                            }}
+                            className="w-full px-4 py-2 text-left hover:bg-[#f1f1f1] flex items-center gap-2 text-[14px]"
+                          >
+                            <span>{country.flag}</span>
+                            <span>{country.code}</span>
+                            <span className="text-gray-500 text-xs">({country.country})</span>
+                          </button>
+                        ))}
+                      </div>
+                    )}
                   </div>
+                  {/* Phone Input */}
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    placeholder="Enter phone number"
+                    required
+                    className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black flex-1 min-w-0"
+                  />
                 </div>
 
-                <select
-                  name="service"
-                  value={formData.service}
-                  onChange={handleInputChange}
-                  required
-                  className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuNDEgOC41OEwxMiAxMy4xN0wxNi41OSA4LjU4TDE4IDEwTDEyIDE2TDYgMTBMNy40MSA4LjU4WiIgZmlsbD0iYmxhY2siLz4KPC9zdmc+Cg==')] bg-no-repeat bg-[right_24px_center]"
-                >
-                  <option value="">Choose Services</option>
-                  {services.map(service => (
-                    <option key={service} value={service}>{service}</option>
-                  ))}
-                </select>
+                <div>
+                  <label className="block text-[14px] text-black mb-2">Specialty</label>
+                  <select
+                    name="service"
+                    value={formData.service}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuNDEgOC41OEwxMiAxMy4xN0wxNi41OSA4LjU4TDE4IDEwTDEyIDE2TDYgMTBMNy40MSA4LjU4WiIgZmlsbD0iYmxhY2siLz4KPC9zdmc+Cg==')] bg-no-repeat bg-[right_24px_center]"
+                  >
+                    <option value="">Select Specialty</option>
+                    {services.map(service => (
+                      <option key={service} value={service}>{service}</option>
+                    ))}
+                  </select>
+                </div>
 
-                <select
-                  name="doctor"
-                  value={formData.doctor}
-                  onChange={handleInputChange}
-                  required
-                  disabled={!formData.service || availableDoctors.length === 0}
-                  className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuNDEgOC41OEwxMiAxMy4xN0wxNi41OSA4LjU4TDE4IDEwTDEyIDE2TDYgMTBMNy40MSA4LjU4WiIgZmlsbD0iYmxhY2siLz4KPC9zdmc+Cg==')] bg-no-repeat bg-[right_24px_center] disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  <option value="">Select Doctor</option>
-                  {availableDoctors.map(doctor => (
-                    <option key={doctor} value={doctor}>{doctor}</option>
-                  ))}
-                </select>
+                <div>
+                  <label className="block text-[14px] text-black mb-2">Doctor</label>
+                  <select
+                    name="doctor"
+                    value={formData.doctor}
+                    onChange={handleInputChange}
+                    required
+                    disabled={!formData.service || availableDoctors.length === 0}
+                    className="w-full bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuNDEgOC41OEwxMiAxMy4xN0wxNi41OSA4LjU4TDE4IDEwTDEyIDE2TDYgMTBMNy40MSA4LjU4WiIgZmlsbD0iYmxhY2siLz4KPC9zdmc+Cg==')] bg-no-repeat bg-[right_24px_center] disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    <option value="">Select Doctor</option>
+                    {availableDoctors.map(doctor => (
+                      <option key={doctor} value={doctor}>{doctor}</option>
+                    ))}
+                  </select>
+                </div>
 
-                {/* Date and Time Pickers - Separate */}
+                {/* Date Input - Opens combined date/time picker */}
                 {formData.doctor && (
-                  <div className="space-y-[21px]">
-                    {/* Date Picker */}
-                    <div className="relative" ref={datePickerRef}>
+                  <div>
+                    <label className="block text-[14px] text-black mb-2">Date</label>
+                    <div className="relative" ref={dateTimePickerRef}>
                       <button
                         type="button"
-                        onClick={() => {
-                          setShowDatePicker(!showDatePicker)
-                          setShowTimePicker(false)
-                        }}
+                        onClick={() => setShowDateTimePicker(!showDateTimePicker)}
                         className={`w-full bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black text-left flex items-center justify-between transition-all ${
                           formData.date 
                             ? 'bg-[#e0edff]' 
                             : 'hover:bg-[#e8e8e8]'
                         }`}
                       >
-                        <div className="flex items-center gap-3">
-                          <svg className={`w-5 h-5 ${formData.date ? 'text-[#97c4ff]' : 'text-gray-400'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                          </svg>
-                          <span className={formData.date ? 'font-semibold text-black' : 'text-gray-500'}>
-                            {formData.date || 'dd/mm/yyyy'}
-                          </span>
-                        </div>
+                        <span className={formData.date ? 'font-semibold text-black' : 'text-gray-500'}>
+                          {formData.date && formData.time 
+                            ? `${formData.date} at ${formData.time}`
+                            : formData.date 
+                            ? formData.date
+                            : 'Select Date'}
+                        </span>
                         <svg className="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                         </svg>
                       </button>
-                      {showDatePicker && (
-                        <DatePicker
+                      {showDateTimePicker && (
+                        <DateTimePicker
                           onDateSelect={handleDateSelect}
-                          selectedDate={formData.date}
-                          onClose={() => setShowDatePicker(false)}
-                        />
-                      )}
-                    </div>
-
-                    {/* Time Picker */}
-                    <div className="relative" ref={timePickerRef}>
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setShowTimePicker(!showTimePicker)
-                          setShowDatePicker(false)
-                        }}
-                        disabled={!formData.date}
-                        className={`w-full bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black text-left flex items-center justify-between transition-all ${
-                          !formData.date
-                            ? 'opacity-50 cursor-not-allowed'
-                            : formData.time
-                            ? 'bg-[#e0edff]'
-                            : 'hover:bg-[#e8e8e8]'
-                        }`}
-                      >
-                        <div className="flex items-center gap-3">
-                          <svg className={`w-5 h-5 ${formData.time ? 'text-[#97c4ff]' : 'text-gray-400'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                          <span className={formData.time ? 'font-semibold text-black' : 'text-gray-500'}>
-                            {formData.time || 'Select time'}
-                          </span>
-                        </div>
-                        <svg className="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                        </svg>
-                      </button>
-                      {showTimePicker && formData.date && (
-                        <TimePicker
                           onTimeSelect={handleTimeSelect}
+                          selectedDate={formData.date}
                           selectedTime={formData.time}
-                          onClose={() => setShowTimePicker(false)}
+                          onClose={() => setShowDateTimePicker(false)}
                         />
                       )}
                     </div>
@@ -400,7 +350,7 @@ export default function ContactSection() {
                   name="message"
                   value={formData.message}
                   onChange={handleInputChange}
-                  placeholder="Message"
+                  placeholder="Any notes for the doctor's office"
                   rows={4}
                   className="bg-[#f1f1f1] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black resize-none"
                 />
@@ -441,14 +391,18 @@ export default function ContactSection() {
   )
 }
 
-// Date Picker Component with Calendar View
-function DatePicker({ 
+// Combined Date and Time Picker Component
+function DateTimePicker({ 
   onDateSelect, 
+  onTimeSelect, 
   selectedDate, 
+  selectedTime,
   onClose 
 }: { 
   onDateSelect: (date: string) => void
+  onTimeSelect: (time: string) => void
   selectedDate: string
+  selectedTime: string
   onClose: () => void
 }) {
   const [currentMonth, setCurrentMonth] = useState(new Date().getMonth())
@@ -460,6 +414,9 @@ function DatePicker({
     const year = date.getFullYear()
     return `${day}/${month}/${year}`
   }
+
+  // Get all time slots (morning + afternoon)
+  const allTimeSlots = [...morningSlots, ...afternoonSlots]
 
   // Calendar functions
   const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
@@ -543,32 +500,10 @@ function DatePicker({
   }
 
   return (
-    <div className="absolute top-full left-0 right-0 mt-3 bg-white rounded-[24px] shadow-2xl border border-gray-100 z-50 overflow-hidden w-full max-w-[500px]">
-      {/* Header */}
-      <div className="bg-[#e0edff] px-6 py-4 flex items-center justify-between border-b border-gray-200">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
-            <svg className="w-5 h-5 text-[#97c4ff]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-          </div>
-          <span className="text-[16px] font-semibold text-black">
-            {selectedDate || 'Select date'}
-          </span>
-        </div>
-        <button
-          type="button"
-          onClick={onClose}
-          className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/50 transition-colors"
-        >
-          <svg className="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-      </div>
-
-      {/* Calendar */}
-      <div className="p-6">
+    <div className="absolute top-full left-0 right-0 mt-3 bg-white rounded-[24px] shadow-2xl border border-gray-100 z-50 overflow-hidden w-full max-w-[800px]">
+      <div className="flex">
+        {/* Left Side - Calendar */}
+        <div className="flex-1 p-6 border-r border-gray-200">
           {/* Month Navigation */}
           <div className="flex items-center justify-between mb-6">
             <button
@@ -604,7 +539,7 @@ function DatePicker({
           </div>
 
           {/* Calendar Grid */}
-          <div className="grid grid-cols-7 gap-2">
+          <div className="grid grid-cols-7 gap-2 mb-6">
             {days.map((day, index) => {
               // Determine if this day belongs to previous, current, or next month
               const isPrevMonth = index < firstDay
@@ -639,70 +574,37 @@ function DatePicker({
             })}
           </div>
 
-      </div>
-    </div>
-  )
-}
-
-// Time Picker Component
-function TimePicker({ 
-  onTimeSelect, 
-  selectedTime,
-  onClose 
-}: { 
-  onTimeSelect: (time: string) => void
-  selectedTime: string
-  onClose: () => void
-}) {
-  // Get all time slots (morning + afternoon)
-  const allTimeSlots = [...morningSlots, ...afternoonSlots]
-
-  return (
-    <div className="absolute top-full left-0 right-0 mt-3 bg-white rounded-[24px] shadow-2xl border border-gray-100 z-50 overflow-hidden w-full max-w-[400px]">
-      {/* Header */}
-      <div className="bg-[#e0edff] px-6 py-4 flex items-center justify-between border-b border-gray-200">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
-            <svg className="w-5 h-5 text-[#97c4ff]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
+          {/* Time Input Footer */}
+          <div className="pt-4 border-t border-gray-200">
+            <div className="flex items-center gap-2 text-[14px] text-gray-600">
+              <span className="font-medium">Time</span>
+              <span className="text-gray-400">--- ---</span>
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
           </div>
-          <span className="text-[16px] font-semibold text-black">
-            {selectedTime || 'Select time'}
-          </span>
         </div>
-        <button
-          type="button"
-          onClick={onClose}
-          className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/50 transition-colors"
-        >
-          <svg className="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-      </div>
 
-      {/* Time Slots */}
-      <div className="p-6 max-h-[400px] overflow-y-auto">
-        <h4 className="text-[16px] font-semibold text-black mb-4">Time</h4>
-        <div className="space-y-2">
-          {allTimeSlots.map((time) => (
-            <button
-              key={time}
-              type="button"
-              onClick={() => {
-                onTimeSelect(time)
-                onClose()
-              }}
-              className={`w-full px-4 py-3 rounded-lg text-[14px] font-medium text-left transition-all ${
-                selectedTime === time
-                  ? 'bg-[#97c4ff] text-white shadow-md'
-                  : 'bg-[#f5f5f5] text-black hover:bg-[#e0edff] hover:text-[#97c4ff]'
-              }`}
-            >
-              {time}
-            </button>
-          ))}
+        {/* Right Side - Time Slots */}
+        <div className="flex-1 p-6 max-h-[500px] overflow-y-auto">
+          <h4 className="text-[16px] font-semibold text-black mb-4">Time</h4>
+          <div className="space-y-2">
+            {allTimeSlots.map((time) => (
+              <button
+                key={time}
+                type="button"
+                onClick={() => onTimeSelect(time)}
+                className={`w-full px-4 py-3 rounded-lg text-[14px] font-medium text-left transition-all ${
+                  selectedTime === time
+                    ? 'bg-[#97c4ff] text-white shadow-md'
+                    : 'bg-[#f5f5f5] text-black hover:bg-[#e0edff] hover:text-[#97c4ff]'
+                }`}
+              >
+                {time}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
     </div>
