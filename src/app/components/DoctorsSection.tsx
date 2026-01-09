@@ -104,8 +104,9 @@ function DoctorCard({ doctor, variants }: { doctor: { name: string; specialty: s
   return (
     <motion.div
       variants={variants}
-      className="group"
+      className="group flex flex-col"
     >
+      {/* Image Card - Only contains image and tag */}
       <div className="bg-white rounded-[20px] overflow-hidden shadow-md hover:shadow-xl transition-shadow">
         <div className="relative h-[350px] md:h-[400px] overflow-hidden">
           <img
@@ -118,17 +119,19 @@ function DoctorCard({ doctor, variants }: { doctor: { name: string; specialty: s
             <span className="text-white text-[12px] md:text-[13px] font-medium">{doctor.specialty}</span>
           </div>
         </div>
-        <div className="p-[20px] md:p-[24px] text-center flex flex-col gap-[8px]">
-          <h3
-            className="text-black text-[18px] md:text-[20px] leading-[1.2]"
-            style={{ fontFamily: "'Gilda Display', serif" }}
-          >
-            {doctor.name}
-          </h3>
-          <button className="text-[#97c4ff] text-[14px] md:text-[15px] hover:underline">
-            View Details
-          </button>
-        </div>
+      </div>
+      
+      {/* Name and View Details - Outside the card */}
+      <div className="mt-[20px] md:mt-[24px] text-center flex flex-col gap-[8px]">
+        <h3
+          className="text-black text-[18px] md:text-[20px] leading-[1.2]"
+          style={{ fontFamily: "'Gilda Display', serif" }}
+        >
+          {doctor.name}
+        </h3>
+        <button className="text-[#97c4ff] text-[14px] md:text-[15px] hover:underline">
+          View Details
+        </button>
       </div>
     </motion.div>
   )
