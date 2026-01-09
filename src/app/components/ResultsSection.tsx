@@ -2,8 +2,10 @@
 
 import { motion, useReducedMotion, useInView } from 'motion/react'
 import { useRef, useState, useCallback, useEffect } from 'react'
-import imgFeP2ZzQx9VG9AjMrPfeb0N3UDkJpg from '../../assets/088aac21103ad32cfae40ab80743ee00c733ec5e.png'
-import img3WwYqzhCzeuAa0TSlhUw9W1OcJpeg from '../../assets/c25fd727883742a604968c2f6e0b9b6946936405.png'
+
+// Update these paths to your new high-quality images in the public folder
+const BEFORE_IMAGE = '/before-treatment.jpg'
+const AFTER_IMAGE = '/after-treatment.jpg'
 
 export default function ResultsSection() {
   const ref = useRef(null)
@@ -14,44 +16,63 @@ export default function ResultsSection() {
   // Track slider position (0-100%)
   const [sliderPosition, setSliderPosition] = useState(50)
   const [isDragging, setIsDragging] = useState(false)
+  const animationFrameRef = useRef<number | null>(null)
+
+  const updateSliderPosition = useCallback((clientX: number) => {
+    if (!containerRef.current) return
+    
+    const rect = containerRef.current.getBoundingClientRect()
+    const x = clientX - rect.left
+    const percentage = (x / rect.width) * 100
+    
+    // Clamp between 0 and 100
+    const newPosition = Math.max(0, Math.min(100, percentage))
+    
+    // Use requestAnimationFrame for smooth updates
+    if (animationFrameRef.current) {
+      cancelAnimationFrame(animationFrameRef.current)
+    }
+    
+    animationFrameRef.current = requestAnimationFrame(() => {
+      setSliderPosition(newPosition)
+    })
+  }, [])
 
   const handleMouseDown = useCallback((e: React.MouseEvent) => {
     setIsDragging(true)
     e.preventDefault()
-  }, [])
+    updateSliderPosition(e.clientX)
+  }, [updateSliderPosition])
 
   const handleMouseMove = useCallback((e: MouseEvent) => {
-    if (!isDragging || !containerRef.current) return
-    
-    const rect = containerRef.current.getBoundingClientRect()
-    const x = e.clientX - rect.left
-    const percentage = (x / rect.width) * 100
-    
-    // Clamp between 0 and 100
-    setSliderPosition(Math.max(0, Math.min(100, percentage)))
-  }, [isDragging])
+    if (!isDragging) return
+    updateSliderPosition(e.clientX)
+  }, [isDragging, updateSliderPosition])
 
   const handleMouseUp = useCallback(() => {
     setIsDragging(false)
+    if (animationFrameRef.current) {
+      cancelAnimationFrame(animationFrameRef.current)
+    }
   }, [])
 
   const handleTouchStart = useCallback((e: React.TouchEvent) => {
     setIsDragging(true)
-  }, [])
+    if (e.touches[0]) {
+      updateSliderPosition(e.touches[0].clientX)
+    }
+  }, [updateSliderPosition])
 
   const handleTouchMove = useCallback((e: TouchEvent) => {
-    if (!isDragging || !containerRef.current) return
-    
-    const touch = e.touches[0]
-    const rect = containerRef.current.getBoundingClientRect()
-    const x = touch.clientX - rect.left
-    const percentage = (x / rect.width) * 100
-    
-    setSliderPosition(Math.max(0, Math.min(100, percentage)))
-  }, [isDragging])
+    if (!isDragging || !e.touches[0]) return
+    updateSliderPosition(e.touches[0].clientX)
+  }, [isDragging, updateSliderPosition])
 
   const handleTouchEnd = useCallback(() => {
     setIsDragging(false)
+    if (animationFrameRef.current) {
+      cancelAnimationFrame(animationFrameRef.current)
+    }
   }, [])
 
   // Add/remove event listeners when dragging state changes
@@ -96,7 +117,7 @@ export default function ResultsSection() {
               {/* After Image (Full width - underneath) */}
               <div className="absolute inset-0">
                 <img
-                  src={img3WwYqzhCzeuAa0TSlhUw9W1OcJpeg}
+                  src={AFTER_IMAGE}
                   alt="After treatment"
                   className="absolute inset-0 w-full h-full object-cover"
                   draggable={false}
@@ -111,14 +132,16 @@ export default function ResultsSection() {
 
               {/* Before Image (Clipped by slider position) */}
               <div 
-                className="absolute inset-0 transition-all duration-100"
+                className="absolute inset-0"
                 style={{ 
                   clipPath: `inset(0 ${100 - sliderPosition}% 0 0)`,
-                  pointerEvents: 'none'
+                  pointerEvents: 'none',
+                  willChange: 'clip-path',
+                  transition: isDragging ? 'none' : 'clip-path 0.1s ease-out'
                 }}
               >
                 <img
-                  src={imgFeP2ZzQx9VG9AjMrPfeb0N3UDkJpg}
+                  src={BEFORE_IMAGE}
                   alt="Before treatment"
                   className="absolute inset-0 w-full h-full object-cover"
                   draggable={false}
@@ -133,8 +156,13 @@ export default function ResultsSection() {
 
               {/* Draggable Divider with controls */}
               <div 
-                className="absolute top-0 bottom-0 w-[4px] bg-white transition-all duration-100"
-                style={{ left: `${sliderPosition}%`, transform: 'translateX(-50%)' }}
+                className="absolute top-0 bottom-0 w-[4px] bg-white"
+                style={{ 
+                  left: `${sliderPosition}%`, 
+                  transform: 'translateX(-50%)',
+                  willChange: 'left',
+                  transition: isDragging ? 'none' : 'left 0.1s ease-out'
+                }}
               >
                 <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-[8px]">
                   {/* Left Arrow */}
