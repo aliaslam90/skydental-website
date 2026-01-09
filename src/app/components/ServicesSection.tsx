@@ -148,24 +148,15 @@ export default function ServicesSection() {
               </button>
             </div>
 
-            {/* Right Content - Image and Checklist */}
-            <div className="flex flex-col md:flex-row items-start gap-[24px] md:gap-[32px] lg:gap-[48px] flex-1 w-full">
-              <div className="relative rounded-[20px] overflow-hidden w-full md:w-[380px] lg:w-[465px] h-[300px] md:h-[350px] lg:h-[414px] transform rotate-180 scale-y-[-1]">
+            {/* Right Content - Image */}
+            <div className="flex-1 w-full">
+              <div className="relative rounded-[20px] overflow-hidden w-full h-[300px] md:h-[400px] lg:h-[500px] transform rotate-180 scale-y-[-1]">
                 <div className="absolute inset-0 bg-[#c4c4c4]" />
                 <img
                   src={imgImage}
                   alt="Dental procedure"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
-              </div>
-
-              <div className="flex flex-col gap-[16px] md:gap-[20px] flex-1 w-full">
-                <CheckItem text="Dental Checkup & Cleaning" />
-                <CheckItem text="Tooth- Colored fillings" />
-                <CheckItem text="Tooth- Colored fillings." />
-                <CheckItem text="Tooth- Colored fillings." />
-                <CheckItem text="Gum Disease Treatment" />
-                <CheckItem text="Preventive Dental Care" />
               </div>
             </div>
           </div>
