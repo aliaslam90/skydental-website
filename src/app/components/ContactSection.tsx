@@ -141,17 +141,47 @@ export default function ContactSection() {
     setSelectedTime('')
   }
 
-  // Get today and tomorrow dates
-  const today = new Date()
-  const tomorrow = new Date(today)
-  tomorrow.setDate(tomorrow.getDate() + 1)
+  // Generate dates for carousel (next 14 days)
+  const generateDates = () => {
+    const dates: Date[] = []
+    const today = new Date()
+    for (let i = 0; i < 14; i++) {
+      const date = new Date(today)
+      date.setDate(today.getDate() + i)
+      dates.push(date)
+    }
+    return dates
+  }
+
+  const availableDates = generateDates()
 
   const formatDate = (date: Date) => {
-    return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
+    const today = new Date()
+    const tomorrow = new Date(today)
+    tomorrow.setDate(tomorrow.getDate() + 1)
+    
+    if (date.toDateString() === today.toDateString()) {
+      return 'Today'
+    } else if (date.toDateString() === tomorrow.toDateString()) {
+      return 'Tomorrow'
+    } else {
+      return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
+    }
   }
 
   return (
     <section id="contact" className="py-[70px] px-[25px]">
+      <style>{`
+        .date-carousel::-webkit-scrollbar,
+        .time-slots::-webkit-scrollbar {
+          display: none;
+        }
+        .date-carousel,
+        .time-slots {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
       <div className="max-w-[1390px] mx-auto">
         <motion.div
           ref={ref}
@@ -303,41 +333,39 @@ export default function ContactSection() {
 
                 {/* Date and Time Picker */}
                 <div className="space-y-4">
-                  <div className="flex gap-2">
-                    <button
-                      type="button"
-                      onClick={() => handleDateSelect(today)}
-                      className={`flex-1 bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black text-center ${
-                        selectedDate && selectedDate.toDateString() === today.toDateString()
-                          ? 'bg-[#e0edff] border-2 border-[#97c4ff]'
-                          : ''
-                      }`}
-                    >
-                      Today ({formatDate(today)})
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => handleDateSelect(tomorrow)}
-                      className={`flex-1 bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black text-center ${
-                        selectedDate && selectedDate.toDateString() === tomorrow.toDateString()
-                          ? 'bg-[#e0edff] border-2 border-[#97c4ff]'
-                          : ''
-                      }`}
-                    >
-                      Tomorrow ({formatDate(tomorrow)})
-                    </button>
+                  {/* Date Carousel */}
+                  <div className="relative">
+                    <div className="date-carousel flex gap-2 overflow-x-auto pb-2" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
+                      {availableDates.map((date) => {
+                        const isSelected = selectedDate && selectedDate.toDateString() === date.toDateString()
+                        return (
+                          <button
+                            key={date.toDateString()}
+                            type="button"
+                            onClick={() => handleDateSelect(date)}
+                            className={`flex-shrink-0 bg-[#f1f1f1] h-[55px] px-[16px] py-[16px] rounded-[12px] text-[14px] text-black text-center whitespace-nowrap w-[130px] ${
+                              isSelected
+                                ? 'bg-[#e0edff] border-2 border-[#97c4ff]'
+                                : 'hover:bg-[#e8e8e8]'
+                            }`}
+                          >
+                            {formatDate(date)}
+                          </button>
+                        )
+                      })}
+                    </div>
                   </div>
 
                   {selectedDate && (
                     <div className="space-y-3">
                       <p className="text-[14px] text-black font-medium">Morning</p>
-                      <div className="grid grid-cols-4 gap-2">
+                      <div className="time-slots flex gap-2 overflow-x-auto pb-2" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
                         {morningSlots.map((time) => (
                           <button
                             key={time}
                             type="button"
                             onClick={() => handleTimeSelect(time)}
-                            className={`bg-[#e0edff] h-[40px] px-3 py-2 rounded-[8px] text-[13px] text-black text-center ${
+                            className={`flex-shrink-0 bg-[#e0edff] h-[40px] px-4 py-2 rounded-[8px] text-[13px] text-black text-center whitespace-nowrap ${
                               selectedTime === time
                                 ? 'bg-[#97c4ff] text-white'
                                 : 'hover:bg-[#d0e0ff]'
@@ -348,13 +376,13 @@ export default function ContactSection() {
                         ))}
                       </div>
                       <p className="text-[14px] text-black font-medium mt-4">Afternoon</p>
-                      <div className="grid grid-cols-4 gap-2">
+                      <div className="time-slots flex gap-2 overflow-x-auto pb-2" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
                         {afternoonSlots.map((time) => (
                           <button
                             key={time}
                             type="button"
                             onClick={() => handleTimeSelect(time)}
-                            className={`bg-[#e0edff] h-[40px] px-3 py-2 rounded-[8px] text-[13px] text-black text-center ${
+                            className={`flex-shrink-0 bg-[#e0edff] h-[40px] px-4 py-2 rounded-[8px] text-[13px] text-black text-center whitespace-nowrap ${
                               selectedTime === time
                                 ? 'bg-[#97c4ff] text-white'
                                 : 'hover:bg-[#d0e0ff]'
