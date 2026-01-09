@@ -2,11 +2,22 @@
 
 import { motion, useReducedMotion, useInView } from 'motion/react'
 import { useRef } from 'react'
+import React from 'react'
 
 export default function TechnologySection() {
   const ref = useRef(null)
+  const videoRef = useRef<HTMLVideoElement>(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
   const shouldReduceMotion = useReducedMotion()
+  
+  // Ensure video plays when in view
+  React.useEffect(() => {
+    if (videoRef.current && isInView) {
+      videoRef.current.play().catch((error) => {
+        console.error('Error playing video:', error)
+      })
+    }
+  }, [isInView])
 
   return (
     <section className="py-[50px] md:py-[60px] lg:py-[70px] px-[16px] md:px-[20px] lg:px-[25px]">
@@ -22,15 +33,24 @@ export default function TechnologySection() {
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-[#c4c4c4]" />
             <video
+              ref={videoRef}
               autoPlay
               loop
               playsInline
               muted
+              preload="auto"
               className="absolute inset-0 w-full h-full object-cover"
               controlsList="nodownload"
+              onLoadedData={() => {
+                console.log('Technology video loaded successfully')
+              }}
+              onError={(e) => {
+                console.error('Technology video failed to load')
+                console.error('Video path:', '/technology-video.mp4')
+                console.error('Full URL:', window.location.origin + '/technology-video.mp4')
+                console.error('Error:', e)
+              }}
             >
-              {/* Add your video file in the public folder and update the src path below */}
-              {/* Example: <source src="/technology-video.mp4" type="video/mp4" /> */}
               <source src="/technology-video.mp4" type="video/mp4" />
             </video>
             {/* Gradient Overlay */}
