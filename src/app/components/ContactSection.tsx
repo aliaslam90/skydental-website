@@ -323,11 +323,33 @@ export default function ContactSection() {
                       <button
                         type="button"
                         onClick={() => setShowDatePicker(!showDatePicker)}
-                        className="w-full bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black text-left flex items-center justify-between"
+                        className={`w-full bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black text-left flex items-center justify-between transition-all ${
+                          formData.date && formData.time 
+                            ? 'bg-[#e0edff] border-2 border-[#97c4ff]' 
+                            : 'hover:bg-[#e8e8e8]'
+                        }`}
                       >
-                        <span>{formData.date || 'dd/mm/yyyy'}</span>
-                        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        <div className="flex items-center gap-3">
+                          {formData.date && formData.time ? (
+                            <>
+                              <svg className="w-5 h-5 text-[#97c4ff]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                              </svg>
+                              <span className="font-semibold">
+                                {formData.date} at {formData.time}
+                              </span>
+                            </>
+                          ) : (
+                            <>
+                              <svg className="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                              </svg>
+                              <span className="text-gray-500">Select date and time</span>
+                            </>
+                          )}
+                        </div>
+                        <svg className="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                         </svg>
                       </button>
                       {showDatePicker && (
@@ -402,9 +424,7 @@ function DateTimePicker({
   selectedTime: string
   onClose: () => void
 }) {
-  const [currentDateIndex, setCurrentDateIndex] = useState(0)
   const dates = getAvailableDates()
-  const shouldReduceMotion = useReducedMotion()
 
   const formatDateString = (date: Date) => {
     const day = String(date.getDate()).padStart(2, '0')
@@ -414,135 +434,158 @@ function DateTimePicker({
   }
 
   const formatDateLabel = (date: Date) => {
-    if (isToday(date)) return 'Today'
-    const tomorrow = new Date()
-    tomorrow.setDate(tomorrow.getDate() + 1)
-    if (date.toDateString() === tomorrow.toDateString()) return 'Tomorrow'
-    const formatted = formatDate(date)
-    return `${formatted.day}, ${formatted.month} ${formatted.date}`
-  }
-
-  const isToday = (date: Date) => {
     const today = new Date()
-    return date.toDateString() === today.toDateString()
-  }
-
-  const formatDate = (date: Date) => {
+    if (date.toDateString() === today.toDateString()) return 'Today'
+    
+    const tomorrow = new Date()
+    tomorrow.setDate(today.getDate() + 1)
+    if (date.toDateString() === tomorrow.toDateString()) return 'Tomorrow'
+    
     const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-    return {
-      day: days[date.getDay()],
-      date: date.getDate(),
-      month: months[date.getMonth()]
-    }
+    return `${days[date.getDay()]}, ${months[date.getMonth()]} ${date.getDate()}`
   }
 
   const handleDateClick = (date: Date) => {
     onDateSelect(formatDateString(date))
   }
 
+  const getSelectedDateDisplay = () => {
+    if (!selectedDate) return 'dd/mm/yyyy'
+    return selectedDate
+  }
+
   return (
-    <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-[20px] shadow-xl border border-gray-200 z-50 p-6 max-h-[600px] overflow-y-auto">
-      <div className="flex items-center justify-between mb-6">
-        <h3 className="text-[20px] font-bold text-black">Pick Time & Date</h3>
+    <div className="absolute top-full left-0 right-0 mt-3 bg-white rounded-[24px] shadow-2xl border border-gray-100 z-50 overflow-hidden">
+      {/* Header with Date Display */}
+      <div className="bg-[#e0edff] px-6 py-4 flex items-center justify-between border-b border-gray-200">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
+            <svg className="w-5 h-5 text-[#97c4ff]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <span className="text-[16px] font-semibold text-black">{getSelectedDateDisplay()}</span>
+        </div>
         <button
           type="button"
           onClick={onClose}
-          className="text-gray-500 hover:text-black"
+          className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/50 transition-colors"
         >
-          <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg className="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
       </div>
 
-      {/* Progress Indicator */}
-      <div className="flex items-center justify-center gap-2 mb-6">
-        {[1, 2, 3, 4, 5].map((step) => (
-          <div
-            key={step}
-            className={`w-2 h-2 rounded-full ${
-              step <= 3 ? 'bg-[#97c4ff]' : 'bg-gray-300'
-            }`}
-          />
-        ))}
-      </div>
-
-      {/* Date Selection */}
-      <div className="mb-6">
-        <div className="flex items-center gap-2 overflow-x-auto pb-2">
-          {dates.map((date, index) => {
-            const dateStr = formatDateString(date)
-            const isSelected = selectedDate === dateStr
-            return (
-              <button
-                key={index}
-                type="button"
-                onClick={() => handleDateClick(date)}
-                className={`px-4 py-2 rounded-[12px] text-[14px] font-medium whitespace-nowrap transition-colors ${
-                  isSelected
-                    ? 'bg-[#97c4ff] text-white'
-                    : 'bg-[#f1f1f1] text-black hover:bg-[#e0edff]'
-                }`}
-              >
-                {formatDateLabel(date)}
-              </button>
-            )
-          })}
+      <div className="p-6">
+        {/* Title */}
+        <div className="flex items-center justify-between mb-6">
+          <h3 className="text-[24px] font-bold text-black" style={{ fontFamily: "'Gilda Display', serif" }}>
+            Pick Time & Date
+          </h3>
         </div>
-      </div>
 
-      {/* Time Slots */}
-      {selectedDate && (
-        <div className="space-y-6">
-          {/* Morning Slots */}
-          <div>
-            <h4 className="text-[16px] font-semibold text-black mb-3">Morning</h4>
-            <div className="grid grid-cols-3 gap-3">
-              {morningSlots.map((time) => (
+        {/* Progress Indicator */}
+        <div className="flex items-center justify-center gap-2 mb-8">
+          {[1, 2, 3, 4, 5].map((step) => (
+            <div
+              key={step}
+              className={`w-[8px] h-[8px] rounded-full transition-all ${
+                step <= 3 
+                  ? 'bg-[#97c4ff] scale-110' 
+                  : 'bg-gray-300'
+              }`}
+            />
+          ))}
+        </div>
+
+        {/* Date Selection */}
+        <div className="mb-8">
+          <div className="flex items-center gap-3 overflow-x-auto pb-3 scrollbar-hide">
+            {dates.map((date, index) => {
+              const dateStr = formatDateString(date)
+              const isSelected = selectedDate === dateStr
+              return (
                 <button
-                  key={time}
+                  key={index}
                   type="button"
-                  onClick={() => onTimeSelect(time)}
-                  className={`px-4 py-2 rounded-[12px] text-[14px] font-medium transition-colors ${
-                    selectedTime === time
-                      ? 'bg-[#97c4ff] text-white'
-                      : 'bg-[#e0edff] text-black hover:bg-[#cbff8f]'
+                  onClick={() => handleDateClick(date)}
+                  className={`px-5 py-3 rounded-[16px] text-[15px] font-semibold whitespace-nowrap transition-all duration-200 flex-shrink-0 ${
+                    isSelected
+                      ? 'bg-[#97c4ff] text-white shadow-md scale-105'
+                      : 'bg-[#f5f5f5] text-black hover:bg-[#e0edff] hover:scale-105'
                   }`}
                 >
-                  {time}
+                  {formatDateLabel(date)}
                 </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Afternoon Slots */}
-          <div>
-            <h4 className="text-[16px] font-semibold text-black mb-3">Afternoon</h4>
-            <div className="grid grid-cols-3 gap-3">
-              {afternoonSlots.map((time) => (
-                <button
-                  key={time}
-                  type="button"
-                  onClick={() => onTimeSelect(time)}
-                  className={`px-4 py-2 rounded-[12px] text-[14px] font-medium transition-colors ${
-                    selectedTime === time
-                      ? 'bg-[#97c4ff] text-white'
-                      : 'bg-[#e0edff] text-black hover:bg-[#cbff8f]'
-                  }`}
-                >
-                  {time}
-                </button>
-              ))}
-            </div>
+              )
+            })}
           </div>
         </div>
-      )}
 
-      {/* Timezone Info */}
-      <p className="text-[12px] text-gray-500 text-center mt-6">
-        Time slots are in (GMT +04:00) Gulf Standard Time
-      </p>
+        {/* Time Slots */}
+        {selectedDate ? (
+          <div className="space-y-6">
+            {/* Morning Slots */}
+            <div>
+              <h4 className="text-[18px] font-bold text-black mb-4" style={{ fontFamily: "'Gilda Display', serif" }}>
+                Morning
+              </h4>
+              <div className="grid grid-cols-4 gap-3">
+                {morningSlots.map((time) => (
+                  <button
+                    key={time}
+                    type="button"
+                    onClick={() => onTimeSelect(time)}
+                    className={`px-4 py-3 rounded-[14px] text-[14px] font-semibold transition-all duration-200 ${
+                      selectedTime === time
+                        ? 'bg-[#97c4ff] text-white shadow-md scale-105'
+                        : 'bg-[#e0edff] text-black hover:bg-[#cbff8f] hover:scale-105'
+                    }`}
+                  >
+                    {time}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Afternoon Slots */}
+            <div>
+              <h4 className="text-[18px] font-bold text-black mb-4" style={{ fontFamily: "'Gilda Display', serif" }}>
+                Afternoon
+              </h4>
+              <div className="grid grid-cols-4 gap-3">
+                {afternoonSlots.map((time) => (
+                  <button
+                    key={time}
+                    type="button"
+                    onClick={() => onTimeSelect(time)}
+                    className={`px-4 py-3 rounded-[14px] text-[14px] font-semibold transition-all duration-200 ${
+                      selectedTime === time
+                        ? 'bg-[#97c4ff] text-white shadow-md scale-105'
+                        : 'bg-[#e0edff] text-black hover:bg-[#cbff8f] hover:scale-105'
+                    }`}
+                  >
+                    {time}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div className="text-center py-12">
+            <p className="text-gray-400 text-[16px]">Please select a date to view available time slots</p>
+          </div>
+        )}
+
+        {/* Timezone Info */}
+        <div className="mt-8 pt-6 border-t border-gray-200">
+          <p className="text-[13px] text-gray-500 text-center">
+            Time slots are in <span className="font-semibold">(GMT +04:00) Gulf Standard Time</span>
+          </p>
+        </div>
+      </div>
     </div>
   )
 }
