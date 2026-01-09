@@ -334,8 +334,8 @@ export default function ContactSection() {
                 {/* Date and Time Picker */}
                 <div className="space-y-4">
                   {/* Date Carousel */}
-                  <div className="relative">
-                    <div className="date-carousel flex gap-2 overflow-x-auto pb-2" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
+                  <div className="relative w-full">
+                    <div className="date-carousel flex gap-2 overflow-x-auto pb-2 w-full" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
                       {availableDates.map((date) => {
                         const isSelected = selectedDate && selectedDate.toDateString() === date.toDateString()
                         return (
@@ -343,7 +343,7 @@ export default function ContactSection() {
                             key={date.toDateString()}
                             type="button"
                             onClick={() => handleDateSelect(date)}
-                            className={`flex-shrink-0 bg-[#f1f1f1] h-[55px] px-[16px] py-[16px] rounded-[12px] text-[14px] text-black text-center whitespace-nowrap w-[130px] ${
+                            className={`flex-shrink-0 bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black text-center whitespace-nowrap min-w-[calc(25%-6px)] ${
                               isSelected
                                 ? 'bg-[#e0edff] border-2 border-[#97c4ff]'
                                 : 'hover:bg-[#e8e8e8]'
@@ -359,7 +359,7 @@ export default function ContactSection() {
                   {selectedDate && (
                     <div className="space-y-3">
                       <p className="text-[14px] text-black font-medium">Morning</p>
-                      <div className="time-slots flex gap-2 overflow-x-auto pb-2" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
+                      <div className="time-slots flex gap-2 overflow-x-auto pb-2 w-full" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
                         {morningSlots.map((time) => (
                           <button
                             key={time}
@@ -376,7 +376,7 @@ export default function ContactSection() {
                         ))}
                       </div>
                       <p className="text-[14px] text-black font-medium mt-4">Afternoon</p>
-                      <div className="time-slots flex gap-2 overflow-x-auto pb-2" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
+                      <div className="time-slots flex gap-2 overflow-x-auto pb-2 w-full" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
                         {afternoonSlots.map((time) => (
                           <button
                             key={time}
