@@ -58,9 +58,9 @@ export default function HeroSection() {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="relative z-10 h-full flex flex-col justify-end px-[20px] md:px-[40px] lg:px-6 pb-[32px] md:pb-[40px] lg:pb-[48px]"
+        className="relative z-10 h-full flex flex-col justify-end px-[20px] md:px-[40px] lg:px-6 pb-[32px] md:pb-[40px] lg:pb-[48px] w-[calc(100%-50px)] max-w-[1340px] mx-auto"
       >
-        <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between w-full max-w-[1340px] mx-auto gap-[32px] md:gap-[40px]">
+        <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between w-full gap-[32px] md:gap-[40px]">
           {/* Left Content */}
           <div className="flex flex-col gap-[16px] max-w-full lg:max-w-[771px]">
             <motion.div variants={itemVariants}>
