@@ -2,11 +2,6 @@
 
 import { motion, useReducedMotion, useInView } from 'motion/react'
 import { useRef } from 'react'
-import { ImageWithFallback } from './figma/ImageWithFallback'
-import imgImage4 from '../../assets/958080d80a0502b2239e7bf8312770b39e189c59.png'
-import imgImage5 from '../../assets/c428fe717bbbc4d96b0993d331398a01e16a965a.png'
-import imgImage6 from '../../assets/9820c349dd5b4ac1658cc8b535bf4db2bebb8ebb.png'
-import imgImage7 from '../../assets/9fbf72269945d89340291423575f203d2365fd2d.png'
 
 export default function DoctorsSection() {
   const ref = useRef(null)
@@ -14,10 +9,10 @@ export default function DoctorsSection() {
   const shouldReduceMotion = useReducedMotion()
 
   const doctors = [
-    { name: 'Dr. Ahmed Hassan', specialty: 'Orthodontist', image: 'https://images.unsplash.com/photo-1631596577204-53ad0d6e6978?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYWxlJTIwZGVudGlzdCUyMHByb2Zlc3Npb25hbCUyMHBvcnRyYWl0fGVufDF8fHx8MTc2Nzg2NjAzOHww&ixlib=rb-4.1.0&q=80&w=1080', useImageWithFallback: true },
-    { name: 'Dr. Maria Rodriguez', specialty: 'Cosmetic Dentist', image: 'https://images.unsplash.com/photo-1565090567208-c8038cfcf6cd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmZW1hbGUlMjBkZW50aXN0JTIwcHJvZmVzc2lvbmFsfGVufDF8fHx8MTc2Nzc0NTMxMXww&ixlib=rb-4.1.0&q=80&w=1080', useImageWithFallback: true },
-    { name: 'Dr. James Wilson', specialty: 'Oral Surgeon', image: imgImage6, useImageWithFallback: false },
-    { name: 'Dr. Lisa Chen', specialty: 'Periodontist', image: imgImage7, useImageWithFallback: false }
+    { name: 'Dr. Saifaldin Tawakul', specialty: 'Specialist Oral Surgeon', image: '/doctor1.png' },
+    { name: 'Dr. Basma Al Rawi', specialty: 'Oral Surgery', image: '/doctor2.png' },
+    { name: 'Dr. Claude Istanbouli', specialty: 'Master of Implant Dentistry', image: '/doctor3.png' },
+    { name: 'Dr. Elias Daoud Hanna', specialty: 'Prosthodontist', image: '/doctor4.png' }
   ]
 
   const containerVariants = {
@@ -103,7 +98,7 @@ export default function DoctorsSection() {
   )
 }
 
-function DoctorCard({ doctor, variants }: { doctor: { name: string; specialty: string; image: string; useImageWithFallback: boolean }; variants: any }) {
+function DoctorCard({ doctor, variants }: { doctor: { name: string; specialty: string; image: string }; variants: any }) {
   const shouldReduceMotion = useReducedMotion()
 
   return (
@@ -113,19 +108,11 @@ function DoctorCard({ doctor, variants }: { doctor: { name: string; specialty: s
     >
       <div className="bg-white rounded-[20px] overflow-hidden shadow-md hover:shadow-xl transition-shadow">
         <div className="relative h-[350px] md:h-[400px] overflow-hidden">
-          {doctor.useImageWithFallback ? (
-            <ImageWithFallback
-              src={doctor.image}
-              alt={doctor.name}
-              className="w-full h-full object-cover"
-            />
-          ) : (
-            <img
-              src={doctor.image}
-              alt={doctor.name}
-              className="w-full h-full object-cover"
-            />
-          )}
+          <img
+            src={doctor.image}
+            alt={doctor.name}
+            className="w-full h-full object-cover"
+          />
           {/* Specialty Badge */}
           <div className="absolute bottom-[16px] left-[16px] bg-black/70 backdrop-blur-sm px-[16px] py-[8px] rounded-[20px]">
             <span className="text-white text-[12px] md:text-[13px] font-medium">{doctor.specialty}</span>
