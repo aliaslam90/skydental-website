@@ -410,7 +410,7 @@ export default function ContactSection() {
   )
 }
 
-// Date and Time Picker Component
+// Date and Time Picker Component with Calendar View
 function DateTimePicker({ 
   onDateSelect, 
   onTimeSelect, 
@@ -424,7 +424,8 @@ function DateTimePicker({
   selectedTime: string
   onClose: () => void
 }) {
-  const dates = getAvailableDates()
+  const [currentMonth, setCurrentMonth] = useState(new Date().getMonth())
+  const [currentYear, setCurrentYear] = useState(new Date().getFullYear())
 
   const formatDateString = (date: Date) => {
     const day = String(date.getDate()).padStart(2, '0')
@@ -433,26 +434,99 @@ function DateTimePicker({
     return `${day}/${month}/${year}`
   }
 
-  const formatDateLabel = (date: Date) => {
-    const today = new Date()
-    if (date.toDateString() === today.toDateString()) return 'Today'
-    
-    const tomorrow = new Date()
-    tomorrow.setDate(today.getDate() + 1)
-    if (date.toDateString() === tomorrow.toDateString()) return 'Tomorrow'
-    
-    const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
-    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-    return `${days[date.getDay()]}, ${months[date.getMonth()]} ${date.getDate()}`
-  }
-
-  const handleDateClick = (date: Date) => {
-    onDateSelect(formatDateString(date))
+  const parseDateString = (dateStr: string): Date | null => {
+    if (!dateStr) return null
+    const [day, month, year] = dateStr.split('/').map(Number)
+    return new Date(year, month - 1, day)
   }
 
   const getSelectedDateDisplay = () => {
     if (!selectedDate) return 'dd/mm/yyyy'
     return selectedDate
+  }
+
+  // Get all time slots (morning + afternoon)
+  const allTimeSlots = [...morningSlots, ...afternoonSlots]
+
+  // Calendar functions
+  const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+  const weekDays = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa']
+
+  const getDaysInMonth = (month: number, year: number) => {
+    return new Date(year, month + 1, 0).getDate()
+  }
+
+  const getFirstDayOfMonth = (month: number, year: number) => {
+    return new Date(year, month, 1).getDay()
+  }
+
+  const handlePrevMonth = () => {
+    if (currentMonth === 0) {
+      setCurrentMonth(11)
+      setCurrentYear(currentYear - 1)
+    } else {
+      setCurrentMonth(currentMonth - 1)
+    }
+  }
+
+  const handleNextMonth = () => {
+    if (currentMonth === 11) {
+      setCurrentMonth(0)
+      setCurrentYear(currentYear + 1)
+    } else {
+      setCurrentMonth(currentMonth + 1)
+    }
+  }
+
+  const handleDateClick = (day: number) => {
+    const date = new Date(currentYear, currentMonth, day)
+    onDateSelect(formatDateString(date))
+  }
+
+  const isDateSelected = (day: number) => {
+    const date = new Date(currentYear, currentMonth, day)
+    return formatDateString(date) === selectedDate
+  }
+
+  const isDateToday = (day: number) => {
+    const today = new Date()
+    const date = new Date(currentYear, currentMonth, day)
+    return date.toDateString() === today.toDateString()
+  }
+
+  const isDatePast = (day: number) => {
+    const today = new Date()
+    today.setHours(0, 0, 0, 0)
+    const date = new Date(currentYear, currentMonth, day)
+    date.setHours(0, 0, 0, 0)
+    return date < today
+  }
+
+  // Generate calendar days
+  const daysInMonth = getDaysInMonth(currentMonth, currentYear)
+  const firstDay = getFirstDayOfMonth(currentMonth, currentYear)
+  const days: (number | null)[] = []
+
+  // Get previous month's last days to fill the first row
+  const prevMonth = currentMonth - 1 < 0 ? 11 : currentMonth - 1
+  const prevMonthYear = currentMonth === 0 ? currentYear - 1 : currentYear
+  const prevMonthDays = getDaysInMonth(prevMonth, prevMonthYear)
+  
+  // Add previous month's days
+  for (let i = firstDay - 1; i >= 0; i--) {
+    days.push(prevMonthDays - i)
+  }
+
+  // Add all days of the current month
+  for (let day = 1; day <= daysInMonth; day++) {
+    days.push(day)
+  }
+
+  // Fill remaining cells to complete the grid (next month's days)
+  const totalCells = 42 // 6 rows * 7 days
+  const remainingCells = totalCells - days.length
+  for (let day = 1; day <= remainingCells; day++) {
+    days.push(day)
   }
 
   return (
@@ -465,7 +539,9 @@ function DateTimePicker({
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
           </div>
-          <span className="text-[16px] font-semibold text-black">{getSelectedDateDisplay()}</span>
+          <span className="text-[16px] font-semibold text-black">
+            {selectedDate && selectedTime ? `${selectedDate} at ${selectedTime}` : getSelectedDateDisplay()}
+          </span>
         </div>
         <button
           type="button"
@@ -478,112 +554,113 @@ function DateTimePicker({
         </button>
       </div>
 
-      <div className="p-6">
-        {/* Title */}
-        <div className="flex items-center justify-between mb-6">
-          <h3 className="text-[24px] font-bold text-black" style={{ fontFamily: "'Gilda Display', serif" }}>
-            Pick Time & Date
-          </h3>
-        </div>
+      <div className="flex">
+        {/* Left Side - Calendar */}
+        <div className="flex-1 p-6 border-r border-gray-200">
+          {/* Month Navigation */}
+          <div className="flex items-center justify-between mb-6">
+            <button
+              type="button"
+              onClick={handlePrevMonth}
+              className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-[#e0edff] transition-colors"
+            >
+              <svg className="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <h3 className="text-[18px] font-semibold text-black">
+              {months[currentMonth]} {currentYear}
+            </h3>
+            <button
+              type="button"
+              onClick={handleNextMonth}
+              className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-[#e0edff] transition-colors"
+            >
+              <svg className="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
 
-        {/* Progress Indicator */}
-        <div className="flex items-center justify-center gap-2 mb-8">
-          {[1, 2, 3, 4, 5].map((step) => (
-            <div
-              key={step}
-              className={`w-[8px] h-[8px] rounded-full transition-all ${
-                step <= 3 
-                  ? 'bg-[#97c4ff] scale-110' 
-                  : 'bg-gray-300'
-              }`}
-            />
-          ))}
-        </div>
+          {/* Week Days Header */}
+          <div className="grid grid-cols-7 gap-2 mb-3">
+            {weekDays.map((day) => (
+              <div key={day} className="text-center text-[12px] font-semibold text-gray-600 py-2">
+                {day}
+              </div>
+            ))}
+          </div>
 
-        {/* Date Selection */}
-        <div className="mb-8">
-          <div className="flex items-center gap-3 overflow-x-auto pb-3 scrollbar-hide">
-            {dates.map((date, index) => {
-              const dateStr = formatDateString(date)
-              const isSelected = selectedDate === dateStr
+          {/* Calendar Grid */}
+          <div className="grid grid-cols-7 gap-2">
+            {days.map((day, index) => {
+              // Determine if this day belongs to previous, current, or next month
+              const isPrevMonth = index < firstDay
+              const isNextMonth = index >= firstDay + daysInMonth
+              
+              const isSelected = !isPrevMonth && !isNextMonth && isDateSelected(day)
+              const isToday = !isPrevMonth && !isNextMonth && isDateToday(day)
+              const isPast = !isPrevMonth && !isNextMonth && isDatePast(day)
+              const isCurrentMonth = !isPrevMonth && !isNextMonth
+
               return (
                 <button
-                  key={index}
+                  key={`${day}-${index}`}
                   type="button"
-                  onClick={() => handleDateClick(date)}
-                  className={`px-5 py-3 rounded-[16px] text-[15px] font-semibold whitespace-nowrap transition-all duration-200 flex-shrink-0 ${
+                  onClick={() => isCurrentMonth && !isPast && handleDateClick(day)}
+                  disabled={!isCurrentMonth || isPast}
+                  className={`h-10 rounded-lg text-[14px] font-medium transition-all ${
                     isSelected
-                      ? 'bg-[#97c4ff] text-white shadow-md scale-105'
-                      : 'bg-[#f5f5f5] text-black hover:bg-[#e0edff] hover:scale-105'
+                      ? 'bg-[#97c4ff] text-white shadow-md'
+                      : isToday
+                      ? 'bg-[#e0edff] text-[#97c4ff] font-bold border-2 border-[#97c4ff]'
+                      : !isCurrentMonth
+                      ? 'text-gray-300 cursor-not-allowed'
+                      : isPast
+                      ? 'text-gray-300 cursor-not-allowed'
+                      : 'text-black hover:bg-[#e0edff] hover:text-[#97c4ff]'
                   }`}
                 >
-                  {formatDateLabel(date)}
+                  {day}
                 </button>
               )
             })}
           </div>
+
+          {/* Time Input Footer */}
+          <div className="mt-6 pt-4 border-t border-gray-200">
+            <div className="flex items-center gap-2 text-[14px] text-gray-600">
+              <span className="font-medium">Time</span>
+              <span className="text-gray-400">--- ---</span>
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+          </div>
         </div>
 
-        {/* Time Slots */}
-        {selectedDate ? (
-          <div className="space-y-6">
-            {/* Morning Slots */}
-            <div>
-              <h4 className="text-[18px] font-bold text-black mb-4" style={{ fontFamily: "'Gilda Display', serif" }}>
-                Morning
-              </h4>
-              <div className="grid grid-cols-4 gap-3">
-                {morningSlots.map((time) => (
-                  <button
-                    key={time}
-                    type="button"
-                    onClick={() => onTimeSelect(time)}
-                    className={`px-4 py-3 rounded-[14px] text-[14px] font-semibold transition-all duration-200 ${
-                      selectedTime === time
-                        ? 'bg-[#97c4ff] text-white shadow-md scale-105'
-                        : 'bg-[#e0edff] text-black hover:bg-[#cbff8f] hover:scale-105'
-                    }`}
-                  >
-                    {time}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Afternoon Slots */}
-            <div>
-              <h4 className="text-[18px] font-bold text-black mb-4" style={{ fontFamily: "'Gilda Display', serif" }}>
-                Afternoon
-              </h4>
-              <div className="grid grid-cols-4 gap-3">
-                {afternoonSlots.map((time) => (
-                  <button
-                    key={time}
-                    type="button"
-                    onClick={() => onTimeSelect(time)}
-                    className={`px-4 py-3 rounded-[14px] text-[14px] font-semibold transition-all duration-200 ${
-                      selectedTime === time
-                        ? 'bg-[#97c4ff] text-white shadow-md scale-105'
-                        : 'bg-[#e0edff] text-black hover:bg-[#cbff8f] hover:scale-105'
-                    }`}
-                  >
-                    {time}
-                  </button>
-                ))}
-              </div>
-            </div>
+        {/* Right Side - Time Slots */}
+        <div className="flex-1 p-6 max-h-[500px] overflow-y-auto">
+          <h4 className="text-[16px] font-semibold text-black mb-4">Time</h4>
+          <div className="space-y-2">
+            {allTimeSlots.map((time) => (
+              <button
+                key={time}
+                type="button"
+                onClick={() => onTimeSelect(time)}
+                disabled={!selectedDate}
+                className={`w-full px-4 py-3 rounded-lg text-[14px] font-medium text-left transition-all ${
+                  !selectedDate
+                    ? 'text-gray-300 cursor-not-allowed bg-gray-50'
+                    : selectedTime === time
+                    ? 'bg-[#97c4ff] text-white shadow-md'
+                    : 'bg-[#f5f5f5] text-black hover:bg-[#e0edff] hover:text-[#97c4ff]'
+                }`}
+              >
+                {time}
+              </button>
+            ))}
           </div>
-        ) : (
-          <div className="text-center py-12">
-            <p className="text-gray-400 text-[16px]">Please select a date to view available time slots</p>
-          </div>
-        )}
-
-        {/* Timezone Info */}
-        <div className="mt-8 pt-6 border-t border-gray-200">
-          <p className="text-[13px] text-gray-500 text-center">
-            Time slots are in <span className="font-semibold">(GMT +04:00) Gulf Standard Time</span>
-          </p>
         </div>
       </div>
     </div>
