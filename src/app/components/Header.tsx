@@ -4,13 +4,15 @@ import { useEffect, useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { motion, useReducedMotion, AnimatePresence } from 'motion/react'
 import svgPaths from '../../imports/svg-p4rwj0t9df'
-import imgRectangle161125373 from '../../assets/531a2b1be40c3f390e42e72de4c6233edf51733e.png'
+import imgRectangle161125373 from 'figma:asset/531a2b1be40c3f390e42e72de4c6233edf51733e.png'
 import Group2147224205 from '../../imports/Group2147224205'
+import { Link } from 'react-router-dom'
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [activeSection, setActiveSection] = useState('home')
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [moreDropdownOpen, setMoreDropdownOpen] = useState(false)
   const shouldReduceMotion = useReducedMotion()
   const navigate = useNavigate()
   const location = useLocation()
@@ -87,6 +89,24 @@ export default function Header() {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
+  const handleOurDoctorsClick = () => {
+    navigate('/our-doctors')
+    setMobileMenuOpen(false)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  const handleServicesClick = () => {
+    navigate('/services')
+    setMobileMenuOpen(false)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  const handleContactClick = () => {
+    navigate('/contact')
+    setMobileMenuOpen(false)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   return (
     <>
       <motion.header
@@ -131,29 +151,108 @@ export default function Header() {
                 About Us
               </button>
               
-              <NavDropdown label="Our Doctors" active={activeSection === 'doctors'} onClick={() => scrollToSection('doctors')} />
-              <NavDropdown label="Services" active={activeSection === 'services'} onClick={() => scrollToSection('services')} />
-              <NavDropdown label="Packages & Offers" active={false} />
-              
-              <button className="text-[14px] text-black hover:text-[#97c4ff] transition-all">
-                Sky Loyalty Program
+              <button
+                onClick={handleOurDoctorsClick}
+                className={`text-[14px] transition-all ${
+                  location.pathname === '/our-doctors' ? 'text-[#97c4ff] font-semibold' : 'text-black hover:text-[#97c4ff]'
+                }`}
+              >
+                Our Doctors
               </button>
               <button
-                onClick={() => scrollToSection('contact')}
+                onClick={handleServicesClick}
+                className={`px-[14px] py-[4px] rounded-full text-[14px] transition-all ${
+                  location.pathname === '/services'
+                    ? 'bg-[#cbff8f] text-[#97c4ff] font-bold'
+                    : 'text-black hover:text-[#97c4ff]'
+                }`}
+              >
+                Services
+              </button>
+              <Link
+                to="/packages"
                 className={`text-[14px] transition-all ${
-                  activeSection === 'contact' ? 'text-[#97c4ff] font-semibold' : 'text-black hover:text-[#97c4ff]'
+                  location.pathname === '/packages' ? 'text-[#97c4ff] font-semibold' : 'text-black hover:text-[#97c4ff]'
+                }`}
+              >
+                Packages & Offers
+              </Link>
+              
+              <Link
+                to="/sky-loyalty"
+                className={`text-[14px] transition-all ${
+                  location.pathname === '/sky-loyalty' ? 'text-[#97c4ff] font-semibold' : 'text-black hover:text-[#97c4ff]'
+                }`}
+              >
+                Sky Loyalty Program
+              </Link>
+              <button
+                onClick={handleContactClick}
+                className={`text-[14px] transition-all ${
+                  location.pathname === '/contact' ? 'text-[#97c4ff] font-semibold' : 'text-black hover:text-[#97c4ff]'
                 }`}
               >
                 Contact
               </button>
-              <NavDropdown label="More" active={false} />
+              
+              {/* More Dropdown */}
+              <div className="relative">
+                <NavDropdown 
+                  label="More" 
+                  active={moreDropdownOpen || ['/patient-guide', '/careers', '/faqs', '/privacy-policy'].includes(location.pathname)} 
+                  onClick={() => setMoreDropdownOpen(!moreDropdownOpen)} 
+                />
+                
+                {/* Dropdown Menu */}
+                <AnimatePresence>
+                  {moreDropdownOpen && (
+                    <motion.div
+                      initial={shouldReduceMotion ? {} : { opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute top-full mt-2 right-0 bg-white rounded-2xl shadow-xl border border-[#0061AF]/20 py-2 min-w-[200px] z-[60]"
+                      onMouseLeave={() => setMoreDropdownOpen(false)}
+                    >
+                      <Link
+                        to="/patient-guide"
+                        onClick={() => setMoreDropdownOpen(false)}
+                        className="block px-5 py-3 text-[14px] text-black hover:bg-[#f8f9fa] hover:text-[#97c4ff] transition-colors"
+                      >
+                        Patient Guide
+                      </Link>
+                      <Link
+                        to="/careers"
+                        onClick={() => setMoreDropdownOpen(false)}
+                        className="block px-5 py-3 text-[14px] text-black hover:bg-[#f8f9fa] hover:text-[#97c4ff] transition-colors"
+                      >
+                        Careers
+                      </Link>
+                      <Link
+                        to="/faqs"
+                        onClick={() => setMoreDropdownOpen(false)}
+                        className="block px-5 py-3 text-[14px] text-black hover:bg-[#f8f9fa] hover:text-[#97c4ff] transition-colors"
+                      >
+                        FAQs
+                      </Link>
+                      <Link
+                        to="/privacy-policy"
+                        onClick={() => setMoreDropdownOpen(false)}
+                        className="block px-5 py-3 text-[14px] text-black hover:bg-[#f8f9fa] hover:text-[#97c4ff] transition-colors"
+                      >
+                        Privacy Policy
+                      </Link>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
             </nav>
 
             {/* Right side - Book Appointment Button + Mobile Menu */}
             <div className="flex items-center gap-4">
               {/* CTA Button - Always visible */}
               <button className="bg-[#cbff8f] flex items-center gap-3 xl:gap-6 pl-4 xl:pl-6 pr-[10px] py-2 rounded-[35px] group hover:bg-[#B1FF57] transition-colors">
-                <span className="text-[#97c4ff] font-bold text-[14px] xl:text-[16px] whitespace-nowrap">Book Appointment</span>
+                <span className="text-[#97c4ff] font-bold text-[14px] xl:text-[16px] whitespace-nowrap">Book Appoitment</span>
                 <div className="bg-[#97c4ff] w-[34px] h-[34px] rounded-full flex items-center justify-center shrink-0">
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 20 20">
                     <path 
@@ -249,39 +348,92 @@ export default function Header() {
                   About Us
                 </button>
                 <button
-                  onClick={() => scrollToSection('doctors')}
+                  onClick={handleOurDoctorsClick}
                   className={`px-[20px] py-[12px] text-[16px] transition-all text-left ${
-                    activeSection === 'doctors' ? 'text-[#97c4ff] font-semibold' : 'text-black hover:text-[#97c4ff]'
+                    location.pathname === '/our-doctors' ? 'text-[#97c4ff] font-semibold' : 'text-black hover:text-[#97c4ff]'
                   }`}
                 >
                   Our Doctors
                 </button>
                 <button
-                  onClick={() => scrollToSection('services')}
-                  className={`px-[20px] py-[12px] text-[16px] transition-all text-left ${
-                    activeSection === 'services' ? 'text-[#97c4ff] font-semibold' : 'text-black hover:text-[#97c4ff]'
+                  onClick={handleServicesClick}
+                  className={`px-[20px] py-[12px] rounded-full text-[16px] transition-all text-left ${
+                    location.pathname === '/services'
+                      ? 'bg-[#cbff8f] text-[#97c4ff] font-bold'
+                      : 'text-black hover:text-[#97c4ff]'
                   }`}
                 >
                   Services
                 </button>
-                <button className="px-[20px] py-[12px] text-[16px] text-black hover:text-[#97c4ff] transition-all text-left">
-                  Packages & Offers
-                </button>
-                <button className="px-[20px] py-[12px] text-[16px] text-black hover:text-[#97c4ff] transition-all text-left">
-                  Sky Loyalty Program
-                </button>
-                <button
-                  onClick={() => scrollToSection('contact')}
+                <Link
+                  to="/packages"
                   className={`px-[20px] py-[12px] text-[16px] transition-all text-left ${
-                    activeSection === 'contact' ? 'text-[#97c4ff] font-semibold' : 'text-black hover:text-[#97c4ff]'
+                    location.pathname === '/packages' ? 'text-[#97c4ff] font-semibold' : 'text-black hover:text-[#97c4ff]'
+                  }`}
+                >
+                  Packages & Offers
+                </Link>
+                <Link
+                  to="/sky-loyalty"
+                  className={`px-[20px] py-[12px] text-[16px] transition-all text-left ${
+                    location.pathname === '/sky-loyalty' ? 'text-[#97c4ff] font-semibold' : 'text-black hover:text-[#97c4ff]'
+                  }`}
+                >
+                  Sky Loyalty Program
+                </Link>
+                <button
+                  onClick={handleContactClick}
+                  className={`px-[20px] py-[12px] text-[16px] transition-all text-left ${
+                    location.pathname === '/contact' ? 'text-[#97c4ff] font-semibold' : 'text-black hover:text-[#97c4ff]'
                   }`}
                 >
                   Contact
                 </button>
                 
+                {/* More Section in Mobile */}
+                <div className="border-t border-[#0061AF]/20 pt-4 mt-2">
+                  <p className="px-[20px] text-[12px] text-gray-400 font-semibold uppercase tracking-wider mb-3">More</p>
+                  <Link
+                    to="/patient-guide"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`block px-[20px] py-[10px] text-[15px] transition-all ${
+                      location.pathname === '/patient-guide' ? 'text-[#97c4ff] font-semibold' : 'text-black hover:text-[#97c4ff]'
+                    }`}
+                  >
+                    Patient Guide
+                  </Link>
+                  <Link
+                    to="/careers"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`block px-[20px] py-[10px] text-[15px] transition-all ${
+                      location.pathname === '/careers' ? 'text-[#97c4ff] font-semibold' : 'text-black hover:text-[#97c4ff]'
+                    }`}
+                  >
+                    Careers
+                  </Link>
+                  <Link
+                    to="/faqs"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`block px-[20px] py-[10px] text-[15px] transition-all ${
+                      location.pathname === '/faqs' ? 'text-[#97c4ff] font-semibold' : 'text-black hover:text-[#97c4ff]'
+                    }`}
+                  >
+                    FAQs
+                  </Link>
+                  <Link
+                    to="/privacy-policy"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`block px-[20px] py-[10px] text-[15px] transition-all ${
+                      location.pathname === '/privacy-policy' ? 'text-[#97c4ff] font-semibold' : 'text-black hover:text-[#97c4ff]'
+                    }`}
+                  >
+                    Privacy Policy
+                  </Link>
+                </div>
+                
                 {/* Bottom Book Appointment Button */}
                 <button className="bg-[#cbff8f] flex items-center justify-center gap-4 px-6 py-4 rounded-[35px] mt-6 hover:bg-[#B1FF57] transition-colors">
-                  <span className="text-[#97c4ff] font-bold text-[16px]">Book Appointment</span>
+                  <span className="text-[#97c4ff] font-bold text-[16px]">Book Appoitment</span>
                   <div className="bg-[#97c4ff] w-[34px] h-[34px] rounded-full flex items-center justify-center">
                     <svg className="w-5 h-5" fill="none" viewBox="0 0 20 20">
                       <path 

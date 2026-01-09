@@ -2,7 +2,7 @@
 
 import { motion, useReducedMotion, useInView } from 'motion/react'
 import { useRef } from 'react'
-import imgImage1 from '../../assets/52ff6087aa6a907ff79e465a1810ea7bc978284f.png'
+import imgImage1 from 'figma:asset/52ff6087aa6a907ff79e465a1810ea7bc978284f.png'
 
 export default function WhyChooseSection() {
   const ref = useRef(null)

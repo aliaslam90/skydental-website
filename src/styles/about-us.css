@@ -11,23 +11,20 @@
   max-width: 100vw !important;
   padding: 0 !important;
   box-sizing: border-box !important;
-  margin: 0 !important;
 }
 
-/* Fix root wrapper */
+/* Fix the hero section (Frame71) to be responsive */
 [data-name="About Us"] > div {
   width: 100% !important;
   max-width: 100% !important;
-  overflow-x: hidden !important;
-  padding: 0 !important;
+  padding: 0 20px !important;
   box-sizing: border-box !important;
   display: flex !important;
   justify-content: center !important;
 }
 
 /* Make the hero container responsive and centered */
-[data-name="About Us"] .rounded-\[25px\].h-\[500px\].w-\[1390px\],
-[data-name="About Us"] .rounded-\[20px\].md\:rounded-\[25px\] {
+[data-name="About Us"] .rounded-\[25px\].h-\[500px\].w-\[1390px\] {
   width: 100% !important;
   max-width: 1390px !important;
   margin: 0 auto !important;
@@ -45,8 +42,7 @@
 
 /* Center the hero content container (Frame49) - THIS IS THE KEY FIX */
 [data-name="About Us"] .w-\[1262\.83px\],
-[data-name="About Us"] .absolute.content-stretch.flex.items-center.justify-between,
-[data-name="About Us"] .absolute.content-stretch.flex.items-center.justify-center {
+[data-name="About Us"] .absolute.content-stretch.flex.items-center.justify-between {
   position: absolute !important;
   top: 50% !important;
   left: 50% !important;
@@ -56,82 +52,8 @@
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
-  padding: 0 16px !important;
+  padding: 0 20px !important;
   box-sizing: border-box !important;
-  overflow: visible !important;
-}
-
-@media (min-width: 768px) {
-  [data-name="About Us"] .absolute.content-stretch.flex.items-center.justify-center {
-    padding: 0 24px !important;
-  }
-}
-
-@media (min-width: 1024px) {
-  [data-name="About Us"] .absolute.content-stretch.flex.items-center.justify-center {
-    padding: 0 32px !important;
-  }
-}
-
-/* Fix text overflow in hero section */
-[data-name="About Us"] .text-\[48px\] {
-  overflow: visible !important;
-  text-overflow: clip !important;
-  white-space: normal !important;
-  word-wrap: break-word !important;
-  max-width: 100% !important;
-}
-
-[data-name="About Us"] .text-\[18px\] {
-  overflow: visible !important;
-  text-overflow: clip !important;
-  white-space: normal !important;
-  word-wrap: break-word !important;
-  max-width: 100% !important;
-}
-
-/* Ensure Frame51 container doesn't clip content */
-[data-name="About Us"] [data-name="Container"] {
-  overflow: visible !important;
-}
-
-/* Fix Frame61 and Frame48 to prevent text clipping */
-[data-name="About Us"] .content-stretch.flex.flex-col.gap-\[16px\].items-center,
-[data-name="About Us"] .content-stretch.flex.flex-col.gap-\[12px\] {
-  overflow: visible !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  padding: 0 16px !important;
-  box-sizing: border-box !important;
-}
-
-/* Fix Frame27 main container */
-[data-name="About Us"] .content-stretch.flex.flex-col.gap-\[70px\],
-[data-name="About Us"] .content-stretch.flex.flex-col.gap-\[40px\] {
-  width: 100% !important;
-  max-width: 1390px !important;
-  margin: 0 auto !important;
-  padding: 0 16px !important;
-  box-sizing: border-box !important;
-}
-
-@media (min-width: 768px) {
-  [data-name="About Us"] .content-stretch.flex.flex-col.gap-\[70px\],
-  [data-name="About Us"] .content-stretch.flex.flex-col.gap-\[40px\] {
-    padding: 0 24px !important;
-  }
-  
-  [data-name="About Us"] .content-stretch.flex.flex-col.gap-\[16px\].items-center,
-  [data-name="About Us"] .content-stretch.flex.flex-col.gap-\[12px\] {
-    padding: 0 24px !important;
-  }
-}
-
-@media (min-width: 1024px) {
-  [data-name="About Us"] .content-stretch.flex.flex-col.gap-\[70px\],
-  [data-name="About Us"] .content-stretch.flex.flex-col.gap-\[40px\] {
-    padding: 0 32px !important;
-  }
 }
 
 /* Remove justify-between that's causing left alignment */
@@ -181,152 +103,6 @@
   }
 }
 
-/* Fix all fixed-width containers to be responsive */
-[data-name="About Us"] .w-\[1390px\] {
-  width: 100% !important;
-  max-width: 100% !important;
-}
-
-[data-name="About Us"] .w-\[1308px\] {
-  width: 100% !important;
-  max-width: 100% !important;
-}
-
-[data-name="About Us"] .w-\[1259px\] {
-  width: 100% !important;
-  max-width: 100% !important;
-}
-
-[data-name="About Us"] .w-\[1340px\] {
-  width: 100% !important;
-  max-width: 100% !important;
-}
-
-/* Fix fixed-width images to be responsive */
-[data-name="About Us"] .w-\[549px\],
-[data-name="About Us"] .w-\[623px\],
-[data-name="About Us"] .w-\[295px\],
-[data-name="About Us"] .w-\[525px\],
-[data-name="About Us"] .w-\[214px\],
-[data-name="About Us"] .w-\[280px\],
-[data-name="About Us"] .w-\[276px\],
-[data-name="About Us"] .w-\[1294px\] {
-  width: 100% !important;
-  max-width: 100% !important;
-}
-
-/* Fix fixed heights to be responsive */
-[data-name="About Us"] .h-\[374px\],
-[data-name="About Us"] .h-\[295px\] {
-  height: auto !important;
-  min-height: 200px !important;
-  aspect-ratio: 16/9 !important;
-}
-
-/* Fix text-nowrap to allow wrapping on mobile */
-[data-name="About Us"] .text-nowrap {
-  white-space: normal !important;
-}
-
-/* Fix flex layouts to stack on mobile */
-[data-name="About Us"] .flex.gap-\[72px\],
-[data-name="About Us"] .flex.gap-\[64px\],
-[data-name="About Us"] .flex.gap-\[32px\] {
-  flex-wrap: wrap !important;
-}
-
-/* Responsive adjustments for tablets */
-@media (max-width: 1200px) {
-  [data-name="About Us"] .w-\[1262\.83px\] {
-    width: 95% !important;
-  }
-  
-  [data-name="About Us"] .flex.gap-\[72px\] {
-    gap: 40px !important;
-  }
-  
-  [data-name="About Us"] .flex.gap-\[64px\] {
-    gap: 32px !important;
-  }
-}
-
-@media (max-width: 768px) {
-  [data-name="About Us"] .rounded-\[25px\].h-\[500px\],
-  [data-name="About Us"] .h-\[400px\],
-  [data-name="About Us"] .md\:h-\[450px\],
-  [data-name="About Us"] .lg\:h-\[500px\] {
-    height: auto !important;
-    min-height: 350px !important;
-    padding: 40px 16px !important;
-  }
-  
-  [data-name="About Us"] .text-\[48px\],
-  [data-name="About Us"] .text-\[28px\],
-  [data-name="About Us"] .md\:text-\[36px\],
-  [data-name="About Us"] .lg\:text-\[48px\] {
-    font-size: 28px !important;
-    line-height: 1.3 !important;
-  }
-  
-  [data-name="About Us"] .text-\[18px\] {
-    font-size: 16px !important;
-  }
-  
-  [data-name="About Us"] .w-\[1262\.83px\],
-  [data-name="About Us"] .absolute.content-stretch.flex.items-center {
-    position: relative !important;
-    top: 0 !important;
-    left: 0 !important;
-    transform: none !important;
-    padding: 40px 20px !important;
-  }
-  
-  [data-name="About Us"] .gap-\[16px\] {
-    gap: 12px !important;
-  }
-  
-  /* Stack flex layouts on mobile */
-  [data-name="About Us"] .flex.gap-\[72px\],
-  [data-name="About Us"] .flex.gap-\[64px\],
-  [data-name="About Us"] .flex.gap-\[32px\],
-  [data-name="About Us"] .content-stretch.flex.gap-\[72px\],
-  [data-name="About Us"] .content-stretch.flex.gap-\[64px\] {
-    flex-direction: column !important;
-    gap: 24px !important;
-  }
-  
-  /* Make images full width on mobile */
-  [data-name="About Us"] [data-name="Image"] {
-    width: 100% !important;
-    height: auto !important;
-    min-height: 250px !important;
-  }
-  
-  /* Fix text sizes on mobile */
-  [data-name="About Us"] .text-\[24px\] {
-    font-size: 20px !important;
-  }
-  
-  [data-name="About Us"] .text-\[16px\] {
-    font-size: 14px !important;
-  }
-  
-  /* Fix padding on mobile */
-  [data-name="About Us"] .p-\[24px\] {
-    padding: 16px !important;
-  }
-  
-  [data-name="About Us"] .px-\[24px\] {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
-  }
-  
-  [data-name="About Us"] .py-\[10px\] {
-    padding-top: 8px !important;
-    padding-bottom: 8px !important;
-  }
-}
-
 @media (max-width: 480px) {
   [data-name="About Us"] [data-name="Container"] {
     flex-direction: column !important;
@@ -336,37 +112,5 @@
   [data-name="About Us"] [data-name="Btn"] {
     width: 100% !important;
     justify-content: center !important;
-  }
-  
-  /* Further reduce gaps on very small screens */
-  [data-name="About Us"] .gap-\[48px\],
-  [data-name="About Us"] .gap-\[32px\],
-  [data-name="About Us"] .gap-\[24px\] {
-    gap: 16px !important;
-  }
-  
-  [data-name="About Us"] .gap-\[18px\] {
-    gap: 12px !important;
-  }
-  
-  /* Reduce text sizes further */
-  [data-name="About Us"] .text-\[48px\] {
-    font-size: 28px !important;
-  }
-  
-  [data-name="About Us"] .text-\[24px\] {
-    font-size: 18px !important;
-  }
-  
-  /* Fix mission/vision cards to stack */
-  [data-name="About Us"] .basis-0.flex.gap-\[32px\] {
-    flex-direction: column !important;
-    gap: 16px !important;
-  }
-  
-  /* Make all cards full width on mobile */
-  [data-name="About Us"] .bg-white.rounded-\[12px\] {
-    width: 100% !important;
-    max-width: 100% !important;
   }
 }

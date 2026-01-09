@@ -1,4 +1,4 @@
-import svgPaths from "./svg-g5qboqlgzy";
+import svgPaths from "./svg-j0sesrjzls";
 import imgRectangle161125373 from "figma:asset/531a2b1be40c3f390e42e72de4c6233edf51733e.png";
 import imgImage from "figma:asset/e7f6b19877321e15ce763eaa93af6f8852c4f043.png";
 import imgImage1 from "figma:asset/84d74e9e31f1ec8d69abcb8a68911f4778c66904.png";
@@ -250,7 +250,7 @@ function Frame48() {
 
 function Frame61() {
   return (
-    <div className="content-stretch flex flex-col gap-[16px] items-center relative shrink-0 w-full">
+    <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full">
       <Frame48 />
       <p className="font-['Arial:Regular',sans-serif] leading-[28px] not-italic relative shrink-0 text-[#1b1b1b] text-[18px] text-center w-full">We combine advanced medical technology with compassionate care to ensure your health journey is smooth, effective, and personalized.</p>
     </div>
@@ -340,7 +340,7 @@ function Container() {
 
 function Frame51() {
   return (
-    <div className="content-stretch flex flex-col gap-[32px] items-center justify-center relative shrink-0 w-full max-w-[828px] px-[20px] mx-auto">
+    <div className="content-stretch flex flex-col gap-[32px] items-center justify-center relative shrink-0 w-[828px]">
       <Frame61 />
       <Container />
     </div>

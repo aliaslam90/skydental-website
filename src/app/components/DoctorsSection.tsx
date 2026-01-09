@@ -3,10 +3,10 @@
 import { motion, useReducedMotion, useInView } from 'motion/react'
 import { useRef } from 'react'
 import { ImageWithFallback } from './figma/ImageWithFallback'
-import imgImage4 from '../../assets/958080d80a0502b2239e7bf8312770b39e189c59.png'
-import imgImage5 from '../../assets/c428fe717bbbc4d96b0993d331398a01e16a965a.png'
-import imgImage6 from '../../assets/9820c349dd5b4ac1658cc8b535bf4db2bebb8ebb.png'
-import imgImage7 from '../../assets/9fbf72269945d89340291423575f203d2365fd2d.png'
+import imgImage4 from 'figma:asset/958080d80a0502b2239e7bf8312770b39e189c59.png'
+import imgImage5 from 'figma:asset/c428fe717bbbc4d96b0993d331398a01e16a965a.png'
+import imgImage6 from 'figma:asset/9820c349dd5b4ac1658cc8b535bf4db2bebb8ebb.png'
+import imgImage7 from 'figma:asset/9fbf72269945d89340291423575f203d2365fd2d.png'
 
 export default function DoctorsSection() {
   const ref = useRef(null)

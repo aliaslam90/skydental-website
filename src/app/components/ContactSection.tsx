@@ -2,7 +2,7 @@
 
 import { motion, useReducedMotion, useInView } from 'motion/react'
 import { useRef } from 'react'
-import imgImage10 from '../../assets/6b7905bb93d0f824d8be0a8badf26d7ebf6ec721.png'
+import imgImage10 from 'figma:asset/6b7905bb93d0f824d8be0a8badf26d7ebf6ec721.png'
 
 export default function ContactSection() {
   const ref = useRef(null)
