@@ -131,7 +131,7 @@ export default function Header() {
             </button>
 
             {/* Desktop Navigation - Hidden on tablets and mobile */}
-            <nav className="hidden xl:flex items-center gap-8">
+            <nav className="hidden xl:flex items-center gap-4">
               <button
                 onClick={handleHomeClick}
                 className={`px-[14px] py-[4px] rounded-full text-[14px] transition-all whitespace-nowrap ${
