@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, useReducedMotion, useInView } from 'motion/react'
-import { useRef, useState, useMemo } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import imgImage10 from '../../assets/6b7905bb93d0f824d8be0a8badf26d7ebf6ec721.png'
 
 // Services list
@@ -13,56 +13,47 @@ const services = [
   'Gum treatment',
   'Braces, Teeth straightening',
   'Cosmetic dentistry',
-  "Children's Dentistry",
+  'Children\'s Dentistry',
   'Your Health Care',
   'Dental Hygiene'
 ]
 
-// Service to Doctor mapping (based on specialties)
+// Service to Doctor mapping (based on actual doctors in DoctorsSection)
 const serviceToDoctors: Record<string, string[]> = {
   'Tooth extraction': ['Dr. Saifaldin Tawakul', 'Dr. Basma Al Rawi'],
-  'Dental prosthetics': ['Dr. Elias Daoud Hanna', 'Dr. Claude Istanbouli'],
-  'Root canal treatment': ['Dr. Saifaldin Tawakul', 'Dr. Basma Al Rawi'],
+  'Dental prosthetics': ['Dr. Claude Istanbouli', 'Dr. Elias Daoud Hanna'],
+  'Root canal treatment': ['Dr. Elias Daoud Hanna'],
   '3D research Panoramic shot': ['Dr. Saifaldin Tawakul', 'Dr. Basma Al Rawi', 'Dr. Claude Istanbouli', 'Dr. Elias Daoud Hanna'],
-  'Gum treatment': ['Dr. Basma Al Rawi', 'Dr. Saifaldin Tawakul'],
+  'Gum treatment': ['Dr. Saifaldin Tawakul', 'Dr. Basma Al Rawi'],
   'Braces, Teeth straightening': ['Dr. Saifaldin Tawakul'],
-  'Cosmetic dentistry': ['Dr. Claude Istanbouli', 'Dr. Elias Daoud Hanna'],
-  "Children's Dentistry": ['Dr. Basma Al Rawi', 'Dr. Saifaldin Tawakul'],
+  'Cosmetic dentistry': ['Dr. Basma Al Rawi', 'Dr. Claude Istanbouli'],
+  'Children\'s Dentistry': ['Dr. Basma Al Rawi'],
   'Your Health Care': ['Dr. Saifaldin Tawakul', 'Dr. Basma Al Rawi', 'Dr. Claude Istanbouli', 'Dr. Elias Daoud Hanna'],
-  'Dental Hygiene': ['Dr. Basma Al Rawi', 'Dr. Saifaldin Tawakul', 'Dr. Elias Daoud Hanna']
+  'Dental Hygiene': ['Dr. Saifaldin Tawakul', 'Dr. Basma Al Rawi', 'Dr. Claude Istanbouli', 'Dr. Elias Daoud Hanna']
 }
 
 // Country codes
 const countryCodes = [
   { code: '+971', country: 'UAE', flag: '🇦🇪' },
-  { code: '+1', country: 'US/CA', flag: '🇺🇸' },
+  { code: '+1', country: 'US', flag: '🇺🇸' },
   { code: '+44', country: 'UK', flag: '🇬🇧' },
-  { code: '+966', country: 'KSA', flag: '🇸🇦' },
-  { code: '+974', country: 'Qatar', flag: '🇶🇦' },
-  { code: '+965', country: 'Kuwait', flag: '🇰🇼' },
-  { code: '+973', country: 'Bahrain', flag: '🇧🇭' },
-  { code: '+968', country: 'Oman', flag: '🇴🇲' },
-  { code: '+961', country: 'Lebanon', flag: '🇱🇧' },
-  { code: '+20', country: 'Egypt', flag: '🇪🇬' },
-  { code: '+962', country: 'Jordan', flag: '🇯🇴' },
-  { code: '+963', country: 'Syria', flag: '🇸🇾' },
-  { code: '+964', country: 'Iraq', flag: '🇮🇶' },
-  { code: '+212', country: 'Morocco', flag: '🇲🇦' },
-  { code: '+213', country: 'Algeria', flag: '🇩🇿' },
-  { code: '+216', country: 'Tunisia', flag: '🇹🇳' },
-  { code: '+90', country: 'Turkey', flag: '🇹🇷' },
-  { code: '+91', country: 'India', flag: '🇮🇳' },
-  { code: '+92', country: 'Pakistan', flag: '🇵🇰' },
-  { code: '+86', country: 'China', flag: '🇨🇳' },
-  { code: '+81', country: 'Japan', flag: '🇯🇵' },
-  { code: '+82', country: 'South Korea', flag: '🇰🇷' },
-  { code: '+33', country: 'France', flag: '🇫🇷' },
-  { code: '+49', country: 'Germany', flag: '🇩🇪' },
-  { code: '+39', country: 'Italy', flag: '🇮🇹' },
-  { code: '+34', country: 'Spain', flag: '🇪🇸' },
-  { code: '+61', country: 'Australia', flag: '🇦🇺' },
-  { code: '+27', country: 'South Africa', flag: '🇿🇦' }
+  { code: '+966', country: 'SA', flag: '🇸🇦' },
+  { code: '+965', country: 'KW', flag: '🇰🇼' },
+  { code: '+974', country: 'QA', flag: '🇶🇦' },
+  { code: '+973', country: 'BH', flag: '🇧🇭' },
+  { code: '+968', country: 'OM', flag: '🇴🇲' },
+  { code: '+961', country: 'LB', flag: '🇱🇧' },
+  { code: '+962', country: 'JO', flag: '🇯🇴' },
+  { code: '+20', country: 'EG', flag: '🇪🇬' },
+  { code: '+91', country: 'IN', flag: '🇮🇳' },
+  { code: '+92', country: 'PK', flag: '🇵🇰' },
+  { code: '+33', country: 'FR', flag: '🇫🇷' },
+  { code: '+49', country: 'DE', flag: '🇩🇪' }
 ]
+
+// Time slots
+const morningSlots = ['07:00 am', '07:45 am', '08:30 am', '09:15 am', '09:45 am', '10:30 am', '11:15 am']
+const afternoonSlots = ['12:00 pm', '12:45 pm', '01:30 pm', '01:45 pm', '02:30 pm', '03:15 pm', '04:00 pm', '04:45 pm', '05:30 pm']
 
 export default function ContactSection() {
   const ref = useRef(null)
@@ -83,47 +74,61 @@ export default function ContactSection() {
   })
 
   const [showDatePicker, setShowDatePicker] = useState(false)
-  const [selectedDate, setSelectedDate] = useState<Date | null>(null)
-  const [selectedTime, setSelectedTime] = useState('')
+  const [showCountryCodeDropdown, setShowCountryCodeDropdown] = useState(false)
+  const [availableDoctors, setAvailableDoctors] = useState<string[]>([])
+  const datePickerRef = useRef<HTMLDivElement>(null)
+  const countryCodeRef = useRef<HTMLDivElement>(null)
 
-  // Filter doctors based on selected service
-  const availableDoctors = useMemo(() => {
-    if (!formData.service) return []
-    return serviceToDoctors[formData.service] || []
+  // Update available doctors when service changes
+  useEffect(() => {
+    if (formData.service && serviceToDoctors[formData.service]) {
+      setAvailableDoctors(serviceToDoctors[formData.service])
+      // Reset doctor selection if current doctor is not available for new service
+      if (!serviceToDoctors[formData.service].includes(formData.doctor)) {
+        setFormData(prev => ({ ...prev, doctor: '' }))
+      }
+    } else {
+      setAvailableDoctors([])
+      setFormData(prev => ({ ...prev, doctor: '' }))
+    }
   }, [formData.service])
 
-  // Generate time slots
-  const morningSlots = ['07:00 am', '07:45 am', '08:30 am', '09:00 am', '09:45 am', '10:30 am', '11:15 am', '11:45 am']
-  const afternoonSlots = ['12:00 pm', '12:45 pm', '01:30 pm', '02:15 pm', '03:00 pm', '03:45 pm', '04:30 pm', '05:15 pm']
+  // Close dropdowns when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (datePickerRef.current && !datePickerRef.current.contains(event.target as Node)) {
+        setShowDatePicker(false)
+      }
+      if (countryCodeRef.current && !countryCodeRef.current.contains(event.target as Node)) {
+        setShowCountryCodeDropdown(false)
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [])
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
-    setFormData(prev => {
-      const updated = { ...prev, [name]: value }
-      // Reset doctor when service changes
-      if (name === 'service') {
-        updated.doctor = ''
-      }
-      return updated
-    })
+    setFormData(prev => ({ ...prev, [name]: value }))
   }
 
-  const handleDateSelect = (date: Date) => {
-    setSelectedDate(date)
-    setFormData(prev => ({ ...prev, date: date.toISOString().split('T')[0] }))
+  const handleDateSelect = (date: string) => {
+    setFormData(prev => ({ ...prev, date }))
     setShowDatePicker(false)
   }
 
   const handleTimeSelect = (time: string) => {
-    setSelectedTime(time)
     setFormData(prev => ({ ...prev, time }))
   }
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Here you would send the form data to your backend
+    // Here you would typically send the form data to your backend
     console.log('Form submitted:', formData)
-    alert('Appointment request sent successfully! We will contact you soon.')
+    alert('Appointment request sent successfully!')
     // Reset form
     setFormData({
       firstName: '',
@@ -137,51 +142,10 @@ export default function ContactSection() {
       time: '',
       message: ''
     })
-    setSelectedDate(null)
-    setSelectedTime('')
-  }
-
-  // Generate dates for carousel (next 14 days)
-  const generateDates = () => {
-    const dates: Date[] = []
-    const today = new Date()
-    for (let i = 0; i < 14; i++) {
-      const date = new Date(today)
-      date.setDate(today.getDate() + i)
-      dates.push(date)
-    }
-    return dates
-  }
-
-  const availableDates = generateDates()
-
-  const formatDate = (date: Date) => {
-    const today = new Date()
-    const tomorrow = new Date(today)
-    tomorrow.setDate(tomorrow.getDate() + 1)
-    
-    if (date.toDateString() === today.toDateString()) {
-      return 'Today'
-    } else if (date.toDateString() === tomorrow.toDateString()) {
-      return 'Tomorrow'
-    } else {
-      return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
-    }
   }
 
   return (
     <section id="contact" className="py-[70px] px-[25px]">
-      <style>{`
-        .date-carousel::-webkit-scrollbar,
-        .time-slots::-webkit-scrollbar {
-          display: none;
-        }
-        .date-carousel,
-        .time-slots {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-      `}</style>
       <div className="max-w-[1390px] mx-auto">
         <motion.div
           ref={ref}
@@ -200,7 +164,7 @@ export default function ContactSection() {
             >
               <div className="flex flex-col gap-[24px]">
                 <h2
-                  className="text-black text-[32px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-1.44px]"
+                  className="text-black text-[48px] leading-[1.2] tracking-[-1.44px]"
                   style={{ fontFamily: "'Gilda Display', serif" }}
                 >
                   Schedule a Consultation Today!
@@ -248,18 +212,18 @@ export default function ContactSection() {
                   <input
                     type="text"
                     name="firstName"
-                    placeholder="First Name"
                     value={formData.firstName}
                     onChange={handleInputChange}
+                    placeholder="First Name"
                     required
                     className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black"
                   />
                   <input
                     type="text"
                     name="lastName"
-                    placeholder="Last Name"
                     value={formData.lastName}
                     onChange={handleInputChange}
+                    placeholder="Last Name"
                     required
                     className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black"
                   />
@@ -269,34 +233,58 @@ export default function ContactSection() {
                   <input
                     type="email"
                     name="email"
-                    placeholder="E-mail"
                     value={formData.email}
                     onChange={handleInputChange}
+                    placeholder="E-mail"
                     required
                     className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black"
                   />
-                  <div className="flex gap-2">
-                    <select
-                      name="countryCode"
-                      value={formData.countryCode}
-                      onChange={handleInputChange}
-                      className="bg-[#f1f1f1] h-[55px] px-[12px] py-[16px] rounded-[12px] text-[14px] text-black appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuNDEgOC41OEwxMiAxMy4xN0wxNi41OSA4LjU4TDE4IDEwTDEyIDE2TDYgMTBMNy40MSA4LjU4WiIgZmlsbD0iYmxhY2siLz4KPC9zdmc+Cg==')] bg-no-repeat bg-[right_8px_center] w-[100px] flex-shrink-0"
-                    >
-                      {countryCodes.map((cc) => (
-                        <option key={cc.code} value={cc.code}>
-                          {cc.flag} {cc.code}
-                        </option>
-                      ))}
-                    </select>
-                    <input
-                      type="tel"
-                      name="phone"
-                      placeholder="Phone"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      required
-                      className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black flex-1"
-                    />
+                  <div className="relative">
+                    <div className="flex gap-2">
+                      {/* Country Code Selector */}
+                      <div className="relative" ref={countryCodeRef}>
+                        <button
+                          type="button"
+                          onClick={() => setShowCountryCodeDropdown(!showCountryCodeDropdown)}
+                          className="bg-[#f1f1f1] h-[55px] px-[12px] py-[16px] rounded-[12px] text-[14px] text-black flex items-center gap-1 min-w-[80px]"
+                        >
+                          <span>{countryCodes.find(c => c.code === formData.countryCode)?.flag}</span>
+                          <span>{formData.countryCode}</span>
+                          <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </button>
+                        {showCountryCodeDropdown && (
+                          <div className="absolute top-full left-0 mt-1 bg-white rounded-[12px] shadow-lg border border-gray-200 z-50 max-h-[200px] overflow-y-auto">
+                            {countryCodes.map((country) => (
+                              <button
+                                key={country.code}
+                                type="button"
+                                onClick={() => {
+                                  setFormData(prev => ({ ...prev, countryCode: country.code }))
+                                  setShowCountryCodeDropdown(false)
+                                }}
+                                className="w-full px-4 py-2 text-left hover:bg-[#f1f1f1] flex items-center gap-2 text-[14px]"
+                              >
+                                <span>{country.flag}</span>
+                                <span>{country.code}</span>
+                                <span className="text-gray-500 text-xs">({country.country})</span>
+                              </button>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                      {/* Phone Input */}
+                      <input
+                        type="tel"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleInputChange}
+                        placeholder="Phone"
+                        required
+                        className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black flex-1"
+                      />
+                    </div>
                   </div>
                 </div>
 
@@ -308,10 +296,8 @@ export default function ContactSection() {
                   className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuNDEgOC41OEwxMiAxMy4xN0wxNi41OSA4LjU4TDE4IDEwTDEyIDE2TDYgMTBMNy40MSA4LjU4WiIgZmlsbD0iYmxhY2siLz4KPC9zdmc+Cg==')] bg-no-repeat bg-[right_24px_center]"
                 >
                   <option value="">Choose Services</option>
-                  {services.map((service) => (
-                    <option key={service} value={service}>
-                      {service}
-                    </option>
+                  {services.map(service => (
+                    <option key={service} value={service}>{service}</option>
                   ))}
                 </select>
 
@@ -324,87 +310,45 @@ export default function ContactSection() {
                   className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuNDEgOC41OEwxMiAxMy4xN0wxNi41OSA4LjU4TDE4IDEwTDEyIDE2TDYgMTBMNy40MSA4LjU4WiIgZmlsbD0iYmxhY2siLz4KPC9zdmc+Cg==')] bg-no-repeat bg-[right_24px_center] disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <option value="">Select Doctor</option>
-                  {availableDoctors.map((doctor) => (
-                    <option key={doctor} value={doctor}>
-                      {doctor}
-                    </option>
+                  {availableDoctors.map(doctor => (
+                    <option key={doctor} value={doctor}>{doctor}</option>
                   ))}
                 </select>
 
                 {/* Date and Time Picker */}
-                <div className="space-y-4">
-                  {/* Date Carousel */}
-                  <div className="relative w-full">
-                    <div className="date-carousel flex gap-2 overflow-x-auto pb-2 w-full" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
-                      {availableDates.map((date) => {
-                        const isSelected = selectedDate && selectedDate.toDateString() === date.toDateString()
-                        return (
-                          <button
-                            key={date.toDateString()}
-                            type="button"
-                            onClick={() => handleDateSelect(date)}
-                            className={`flex-shrink-0 bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black text-center whitespace-nowrap min-w-[calc(25%-6px)] ${
-                              isSelected
-                                ? 'bg-[#e0edff] border-2 border-[#97c4ff]'
-                                : 'hover:bg-[#e8e8e8]'
-                            }`}
-                          >
-                            {formatDate(date)}
-                          </button>
-                        )
-                      })}
+                {formData.doctor && (
+                  <div className="space-y-4">
+                    {/* Date Picker */}
+                    <div className="relative" ref={datePickerRef}>
+                      <button
+                        type="button"
+                        onClick={() => setShowDatePicker(!showDatePicker)}
+                        className="w-full bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black text-left flex items-center justify-between"
+                      >
+                        <span>{formData.date || 'dd/mm/yyyy'}</span>
+                        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                      </button>
+                      {showDatePicker && (
+                        <DateTimePicker
+                          onDateSelect={handleDateSelect}
+                          onTimeSelect={handleTimeSelect}
+                          selectedDate={formData.date}
+                          selectedTime={formData.time}
+                          onClose={() => setShowDatePicker(false)}
+                        />
+                      )}
                     </div>
                   </div>
-
-                  {selectedDate && (
-                    <div className="space-y-3">
-                      <p className="text-[14px] text-black font-medium">Morning</p>
-                      <div className="time-slots flex gap-2 overflow-x-auto pb-2 w-full" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
-                        {morningSlots.map((time) => (
-                          <button
-                            key={time}
-                            type="button"
-                            onClick={() => handleTimeSelect(time)}
-                            className={`flex-shrink-0 bg-[#e0edff] h-[40px] px-4 py-2 rounded-[8px] text-[13px] text-black text-center whitespace-nowrap ${
-                              selectedTime === time
-                                ? 'bg-[#97c4ff] text-white'
-                                : 'hover:bg-[#d0e0ff]'
-                            }`}
-                          >
-                            {time}
-                          </button>
-                        ))}
-                      </div>
-                      <p className="text-[14px] text-black font-medium mt-4">Afternoon</p>
-                      <div className="time-slots flex gap-2 overflow-x-auto pb-2 w-full" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
-                        {afternoonSlots.map((time) => (
-                          <button
-                            key={time}
-                            type="button"
-                            onClick={() => handleTimeSelect(time)}
-                            className={`flex-shrink-0 bg-[#e0edff] h-[40px] px-4 py-2 rounded-[8px] text-[13px] text-black text-center whitespace-nowrap ${
-                              selectedTime === time
-                                ? 'bg-[#97c4ff] text-white'
-                                : 'hover:bg-[#d0e0ff]'
-                            }`}
-                          >
-                            {time}
-                          </button>
-                        ))}
-                      </div>
-                      <p className="text-[12px] text-gray-600 mt-2">
-                        Time slots are in (GMT +04:00) Gulf Standard Time
-                      </p>
-                    </div>
-                  )}
-                </div>
+                )}
 
                 <textarea
                   name="message"
-                  placeholder="Message"
-                  rows={4}
                   value={formData.message}
                   onChange={handleInputChange}
+                  placeholder="Message"
+                  rows={4}
                   className="bg-[#f1f1f1] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black resize-none"
                 />
 
@@ -442,6 +386,176 @@ export default function ContactSection() {
       </div>
     </section>
   )
+}
+
+// Date and Time Picker Component
+function DateTimePicker({ 
+  onDateSelect, 
+  onTimeSelect, 
+  selectedDate, 
+  selectedTime,
+  onClose 
+}: { 
+  onDateSelect: (date: string) => void
+  onTimeSelect: (time: string) => void
+  selectedDate: string
+  selectedTime: string
+  onClose: () => void
+}) {
+  const [currentDateIndex, setCurrentDateIndex] = useState(0)
+  const dates = getAvailableDates()
+  const shouldReduceMotion = useReducedMotion()
+
+  const formatDateString = (date: Date) => {
+    const day = String(date.getDate()).padStart(2, '0')
+    const month = String(date.getMonth() + 1).padStart(2, '0')
+    const year = date.getFullYear()
+    return `${day}/${month}/${year}`
+  }
+
+  const formatDateLabel = (date: Date) => {
+    if (isToday(date)) return 'Today'
+    const tomorrow = new Date()
+    tomorrow.setDate(tomorrow.getDate() + 1)
+    if (date.toDateString() === tomorrow.toDateString()) return 'Tomorrow'
+    const formatted = formatDate(date)
+    return `${formatted.day}, ${formatted.month} ${formatted.date}`
+  }
+
+  const isToday = (date: Date) => {
+    const today = new Date()
+    return date.toDateString() === today.toDateString()
+  }
+
+  const formatDate = (date: Date) => {
+    const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    return {
+      day: days[date.getDay()],
+      date: date.getDate(),
+      month: months[date.getMonth()]
+    }
+  }
+
+  const handleDateClick = (date: Date) => {
+    onDateSelect(formatDateString(date))
+  }
+
+  return (
+    <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-[20px] shadow-xl border border-gray-200 z-50 p-6 max-h-[600px] overflow-y-auto">
+      <div className="flex items-center justify-between mb-6">
+        <h3 className="text-[20px] font-bold text-black">Pick Time & Date</h3>
+        <button
+          type="button"
+          onClick={onClose}
+          className="text-gray-500 hover:text-black"
+        >
+          <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      {/* Progress Indicator */}
+      <div className="flex items-center justify-center gap-2 mb-6">
+        {[1, 2, 3, 4, 5].map((step) => (
+          <div
+            key={step}
+            className={`w-2 h-2 rounded-full ${
+              step <= 3 ? 'bg-[#97c4ff]' : 'bg-gray-300'
+            }`}
+          />
+        ))}
+      </div>
+
+      {/* Date Selection */}
+      <div className="mb-6">
+        <div className="flex items-center gap-2 overflow-x-auto pb-2">
+          {dates.map((date, index) => {
+            const dateStr = formatDateString(date)
+            const isSelected = selectedDate === dateStr
+            return (
+              <button
+                key={index}
+                type="button"
+                onClick={() => handleDateClick(date)}
+                className={`px-4 py-2 rounded-[12px] text-[14px] font-medium whitespace-nowrap transition-colors ${
+                  isSelected
+                    ? 'bg-[#97c4ff] text-white'
+                    : 'bg-[#f1f1f1] text-black hover:bg-[#e0edff]'
+                }`}
+              >
+                {formatDateLabel(date)}
+              </button>
+            )
+          })}
+        </div>
+      </div>
+
+      {/* Time Slots */}
+      {selectedDate && (
+        <div className="space-y-6">
+          {/* Morning Slots */}
+          <div>
+            <h4 className="text-[16px] font-semibold text-black mb-3">Morning</h4>
+            <div className="grid grid-cols-3 gap-3">
+              {morningSlots.map((time) => (
+                <button
+                  key={time}
+                  type="button"
+                  onClick={() => onTimeSelect(time)}
+                  className={`px-4 py-2 rounded-[12px] text-[14px] font-medium transition-colors ${
+                    selectedTime === time
+                      ? 'bg-[#97c4ff] text-white'
+                      : 'bg-[#e0edff] text-black hover:bg-[#cbff8f]'
+                  }`}
+                >
+                  {time}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Afternoon Slots */}
+          <div>
+            <h4 className="text-[16px] font-semibold text-black mb-3">Afternoon</h4>
+            <div className="grid grid-cols-3 gap-3">
+              {afternoonSlots.map((time) => (
+                <button
+                  key={time}
+                  type="button"
+                  onClick={() => onTimeSelect(time)}
+                  className={`px-4 py-2 rounded-[12px] text-[14px] font-medium transition-colors ${
+                    selectedTime === time
+                      ? 'bg-[#97c4ff] text-white'
+                      : 'bg-[#e0edff] text-black hover:bg-[#cbff8f]'
+                  }`}
+                >
+                  {time}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Timezone Info */}
+      <p className="text-[12px] text-gray-500 text-center mt-6">
+        Time slots are in (GMT +04:00) Gulf Standard Time
+      </p>
+    </div>
+  )
+}
+
+function getAvailableDates() {
+  const dates = []
+  const today = new Date()
+  for (let i = 0; i < 8; i++) {
+    const date = new Date(today)
+    date.setDate(today.getDate() + i)
+    dates.push(date)
+  }
+  return dates
 }
 
 function SocialIcon({ children }: { children: React.ReactNode }) {
