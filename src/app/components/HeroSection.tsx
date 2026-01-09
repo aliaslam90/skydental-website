@@ -45,7 +45,11 @@ export default function HeroSection() {
           className="absolute w-full h-full object-cover"
           controlsList="nodownload"
         >
-          <source src="/_videos/v1/cac7ef0f2078d54cbca9b2ac882dd44881ca13ba" />
+          {/* Add your video file in the public folder and update the src path below */}
+          {/* Example: <source src="/hero-video.mp4" type="video/mp4" /> */}
+          {/* Example: <source src="/hero-video.webm" type="video/webm" /> */}
+          {/* For multiple formats, add multiple source tags for better browser compatibility */}
+          <source src="/hero-video.mp4" type="video/mp4" />
         </video>
         {/* Gradient Overlay */}
         <div 
