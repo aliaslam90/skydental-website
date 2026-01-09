@@ -18,7 +18,7 @@ export default function Footer() {
         >
           <div className="flex flex-col gap-8 md:gap-12 lg:gap-16">
             {/* Main Footer Content */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 lg:gap-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-8 lg:gap-8">
               {/* Logo and Description */}
               <div className="flex flex-col gap-4 md:gap-6">
                 <div className="flex items-center">
@@ -64,10 +64,10 @@ export default function Footer() {
                 </h3>
                 <div className="flex flex-col gap-2 md:gap-3">
                   <FooterLink href="#home">Home</FooterLink>
-                  <FooterLink href="#services">Services</FooterLink>
-                  <FooterLink href="#doctors">Team</FooterLink>
-                  <FooterLink href="#technology">Technology</FooterLink>
-                  <FooterLink href="#contact">Contact</FooterLink>
+                  <FooterLink href="/our-doctors">Our Doctors</FooterLink>
+                  <FooterLink href="/services">Services</FooterLink>
+                  <FooterLink href="/packages">Packages & Offers</FooterLink>
+                  <FooterLink href="/privacy-policy">Privacy Policy</FooterLink>
                 </div>
               </div>
 
@@ -79,17 +79,12 @@ export default function Footer() {
                 >
                   All Services
                 </h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 md:gap-x-6 gap-y-2 md:gap-y-3">
-                  <FooterLink href="#">Tooth extraction</FooterLink>
-                  <FooterLink href="#">Dental prosthetics</FooterLink>
-                  <FooterLink href="#">Root canal treatment</FooterLink>
-                  <FooterLink href="#">3D research Panoramic shot</FooterLink>
-                  <FooterLink href="#">Gum treatment</FooterLink>
-                  <FooterLink href="#">Braces, Teeth straightening</FooterLink>
-                  <FooterLink href="#">Cosmetic dentistry</FooterLink>
-                  <FooterLink href="#">Children's Dentistry</FooterLink>
-                  <FooterLink href="#">Your Health Care</FooterLink>
-                  <FooterLink href="#">Dental Hygiene</FooterLink>
+                <div className="flex flex-col gap-2 md:gap-3">
+                  <FooterLink href="/services">General Dentistry</FooterLink>
+                  <FooterLink href="/services">Cosmetic Dentistry</FooterLink>
+                  <FooterLink href="/services">Orthodontics</FooterLink>
+                  <FooterLink href="/services">Pediatric Dentistry</FooterLink>
+                  <FooterLink href="/services">Advanced & Restorative Care</FooterLink>
                 </div>
               </div>
 
