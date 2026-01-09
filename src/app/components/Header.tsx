@@ -134,7 +134,7 @@ export default function Header() {
             <nav className="hidden xl:flex items-center gap-8">
               <button
                 onClick={handleHomeClick}
-                className={`px-[14px] py-[4px] rounded-full text-[14px] transition-all ${
+                className={`px-[14px] py-[4px] rounded-full text-[14px] transition-all whitespace-nowrap ${
                   location.pathname === '/'
                     ? 'bg-[#cbff8f] text-[#97c4ff] font-bold'
                     : 'text-black hover:text-[#97c4ff]'
@@ -144,7 +144,7 @@ export default function Header() {
               </button>
               <button
                 onClick={handleAboutUsClick}
-                className={`px-[14px] py-[4px] rounded-full text-[14px] transition-all ${
+                className={`px-[14px] py-[4px] rounded-full text-[14px] transition-all whitespace-nowrap ${
                   location.pathname === '/about-us'
                     ? 'bg-[#cbff8f] text-[#97c4ff] font-bold'
                     : 'text-black hover:text-[#97c4ff]'
@@ -155,7 +155,7 @@ export default function Header() {
               
               <button
                 onClick={handleOurDoctorsClick}
-                className={`px-[14px] py-[4px] rounded-full text-[14px] transition-all ${
+                className={`px-[14px] py-[4px] rounded-full text-[14px] transition-all whitespace-nowrap ${
                   location.pathname.startsWith('/our-doctors')
                     ? 'bg-[#cbff8f] text-[#97c4ff] font-bold'
                     : 'text-black hover:text-[#97c4ff]'
@@ -165,7 +165,7 @@ export default function Header() {
               </button>
               <button
                 onClick={handleServicesClick}
-                className={`px-[14px] py-[4px] rounded-full text-[14px] transition-all ${
+                className={`px-[14px] py-[4px] rounded-full text-[14px] transition-all whitespace-nowrap ${
                   location.pathname.startsWith('/services')
                     ? 'bg-[#cbff8f] text-[#97c4ff] font-bold'
                     : 'text-black hover:text-[#97c4ff]'
@@ -175,7 +175,7 @@ export default function Header() {
               </button>
               <Link
                 to="/packages"
-                className={`px-[14px] py-[4px] rounded-full text-[14px] transition-all ${
+                className={`px-[14px] py-[4px] rounded-full text-[14px] transition-all whitespace-nowrap ${
                   location.pathname === '/packages'
                     ? 'bg-[#cbff8f] text-[#97c4ff] font-bold'
                     : 'text-black hover:text-[#97c4ff]'
@@ -186,7 +186,7 @@ export default function Header() {
               
               <Link
                 to="/sky-loyalty"
-                className={`px-[14px] py-[4px] rounded-full text-[14px] transition-all ${
+                className={`px-[14px] py-[4px] rounded-full text-[14px] transition-all whitespace-nowrap ${
                   location.pathname === '/sky-loyalty'
                     ? 'bg-[#cbff8f] text-[#97c4ff] font-bold'
                     : 'text-black hover:text-[#97c4ff]'
@@ -196,7 +196,7 @@ export default function Header() {
               </Link>
               <button
                 onClick={handleContactClick}
-                className={`px-[14px] py-[4px] rounded-full text-[14px] transition-all ${
+                className={`px-[14px] py-[4px] rounded-full text-[14px] transition-all whitespace-nowrap ${
                   location.pathname === '/contact'
                     ? 'bg-[#cbff8f] text-[#97c4ff] font-bold'
                     : 'text-black hover:text-[#97c4ff]'
@@ -510,7 +510,7 @@ function NavDropdown({ label, active, onClick }: { label: string; active: boolea
   return (
     <button
       onClick={onClick}
-      className={`flex items-center gap-[5px] px-[14px] py-[4px] rounded-full text-[14px] transition-all ${
+      className={`flex items-center gap-[5px] px-[14px] py-[4px] rounded-full text-[14px] transition-all whitespace-nowrap ${
         active ? 'bg-[#cbff8f] text-[#97c4ff] font-bold' : 'text-black hover:text-[#97c4ff]'
       }`}
     >
