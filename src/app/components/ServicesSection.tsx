@@ -5,11 +5,36 @@ import { useRef, useState } from 'react'
 import svgPaths from '../../imports/svg-p4rwj0t9df'
 import imgImage from '../../assets/4fafeb49b310a78e44a5f2d40f54b8605c5129d1.png'
 
+const servicesData = {
+  'General Dentistry': {
+    title: 'General Dentistry',
+    description: 'General Dentistry forms the foundation of lifelong oral health, focusing on early diagnosis, prevention, and treatment of common dental concerns. Our team provides precise, comfortable care designed to protect your smile and maintain healthy teeth and gums. We adopt modern techniques to ensure accurate results and an exceptional patient journey.'
+  },
+  'Cosmetic Dentistry': {
+    title: 'Cosmetic Dentistry',
+    description: 'Our cosmetic dentistry services focus on enhancing the beauty, balance, and harmony of your smile. Using modern aesthetic techniques and personalized planning, we create naturally stunning results that elevate confidence. Each treatment is tailored to your unique facial profile and smile goals.'
+  },
+  'Orthodontics': {
+    title: 'Orthodontics',
+    description: 'Our orthodontic services deliver functional and aesthetic improvements by straightening teeth and aligning the bite. We offer modern solutions suitable for all ages, ensuring comfortable treatment and precise results. Every plan is individually crafted to create a healthy, beautifully aligned smile.'
+  },
+  'Pediatric Dentistry': {
+    title: 'Pediatric Dentistry',
+    description: 'Our paediatric dentistry services provide gentle, child-friendly care that supports healthy dental development in a comfortable, reassuring environment. We focus on prevention, early diagnosis, and building positive dental habits that last a lifetime. Your child\'s wellbeing and confidence are our top priorities.'
+  },
+  'Advanced & Restorative Care': {
+    title: 'Advanced & Restorative Care',
+    description: 'Our advanced restorative services combine high-level clinical expertise with innovative technology to rebuild oral health and restore complete functionality. These treatments address complex conditions with precision, comfort, and long-lasting outcomes. We aim to revitalise your smile with solutions tailored to your unique needs.'
+  }
+}
+
 export default function ServicesSection() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
   const shouldReduceMotion = useReducedMotion()
   const [selectedService, setSelectedService] = useState('General Dentistry')
+  
+  const currentService = servicesData[selectedService as keyof typeof servicesData]
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -108,10 +133,10 @@ export default function ServicesSection() {
                   className="text-black text-[28px] md:text-[34px] lg:text-[40px] leading-[1.2] tracking-[-1.2px]"
                   style={{ fontFamily: "'Gilda Display', serif" }}
                 >
-                  {selectedService}
+                  {currentService.title}
                 </h3>
                 <p className="text-black text-[15px] md:text-[16px] leading-[1.55] text-justify">
-                  General Dentistry forms the foundation of lifelong oral health, focusing on early diagnosis, prevention, and treatment of common dental concerns. Our team provides precise, comfortable care designed to protect your smile and maintain healthy teeth and gums. We adopt modern techniques to ensure accurate results and an exceptional patient journey.
+                  {currentService.description}
                 </p>
               </div>
 
