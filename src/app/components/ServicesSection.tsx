@@ -3,28 +3,37 @@
 import { motion, useReducedMotion, useInView } from 'motion/react'
 import { useRef, useState } from 'react'
 import svgPaths from '../../imports/svg-p4rwj0t9df'
-import imgImage from '../../assets/4fafeb49b310a78e44a5f2d40f54b8605c5129d1.png'
+import imgGeneralDentistry from '../../assets/4fafeb49b310a78e44a5f2d40f54b8605c5129d1.png'
+import imgCosmeticDentistry from '../../assets/52ff6087aa6a907ff79e465a1810ea7bc978284f.png'
+import imgOrthodontics from '../../assets/1291a4cb6823b1349697cd81e94f0cd9176a9622.png'
+import imgPediatricDentistry from '../../assets/088aac21103ad32cfae40ab80743ee00c733ec5e.png'
+import imgAdvancedRestorative from '../../assets/bad2f27ff5079a0e6ec2492bdc6955e6b191903e.png'
 
 const servicesData = {
   'General Dentistry': {
     title: 'General Dentistry',
-    description: 'General Dentistry forms the foundation of lifelong oral health, focusing on early diagnosis, prevention, and treatment of common dental concerns. Our team provides precise, comfortable care designed to protect your smile and maintain healthy teeth and gums. We adopt modern techniques to ensure accurate results and an exceptional patient journey.'
+    description: 'General Dentistry forms the foundation of lifelong oral health, focusing on early diagnosis, prevention, and treatment of common dental concerns. Our team provides precise, comfortable care designed to protect your smile and maintain healthy teeth and gums. We adopt modern techniques to ensure accurate results and an exceptional patient journey.',
+    image: imgGeneralDentistry
   },
   'Cosmetic Dentistry': {
     title: 'Cosmetic Dentistry',
-    description: 'Our cosmetic dentistry services focus on enhancing the beauty, balance, and harmony of your smile. Using modern aesthetic techniques and personalized planning, we create naturally stunning results that elevate confidence. Each treatment is tailored to your unique facial profile and smile goals.'
+    description: 'Our cosmetic dentistry services focus on enhancing the beauty, balance, and harmony of your smile. Using modern aesthetic techniques and personalized planning, we create naturally stunning results that elevate confidence. Each treatment is tailored to your unique facial profile and smile goals.',
+    image: imgCosmeticDentistry
   },
   'Orthodontics': {
     title: 'Orthodontics',
-    description: 'Our orthodontic services deliver functional and aesthetic improvements by straightening teeth and aligning the bite. We offer modern solutions suitable for all ages, ensuring comfortable treatment and precise results. Every plan is individually crafted to create a healthy, beautifully aligned smile.'
+    description: 'Our orthodontic services deliver functional and aesthetic improvements by straightening teeth and aligning the bite. We offer modern solutions suitable for all ages, ensuring comfortable treatment and precise results. Every plan is individually crafted to create a healthy, beautifully aligned smile.',
+    image: imgOrthodontics
   },
   'Pediatric Dentistry': {
     title: 'Pediatric Dentistry',
-    description: 'Our paediatric dentistry services provide gentle, child-friendly care that supports healthy dental development in a comfortable, reassuring environment. We focus on prevention, early diagnosis, and building positive dental habits that last a lifetime. Your child\'s wellbeing and confidence are our top priorities.'
+    description: 'Our paediatric dentistry services provide gentle, child-friendly care that supports healthy dental development in a comfortable, reassuring environment. We focus on prevention, early diagnosis, and building positive dental habits that last a lifetime. Your child\'s wellbeing and confidence are our top priorities.',
+    image: imgPediatricDentistry
   },
   'Advanced & Restorative Care': {
     title: 'Advanced & Restorative Care',
-    description: 'Our advanced restorative services combine high-level clinical expertise with innovative technology to rebuild oral health and restore complete functionality. These treatments address complex conditions with precision, comfort, and long-lasting outcomes. We aim to revitalise your smile with solutions tailored to your unique needs.'
+    description: 'Our advanced restorative services combine high-level clinical expertise with innovative technology to rebuild oral health and restore complete functionality. These treatments address complex conditions with precision, comfort, and long-lasting outcomes. We aim to revitalise your smile with solutions tailored to your unique needs.',
+    image: imgAdvancedRestorative
   }
 }
 
@@ -153,8 +162,8 @@ export default function ServicesSection() {
               <div className="relative rounded-[20px] overflow-hidden w-full h-[350px] transform rotate-180 scale-y-[-1]">
                 <div className="absolute inset-0 bg-[#c4c4c4]" />
                 <img
-                  src={imgImage}
-                  alt="Dental procedure"
+                  src={currentService.image}
+                  alt={`${currentService.title} procedure`}
                   className="absolute inset-0 w-full h-full object-cover"
                 />
               </div>
