@@ -111,6 +111,7 @@ export default function Footer() {
 
             {/* Bottom Bar */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-6 md:pt-8 border-t border-black/10">
+              <p className="text-black text-[11px] md:text-[12px] break-words">MOHAP APPROVAL LICENSE: RE6YF8UV-101224</p>
               <p className="text-black text-[11px] md:text-[12px] whitespace-nowrap">Copyright © 2025 Sky Dental Center. All rights reserved.</p>
             </div>
           </div>
