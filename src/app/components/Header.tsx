@@ -144,8 +144,10 @@ export default function Header() {
               </button>
               <button
                 onClick={handleAboutUsClick}
-                className={`text-[14px] transition-all ${
-                  location.pathname === '/about-us' ? 'text-[#97c4ff] font-semibold' : 'text-black hover:text-[#97c4ff]'
+                className={`px-[14px] py-[4px] rounded-full text-[14px] transition-all ${
+                  location.pathname === '/about-us'
+                    ? 'bg-[#cbff8f] text-[#97c4ff] font-bold'
+                    : 'text-black hover:text-[#97c4ff]'
                 }`}
               >
                 About Us
@@ -153,8 +155,10 @@ export default function Header() {
               
               <button
                 onClick={handleOurDoctorsClick}
-                className={`text-[14px] transition-all ${
-                  location.pathname === '/our-doctors' ? 'text-[#97c4ff] font-semibold' : 'text-black hover:text-[#97c4ff]'
+                className={`px-[14px] py-[4px] rounded-full text-[14px] transition-all ${
+                  location.pathname.startsWith('/our-doctors')
+                    ? 'bg-[#cbff8f] text-[#97c4ff] font-bold'
+                    : 'text-black hover:text-[#97c4ff]'
                 }`}
               >
                 Our Doctors
@@ -162,7 +166,7 @@ export default function Header() {
               <button
                 onClick={handleServicesClick}
                 className={`px-[14px] py-[4px] rounded-full text-[14px] transition-all ${
-                  location.pathname === '/services'
+                  location.pathname.startsWith('/services')
                     ? 'bg-[#cbff8f] text-[#97c4ff] font-bold'
                     : 'text-black hover:text-[#97c4ff]'
                 }`}
@@ -171,8 +175,10 @@ export default function Header() {
               </button>
               <Link
                 to="/packages"
-                className={`text-[14px] transition-all ${
-                  location.pathname === '/packages' ? 'text-[#97c4ff] font-semibold' : 'text-black hover:text-[#97c4ff]'
+                className={`px-[14px] py-[4px] rounded-full text-[14px] transition-all ${
+                  location.pathname === '/packages'
+                    ? 'bg-[#cbff8f] text-[#97c4ff] font-bold'
+                    : 'text-black hover:text-[#97c4ff]'
                 }`}
               >
                 Packages & Offers
@@ -180,16 +186,20 @@ export default function Header() {
               
               <Link
                 to="/sky-loyalty"
-                className={`text-[14px] transition-all ${
-                  location.pathname === '/sky-loyalty' ? 'text-[#97c4ff] font-semibold' : 'text-black hover:text-[#97c4ff]'
+                className={`px-[14px] py-[4px] rounded-full text-[14px] transition-all ${
+                  location.pathname === '/sky-loyalty'
+                    ? 'bg-[#cbff8f] text-[#97c4ff] font-bold'
+                    : 'text-black hover:text-[#97c4ff]'
                 }`}
               >
                 Sky Loyalty Program
               </Link>
               <button
                 onClick={handleContactClick}
-                className={`text-[14px] transition-all ${
-                  location.pathname === '/contact' ? 'text-[#97c4ff] font-semibold' : 'text-black hover:text-[#97c4ff]'
+                className={`px-[14px] py-[4px] rounded-full text-[14px] transition-all ${
+                  location.pathname === '/contact'
+                    ? 'bg-[#cbff8f] text-[#97c4ff] font-bold'
+                    : 'text-black hover:text-[#97c4ff]'
                 }`}
               >
                 Contact
@@ -217,28 +227,44 @@ export default function Header() {
                       <Link
                         to="/patient-guide"
                         onClick={() => setMoreDropdownOpen(false)}
-                        className="block px-5 py-3 text-[14px] text-black hover:bg-[#f8f9fa] hover:text-[#97c4ff] transition-colors"
+                        className={`block px-5 py-3 text-[14px] rounded-full transition-colors ${
+                          location.pathname === '/patient-guide'
+                            ? 'bg-[#cbff8f] text-[#97c4ff] font-bold'
+                            : 'text-black hover:bg-[#f8f9fa] hover:text-[#97c4ff]'
+                        }`}
                       >
                         Patient Guide
                       </Link>
                       <Link
                         to="/careers"
                         onClick={() => setMoreDropdownOpen(false)}
-                        className="block px-5 py-3 text-[14px] text-black hover:bg-[#f8f9fa] hover:text-[#97c4ff] transition-colors"
+                        className={`block px-5 py-3 text-[14px] rounded-full transition-colors ${
+                          location.pathname === '/careers'
+                            ? 'bg-[#cbff8f] text-[#97c4ff] font-bold'
+                            : 'text-black hover:bg-[#f8f9fa] hover:text-[#97c4ff]'
+                        }`}
                       >
                         Careers
                       </Link>
                       <Link
                         to="/faqs"
                         onClick={() => setMoreDropdownOpen(false)}
-                        className="block px-5 py-3 text-[14px] text-black hover:bg-[#f8f9fa] hover:text-[#97c4ff] transition-colors"
+                        className={`block px-5 py-3 text-[14px] rounded-full transition-colors ${
+                          location.pathname === '/faqs'
+                            ? 'bg-[#cbff8f] text-[#97c4ff] font-bold'
+                            : 'text-black hover:bg-[#f8f9fa] hover:text-[#97c4ff]'
+                        }`}
                       >
                         FAQs
                       </Link>
                       <Link
                         to="/privacy-policy"
                         onClick={() => setMoreDropdownOpen(false)}
-                        className="block px-5 py-3 text-[14px] text-black hover:bg-[#f8f9fa] hover:text-[#97c4ff] transition-colors"
+                        className={`block px-5 py-3 text-[14px] rounded-full transition-colors ${
+                          location.pathname === '/privacy-policy'
+                            ? 'bg-[#cbff8f] text-[#97c4ff] font-bold'
+                            : 'text-black hover:bg-[#f8f9fa] hover:text-[#97c4ff]'
+                        }`}
                       >
                         Privacy Policy
                       </Link>
@@ -332,7 +358,7 @@ export default function Header() {
                 <button
                   onClick={handleHomeClick}
                   className={`px-[20px] py-[12px] rounded-full text-[16px] transition-all text-left ${
-                    activeSection === 'home'
+                    location.pathname === '/' || activeSection === 'home'
                       ? 'bg-[#cbff8f] text-[#97c4ff] font-bold'
                       : 'text-black hover:text-[#97c4ff]'
                   }`}
@@ -341,16 +367,20 @@ export default function Header() {
                 </button>
                 <button
                   onClick={handleAboutUsClick}
-                  className={`px-[20px] py-[12px] text-[16px] transition-all text-left ${
-                    location.pathname === '/about-us' ? 'text-[#97c4ff] font-semibold' : 'text-black hover:text-[#97c4ff]'
+                  className={`px-[20px] py-[12px] rounded-full text-[16px] transition-all text-left ${
+                    location.pathname === '/about-us'
+                      ? 'bg-[#cbff8f] text-[#97c4ff] font-bold'
+                      : 'text-black hover:text-[#97c4ff]'
                   }`}
                 >
                   About Us
                 </button>
                 <button
                   onClick={handleOurDoctorsClick}
-                  className={`px-[20px] py-[12px] text-[16px] transition-all text-left ${
-                    location.pathname === '/our-doctors' ? 'text-[#97c4ff] font-semibold' : 'text-black hover:text-[#97c4ff]'
+                  className={`px-[20px] py-[12px] rounded-full text-[16px] transition-all text-left ${
+                    location.pathname.startsWith('/our-doctors')
+                      ? 'bg-[#cbff8f] text-[#97c4ff] font-bold'
+                      : 'text-black hover:text-[#97c4ff]'
                   }`}
                 >
                   Our Doctors
@@ -358,7 +388,7 @@ export default function Header() {
                 <button
                   onClick={handleServicesClick}
                   className={`px-[20px] py-[12px] rounded-full text-[16px] transition-all text-left ${
-                    location.pathname === '/services'
+                    location.pathname.startsWith('/services')
                       ? 'bg-[#cbff8f] text-[#97c4ff] font-bold'
                       : 'text-black hover:text-[#97c4ff]'
                   }`}
@@ -367,24 +397,30 @@ export default function Header() {
                 </button>
                 <Link
                   to="/packages"
-                  className={`px-[20px] py-[12px] text-[16px] transition-all text-left ${
-                    location.pathname === '/packages' ? 'text-[#97c4ff] font-semibold' : 'text-black hover:text-[#97c4ff]'
+                  className={`px-[20px] py-[12px] rounded-full text-[16px] transition-all text-left ${
+                    location.pathname === '/packages'
+                      ? 'bg-[#cbff8f] text-[#97c4ff] font-bold'
+                      : 'text-black hover:text-[#97c4ff]'
                   }`}
                 >
                   Packages & Offers
                 </Link>
                 <Link
                   to="/sky-loyalty"
-                  className={`px-[20px] py-[12px] text-[16px] transition-all text-left ${
-                    location.pathname === '/sky-loyalty' ? 'text-[#97c4ff] font-semibold' : 'text-black hover:text-[#97c4ff]'
+                  className={`px-[20px] py-[12px] rounded-full text-[16px] transition-all text-left ${
+                    location.pathname === '/sky-loyalty'
+                      ? 'bg-[#cbff8f] text-[#97c4ff] font-bold'
+                      : 'text-black hover:text-[#97c4ff]'
                   }`}
                 >
                   Sky Loyalty Program
                 </Link>
                 <button
                   onClick={handleContactClick}
-                  className={`px-[20px] py-[12px] text-[16px] transition-all text-left ${
-                    location.pathname === '/contact' ? 'text-[#97c4ff] font-semibold' : 'text-black hover:text-[#97c4ff]'
+                  className={`px-[20px] py-[12px] rounded-full text-[16px] transition-all text-left ${
+                    location.pathname === '/contact'
+                      ? 'bg-[#cbff8f] text-[#97c4ff] font-bold'
+                      : 'text-black hover:text-[#97c4ff]'
                   }`}
                 >
                   Contact
@@ -396,8 +432,10 @@ export default function Header() {
                   <Link
                     to="/patient-guide"
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`block px-[20px] py-[10px] text-[15px] transition-all ${
-                      location.pathname === '/patient-guide' ? 'text-[#97c4ff] font-semibold' : 'text-black hover:text-[#97c4ff]'
+                    className={`block px-[20px] py-[10px] rounded-full text-[15px] transition-all ${
+                      location.pathname === '/patient-guide'
+                        ? 'bg-[#cbff8f] text-[#97c4ff] font-bold'
+                        : 'text-black hover:text-[#97c4ff]'
                     }`}
                   >
                     Patient Guide
@@ -405,8 +443,10 @@ export default function Header() {
                   <Link
                     to="/careers"
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`block px-[20px] py-[10px] text-[15px] transition-all ${
-                      location.pathname === '/careers' ? 'text-[#97c4ff] font-semibold' : 'text-black hover:text-[#97c4ff]'
+                    className={`block px-[20px] py-[10px] rounded-full text-[15px] transition-all ${
+                      location.pathname === '/careers'
+                        ? 'bg-[#cbff8f] text-[#97c4ff] font-bold'
+                        : 'text-black hover:text-[#97c4ff]'
                     }`}
                   >
                     Careers
@@ -414,8 +454,10 @@ export default function Header() {
                   <Link
                     to="/faqs"
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`block px-[20px] py-[10px] text-[15px] transition-all ${
-                      location.pathname === '/faqs' ? 'text-[#97c4ff] font-semibold' : 'text-black hover:text-[#97c4ff]'
+                    className={`block px-[20px] py-[10px] rounded-full text-[15px] transition-all ${
+                      location.pathname === '/faqs'
+                        ? 'bg-[#cbff8f] text-[#97c4ff] font-bold'
+                        : 'text-black hover:text-[#97c4ff]'
                     }`}
                   >
                     FAQs
@@ -423,8 +465,10 @@ export default function Header() {
                   <Link
                     to="/privacy-policy"
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`block px-[20px] py-[10px] text-[15px] transition-all ${
-                      location.pathname === '/privacy-policy' ? 'text-[#97c4ff] font-semibold' : 'text-black hover:text-[#97c4ff]'
+                    className={`block px-[20px] py-[10px] rounded-full text-[15px] transition-all ${
+                      location.pathname === '/privacy-policy'
+                        ? 'bg-[#cbff8f] text-[#97c4ff] font-bold'
+                        : 'text-black hover:text-[#97c4ff]'
                     }`}
                   >
                     Privacy Policy
@@ -466,8 +510,8 @@ function NavDropdown({ label, active, onClick }: { label: string; active: boolea
   return (
     <button
       onClick={onClick}
-      className={`flex items-center gap-[5px] text-[14px] transition-all ${
-        active ? 'text-[#97c4ff] font-semibold' : 'text-black hover:text-[#97c4ff]'
+      className={`flex items-center gap-[5px] px-[14px] py-[4px] rounded-full text-[14px] transition-all ${
+        active ? 'bg-[#cbff8f] text-[#97c4ff] font-bold' : 'text-black hover:text-[#97c4ff]'
       }`}
     >
       <span>{label}</span>
