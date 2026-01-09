@@ -76,7 +76,7 @@ export default function WhyChooseSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
               transition={{ delay: 0.8, duration: shouldReduceMotion ? 0 : 0.5 }}
-              className="absolute bottom-[16px] left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:bottom-[30px] md:right-[30px] bg-[#cbff8f] flex items-center gap-3 md:gap-6 pl-4 md:pl-6 pr-[8px] md:pr-[10px] py-2 rounded-[35px] hover:bg-[#B1FF57] transition-colors z-10 shadow-lg"
+              className="absolute bottom-[30px] right-[30px] bg-[#cbff8f] flex items-center gap-4 md:gap-6 pl-4 md:pl-6 pr-[8px] md:pr-[10px] py-2 rounded-[35px] hover:bg-[#B1FF57] transition-colors z-10"
             >
               <span className="text-[#97c4ff] font-bold text-[14px] md:text-[16px] whitespace-nowrap">Book Now</span>
               <div className="bg-[#97c4ff] w-[32px] h-[32px] md:w-[34px] md:h-[34px] rounded-full flex items-center justify-center flex-shrink-0">
