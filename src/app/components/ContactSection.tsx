@@ -275,74 +275,65 @@ export default function ContactSection() {
                   />
                 </div>
 
-                <div>
-                  <label className="block text-[14px] text-black mb-2">Specialty</label>
-                  <select
-                    name="service"
-                    value={formData.service}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuNDEgOC41OEwxMiAxMy4xN0wxNi41OSA4LjU4TDE4IDEwTDEyIDE2TDYgMTBMNy40MSA4LjU4WiIgZmlsbD0iYmxhY2siLz4KPC9zdmc+Cg==')] bg-no-repeat bg-[right_24px_center]"
-                  >
-                    <option value="">Select Specialty</option>
-                    {services.map(service => (
-                      <option key={service} value={service}>{service}</option>
-                    ))}
-                  </select>
-                </div>
+                <select
+                  name="service"
+                  value={formData.service}
+                  onChange={handleInputChange}
+                  required
+                  className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuNDEgOC41OEwxMiAxMy4xN0wxNi41OSA4LjU4TDE4IDEwTDEyIDE2TDYgMTBMNy40MSA4LjU4WiIgZmlsbD0iYmxhY2siLz4KPC9zdmc+Cg==')] bg-no-repeat bg-[right_24px_center]"
+                >
+                  <option value="">Select Specialty</option>
+                  {services.map(service => (
+                    <option key={service} value={service}>{service}</option>
+                  ))}
+                </select>
 
-                <div>
-                  <label className="block text-[14px] text-black mb-2">Doctor</label>
-                  <select
-                    name="doctor"
-                    value={formData.doctor}
-                    onChange={handleInputChange}
-                    required
-                    disabled={!formData.service || availableDoctors.length === 0}
-                    className="w-full bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuNDEgOC41OEwxMiAxMy4xN0wxNi41OSA4LjU4TDE4IDEwTDEyIDE2TDYgMTBMNy40MSA4LjU4WiIgZmlsbD0iYmxhY2siLz4KPC9zdmc+Cg==')] bg-no-repeat bg-[right_24px_center] disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    <option value="">Select Doctor</option>
-                    {availableDoctors.map(doctor => (
-                      <option key={doctor} value={doctor}>{doctor}</option>
-                    ))}
-                  </select>
-                </div>
+                <select
+                  name="doctor"
+                  value={formData.doctor}
+                  onChange={handleInputChange}
+                  required
+                  disabled={!formData.service || availableDoctors.length === 0}
+                  className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuNDEgOC41OEwxMiAxMy4xN0wxNi41OSA4LjU4TDE4IDEwTDEyIDE2TDYgMTBMNy40MSA4LjU4WiIgZmlsbD0iYmxhY2siLz4KPC9zdmc+Cg==')] bg-no-repeat bg-[right_24px_center] disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  <option value="">Select Doctor</option>
+                  {availableDoctors.map(doctor => (
+                    <option key={doctor} value={doctor}>{doctor}</option>
+                  ))}
+                </select>
 
                 {/* Date Input - Opens combined date/time picker */}
                 {formData.doctor && (
-                  <div>
-                    <label className="block text-[14px] text-black mb-2">Date</label>
-                    <div className="relative" ref={dateTimePickerRef}>
-                      <button
-                        type="button"
-                        onClick={() => setShowDateTimePicker(!showDateTimePicker)}
-                        className={`w-full bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black text-left flex items-center justify-between transition-all ${
-                          formData.date 
-                            ? 'bg-[#e0edff]' 
-                            : 'hover:bg-[#e8e8e8]'
-                        }`}
-                      >
-                        <span className={formData.date ? 'font-semibold text-black' : 'text-gray-500'}>
-                          {formData.date && formData.time 
-                            ? `${formData.date} at ${formData.time}`
-                            : formData.date 
-                            ? formData.date
-                            : 'Select Date'}
-                        </span>
-                        <svg className="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                        </svg>
-                      </button>
-                      {showDateTimePicker && (
-                        <DateTimePicker
-                          onDateSelect={handleDateSelect}
-                          onTimeSelect={handleTimeSelect}
-                          selectedDate={formData.date}
-                          selectedTime={formData.time}
-                          onClose={() => setShowDateTimePicker(false)}
-                        />
-                      )}
-                    </div>
+                  <div className="relative" ref={dateTimePickerRef}>
+                    <button
+                      type="button"
+                      onClick={() => setShowDateTimePicker(!showDateTimePicker)}
+                      className={`w-full bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black text-left flex items-center justify-between transition-all ${
+                        formData.date 
+                          ? 'bg-[#e0edff]' 
+                          : 'hover:bg-[#e8e8e8]'
+                      }`}
+                    >
+                      <span className={formData.date ? 'font-semibold text-black' : 'text-gray-500'}>
+                        {formData.date && formData.time 
+                          ? `${formData.date} at ${formData.time}`
+                          : formData.date 
+                          ? formData.date
+                          : 'Select Date'}
+                      </span>
+                      <svg className="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                    {showDateTimePicker && (
+                      <DateTimePicker
+                        onDateSelect={handleDateSelect}
+                        onTimeSelect={handleTimeSelect}
+                        selectedDate={formData.date}
+                        selectedTime={formData.time}
+                        onClose={() => setShowDateTimePicker(false)}
+                      />
+                    )}
                   </div>
                 )}
 
