@@ -8,12 +8,12 @@ const servicesData = {
   'General Dentistry': {
     title: 'General Dentistry',
     description: 'General Dentistry forms the foundation of lifelong oral health, focusing on early diagnosis, prevention, and treatment of common dental concerns. Our team provides precise, comfortable care designed to protect your smile and maintain healthy teeth and gums. We adopt modern techniques to ensure accurate results and an exceptional patient journey.',
-    image: '/General Dentistry.jpg'
+    image: '/General%20Dentistry.jpg'
   },
   'Cosmetic Dentistry': {
     title: 'Cosmetic Dentistry',
     description: 'Our cosmetic dentistry services focus on enhancing the beauty, balance, and harmony of your smile. Using modern aesthetic techniques and personalized planning, we create naturally stunning results that elevate confidence. Each treatment is tailored to your unique facial profile and smile goals.',
-    image: '/Cosmetic Dentistry.jpg'
+    image: '/Cosmetic%20Dentistry.jpg'
   },
   'Orthodontics': {
     title: 'Orthodontics',
@@ -23,12 +23,12 @@ const servicesData = {
   'Pediatric Dentistry': {
     title: 'Pediatric Dentistry',
     description: 'Our paediatric dentistry services provide gentle, child-friendly care that supports healthy dental development in a comfortable, reassuring environment. We focus on prevention, early diagnosis, and building positive dental habits that last a lifetime. Your child\'s wellbeing and confidence are our top priorities.',
-    image: '/Pediatric Dentistry.jpg'
+    image: '/Pediatric%20Dentistry.jpg'
   },
   'Advanced & Restorative Care': {
     title: 'Advanced & Restorative Care',
     description: 'Our advanced restorative services combine high-level clinical expertise with innovative technology to rebuild oral health and restore complete functionality. These treatments address complex conditions with precision, comfort, and long-lasting outcomes. We aim to revitalise your smile with solutions tailored to your unique needs.',
-    image: '/Advanced & Restorative Care.jpg'
+    image: '/Advanced%20%26%20Restorative%20Care.jpg'
   }
 }
 
