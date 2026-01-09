@@ -150,7 +150,7 @@ export default function ServicesSection() {
 
             {/* Right Content - Image */}
             <div className="flex-1 w-full">
-              <div className="relative rounded-[20px] overflow-hidden w-full h-[300px] md:h-[400px] lg:h-[500px] transform rotate-180 scale-y-[-1]">
+              <div className="relative rounded-[20px] overflow-hidden w-full h-[350px] transform rotate-180 scale-y-[-1]">
                 <div className="absolute inset-0 bg-[#c4c4c4]" />
                 <img
                   src={imgImage}
