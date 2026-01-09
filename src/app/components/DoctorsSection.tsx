@@ -53,7 +53,7 @@ export default function DoctorsSection() {
           className="text-center mb-[32px] md:mb-[48px] flex flex-col items-center gap-[24px] md:gap-[32px]"
         >
           <h2
-            className="text-black text-[28px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-1.44px] max-w-[900px] px-4"
+            className="text-black text-[32px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-1.44px] max-w-[900px]"
             style={{ fontFamily: "'Gilda Display', serif" }}
           >
             Professional, Experienced Doctors who are Fluent in all Modern Treatment Methods
@@ -87,7 +87,7 @@ export default function DoctorsSection() {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[24px] md:gap-[24px] lg:gap-[32px]"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[20px] md:gap-[24px] lg:gap-[32px]"
         >
           {doctors.map((doctor, index) => (
             <DoctorCard key={index} doctor={doctor} variants={cardVariants} />
@@ -107,29 +107,29 @@ function DoctorCard({ doctor, variants }: { doctor: { name: string; specialty: s
       className="group flex flex-col"
     >
       {/* Image Card - Only contains image and tag */}
-      <div className="bg-white rounded-[20px] overflow-hidden shadow-md hover:shadow-xl transition-shadow w-full">
-        <div className="relative h-[280px] sm:h-[320px] md:h-[400px] overflow-hidden">
+      <div className="bg-white rounded-[20px] overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+        <div className="relative h-[350px] md:h-[400px] overflow-hidden">
           <img
             src={doctor.image}
             alt={doctor.name}
             className="w-full h-full object-cover"
           />
           {/* Specialty Badge */}
-          <div className="absolute bottom-[12px] left-[12px] md:bottom-[16px] md:left-[16px] bg-black/70 backdrop-blur-sm px-[12px] md:px-[16px] py-[6px] md:py-[8px] rounded-[20px] max-w-[calc(100%-24px)]">
-            <span className="text-white text-[11px] md:text-[13px] font-medium whitespace-normal break-words">{doctor.specialty}</span>
+          <div className="absolute bottom-[16px] left-[16px] bg-black/70 backdrop-blur-sm px-[16px] py-[8px] rounded-[20px]">
+            <span className="text-white text-[12px] md:text-[13px] font-medium">{doctor.specialty}</span>
           </div>
         </div>
       </div>
       
       {/* Name and View Details - Outside the card */}
-      <div className="mt-[16px] md:mt-[24px] text-center flex flex-col gap-[8px] px-2">
+      <div className="mt-[20px] md:mt-[24px] text-center flex flex-col gap-[8px]">
         <h3
-          className="text-black text-[16px] md:text-[20px] leading-[1.2] break-words"
+          className="text-black text-[18px] md:text-[20px] leading-[1.2]"
           style={{ fontFamily: "'Gilda Display', serif" }}
         >
           {doctor.name}
         </h3>
-        <button className="text-[#97c4ff] text-[13px] md:text-[15px] hover:underline">
+        <button className="text-[#97c4ff] text-[14px] md:text-[15px] hover:underline">
           View Details
         </button>
       </div>
