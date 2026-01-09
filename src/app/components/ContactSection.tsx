@@ -244,52 +244,50 @@ export default function ContactSection() {
                     required
                     className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black"
                   />
-                  <div className="relative">
-                    <div className="flex gap-2">
-                      {/* Country Code Selector */}
-                      <div className="relative" ref={countryCodeRef}>
-                        <button
-                          type="button"
-                          onClick={() => setShowCountryCodeDropdown(!showCountryCodeDropdown)}
-                          className="bg-[#f1f1f1] h-[55px] px-[12px] py-[16px] rounded-[12px] text-[14px] text-black flex items-center gap-1 min-w-[80px]"
-                        >
-                          <span>{countryCodes.find(c => c.code === formData.countryCode)?.flag}</span>
-                          <span>{formData.countryCode}</span>
-                          <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                          </svg>
-                        </button>
-                        {showCountryCodeDropdown && (
-                          <div className="absolute top-full left-0 mt-1 bg-white rounded-[12px] shadow-lg border border-gray-200 z-50 max-h-[200px] overflow-y-auto">
-                            {countryCodes.map((country) => (
-                              <button
-                                key={country.code}
-                                type="button"
-                                onClick={() => {
-                                  setFormData(prev => ({ ...prev, countryCode: country.code }))
-                                  setShowCountryCodeDropdown(false)
-                                }}
-                                className="w-full px-4 py-2 text-left hover:bg-[#f1f1f1] flex items-center gap-2 text-[14px]"
-                              >
-                                <span>{country.flag}</span>
-                                <span>{country.code}</span>
-                                <span className="text-gray-500 text-xs">({country.country})</span>
-                              </button>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                      {/* Phone Input */}
-                      <input
-                        type="tel"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleInputChange}
-                        placeholder="Phone"
-                        required
-                        className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black flex-1"
-                      />
+                  <div className="flex gap-2">
+                    {/* Country Code Selector */}
+                    <div className="relative flex-shrink-0" ref={countryCodeRef}>
+                      <button
+                        type="button"
+                        onClick={() => setShowCountryCodeDropdown(!showCountryCodeDropdown)}
+                        className="bg-[#f1f1f1] h-[55px] px-[12px] py-[16px] rounded-[12px] text-[14px] text-black flex items-center gap-1 min-w-[90px]"
+                      >
+                        <span>{countryCodes.find(c => c.code === formData.countryCode)?.flag}</span>
+                        <span>{formData.countryCode}</span>
+                        <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </button>
+                      {showCountryCodeDropdown && (
+                        <div className="absolute top-full left-0 mt-1 bg-white rounded-[12px] shadow-lg border border-gray-200 z-50 max-h-[200px] overflow-y-auto">
+                          {countryCodes.map((country) => (
+                            <button
+                              key={country.code}
+                              type="button"
+                              onClick={() => {
+                                setFormData(prev => ({ ...prev, countryCode: country.code }))
+                                setShowCountryCodeDropdown(false)
+                              }}
+                              className="w-full px-4 py-2 text-left hover:bg-[#f1f1f1] flex items-center gap-2 text-[14px]"
+                            >
+                              <span>{country.flag}</span>
+                              <span>{country.code}</span>
+                              <span className="text-gray-500 text-xs">({country.country})</span>
+                            </button>
+                          ))}
+                        </div>
+                      )}
                     </div>
+                    {/* Phone Input */}
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      placeholder="Phone"
+                      required
+                      className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black flex-1 min-w-0"
+                    />
                   </div>
                 </div>
 
@@ -333,7 +331,7 @@ export default function ContactSection() {
                         }}
                         className={`w-full bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black text-left flex items-center justify-between transition-all ${
                           formData.date 
-                            ? 'bg-[#e0edff] border-2 border-[#97c4ff]' 
+                            ? 'bg-[#e0edff]' 
                             : 'hover:bg-[#e8e8e8]'
                         }`}
                       >
@@ -371,7 +369,7 @@ export default function ContactSection() {
                           !formData.date
                             ? 'opacity-50 cursor-not-allowed'
                             : formData.time
-                            ? 'bg-[#e0edff] border-2 border-[#97c4ff]'
+                            ? 'bg-[#e0edff]'
                             : 'hover:bg-[#e8e8e8]'
                         }`}
                       >
