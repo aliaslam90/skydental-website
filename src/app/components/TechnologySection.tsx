@@ -2,7 +2,6 @@
 
 import { motion, useReducedMotion, useInView } from 'motion/react'
 import { useRef } from 'react'
-import imgImage2 from '../../assets/1291a4cb6823b1349697cd81e94f0cd9176a9622.png'
 
 export default function TechnologySection() {
   const ref = useRef(null)
@@ -19,14 +18,21 @@ export default function TechnologySection() {
           transition={{ duration: shouldReduceMotion ? 0 : 0.8 }}
           className="relative w-full h-[400px] md:h-[470px] lg:h-[537px] rounded-[20px] md:rounded-[25px] overflow-hidden"
         >
-          {/* Background Image */}
+          {/* Background Video */}
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-[#c4c4c4]" />
-            <img
-              src={imgImage2}
-              alt="Dental technology"
+            <video
+              autoPlay
+              loop
+              playsInline
+              muted
               className="absolute inset-0 w-full h-full object-cover"
-            />
+              controlsList="nodownload"
+            >
+              {/* Add your video file in the public folder and update the src path below */}
+              {/* Example: <source src="/technology-video.mp4" type="video/mp4" /> */}
+              <source src="/technology-video.mp4" type="video/mp4" />
+            </video>
             {/* Gradient Overlay */}
             <div className="absolute inset-0 bg-gradient-to-b from-transparent from-[5.587%] to-[rgba(0,0,0,0.6)] to-[68.156%]" />
           </div>
