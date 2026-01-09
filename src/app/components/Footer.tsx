@@ -26,14 +26,9 @@ export default function Footer() {
                     <MaskGroup />
                   </div>
                 </div>
-                <div>
-                  <h2 className="text-black text-[18px] md:text-[20px] font-bold mb-1" style={{ fontFamily: "'Gilda Display', serif" }}>
-                    SKY DENTAL CENTER
-                  </h2>
-                  <p className="text-black text-[14px] md:text-[16px] font-medium mb-2" dir="rtl">
-                    مركز سكاي لطب الأسنان
-                  </p>
-                </div>
+                <h2 className="text-black text-[18px] md:text-[20px] font-bold mb-2" style={{ fontFamily: "'Gilda Display', serif" }}>
+                  SKY DENTAL CENTER
+                </h2>
                 <p className="text-black text-[13px] md:text-[14px] leading-[1.6]">
                   Sky Dental Center is a modern full-service dental clinic. Professional, experienced doctors who perfectly know all modern methods of treatment.
                 </p>
