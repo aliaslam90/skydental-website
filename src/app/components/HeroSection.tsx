@@ -36,7 +36,7 @@ export default function HeroSection() {
   return (
     <section id="home" className="relative w-full h-screen overflow-hidden">
       {/* Background Video */}
-      <div className="absolute inset-0 rounded-[15px] md:rounded-[20px] lg:rounded-[25px] overflow-hidden mx-[16px] md:mx-[20px] lg:mx-[25px] my-[16px] md:my-[20px] lg:my-[25px]">
+      <div className="absolute inset-0 rounded-none overflow-hidden">
         <video 
           autoPlay 
           loop 
