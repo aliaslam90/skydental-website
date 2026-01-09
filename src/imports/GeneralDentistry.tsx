@@ -1,10 +1,10 @@
 import svgPaths from "./svg-qukyobqdkm";
-import imgRectangle161125373 from "figma:asset/531a2b1be40c3f390e42e72de4c6233edf51733e.png";
-import imgDentalCare from "figma:asset/7e26eb0c35bbd0356cd593caf48b0b5a702f7753.png";
-import imgImage from "figma:asset/e2295a1a1a2bc348414dcc117de577c691164137.png";
-import imgImage1 from "figma:asset/c5fbf2bb2ed01ea6f6ce38835da33519e2db95fe.png";
-import imgImage2 from "figma:asset/27cea6501d6677b5b8f9f08502ce76c7a193f7f8.png";
-import imgRectangle161125374 from "figma:asset/0279a12caadec65ec1eff7a13c4a4eb8aa32c2fa.png";
+import imgRectangle161125373 from "../assets/531a2b1be40c3f390e42e72de4c6233edf51733e.png";
+import imgDentalCare from "../assets/7e26eb0c35bbd0356cd593caf48b0b5a702f7753.png";
+import imgImage from "../assets/e2295a1a1a2bc348414dcc117de577c691164137.png";
+import imgImage1 from "../assets/c5fbf2bb2ed01ea6f6ce38835da33519e2db95fe.png";
+import imgImage2 from "../assets/27cea6501d6677b5b8f9f08502ce76c7a193f7f8.png";
+import imgRectangle161125374 from "../assets/0279a12caadec65ec1eff7a13c4a4eb8aa32c2fa.png";
 
 function MaskGroup() {
   return (

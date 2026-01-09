@@ -4,10 +4,10 @@ import { motion, useReducedMotion, useInView } from 'motion/react'
 import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { Home, ChevronRight, Check, ArrowUpRight, Shield, Star, Crown, Gift, Zap, Award } from 'lucide-react'
-import imgPremiumDentalCare from "figma:asset/4f8e41bd74fa3fbba3008a03ef58695f6730a222.png"
-import imgImage from "figma:asset/e2295a1a1a2bc348414dcc117de577c691164137.png"
-import imgImage1 from "figma:asset/c5fbf2bb2ed01ea6f6ce38835da33519e2db95fe.png"
-import imgImage2 from "figma:asset/27cea6501d6677b5b8f9f08502ce76c7a193f7f8.png"
+import imgPremiumDentalCare from "../../assets/4f8e41bd74fa3fbba3008a03ef58695f6730a222.png"
+import imgImage from "../../assets/e2295a1a1a2bc348414dcc117de577c691164137.png"
+import imgImage1 from "../../assets/c5fbf2bb2ed01ea6f6ce38835da33519e2db95fe.png"
+import imgImage2 from "../../assets/27cea6501d6677b5b8f9f08502ce76c7a193f7f8.png"
 
 interface TierBenefit {
   text: string

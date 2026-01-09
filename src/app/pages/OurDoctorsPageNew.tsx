@@ -4,19 +4,19 @@ import { motion, useReducedMotion } from 'motion/react'
 import { useState, useEffect, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { Search, ChevronDown, Heart, Target, Users, Award } from 'lucide-react'
-import imgImage from "figma:asset/6bcd7b1b14451ea069e378e86538986311521fdb.png"
-import imgImage1 from "figma:asset/5acfcfbb197f8e51d36fe2ef16afabdd1303f102.png"
-import imgImage2 from "figma:asset/c732a079e104af15d7dd4e2053f9ad2a683392cf.png"
-import imgImage3 from "figma:asset/9fbf72269945d89340291423575f203d2365fd2d.png"
-import imgImage4 from "figma:asset/9820c349dd5b4ac1658cc8b535bf4db2bebb8ebb.png"
-import imgImage5 from "figma:asset/77ae170107d77646f52d92aa2eb7f49fce9af7ad.png"
-import imgImage6 from "figma:asset/7354fce0048b8c11bb7fcdd7a0ab2cd907a3d792.png"
-import imgImage7 from "figma:asset/09dfd6008361ed084838521d23cd6404d570744c.png"
-import imgImage8 from "figma:asset/5027978346984890af8db65202bd8d2976612444.png"
-import imgImage9 from "figma:asset/8e5d5d334628947ffcff13589fb416cb10c316ca.png"
-import imgImage10 from "figma:asset/d0a174de16cf4fb8302d79cf8289e73cb1677432.png"
-import imgImage11 from "figma:asset/0d3ac11072075d113c29833278eb30849c46faed.png"
-import imgImage12 from "figma:asset/6b7905bb93d0f824d8be0a8badf26d7ebf6ec721.png"
+import imgImage from "../../assets/6bcd7b1b14451ea069e378e86538986311521fdb.png"
+import imgImage1 from "../../assets/5acfcfbb197f8e51d36fe2ef16afabdd1303f102.png"
+import imgImage2 from "../../assets/c732a079e104af15d7dd4e2053f9ad2a683392cf.png"
+import imgImage3 from "../../assets/9fbf72269945d89340291423575f203d2365fd2d.png"
+import imgImage4 from "../../assets/9820c349dd5b4ac1658cc8b535bf4db2bebb8ebb.png"
+import imgImage5 from "../../assets/77ae170107d77646f52d92aa2eb7f49fce9af7ad.png"
+import imgImage6 from "../../assets/7354fce0048b8c11bb7fcdd7a0ab2cd907a3d792.png"
+import imgImage7 from "../../assets/09dfd6008361ed084838521d23cd6404d570744c.png"
+import imgImage8 from "../../assets/5027978346984890af8db65202bd8d2976612444.png"
+import imgImage9 from "../../assets/8e5d5d334628947ffcff13589fb416cb10c316ca.png"
+import imgImage10 from "../../assets/d0a174de16cf4fb8302d79cf8289e73cb1677432.png"
+import imgImage11 from "../../assets/0d3ac11072075d113c29833278eb30849c46faed.png"
+import imgImage12 from "../../assets/6b7905bb93d0f824d8be0a8badf26d7ebf6ec721.png"
 
 // Doctor data from Figma design
 const doctorsData = [

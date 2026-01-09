@@ -3,7 +3,7 @@
 import { motion, useReducedMotion, useInView, AnimatePresence } from 'motion/react'
 import { useRef, useState, useEffect } from 'react'
 import svgPaths from '../../imports/svg-p4rwj0t9df'
-import imgImage3 from 'figma:asset/bad2f27ff5079a0e6ec2492bdc6955e6b191903e.png'
+import imgImage3 from '../../assets/bad2f27ff5079a0e6ec2492bdc6955e6b191903e.png'
 
 const testimonials = [
   {

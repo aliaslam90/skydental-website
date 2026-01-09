@@ -2,7 +2,7 @@
 
 import { motion, useReducedMotion, useInView } from 'motion/react'
 import { useRef } from 'react'
-import imgImage2 from 'figma:asset/1291a4cb6823b1349697cd81e94f0cd9176a9622.png'
+import imgImage2 from '../../assets/1291a4cb6823b1349697cd81e94f0cd9176a9622.png'
 
 export default function TechnologySection() {
   const ref = useRef(null)

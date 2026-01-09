@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { motion, useReducedMotion, AnimatePresence } from 'motion/react'
 import svgPaths from '../../imports/svg-p4rwj0t9df'
-import imgRectangle161125373 from 'figma:asset/531a2b1be40c3f390e42e72de4c6233edf51733e.png'
+import imgRectangle161125373 from '../../assets/531a2b1be40c3f390e42e72de4c6233edf51733e.png'
 import Group2147224205 from '../../imports/Group2147224205'
 import { Link } from 'react-router-dom'
 

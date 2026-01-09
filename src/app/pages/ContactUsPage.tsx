@@ -4,9 +4,9 @@ import { motion, useReducedMotion, useInView } from 'motion/react'
 import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Home, ChevronRight, Phone, Mail, MapPin, Clock, Send, CheckCircle2 } from 'lucide-react'
-import imgImage from "figma:asset/e2295a1a1a2bc348414dcc117de577c691164137.png"
-import imgImage1 from "figma:asset/c5fbf2bb2ed01ea6f6ce38835da33519e2db95fe.png"
-import imgImage2 from "figma:asset/27cea6501d6677b5b8f9f08502ce76c7a193f7f8.png"
+import imgImage from "../../assets/e2295a1a1a2bc348414dcc117de577c691164137.png"
+import imgImage1 from "../../assets/c5fbf2bb2ed01ea6f6ce38835da33519e2db95fe.png"
+import imgImage2 from "../../assets/27cea6501d6677b5b8f9f08502ce76c7a193f7f8.png"
 
 export default function ContactUsPage() {
   const shouldReduceMotion = useReducedMotion()
