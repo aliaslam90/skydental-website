@@ -1,13 +1,154 @@
 'use client'
 
 import { motion, useReducedMotion, useInView } from 'motion/react'
-import { useRef } from 'react'
+import { useRef, useState, useMemo } from 'react'
 import imgImage10 from '../../assets/6b7905bb93d0f824d8be0a8badf26d7ebf6ec721.png'
+
+// Services list
+const services = [
+  'Tooth extraction',
+  'Dental prosthetics',
+  'Root canal treatment',
+  '3D research Panoramic shot',
+  'Gum treatment',
+  'Braces, Teeth straightening',
+  'Cosmetic dentistry',
+  "Children's Dentistry",
+  'Your Health Care',
+  'Dental Hygiene'
+]
+
+// Service to Doctor mapping (based on specialties)
+const serviceToDoctors: Record<string, string[]> = {
+  'Tooth extraction': ['Dr. Saifaldin Tawakul', 'Dr. Basma Al Rawi'],
+  'Dental prosthetics': ['Dr. Elias Daoud Hanna', 'Dr. Claude Istanbouli'],
+  'Root canal treatment': ['Dr. Saifaldin Tawakul', 'Dr. Basma Al Rawi'],
+  '3D research Panoramic shot': ['Dr. Saifaldin Tawakul', 'Dr. Basma Al Rawi', 'Dr. Claude Istanbouli', 'Dr. Elias Daoud Hanna'],
+  'Gum treatment': ['Dr. Basma Al Rawi', 'Dr. Saifaldin Tawakul'],
+  'Braces, Teeth straightening': ['Dr. Saifaldin Tawakul'],
+  'Cosmetic dentistry': ['Dr. Claude Istanbouli', 'Dr. Elias Daoud Hanna'],
+  "Children's Dentistry": ['Dr. Basma Al Rawi', 'Dr. Saifaldin Tawakul'],
+  'Your Health Care': ['Dr. Saifaldin Tawakul', 'Dr. Basma Al Rawi', 'Dr. Claude Istanbouli', 'Dr. Elias Daoud Hanna'],
+  'Dental Hygiene': ['Dr. Basma Al Rawi', 'Dr. Saifaldin Tawakul', 'Dr. Elias Daoud Hanna']
+}
+
+// Country codes
+const countryCodes = [
+  { code: '+971', country: 'UAE', flag: '🇦🇪' },
+  { code: '+1', country: 'US/CA', flag: '🇺🇸' },
+  { code: '+44', country: 'UK', flag: '🇬🇧' },
+  { code: '+966', country: 'KSA', flag: '🇸🇦' },
+  { code: '+974', country: 'Qatar', flag: '🇶🇦' },
+  { code: '+965', country: 'Kuwait', flag: '🇰🇼' },
+  { code: '+973', country: 'Bahrain', flag: '🇧🇭' },
+  { code: '+968', country: 'Oman', flag: '🇴🇲' },
+  { code: '+961', country: 'Lebanon', flag: '🇱🇧' },
+  { code: '+20', country: 'Egypt', flag: '🇪🇬' },
+  { code: '+962', country: 'Jordan', flag: '🇯🇴' },
+  { code: '+963', country: 'Syria', flag: '🇸🇾' },
+  { code: '+964', country: 'Iraq', flag: '🇮🇶' },
+  { code: '+212', country: 'Morocco', flag: '🇲🇦' },
+  { code: '+213', country: 'Algeria', flag: '🇩🇿' },
+  { code: '+216', country: 'Tunisia', flag: '🇹🇳' },
+  { code: '+90', country: 'Turkey', flag: '🇹🇷' },
+  { code: '+91', country: 'India', flag: '🇮🇳' },
+  { code: '+92', country: 'Pakistan', flag: '🇵🇰' },
+  { code: '+86', country: 'China', flag: '🇨🇳' },
+  { code: '+81', country: 'Japan', flag: '🇯🇵' },
+  { code: '+82', country: 'South Korea', flag: '🇰🇷' },
+  { code: '+33', country: 'France', flag: '🇫🇷' },
+  { code: '+49', country: 'Germany', flag: '🇩🇪' },
+  { code: '+39', country: 'Italy', flag: '🇮🇹' },
+  { code: '+34', country: 'Spain', flag: '🇪🇸' },
+  { code: '+61', country: 'Australia', flag: '🇦🇺' },
+  { code: '+27', country: 'South Africa', flag: '🇿🇦' }
+]
 
 export default function ContactSection() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
   const shouldReduceMotion = useReducedMotion()
+
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    countryCode: '+971',
+    phone: '',
+    service: '',
+    doctor: '',
+    date: '',
+    time: '',
+    message: ''
+  })
+
+  const [showDatePicker, setShowDatePicker] = useState(false)
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null)
+  const [selectedTime, setSelectedTime] = useState('')
+
+  // Filter doctors based on selected service
+  const availableDoctors = useMemo(() => {
+    if (!formData.service) return []
+    return serviceToDoctors[formData.service] || []
+  }, [formData.service])
+
+  // Generate time slots
+  const morningSlots = ['07:00 am', '07:45 am', '08:30 am', '09:00 am', '09:45 am', '10:30 am', '11:15 am', '11:45 am']
+  const afternoonSlots = ['12:00 pm', '12:45 pm', '01:30 pm', '02:15 pm', '03:00 pm', '03:45 pm', '04:30 pm', '05:15 pm']
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target
+    setFormData(prev => {
+      const updated = { ...prev, [name]: value }
+      // Reset doctor when service changes
+      if (name === 'service') {
+        updated.doctor = ''
+      }
+      return updated
+    })
+  }
+
+  const handleDateSelect = (date: Date) => {
+    setSelectedDate(date)
+    setFormData(prev => ({ ...prev, date: date.toISOString().split('T')[0] }))
+    setShowDatePicker(false)
+  }
+
+  const handleTimeSelect = (time: string) => {
+    setSelectedTime(time)
+    setFormData(prev => ({ ...prev, time }))
+  }
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    // Here you would send the form data to your backend
+    console.log('Form submitted:', formData)
+    alert('Appointment request sent successfully! We will contact you soon.')
+    // Reset form
+    setFormData({
+      firstName: '',
+      lastName: '',
+      email: '',
+      countryCode: '+971',
+      phone: '',
+      service: '',
+      doctor: '',
+      date: '',
+      time: '',
+      message: ''
+    })
+    setSelectedDate(null)
+    setSelectedTime('')
+  }
+
+  // Get today and tomorrow dates
+  const today = new Date()
+  const tomorrow = new Date(today)
+  tomorrow.setDate(tomorrow.getDate() + 1)
+
+  const formatDate = (date: Date) => {
+    return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
+  }
 
   return (
     <section id="contact" className="py-[70px] px-[25px]">
@@ -19,7 +160,7 @@ export default function ContactSection() {
           transition={{ duration: shouldReduceMotion ? 0 : 0.8 }}
           className="rounded-[24px] p-[48px]"
         >
-          <div className="flex gap-[64px]">
+          <div className="flex flex-col lg:flex-row gap-[64px]">
             {/* Left - Image */}
             <motion.div
               initial={{ x: -50, opacity: 0 }}
@@ -29,7 +170,7 @@ export default function ContactSection() {
             >
               <div className="flex flex-col gap-[24px]">
                 <h2
-                  className="text-black text-[48px] leading-[1.2] tracking-[-1.44px]"
+                  className="text-black text-[32px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-1.44px]"
                   style={{ fontFamily: "'Gilda Display', serif" }}
                 >
                   Schedule a Consultation Today!
@@ -72,16 +213,24 @@ export default function ContactSection() {
               transition={{ delay: shouldReduceMotion ? 0 : 0.5, duration: shouldReduceMotion ? 0 : 0.8 }}
               className="flex-1"
             >
-              <form className="flex flex-col gap-[25px]">
+              <form onSubmit={handleSubmit} className="flex flex-col gap-[25px]">
                 <div className="grid grid-cols-2 gap-[21px]">
                   <input
                     type="text"
+                    name="firstName"
                     placeholder="First Name"
+                    value={formData.firstName}
+                    onChange={handleInputChange}
+                    required
                     className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black"
                   />
                   <input
                     type="text"
+                    name="lastName"
                     placeholder="Last Name"
+                    value={formData.lastName}
+                    onChange={handleInputChange}
+                    required
                     className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black"
                   />
                 </div>
@@ -89,39 +238,145 @@ export default function ContactSection() {
                 <div className="grid grid-cols-2 gap-[21px]">
                   <input
                     type="email"
+                    name="email"
                     placeholder="E-mail"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required
                     className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black"
                   />
-                  <input
-                    type="tel"
-                    placeholder="Phone"
-                    className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black"
-                  />
+                  <div className="flex gap-2">
+                    <select
+                      name="countryCode"
+                      value={formData.countryCode}
+                      onChange={handleInputChange}
+                      className="bg-[#f1f1f1] h-[55px] px-[12px] py-[16px] rounded-[12px] text-[14px] text-black appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuNDEgOC41OEwxMiAxMy4xN0wxNi41OSA4LjU4TDE4IDEwTDEyIDE2TDYgMTBMNy40MSA4LjU4WiIgZmlsbD0iYmxhY2siLz4KPC9zdmc+Cg==')] bg-no-repeat bg-[right_8px_center] w-[100px] flex-shrink-0"
+                    >
+                      {countryCodes.map((cc) => (
+                        <option key={cc.code} value={cc.code}>
+                          {cc.flag} {cc.code}
+                        </option>
+                      ))}
+                    </select>
+                    <input
+                      type="tel"
+                      name="phone"
+                      placeholder="Phone"
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      required
+                      className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black flex-1"
+                    />
+                  </div>
                 </div>
 
-                <select className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuNDEgOC41OEwxMiAxMy4xN0wxNi41OSA4LjU4TDE4IDEwTDEyIDE2TDYgMTBMNy40MSA4LjU4WiIgZmlsbD0iYmxhY2siLz4KPC9zdmc+Cg==')] bg-no-repeat bg-[right_24px_center]">
-                  <option>Choose Services</option>
-                  <option>General Dentistry</option>
-                  <option>Cosmetic Dentistry</option>
-                  <option>Orthodontics</option>
+                <select
+                  name="service"
+                  value={formData.service}
+                  onChange={handleInputChange}
+                  required
+                  className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuNDEgOC41OEwxMiAxMy4xN0wxNi41OSA4LjU4TDE4IDEwTDEyIDE2TDYgMTBMNy40MSA4LjU4WiIgZmlsbD0iYmxhY2siLz4KPC9zdmc+Cg==')] bg-no-repeat bg-[right_24px_center]"
+                >
+                  <option value="">Choose Services</option>
+                  {services.map((service) => (
+                    <option key={service} value={service}>
+                      {service}
+                    </option>
+                  ))}
                 </select>
 
-                <select className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuNDEgOC41OEwxMiAxMy4xN0wxNi41OSA4LjU4TDE4IDEwTDEyIDE2TDYgMTBMNy40MSA4LjU4WiIgZmlsbD0iYmxhY2siLz4KPC9zdmc+Cg==')] bg-no-repeat bg-[right_24px_center]">
-                  <option>Select Doctor</option>
-                  <option>Dr. Ahmed Hassan</option>
-                  <option>Dr. Maria Rodriguez</option>
-                  <option>Dr. James Wilson</option>
+                <select
+                  name="doctor"
+                  value={formData.doctor}
+                  onChange={handleInputChange}
+                  required
+                  disabled={!formData.service || availableDoctors.length === 0}
+                  className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuNDEgOC41OEwxMiAxMy4xN0wxNi41OSA4LjU4TDE4IDEwTDEyIDE2TDYgMTBMNy40MSA4LjU4WiIgZmlsbD0iYmxhY2siLz4KPC9zdmc+Cg==')] bg-no-repeat bg-[right_24px_center] disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  <option value="">Select Doctor</option>
+                  {availableDoctors.map((doctor) => (
+                    <option key={doctor} value={doctor}>
+                      {doctor}
+                    </option>
+                  ))}
                 </select>
 
-                <input
-                  type="date"
-                  placeholder="mm/dd/yyyy"
-                  className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black"
-                />
+                {/* Date and Time Picker */}
+                <div className="space-y-4">
+                  <div className="flex gap-2">
+                    <button
+                      type="button"
+                      onClick={() => handleDateSelect(today)}
+                      className={`flex-1 bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black text-center ${
+                        selectedDate && selectedDate.toDateString() === today.toDateString()
+                          ? 'bg-[#e0edff] border-2 border-[#97c4ff]'
+                          : ''
+                      }`}
+                    >
+                      Today ({formatDate(today)})
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => handleDateSelect(tomorrow)}
+                      className={`flex-1 bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black text-center ${
+                        selectedDate && selectedDate.toDateString() === tomorrow.toDateString()
+                          ? 'bg-[#e0edff] border-2 border-[#97c4ff]'
+                          : ''
+                      }`}
+                    >
+                      Tomorrow ({formatDate(tomorrow)})
+                    </button>
+                  </div>
+
+                  {selectedDate && (
+                    <div className="space-y-3">
+                      <p className="text-[14px] text-black font-medium">Morning</p>
+                      <div className="grid grid-cols-4 gap-2">
+                        {morningSlots.map((time) => (
+                          <button
+                            key={time}
+                            type="button"
+                            onClick={() => handleTimeSelect(time)}
+                            className={`bg-[#e0edff] h-[40px] px-3 py-2 rounded-[8px] text-[13px] text-black text-center ${
+                              selectedTime === time
+                                ? 'bg-[#97c4ff] text-white'
+                                : 'hover:bg-[#d0e0ff]'
+                            }`}
+                          >
+                            {time}
+                          </button>
+                        ))}
+                      </div>
+                      <p className="text-[14px] text-black font-medium mt-4">Afternoon</p>
+                      <div className="grid grid-cols-4 gap-2">
+                        {afternoonSlots.map((time) => (
+                          <button
+                            key={time}
+                            type="button"
+                            onClick={() => handleTimeSelect(time)}
+                            className={`bg-[#e0edff] h-[40px] px-3 py-2 rounded-[8px] text-[13px] text-black text-center ${
+                              selectedTime === time
+                                ? 'bg-[#97c4ff] text-white'
+                                : 'hover:bg-[#d0e0ff]'
+                            }`}
+                          >
+                            {time}
+                          </button>
+                        ))}
+                      </div>
+                      <p className="text-[12px] text-gray-600 mt-2">
+                        Time slots are in (GMT +04:00) Gulf Standard Time
+                      </p>
+                    </div>
+                  )}
+                </div>
 
                 <textarea
+                  name="message"
                   placeholder="Message"
                   rows={4}
+                  value={formData.message}
+                  onChange={handleInputChange}
                   className="bg-[#f1f1f1] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black resize-none"
                 />
 
