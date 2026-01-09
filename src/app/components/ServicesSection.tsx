@@ -66,7 +66,7 @@ export default function ServicesSection() {
           </h2>
 
           {/* Tabs Menu */}
-          <motion.div variants={containerVariants} className="flex items-center gap-[16px] md:gap-[20px] mb-[32px] md:mb-[48px] relative z-10 overflow-x-auto scrollbar-hide pb-2">
+          <motion.div variants={containerVariants} className="flex items-center justify-center gap-[12px] md:gap-[16px] mb-[32px] md:mb-[48px] relative z-10 overflow-x-auto scrollbar-hide pb-2">
             <button className="bg-[#cbff8f] border border-[#97c4ff] flex items-center gap-[8px] h-[44px] md:h-[50px] px-[14px] md:px-[18px] py-[12px] md:py-[15px] rounded-[35px] flex-shrink-0 hover:bg-[#B1FF57] transition-colors">
               <ToothIcon />
               <span className="text-[#97c4ff] font-bold text-[14px] md:text-[16px] whitespace-nowrap">General Dentistry</span>
