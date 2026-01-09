@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, useReducedMotion, useInView } from 'motion/react'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import svgPaths from '../../imports/svg-p4rwj0t9df'
 import imgImage from '../../assets/4fafeb49b310a78e44a5f2d40f54b8605c5129d1.png'
 
@@ -9,6 +9,7 @@ export default function ServicesSection() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
   const shouldReduceMotion = useReducedMotion()
+  const [selectedService, setSelectedService] = useState('General Dentistry')
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -67,15 +68,36 @@ export default function ServicesSection() {
 
           {/* Tabs Menu */}
           <motion.div variants={containerVariants} className="flex items-center justify-center gap-[12px] md:gap-[16px] mb-[32px] md:mb-[48px] relative z-10 overflow-x-auto scrollbar-hide pb-2">
-            <button className="bg-[#cbff8f] border border-[#97c4ff] flex items-center gap-[8px] h-[44px] md:h-[50px] px-[14px] md:px-[18px] py-[12px] md:py-[15px] rounded-[35px] flex-shrink-0 hover:bg-[#B1FF57] transition-colors">
-              <ToothIcon />
-              <span className="text-[#97c4ff] font-bold text-[14px] md:text-[16px] whitespace-nowrap">General Dentistry</span>
-            </button>
-
-            <ServiceButton icon={<HappyToothIcon />} label="Cosmetic Dentistry" />
-            <ServiceButton icon={<BracketsIcon />} label="Orthodontics" />
-            <ServiceButton icon={<ToothacheIcon />} label="Pediatric Dentistry" />
-            <ServiceButton icon={<FlossIcon />} label="Advanced & Restorative Care" />
+            <ServiceButton 
+              icon={<ToothIcon />} 
+              label="General Dentistry" 
+              isActive={selectedService === 'General Dentistry'}
+              onClick={() => setSelectedService('General Dentistry')}
+            />
+            <ServiceButton 
+              icon={<HappyToothIcon />} 
+              label="Cosmetic Dentistry" 
+              isActive={selectedService === 'Cosmetic Dentistry'}
+              onClick={() => setSelectedService('Cosmetic Dentistry')}
+            />
+            <ServiceButton 
+              icon={<BracketsIcon />} 
+              label="Orthodontics" 
+              isActive={selectedService === 'Orthodontics'}
+              onClick={() => setSelectedService('Orthodontics')}
+            />
+            <ServiceButton 
+              icon={<ToothacheIcon />} 
+              label="Pediatric Dentistry" 
+              isActive={selectedService === 'Pediatric Dentistry'}
+              onClick={() => setSelectedService('Pediatric Dentistry')}
+            />
+            <ServiceButton 
+              icon={<FlossIcon />} 
+              label="Advanced & Restorative Care" 
+              isActive={selectedService === 'Advanced & Restorative Care'}
+              onClick={() => setSelectedService('Advanced & Restorative Care')}
+            />
           </motion.div>
 
           <div className="flex flex-col lg:flex-row items-start lg:items-center gap-[32px] md:gap-[40px] lg:gap-[48px] relative z-10">
@@ -86,7 +108,7 @@ export default function ServicesSection() {
                   className="text-black text-[28px] md:text-[34px] lg:text-[40px] leading-[1.2] tracking-[-1.2px]"
                   style={{ fontFamily: "'Gilda Display', serif" }}
                 >
-                  General Dentistry
+                  {selectedService}
                 </h3>
                 <p className="text-black text-[15px] md:text-[16px] leading-[1.55] text-justify">
                   General Dentistry forms the foundation of lifelong oral health, focusing on early diagnosis, prevention, and treatment of common dental concerns. Our team provides precise, comfortable care designed to protect your smile and maintain healthy teeth and gums. We adopt modern techniques to ensure accurate results and an exceptional patient journey.
@@ -128,11 +150,22 @@ export default function ServicesSection() {
   )
 }
 
-function ServiceButton({ icon, label }: { icon: React.ReactNode; label: string }) {
+function ServiceButton({ icon, label, isActive, onClick }: { icon: React.ReactNode; label: string; isActive?: boolean; onClick?: () => void }) {
   return (
-    <button className="border-[0.7px] border-black flex items-center gap-[8px] h-[44px] md:h-[50px] px-[14px] md:px-[18px] py-[12px] md:py-[15px] rounded-[35px] hover:bg-[#e0edff] hover:border-[#97c4ff] transition-colors flex-shrink-0">
-      {icon}
-      <span className="text-black text-[14px] md:text-[16px] whitespace-nowrap">{label}</span>
+    <button 
+      onClick={onClick}
+      className={`flex items-center gap-[8px] h-[44px] md:h-[50px] px-[14px] md:px-[18px] py-[12px] md:py-[15px] rounded-[35px] transition-colors flex-shrink-0 ${
+        isActive 
+          ? 'bg-[#cbff8f] border border-[#97c4ff] hover:bg-[#B1FF57]' 
+          : 'border-[0.7px] border-black hover:bg-[#e0edff] hover:border-[#97c4ff]'
+      }`}
+    >
+      <div className={isActive ? '[&_path]:!fill-[#97c4ff]' : '[&_path]:!fill-black'}>
+        {icon}
+      </div>
+      <span className={`${isActive ? 'text-[#97c4ff] font-bold' : 'text-black'} text-[14px] md:text-[16px] whitespace-nowrap`}>
+        {label}
+      </span>
     </button>
   )
 }
