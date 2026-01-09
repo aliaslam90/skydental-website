@@ -4,8 +4,8 @@ import { motion, useReducedMotion, useInView } from 'motion/react'
 import { useRef, useState, useCallback, useEffect } from 'react'
 
 // Update these paths to your new high-quality images in the public folder
-const BEFORE_IMAGE = '/before-treatment.jpg'
-const AFTER_IMAGE = '/after-treatment.jpg'
+const BEFORE_IMAGE = '/before-treatment.jp.png'
+const AFTER_IMAGE = '/after-treatment.jpg.jpg'
 
 export default function ResultsSection() {
   const ref = useRef(null)
