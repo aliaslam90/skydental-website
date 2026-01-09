@@ -154,12 +154,17 @@ export default function ServicesSection() {
 
             {/* Right Content - Image */}
             <div className="flex-1 w-full">
-              <div className="relative rounded-[20px] overflow-hidden w-full h-[350px] transform rotate-180 scale-y-[-1]">
+              <div className="relative rounded-[20px] overflow-hidden w-full h-[350px]">
                 <div className="absolute inset-0 bg-[#c4c4c4]" />
                 <img
+                  key={selectedService}
                   src={currentService.image}
                   alt={`${currentService.title} procedure`}
                   className="absolute inset-0 w-full h-full object-cover"
+                  onError={(e) => {
+                    console.error('Image failed to load:', currentService.image)
+                    console.error('Error:', e)
+                  }}
                 />
               </div>
             </div>
