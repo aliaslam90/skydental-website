@@ -7,30 +7,38 @@ export default function Footer() {
   const shouldReduceMotion = useReducedMotion()
 
   return (
-    <footer className="px-[25px] pb-[25px]">
-      <div className="max-w-[1390px] mx-auto">
+    <footer className="w-full bg-[#cbff8f]">
+      <div className="w-full px-4 md:px-6 lg:px-8 xl:px-12 py-8 md:py-12 lg:py-16">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: shouldReduceMotion ? 0 : 0.8 }}
-          className="bg-[#cbff8f] rounded-[24px] p-[48px]"
+          className="max-w-[1390px] mx-auto"
         >
-          <div className="flex flex-col gap-[48px]">
+          <div className="flex flex-col gap-8 md:gap-12 lg:gap-16">
             {/* Main Footer Content */}
-            <div className="flex gap-[60px] lg:gap-[80px] xl:gap-[100px]">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 lg:gap-12">
               {/* Logo and Description */}
-              <div className="flex flex-col gap-[24px] max-w-[280px]">
+              <div className="flex flex-col gap-4 md:gap-6">
                 <div className="flex items-center">
                   <div className="w-[64px] h-[60px]">
                     <MaskGroup />
                   </div>
                 </div>
-                <p className="text-black text-[13px] leading-[1.6]">
+                <div>
+                  <h2 className="text-black text-[18px] md:text-[20px] font-bold mb-1" style={{ fontFamily: "'Gilda Display', serif" }}>
+                    SKY DENTAL CENTER
+                  </h2>
+                  <p className="text-black text-[14px] md:text-[16px] font-medium mb-2" dir="rtl">
+                    مركز سكاي لطب الأسنان
+                  </p>
+                </div>
+                <p className="text-black text-[13px] md:text-[14px] leading-[1.6]">
                   Sky Dental Center is a modern full-service dental clinic. Professional, experienced doctors who perfectly know all modern methods of treatment.
                 </p>
                 {/* Social Icons */}
-                <div className="flex gap-[16px] mt-[8px]">
+                <div className="flex gap-3 md:gap-4 mt-2">
                   <SocialIcon href="#">
                     <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
                       <path d="M12 2C6.477 2 2 6.477 2 12C2 16.991 5.657 21.128 10.438 21.878V14.891H7.898V12H10.438V9.797C10.438 7.291 11.93 5.907 14.215 5.907C15.309 5.907 16.453 6.102 16.453 6.102V8.562H15.193C13.95 8.562 13.563 9.333 13.563 10.124V12H16.336L15.893 14.89H13.563V21.878C18.343 21.128 22 16.991 22 12C22 6.477 17.523 2 12 2Z" fill="#97C4FF" />
@@ -52,67 +60,71 @@ export default function Footer() {
                     </svg>
                   </SocialIcon>
                 </div>
+                {/* MOHAP License */}
+                <p className="text-black text-[11px] md:text-[12px] mt-4">
+                  MOHAP APPROVAL LICENSE: RE6YF8UV-101224
+                </p>
               </div>
 
-              {/* Links Sections */}
-              <div className="flex gap-[50px] lg:gap-[70px] xl:gap-[90px] flex-1">
-                <div className="flex flex-col gap-[20px]">
-                  <h3
-                    className="text-black text-[18px] leading-[1.15]"
-                    style={{ fontFamily: "'Gilda Display', serif" }}
-                  >
-                    Quick Links
-                  </h3>
-                  <div className="flex flex-col gap-[10px]">
-                    <FooterLink href="#home">Home</FooterLink>
-                    <FooterLink href="#services">Services</FooterLink>
-                    <FooterLink href="#doctors">Team</FooterLink>
-                    <FooterLink href="#technology">Technology</FooterLink>
-                    <FooterLink href="#contact">Contact</FooterLink>
-                  </div>
+              {/* Quick Links */}
+              <div className="flex flex-col gap-4 md:gap-5">
+                <h3
+                  className="text-black text-[16px] md:text-[18px] font-bold leading-[1.15]"
+                  style={{ fontFamily: "'Gilda Display', serif" }}
+                >
+                  Quick Links
+                </h3>
+                <div className="flex flex-col gap-2 md:gap-3">
+                  <FooterLink href="#home">Home</FooterLink>
+                  <FooterLink href="#services">Services</FooterLink>
+                  <FooterLink href="#doctors">Team</FooterLink>
+                  <FooterLink href="#technology">Technology</FooterLink>
+                  <FooterLink href="#contact">Contact</FooterLink>
                 </div>
+              </div>
 
-                <div className="flex flex-col gap-[20px]">
-                  <h3
-                    className="text-black text-[18px] leading-[1.15]"
-                    style={{ fontFamily: "'Gilda Display', serif" }}
-                  >
-                    All Services
-                  </h3>
-                  <div className="grid grid-cols-2 gap-x-[40px] gap-y-[10px]">
-                    <FooterLink href="#">Tooth extraction</FooterLink>
-                    <FooterLink href="#">Dental prosthetics</FooterLink>
-                    <FooterLink href="#">Root canal treatment</FooterLink>
-                    <FooterLink href="#">3D research Panoramic shot</FooterLink>
-                    <FooterLink href="#">Gum treatment</FooterLink>
-                    <FooterLink href="#">Braces,Teeth straightening</FooterLink>
-                    <FooterLink href="#">Cosmetic dentistry</FooterLink>
-                    <FooterLink href="#">Children's Dentistry</FooterLink>
-                    <FooterLink href="#">Your Health Care</FooterLink>
-                    <FooterLink href="#">Dental Hygiene</FooterLink>
-                  </div>
+              {/* All Services */}
+              <div className="flex flex-col gap-4 md:gap-5">
+                <h3
+                  className="text-black text-[16px] md:text-[18px] font-bold leading-[1.15]"
+                  style={{ fontFamily: "'Gilda Display', serif" }}
+                >
+                  All Services
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 md:gap-x-6 gap-y-2 md:gap-y-3">
+                  <FooterLink href="#">Tooth extraction</FooterLink>
+                  <FooterLink href="#">Dental prosthetics</FooterLink>
+                  <FooterLink href="#">Root canal treatment</FooterLink>
+                  <FooterLink href="#">3D research Panoramic shot</FooterLink>
+                  <FooterLink href="#">Gum treatment</FooterLink>
+                  <FooterLink href="#">Braces, Teeth straightening</FooterLink>
+                  <FooterLink href="#">Cosmetic dentistry</FooterLink>
+                  <FooterLink href="#">Children's Dentistry</FooterLink>
+                  <FooterLink href="#">Your Health Care</FooterLink>
+                  <FooterLink href="#">Dental Hygiene</FooterLink>
                 </div>
+              </div>
 
-                <div className="flex flex-col gap-[20px]">
-                  <h3
-                    className="text-black text-[18px] leading-[1.15]"
-                    style={{ fontFamily: "'Gilda Display', serif" }}
-                  >
-                    Contact Information
-                  </h3>
-                  <div className="flex flex-col gap-[12px]">
-                    <ContactItem icon={<PhoneIcon />} text="600 527626" />
-                    <ContactItem icon={<EmailIcon />} text="info@skydc.ae" />
-                    <ContactItem icon={<ClockIcon />} text="Saturday - Friday  |  10:00 AM - 10:00 PM" />
-                  </div>
+              {/* Contact Information */}
+              <div className="flex flex-col gap-4 md:gap-5">
+                <h3
+                  className="text-black text-[16px] md:text-[18px] font-bold leading-[1.15]"
+                  style={{ fontFamily: "'Gilda Display', serif" }}
+                >
+                  Contact Information
+                </h3>
+                <div className="flex flex-col gap-3 md:gap-4">
+                  <ContactItem icon={<PhoneIcon />} text="600 527626" />
+                  <ContactItem icon={<EmailIcon />} text="Info@Skydc.Ae" />
+                  <ContactItem icon={<ClockIcon />} text="Saturday - Friday | 10:00 AM - 10:00 PM" />
                 </div>
               </div>
             </div>
 
             {/* Bottom Bar */}
-            <div className="flex items-center justify-between text-black text-[12px] pt-[24px] border-t border-black/10">
-              <p>MOHAP APPROVAL LICENSE: RE6YF8UV-101224</p>
-              <p>Copyright © 2025 Sky Dental Center. All rights reserved.</p>
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-6 md:pt-8 border-t border-black/10">
+              <p className="text-black text-[11px] md:text-[12px] break-words">MOHAP APPROVAL LICENSE: RE6YF8UV-101224</p>
+              <p className="text-black text-[11px] md:text-[12px] whitespace-nowrap">Copyright © 2025 Sky Dental Center. All rights reserved.</p>
             </div>
           </div>
         </motion.div>
@@ -125,7 +137,7 @@ function FooterLink({ href, children }: { href: string; children: React.ReactNod
   return (
     <a
       href={href}
-      className="text-black text-[14px] capitalize leading-[30px] hover:text-[#97c4ff] transition-colors"
+      className="text-black text-[13px] md:text-[14px] capitalize leading-[1.5] hover:text-[#97c4ff] transition-colors break-words"
     >
       {children}
     </a>
@@ -134,16 +146,18 @@ function FooterLink({ href, children }: { href: string; children: React.ReactNod
 
 function ContactItem({ icon, text }: { icon: React.ReactNode; text: string }) {
   return (
-    <div className="flex items-center gap-[12px]">
-      {icon}
-      <p className="text-black text-[14px] leading-[30px] capitalize">{text}</p>
+    <div className="flex items-start gap-3">
+      <div className="flex-shrink-0 mt-0.5">
+        {icon}
+      </div>
+      <p className="text-black text-[13px] md:text-[14px] leading-[1.5] break-words">{text}</p>
     </div>
   )
 }
 
 function PhoneIcon() {
   return (
-    <div className="w-[24px] h-[24px] flex items-center justify-center">
+    <div className="w-[20px] h-[20px] md:w-[24px] md:h-[24px] flex items-center justify-center flex-shrink-0">
       <svg className="w-full h-full" fill="none" viewBox="0 0 18 18">
         <path
           d="M10.374 12.426C10.5289 12.4971 10.7034 12.5134 10.8688 12.4721C11.0341 12.4308 11.1805 12.3344 11.2838 12.1987L11.55 11.85C11.6897 11.6637 11.8709 11.5125 12.0792 11.4084C12.2875 11.3042 12.5171 11.25 12.75 11.25H15C15.3978 11.25 15.7794 11.408 16.0607 11.6893C16.342 11.9706 16.5 12.3522 16.5 12.75V15C16.5 15.3978 16.342 15.7794 16.0607 16.0607C15.7794 16.342 15.3978 16.5 15 16.5C11.4196 16.5 7.9858 15.0777 5.45406 12.5459C2.92232 10.0142 1.5 6.58042 1.5 3C1.5 2.60218 1.65804 2.22064 1.93934 1.93934C2.22064 1.65804 2.60218 1.5 3 1.5H5.25C5.64782 1.5 6.02936 1.65804 6.31066 1.93934C6.59196 2.22064 6.75 2.60218 6.75 3V5.25C6.75 5.48287 6.69578 5.71254 6.59164 5.92082C6.4875 6.1291 6.33629 6.31028 6.15 6.45L5.799 6.71325C5.66131 6.81838 5.56426 6.96794 5.52434 7.13651C5.48442 7.30509 5.50409 7.48228 5.58 7.638C6.60501 9.7199 8.29082 11.4036 10.374 12.426Z"
@@ -156,7 +170,7 @@ function PhoneIcon() {
 
 function EmailIcon() {
   return (
-    <div className="w-[24px] h-[24px] flex items-center justify-center">
+    <div className="w-[20px] h-[20px] md:w-[24px] md:h-[24px] flex items-center justify-center flex-shrink-0">
       <svg className="w-full h-full" fill="none" viewBox="0 0 24 24">
         <path
           d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z"
@@ -169,7 +183,7 @@ function EmailIcon() {
 
 function ClockIcon() {
   return (
-    <div className="w-[24px] h-[24px] flex items-center justify-center">
+    <div className="w-[20px] h-[20px] md:w-[24px] md:h-[24px] flex items-center justify-center flex-shrink-0">
       <svg className="w-full h-full" fill="none" viewBox="0 0 24 24">
         <circle cx="12" cy="12" r="9" stroke="black" strokeWidth="1.5" fill="none" />
         <path d="M12 7V12L15 15" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -182,7 +196,7 @@ function SocialIcon({ href, children }: { href: string; children: React.ReactNod
   return (
     <a
       href={href}
-      className="text-black text-[14px] capitalize leading-[30px] hover:text-[#97c4ff] transition-colors"
+      className="w-[32px] h-[32px] md:w-[36px] md:h-[36px] flex items-center justify-center transition-opacity hover:opacity-70"
     >
       {children}
     </a>
