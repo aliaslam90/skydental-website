@@ -138,7 +138,7 @@ export default function AboutUsPageNew() {
       {/* Hero Section */}
       <section 
         ref={heroRef}
-        className="relative min-h-[400px] overflow-hidden pt-32 pb-20"
+        className="relative min-h-[400px] overflow-hidden pt-24 pb-20"
         style={{
           background: 'linear-gradient(160deg, rgb(237, 248, 255) 0%, rgb(255, 255, 255) 50%, rgb(237, 248, 255) 100%)'
         }}
