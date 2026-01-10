@@ -2,7 +2,7 @@
 
 import { motion, useReducedMotion, useInView } from 'motion/react'
 import { useRef, useEffect } from 'react'
-import { Heart, Target, Users, Award, Zap, Shield, Clock, Phone, Mail, MapPin, CheckCircle } from 'lucide-react'
+import { Heart, Target, Users, Award, Zap, Shield, Clock, CheckCircle } from 'lucide-react'
 
 // Core Values Data
 const coreValues = [
@@ -120,7 +120,6 @@ export default function AboutUsPageNew() {
   const journeyRef = useRef(null)
   const patientJourneyRef = useRef(null)
   const galleryRef = useRef(null)
-  const footerRef = useRef(null)
 
   const heroInView = useInView(heroRef, { once: true })
   const visionInView = useInView(visionRef, { once: true })
@@ -129,7 +128,6 @@ export default function AboutUsPageNew() {
   const journeyInView = useInView(journeyRef, { once: true })
   const patientJourneyInView = useInView(patientJourneyRef, { once: true })
   const galleryInView = useInView(galleryRef, { once: true })
-  const footerInView = useInView(footerRef, { once: true })
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -753,79 +751,6 @@ export default function AboutUsPageNew() {
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Footer Info Section */}
-      <section 
-        ref={footerRef}
-        className="py-16"
-        style={{ backgroundColor: '#cbff8f' }}
-      >
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
-            animate={footerInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="max-w-7xl mx-auto"
-          >
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {/* About Column */}
-              <div>
-                <h3 className="text-lg font-['Gilda_Display'] text-black mb-4">About Us</h3>
-                <p className="text-sm text-black/70 font-['Arial'] leading-relaxed mb-4">
-                  We are dedicated to providing exceptional dental care with compassion and expertise.
-                </p>
-              </div>
-
-              {/* Quick Links */}
-              <div>
-                <h3 className="text-lg font-['Gilda_Display'] text-black mb-4">Quick Links</h3>
-                <ul className="space-y-2 text-sm text-black/70 font-['Arial']">
-                  <li><a href="/services" className="hover:text-black transition-colors">Services</a></li>
-                  <li><a href="/our-doctors" className="hover:text-black transition-colors">Our Doctors</a></li>
-                  <li><a href="/about-us" className="hover:text-black transition-colors">About Us</a></li>
-                  <li><a href="/contact" className="hover:text-black transition-colors">Contact</a></li>
-                </ul>
-              </div>
-
-              {/* Services */}
-              <div>
-                <h3 className="text-lg font-['Gilda_Display'] text-black mb-4">Our Services</h3>
-                <ul className="space-y-2 text-sm text-black/70 font-['Arial']">
-                  <li>General Dentistry</li>
-                  <li>Cosmetic Dentistry</li>
-                  <li>Orthodontics</li>
-                  <li>Pediatric Dentistry</li>
-                </ul>
-              </div>
-
-              {/* Contact Info */}
-              <div>
-                <h3 className="text-lg font-['Gilda_Display'] text-black mb-4">Contact Us</h3>
-                <div className="space-y-3 text-sm text-black/70 font-['Arial']">
-                  <div className="flex items-start gap-2">
-                    <Phone className="w-4 h-4 mt-1 shrink-0" />
-                    <span>+1 (555) 123-4567</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <Mail className="w-4 h-4 mt-1 shrink-0" />
-                    <span>info@dentalclinic.com</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <MapPin className="w-4 h-4 mt-1 shrink-0" />
-                    <span>123 Dental Street, City, State 12345</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-12 pt-8 border-t border-black/10 text-center">
-              <p className="text-sm text-black/60 font-['Arial']">
-                © 2024 Sky Dental Clinic. All rights reserved.
-              </p>
-            </div>
-          </motion.div>
         </div>
       </section>
     </div>
