@@ -2,7 +2,7 @@
 
 import { motion, useReducedMotion, useInView } from 'motion/react'
 import { useRef } from 'react'
-import { ArrowUpRight, Plus } from 'lucide-react'
+import { ArrowUpRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import TestimonialsSection from '../components/TestimonialsSection'
 
@@ -179,14 +179,6 @@ export default function ServicesPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            {/* Badge */}
-            <div className="mb-6 flex justify-center">
-              <div className="inline-flex items-center gap-2 bg-[#e8f2ff] px-4 py-2 rounded-full">
-                <Plus className="w-4 h-4 text-black" />
-                <span className="text-sm text-black font-['Arial']">What We Do</span>
-              </div>
-            </div>
-
             {/* Title */}
             <h2 className="text-5xl md:text-6xl font-['Gilda_Display'] text-black mb-6 tracking-tight">
               Our Services

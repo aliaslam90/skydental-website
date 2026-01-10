@@ -25,7 +25,7 @@ interface Privilege {
 const packages: Package[] = [
   {
     id: 'back-to-school',
-    icon: <GraduationCap className="w-6 h-6" />,
+    icon: <GraduationCap className="w-6 h-6 text-[#97c4ff]" />,
     title: 'Back To School',
     description: 'Give your child the perfect start to the academic year with our premium Back to School package designed to safeguard oral health, boost confidence, and support long-term wellbeing.',
     features: [
@@ -36,7 +36,7 @@ const packages: Package[] = [
   },
   {
     id: 'healthy-smiles',
-    icon: <HeartPulse className="w-6 h-6" />,
+    icon: <HeartPulse className="w-6 h-6 text-[#97c4ff]" />,
     title: 'Sky Healthy Smiles',
     description: 'Our signature package delivers a full-spectrum wellness experience for individuals and families committed to superior oral health.',
     features: [
@@ -47,7 +47,7 @@ const packages: Package[] = [
   },
   {
     id: 'hollywood-smile',
-    icon: <Sparkles className="w-6 h-6" />,
+    icon: <Sparkles className="w-6 h-6 text-[#97c4ff]" />,
     title: 'Hollywood Smile',
     description: 'Transform your smile into a work of art with our luxury Hollywood Smile package crafted using cutting-edge cosmetic dentistry and premium veneer artistry.',
     features: [
@@ -58,7 +58,7 @@ const packages: Package[] = [
   },
   {
     id: 'whitening-cleaning',
-    icon: <Smile className="w-6 h-6" />,
+    icon: <Smile className="w-6 h-6 text-[#97c4ff]" />,
     title: 'Whitening & Cleaning',
     description: 'Unveil the brilliance of your smile with our professional Whitening & Cleaning package. Meticulously designed treatment for immediate, luminous results.',
     features: [
@@ -69,7 +69,7 @@ const packages: Package[] = [
   },
   {
     id: 'consultation',
-    icon: <MessageCircle className="w-6 h-6" />,
+    icon: <MessageCircle className="w-6 h-6 text-[#97c4ff]" />,
     title: 'Free Braces Consultation',
     description: 'Begin your orthodontic transformation with absolute clarity and confidence. Your dream smile starts with a conversation free of charge.',
     features: [
@@ -80,7 +80,7 @@ const packages: Package[] = [
   },
   {
     id: 'discount',
-    icon: <Percent className="w-6 h-6" />,
+    icon: <Percent className="w-6 h-6 text-[#97c4ff]" />,
     title: 'Member Discount 40%',
     description: 'Sky Dental Center celebrates loyalty with an exclusive 40% discount for members on selected treatments. World-class dentistry, enhanced with exceptional value.',
     features: [
