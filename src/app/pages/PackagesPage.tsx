@@ -2,8 +2,7 @@
 
 import { motion, useReducedMotion, useInView } from 'motion/react'
 import { useRef } from 'react'
-import { Link } from 'react-router-dom'
-import { Home, ChevronRight, ArrowUpRight, Check, GraduationCap, HeartPulse, Sparkles, Smile, MessageCircle, Percent } from 'lucide-react'
+import { ArrowUpRight, Check, GraduationCap, HeartPulse, Sparkles, Smile, MessageCircle, Percent } from 'lucide-react'
 import imgImage from "../../assets/e2295a1a1a2bc348414dcc117de577c691164137.png"
 import imgImage1 from "../../assets/c5fbf2bb2ed01ea6f6ce38835da33519e2db95fe.png"
 import imgImage2 from "../../assets/27cea6501d6677b5b8f9f08502ce76c7a193f7f8.png"
@@ -140,7 +139,7 @@ export default function PackagesPage() {
         <div className="absolute -left-24 top-40 w-64 h-64 bg-[rgba(203,255,143,0.2)] rounded-full blur-[64px]" />
         <div className="absolute right-32 top-80 w-64 h-64 bg-[rgba(12,0,96,0.1)] rounded-full blur-[64px]" />
 
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-6 py-20 relative z-10">
           <motion.div
             initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
             animate={heroInView ? { opacity: 1, y: 0 } : {}}
@@ -164,29 +163,20 @@ export default function PackagesPage() {
 
             {/* Badges */}
             <div className="flex flex-wrap items-center justify-center gap-4 mb-10">
-              <div className="bg-white border border-[rgba(12,0,96,0.05)] px-4 py-2 rounded-full shadow-sm inline-flex items-center gap-2">
+              <div className="bg-[#cbff8f] border border-[rgba(12,0,96,0.05)] px-4 py-2 rounded-full shadow-sm inline-flex items-center gap-2">
                 <Check className="w-4 h-4 text-[#97c4ff]" />
                 <span className="text-sm text-[#97c4ff] font-['Poppins'] font-medium">Premium Care</span>
               </div>
-              <div className="bg-white border border-[rgba(12,0,96,0.05)] px-4 py-2 rounded-full shadow-sm inline-flex items-center gap-2">
+              <div className="bg-[#cbff8f] border border-[rgba(12,0,96,0.05)] px-4 py-2 rounded-full shadow-sm inline-flex items-center gap-2">
                 <Check className="w-4 h-4 text-[#97c4ff]" />
                 <span className="text-sm text-[#97c4ff] font-['Poppins'] font-medium">Exclusive Benefits</span>
               </div>
-              <div className="bg-white border border-[rgba(12,0,96,0.05)] px-4 py-2 rounded-full shadow-sm inline-flex items-center gap-2">
+              <div className="bg-[#cbff8f] border border-[rgba(12,0,96,0.05)] px-4 py-2 rounded-full shadow-sm inline-flex items-center gap-2">
                 <Check className="w-4 h-4 text-[#97c4ff]" />
                 <span className="text-sm text-[#97c4ff] font-['Poppins'] font-medium">World-Class Dentistry</span>
               </div>
             </div>
 
-            {/* Breadcrumbs */}
-            <div className="flex items-center justify-center gap-2 text-sm">
-              <Link to="/" className="flex items-center gap-1 text-gray-500 hover:text-gray-700">
-                <Home className="w-4 h-4" />
-                <span className="font-['Arial']">Home</span>
-              </Link>
-              <ChevronRight className="w-4 h-4 text-gray-400" />
-              <span className="text-[#97c4ff] font-['Arial']">Packages & Offers</span>
-            </div>
           </motion.div>
         </div>
       </section>
