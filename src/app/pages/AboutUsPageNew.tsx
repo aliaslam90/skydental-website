@@ -134,7 +134,7 @@ export default function AboutUsPageNew() {
   }, [])
 
   return (
-    <div className="bg-white overflow-x-hidden" style={{ marginTop: '100px' }}>
+    <div className="bg-white overflow-x-hidden">
       {/* Hero Section */}
       <section 
         ref={heroRef}
