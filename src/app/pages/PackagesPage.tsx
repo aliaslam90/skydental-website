@@ -120,13 +120,11 @@ export default function PackagesPage() {
   const packagesRef = useRef(null)
   const privilegesRef = useRef(null)
   const galleryRef = useRef(null)
-  const footerRef = useRef(null)
 
   const heroInView = useInView(heroRef, { once: true })
   const packagesInView = useInView(packagesRef, { once: true })
   const privilegesInView = useInView(privilegesRef, { once: true })
   const galleryInView = useInView(galleryRef, { once: true })
-  const footerInView = useInView(footerRef, { once: true })
 
   return (
     <div className="bg-white">
@@ -399,65 +397,6 @@ export default function PackagesPage() {
         </div>
       </section>
 
-      {/* Footer Info Section */}
-      <section 
-        ref={footerRef}
-        className="py-16"
-        style={{
-          background: 'linear-gradient(to right, rgb(203, 255, 143) 0%, rgb(255, 255, 255) 100%)'
-        }}
-      >
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
-            animate={footerInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8 }}
-            className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12"
-          >
-            {/* Quick Links */}
-            <div>
-              <h3 className="text-xl font-['Gilda_Display'] text-black mb-6">Quick Links</h3>
-              <ul className="space-y-3">
-                <li>
-                  <Link to="/services" className="text-base text-[#1b1b1b] font-['Arial'] hover:text-[#97c4ff] transition-colors">
-                    Services
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/our-doctors" className="text-base text-[#1b1b1b] font-['Arial'] hover:text-[#97c4ff] transition-colors">
-                    Our Doctors
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/about-us" className="text-base text-[#1b1b1b] font-['Arial'] hover:text-[#97c4ff] transition-colors">
-                    About Us
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Office Hours */}
-            <div>
-              <h3 className="text-xl font-['Gilda_Display'] text-black mb-6">Office Hours</h3>
-              <ul className="space-y-3 text-base text-[#1b1b1b] font-['Arial']">
-                <li>Saturday to Wednesday: 9:00 AM - 9:00 PM</li>
-                <li>Thursday: 9:00 AM - 6:00 PM</li>
-                <li>Friday: Closed</li>
-              </ul>
-            </div>
-
-            {/* Contact Information */}
-            <div>
-              <h3 className="text-xl font-['Gilda_Display'] text-black mb-6">Contact Information</h3>
-              <ul className="space-y-3 text-base text-[#1b1b1b] font-['Arial']">
-                <li>+971 2 123 4567</li>
-                <li>info@skydentalcenter.ae</li>
-                <li>Abu Dhabi, UAE</li>
-              </ul>
-            </div>
-          </motion.div>
-        </div>
-      </section>
     </div>
   )
 }
