@@ -2,8 +2,7 @@
 
 import { motion, useReducedMotion, useInView } from 'motion/react'
 import { useRef } from 'react'
-import { Link } from 'react-router-dom'
-import { Home, ChevronRight, Check, ArrowUpRight, Shield, Star, Crown, Gift, Zap, Award } from 'lucide-react'
+import { Check, ArrowUpRight, Shield, Star, Crown, Gift, Zap, Award } from 'lucide-react'
 import imgPremiumDentalCare from "../../assets/4f8e41bd74fa3fbba3008a03ef58695f6730a222.png"
 import imgImage from "../../assets/e2295a1a1a2bc348414dcc117de577c691164137.png"
 import imgImage1 from "../../assets/c5fbf2bb2ed01ea6f6ce38835da33519e2db95fe.png"
@@ -147,7 +146,7 @@ export default function SkyLoyaltyPage() {
         <div className="absolute -left-24 top-40 w-64 h-64 bg-[rgba(203,255,143,0.2)] rounded-full blur-[64px]" />
         <div className="absolute right-32 top-80 w-64 h-64 bg-[rgba(12,0,96,0.1)] rounded-full blur-[64px]" />
 
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-6 py-20 relative z-10">
           <motion.div
             initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
             animate={heroInView ? { opacity: 1, y: 0 } : {}}
@@ -167,25 +166,16 @@ export default function SkyLoyaltyPage() {
             {/* Badges */}
             <div className="flex flex-wrap items-center justify-center gap-4 mb-10">
               <div className="bg-[#cbff8f] px-5 py-2.5 rounded-full inline-flex items-center gap-2">
-                <span className="text-sm text-black font-['Arial'] font-medium">Exclusive Benefits</span>
+                <span className="text-sm text-[#97c4ff] font-['Arial'] font-medium">Exclusive Benefits</span>
               </div>
               <div className="bg-[#cbff8f] px-5 py-2.5 rounded-full inline-flex items-center gap-2">
-                <span className="text-sm text-black font-['Arial'] font-medium">Member Rewards</span>
+                <span className="text-sm text-[#97c4ff] font-['Arial'] font-medium">Member Rewards</span>
               </div>
               <div className="bg-[#cbff8f] px-5 py-2.5 rounded-full inline-flex items-center gap-2">
-                <span className="text-sm text-black font-['Arial'] font-medium">Premium Experience</span>
+                <span className="text-sm text-[#97c4ff] font-['Arial'] font-medium">Premium Experience</span>
               </div>
             </div>
 
-            {/* Breadcrumbs */}
-            <div className="flex items-center justify-center gap-2 text-sm">
-              <Link to="/" className="flex items-center gap-1 text-gray-500 hover:text-gray-700">
-                <Home className="w-4 h-4" />
-                <span className="font-['Arial']">Home</span>
-              </Link>
-              <ChevronRight className="w-4 h-4 text-gray-400" />
-              <span className="text-[#97c4ff] font-['Arial']">Sky Loyalty Program</span>
-            </div>
           </motion.div>
         </div>
       </section>
@@ -205,9 +195,6 @@ export default function SkyLoyaltyPage() {
             <p className="text-lg text-[#1b1b1b] font-['Arial'] leading-relaxed max-w-3xl mx-auto mb-8">
               Our three membership categories offers a rewarding family of luxury, exclusivity, and wellness. Each tier is meticulously designed to provide a personalized experience.
             </p>
-            <button className="bg-[#0c0060] text-white px-6 py-3 rounded-full font-['Arial'] font-medium hover:bg-[#0a0050] transition-colors">
-              Join Now
-            </button>
           </motion.div>
 
           {/* Tiers Grid */}

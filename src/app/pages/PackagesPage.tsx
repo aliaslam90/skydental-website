@@ -130,7 +130,7 @@ export default function PackagesPage() {
       {/* Hero Section */}
       <section 
         ref={heroRef}
-        className="relative min-h-[500px] overflow-hidden pt-32 pb-20"
+        className="relative min-h-[500px] overflow-hidden pt-32"
         style={{
           background: 'linear-gradient(160.216deg, rgb(224, 237, 255) 0%, rgb(255, 255, 255) 50%, rgb(224, 237, 255) 100%)'
         }}
@@ -203,8 +203,6 @@ export default function PackagesPage() {
             {packages.map((pkg, index) => {
               const ref = useRef(null)
               const isInView = useInView(ref, { once: true, margin: "-100px" })
-              // Special styling for Sky Healthy Smiles (middle card in top row)
-              const isHighlighted = pkg.id === 'healthy-smiles'
               
               return (
                 <motion.div
@@ -213,11 +211,7 @@ export default function PackagesPage() {
                   initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className={`${
-                    isHighlighted 
-                      ? 'bg-[#dff0ff] border-[#c5e4ff]' 
-                      : 'bg-white border-[#f3f4f6]'
-                  } border rounded-[32px] p-8 hover:shadow-xl transition-shadow duration-300`}
+                  className="bg-white border-[#f3f4f6] border rounded-[32px] p-8 hover:shadow-xl hover:bg-[#97c4ff] transition-all duration-300"
                 >
                   {/* Icon */}
                   <div className="w-14 h-14 bg-[#cbff8f] rounded-[18px] flex items-center justify-center text-2xl mb-5">

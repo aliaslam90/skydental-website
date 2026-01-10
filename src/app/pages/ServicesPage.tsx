@@ -4,31 +4,7 @@ import { motion, useReducedMotion, useInView } from 'motion/react'
 import { useRef } from 'react'
 import { ArrowUpRight, Plus } from 'lucide-react'
 import { Link } from 'react-router-dom'
-
-// Testimonial data
-const testimonials = [
-  {
-    name: 'A Happy Patient',
-    rating: 5,
-    text: 'The Dental Clinic offers specialty care and expert health care and a welcoming atmosphere. My hygienist was excellent and gets five stars. Wonderful!',
-    bgColor: '#cbff8f',
-    image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=100&h=100&fit=crop'
-  },
-  {
-    name: 'A Satisfied Client',
-    rating: 5,
-    text: 'Excellent service and super care!! The team were so careful and confident in doing a check. The clinic is really decent and clean.',
-    bgColor: '#cbff8f',
-    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&h=100&fit=crop'
-  },
-  {
-    name: 'A Happy Patient',
-    rating: 5,
-    text: 'The Dental Clinic offers specialty care and expert health care and a welcoming atmosphere. My hygienist was excellent and gets five stars. Wonderful!',
-    bgColor: '#cbff8f',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&h=100&fit=crop'
-  }
-]
+import TestimonialsSection from '../components/TestimonialsSection'
 
 // Services data with IDs for routing
 const services = [
@@ -129,57 +105,15 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
   )
 }
 
-function TestimonialCard({ testimonial, index }: { testimonial: typeof testimonials[0]; index: number }) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-50px" })
-  const shouldReduceMotion = useReducedMotion()
-
-  return (
-    <motion.div
-      ref={ref}
-      initial={shouldReduceMotion ? {} : { opacity: 0, x: 30 }}
-      animate={isInView ? { opacity: 1, x: 0 } : {}}
-      transition={{ duration: 0.6, delay: index * 0.15 }}
-      className="rounded-3xl p-6 flex items-center gap-6"
-      style={{ backgroundColor: testimonial.bgColor }}
-    >
-      {/* Content */}
-      <div className="flex-1">
-        <p className="text-sm text-black font-['Arial'] leading-relaxed mb-3">
-          "{testimonial.text}"
-        </p>
-        <p className="text-sm font-bold text-black font-['Arial']">
-          {testimonial.name}
-        </p>
-      </div>
-
-      {/* Avatar & Rating */}
-      <div className="flex flex-col items-center gap-2 shrink-0">
-        <img
-          src={testimonial.image}
-          alt={testimonial.name}
-          className="w-16 h-16 rounded-full object-cover border-2 border-white"
-        />
-        <div className="flex gap-0.5">
-          {[...Array(testimonial.rating)].map((_, i) => (
-            <span key={i} className="text-yellow-400 text-xs">★</span>
-          ))}
-        </div>
-      </div>
-    </motion.div>
-  )
-}
 
 export default function ServicesPage() {
   const shouldReduceMotion = useReducedMotion()
   const heroRef = useRef(null)
   const servicesRef = useRef(null)
-  const testimonialsRef = useRef(null)
   const experiencesRef = useRef(null)
 
   const heroInView = useInView(heroRef, { once: true })
   const servicesInView = useInView(servicesRef, { once: true })
-  const testimonialsInView = useInView(testimonialsRef, { once: true })
   const experiencesInView = useInView(experiencesRef, { once: true })
 
   return (
@@ -285,35 +219,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Testimonials Section */}
-      <section ref={testimonialsRef} className="py-24 bg-gradient-to-b from-white to-gray-50">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
-            animate={testimonialsInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="mb-12"
-          >
-            {/* Badge */}
-            <div className="mb-6">
-              <div className="inline-flex items-center gap-2 bg-white border border-gray-200 px-4 py-2 rounded-full">
-                <span className="text-sm text-black font-['Arial']">Testimonial</span>
-              </div>
-            </div>
-
-            {/* Title */}
-            <h2 className="text-5xl font-['Gilda_Display'] text-black tracking-tight max-w-xl">
-              Hear What Our Thrilled Clientele Have to Say
-            </h2>
-          </motion.div>
-
-          {/* Testimonials */}
-          <div className="space-y-4 max-w-4xl">
-            {testimonials.map((testimonial, index) => (
-              <TestimonialCard key={index} testimonial={testimonial} index={index} />
-            ))}
-          </div>
-        </div>
-      </section>
+      <TestimonialsSection />
 
       {/* Guest Experiences Section */}
       <section ref={experiencesRef} className="py-24 bg-white">
