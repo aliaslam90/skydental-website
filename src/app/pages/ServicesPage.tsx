@@ -231,16 +231,6 @@ export default function ServicesPage() {
                 </div>
               </motion.button>
 
-              <motion.button
-                whileHover={shouldReduceMotion ? {} : { scale: 1.05 }}
-                whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
-                className="bg-white text-[#97c4ff] font-bold px-8 py-4 rounded-full inline-flex items-center gap-3 hover:bg-gray-50 transition-colors font-['Arial']"
-              >
-                <span>Learn More</span>
-                <div className="w-9 h-9 bg-[#cbff8f] rounded-full flex items-center justify-center">
-                  <ArrowUpRight className="w-5 h-5 text-[#97c4ff]" />
-                </div>
-              </motion.button>
             </div>
           </motion.div>
         </div>
