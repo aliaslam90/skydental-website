@@ -211,7 +211,7 @@ export default function PackagesPage() {
                   initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-white border-[#f3f4f6] border rounded-[32px] p-8 hover:shadow-xl hover:bg-[#97c4ff] transition-all duration-300"
+                  className="bg-white border-[#f3f4f6] border rounded-[32px] p-8 hover:shadow-xl hover:bg-[#97c4ff] transition-all duration-300 flex flex-col h-full"
                 >
                   {/* Icon */}
                   <div className="w-14 h-14 bg-[#cbff8f] rounded-[18px] flex items-center justify-center text-2xl mb-5">
@@ -229,7 +229,7 @@ export default function PackagesPage() {
                   </p>
 
                   {/* Features */}
-                  <ul className="space-y-2.5 mb-8">
+                  <ul className="space-y-2.5 mb-8 flex-grow">
                     {pkg.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start gap-2.5">
                         <div className="w-1.5 h-1.5 bg-black rounded-full mt-[7px] shrink-0" />
