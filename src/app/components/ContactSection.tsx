@@ -74,21 +74,37 @@ export default function ContactSection() {
 
   const [showDateTimePicker, setShowDateTimePicker] = useState(false)
   const [showCountryCodeDropdown, setShowCountryCodeDropdown] = useState(false)
-  const [availableDoctors, setAvailableDoctors] = useState<string[]>([])
+  const [availableServices, setAvailableServices] = useState<string[]>([])
   const dateTimePickerRef = useRef<HTMLDivElement>(null)
   const countryCodeRef = useRef<HTMLDivElement>(null)
 
-  // Update available doctors when service changes
+  // Get all unique doctors
+  const allDoctors = ['Dr. Saifaldin Tawakul', 'Dr. Basma Al Rawi', 'Dr. Claude Istanbouli', 'Dr. Elias Daoud Hanna']
+
+  // Update available services when doctor changes
   useEffect(() => {
-    if (formData.service && serviceToDoctors[formData.service]) {
-      setAvailableDoctors(serviceToDoctors[formData.service])
-      // Reset doctor selection if current doctor is not available for new service
-      if (!serviceToDoctors[formData.service].includes(formData.doctor)) {
-        setFormData(prev => ({ ...prev, doctor: '' }))
+    if (formData.doctor) {
+      // Get services available for the selected doctor
+      const servicesForDoctor = Object.keys(serviceToDoctors).filter(service => 
+        serviceToDoctors[service].includes(formData.doctor)
+      )
+      setAvailableServices(servicesForDoctor)
+      // Reset service, date, and time if current service is not available for new doctor
+      if (servicesForDoctor.length > 0 && !servicesForDoctor.includes(formData.service)) {
+        setFormData(prev => ({ ...prev, service: '', date: '', time: '' }))
       }
     } else {
-      setAvailableDoctors([])
-      setFormData(prev => ({ ...prev, doctor: '' }))
+      setAvailableServices([])
+      setFormData(prev => ({ ...prev, service: '', date: '', time: '' }))
+    }
+  }, [formData.doctor])
+
+  // Reset date and time when service changes
+  useEffect(() => {
+    if (formData.service) {
+      // Keep date and time if service is selected
+    } else {
+      setFormData(prev => ({ ...prev, date: '', time: '' }))
     }
   }, [formData.service])
 
@@ -116,7 +132,7 @@ export default function ContactSection() {
 
   const handleDateSelect = (date: string) => {
     setFormData(prev => ({ ...prev, date }))
-    setShowDatePicker(false)
+    setShowDateTimePicker(false)
   }
 
   const handleTimeSelect = (time: string) => {
@@ -205,127 +221,128 @@ export default function ContactSection() {
               transition={{ delay: shouldReduceMotion ? 0 : 0.5, duration: shouldReduceMotion ? 0 : 0.8 }}
               className="flex-1"
             >
-              <h3 className="text-[28px] font-bold text-black mb-6" style={{ fontFamily: "'Gilda Display', serif" }}>
-                Book an Appointment
-              </h3>
-              <form onSubmit={handleSubmit} className="flex flex-col gap-[25px]">
-                <input
-                  type="text"
-                  name="fullName"
-                  value={formData.fullName}
-                  onChange={handleInputChange}
-                  placeholder="Enter full name"
-                  required
-                  className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black"
-                />
-
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  placeholder="Email ID"
-                  required
-                  className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black"
-                />
-
-                <div className="flex gap-2">
-                  {/* Country Code Selector */}
-                  <div className="relative flex-shrink-0" ref={countryCodeRef}>
-                    <button
-                      type="button"
-                      onClick={() => setShowCountryCodeDropdown(!showCountryCodeDropdown)}
-                      className="bg-[#f1f1f1] h-[55px] px-[12px] py-[16px] rounded-[12px] text-[14px] text-black flex items-center gap-1 min-w-[90px]"
-                    >
-                      <span>{countryCodes.find(c => c.code === formData.countryCode)?.flag}</span>
-                      <span>{formData.countryCode}</span>
-                      <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </button>
-                    {showCountryCodeDropdown && (
-                      <div className="absolute top-full left-0 mt-1 bg-white rounded-[12px] shadow-lg border border-gray-200 z-50 max-h-[200px] overflow-y-auto">
-                        {countryCodes.map((country) => (
-                          <button
-                            key={country.code}
-                            type="button"
-                            onClick={() => {
-                              setFormData(prev => ({ ...prev, countryCode: country.code }))
-                              setShowCountryCodeDropdown(false)
-                            }}
-                            className="w-full px-4 py-2 text-left hover:bg-[#f1f1f1] flex items-center gap-2 text-[14px]"
-                          >
-                            <span>{country.flag}</span>
-                            <span>{country.code}</span>
-                            <span className="text-gray-500 text-xs">({country.country})</span>
-                          </button>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                  {/* Phone Input */}
+              <form onSubmit={handleSubmit} className="flex flex-col gap-[30px]">
+                {/* Patient Information Section */}
+                <div className="flex flex-col gap-[20px]">
+                  <h4 className="text-[16px] font-bold text-black">Patient Information</h4>
+                  
                   <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
+                    type="text"
+                    name="fullName"
+                    value={formData.fullName}
                     onChange={handleInputChange}
-                    placeholder="Enter phone number"
+                    placeholder="Enter patient name"
                     required
-                    className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black flex-1 min-w-0"
+                    className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black"
+                  />
+
+                  <div className="flex gap-2">
+                    {/* Country Code Selector */}
+                    <div className="relative flex-shrink-0" ref={countryCodeRef}>
+                      <button
+                        type="button"
+                        onClick={() => setShowCountryCodeDropdown(!showCountryCodeDropdown)}
+                        className="bg-[#f1f1f1] h-[55px] px-[12px] py-[16px] rounded-[12px] text-[14px] text-black flex items-center gap-1 min-w-[90px]"
+                      >
+                        <span>{countryCodes.find(c => c.code === formData.countryCode)?.flag}</span>
+                        <span>{formData.countryCode}</span>
+                        <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </button>
+                      {showCountryCodeDropdown && (
+                        <div className="absolute top-full left-0 mt-1 bg-white rounded-[12px] shadow-lg border border-gray-200 z-50 max-h-[200px] overflow-y-auto">
+                          {countryCodes.map((country) => (
+                            <button
+                              key={country.code}
+                              type="button"
+                              onClick={() => {
+                                setFormData(prev => ({ ...prev, countryCode: country.code }))
+                                setShowCountryCodeDropdown(false)
+                              }}
+                              className="w-full px-4 py-2 text-left hover:bg-[#f1f1f1] flex items-center gap-2 text-[14px]"
+                            >
+                              <span>{country.flag}</span>
+                              <span>{country.code}</span>
+                              <span className="text-gray-500 text-xs">({country.country})</span>
+                            </button>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                    {/* Phone Input */}
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      placeholder="+971-XX-XXX-XXXX"
+                      required
+                      className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black flex-1 min-w-0"
+                    />
+                  </div>
+
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    placeholder="patient@email.com"
+                    className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black"
                   />
                 </div>
 
-                <select
-                  name="service"
-                  value={formData.service}
-                  onChange={handleInputChange}
-                  required
-                  className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuNDEgOC41OEwxMiAxMy4xN0wxNi41OSA4LjU4TDE4IDEwTDEyIDE2TDYgMTBMNy40MSA4LjU4WiIgZmlsbD0iYmxhY2siLz4KPC9zdmc+Cg==')] bg-no-repeat bg-[right_24px_center]"
-                >
-                  <option value="">Select Specialty</option>
-                  {services.map(service => (
-                    <option key={service} value={service}>{service}</option>
-                  ))}
-                </select>
+                {/* Appointment Details Section */}
+                <div className="flex flex-col gap-[20px]">
+                  <h4 className="text-[16px] font-bold text-black">Appointment Details</h4>
+                  
+                  <select
+                    name="doctor"
+                    value={formData.doctor}
+                    onChange={handleInputChange}
+                    required
+                    className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuNDEgOC41OEwxMiAxMy4xN0wxNi41OSA4LjU4TDE4IDEwTDEyIDE2TDYgMTBMNy40MSA4LjU4WiIgZmlsbD0iYmxhY2siLz4KPC9zdmc+Cg==')] bg-no-repeat bg-[right_24px_center]"
+                  >
+                    <option value="">Select doctor</option>
+                    {allDoctors.map(doctor => (
+                      <option key={doctor} value={doctor}>{doctor}</option>
+                    ))}
+                  </select>
 
-                <select
-                  name="doctor"
-                  value={formData.doctor}
-                  onChange={handleInputChange}
-                  required
-                  disabled={!formData.service || availableDoctors.length === 0}
-                  className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuNDEgOC41OEwxMiAxMy4xN0wxNi41OSA4LjU4TDE4IDEwTDEyIDE2TDYgMTBMNy40MSA4LjU4WiIgZmlsbD0iYmxhY2siLz4KPC9zdmc+Cg==')] bg-no-repeat bg-[right_24px_center] disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  <option value="">Select Doctor</option>
-                  {availableDoctors.map(doctor => (
-                    <option key={doctor} value={doctor}>{doctor}</option>
-                  ))}
-                </select>
+                  <select
+                    name="service"
+                    value={formData.service}
+                    onChange={handleInputChange}
+                    required
+                    disabled={!formData.doctor}
+                    className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuNDEgOC41OEwxMiAxMy4xN0wxNi41OSA4LjU4TDE4IDEwTDEyIDE2TDYgMTBMNy40MSA4LjU4WiIgZmlsbD0iYmxhY2siLz4KPC9zdmc+Cg==')] bg-no-repeat bg-[right_24px_center] disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    <option value="">{formData.doctor ? 'Select service' : 'Select doctor first'}</option>
+                    {formData.doctor && availableServices.map(service => (
+                      <option key={service} value={service}>{service}</option>
+                    ))}
+                  </select>
 
-                {/* Date Input - Opens combined date/time picker */}
-                {formData.doctor && (
+                  {/* Date Input */}
                   <div className="relative" ref={dateTimePickerRef}>
                     <button
                       type="button"
-                      onClick={() => setShowDateTimePicker(!showDateTimePicker)}
-                      className={`w-full bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black text-left flex items-center justify-between transition-all ${
+                      onClick={() => formData.doctor && formData.service && setShowDateTimePicker(!showDateTimePicker)}
+                      disabled={!formData.doctor || !formData.service}
+                      className={`w-full bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black text-left flex items-center gap-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed ${
                         formData.date 
                           ? 'bg-[#e0edff]' 
                           : 'hover:bg-[#e8e8e8]'
                       }`}
                     >
-                      <span className={formData.date ? 'font-semibold text-black' : 'text-gray-500'}>
-                        {formData.date && formData.time 
-                          ? `${formData.date} at ${formData.time}`
-                          : formData.date 
-                          ? formData.date
-                          : 'Select Date'}
-                      </span>
                       <svg className="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                       </svg>
+                      <span className={formData.date ? 'font-semibold text-black' : 'text-gray-500'}>
+                        {formData.date || 'Select doctor & service'}
+                      </span>
                     </button>
-                    {showDateTimePicker && (
+                    {showDateTimePicker && formData.doctor && formData.service && (
                       <DateTimePicker
                         onDateSelect={handleDateSelect}
                         onTimeSelect={handleTimeSelect}
@@ -335,44 +352,75 @@ export default function ContactSection() {
                       />
                     )}
                   </div>
-                )}
 
-                <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  placeholder="Any notes for the doctor's office"
-                  rows={4}
-                  className="bg-[#f1f1f1] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black resize-none"
-                />
-
-                <motion.button
-                  type="submit"
-                  initial={{ y: 30, opacity: 0 }}
-                  animate={isInView ? { y: 0, opacity: 1 } : { y: 30, opacity: 0 }}
-                  transition={{ delay: shouldReduceMotion ? 0 : 0.5, duration: shouldReduceMotion ? 0 : 0.6 }}
-                  className="bg-[#cbff8f] flex items-center gap-6 justify-center pl-6 pr-[10px] py-3 rounded-[35px] hover:bg-[#B1FF57] transition-colors"
-                >
-                  <span className="text-[#97c4ff] font-bold text-[16px]">Send Message</span>
-                  <div className="bg-[#97c4ff] w-[34px] h-[34px] rounded-full flex items-center justify-center">
-                    <svg className="w-5 h-5" fill="none" viewBox="0 0 20 20">
-                      <path 
-                        d="M5 15L15 5" 
-                        stroke="#CBFF8F" 
-                        strokeWidth="1.5" 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round" 
-                      />
-                      <path 
-                        d="M6.875 5H15V13.125" 
-                        stroke="#CBFF8F" 
-                        strokeWidth="1.5" 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round" 
-                      />
-                    </svg>
+                  {/* Time Input */}
+                  <div className="relative">
+                    <button
+                      type="button"
+                      onClick={() => formData.date && setShowDateTimePicker(true)}
+                      disabled={!formData.date}
+                      className={`w-full bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black text-left flex items-center justify-between transition-all disabled:opacity-50 disabled:cursor-not-allowed ${
+                        formData.time ? 'bg-[#e0edff]' : ''
+                      }`}
+                    >
+                      <span className={formData.time ? 'font-semibold text-black' : 'text-gray-500'}>
+                        {formData.time || '--:-- --'}
+                      </span>
+                      <svg className="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </button>
+                    {!formData.date && (
+                      <p className="text-[12px] text-gray-500 mt-1">Select date first</p>
+                    )}
                   </div>
-                </motion.button>
+                </div>
+
+                {/* Internal Notes Section */}
+                <div className="flex flex-col gap-[20px]">
+                  <h4 className="text-[16px] font-bold text-black">Internal Notes (Optional)</h4>
+                  
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    placeholder="Add any special instructions or notes..."
+                    rows={4}
+                    className="bg-[#f1f1f1] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black resize-none"
+                  />
+                </div>
+
+                {/* Action Buttons */}
+                <div className="flex gap-[16px] pt-[8px]">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setFormData({
+                        fullName: '',
+                        email: '',
+                        countryCode: '+971',
+                        phone: '',
+                        service: '',
+                        doctor: '',
+                        date: '',
+                        time: '',
+                        message: ''
+                      })
+                    }}
+                    className="flex-1 bg-white border border-gray-300 h-[50px] px-[24px] py-[16px] rounded-[12px] text-[14px] font-medium text-black hover:bg-gray-50 transition-colors"
+                  >
+                    Cancel
+                  </button>
+                  <motion.button
+                    type="submit"
+                    initial={{ y: 30, opacity: 0 }}
+                    animate={isInView ? { y: 0, opacity: 1 } : { y: 30, opacity: 0 }}
+                    transition={{ delay: shouldReduceMotion ? 0 : 0.5, duration: shouldReduceMotion ? 0 : 0.6 }}
+                    className="flex-1 bg-[#cbff8f] h-[50px] px-[24px] py-[16px] rounded-[12px] text-[14px] font-medium text-black hover:bg-[#B1FF57] transition-colors"
+                  >
+                    Create Appointment
+                  </motion.button>
+                </div>
               </form>
             </motion.div>
           </div>
