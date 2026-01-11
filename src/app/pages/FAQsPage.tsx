@@ -3,7 +3,7 @@
 import { motion, useReducedMotion, useInView } from 'motion/react'
 import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Home, ChevronRight, Search, Plus, Minus } from 'lucide-react'
+import { Home, ChevronRight, Plus, Minus } from 'lucide-react'
 import imgImage from "../../assets/e2295a1a1a2bc348414dcc117de577c691164137.png"
 import imgImage1 from "../../assets/c5fbf2bb2ed01ea6f6ce38835da33519e2db95fe.png"
 import imgImage2 from "../../assets/27cea6501d6677b5b8f9f08502ce76c7a193f7f8.png"
@@ -50,19 +50,231 @@ const faqCategories: FAQCategory[] = [
     icon: '🦷',
     faqs: [
       {
-        id: 'q1',
+        id: 'general-1',
         question: 'What should I expect during my first dental visit?',
-        answer: 'During your first visit, we will conduct a comprehensive examination of your teeth, gums, and overall oral health. This includes X-rays if necessary, a professional cleaning, and a discussion about your dental history and any concerns you may have. Our team will create a personalized treatment plan tailored to your needs.',
+        answer: 'Your first visit includes a comprehensive oral examination, digital X-rays (if needed), and a personalised treatment plan. Our team ensures a comfortable and seamless experience so you leave with clarity and confidence about your oral health.',
       },
       {
-        id: 'q2',
+        id: 'general-2',
         question: 'How often should I have a dental check-up and cleaning?',
-        answer: 'We recommend visiting the dentist every 6 months for a routine check-up and professional cleaning. However, some patients may need more frequent visits based on their oral health condition. Our team will advise you on the best schedule for your specific needs.',
+        answer: 'We recommend a check-up every 6 months to maintain healthy teeth and gums and prevent dental issues before they develop.',
       },
       {
-        id: 'q3',
-        question: 'Do tooth-colored fillings last long?',
-        answer: 'Yes, tooth-colored composite fillings are durable and can last many years with proper care. They blend naturally with your teeth and provide excellent strength. The longevity depends on factors like the size of the filling, oral hygiene habits, and regular dental check-ups.',
+        id: 'general-3',
+        question: 'Do tooth-coloured fillings last long?',
+        answer: 'Yes. Our modern composite fillings are durable, aesthetically pleasing, and blend naturally with your tooth structure for long-lasting results.',
+      },
+    ],
+  },
+  {
+    id: 'cosmetic',
+    title: 'Cosmetic Dentistry',
+    icon: '✨',
+    faqs: [
+      {
+        id: 'cosmetic-1',
+        question: 'What is the difference between veneers and a Hollywood Smile?',
+        answer: 'Veneers enhance individual teeth, while a Hollywood Smile is a full smile makeover using veneers or crowns to create a dramatic transformation. Both options are customised based on your facial harmony and desired aesthetic.',
+      },
+      {
+        id: 'cosmetic-2',
+        question: 'Is teeth whitening safe?',
+        answer: 'Absolutely. Our professional whitening treatments are safe, effective, and designed to protect tooth enamel while delivering brighter results in a single session.',
+      },
+      {
+        id: 'cosmetic-3',
+        question: 'How long does a Smile Design take?',
+        answer: 'Digital Smile Design typically takes 1–2 sessions. You'll preview your future smile before treatment begins.',
+      },
+    ],
+  },
+  {
+    id: 'orthodontics',
+    title: 'Orthodontics',
+    icon: '🦷',
+    faqs: [
+      {
+        id: 'orthodontics-1',
+        question: 'Do braces work for adults?',
+        answer: 'Yes! Braces and clear aligners such as Invisalign and Spark are highly effective for adults seeking alignment and bite correction.',
+      },
+      {
+        id: 'orthodontics-2',
+        question: 'How long does orthodontic treatment take?',
+        answer: 'Treatment duration varies from 6 months to 24 months, depending on the complexity of the case and the chosen orthodontic method.',
+      },
+      {
+        id: 'orthodontics-3',
+        question: 'Are clear aligners as effective as traditional braces?',
+        answer: 'For many cases, yes. Clear aligners offer discreet, comfortable treatment and excellent results when worn consistently.',
+      },
+    ],
+  },
+  {
+    id: 'pediatric',
+    title: 'Pediatric Dentistry',
+    icon: '👶',
+    faqs: [
+      {
+        id: 'pediatric-1',
+        question: 'When should my child see a dentist for the first time?',
+        answer: 'The first visit is recommended at age 1 or within 6 months of the first tooth erupting. Early care helps prevent oral issues and builds comfort.',
+      },
+      {
+        id: 'pediatric-2',
+        question: 'What are dental sealants, and do children need them?',
+        answer: 'Sealants are protective coatings placed on molars to prevent cavities. They are highly recommended for children aged 6–12.',
+      },
+      {
+        id: 'pediatric-3',
+        question: 'How do you manage anxious children during treatment?',
+        answer: 'Our paediatric specialists use gentle communication, child-friendly techniques, and behavioural guidance to ensure a calm and pleasant experience.',
+      },
+    ],
+  },
+  {
+    id: 'advanced',
+    title: 'Advanced & Restorative Care',
+    icon: '🔬',
+    faqs: [
+      {
+        id: 'advanced-1',
+        question: 'Who is eligible for dental implants?',
+        answer: 'Most adults with healthy gums and sufficient bone structure qualify for implants. Our specialists conduct a thorough assessment to determine suitability.',
+      },
+      {
+        id: 'advanced-2',
+        question: 'What is full-mouth rehabilitation?',
+        answer: 'It is a comprehensive treatment that restores function, aesthetics, and oral health using crowns, implants, veneers, or other restorative techniques.',
+      },
+      {
+        id: 'advanced-3',
+        question: 'Are digital X-rays safe?',
+        answer: 'Yes. Digital imaging uses significantly lower radiation than traditional X-rays and provides highly accurate diagnostic results.',
+      },
+    ],
+  },
+  {
+    id: 'endodontics',
+    title: 'Endodontics',
+    icon: '🦷',
+    faqs: [
+      {
+        id: 'endodontics-1',
+        question: 'Is root canal treatment painful?',
+        answer: 'Not at all. Thanks to modern techniques and anaesthesia, root canal therapy is comfortable and often relieves pain rather than causing it.',
+      },
+      {
+        id: 'endodontics-2',
+        question: 'How long does a root canal take?',
+        answer: 'Most treatments are completed in one visit, depending on the tooth and complexity.',
+      },
+    ],
+  },
+  {
+    id: 'prosthodontics',
+    title: 'Prosthodontics',
+    icon: '🦷',
+    faqs: [
+      {
+        id: 'prosthodontics-1',
+        question: 'What is the difference between crowns and bridges?',
+        answer: 'A crown covers a single tooth, while a bridge replaces one or more missing teeth using neighbouring teeth for support.',
+      },
+      {
+        id: 'prosthodontics-2',
+        question: 'Are dentures still used today?',
+        answer: 'Yes—modern dentures are far more comfortable and natural-looking. We offer removable, fixed, and implant-supported options.',
+      },
+    ],
+  },
+  {
+    id: 'oral-surgery',
+    title: 'Oral Surgery',
+    icon: '⚕️',
+    faqs: [
+      {
+        id: 'oral-surgery-1',
+        question: 'When is wisdom tooth removal necessary?',
+        answer: 'Extraction is recommended when wisdom teeth are impacted, causing pain, swelling, or crowding. Our oral surgeons ensure safe and smooth removal.',
+      },
+      {
+        id: 'oral-surgery-2',
+        question: 'How long is recovery after an extraction?',
+        answer: 'Most patients recover within 2–3 days with proper care.',
+      },
+    ],
+  },
+  {
+    id: 'dental-tourism',
+    title: 'Dental Tourism',
+    icon: '✈️',
+    faqs: [
+      {
+        id: 'dental-tourism-1',
+        question: 'Do you assist international patients with travel planning?',
+        answer: 'Yes. We provide full support including appointment coordination, treatment planning, hotel guidance, and follow-up care.',
+      },
+      {
+        id: 'dental-tourism-2',
+        question: 'Why choose Abu Dhabi for dental treatment?',
+        answer: 'Abu Dhabi offers world-class healthcare, luxury hospitality, and highly skilled dental specialists—all within a safe and modern environment.',
+      },
+    ],
+  },
+  {
+    id: 'insurance',
+    title: 'Insurance',
+    icon: '🛡️',
+    faqs: [
+      {
+        id: 'insurance-1',
+        question: 'Which insurance partners do you work with?',
+        answer: 'Sky Dental Center collaborates with a wide network of local and international insurance companies. Our team assists with verification, approvals, and direct billing (when available).',
+      },
+      {
+        id: 'insurance-2',
+        question: 'How do I know what my insurance covers?',
+        answer: 'Simply share your insurance details with our reception team—we will explain your benefits clearly and guide you through all covered services.',
+      },
+    ],
+  },
+  {
+    id: 'loyalty',
+    title: 'Sky Loyalty Program',
+    icon: '⭐',
+    faqs: [
+      {
+        id: 'loyalty-1',
+        question: 'How can I join the Sky Loyalty Program?',
+        answer: 'Membership is open to all patients. Simply register during your visit and enjoy exclusive discounts, benefits, and reward points.',
+      },
+      {
+        id: 'loyalty-2',
+        question: 'What are the differences between Silver, Gold, and Platinum tiers?',
+        answer: 'Each tier offers increasing levels of luxury, privileges, and rewards—from basic discounts in Silver to VIP access and exclusive benefits in Platinum.',
+      },
+    ],
+  },
+  {
+    id: 'appointments',
+    title: 'Appointments & Clinic',
+    icon: '📅',
+    faqs: [
+      {
+        id: 'appointments-1',
+        question: 'How can I book an appointment?',
+        answer: 'You can book easily through: WhatsApp, Phone, Website booking form, Or by visiting our reception',
+      },
+      {
+        id: 'appointments-2',
+        question: 'Do you offer same-day appointments for emergencies?',
+        answer: 'Yes. We prioritise urgent cases and aim to provide same-day treatment whenever possible.',
+      },
+      {
+        id: 'appointments-3',
+        question: 'Is Sky Dental Center suitable for families?',
+        answer: 'Absolutely. We offer comprehensive care for adults and children, making us a leading family-friendly dental centre in Abu Dhabi.',
       },
     ],
   },
@@ -71,7 +283,6 @@ const faqCategories: FAQCategory[] = [
 export default function FAQsPage() {
   const shouldReduceMotion = useReducedMotion()
   const [selectedCategory, setSelectedCategory] = useState<string>('general')
-  const [searchQuery, setSearchQuery] = useState('')
   const [expandedFAQ, setExpandedFAQ] = useState<string | null>(null)
 
   const heroRef = useRef(null)
@@ -104,7 +315,7 @@ export default function FAQsPage() {
         <div className="absolute -left-24 top-40 w-64 h-64 bg-[rgba(203,255,143,0.2)] rounded-full blur-[64px]" />
         <div className="absolute right-32 top-80 w-64 h-64 bg-[rgba(12,0,96,0.1)] rounded-full blur-[64px]" />
 
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-6 relative z-10 py-20">
           <motion.div
             initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
             animate={heroInView ? { opacity: 1, y: 0 } : {}}
@@ -123,15 +334,15 @@ export default function FAQsPage() {
 
             {/* Tabs - Static Design Elements */}
             <div className="flex items-center justify-center gap-4 mb-10">
-              <div className="px-6 py-2.5 rounded-full text-[14px] font-['Arial'] font-medium flex items-center gap-2 bg-white/50 text-[#97c4ff] shadow-sm">
+              <div className="px-6 py-2.5 rounded-full text-[14px] font-['Arial'] font-medium flex items-center gap-2 bg-[#cbff8f] text-[#97c4ff] shadow-sm">
                 <div className="w-2 h-2 rounded-full bg-[#97c4ff]" />
                 <span>Expert Answers</span>
               </div>
-              <div className="px-6 py-2.5 rounded-full text-[14px] font-['Arial'] font-medium flex items-center gap-2 bg-white/50 text-[#97c4ff] shadow-sm">
+              <div className="px-6 py-2.5 rounded-full text-[14px] font-['Arial'] font-medium flex items-center gap-2 bg-[#cbff8f] text-[#97c4ff] shadow-sm">
                 <div className="w-2 h-2 rounded-full bg-[#97c4ff]" />
                 <span>Comprehensive Guide</span>
               </div>
-              <div className="px-6 py-2.5 rounded-full text-[14px] font-['Arial'] font-medium flex items-center gap-2 bg-white/50 text-[#97c4ff] shadow-sm">
+              <div className="px-6 py-2.5 rounded-full text-[14px] font-['Arial'] font-medium flex items-center gap-2 bg-[#cbff8f] text-[#97c4ff] shadow-sm">
                 <div className="w-2 h-2 rounded-full bg-[#97c4ff]" />
                 <span>Always Here to Help</span>
               </div>
@@ -178,20 +389,6 @@ export default function FAQsPage() {
                   <span>{category.label}</span>
                 </motion.button>
               ))}
-            </div>
-
-            {/* Search Bar */}
-            <div className="max-w-xl mx-auto">
-              <div className="relative">
-                <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#9ca3af]" />
-                <input
-                  type="text"
-                  placeholder="Search topics..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-12 pr-4 py-3.5 rounded-full border border-[#e5e7eb] text-[15px] font-['Arial'] text-black placeholder:text-[#9ca3af] focus:outline-none focus:border-[#97c4ff] focus:ring-2 focus:ring-[#97c4ff]/20 transition-all"
-                />
-              </div>
             </div>
           </motion.div>
         </div>

@@ -3,7 +3,7 @@
 import { motion, useReducedMotion, useInView } from 'motion/react'
 import { useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { Home, ChevronRight, Mail, MessageCircle, ArrowUpRight } from 'lucide-react'
+import { Mail, MessageCircle, ArrowUpRight } from 'lucide-react'
 import imgImage from "../../assets/e2295a1a1a2bc348414dcc117de577c691164137.png"
 import imgImage1 from "../../assets/c5fbf2bb2ed01ea6f6ce38835da33519e2db95fe.png"
 import imgImage2 from "../../assets/27cea6501d6677b5b8f9f08502ce76c7a193f7f8.png"
@@ -90,7 +90,7 @@ export default function CareersPage() {
         <div className="absolute -left-24 top-40 w-80 h-80 bg-[rgba(203,255,143,0.3)] rounded-full blur-[80px]" />
         <div className="absolute right-20 top-60 w-96 h-96 bg-[rgba(151,196,255,0.2)] rounded-full blur-[100px]" />
 
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-6 relative z-10 py-20">
           <motion.div
             initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
             animate={heroInView ? { opacity: 1, y: 0 } : {}}
@@ -113,7 +113,7 @@ export default function CareersPage() {
                 initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
                 animate={heroInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="px-6 py-2.5 bg-[#cbff8f] rounded-full text-[14px] font-['Arial'] font-medium text-black"
+                className="px-6 py-2.5 bg-[#cbff8f] rounded-full text-[14px] font-['Arial'] font-medium text-[#97c4ff]"
               >
                 Dynamic Environment
               </motion.div>
@@ -121,7 +121,7 @@ export default function CareersPage() {
                 initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
                 animate={heroInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="px-6 py-2.5 bg-[#cbff8f] rounded-full text-[14px] font-['Arial'] font-medium text-black"
+                className="px-6 py-2.5 bg-[#cbff8f] rounded-full text-[14px] font-['Arial'] font-medium text-[#97c4ff]"
               >
                 Professional Growth
               </motion.div>
@@ -129,22 +129,10 @@ export default function CareersPage() {
                 initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
                 animate={heroInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="px-6 py-2.5 bg-[#cbff8f] rounded-full text-[14px] font-['Arial'] font-medium text-black"
+                className="px-6 py-2.5 bg-[#cbff8f] rounded-full text-[14px] font-['Arial'] font-medium text-[#97c4ff]"
               >
                 Rewarding Career
               </motion.div>
-            </div>
-
-            {/* Breadcrumbs */}
-            <div className="flex items-center justify-center gap-2 text-sm">
-              <Link to="/" className="flex items-center gap-1 text-gray-500 hover:text-gray-700">
-                <Home className="w-4 h-4" />
-                <span className="font-['Arial']">Home</span>
-              </Link>
-              <ChevronRight className="w-4 h-4 text-gray-400" />
-              <span className="text-gray-500 font-['Arial']">More</span>
-              <ChevronRight className="w-4 h-4 text-gray-400" />
-              <span className="text-[#97c4ff] font-['Arial']">Careers</span>
             </div>
           </motion.div>
         </div>
