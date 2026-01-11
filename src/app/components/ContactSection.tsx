@@ -215,8 +215,6 @@ export default function ContactSection() {
               <form onSubmit={handleSubmit} className="flex flex-col gap-[30px]">
                 {/* Patient Information Section */}
                 <div className="flex flex-col gap-[20px]">
-                  <h4 className="text-[16px] font-bold text-black">Patient Information</h4>
-                  
                   <div className="flex flex-col gap-[8px]">
                     <label className="text-[14px] font-medium text-black">
                       Patient Name <span className="text-red-500">*</span>
@@ -300,8 +298,6 @@ export default function ContactSection() {
 
                 {/* Appointment Details Section */}
                 <div className="flex flex-col gap-[20px]">
-                  <h4 className="text-[16px] font-bold text-black">Appointment Details</h4>
-                  
                   {/* Service and Doctor in one row */}
                   <div className="flex flex-col gap-[8px]">
                     <div className="flex gap-[16px]">
