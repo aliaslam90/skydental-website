@@ -467,7 +467,7 @@ export default function BookingFormSidebar({ isOpen, onClose, preselectedDoctor 
                     type="submit"
                     className="w-full bg-[#cbff8f] h-[50px] px-[24px] py-[16px] rounded-[12px] text-[14px] font-medium text-black hover:bg-[#B1FF57] transition-colors"
                   >
-                    Create Appointment
+                    Book Appointment
                   </motion.button>
                 </form>
               </div>
