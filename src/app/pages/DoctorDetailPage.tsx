@@ -56,7 +56,7 @@ export default function DoctorDetailPage() {
         <div className="absolute -left-24 top-40 w-64 h-64 bg-[rgba(203,255,143,0.3)] rounded-full blur-[64px]" />
         <div className="absolute right-32 top-20 w-64 h-64 bg-[rgba(12,0,96,0.1)] rounded-full blur-[64px]" />
 
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-6 py-20 relative z-10">
           <motion.div
             initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
             animate={heroInView ? { opacity: 1, y: 0 } : {}}
