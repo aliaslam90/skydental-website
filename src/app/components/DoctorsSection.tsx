@@ -13,7 +13,7 @@ export default function DoctorsSection() {
     { name: 'Dr. Saif Eldin Tawakul', specialty: 'Specialist Oral Surgeon', image: '/doctor1.png' },
     { name: 'Dr. Basma Alrawi', specialty: 'Oral Surgery', image: '/doctor2.png' },
     { name: 'Dr. Claude Istanbouli', specialty: 'Master of Implant Dentistry', image: '/doctor3.png' },
-    { name: 'Dr. Elias Daoud Hanna', specialty: 'Prosthodontist', image: '/doctor4.png' }
+    { name: 'Dr. Elias Hanna', specialty: 'Prosthodontist', image: '/doctor4.png' }
   ]
 
   const containerVariants = {

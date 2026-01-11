@@ -34,7 +34,7 @@ const doctorsData = [
   },
   {
     id: 'dr-elias-daoud-hanna',
-    name: 'Dr. Elias Daoud Hanna',
+    name: 'Dr. Elias Hanna',
     specialty: 'Prosthodontist',
     experience: '20+ years',
     image: '/doctor4.png',
