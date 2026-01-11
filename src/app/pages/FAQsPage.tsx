@@ -84,7 +84,7 @@ const faqCategories: FAQCategory[] = [
       {
         id: 'cosmetic-3',
         question: 'How long does a Smile Design take?',
-        answer: 'Digital Smile Design typically takes 1–2 sessions. You'll preview your future smile before treatment begins.',
+        answer: 'Digital Smile Design typically takes 1–2 sessions. You\'ll preview your future smile before treatment begins.',
       },
     ],
   },
