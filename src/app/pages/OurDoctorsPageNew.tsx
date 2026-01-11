@@ -18,7 +18,7 @@ const doctorsData = [
   },
   {
     id: 'dr-basma-al-rawi',
-    name: 'Dr. Basma Al Rawi',
+    name: 'Dr. Basma Alrawi',
     specialty: 'Oral Surgery',
     experience: '12+ years',
     image: '/doctor2.png',

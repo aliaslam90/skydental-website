@@ -11,7 +11,7 @@ export default function DoctorsSection() {
 
   const doctors = [
     { name: 'Dr. Saif Eldin Tawakul', specialty: 'Specialist Oral Surgeon', image: '/doctor1.png' },
-    { name: 'Dr. Basma Al Rawi', specialty: 'Oral Surgery', image: '/doctor2.png' },
+    { name: 'Dr. Basma Alrawi', specialty: 'Oral Surgery', image: '/doctor2.png' },
     { name: 'Dr. Claude Istanbouli', specialty: 'Master of Implant Dentistry', image: '/doctor3.png' },
     { name: 'Dr. Elias Daoud Hanna', specialty: 'Prosthodontist', image: '/doctor4.png' }
   ]

@@ -174,97 +174,121 @@ export const doctorsData: DoctorDetail[] = [
   },
   {
     id: 'dr-basma-al-rawi',
-    name: 'Dr. Basma Al Rawi',
-    title: 'DDS, FACD',
-    specialty: 'Cosmetic Dentistry',
+    name: 'Dr. Basma Alrawi',
+    title: 'Specialist Oral Surgeon',
+    specialty: 'Sky Dental Center [With Implant Privileges]',
     image: imgImage1,
     aboutImage: imgImage1,
-    description: 'Dr. Basma Al Rawi is a renowned cosmetic dentist with a passion for creating stunning smiles. With over 12 years of experience, she specializes in smile makeovers, porcelain veneers, and advanced whitening techniques. Dr. Al Rawi\'s artistic eye and meticulous attention to detail have transformed countless smiles, boosting her patients\' confidence and quality of life.',
+    description: 'Dr. Basma Alrawi is a highly accomplished Specialist Oral Surgeon renowned for her advanced surgical expertise, precision-driven clinical approach, and unwavering commitment to patient safety and wellbeing. With implant privileges and extensive experience managing complex oral and maxillofacial conditions, she brings exceptional skill and a calm, reassuring presence to every treatment journey. Her practice integrates evidence-based surgery, modern diagnostic technologies, and a multidisciplinary philosophy—ensuring that patients receive comprehensive, safe, and predictable surgical outcomes.',
     stats: [
-      { label: 'Years of Experience', value: '12+' },
-      { label: 'Smile Makeovers', value: '2,000+' },
-      { label: 'Procedures Performed', value: '8,500+' }
+      { label: 'Specialist', value: 'Oral Surgeon' },
+      { label: 'Implant Privileges', value: 'Certified' },
+      { label: 'Practice', value: 'Sky Dental Center' }
     ],
     education: [
       {
         icon: '🎓',
-        degree: 'Advanced Cosmetic Dentistry',
-        institution: 'Las Vegas Institute for Advanced Dental Studies',
-        year: '2014'
+        degree: 'Specialist Oral Surgeon',
+        institution: 'Certified Specialist',
+        year: 'Current'
       },
       {
-        icon: '🎓',
-        degree: 'Doctor of Dental Surgery (DDS)',
-        institution: 'University of Southern California',
-        year: '2011'
+        icon: '🦷',
+        degree: 'Implant Privileges',
+        institution: 'Certified Implant Surgeon',
+        year: 'Current'
       },
       {
-        icon: '📜',
-        degree: 'Fellowship in Cosmetic Dentistry',
-        institution: 'American Academy of Cosmetic Dentistry',
-        year: '2015'
+        icon: '🏥',
+        degree: 'Advanced Surgical Training',
+        institution: 'Oral and Maxillofacial Surgery',
+        year: 'Current'
       },
       {
-        icon: '🏆',
-        degree: 'Master Ceramist Certification',
-        institution: 'European Academy of Esthetic Dentistry',
-        year: '2017'
+        icon: '🔬',
+        degree: 'Evidence-Based Practice',
+        institution: 'Modern Diagnostic Technologies',
+        year: 'Current'
       }
     ],
     experience: {
-      title: 'Comprehensive Cosmetic Experience',
-      description: 'Dr. Al Rawi has dedicated her career to the art and science of cosmetic dentistry. Her expertise in smile design, combined with cutting-edge technology, allows her to create natural-looking, beautiful smiles that exceed patient expectations.',
+      title: 'Excellence in Oral Surgery, Compassion in Care',
+      description: 'Dr. Basma Alrawi brings exceptional skill and a calm, reassuring presence to every treatment journey. Her practice integrates evidence-based surgery, modern diagnostic technologies, and a multidisciplinary philosophy—ensuring that patients receive comprehensive, safe, and predictable surgical outcomes.',
       highlights: [
-        'Specialist in full smile makeovers',
-        'Expert in porcelain veneer placement',
-        'Advanced training in digital smile design',
-        'Featured in cosmetic dentistry publications',
-        'Regular instructor at aesthetic dentistry courses'
+        'Advanced surgical expertise in oral and maxillofacial surgery',
+        'Extensive experience managing complex oral conditions',
+        'Certified implant privileges',
+        'Evidence-based surgical practice',
+        'Multidisciplinary treatment approach',
+        'Commitment to patient safety and wellbeing'
       ]
     },
     expertise: [
       {
-        category: 'Smile Design',
+        category: 'Evaluation & Diagnosis',
         items: [
-          'Digital smile design',
-          'Full smile makeovers',
-          'Gum contouring',
-          'Smile line optimization',
-          'Facial aesthetics integration'
+          'Comprehensive dental and medical evaluations',
+          'Oral cancer screening and assessment of TMJ, salivary glands, and facial structures',
+          'CBCT and radiographic interpretation (intraoral & extraoral)',
+          'Diagnosis of cysts, tumours, orofacial pain, and oral pathologies',
+          'Collaborative treatment planning with multidisciplinary medical teams'
         ]
       },
       {
-        category: 'Cosmetic Restorations',
+        category: 'Emergency & Trauma Care',
         items: [
-          'Porcelain veneers',
-          'Composite bonding',
-          'All-ceramic crowns',
-          'Teeth whitening',
-          'Minimally invasive dentistry'
+          'Management of dental emergencies and acute oral infections',
+          'Treatment of dental and facial trauma, including fractures and soft-tissue lacerations',
+          'TMJ dislocation management and abscess drainage'
         ]
       },
       {
-        category: 'Advanced Procedures',
+        category: 'Surgical Procedures',
         items: [
-          'Laser dentistry',
-          'Gum recontouring',
-          'Bite reconstruction',
-          'Esthetic implant restoration',
-          'Anti-aging facial treatments'
+          'Simple and complex tooth extractions',
+          'Removal of impacted and wisdom teeth',
+          'Management of oral cysts, tumours, and soft-tissue lesions',
+          'Pre-prosthetic surgeries including ridge augmentation and alveoloplasty',
+          'Bone grafting, sinus lift procedures, and surgical exposure of teeth'
+        ]
+      },
+      {
+        category: 'Implantology',
+        items: [
+          'Surgical placement of dental implants',
+          'Advanced implant solutions, including All-On-X and ridge-preservation techniques',
+          'Management of implant complications and peri-implantitis'
+        ]
+      },
+      {
+        category: 'Preventive & Supportive Care',
+        items: [
+          'Oral hygiene counselling and disease-prevention strategies',
+          'Pre- and post-operative care for medically compromised patients',
+          'Custom dental appliances for surgical planning and protection'
+        ]
+      },
+      {
+        category: 'Restorative & Endodontic Support',
+        items: [
+          'Minor restorative treatments when required before or after surgery',
+          'Support in providing implant-supported prostheses such as crowns and bridges',
+          'Performing uncomplicated root canal treatments',
+          'Pulp therapy (vital and non-vital) for both primary and permanent teeth'
         ]
       }
     ],
     philosophy: {
-      title: 'Artistry Meets Science',
-      description: 'Dr. Al Rawi believes that every smile is unique and deserves a personalized approach that harmonizes facial aesthetics with dental function.',
+      title: 'A Patient-Centred Surgical Philosophy',
+      description: 'Dr. Basma Alrawi believes that exceptional surgical care requires not only technical expertise but also empathy, communication, and trust. She prioritises clear explanation of procedures and treatment expectations, gentle patient-focused surgical delivery, multidisciplinary collaboration for comprehensive outcomes, and individualised treatment plans tailored to each patient\'s clinical needs and personal comfort.',
       principles: [
-        'Comprehensive smile analysis and planning',
-        'Natural-looking aesthetic results',
-        'Minimal tooth preparation techniques',
-        'High-quality materials and craftsmanship',
-        'Patient comfort and satisfaction first'
+        'Clear explanation of procedures and treatment expectations',
+        'Gentle, patient-focused surgical delivery',
+        'Multidisciplinary collaboration for comprehensive outcomes',
+        'Individualised treatment plans tailored to each patient\'s clinical needs and personal comfort',
+        'Surgical care of the highest standard delivered with compassion, precision, and integrity'
       ],
-      quote: 'A beautiful smile is more than just straight white teeth—it\'s about creating harmony between your facial features, personality, and dental aesthetics.'
+      quote: 'Dr. Basma Alrawi looks forward to continuing her mission of elevating oral surgical care at Sky Dental Center, ensuring every patient experiences safe, advanced, and transformative treatment.'
     },
     clinicImages: [
       'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&h=600&fit=crop',
