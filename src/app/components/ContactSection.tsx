@@ -302,41 +302,48 @@ export default function ContactSection() {
                 <div className="flex flex-col gap-[20px]">
                   <h4 className="text-[16px] font-bold text-black">Appointment Details</h4>
                   
+                  {/* Service and Doctor in one row */}
                   <div className="flex flex-col gap-[8px]">
-                    <label className="text-[14px] font-medium text-black">
-                      Service <span className="text-red-500">*</span>
-                    </label>
-                    <select
-                      name="service"
-                      value={formData.service}
-                      onChange={handleInputChange}
-                      required
-                      className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuNDEgOC41OEwxMiAxMy4xN0wxNi41OSA4LjU4TDE4IDEwTDEyIDE2TDYgMTBMNy40MSA4LjU4WiIgZmlsbD0iYmxhY2siLz4KPC9zdmc+Cg==')] bg-no-repeat bg-[right_24px_center]"
-                    >
-                      <option value="">Select service</option>
-                      {services.map(service => (
-                        <option key={service} value={service}>{service}</option>
-                      ))}
-                    </select>
-                  </div>
+                    <div className="flex gap-[16px]">
+                      {/* Service Input */}
+                      <div className="relative flex-1">
+                        <label className="text-[14px] font-medium text-black mb-[8px] block">
+                          Service <span className="text-red-500">*</span>
+                        </label>
+                        <select
+                          name="service"
+                          value={formData.service}
+                          onChange={handleInputChange}
+                          required
+                          className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuNDEgOC41OEwxMiAxMy4xN0wxNi41OSA4LjU4TDE4IDEwTDEyIDE2TDYgMTBMNy40MSA4LjU4WiIgZmlsbD0iYmxhY2siLz4KPC9zdmc+Cg==')] bg-no-repeat bg-[right_24px_center] w-full"
+                        >
+                          <option value="">Select service</option>
+                          {services.map(service => (
+                            <option key={service} value={service}>{service}</option>
+                          ))}
+                        </select>
+                      </div>
 
-                  <div className="flex flex-col gap-[8px]">
-                    <label className="text-[14px] font-medium text-black">
-                      Doctor <span className="text-red-500">*</span>
-                    </label>
-                    <select
-                      name="doctor"
-                      value={formData.doctor}
-                      onChange={handleInputChange}
-                      required
-                      disabled={!formData.service}
-                      className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuNDEgOC41OEwxMiAxMy4xN0wxNi41OSA4LjU4TDE4IDEwTDEyIDE2TDYgMTBMNy40MSA4LjU4WiIgZmlsbD0iYmxhY2siLz4KPC9zdmc+Cg==')] bg-no-repeat bg-[right_24px_center] disabled:opacity-50 disabled:cursor-not-allowed"
-                    >
-                      <option value="">{formData.service ? 'Select doctor' : 'Select service first'}</option>
-                      {formData.service && availableDoctors.map(doctor => (
-                        <option key={doctor} value={doctor}>{doctor}</option>
-                      ))}
-                    </select>
+                      {/* Doctor Input */}
+                      <div className="relative flex-1">
+                        <label className="text-[14px] font-medium text-black mb-[8px] block">
+                          Doctor <span className="text-red-500">*</span>
+                        </label>
+                        <select
+                          name="doctor"
+                          value={formData.doctor}
+                          onChange={handleInputChange}
+                          required
+                          disabled={!formData.service}
+                          className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuNDEgOC41OEwxMiAxMy4xN0wxNi41OSA4LjU4TDE4IDEwTDEyIDE2TDYgMTBMNy40MSA4LjU4WiIgZmlsbD0iYmxhY2siLz4KPC9zdmc+Cg==')] bg-no-repeat bg-[right_24px_center] disabled:opacity-50 disabled:cursor-not-allowed w-full"
+                        >
+                          <option value="">{formData.service ? 'Select doctor' : 'Select service first'}</option>
+                          {formData.service && availableDoctors.map(doctor => (
+                            <option key={doctor} value={doctor}>{doctor}</option>
+                          ))}
+                        </select>
+                      </div>
+                    </div>
                   </div>
 
                   {/* Date and Time in one row */}
