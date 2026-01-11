@@ -4,6 +4,7 @@ import { motion, useReducedMotion, useInView } from 'motion/react'
 import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { Home, ChevronRight, Check, FileText, ClipboardList, Plane, Shield, DollarSign, MapPin } from 'lucide-react'
+import { useBooking } from '../context/BookingContext'
 import imgDentalCare from "../../assets/7e26eb0c35bbd0356cd593caf48b0b5a702f7753.png"
 import imgImage from "../../assets/e2295a1a1a2bc348414dcc117de577c691164137.png"
 import imgImage1 from "../../assets/c5fbf2bb2ed01ea6f6ce38835da33519e2db95fe.png"
@@ -85,6 +86,7 @@ const insurancePartners: InsurancePartner[] = [
 
 export default function PatientGuidePage() {
   const shouldReduceMotion = useReducedMotion()
+  const { openBookingSidebar } = useBooking()
 
   const heroRef = useRef(null)
   const firstVisitRef = useRef(null)
@@ -288,6 +290,7 @@ export default function PatientGuidePage() {
             <motion.button
               whileHover={shouldReduceMotion ? {} : { scale: 1.05 }}
               whileTap={shouldReduceMotion ? {} : { scale: 0.95 }}
+              onClick={() => openBookingSidebar()}
               className="bg-[#cbff8f] text-[#97c4ff] font-bold px-8 py-4 rounded-full inline-flex items-center gap-3 hover:bg-[#b8ff6d] transition-colors font-['Arial'] text-[15px]"
             >
               <span>Get a Second Opinion</span>
@@ -394,6 +397,7 @@ export default function PatientGuidePage() {
                 <motion.button
                   whileHover={shouldReduceMotion ? {} : { scale: 1.05 }}
                   whileTap={shouldReduceMotion ? {} : { scale: 0.95 }}
+                  onClick={() => openBookingSidebar()}
                   className="bg-[#cbff8f] text-[#97c4ff] font-bold px-8 py-4 rounded-full inline-flex items-center gap-3 hover:bg-[#b8ff6d] transition-colors font-['Arial'] text-[15px]"
                 >
                   <span>Plan Your Visit</span>

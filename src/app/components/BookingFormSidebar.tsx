@@ -231,7 +231,7 @@ export default function BookingFormSidebar({ isOpen, onClose, preselectedDoctor 
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={onClose}
-              className="fixed inset-0 bg-black/50 z-40"
+              className="fixed inset-0 bg-black/50 z-[999]"
             />
 
             {/* Sidebar */}
@@ -240,7 +240,7 @@ export default function BookingFormSidebar({ isOpen, onClose, preselectedDoctor 
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ duration: shouldReduceMotion ? 0 : 0.3, ease: 'easeInOut' }}
-              className="fixed top-0 right-0 h-full w-full max-w-[600px] bg-white shadow-2xl z-50 overflow-y-auto"
+              className="fixed top-0 right-0 h-full w-full max-w-[600px] bg-white shadow-2xl z-[1000] overflow-y-auto"
             >
               <div className="p-6 md:p-8">
                 {/* Header */}
@@ -739,7 +739,7 @@ function OTPVerificationModal({
   }
 
   return (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-[60] p-4">
+    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-[1001] p-4">
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}

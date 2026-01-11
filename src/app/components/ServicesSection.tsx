@@ -304,14 +304,14 @@ function ArrowIcon() {
     <svg className="w-5 h-5" fill="none" viewBox="0 0 20 20">
       <path 
         d="M5 15L15 5" 
-        stroke="#97C4FF" 
+        stroke="white" 
         strokeWidth="1.5" 
         strokeLinecap="round" 
         strokeLinejoin="round" 
       />
       <path 
         d="M6.875 5H15V13.125" 
-        stroke="#97C4FF" 
+        stroke="white" 
         strokeWidth="1.5" 
         strokeLinecap="round" 
         strokeLinejoin="round" 

@@ -57,7 +57,7 @@ export default function ContactUsPage() {
       {/* Hero Section */}
       <section
         ref={heroRef}
-        className="relative min-h-[500px] overflow-hidden pt-32 pb-20"
+        className="relative min-h-[500px] overflow-hidden pt-32"
         style={{
           background: 'linear-gradient(160deg, rgb(224, 237, 255) 0%, rgb(255, 255, 255) 50%, rgb(224, 237, 255) 100%)',
         }}

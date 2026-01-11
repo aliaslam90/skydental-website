@@ -17,6 +17,7 @@ export default function Header() {
   const shouldReduceMotion = useReducedMotion()
   const navigate = useNavigate()
   const location = useLocation()
+  const { openBookingSidebar } = useBooking()
 
   useEffect(() => {
     const handleScroll = () => {
