@@ -419,8 +419,6 @@ export default function ContactSection() {
 
                 {/* Internal Notes Section */}
                 <div className="flex flex-col gap-[20px]">
-                  <h4 className="text-[16px] font-bold text-black">Internal Notes (Optional)</h4>
-                  
                   <textarea
                     name="message"
                     value={formData.message}
@@ -432,32 +430,13 @@ export default function ContactSection() {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex gap-[16px] pt-[8px]">
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setFormData({
-                        fullName: '',
-                        email: '',
-                        countryCode: '+971',
-                        phone: '',
-                        service: '',
-                        doctor: '',
-                        date: '',
-                        time: '',
-                        message: ''
-                      })
-                    }}
-                    className="flex-1 bg-white border border-gray-300 h-[50px] px-[24px] py-[16px] rounded-[12px] text-[14px] font-medium text-black hover:bg-gray-50 transition-colors"
-                  >
-                    Cancel
-                  </button>
+                <div className="pt-[8px]">
                   <motion.button
                     type="submit"
                     initial={{ y: 30, opacity: 0 }}
                     animate={isInView ? { y: 0, opacity: 1 } : { y: 30, opacity: 0 }}
                     transition={{ delay: shouldReduceMotion ? 0 : 0.5, duration: shouldReduceMotion ? 0 : 0.6 }}
-                    className="flex-1 bg-[#cbff8f] h-[50px] px-[24px] py-[16px] rounded-[12px] text-[14px] font-medium text-black hover:bg-[#B1FF57] transition-colors"
+                    className="w-full bg-[#cbff8f] h-[50px] px-[24px] py-[16px] rounded-[12px] text-[14px] font-medium text-black hover:bg-[#B1FF57] transition-colors"
                   >
                     Create Appointment
                   </motion.button>
