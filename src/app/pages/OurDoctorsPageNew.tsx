@@ -318,20 +318,29 @@ export default function OurDoctorsPageNew() {
                   </div>
                 </div>
                 
-                {/* Name and View Details - Outside the card */}
-                <div className="mt-[20px] md:mt-[24px] text-center flex flex-col gap-[8px]">
+                {/* Name and Buttons - Outside the card */}
+                <div className="mt-[20px] md:mt-[24px] text-center flex flex-col gap-[12px]">
                   <h3
                     className="text-black text-[18px] md:text-[20px] leading-[1.2]"
                     style={{ fontFamily: "'Gilda Display', serif" }}
                   >
                     {doctor.name}
                   </h3>
-                  <Link 
-                    to={`/our-doctors/${doctor.id}`}
-                    className="text-[#97c4ff] text-[14px] md:text-[15px] hover:underline"
-                  >
-                    View Details
-                  </Link>
+                  {/* Buttons - Side by side on larger screens, stacked on mobile */}
+                  <div className="flex flex-col sm:flex-row gap-[8px] sm:gap-[12px]">
+                    <Link 
+                      to={`/our-doctors/${doctor.id}`}
+                      className="flex-1 bg-white border border-[#97c4ff] text-[#97c4ff] text-[13px] md:text-[14px] font-medium py-[10px] px-[16px] rounded-[12px] hover:bg-[#97c4ff] hover:text-white transition-colors text-center"
+                    >
+                      View Profile
+                    </Link>
+                    <Link 
+                      to="/contact-us"
+                      className="flex-1 bg-[#97c4ff] text-white text-[13px] md:text-[14px] font-medium py-[10px] px-[16px] rounded-[12px] hover:bg-[#7db3ff] transition-colors text-center"
+                    >
+                      Book Appointment
+                    </Link>
+                  </div>
                 </div>
               </motion.div>
             ))}
