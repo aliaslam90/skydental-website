@@ -1,0 +1,844 @@
+'use client'
+
+import { motion, AnimatePresence, useReducedMotion } from 'motion/react'
+import { useRef, useState, useEffect } from 'react'
+
+// Services list
+const services = [
+  'Tooth extraction',
+  'Dental prosthetics',
+  'Root canal treatment',
+  '3D research Panoramic shot',
+  'Gum treatment',
+  'Braces, Teeth straightening',
+  'Cosmetic dentistry',
+  'Children\'s Dentistry',
+  'Your Health Care',
+  'Dental Hygiene'
+]
+
+// Service to Doctor mapping
+const serviceToDoctors: Record<string, string[]> = {
+  'Tooth extraction': ['Dr. Saifaldin Tawakul', 'Dr. Basma Al Rawi'],
+  'Dental prosthetics': ['Dr. Claude Istanbouli', 'Dr. Elias Daoud Hanna'],
+  'Root canal treatment': ['Dr. Elias Daoud Hanna'],
+  '3D research Panoramic shot': ['Dr. Saifaldin Tawakul', 'Dr. Basma Al Rawi', 'Dr. Claude Istanbouli', 'Dr. Elias Daoud Hanna'],
+  'Gum treatment': ['Dr. Saifaldin Tawakul', 'Dr. Basma Al Rawi'],
+  'Braces, Teeth straightening': ['Dr. Saifaldin Tawakul'],
+  'Cosmetic dentistry': ['Dr. Basma Al Rawi', 'Dr. Claude Istanbouli'],
+  'Children\'s Dentistry': ['Dr. Basma Al Rawi'],
+  'Your Health Care': ['Dr. Saifaldin Tawakul', 'Dr. Basma Al Rawi', 'Dr. Claude Istanbouli', 'Dr. Elias Daoud Hanna'],
+  'Dental Hygiene': ['Dr. Saifaldin Tawakul', 'Dr. Basma Al Rawi', 'Dr. Claude Istanbouli', 'Dr. Elias Daoud Hanna']
+}
+
+// Country codes
+const countryCodes = [
+  { code: '+971', country: 'UAE', flag: '🇦🇪' },
+  { code: '+1', country: 'US', flag: '🇺🇸' },
+  { code: '+44', country: 'UK', flag: '🇬🇧' },
+  { code: '+966', country: 'SA', flag: '🇸🇦' },
+  { code: '+965', country: 'KW', flag: '🇰🇼' },
+  { code: '+974', country: 'QA', flag: '🇶🇦' },
+  { code: '+973', country: 'BH', flag: '🇧🇭' },
+  { code: '+968', country: 'OM', flag: '🇴🇲' },
+  { code: '+961', country: 'LB', flag: '🇱🇧' },
+  { code: '+962', country: 'JO', flag: '🇯🇴' },
+  { code: '+20', country: 'EG', flag: '🇪🇬' },
+  { code: '+91', country: 'IN', flag: '🇮🇳' },
+  { code: '+92', country: 'PK', flag: '🇵🇰' },
+  { code: '+33', country: 'FR', flag: '🇫🇷' },
+  { code: '+49', country: 'DE', flag: '🇩🇪' }
+]
+
+// Time slots
+const morningSlots = ['07:00 am', '07:45 am', '08:30 am', '09:15 am', '09:45 am', '10:30 am', '11:15 am']
+const afternoonSlots = ['12:00 pm', '12:45 pm', '01:30 pm', '01:45 pm', '02:30 pm', '03:15 pm', '04:00 pm', '04:45 pm', '05:30 pm']
+
+interface BookingFormSidebarProps {
+  isOpen: boolean
+  onClose: () => void
+  preselectedDoctor?: string
+}
+
+export default function BookingFormSidebar({ isOpen, onClose, preselectedDoctor }: BookingFormSidebarProps) {
+  const shouldReduceMotion = useReducedMotion()
+
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    countryCode: '+971',
+    phone: '',
+    service: '',
+    doctor: preselectedDoctor || '',
+    date: '',
+    time: '',
+    message: ''
+  })
+
+  const [showDatePicker, setShowDatePicker] = useState(false)
+  const [showTimePicker, setShowTimePicker] = useState(false)
+  const [showCountryCodeDropdown, setShowCountryCodeDropdown] = useState(false)
+  const [availableDoctors, setAvailableDoctors] = useState<string[]>([])
+  const [showOTPModal, setShowOTPModal] = useState(false)
+  const [otp, setOtp] = useState('')
+  const [otpSent, setOtpSent] = useState(false)
+  const [otpVerified, setOtpVerified] = useState(false)
+  const [bookingId, setBookingId] = useState('')
+  const [generatedOTP, setGeneratedOTP] = useState('')
+  const datePickerRef = useRef<HTMLDivElement>(null)
+  const timePickerRef = useRef<HTMLDivElement>(null)
+  const countryCodeRef = useRef<HTMLDivElement>(null)
+
+  // Set preselected doctor when sidebar opens
+  useEffect(() => {
+    if (isOpen && preselectedDoctor) {
+      setFormData(prev => ({ ...prev, doctor: preselectedDoctor }))
+    }
+  }, [isOpen, preselectedDoctor])
+
+  // Update available doctors when service changes
+  useEffect(() => {
+    if (formData.service && serviceToDoctors[formData.service]) {
+      setAvailableDoctors(serviceToDoctors[formData.service])
+      if (!serviceToDoctors[formData.service].includes(formData.doctor)) {
+        setFormData(prev => ({ ...prev, doctor: '', date: '', time: '' }))
+      }
+    } else {
+      setAvailableDoctors([])
+      setFormData(prev => ({ ...prev, doctor: '', date: '', time: '' }))
+    }
+  }, [formData.service])
+
+  // Reset date and time when doctor changes
+  useEffect(() => {
+    if (!formData.doctor) {
+      setFormData(prev => ({ ...prev, date: '', time: '' }))
+    }
+  }, [formData.doctor])
+
+  // Close dropdowns when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (datePickerRef.current && !datePickerRef.current.contains(event.target as Node)) {
+        setShowDatePicker(false)
+      }
+      if (timePickerRef.current && !timePickerRef.current.contains(event.target as Node)) {
+        setShowTimePicker(false)
+      }
+      if (countryCodeRef.current && !countryCodeRef.current.contains(event.target as Node)) {
+        setShowCountryCodeDropdown(false)
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [])
+
+  // Prevent body scroll when sidebar is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [isOpen])
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target
+    setFormData(prev => ({ ...prev, [name]: value }))
+  }
+
+  const handleDateSelect = (date: string) => {
+    setFormData(prev => ({ ...prev, date }))
+    setShowDatePicker(false)
+  }
+
+  const handleTimeSelect = (time: string) => {
+    setFormData(prev => ({ ...prev, time }))
+    setShowTimePicker(false)
+  }
+
+  // Generate OTP (fixed for testing)
+  const generateOTP = () => {
+    return '123456'
+  }
+
+  // Generate a booking ID
+  const generateBookingId = () => {
+    const prefix = 'SKY'
+    const timestamp = Date.now().toString().slice(-6)
+    const random = Math.floor(1000 + Math.random() * 9000)
+    return `${prefix}-${timestamp}-${random}`
+  }
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    const otp = generateOTP()
+    const bookingId = generateBookingId()
+    
+    setGeneratedOTP(otp)
+    setBookingId(bookingId)
+    setOtpSent(true)
+    setShowOTPModal(true)
+    setOtp('')
+    setOtpVerified(false)
+    
+    console.log(`OTP sent to ${formData.countryCode}${formData.phone}: ${otp}`)
+  }
+
+  const handleOTPVerify = () => {
+    if (otp === generatedOTP) {
+      setOtpVerified(true)
+    } else {
+      alert('Invalid OTP. Please try again.')
+      setOtp('')
+    }
+  }
+
+  const handleCloseModal = () => {
+    setShowOTPModal(false)
+    setOtp('')
+    setOtpSent(false)
+    setOtpVerified(false)
+    setGeneratedOTP('')
+    setBookingId('')
+    setFormData({
+      fullName: '',
+      email: '',
+      countryCode: '+971',
+      phone: '',
+      service: '',
+      doctor: preselectedDoctor || '',
+      date: '',
+      time: '',
+      message: ''
+    })
+  }
+
+  return (
+    <>
+      <AnimatePresence>
+        {isOpen && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={onClose}
+              className="fixed inset-0 bg-black/50 z-40"
+            />
+
+            {/* Sidebar */}
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ duration: shouldReduceMotion ? 0 : 0.3, ease: 'easeInOut' }}
+              className="fixed top-0 right-0 h-full w-full max-w-[600px] bg-white shadow-2xl z-50 overflow-y-auto"
+            >
+              <div className="p-6 md:p-8">
+                {/* Header */}
+                <div className="flex items-center justify-between mb-8">
+                  <h2 className="text-[28px] font-bold text-black" style={{ fontFamily: "'Gilda Display', serif" }}>
+                    Book an Appointment
+                  </h2>
+                  <button
+                    onClick={onClose}
+                    className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors"
+                  >
+                    <svg className="w-6 h-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
+
+                {/* Form */}
+                <form onSubmit={handleSubmit} className="flex flex-col gap-[30px]">
+                  {/* Patient Information Section */}
+                  <div className="flex flex-col gap-[20px]">
+                    <div className="flex flex-col gap-[8px]">
+                      <label className="text-[14px] font-medium text-black">
+                        Patient Name <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        name="fullName"
+                        value={formData.fullName}
+                        onChange={handleInputChange}
+                        placeholder="Enter patient name"
+                        required
+                        className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black"
+                      />
+                    </div>
+
+                    <div className="flex flex-col gap-[8px]">
+                      <label className="text-[14px] font-medium text-black">
+                        Phone Number <span className="text-red-500">*</span>
+                      </label>
+                      <div className="flex gap-2">
+                        <div className="relative flex-shrink-0" ref={countryCodeRef}>
+                          <button
+                            type="button"
+                            onClick={() => setShowCountryCodeDropdown(!showCountryCodeDropdown)}
+                            className="bg-[#f1f1f1] h-[55px] px-[12px] py-[16px] rounded-[12px] text-[14px] text-black flex items-center gap-1 min-w-[90px]"
+                          >
+                            <span>{countryCodes.find(c => c.code === formData.countryCode)?.flag}</span>
+                            <span>{formData.countryCode}</span>
+                            <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            </svg>
+                          </button>
+                          {showCountryCodeDropdown && (
+                            <div className="absolute top-full left-0 mt-1 bg-white rounded-[12px] shadow-lg border border-gray-200 z-50 max-h-[200px] overflow-y-auto">
+                              {countryCodes.map((country) => (
+                                <button
+                                  key={country.code}
+                                  type="button"
+                                  onClick={() => {
+                                    setFormData(prev => ({ ...prev, countryCode: country.code }))
+                                    setShowCountryCodeDropdown(false)
+                                  }}
+                                  className="w-full px-4 py-2 text-left hover:bg-[#f1f1f1] flex items-center gap-2 text-[14px]"
+                                >
+                                  <span>{country.flag}</span>
+                                  <span>{country.code}</span>
+                                  <span className="text-gray-500 text-xs">({country.country})</span>
+                                </button>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                        <input
+                          type="tel"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleInputChange}
+                          placeholder="+971-XX-XXX-XXXX"
+                          required
+                          className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black flex-1 min-w-0"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col gap-[8px]">
+                      <label className="text-[14px] font-medium text-black">
+                        Email <span className="text-gray-500">(Optional)</span>
+                      </label>
+                      <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        placeholder="patient@email.com"
+                        className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Appointment Details Section */}
+                  <div className="flex flex-col gap-[20px]">
+                    <div className="flex flex-col gap-[8px]">
+                      <div className="flex gap-[16px]">
+                        <div className="relative flex-1">
+                          <label className="text-[14px] font-medium text-black mb-[8px] block">
+                            Service <span className="text-red-500">*</span>
+                          </label>
+                          <select
+                            name="service"
+                            value={formData.service}
+                            onChange={handleInputChange}
+                            required
+                            className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuNDEgOC41OEwxMiAxMy4xN0wxNi41OSA4LjU4TDE4IDEwTDEyIDE2TDYgMTBMNy40MSA4LjU4WiIgZmlsbD0iYmxhY2siLz4KPC9zdmc+Cg==')] bg-no-repeat bg-[right_24px_center] w-full"
+                          >
+                            <option value="">Select service</option>
+                            {services.map(service => (
+                              <option key={service} value={service}>{service}</option>
+                            ))}
+                          </select>
+                        </div>
+
+                        <div className="relative flex-1">
+                          <label className="text-[14px] font-medium text-black mb-[8px] block">
+                            Doctor <span className="text-red-500">*</span>
+                          </label>
+                          <select
+                            name="doctor"
+                            value={formData.doctor}
+                            onChange={handleInputChange}
+                            required
+                            disabled={!formData.service}
+                            className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuNDEgOC41OEwxMiAxMy4xN0wxNi41OSA4LjU4TDE4IDEwTDEyIDE2TDYgMTBMNy40MSA4LjU4WiIgZmlsbD0iYmxhY2siLz4KPC9zdmc+Cg==')] bg-no-repeat bg-[right_24px_center] disabled:opacity-50 disabled:cursor-not-allowed w-full"
+                          >
+                            <option value="">{formData.service ? 'Select doctor' : 'Select service first'}</option>
+                            {formData.service && availableDoctors.map(doctor => (
+                              <option key={doctor} value={doctor}>{doctor}</option>
+                            ))}
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col gap-[8px]">
+                      <div className="flex gap-[16px]">
+                        <div className="relative flex-1" ref={datePickerRef}>
+                          <label className="text-[14px] font-medium text-black mb-[8px] block">
+                            Date <span className="text-red-500">*</span>
+                          </label>
+                          <button
+                            type="button"
+                            onClick={() => formData.service && formData.doctor && setShowDatePicker(!showDatePicker)}
+                            disabled={!formData.service || !formData.doctor}
+                            className={`w-full bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black text-left flex items-center gap-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed ${
+                              formData.date 
+                                ? 'bg-[#e0edff]' 
+                                : 'hover:bg-[#e8e8e8]'
+                            }`}
+                          >
+                            <svg className="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                            <span className={formData.date ? 'font-semibold text-black' : 'text-gray-500'}>
+                              {formData.date || 'Select date'}
+                            </span>
+                          </button>
+                          {showDatePicker && formData.service && formData.doctor && (
+                            <DatePicker
+                              onDateSelect={handleDateSelect}
+                              selectedDate={formData.date}
+                              onClose={() => setShowDatePicker(false)}
+                            />
+                          )}
+                        </div>
+
+                        <div className="relative flex-1" ref={timePickerRef}>
+                          <label className="text-[14px] font-medium text-black mb-[8px] block">
+                            Time <span className="text-red-500">*</span>
+                          </label>
+                          <button
+                            type="button"
+                            onClick={() => formData.date && setShowTimePicker(!showTimePicker)}
+                            disabled={!formData.service || !formData.doctor || !formData.date}
+                            className={`w-full bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black text-left flex items-center justify-between transition-all disabled:opacity-50 disabled:cursor-not-allowed ${
+                              formData.time ? 'bg-[#e0edff]' : ''
+                            }`}
+                          >
+                            <span className={formData.time ? 'font-semibold text-black' : 'text-gray-500'}>
+                              {formData.time || '--:-- --'}
+                            </span>
+                            <svg className="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                          </button>
+                          {showTimePicker && formData.date && (
+                            <TimePicker
+                              onTimeSelect={handleTimeSelect}
+                              selectedTime={formData.time}
+                              onClose={() => setShowTimePicker(false)}
+                            />
+                          )}
+                          {!formData.date && formData.service && formData.doctor && (
+                            <p className="text-[12px] text-gray-500 mt-1">Select date first</p>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Internal Notes Section */}
+                  <div className="flex flex-col gap-[20px]">
+                    <textarea
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      placeholder="Add any special instructions or notes..."
+                      rows={4}
+                      className="bg-[#f1f1f1] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black resize-none"
+                    />
+                  </div>
+
+                  {/* Submit Button */}
+                  <motion.button
+                    type="submit"
+                    className="w-full bg-[#cbff8f] h-[50px] px-[24px] py-[16px] rounded-[12px] text-[14px] font-medium text-black hover:bg-[#B1FF57] transition-colors"
+                  >
+                    Create Appointment
+                  </motion.button>
+                </form>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+
+      {/* OTP Verification Modal */}
+      {showOTPModal && (
+        <OTPVerificationModal
+          phoneNumber={`${formData.countryCode}${formData.phone}`}
+          otp={otp}
+          setOtp={setOtp}
+          otpSent={otpSent}
+          otpVerified={otpVerified}
+          onVerify={handleOTPVerify}
+          onClose={handleCloseModal}
+          bookingId={bookingId}
+          bookingDetails={formData}
+        />
+      )}
+    </>
+  )
+}
+
+// Date Picker Component (Calendar Only)
+function DatePicker({ 
+  onDateSelect, 
+  selectedDate, 
+  onClose 
+}: { 
+  onDateSelect: (date: string) => void
+  selectedDate: string
+  onClose: () => void
+}) {
+  const [currentMonth, setCurrentMonth] = useState(new Date().getMonth())
+  const [currentYear, setCurrentYear] = useState(new Date().getFullYear())
+
+  const formatDateString = (date: Date) => {
+    const day = String(date.getDate()).padStart(2, '0')
+    const month = String(date.getMonth() + 1).padStart(2, '0')
+    const year = date.getFullYear()
+    return `${day}/${month}/${year}`
+  }
+
+  const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+  const weekDays = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa']
+
+  const getDaysInMonth = (month: number, year: number) => {
+    return new Date(year, month + 1, 0).getDate()
+  }
+
+  const getFirstDayOfMonth = (month: number, year: number) => {
+    return new Date(year, month, 1).getDay()
+  }
+
+  const handlePrevMonth = () => {
+    if (currentMonth === 0) {
+      setCurrentMonth(11)
+      setCurrentYear(currentYear - 1)
+    } else {
+      setCurrentMonth(currentMonth - 1)
+    }
+  }
+
+  const handleNextMonth = () => {
+    if (currentMonth === 11) {
+      setCurrentMonth(0)
+      setCurrentYear(currentYear + 1)
+    } else {
+      setCurrentMonth(currentMonth + 1)
+    }
+  }
+
+  const handleDateClick = (day: number) => {
+    const date = new Date(currentYear, currentMonth, day)
+    onDateSelect(formatDateString(date))
+  }
+
+  const isDateSelected = (day: number) => {
+    const date = new Date(currentYear, currentMonth, day)
+    return formatDateString(date) === selectedDate
+  }
+
+  const isDateToday = (day: number) => {
+    const today = new Date()
+    const date = new Date(currentYear, currentMonth, day)
+    return date.toDateString() === today.toDateString()
+  }
+
+  const isDatePast = (day: number) => {
+    const today = new Date()
+    today.setHours(0, 0, 0, 0)
+    const date = new Date(currentYear, currentMonth, day)
+    date.setHours(0, 0, 0, 0)
+    return date < today
+  }
+
+  const daysInMonth = getDaysInMonth(currentMonth, currentYear)
+  const firstDay = getFirstDayOfMonth(currentMonth, currentYear)
+  const days: (number | null)[] = []
+
+  const prevMonth = currentMonth - 1 < 0 ? 11 : currentMonth - 1
+  const prevMonthYear = currentMonth === 0 ? currentYear - 1 : currentYear
+  const prevMonthDays = getDaysInMonth(prevMonth, prevMonthYear)
+  
+  for (let i = firstDay - 1; i >= 0; i--) {
+    days.push(prevMonthDays - i)
+  }
+
+  for (let day = 1; day <= daysInMonth; day++) {
+    days.push(day)
+  }
+
+  const totalCells = 42
+  const remainingCells = totalCells - days.length
+  for (let day = 1; day <= remainingCells; day++) {
+    days.push(day)
+  }
+
+  return (
+    <div className="absolute top-full left-0 right-0 mt-3 bg-white rounded-[24px] shadow-2xl border border-gray-100 z-50 overflow-hidden w-full max-w-[400px]">
+      <div className="p-6">
+        <div className="flex items-center justify-between mb-6">
+          <button
+            type="button"
+            onClick={handlePrevMonth}
+            className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-[#e0edff] transition-colors"
+          >
+            <svg className="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <h3 className="text-[18px] font-semibold text-black">
+            {months[currentMonth]} {currentYear}
+          </h3>
+          <button
+            type="button"
+            onClick={handleNextMonth}
+            className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-[#e0edff] transition-colors"
+          >
+            <svg className="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+
+        <div className="grid grid-cols-7 gap-2 mb-3">
+          {weekDays.map((day) => (
+            <div key={day} className="text-center text-[12px] font-semibold text-gray-600 py-2">
+              {day}
+            </div>
+          ))}
+        </div>
+
+        <div className="grid grid-cols-7 gap-2">
+          {days.map((day, index) => {
+            const isPrevMonth = index < firstDay
+            const isNextMonth = index >= firstDay + daysInMonth
+            
+            const isSelected = !isPrevMonth && !isNextMonth && isDateSelected(day)
+            const isToday = !isPrevMonth && !isNextMonth && isDateToday(day)
+            const isPast = !isPrevMonth && !isNextMonth && isDatePast(day)
+            const isCurrentMonth = !isPrevMonth && !isNextMonth
+
+            return (
+              <button
+                key={`${day}-${index}`}
+                type="button"
+                onClick={() => isCurrentMonth && !isPast && handleDateClick(day)}
+                disabled={!isCurrentMonth || isPast}
+                className={`h-10 rounded-lg text-[14px] font-medium transition-all ${
+                  isSelected
+                    ? 'bg-[#97c4ff] text-white shadow-md'
+                    : isToday
+                    ? 'bg-[#e0edff] text-[#97c4ff] font-bold border-2 border-[#97c4ff]'
+                    : !isCurrentMonth
+                    ? 'text-gray-300 cursor-not-allowed'
+                    : isPast
+                    ? 'text-gray-300 cursor-not-allowed'
+                    : 'text-black hover:bg-[#e0edff] hover:text-[#97c4ff]'
+                }`}
+              >
+                {day}
+              </button>
+            )
+          })}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// Time Picker Component (Time Slots Only)
+function TimePicker({ 
+  onTimeSelect, 
+  selectedTime,
+  onClose 
+}: { 
+  onTimeSelect: (time: string) => void
+  selectedTime: string
+  onClose: () => void
+}) {
+  const allTimeSlots = [...morningSlots, ...afternoonSlots]
+
+  return (
+    <div className="absolute top-full left-0 right-0 mt-3 bg-white rounded-[24px] shadow-2xl border border-gray-100 z-50 overflow-hidden w-full max-w-[400px]">
+      <div className="p-6 max-h-[400px] overflow-y-auto">
+        <h4 className="text-[16px] font-semibold text-black mb-4">Select Time</h4>
+        <div className="space-y-2">
+          {allTimeSlots.map((time) => (
+            <button
+              key={time}
+              type="button"
+              onClick={() => onTimeSelect(time)}
+              className={`w-full px-4 py-3 rounded-lg text-[14px] font-medium text-left transition-all ${
+                selectedTime === time
+                  ? 'bg-[#97c4ff] text-white shadow-md'
+                  : 'bg-[#f5f5f5] text-black hover:bg-[#e0edff] hover:text-[#97c4ff]'
+              }`}
+            >
+              {time}
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// OTP Verification Modal Component
+function OTPVerificationModal({
+  phoneNumber,
+  otp,
+  setOtp,
+  otpSent,
+  otpVerified,
+  onVerify,
+  onClose,
+  bookingId,
+  bookingDetails
+}: {
+  phoneNumber: string
+  otp: string
+  setOtp: (otp: string) => void
+  otpSent: boolean
+  otpVerified: boolean
+  onVerify: () => void
+  onClose: () => void
+  bookingId: string
+  bookingDetails: {
+    fullName: string
+    email: string
+    service: string
+    doctor: string
+    date: string
+    time: string
+  }
+}) {
+  const handleOtpChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value.replace(/\D/g, '').slice(0, 6)
+    setOtp(value)
+  }
+
+  return (
+    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-[60] p-4">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0.9 }}
+        className="bg-white rounded-[24px] shadow-2xl max-w-[500px] w-full p-8 relative"
+      >
+        <button
+          onClick={onClose}
+          className="absolute top-6 right-6 w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors"
+        >
+          <svg className="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        {!otpVerified ? (
+          <>
+            <div className="mb-6">
+              <h3 className="text-[24px] font-bold text-black mb-2" style={{ fontFamily: "'Gilda Display', serif" }}>
+                Verify Your Phone Number
+              </h3>
+              <p className="text-[14px] text-gray-600">
+                We've sent a 6-digit OTP to <span className="font-semibold text-black">{phoneNumber}</span>
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-2">
+                <label className="text-[14px] font-medium text-black">
+                  Enter OTP <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  value={otp}
+                  onChange={handleOtpChange}
+                  placeholder="000000"
+                  maxLength={6}
+                  className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black text-center tracking-[8px] text-[20px] font-semibold"
+                />
+              </div>
+
+              <button
+                onClick={onVerify}
+                disabled={otp.length !== 6}
+                className="w-full bg-[#cbff8f] h-[50px] px-[24px] py-[16px] rounded-[12px] text-[14px] font-medium text-black hover:bg-[#B1FF57] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                Verify OTP
+              </button>
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="mb-6">
+              <div className="w-16 h-16 bg-[#cbff8f] rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-[#97c4ff]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <h3 className="text-[24px] font-bold text-black mb-2 text-center" style={{ fontFamily: "'Gilda Display', serif" }}>
+                Appointment Confirmed!
+              </h3>
+              <p className="text-[14px] text-gray-600 text-center">
+                Your appointment has been successfully booked
+              </p>
+            </div>
+
+            <div className="bg-[#f1f1f1] rounded-[16px] p-6 mb-6">
+              <div className="space-y-4">
+                <div className="flex justify-between items-center pb-3 border-b border-gray-300">
+                  <span className="text-[14px] text-gray-600">Booking ID</span>
+                  <span className="text-[16px] font-bold text-black">{bookingId}</span>
+                </div>
+                <div className="flex justify-between items-center pb-3 border-b border-gray-300">
+                  <span className="text-[14px] text-gray-600">Name</span>
+                  <span className="text-[16px] font-semibold text-black">{bookingDetails.fullName}</span>
+                </div>
+                <div className="flex justify-between items-center pb-3 border-b border-gray-300">
+                  <span className="text-[14px] text-gray-600">Service</span>
+                  <span className="text-[16px] font-semibold text-black">{bookingDetails.service}</span>
+                </div>
+                <div className="flex justify-between items-center pb-3 border-b border-gray-300">
+                  <span className="text-[14px] text-gray-600">Doctor</span>
+                  <span className="text-[16px] font-semibold text-black">{bookingDetails.doctor}</span>
+                </div>
+                <div className="flex justify-between items-center pb-3 border-b border-gray-300">
+                  <span className="text-[14px] text-gray-600">Date</span>
+                  <span className="text-[16px] font-semibold text-black">{bookingDetails.date}</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-[14px] text-gray-600">Time</span>
+                  <span className="text-[16px] font-semibold text-black">{bookingDetails.time}</span>
+                </div>
+              </div>
+            </div>
+
+            <button
+              onClick={onClose}
+              className="w-full bg-[#97c4ff] h-[50px] px-[24px] py-[16px] rounded-[12px] text-[14px] font-medium text-white hover:bg-[#7db3ff] transition-colors"
+            >
+              Close
+            </button>
+          </>
+        )}
+      </motion.div>
+    </div>
+  )
+}

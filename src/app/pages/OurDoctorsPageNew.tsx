@@ -4,6 +4,7 @@ import { motion, useReducedMotion } from 'motion/react'
 import { useState, useEffect, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { Search, ChevronDown, Heart, Target, Users, Award } from 'lucide-react'
+import BookingFormSidebar from '../components/BookingFormSidebar'
 import imgImage from "../../assets/6bcd7b1b14451ea069e378e86538986311521fdb.png"
 import imgImage1 from "../../assets/5acfcfbb197f8e51d36fe2ef16afabdd1303f102.png"
 import imgImage2 from "../../assets/c732a079e104af15d7dd4e2053f9ad2a683392cf.png"
@@ -173,6 +174,8 @@ export default function OurDoctorsPageNew() {
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedSpecialty, setSelectedSpecialty] = useState('All Specialties')
   const [isSpecialtyOpen, setIsSpecialtyOpen] = useState(false)
+  const [isBookingSidebarOpen, setIsBookingSidebarOpen] = useState(false)
+  const [selectedDoctorForBooking, setSelectedDoctorForBooking] = useState<string>('')
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -334,12 +337,15 @@ export default function OurDoctorsPageNew() {
                     >
                       View Profile
                     </Link>
-                    <Link 
-                      to="/contact-us"
+                    <button
+                      onClick={() => {
+                        setSelectedDoctorForBooking(doctor.name)
+                        setIsBookingSidebarOpen(true)
+                      }}
                       className="flex-1 sm:flex-1 bg-[#cbff8f] text-[#97c4ff] text-[13px] md:text-[14px] font-medium py-[10px] px-[16px] rounded-[12px] hover:bg-[#B1FF57] transition-colors text-center"
                     >
                       Book Appointment
-                    </Link>
+                    </button>
                   </div>
                 </div>
               </motion.div>
@@ -532,6 +538,16 @@ export default function OurDoctorsPageNew() {
           </div>
         </div>
       </section>
+
+      {/* Booking Form Sidebar */}
+      <BookingFormSidebar
+        isOpen={isBookingSidebarOpen}
+        onClose={() => {
+          setIsBookingSidebarOpen(false)
+          setSelectedDoctorForBooking('')
+        }}
+        preselectedDoctor={selectedDoctorForBooking}
+      />
     </div>
   )
 }
