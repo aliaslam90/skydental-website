@@ -72,10 +72,12 @@ export default function ContactSection() {
     message: ''
   })
 
-  const [showDateTimePicker, setShowDateTimePicker] = useState(false)
+  const [showDatePicker, setShowDatePicker] = useState(false)
+  const [showTimePicker, setShowTimePicker] = useState(false)
   const [showCountryCodeDropdown, setShowCountryCodeDropdown] = useState(false)
   const [availableDoctors, setAvailableDoctors] = useState<string[]>([])
-  const dateTimePickerRef = useRef<HTMLDivElement>(null)
+  const datePickerRef = useRef<HTMLDivElement>(null)
+  const timePickerRef = useRef<HTMLDivElement>(null)
   const countryCodeRef = useRef<HTMLDivElement>(null)
 
   // Update available doctors when service changes
@@ -102,8 +104,11 @@ export default function ContactSection() {
   // Close dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dateTimePickerRef.current && !dateTimePickerRef.current.contains(event.target as Node)) {
-        setShowDateTimePicker(false)
+      if (datePickerRef.current && !datePickerRef.current.contains(event.target as Node)) {
+        setShowDatePicker(false)
+      }
+      if (timePickerRef.current && !timePickerRef.current.contains(event.target as Node)) {
+        setShowTimePicker(false)
       }
       if (countryCodeRef.current && !countryCodeRef.current.contains(event.target as Node)) {
         setShowCountryCodeDropdown(false)
@@ -123,11 +128,12 @@ export default function ContactSection() {
 
   const handleDateSelect = (date: string) => {
     setFormData(prev => ({ ...prev, date }))
-    setShowDateTimePicker(false)
+    setShowDatePicker(false)
   }
 
   const handleTimeSelect = (time: string) => {
     setFormData(prev => ({ ...prev, time }))
+    setShowTimePicker(false)
   }
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -346,48 +352,44 @@ export default function ContactSection() {
                   <div className="flex flex-col gap-[8px]">
                     <div className="flex gap-[16px]">
                       {/* Date Input */}
-                      <div className="relative flex-1">
+                      <div className="relative flex-1" ref={datePickerRef}>
                         <label className="text-[14px] font-medium text-black mb-[8px] block">
                           Date <span className="text-red-500">*</span>
                         </label>
-                        <div ref={dateTimePickerRef}>
-                          <button
-                            type="button"
-                            onClick={() => formData.service && formData.doctor && setShowDateTimePicker(!showDateTimePicker)}
-                            disabled={!formData.service || !formData.doctor}
-                            className={`w-full bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black text-left flex items-center gap-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed ${
-                              formData.date 
-                                ? 'bg-[#e0edff]' 
-                                : 'hover:bg-[#e8e8e8]'
-                            }`}
-                          >
-                            <svg className="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                            </svg>
-                            <span className={formData.date ? 'font-semibold text-black' : 'text-gray-500'}>
-                              {formData.date || 'Select doctor & service'}
-                            </span>
-                          </button>
-                          {showDateTimePicker && formData.service && formData.doctor && (
-                            <DateTimePicker
-                              onDateSelect={handleDateSelect}
-                              onTimeSelect={handleTimeSelect}
-                              selectedDate={formData.date}
-                              selectedTime={formData.time}
-                              onClose={() => setShowDateTimePicker(false)}
-                            />
-                          )}
-                        </div>
+                        <button
+                          type="button"
+                          onClick={() => formData.service && formData.doctor && setShowDatePicker(!showDatePicker)}
+                          disabled={!formData.service || !formData.doctor}
+                          className={`w-full bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black text-left flex items-center gap-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed ${
+                            formData.date 
+                              ? 'bg-[#e0edff]' 
+                              : 'hover:bg-[#e8e8e8]'
+                          }`}
+                        >
+                          <svg className="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                          </svg>
+                          <span className={formData.date ? 'font-semibold text-black' : 'text-gray-500'}>
+                            {formData.date || 'Select date'}
+                          </span>
+                        </button>
+                        {showDatePicker && formData.service && formData.doctor && (
+                          <DatePicker
+                            onDateSelect={handleDateSelect}
+                            selectedDate={formData.date}
+                            onClose={() => setShowDatePicker(false)}
+                          />
+                        )}
                       </div>
 
                       {/* Time Input */}
-                      <div className="relative flex-1">
+                      <div className="relative flex-1" ref={timePickerRef}>
                         <label className="text-[14px] font-medium text-black mb-[8px] block">
                           Time <span className="text-red-500">*</span>
                         </label>
                         <button
                           type="button"
-                          onClick={() => formData.date && setShowDateTimePicker(true)}
+                          onClick={() => formData.date && setShowTimePicker(!showTimePicker)}
                           disabled={!formData.service || !formData.doctor || !formData.date}
                           className={`w-full bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black text-left flex items-center justify-between transition-all disabled:opacity-50 disabled:cursor-not-allowed ${
                             formData.time ? 'bg-[#e0edff]' : ''
@@ -400,6 +402,13 @@ export default function ContactSection() {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                           </svg>
                         </button>
+                        {showTimePicker && formData.date && (
+                          <TimePicker
+                            onTimeSelect={handleTimeSelect}
+                            selectedTime={formData.time}
+                            onClose={() => setShowTimePicker(false)}
+                          />
+                        )}
                         {!formData.date && formData.service && formData.doctor && (
                           <p className="text-[12px] text-gray-500 mt-1">Select date first</p>
                         )}
@@ -462,18 +471,14 @@ export default function ContactSection() {
   )
 }
 
-// Combined Date and Time Picker Component
-function DateTimePicker({ 
+// Date Picker Component (Calendar Only)
+function DatePicker({ 
   onDateSelect, 
-  onTimeSelect, 
   selectedDate, 
-  selectedTime,
   onClose 
 }: { 
   onDateSelect: (date: string) => void
-  onTimeSelect: (time: string) => void
   selectedDate: string
-  selectedTime: string
   onClose: () => void
 }) {
   const [currentMonth, setCurrentMonth] = useState(new Date().getMonth())
@@ -485,9 +490,6 @@ function DateTimePicker({
     const year = date.getFullYear()
     return `${day}/${month}/${year}`
   }
-
-  // Get all time slots (morning + afternoon)
-  const allTimeSlots = [...morningSlots, ...afternoonSlots]
 
   // Calendar functions
   const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
@@ -571,111 +573,114 @@ function DateTimePicker({
   }
 
   return (
-    <div className="absolute top-full left-0 right-0 mt-3 bg-white rounded-[24px] shadow-2xl border border-gray-100 z-50 overflow-hidden w-full max-w-[800px]">
-      <div className="flex">
-        {/* Left Side - Calendar */}
-        <div className="flex-1 p-6 border-r border-gray-200">
-          {/* Month Navigation */}
-          <div className="flex items-center justify-between mb-6">
-            <button
-              type="button"
-              onClick={handlePrevMonth}
-              className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-[#e0edff] transition-colors"
-            >
-              <svg className="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-            <h3 className="text-[18px] font-semibold text-black">
-              {months[currentMonth]} {currentYear}
-            </h3>
-            <button
-              type="button"
-              onClick={handleNextMonth}
-              className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-[#e0edff] transition-colors"
-            >
-              <svg className="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
-          </div>
-
-          {/* Week Days Header */}
-          <div className="grid grid-cols-7 gap-2 mb-3">
-            {weekDays.map((day) => (
-              <div key={day} className="text-center text-[12px] font-semibold text-gray-600 py-2">
-                {day}
-              </div>
-            ))}
-          </div>
-
-          {/* Calendar Grid */}
-          <div className="grid grid-cols-7 gap-2 mb-6">
-            {days.map((day, index) => {
-              // Determine if this day belongs to previous, current, or next month
-              const isPrevMonth = index < firstDay
-              const isNextMonth = index >= firstDay + daysInMonth
-              
-              const isSelected = !isPrevMonth && !isNextMonth && isDateSelected(day)
-              const isToday = !isPrevMonth && !isNextMonth && isDateToday(day)
-              const isPast = !isPrevMonth && !isNextMonth && isDatePast(day)
-              const isCurrentMonth = !isPrevMonth && !isNextMonth
-
-              return (
-                <button
-                  key={`${day}-${index}`}
-                  type="button"
-                  onClick={() => isCurrentMonth && !isPast && handleDateClick(day)}
-                  disabled={!isCurrentMonth || isPast}
-                  className={`h-10 rounded-lg text-[14px] font-medium transition-all ${
-                    isSelected
-                      ? 'bg-[#97c4ff] text-white shadow-md'
-                      : isToday
-                      ? 'bg-[#e0edff] text-[#97c4ff] font-bold border-2 border-[#97c4ff]'
-                      : !isCurrentMonth
-                      ? 'text-gray-300 cursor-not-allowed'
-                      : isPast
-                      ? 'text-gray-300 cursor-not-allowed'
-                      : 'text-black hover:bg-[#e0edff] hover:text-[#97c4ff]'
-                  }`}
-                >
-                  {day}
-                </button>
-              )
-            })}
-          </div>
-
-          {/* Time Input Footer */}
-          <div className="pt-4 border-t border-gray-200">
-            <div className="flex items-center gap-2 text-[14px] text-gray-600">
-              <span className="font-medium">Time</span>
-              <span className="text-gray-400">--- ---</span>
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </div>
-          </div>
+    <div className="absolute top-full left-0 right-0 mt-3 bg-white rounded-[24px] shadow-2xl border border-gray-100 z-50 overflow-hidden w-full max-w-[400px]">
+      <div className="p-6">
+        {/* Month Navigation */}
+        <div className="flex items-center justify-between mb-6">
+          <button
+            type="button"
+            onClick={handlePrevMonth}
+            className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-[#e0edff] transition-colors"
+          >
+            <svg className="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <h3 className="text-[18px] font-semibold text-black">
+            {months[currentMonth]} {currentYear}
+          </h3>
+          <button
+            type="button"
+            onClick={handleNextMonth}
+            className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-[#e0edff] transition-colors"
+          >
+            <svg className="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
         </div>
 
-        {/* Right Side - Time Slots */}
-        <div className="flex-1 p-6 max-h-[500px] overflow-y-auto">
-          <h4 className="text-[16px] font-semibold text-black mb-4">Time</h4>
-          <div className="space-y-2">
-            {allTimeSlots.map((time) => (
+        {/* Week Days Header */}
+        <div className="grid grid-cols-7 gap-2 mb-3">
+          {weekDays.map((day) => (
+            <div key={day} className="text-center text-[12px] font-semibold text-gray-600 py-2">
+              {day}
+            </div>
+          ))}
+        </div>
+
+        {/* Calendar Grid */}
+        <div className="grid grid-cols-7 gap-2">
+          {days.map((day, index) => {
+            // Determine if this day belongs to previous, current, or next month
+            const isPrevMonth = index < firstDay
+            const isNextMonth = index >= firstDay + daysInMonth
+            
+            const isSelected = !isPrevMonth && !isNextMonth && isDateSelected(day)
+            const isToday = !isPrevMonth && !isNextMonth && isDateToday(day)
+            const isPast = !isPrevMonth && !isNextMonth && isDatePast(day)
+            const isCurrentMonth = !isPrevMonth && !isNextMonth
+
+            return (
               <button
-                key={time}
+                key={`${day}-${index}`}
                 type="button"
-                onClick={() => onTimeSelect(time)}
-                className={`w-full px-4 py-3 rounded-lg text-[14px] font-medium text-left transition-all ${
-                  selectedTime === time
+                onClick={() => isCurrentMonth && !isPast && handleDateClick(day)}
+                disabled={!isCurrentMonth || isPast}
+                className={`h-10 rounded-lg text-[14px] font-medium transition-all ${
+                  isSelected
                     ? 'bg-[#97c4ff] text-white shadow-md'
-                    : 'bg-[#f5f5f5] text-black hover:bg-[#e0edff] hover:text-[#97c4ff]'
+                    : isToday
+                    ? 'bg-[#e0edff] text-[#97c4ff] font-bold border-2 border-[#97c4ff]'
+                    : !isCurrentMonth
+                    ? 'text-gray-300 cursor-not-allowed'
+                    : isPast
+                    ? 'text-gray-300 cursor-not-allowed'
+                    : 'text-black hover:bg-[#e0edff] hover:text-[#97c4ff]'
                 }`}
               >
-                {time}
+                {day}
               </button>
-            ))}
-          </div>
+            )
+          })}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// Time Picker Component (Time Slots Only)
+function TimePicker({ 
+  onTimeSelect, 
+  selectedTime,
+  onClose 
+}: { 
+  onTimeSelect: (time: string) => void
+  selectedTime: string
+  onClose: () => void
+}) {
+  // Get all time slots (morning + afternoon)
+  const allTimeSlots = [...morningSlots, ...afternoonSlots]
+
+  return (
+    <div className="absolute top-full left-0 right-0 mt-3 bg-white rounded-[24px] shadow-2xl border border-gray-100 z-50 overflow-hidden w-full max-w-[400px]">
+      <div className="p-6 max-h-[400px] overflow-y-auto">
+        <h4 className="text-[16px] font-semibold text-black mb-4">Select Time</h4>
+        <div className="space-y-2">
+          {allTimeSlots.map((time) => (
+            <button
+              key={time}
+              type="button"
+              onClick={() => onTimeSelect(time)}
+              className={`w-full px-4 py-3 rounded-lg text-[14px] font-medium text-left transition-all ${
+                selectedTime === time
+                  ? 'bg-[#97c4ff] text-white shadow-md'
+                  : 'bg-[#f5f5f5] text-black hover:bg-[#e0edff] hover:text-[#97c4ff]'
+              }`}
+            >
+              {time}
+            </button>
+          ))}
         </div>
       </div>
     </div>
