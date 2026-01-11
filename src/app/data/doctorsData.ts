@@ -175,8 +175,8 @@ export const doctorsData: DoctorDetail[] = [
   {
     id: 'dr-basma-al-rawi',
     name: 'Dr. Basma Alrawi',
-    title: 'Specialist Oral Surgeon',
-    specialty: 'Sky Dental Center [With Implant Privileges]',
+    title: 'Specialist Oral Surgeon | Sky Dental Center [With Implant Privileges]',
+    specialty: 'Excellence in Oral Surgery, Compassion in Care',
     image: imgImage1,
     aboutImage: imgImage1,
     description: 'Dr. Basma Alrawi is a highly accomplished Specialist Oral Surgeon renowned for her advanced surgical expertise, precision-driven clinical approach, and unwavering commitment to patient safety and wellbeing. With implant privileges and extensive experience managing complex oral and maxillofacial conditions, she brings exceptional skill and a calm, reassuring presence to every treatment journey. Her practice integrates evidence-based surgery, modern diagnostic technologies, and a multidisciplinary philosophy—ensuring that patients receive comprehensive, safe, and predictable surgical outcomes.',
@@ -243,6 +243,14 @@ export const doctorsData: DoctorDetail[] = [
         ]
       },
       {
+        category: 'Preventive & Supportive Care',
+        items: [
+          'Oral hygiene counselling and disease-prevention strategies',
+          'Pre- and post-operative care for medically compromised patients',
+          'Custom dental appliances for surgical planning and protection'
+        ]
+      },
+      {
         category: 'Surgical Procedures',
         items: [
           'Simple and complex tooth extractions',
@@ -261,18 +269,15 @@ export const doctorsData: DoctorDetail[] = [
         ]
       },
       {
-        category: 'Preventive & Supportive Care',
+        category: 'Restorative Support',
         items: [
-          'Oral hygiene counselling and disease-prevention strategies',
-          'Pre- and post-operative care for medically compromised patients',
-          'Custom dental appliances for surgical planning and protection'
+          'Minor restorative treatments when required before or after surgery',
+          'Support in providing implant-supported prostheses such as crowns and bridges'
         ]
       },
       {
-        category: 'Restorative & Endodontic Support',
+        category: 'Endodontics',
         items: [
-          'Minor restorative treatments when required before or after surgery',
-          'Support in providing implant-supported prostheses such as crowns and bridges',
           'Performing uncomplicated root canal treatments',
           'Pulp therapy (vital and non-vital) for both primary and permanent teeth'
         ]
@@ -280,13 +285,13 @@ export const doctorsData: DoctorDetail[] = [
     ],
     philosophy: {
       title: 'A Patient-Centred Surgical Philosophy',
-      description: 'Dr. Basma Alrawi believes that exceptional surgical care requires not only technical expertise but also empathy, communication, and trust. She prioritises clear explanation of procedures and treatment expectations, gentle patient-focused surgical delivery, multidisciplinary collaboration for comprehensive outcomes, and individualised treatment plans tailored to each patient\'s clinical needs and personal comfort.',
+      description: 'Dr. Basma Alrawi believes that exceptional surgical care requires not only technical expertise but also empathy, communication, and trust. She prioritises:',
       principles: [
         'Clear explanation of procedures and treatment expectations',
         'Gentle, patient-focused surgical delivery',
         'Multidisciplinary collaboration for comprehensive outcomes',
         'Individualised treatment plans tailored to each patient\'s clinical needs and personal comfort',
-        'Surgical care of the highest standard delivered with compassion, precision, and integrity'
+        'Her professionalism, skill, and dedication ensure that every patient receives surgical care of the highest standard—delivered with compassion, precision, and integrity'
       ],
       quote: 'Dr. Basma Alrawi looks forward to continuing her mission of elevating oral surgical care at Sky Dental Center, ensuring every patient experiences safe, advanced, and transformative treatment.'
     },
