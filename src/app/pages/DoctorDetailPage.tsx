@@ -158,9 +158,9 @@ export default function DoctorDetailPage() {
                 initial={shouldReduceMotion ? {} : { opacity: 0, x: 30 }}
                 animate={aboutInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.8 }}
-                className="relative"
+                className="relative w-full flex justify-center lg:justify-end"
               >
-                <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
+                <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl w-full lg:w-1/2">
                   <img
                     src={doctor.aboutImage}
                     alt={doctor.name}
