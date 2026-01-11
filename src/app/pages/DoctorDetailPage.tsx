@@ -167,8 +167,6 @@ export default function DoctorDetailPage() {
                     className="w-full h-full object-cover object-top"
                   />
                 </div>
-                {/* Decorative element */}
-                <div className="absolute -bottom-6 -left-6 w-40 h-40 bg-[#cbff8f] rounded-3xl -z-10" />
               </motion.div>
             </div>
           </div>
@@ -426,48 +424,6 @@ export default function DoctorDetailPage() {
         </div>
       </section>
 
-      {/* Gallery Section */}
-      <section ref={galleryRef} className="py-24 bg-[#f8f9fa]">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
-            animate={galleryInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-['Gilda_Display'] text-black tracking-tight">
-              A Collection of Unforgettable<br />Patient Experiences
-            </h2>
-          </motion.div>
-
-          {/* Images Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
-            {doctor.clinicImages.map((image, index) => {
-              const ref = useRef(null)
-              const isInView = useInView(ref, { once: true, margin: "-100px" })
-              
-              return (
-                <motion.div
-                  key={index}
-                  ref={ref}
-                  initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: index * 0.15 }}
-                  className="relative aspect-[4/5] rounded-3xl overflow-hidden group"
-                >
-                  <img
-                    src={image}
-                    alt={`Clinical environment ${index + 1}`}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </motion.div>
-              )
-            })}
-          </div>
-        </div>
-      </section>
-
       {/* Contact Section */}
       <section 
         ref={contactRef}
@@ -526,6 +482,48 @@ export default function DoctorDetailPage() {
               </div>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Gallery Section */}
+      <section ref={galleryRef} className="py-24 bg-[#f8f9fa]">
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
+            animate={galleryInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-['Gilda_Display'] text-black tracking-tight">
+              A Collection of Unforgettable<br />Patient Experiences
+            </h2>
+          </motion.div>
+
+          {/* Images Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
+            {doctor.clinicImages.map((image, index) => {
+              const ref = useRef(null)
+              const isInView = useInView(ref, { once: true, margin: "-100px" })
+              
+              return (
+                <motion.div
+                  key={index}
+                  ref={ref}
+                  initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: index * 0.15 }}
+                  className="relative aspect-[4/5] rounded-3xl overflow-hidden group"
+                >
+                  <img
+                    src={image}
+                    alt={`Clinical environment ${index + 1}`}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </motion.div>
+              )
+            })}
+          </div>
         </div>
       </section>
     </div>
