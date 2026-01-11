@@ -286,7 +286,7 @@ export default function AboutUsPageNew() {
               className="bg-white rounded-3xl p-8 text-center shadow-sm"
             >
               <div className="w-16 h-16 bg-[#cbff8f] rounded-full flex items-center justify-center mx-auto mb-6">
-                <Heart className="w-8 h-8 text-[#97c4ff]" />
+                <Heart className="w-8 h-8 text-[#97c4ff]" stroke="#97c4ff" />
               </div>
               <h3 className="text-xl font-['Gilda_Display'] text-black mb-4">
                 Compassion First
@@ -304,7 +304,7 @@ export default function AboutUsPageNew() {
               className="bg-white rounded-3xl p-8 text-center shadow-sm"
             >
               <div className="w-16 h-16 bg-[#cbff8f] rounded-full flex items-center justify-center mx-auto mb-6">
-                <Shield className="w-8 h-8 text-[#97c4ff]" />
+                <Shield className="w-8 h-8 text-[#97c4ff]" stroke="#97c4ff" />
               </div>
               <h3 className="text-xl font-['Gilda_Display'] text-black mb-4">
                 Integrity & Trust
@@ -322,7 +322,7 @@ export default function AboutUsPageNew() {
               className="bg-white rounded-3xl p-8 text-center shadow-sm"
             >
               <div className="w-16 h-16 bg-[#cbff8f] rounded-full flex items-center justify-center mx-auto mb-6">
-                <Clock className="w-8 h-8 text-[#97c4ff]" />
+                <Clock className="w-8 h-8 text-[#97c4ff]" stroke="#97c4ff" />
               </div>
               <h3 className="text-xl font-['Gilda_Display'] text-black mb-4">
                 Always Available
@@ -340,7 +340,7 @@ export default function AboutUsPageNew() {
               className="bg-white rounded-3xl p-8 text-center shadow-sm"
             >
               <div className="w-16 h-16 bg-[#cbff8f] rounded-full flex items-center justify-center mx-auto mb-6">
-                <Users className="w-8 h-8 text-[#97c4ff]" />
+                <Users className="w-8 h-8 text-[#97c4ff]" stroke="#97c4ff" />
               </div>
               <h3 className="text-xl font-['Gilda_Display'] text-black mb-4">
                 Patient-Centric

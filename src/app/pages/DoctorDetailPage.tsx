@@ -118,7 +118,7 @@ export default function DoctorDetailPage() {
       <section ref={aboutRef} className="py-24 bg-white">
         <div className="container mx-auto px-6">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-24 items-start">
               {/* Text Content */}
               <motion.div
                 initial={shouldReduceMotion ? {} : { opacity: 0, x: -30 }}
