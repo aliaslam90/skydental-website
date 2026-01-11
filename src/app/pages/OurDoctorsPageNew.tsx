@@ -327,16 +327,16 @@ export default function OurDoctorsPageNew() {
                     {doctor.name}
                   </h3>
                   {/* Buttons - Side by side on larger screens, stacked on mobile */}
-                  <div className="flex flex-col sm:flex-row gap-[8px] sm:gap-[12px]">
+                  <div className="flex flex-col sm:flex-row gap-[8px] sm:gap-[12px] items-center justify-center">
                     <Link 
                       to={`/our-doctors/${doctor.id}`}
-                      className="flex-1 bg-white border border-[#97c4ff] text-[#97c4ff] text-[13px] md:text-[14px] font-medium py-[10px] px-[16px] rounded-[12px] hover:bg-[#97c4ff] hover:text-white transition-colors text-center"
+                      className="bg-white border border-[#97c4ff] text-[#97c4ff] text-[13px] md:text-[14px] font-medium py-[10px] px-[20px] rounded-[12px] hover:bg-[#97c4ff] hover:text-white transition-colors text-center whitespace-nowrap"
                     >
                       View Profile
                     </Link>
                     <Link 
                       to="/contact-us"
-                      className="flex-1 bg-[#97c4ff] text-white text-[13px] md:text-[14px] font-medium py-[10px] px-[16px] rounded-[12px] hover:bg-[#7db3ff] transition-colors text-center"
+                      className="flex-1 sm:flex-1 bg-[#cbff8f] text-[#97c4ff] text-[13px] md:text-[14px] font-medium py-[10px] px-[16px] rounded-[12px] hover:bg-[#B1FF57] transition-colors text-center"
                     >
                       Book Appointment
                     </Link>
