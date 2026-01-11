@@ -265,21 +265,21 @@ export default function ContactSection() {
               transition={{ delay: shouldReduceMotion ? 0 : 0.5, duration: shouldReduceMotion ? 0 : 0.8 }}
               className="flex-1"
             >
-              <form onSubmit={handleSubmit} className="flex flex-col gap-[30px]">
+              <form onSubmit={handleSubmit} className="flex flex-col gap-[24px] sm:gap-[30px]">
                 {/* Patient Information Section */}
-                <div className="flex flex-col gap-[20px]">
+                <div className="flex flex-col gap-[16px] sm:gap-[20px]">
                   <div className="flex flex-col gap-[8px]">
                     <label className="text-[14px] font-medium text-black">
-                      Patient Name <span className="text-red-500">*</span>
+                      Full Name <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
                       name="fullName"
                       value={formData.fullName}
                       onChange={handleInputChange}
-                      placeholder="Enter patient name"
+                      placeholder="Full name"
                       required
-                      className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black"
+                      className="bg-[#f1f1f1] h-[55px] px-[16px] sm:px-[24px] py-[16px] rounded-[12px] text-[14px] text-black"
                     />
                   </div>
 
@@ -329,7 +329,7 @@ export default function ContactSection() {
                         onChange={handleInputChange}
                         placeholder="+971-XX-XXX-XXXX"
                         required
-                        className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black flex-1 min-w-0"
+                        className="bg-[#f1f1f1] h-[55px] px-[16px] sm:px-[24px] py-[16px] rounded-[12px] text-[14px] text-black flex-1 min-w-0"
                       />
                     </div>
                   </div>
@@ -343,19 +343,19 @@ export default function ContactSection() {
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      placeholder="patient@email.com"
-                      className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black"
+                      placeholder="Enter email address"
+                      className="bg-[#f1f1f1] h-[55px] px-[16px] sm:px-[24px] py-[16px] rounded-[12px] text-[14px] text-black"
                     />
                   </div>
                 </div>
 
                 {/* Appointment Details Section */}
-                <div className="flex flex-col gap-[20px]">
+                <div className="flex flex-col gap-[16px] sm:gap-[20px]">
                   {/* Service and Doctor in one row */}
                   <div className="flex flex-col gap-[8px]">
-                    <div className="flex gap-[16px]">
+                    <div className="flex flex-col sm:flex-row gap-[16px]">
                       {/* Service Input */}
-                      <div className="relative flex-1">
+                      <div className="relative flex-1 w-full">
                         <label className="text-[14px] font-medium text-black mb-[8px] block">
                           Service <span className="text-red-500">*</span>
                         </label>
@@ -364,7 +364,7 @@ export default function ContactSection() {
                           value={formData.service}
                           onChange={handleInputChange}
                           required
-                          className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuNDEgOC41OEwxMiAxMy4xN0wxNi41OSA4LjU4TDE4IDEwTDEyIDE2TDYgMTBMNy40MSA4LjU4WiIgZmlsbD0iYmxhY2siLz4KPC9zdmc+Cg==')] bg-no-repeat bg-[right_24px_center] w-full"
+                          className="bg-[#f1f1f1] h-[55px] px-[16px] sm:px-[24px] py-[16px] rounded-[12px] text-[14px] text-black appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuNDEgOC41OEwxMiAxMy4xN0wxNi41OSA4LjU4TDE4IDEwTDEyIDE2TDYgMTBMNy40MSA4LjU4WiIgZmlsbD0iYmxhY2siLz4KPC9zdmc+Cg==')] bg-no-repeat bg-[right_16px_center] sm:bg-[right_24px_center] w-full"
                         >
                           <option value="">Select service</option>
                           {services.map(service => (
@@ -374,7 +374,7 @@ export default function ContactSection() {
                       </div>
 
                       {/* Doctor Input */}
-                      <div className="relative flex-1">
+                      <div className="relative flex-1 w-full">
                         <label className="text-[14px] font-medium text-black mb-[8px] block">
                           Doctor <span className="text-red-500">*</span>
                         </label>
@@ -384,9 +384,9 @@ export default function ContactSection() {
                           onChange={handleInputChange}
                           required
                           disabled={!formData.service}
-                          className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuNDEgOC41OEwxMiAxMy4xN0wxNi41OSA4LjU4TDE4IDEwTDEyIDE2TDYgMTBMNy40MSA4LjU4WiIgZmlsbD0iYmxhY2siLz4KPC9zdmc+Cg==')] bg-no-repeat bg-[right_24px_center] disabled:opacity-50 disabled:cursor-not-allowed w-full"
+                          className="bg-[#f1f1f1] h-[55px] px-[16px] sm:px-[24px] py-[16px] rounded-[12px] text-[14px] text-black appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuNDEgOC41OEwxMiAxMy4xN0wxNi41OSA4LjU4TDE4IDEwTDEyIDE2TDYgMTBMNy40MSA4LjU4WiIgZmlsbD0iYmxhY2siLz4KPC9zdmc+Cg==')] bg-no-repeat bg-[right_16px_center] sm:bg-[right_24px_center] disabled:opacity-50 disabled:cursor-not-allowed w-full"
                         >
-                          <option value="">{formData.service ? 'Select doctor' : 'Select service first'}</option>
+                          <option value="">Select doctor</option>
                           {formData.service && availableDoctors.map(doctor => (
                             <option key={doctor} value={doctor}>{doctor}</option>
                           ))}
@@ -397,9 +397,9 @@ export default function ContactSection() {
 
                   {/* Date and Time in one row */}
                   <div className="flex flex-col gap-[8px]">
-                    <div className="flex gap-[16px]">
+                    <div className="flex flex-col sm:flex-row gap-[16px]">
                       {/* Date Input */}
-                      <div className="relative flex-1" ref={datePickerRef}>
+                      <div className="relative flex-1 w-full" ref={datePickerRef}>
                         <label className="text-[14px] font-medium text-black mb-[8px] block">
                           Date <span className="text-red-500">*</span>
                         </label>
@@ -407,18 +407,23 @@ export default function ContactSection() {
                           type="button"
                           onClick={() => formData.service && formData.doctor && setShowDatePicker(!showDatePicker)}
                           disabled={!formData.service || !formData.doctor}
-                          className={`w-full bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black text-left flex items-center gap-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed ${
+                          className={`w-full bg-[#f1f1f1] h-[55px] px-[16px] sm:px-[24px] py-[16px] rounded-[12px] text-[14px] text-black text-left flex items-center justify-between transition-all disabled:opacity-50 disabled:cursor-not-allowed ${
                             formData.date 
                               ? 'bg-[#e0edff]' 
                               : 'hover:bg-[#e8e8e8]'
                           }`}
                         >
-                          <svg className="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <div className="flex items-center gap-2 flex-1 min-w-0">
+                            <svg className="w-5 h-5 text-gray-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                            <span className={`truncate ${formData.date ? 'font-semibold text-black' : 'text-gray-500'}`}>
+                              {formData.date || 'Select date'}
+                            </span>
+                          </div>
+                          <svg className="w-5 h-5 text-gray-400 flex-shrink-0 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                           </svg>
-                          <span className={formData.date ? 'font-semibold text-black' : 'text-gray-500'}>
-                            {formData.date || 'Select date'}
-                          </span>
                         </button>
                         {showDatePicker && formData.service && formData.doctor && (
                           <DatePicker
@@ -430,7 +435,7 @@ export default function ContactSection() {
                       </div>
 
                       {/* Time Input */}
-                      <div className="relative flex-1" ref={timePickerRef}>
+                      <div className="relative flex-1 w-full" ref={timePickerRef}>
                         <label className="text-[14px] font-medium text-black mb-[8px] block">
                           Time <span className="text-red-500">*</span>
                         </label>
@@ -438,14 +443,14 @@ export default function ContactSection() {
                           type="button"
                           onClick={() => formData.date && setShowTimePicker(!showTimePicker)}
                           disabled={!formData.service || !formData.doctor || !formData.date}
-                          className={`w-full bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black text-left flex items-center justify-between transition-all disabled:opacity-50 disabled:cursor-not-allowed ${
+                          className={`w-full bg-[#f1f1f1] h-[55px] px-[16px] sm:px-[24px] py-[16px] rounded-[12px] text-[14px] text-black text-left flex items-center justify-between transition-all disabled:opacity-50 disabled:cursor-not-allowed ${
                             formData.time ? 'bg-[#e0edff]' : ''
                           }`}
                         >
-                          <span className={formData.time ? 'font-semibold text-black' : 'text-gray-500'}>
-                            {formData.time || '--:-- --'}
+                          <span className={`truncate flex-1 ${formData.time ? 'font-semibold text-black' : 'text-gray-500'}`}>
+                            {formData.time || 'Select time'}
                           </span>
-                          <svg className="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <svg className="w-5 h-5 text-gray-400 flex-shrink-0 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                           </svg>
                         </button>
@@ -465,15 +470,15 @@ export default function ContactSection() {
                 </div>
 
                 {/* Internal Notes Section */}
-                <div className="flex flex-col gap-[20px]">
-                  <textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    placeholder="Add any special instructions or notes..."
-                    rows={4}
-                    className="bg-[#f1f1f1] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black resize-none"
-                  />
+                <div className="flex flex-col gap-[16px] sm:gap-[20px]">
+                    <textarea
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      placeholder="Add any special instructions or notes..."
+                      rows={4}
+                      className="bg-[#f1f1f1] px-[16px] sm:px-[24px] py-[16px] rounded-[12px] text-[14px] text-black resize-none"
+                    />
                 </div>
 
                 {/* Action Buttons */}
