@@ -142,9 +142,9 @@ export default function ContactSection() {
     setShowTimePicker(false)
   }
 
-  // Generate a random 6-digit OTP
+  // Generate OTP (fixed for testing)
   const generateOTP = () => {
-    return Math.floor(100000 + Math.random() * 900000).toString()
+    return '123456'
   }
 
   // Generate a booking ID
