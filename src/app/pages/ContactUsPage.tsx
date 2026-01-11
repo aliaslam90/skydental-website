@@ -3,7 +3,7 @@
 import { motion, useReducedMotion, useInView } from 'motion/react'
 import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Home, ChevronRight, Phone, Mail, MapPin, Clock, Send, CheckCircle2 } from 'lucide-react'
+import { Phone, Mail, MapPin, Clock, Send, CheckCircle2 } from 'lucide-react'
 import imgImage from "../../assets/e2295a1a1a2bc348414dcc117de577c691164137.png"
 import imgImage1 from "../../assets/c5fbf2bb2ed01ea6f6ce38835da33519e2db95fe.png"
 import imgImage2 from "../../assets/27cea6501d6677b5b8f9f08502ce76c7a193f7f8.png"
@@ -66,7 +66,7 @@ export default function ContactUsPage() {
         <div className="absolute -left-24 top-40 w-64 h-64 bg-[rgba(203,255,143,0.2)] rounded-full blur-[64px]" />
         <div className="absolute right-32 top-80 w-64 h-64 bg-[rgba(12,0,96,0.1)] rounded-full blur-[64px]" />
 
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-6 relative z-10 py-20">
           <motion.div
             initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
             animate={heroInView ? { opacity: 1, y: 0 } : {}}
@@ -99,16 +99,6 @@ export default function ContactUsPage() {
                 <CheckCircle2 className="w-4 h-4 text-[#97c4ff]" />
                 <span className="text-sm font-['Arial'] font-bold text-[#97c4ff]">Easy Booking</span>
               </div>
-            </div>
-
-            {/* Breadcrumbs */}
-            <div className="flex items-center justify-center gap-2 text-sm">
-              <Link to="/" className="flex items-center gap-1 text-gray-500 hover:text-gray-700">
-                <Home className="w-4 h-4" />
-                <span className="font-['Arial']">Home</span>
-              </Link>
-              <ChevronRight className="w-4 h-4 text-gray-400" />
-              <span className="text-[#97c4ff] font-['Arial']">Contact</span>
             </div>
           </motion.div>
         </div>

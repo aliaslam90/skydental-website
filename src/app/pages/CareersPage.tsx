@@ -38,7 +38,7 @@ const whyJoinCards: WhyJoinCard[] = [
   {
     title: 'Meaningful Impact',
     description: 'Make a real difference in people\'s lives every day. Your work directly contributes to improving oral health and creating confident, beautiful smiles in our community.',
-    bgColor: 'bg-[#e0edff]',
+    bgColor: 'bg-[#cbff8f]',
   },
 ]
 
