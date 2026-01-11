@@ -160,17 +160,12 @@ export default function DoctorDetailPage() {
                 transition={{ duration: 0.8 }}
                 className="relative"
               >
-                <div className="relative aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl">
+                <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
                   <img
                     src={doctor.aboutImage}
                     alt={doctor.name}
                     className="w-full h-full object-cover"
                   />
-                  {/* Badge */}
-                  <div className="absolute top-6 right-6 bg-white rounded-2xl px-6 py-3 shadow-lg">
-                    <div className="text-2xl font-['Gilda_Display'] text-black">{doctor.stats[0].value}</div>
-                    <div className="text-xs text-black/60 font-['Arial']">{doctor.stats[0].label}</div>
-                  </div>
                 </div>
                 {/* Decorative element */}
                 <div className="absolute -bottom-6 -left-6 w-40 h-40 bg-[#cbff8f] rounded-3xl -z-10" />
