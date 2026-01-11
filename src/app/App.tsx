@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { motion, useReducedMotion } from 'motion/react'
 import Header from './components/Header'
+import ScrollToTop from './components/ScrollToTop'
 import HomePage from './pages/HomePage'
 import AboutUsPage from './pages/AboutUsPage'
 import OurDoctorsPageNew from './pages/OurDoctorsPageNew'
@@ -24,6 +25,10 @@ export default function App() {
   const shouldReduceMotion = useReducedMotion()
 
   useEffect(() => {
+    // Disable browser scroll restoration
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual'
+    }
     setMounted(true)
   }, [])
 
@@ -33,6 +38,7 @@ export default function App() {
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div className="bg-white min-h-screen">
         <Header />
         <Routes>

@@ -160,11 +160,11 @@ export default function DoctorDetailPage() {
                 transition={{ duration: 0.8 }}
                 className="relative w-full"
               >
-                <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl w-full max-w-md mx-auto lg:mx-0">
+                <div className="relative h-[350px] md:h-[400px] rounded-3xl overflow-hidden shadow-2xl w-full mx-auto lg:mx-0">
                   <img
                     src={doctor.aboutImage}
                     alt={doctor.name}
-                    className="w-full h-full object-cover object-top"
+                    className="w-full h-full object-cover"
                   />
                 </div>
               </motion.div>
