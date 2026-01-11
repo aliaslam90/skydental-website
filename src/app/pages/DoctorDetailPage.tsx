@@ -142,7 +142,7 @@ export default function DoctorDetailPage() {
                       transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
                       className="text-center"
                     >
-                      <div className="text-xl md:text-4xl font-['Gilda_Display'] text-[#97c4ff] mb-2">
+                      <div className="text-xl md:text-xl font-['Gilda_Display'] text-[#97c4ff] mb-2">
                         {stat.value}
                       </div>
                       <div className="text-sm text-black/60 font-['Arial']">
