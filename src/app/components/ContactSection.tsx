@@ -76,6 +76,12 @@ export default function ContactSection() {
   const [showTimePicker, setShowTimePicker] = useState(false)
   const [showCountryCodeDropdown, setShowCountryCodeDropdown] = useState(false)
   const [availableDoctors, setAvailableDoctors] = useState<string[]>([])
+  const [showOTPModal, setShowOTPModal] = useState(false)
+  const [otp, setOtp] = useState('')
+  const [otpSent, setOtpSent] = useState(false)
+  const [otpVerified, setOtpVerified] = useState(false)
+  const [bookingId, setBookingId] = useState('')
+  const [generatedOTP, setGeneratedOTP] = useState('')
   const datePickerRef = useRef<HTMLDivElement>(null)
   const timePickerRef = useRef<HTMLDivElement>(null)
   const countryCodeRef = useRef<HTMLDivElement>(null)
@@ -136,11 +142,52 @@ export default function ContactSection() {
     setShowTimePicker(false)
   }
 
+  // Generate a random 6-digit OTP
+  const generateOTP = () => {
+    return Math.floor(100000 + Math.random() * 900000).toString()
+  }
+
+  // Generate a booking ID
+  const generateBookingId = () => {
+    const prefix = 'SKY'
+    const timestamp = Date.now().toString().slice(-6)
+    const random = Math.floor(1000 + Math.random() * 9000)
+    return `${prefix}-${timestamp}-${random}`
+  }
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Here you would typically send the form data to your backend
-    console.log('Form submitted:', formData)
-    alert('Appointment request sent successfully!')
+    // Generate OTP and booking ID
+    const otp = generateOTP()
+    const bookingId = generateBookingId()
+    
+    setGeneratedOTP(otp)
+    setBookingId(bookingId)
+    setOtpSent(true)
+    setShowOTPModal(true)
+    setOtp('')
+    setOtpVerified(false)
+    
+    // In a real app, you would send the OTP to the phone number via SMS
+    console.log(`OTP sent to ${formData.countryCode}${formData.phone}: ${otp}`)
+  }
+
+  const handleOTPVerify = () => {
+    if (otp === generatedOTP) {
+      setOtpVerified(true)
+    } else {
+      alert('Invalid OTP. Please try again.')
+      setOtp('')
+    }
+  }
+
+  const handleCloseModal = () => {
+    setShowOTPModal(false)
+    setOtp('')
+    setOtpSent(false)
+    setOtpVerified(false)
+    setGeneratedOTP('')
+    setBookingId('')
     // Reset form
     setFormData({
       fullName: '',
@@ -446,6 +493,21 @@ export default function ContactSection() {
           </div>
         </motion.div>
       </div>
+
+      {/* OTP Verification Modal */}
+      {showOTPModal && (
+        <OTPVerificationModal
+          phoneNumber={`${formData.countryCode}${formData.phone}`}
+          otp={otp}
+          setOtp={setOtp}
+          otpSent={otpSent}
+          otpVerified={otpVerified}
+          onVerify={handleOTPVerify}
+          onClose={handleCloseModal}
+          bookingId={bookingId}
+          bookingDetails={formData}
+        />
+      )}
     </section>
   )
 }
@@ -687,5 +749,152 @@ function SocialIcon({ children }: { children: React.ReactNode }) {
         {children}
       </svg>
     </a>
+  )
+}
+
+// OTP Verification Modal Component
+function OTPVerificationModal({
+  phoneNumber,
+  otp,
+  setOtp,
+  otpSent,
+  otpVerified,
+  onVerify,
+  onClose,
+  bookingId,
+  bookingDetails
+}: {
+  phoneNumber: string
+  otp: string
+  setOtp: (otp: string) => void
+  otpSent: boolean
+  otpVerified: boolean
+  onVerify: () => void
+  onClose: () => void
+  bookingId: string
+  bookingDetails: {
+    fullName: string
+    email: string
+    service: string
+    doctor: string
+    date: string
+    time: string
+  }
+}) {
+  const handleOtpChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value.replace(/\D/g, '').slice(0, 6)
+    setOtp(value)
+  }
+
+  return (
+    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0.9 }}
+        className="bg-white rounded-[24px] shadow-2xl max-w-[500px] w-full p-8 relative"
+      >
+        {/* Close Button */}
+        <button
+          onClick={onClose}
+          className="absolute top-6 right-6 w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors"
+        >
+          <svg className="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        {!otpVerified ? (
+          <>
+            {/* OTP Verification Step */}
+            <div className="mb-6">
+              <h3 className="text-[24px] font-bold text-black mb-2" style={{ fontFamily: "'Gilda Display', serif" }}>
+                Verify Your Phone Number
+              </h3>
+              <p className="text-[14px] text-gray-600">
+                We've sent a 6-digit OTP to <span className="font-semibold text-black">{phoneNumber}</span>
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-2">
+                <label className="text-[14px] font-medium text-black">
+                  Enter OTP <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  value={otp}
+                  onChange={handleOtpChange}
+                  placeholder="000000"
+                  maxLength={6}
+                  className="bg-[#f1f1f1] h-[55px] px-[24px] py-[16px] rounded-[12px] text-[14px] text-black text-center tracking-[8px] text-[20px] font-semibold"
+                />
+              </div>
+
+              <button
+                onClick={onVerify}
+                disabled={otp.length !== 6}
+                className="w-full bg-[#cbff8f] h-[50px] px-[24px] py-[16px] rounded-[12px] text-[14px] font-medium text-black hover:bg-[#B1FF57] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                Verify OTP
+              </button>
+            </div>
+          </>
+        ) : (
+          <>
+            {/* Booking Confirmation Step */}
+            <div className="mb-6">
+              <div className="w-16 h-16 bg-[#cbff8f] rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-[#97c4ff]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <h3 className="text-[24px] font-bold text-black mb-2 text-center" style={{ fontFamily: "'Gilda Display', serif" }}>
+                Appointment Confirmed!
+              </h3>
+              <p className="text-[14px] text-gray-600 text-center">
+                Your appointment has been successfully booked
+              </p>
+            </div>
+
+            <div className="bg-[#f1f1f1] rounded-[16px] p-6 mb-6">
+              <div className="space-y-4">
+                <div className="flex justify-between items-center pb-3 border-b border-gray-300">
+                  <span className="text-[14px] text-gray-600">Booking ID</span>
+                  <span className="text-[16px] font-bold text-black">{bookingId}</span>
+                </div>
+                <div className="flex justify-between items-center pb-3 border-b border-gray-300">
+                  <span className="text-[14px] text-gray-600">Name</span>
+                  <span className="text-[16px] font-semibold text-black">{bookingDetails.fullName}</span>
+                </div>
+                <div className="flex justify-between items-center pb-3 border-b border-gray-300">
+                  <span className="text-[14px] text-gray-600">Service</span>
+                  <span className="text-[16px] font-semibold text-black">{bookingDetails.service}</span>
+                </div>
+                <div className="flex justify-between items-center pb-3 border-b border-gray-300">
+                  <span className="text-[14px] text-gray-600">Doctor</span>
+                  <span className="text-[16px] font-semibold text-black">{bookingDetails.doctor}</span>
+                </div>
+                <div className="flex justify-between items-center pb-3 border-b border-gray-300">
+                  <span className="text-[14px] text-gray-600">Date</span>
+                  <span className="text-[16px] font-semibold text-black">{bookingDetails.date}</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-[14px] text-gray-600">Time</span>
+                  <span className="text-[16px] font-semibold text-black">{bookingDetails.time}</span>
+                </div>
+              </div>
+            </div>
+
+            <button
+              onClick={onClose}
+              className="w-full bg-[#97c4ff] h-[50px] px-[24px] py-[16px] rounded-[12px] text-[14px] font-medium text-white hover:bg-[#7db3ff] transition-colors"
+            >
+              Close
+            </button>
+          </>
+        )}
+      </motion.div>
+    </div>
   )
 }
