@@ -61,7 +61,7 @@ export const servicesData: ServiceDetail[] = [
       {
         icon: '📅',
         title: 'Dental Checkup & Cleaning',
-        description: 'Regular checkups help detect issues early and keep your smile healthy. Our thorough cleanings remove plaque and tartar buildup.',
+        description: 'A comprehensive examination and professional cleaning that help detect early concerns and maintain optimal oral hygiene. This service prevents decay, reduces gum disease risk, and leaves your smile feeling fresh and healthy.',
         features: [
           'Comprehensive oral examination',
           'Professional teeth cleaning',
@@ -70,20 +70,20 @@ export const servicesData: ServiceDetail[] = [
         ]
       },
       {
-        icon: '📋',
-        title: 'Dental Laboratory Filing',
-        description: 'Accurate diagnostic imaging and laboratory work for precise treatment planning and optimal results.',
+        icon: '✨',
+        title: 'Tooth-Coloured Fillings',
+        description: 'Aesthetic, natural-looking fillings that match your tooth shade while restoring function and structure. An ideal solution for treating decay discreetly and effectively.',
         features: [
-          'Digital X-rays',
-          'Lab work coordination',
-          'Treatment planning',
-          'Follow-up care'
+          'Natural tooth shade matching',
+          'Aesthetic restoration',
+          'Functional repair',
+          'Discreet treatment'
         ]
       },
       {
         icon: '🦷',
         title: 'Tooth Extraction',
-        description: 'Safe and comfortable tooth removal when necessary, performed with care to minimize discomfort.',
+        description: 'Gentle and precise removal of damaged or non-restorable teeth with a focus on patient comfort and fast healing. Our approach minimises discomfort and supports ongoing oral health.',
         features: [
           'Gentle extraction technique',
           'Pain management',
@@ -93,8 +93,8 @@ export const servicesData: ServiceDetail[] = [
       },
       {
         icon: '🌱',
-        title: 'Root Canal Treatment',
-        description: 'Save your natural tooth with our advanced root canal therapy, performed with precision and care.',
+        title: 'Root Canal Treatments',
+        description: 'An advanced treatment that removes infection inside the tooth to preserve it rather than extract it. Performed using modern techniques to ensure comfort and durable outcomes.',
         features: [
           'Pain-free procedure',
           'Advanced technology',
@@ -103,25 +103,25 @@ export const servicesData: ServiceDetail[] = [
         ]
       },
       {
-        icon: '🦴',
-        title: 'Dental Bone Grafting',
-        description: 'Restore bone density and prepare for implants with our advanced bone grafting procedures.',
+        icon: '🩹',
+        title: 'Gum Disease Treatment',
+        description: 'Specialised care that treats inflammation, halts disease progression, and restores gum health. Early management prevents tooth loss and enhances overall oral wellbeing.',
         features: [
-          'Bone regeneration',
-          'Implant preparation',
-          'Advanced materials',
-          'Proven success rate'
+          'Inflammation treatment',
+          'Disease progression prevention',
+          'Gum health restoration',
+          'Tooth loss prevention'
         ]
       },
       {
-        icon: '🩹',
-        title: 'Periodontal Treatment',
-        description: 'Protect your gums and prevent disease with our comprehensive periodontal care programs.',
+        icon: '🛡️',
+        title: 'Preventive Dental Care',
+        description: 'Fluoride treatments, hygiene guidance, and routine monitoring designed to protect your smile from future issues. Prevention is the key to lasting oral health.',
         features: [
-          'Gum disease treatment',
-          'Deep cleaning',
-          'Maintenance programs',
-          'Health monitoring'
+          'Fluoride treatments',
+          'Hygiene guidance',
+          'Routine monitoring',
+          'Preventive strategies'
         ]
       }
     ],
