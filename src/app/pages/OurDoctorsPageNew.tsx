@@ -18,38 +18,38 @@ import imgImage10 from "../../assets/d0a174de16cf4fb8302d79cf8289e73cb1677432.pn
 import imgImage11 from "../../assets/0d3ac11072075d113c29833278eb30849c46faed.png"
 import imgImage12 from "../../assets/6b7905bb93d0f824d8be0a8badf26d7ebf6ec721.png"
 
-// Doctor data from Figma design
+// Doctor data - First 4 match homepage, rest can be added later
 const doctorsData = [
   {
     id: 'dr-saifaldin-tawakul',
     name: 'Dr. Saifaldin Tawakul',
-    specialty: 'Orthodontist',
+    specialty: 'Specialist Oral Surgeon',
     experience: '15+ years',
-    image: imgImage,
+    image: '/doctor1.png',
     available: true
   },
   {
     id: 'dr-basma-al-rawi',
     name: 'Dr. Basma Al Rawi',
-    specialty: 'Cosmetic Dentistry',
+    specialty: 'Oral Surgery',
     experience: '12+ years',
-    image: imgImage1,
+    image: '/doctor2.png',
     available: true
   },
   {
     id: 'dr-claude-istanbouli',
     name: 'Dr. Claude Istanbouli',
-    specialty: 'Endodontist',
+    specialty: 'Master of Implant Dentistry',
     experience: '10+ years',
-    image: null, // Placeholder
-    available: false
+    image: '/doctor3.png',
+    available: true
   },
   {
     id: 'dr-elias-daoud-hanna',
     name: 'Dr. Elias Daoud Hanna',
-    specialty: 'Oral Surgeon',
+    specialty: 'Prosthodontist',
     experience: '20+ years',
-    image: imgImage2,
+    image: '/doctor4.png',
     available: true
   },
   {
@@ -284,83 +284,76 @@ export default function OurDoctorsPageNew() {
       </section>
 
       {/* Doctors Grid */}
-      <section className="py-16 bg-[#f5fded]">
-        <div className="container mx-auto px-6">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {filteredDoctors.map((doctor, index) => (
-                <motion.div
-                  key={doctor.id}
-                  initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                >
-                  <Link to={`/our-doctors/${doctor.id}`}>
-                    <div className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 group cursor-pointer">
-                      {/* Doctor Image */}
-                      <div className="aspect-[3/4] bg-gray-100 relative overflow-hidden">
-                        {doctor.image ? (
-                          <img
-                            src={doctor.image}
-                            alt={doctor.name}
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                          />
-                        ) : (
-                          <div className="w-full h-full flex items-center justify-center bg-gray-200">
-                            <svg className="w-24 h-24 text-gray-400" viewBox="0 0 24 24" fill="currentColor">
-                              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                            </svg>
-                          </div>
-                        )}
-                        {!doctor.available && (
-                          <div className="absolute top-3 right-3 bg-gray-800/80 text-white text-xs px-3 py-1 rounded-full font-['Arial']">
-                            Coming Soon
-                          </div>
-                        )}
+      <section className="py-[50px] md:py-[60px] lg:py-[70px] px-[16px] md:px-[20px] lg:px-[25px] bg-[#e0edff]">
+        <div className="max-w-[1390px] mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[20px] md:gap-[24px] lg:gap-[32px]">
+            {filteredDoctors.map((doctor, index) => (
+              <motion.div
+                key={doctor.id}
+                initial={shouldReduceMotion ? {} : { opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: shouldReduceMotion ? 0 : 0.6, delay: index * 0.15, ease: 'easeOut' }}
+                className="group flex flex-col"
+              >
+                {/* Image Card - Only contains image and tag */}
+                <div className="bg-white rounded-[20px] overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+                  <div className="relative h-[350px] md:h-[400px] overflow-hidden">
+                    {doctor.image ? (
+                      <img
+                        src={doctor.image}
+                        alt={doctor.name}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center bg-gray-200">
+                        <svg className="w-24 h-24 text-gray-400" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                        </svg>
                       </div>
-
-                      {/* Doctor Info */}
-                      <div className="p-6 text-center">
-                        <h3 className="text-xl font-['Gilda_Display'] text-black mb-2 tracking-tight">
-                          {doctor.name}
-                        </h3>
-                        <p className="text-sm text-[#97c4ff] font-['Arial'] mb-1">
-                          {doctor.specialty}
-                        </p>
-                        <p className="text-xs text-black/60 font-['Arial'] mb-4">
-                          {doctor.experience}
-                        </p>
-                        
-                        {doctor.available && (
-                          <button className="w-full bg-[#cbff8f] hover:bg-[#b8e67c] text-black font-['Arial'] text-sm py-2 px-4 rounded-full transition-colors">
-                            View Profile
-                          </button>
-                        )}
-                      </div>
+                    )}
+                    {/* Specialty Badge */}
+                    <div className="absolute bottom-[16px] left-[16px] bg-black/70 backdrop-blur-sm px-[16px] py-[8px] rounded-[20px]">
+                      <span className="text-white text-[12px] md:text-[13px] font-medium">{doctor.specialty}</span>
                     </div>
+                  </div>
+                </div>
+                
+                {/* Name and View Details - Outside the card */}
+                <div className="mt-[20px] md:mt-[24px] text-center flex flex-col gap-[8px]">
+                  <h3
+                    className="text-black text-[18px] md:text-[20px] leading-[1.2]"
+                    style={{ fontFamily: "'Gilda Display', serif" }}
+                  >
+                    {doctor.name}
+                  </h3>
+                  <Link 
+                    to={`/our-doctors/${doctor.id}`}
+                    className="text-[#97c4ff] text-[14px] md:text-[15px] hover:underline"
+                  >
+                    View Details
                   </Link>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* No Results */}
-            {filteredDoctors.length === 0 && (
-              <div className="text-center py-16">
-                <p className="text-lg text-black/60 font-['Arial']">
-                  No doctors found matching your criteria.
-                </p>
-                <button
-                  onClick={() => {
-                    setSearchQuery('')
-                    setSelectedSpecialty('All Specialties')
-                  }}
-                  className="mt-4 text-[#97c4ff] font-['Arial'] text-sm hover:underline"
-                >
-                  Clear filters
-                </button>
-              </div>
-            )}
+                </div>
+              </motion.div>
+            ))}
           </div>
+
+          {/* No Results */}
+          {filteredDoctors.length === 0 && (
+            <div className="text-center py-16">
+              <p className="text-lg text-black/60 font-['Arial']">
+                No doctors found matching your criteria.
+              </p>
+              <button
+                onClick={() => {
+                  setSearchQuery('')
+                  setSelectedSpecialty('All Specialties')
+                }}
+                className="mt-4 text-[#97c4ff] font-['Arial'] text-sm hover:underline"
+              >
+                Clear filters
+              </button>
+            </div>
+          )}
         </div>
       </section>
 
