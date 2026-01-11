@@ -169,47 +169,58 @@ export const servicesData: ServiceDetail[] = [
     ],
     services: [
       {
-        icon: '🦷',
+        icon: '✨',
         title: 'Teeth Whitening',
-        description: 'Professional whitening treatments that brighten your smile by several shades safely and effectively.',
+        description: 'A safe and effective whitening treatment that brightens your smile and removes deep stains. Enjoy noticeable, long-lasting results in a single session.',
         features: [
-          'In-office whitening',
-          'Take-home kits',
+          'Safe and effective treatment',
+          'Deep stain removal',
           'Long-lasting results',
-          'Safe for enamel'
+          'Single session completion'
         ]
       },
       {
         icon: '💎',
-        title: 'Porcelain Veneers',
-        description: 'Ultra-thin shells that cover imperfections and create a flawless, natural-looking smile.',
+        title: 'Veneers & Hollywood Smile',
+        description: 'Ultra-thin cosmetic veneers designed to perfect your smile by enhancing colour, shape, and symmetry. Achieve a natural yet glamorous Hollywood Smile.',
         features: [
-          'Custom-crafted veneers',
-          'Stain-resistant',
-          'Natural appearance',
-          'Minimal tooth preparation'
+          'Ultra-thin cosmetic veneers',
+          'Colour and shape enhancement',
+          'Symmetry perfection',
+          'Natural glamorous results'
         ]
       },
       {
         icon: '👑',
-        title: 'Smile Makeover',
-        description: 'Comprehensive treatment combining multiple procedures to completely transform your smile.',
+        title: 'Dental Crowns & Bridge',
+        description: 'Durable and aesthetic restorations that replace or strengthen damaged or missing teeth. Custom-made to restore natural function and appearance.',
         features: [
-          'Complete smile analysis',
-          'Multiple treatments',
-          'Digital smile preview',
-          'Stunning results'
+          'Durable restorations',
+          'Aesthetic appearance',
+          'Custom-made design',
+          'Natural function restoration'
+        ]
+      },
+      {
+        icon: '🎨',
+        title: 'Smile Design',
+        description: 'A digital design process that plans your ideal smile based on your facial features. Preview your results before treatment begins for full confidence in your transformation.',
+        features: [
+          'Digital design process',
+          'Facial feature analysis',
+          'Result preview',
+          'Confidence in transformation'
         ]
       },
       {
         icon: '🎯',
-        title: 'Dental Bonding',
-        description: 'Quick and affordable solution to repair chips, cracks, and gaps in your teeth.',
+        title: 'Composite Bonding',
+        description: 'A quick and minimally invasive solution that reshapes and corrects minor imperfections. Achieve refined, aesthetic enhancements without extensive procedures.',
         features: [
-          'Same-day treatment',
-          'Natural color matching',
-          'Conservative approach',
-          'Immediate results'
+          'Quick treatment',
+          'Minimally invasive',
+          'Minor imperfection correction',
+          'Refined aesthetic results'
         ]
       }
     ],
@@ -258,46 +269,46 @@ export const servicesData: ServiceDetail[] = [
     services: [
       {
         icon: '🔲',
-        title: 'Traditional Braces',
-        description: 'Proven, effective treatment for complex orthodontic cases with modern materials for comfort.',
+        title: 'Metal & Ceramic Braces',
+        description: 'Effective orthodontic systems designed to correct a wide range of alignment issues. Both options provide excellent results, with ceramic braces offering a more discreet appearance.',
         features: [
-          'Metal or ceramic options',
-          'Effective for all cases',
-          'Precise tooth movement',
-          'Affordable option'
+          'Metal and ceramic options',
+          'Wide range alignment correction',
+          'Excellent results',
+          'Discreet ceramic option'
         ]
       },
       {
         icon: '👻',
-        title: 'Invisalign Clear Aligners',
-        description: 'Nearly invisible aligners that straighten teeth without the look of traditional braces.',
+        title: 'Invisalign, Sparks & Smarter',
+        description: 'Clear aligner systems that gently and discreetly align teeth using advanced digital planning. Comfortable, removable, and highly effective for everyday lifestyles.',
         features: [
-          'Virtually invisible',
-          'Removable convenience',
-          'Comfortable fit',
-          'Predictable results'
-        ]
-      },
-      {
-        icon: '⏱️',
-        title: 'Fast Track Orthodontics',
-        description: 'Accelerated treatment options to achieve your dream smile in less time.',
-        features: [
-          'Reduced treatment time',
-          'Advanced techniques',
-          'Effective results',
-          'Regular monitoring'
+          'Clear aligner systems',
+          'Advanced digital planning',
+          'Comfortable and removable',
+          'Highly effective'
         ]
       },
       {
         icon: '🛡️',
-        title: 'Retainers & Maintenance',
-        description: 'Keep your newly straightened smile perfect with custom retainers and ongoing care.',
+        title: 'Retainers and Smile Correction',
+        description: 'Custom retainers designed to maintain treatment results and prevent teeth from shifting. Supports long-term smile stability.',
         features: [
           'Custom retainers',
-          'Lifetime retention plan',
-          'Regular check-ups',
-          'Smile protection'
+          'Treatment result maintenance',
+          'Prevents teeth shifting',
+          'Long-term smile stability'
+        ]
+      },
+      {
+        icon: '🔍',
+        title: 'Orthodontic Check-up',
+        description: 'A detailed orthodontic assessment to evaluate dental alignment and bite concerns, allowing us to plan or adjust treatment as needed.',
+        features: [
+          'Detailed assessment',
+          'Dental alignment evaluation',
+          'Bite concern evaluation',
+          'Treatment planning and adjustment'
         ]
       }
     ],
@@ -345,47 +356,58 @@ export const servicesData: ServiceDetail[] = [
     ],
     services: [
       {
-        icon: '👀',
-        title: 'Preventive Care',
-        description: 'Regular checkups, cleanings, and fluoride treatments to keep young smiles healthy.',
+        icon: '👶',
+        title: 'Gentle Dental Care for Kids',
+        description: 'Soft, comforting care that helps children feel relaxed during dental visits. We create positive experiences that encourage lifelong oral health.',
         features: [
-          'Gentle examinations',
-          'Professional cleanings',
-          'Fluoride treatments',
-          'Sealants'
+          'Soft and comforting care',
+          'Relaxed dental visits',
+          'Positive experiences',
+          'Lifelong oral health encouragement'
         ]
       },
       {
-        icon: '🦷',
-        title: 'Cavity Treatment',
-        description: 'Gentle, effective treatment for cavities using child-friendly techniques and materials.',
+        icon: '🛡️',
+        title: 'Fluoride Treatment',
+        description: 'A preventive treatment that strengthens enamel and reduces the risk of decay—especially beneficial for growing children.',
         features: [
-          'Tooth-colored fillings',
-          'Gentle approach',
-          'Pain management',
-          'Quick procedures'
+          'Enamel strengthening',
+          'Decay risk reduction',
+          'Preventive care',
+          'Beneficial for growing children'
+        ]
+      },
+      {
+        icon: '🔒',
+        title: 'Dental Sealant',
+        description: 'A protective coating applied to molars to prevent cavities. One of the most effective long-term methods for paediatric decay prevention.',
+        features: [
+          'Protective coating',
+          'Molar protection',
+          'Cavity prevention',
+          'Long-term effectiveness'
+        ]
+      },
+      {
+        icon: '🔍',
+        title: 'Early Orthodontic Evaluation',
+        description: 'Early assessment that identifies developmental issues in the teeth and jaws, ensuring timely guidance and intervention.',
+        features: [
+          'Early assessment',
+          'Developmental issue identification',
+          'Timely guidance',
+          'Intervention planning'
         ]
       },
       {
         icon: '📚',
-        title: 'Dental Education',
-        description: 'Teaching children proper brushing, flossing, and nutrition habits for lifelong oral health.',
+        title: 'Education on Oral Hygiene Habits',
+        description: 'Engaging instruction that teaches children proper brushing, flossing, and healthy habits to support long-term dental wellness.',
         features: [
-          'Interactive learning',
-          'Brushing demonstrations',
-          'Nutrition guidance',
-          'Fun activities'
-        ]
-      },
-      {
-        icon: '🚨',
-        title: 'Emergency Care',
-        description: 'Prompt treatment for dental emergencies including knocked-out teeth and injuries.',
-        features: [
-          'Same-day appointments',
-          'Trauma care',
-          'Pain relief',
-          'Follow-up care'
+          'Engaging instruction',
+          'Proper brushing techniques',
+          'Flossing education',
+          'Healthy habit development'
         ]
       }
     ],
@@ -435,45 +457,45 @@ export const servicesData: ServiceDetail[] = [
       {
         icon: '🦷',
         title: 'Dental Implants',
-        description: 'Permanent tooth replacement that looks, feels, and functions like natural teeth.',
+        description: 'State-of-the-art implant solutions designed to replace missing teeth with exceptional stability and natural appearance.',
         features: [
+          'State-of-the-art solutions',
+          'Exceptional stability',
           'Natural appearance',
-          'Permanent solution',
-          'Bone preservation',
-          'High success rate'
-        ]
-      },
-      {
-        icon: '👑',
-        title: 'Crowns & Bridges',
-        description: 'Custom-crafted restorations to repair damaged teeth or replace missing ones.',
-        features: [
-          'Natural-looking',
-          'Durable materials',
-          'Custom-fit',
-          'Long-lasting'
+          'Missing tooth replacement'
         ]
       },
       {
         icon: '😬',
-        title: 'Full Mouth Restoration',
-        description: 'Comprehensive treatment to rebuild and restore your entire smile.',
+        title: 'Full Mouth Rehabilitation',
+        description: 'A comprehensive approach that restores function, aesthetics, and oral harmony through personalised, multi-disciplinary treatment planning.',
         features: [
-          'Complete transformation',
-          'Multiple procedures',
-          'Personalized plan',
-          'Life-changing results'
+          'Comprehensive approach',
+          'Function and aesthetics restoration',
+          'Oral harmony',
+          'Multi-disciplinary planning'
         ]
       },
       {
-        icon: '🦴',
-        title: 'Bone Grafting & Sinus Lift',
-        description: 'Advanced procedures to restore bone and prepare for dental implants.',
+        icon: '📸',
+        title: 'Digital X-rays & 3D Imaging',
+        description: 'Advanced diagnostic technology providing highly detailed images that guide precise and efficient treatment.',
         features: [
-          'Bone regeneration',
-          'Implant preparation',
-          'Advanced materials',
-          'Proven techniques'
+          'Advanced diagnostic technology',
+          'Highly detailed images',
+          'Precise treatment guidance',
+          'Efficient treatment planning'
+        ]
+      },
+      {
+        icon: '🚨',
+        title: 'Emergency Dental Treatment',
+        description: 'Immediate care for urgent situations involving pain, trauma, or dental injury—ensuring fast relief and stabilisation.',
+        features: [
+          'Immediate care',
+          'Urgent situation handling',
+          'Pain and trauma treatment',
+          'Fast relief and stabilisation'
         ]
       }
     ],

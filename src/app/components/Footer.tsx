@@ -1,6 +1,7 @@
 'use client'
 
 import { motion, useReducedMotion } from 'motion/react'
+import { Link } from 'react-router-dom'
 import MaskGroup from '../../imports/MaskGroup'
 
 export default function Footer() {
@@ -63,10 +64,16 @@ export default function Footer() {
                   Quick Links
                 </h3>
                 <div className="flex flex-col gap-2 md:gap-3">
-                  <FooterLink href="#home">Home</FooterLink>
+                  <FooterLink href="/">Home</FooterLink>
+                  <FooterLink href="/about-us">About Us</FooterLink>
                   <FooterLink href="/our-doctors">Our Doctors</FooterLink>
                   <FooterLink href="/services">Services</FooterLink>
                   <FooterLink href="/packages">Packages & Offers</FooterLink>
+                  <FooterLink href="/sky-loyalty">Sky Loyalty Program</FooterLink>
+                  <FooterLink href="/patient-guide">Patient Guide</FooterLink>
+                  <FooterLink href="/faqs">FAQs</FooterLink>
+                  <FooterLink href="/careers">Careers</FooterLink>
+                  <FooterLink href="/contact">Contact Us</FooterLink>
                   <FooterLink href="/privacy-policy">Privacy Policy</FooterLink>
                 </div>
               </div>
@@ -80,11 +87,11 @@ export default function Footer() {
                   All Services
                 </h3>
                 <div className="flex flex-col gap-2 md:gap-3">
-                  <FooterLink href="/services">General Dentistry</FooterLink>
-                  <FooterLink href="/services">Cosmetic Dentistry</FooterLink>
-                  <FooterLink href="/services">Orthodontics</FooterLink>
-                  <FooterLink href="/services">Pediatric Dentistry</FooterLink>
-                  <FooterLink href="/services">Advanced & Restorative Care</FooterLink>
+                  <FooterLink href="/services/general-dentistry">General Dentistry</FooterLink>
+                  <FooterLink href="/services/cosmetic-dentistry">Cosmetic Dentistry</FooterLink>
+                  <FooterLink href="/services/orthodontics">Orthodontics</FooterLink>
+                  <FooterLink href="/services/pediatric-dentistry">Pediatric Dentistry</FooterLink>
+                  <FooterLink href="/services/advanced-restorative">Advanced & Restorative Care</FooterLink>
                 </div>
               </div>
 
@@ -118,12 +125,12 @@ export default function Footer() {
 
 function FooterLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
-    <a
-      href={href}
+    <Link
+      to={href}
       className="inline-block text-black text-[13px] md:text-[14px] capitalize leading-[1.5] hover:text-[#97c4ff] transition-colors break-words w-fit"
     >
       {children}
-    </a>
+    </Link>
   )
 }
 

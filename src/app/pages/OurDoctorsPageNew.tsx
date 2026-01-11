@@ -4,7 +4,7 @@ import { motion, useReducedMotion } from 'motion/react'
 import { useState, useEffect, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { Search, ChevronDown, Heart, Target, Users, Award } from 'lucide-react'
-import BookingFormSidebar from '../components/BookingFormSidebar'
+import { useBooking } from '../context/BookingContext'
 
 // Doctor data - First 4 match homepage, rest can be added later
 const doctorsData = [
@@ -161,8 +161,7 @@ export default function OurDoctorsPageNew() {
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedSpecialty, setSelectedSpecialty] = useState('All Specialties')
   const [isSpecialtyOpen, setIsSpecialtyOpen] = useState(false)
-  const [isBookingSidebarOpen, setIsBookingSidebarOpen] = useState(false)
-  const [selectedDoctorForBooking, setSelectedDoctorForBooking] = useState<string>('')
+  const { openBookingSidebar } = useBooking()
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -325,10 +324,7 @@ export default function OurDoctorsPageNew() {
                       View Profile
                     </Link>
                     <button
-                      onClick={() => {
-                        setSelectedDoctorForBooking(doctor.name)
-                        setIsBookingSidebarOpen(true)
-                      }}
+                      onClick={() => openBookingSidebar(doctor.name)}
                       className="flex-1 sm:flex-1 bg-[#cbff8f] text-[#97c4ff] text-[13px] md:text-[14px] font-medium py-[10px] px-[16px] rounded-[12px] hover:bg-[#B1FF57] transition-colors text-center"
                     >
                       Book Appointment
@@ -447,15 +443,6 @@ export default function OurDoctorsPageNew() {
         </div>
       </section>
 
-      {/* Booking Form Sidebar */}
-      <BookingFormSidebar
-        isOpen={isBookingSidebarOpen}
-        onClose={() => {
-          setIsBookingSidebarOpen(false)
-          setSelectedDoctorForBooking('')
-        }}
-        preselectedDoctor={selectedDoctorForBooking}
-      />
     </div>
   )
 }

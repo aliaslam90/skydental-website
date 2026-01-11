@@ -3,12 +3,14 @@
 import { motion, useReducedMotion, useInView } from 'motion/react'
 import { useRef } from 'react'
 import React from 'react'
+import { useBooking } from '../context/BookingContext'
 
 export default function TechnologySection() {
   const ref = useRef(null)
   const videoRef = useRef<HTMLVideoElement>(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
   const shouldReduceMotion = useReducedMotion()
+  const { openBookingSidebar } = useBooking()
   
   // Ensure video plays when in view
   React.useEffect(() => {
@@ -81,6 +83,7 @@ export default function TechnologySection() {
                 initial={{ y: 30, opacity: 0 }}
                 animate={isInView ? { y: 0, opacity: 1 } : { y: 30, opacity: 0 }}
                 transition={{ delay: shouldReduceMotion ? 0 : 0.5, duration: shouldReduceMotion ? 0 : 0.6 }}
+                onClick={() => openBookingSidebar()}
                 className="bg-[#cbff8f] flex items-center gap-4 md:gap-6 pl-4 md:pl-6 pr-[8px] md:pr-[10px] py-2 rounded-[35px] flex-shrink-0 hover:bg-[#B1FF57] transition-colors"
               >
                 <span className="text-[#97c4ff] font-bold text-[14px] md:text-[16px] whitespace-nowrap">Request Appointment</span>

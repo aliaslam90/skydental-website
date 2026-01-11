@@ -3,6 +3,7 @@
 import { motion, useReducedMotion, useInView } from 'motion/react'
 import { useRef, useState } from 'react'
 import svgPaths from '../../imports/svg-p4rwj0t9df'
+import { useBooking } from '../context/BookingContext'
 
 const servicesData = {
   'General Dentistry': {
@@ -37,6 +38,7 @@ export default function ServicesSection() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
   const shouldReduceMotion = useReducedMotion()
   const [selectedService, setSelectedService] = useState('General Dentistry')
+  const { openBookingSidebar } = useBooking()
   
   const currentService = servicesData[selectedService as keyof typeof servicesData]
   
@@ -147,9 +149,11 @@ export default function ServicesSection() {
                 </p>
               </div>
 
-              <button className="bg-white flex items-center gap-4 md:gap-6 pl-4 md:pl-6 pr-[8px] md:pr-[10px] py-2 rounded-[35px] self-start hover:bg-[#f5f9ff] transition-colors">
+              <button 
+                onClick={() => openBookingSidebar()}
+                className="bg-[#cbff8f] flex items-center gap-4 md:gap-6 pl-4 md:pl-6 pr-[8px] md:pr-[10px] py-2 rounded-[35px] self-start hover:bg-[#B1FF57] transition-colors">
                 <span className="text-[#97c4ff] font-bold text-[14px] md:text-[16px] whitespace-nowrap">Request Appointment</span>
-                <div className="bg-[#cbff8f] w-[32px] h-[32px] md:w-[34px] md:h-[34px] rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="bg-[#97c4ff] w-[32px] h-[32px] md:w-[34px] md:h-[34px] rounded-full flex items-center justify-center flex-shrink-0">
                   <ArrowIcon />
                 </div>
               </button>
@@ -183,7 +187,7 @@ export default function ServicesSection() {
   )
 }
 
-function ServiceButton({ icon, label, isActive, onClick }: { icon: React.ReactNode; label: string; isActive?: boolean; onClick?: () => void }) {
+function ServiceButton({ icon, label, isActive, onClick }: { icon: any; label: string; isActive?: boolean; onClick?: () => void }) {
   return (
     <button 
       onClick={onClick}

@@ -7,6 +7,7 @@ import svgPaths from '../../imports/svg-p4rwj0t9df'
 import imgRectangle161125373 from '../../assets/531a2b1be40c3f390e42e72de4c6233edf51733e.png'
 import Group2147224205 from '../../imports/Group2147224205'
 import { Link } from 'react-router-dom'
+import { useBooking } from '../context/BookingContext'
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
@@ -277,7 +278,9 @@ export default function Header() {
             {/* Right side - Book Appointment Button + Mobile Menu */}
             <div className="flex items-center gap-4">
               {/* CTA Button - Always visible */}
-              <button className="bg-[#cbff8f] flex items-center gap-3 xl:gap-6 pl-4 xl:pl-6 pr-[10px] py-2 rounded-[35px] group hover:bg-[#B1FF57] transition-colors">
+              <button 
+                onClick={() => openBookingSidebar()}
+                className="bg-[#cbff8f] flex items-center gap-3 xl:gap-6 pl-4 xl:pl-6 pr-[10px] py-2 rounded-[35px] group hover:bg-[#B1FF57] transition-colors">
                 <span className="text-[#97c4ff] font-bold text-[14px] xl:text-[16px] whitespace-nowrap">Book Appointment</span>
                 <div className="bg-[#97c4ff] w-[34px] h-[34px] rounded-full flex items-center justify-center shrink-0">
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 20 20">
@@ -476,7 +479,12 @@ export default function Header() {
                 </div>
                 
                 {/* Bottom Book Appointment Button */}
-                <button className="bg-[#cbff8f] flex items-center justify-center gap-4 px-6 py-4 rounded-[35px] mt-6 hover:bg-[#B1FF57] transition-colors">
+                <button 
+                  onClick={() => {
+                    openBookingSidebar()
+                    setMobileMenuOpen(false)
+                  }}
+                  className="bg-[#cbff8f] flex items-center justify-center gap-4 px-6 py-4 rounded-[35px] mt-6 hover:bg-[#B1FF57] transition-colors">
                   <span className="text-[#97c4ff] font-bold text-[16px]">Book Appointment</span>
                   <div className="bg-[#97c4ff] w-[34px] h-[34px] rounded-full flex items-center justify-center">
                     <svg className="w-5 h-5" fill="none" viewBox="0 0 20 20">

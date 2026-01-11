@@ -10,10 +10,10 @@ export default function DoctorsSection() {
   const shouldReduceMotion = useReducedMotion()
 
   const doctors = [
-    { name: 'Dr. Saif Eldin Tawakul', specialty: 'Specialist Oral Surgeon', image: '/doctor1.png' },
-    { name: 'Dr. Basma Alrawi', specialty: 'Oral Surgery', image: '/doctor2.png' },
-    { name: 'Dr. Claude Istanbouli', specialty: 'Master of Implant Dentistry', image: '/doctor3.png' },
-    { name: 'Dr. Elias Hanna', specialty: 'Prosthodontist', image: '/doctor4.png' }
+    { id: 'dr-saifaldin-tawakul', name: 'Dr. Saif Eldin Tawakul', specialty: 'Specialist Oral Surgeon', image: '/doctor1.png' },
+    { id: 'dr-basma-al-rawi', name: 'Dr. Basma Alrawi', specialty: 'Oral Surgery', image: '/doctor2.png' },
+    { id: 'dr-claude-istanbouli', name: 'Dr. Claude Istanbouli', specialty: 'Master of Implant Dentistry', image: '/doctor3.png' },
+    { id: 'dr-elias-daoud-hanna', name: 'Dr. Elias Hanna', specialty: 'Prosthodontist', image: '/doctor4.png' }
   ]
 
   const containerVariants = {
@@ -99,7 +99,7 @@ export default function DoctorsSection() {
   )
 }
 
-function DoctorCard({ doctor, variants }: { doctor: { name: string; specialty: string; image: string }; variants: any }) {
+function DoctorCard({ doctor, variants }: { doctor: { id: string; name: string; specialty: string; image: string }; variants: any }) {
   const shouldReduceMotion = useReducedMotion()
 
   return (
@@ -130,9 +130,12 @@ function DoctorCard({ doctor, variants }: { doctor: { name: string; specialty: s
         >
           {doctor.name}
         </h3>
-        <button className="text-[#97c4ff] text-[14px] md:text-[15px] hover:underline">
+        <Link 
+          to={`/our-doctors/${doctor.id}`}
+          className="text-[#97c4ff] text-[14px] md:text-[15px] hover:underline"
+        >
           View Details
-        </button>
+        </Link>
       </div>
     </motion.div>
   )

@@ -5,11 +5,13 @@ import { useRef } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { ArrowUpRight, Home, ChevronRight, Phone, Calendar, CheckCircle } from 'lucide-react'
 import { getDoctorById } from '../data/doctorsData'
+import { useBooking } from '../context/BookingContext'
 
 export default function DoctorDetailPage() {
   const { doctorId } = useParams()
   const doctor = getDoctorById(doctorId || '')
   const shouldReduceMotion = useReducedMotion()
+  const { openBookingSidebar } = useBooking()
   
   const heroRef = useRef(null)
   const aboutRef = useRef(null)
@@ -78,6 +80,7 @@ export default function DoctorDetailPage() {
               <motion.button
                 whileHover={shouldReduceMotion ? {} : { scale: 1.05 }}
                 whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
+                onClick={() => openBookingSidebar(doctor.name)}
                 className="bg-[#cbff8f] text-[#97c4ff] font-bold px-8 py-4 rounded-full inline-flex items-center gap-3 hover:bg-[#b8ff6d] transition-colors font-['Arial']"
               >
                 <Calendar className="w-5 h-5" />
@@ -466,6 +469,7 @@ export default function DoctorDetailPage() {
                 <motion.button
                   whileHover={shouldReduceMotion ? {} : { scale: 1.05 }}
                   whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
+                  onClick={() => openBookingSidebar(doctor.name)}
                   className="bg-[#97c4ff] text-white font-bold px-8 py-5 rounded-full inline-flex items-center justify-center gap-3 hover:bg-[#7db4ff] transition-colors font-['Arial'] text-lg w-full"
                 >
                   <Calendar className="w-5 h-5" />

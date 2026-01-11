@@ -5,6 +5,7 @@ import { useRef } from 'react'
 import { ArrowUpRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import TestimonialsSection from '../components/TestimonialsSection'
+import { useBooking } from '../context/BookingContext'
 
 // Services data with IDs for routing
 const services = [
@@ -108,6 +109,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
 
 export default function ServicesPage() {
   const shouldReduceMotion = useReducedMotion()
+  const { openBookingSidebar } = useBooking()
   const heroRef = useRef(null)
   const servicesRef = useRef(null)
   const experiencesRef = useRef(null)
@@ -157,6 +159,7 @@ export default function ServicesPage() {
               <motion.button
                 whileHover={shouldReduceMotion ? {} : { scale: 1.05 }}
                 whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
+                onClick={() => openBookingSidebar()}
                 className="bg-[#cbff8f] text-[#97c4ff] font-bold px-8 py-4 rounded-full inline-flex items-center gap-3 hover:bg-[#b8ff6d] transition-colors font-['Arial']"
               >
                 <span>Book Appointment</span>

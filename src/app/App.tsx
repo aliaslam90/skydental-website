@@ -19,6 +19,7 @@ import CareersPage from './pages/CareersPage'
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage'
 import ContactUsPage from './pages/ContactUsPage'
 import Footer from './components/Footer'
+import { BookingProvider } from './context/BookingContext'
 
 export default function App() {
   const [mounted, setMounted] = useState(false)
@@ -38,27 +39,29 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      <ScrollToTop />
-      <div className="bg-white min-h-screen">
-        <Header />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about-us" element={<AboutUsPage />} />
-          <Route path="/our-doctors" element={<OurDoctorsPageNew />} />
-          <Route path="/our-doctors/:doctorId" element={<DoctorDetailPage />} />
-          <Route path="/services" element={<ServicesPage />} />
-          <Route path="/services/:serviceId" element={<ServiceDetailPage />} />
-          <Route path="/packages" element={<PackagesPage />} />
-          <Route path="/sky-loyalty" element={<SkyLoyaltyPage />} />
-          <Route path="/patient-guide" element={<PatientGuidePage />} />
-          <Route path="/faqs" element={<FAQsPage />} />
-          <Route path="/careers" element={<CareersPage />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-          <Route path="/contact" element={<ContactUsPage />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
-        <Footer />
-      </div>
+      <BookingProvider>
+        <ScrollToTop />
+        <div className="bg-white min-h-screen">
+          <Header />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about-us" element={<AboutUsPage />} />
+            <Route path="/our-doctors" element={<OurDoctorsPageNew />} />
+            <Route path="/our-doctors/:doctorId" element={<DoctorDetailPage />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/services/:serviceId" element={<ServiceDetailPage />} />
+            <Route path="/packages" element={<PackagesPage />} />
+            <Route path="/sky-loyalty" element={<SkyLoyaltyPage />} />
+            <Route path="/patient-guide" element={<PatientGuidePage />} />
+            <Route path="/faqs" element={<FAQsPage />} />
+            <Route path="/careers" element={<CareersPage />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+            <Route path="/contact" element={<ContactUsPage />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+          <Footer />
+        </div>
+      </BookingProvider>
     </BrowserRouter>
   )
 }

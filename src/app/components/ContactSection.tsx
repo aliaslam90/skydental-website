@@ -488,7 +488,7 @@ export default function ContactSection() {
                     initial={{ y: 30, opacity: 0 }}
                     animate={isInView ? { y: 0, opacity: 1 } : { y: 30, opacity: 0 }}
                     transition={{ delay: shouldReduceMotion ? 0 : 0.5, duration: shouldReduceMotion ? 0 : 0.6 }}
-                    className="w-full bg-[#cbff8f] h-[50px] px-[24px] py-[16px] rounded-[12px] text-[14px] font-medium text-black hover:bg-[#B1FF57] transition-colors"
+                    className="w-full bg-[#cbff8f] h-[50px] px-[24px] py-[16px] rounded-[12px] text-[14px] font-medium text-[#97c4ff] hover:bg-[#B1FF57] transition-colors"
                   >
                     Book Appointment
                   </motion.button>

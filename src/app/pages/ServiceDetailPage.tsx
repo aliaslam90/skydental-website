@@ -5,6 +5,7 @@ import { useRef } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { ArrowUpRight, Home, ChevronRight } from 'lucide-react'
 import { getServiceById } from '../data/servicesData'
+import { useBooking } from '../context/BookingContext'
 
 // Guest experience images
 const guestExperiences = [
@@ -123,6 +124,7 @@ export default function ServiceDetailPage() {
               <motion.button
                 whileHover={shouldReduceMotion ? {} : { scale: 1.05 }}
                 whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
+                onClick={() => openBookingSidebar()}
                 className="bg-[#cbff8f] text-[#97c4ff] font-bold px-8 py-4 rounded-full inline-flex items-center gap-3 hover:bg-[#b8ff6d] transition-colors font-['Arial']"
               >
                 <span>Book Appointment</span>
