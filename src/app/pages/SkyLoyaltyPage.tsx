@@ -89,31 +89,31 @@ const membershipTiers: MembershipTier[] = [
 const benefits: Benefit[] = [
   {
     id: 'rewards',
-    icon: <Gift className="w-6 h-6" />,
+    icon: <Gift className="w-6 h-6 text-[#97c4ff]" stroke="#97c4ff" />,
     title: 'Save with Rewards',
     description: 'Earn points with every visit and procedure that can be redeemed for discounts on future treatments.',
-    color: 'bg-[#f0f9ff]',
+    color: 'bg-white',
   },
   {
     id: 'support',
-    icon: <Zap className="w-6 h-6" />,
+    icon: <Zap className="w-6 h-6 text-[#97c4ff]" stroke="#97c4ff" />,
     title: 'Long-Term Support',
     description: 'Enjoy continuous care and ongoing support with personalized treatment plans designed specifically for you.',
-    color: 'bg-[#fffbeb]',
+    color: 'bg-white',
   },
   {
     id: 'priority',
-    icon: <Star className="w-6 h-6" />,
+    icon: <Star className="w-6 h-6 text-[#97c4ff]" stroke="#97c4ff" />,
     title: 'Priority Appointment',
     description: 'Members gain priority access to appointment slots, ensuring you receive care when you need it most.',
-    color: 'bg-[#f0fdf4]',
+    color: 'bg-white',
   },
   {
     id: 'trial',
-    icon: <Award className="w-6 h-6" />,
+    icon: <Award className="w-6 h-6 text-[#97c4ff]" stroke="#97c4ff" />,
     title: 'Priority & Free of Trial',
     description: 'Get complimentary trials of new treatments and technologies before they become available to the general public.',
-    color: 'bg-[#faf5ff]',
+    color: 'bg-white',
   },
 ]
 
@@ -137,7 +137,7 @@ export default function SkyLoyaltyPage() {
       {/* Hero Section */}
       <section
         ref={heroRef}
-        className="relative min-h-[500px] overflow-hidden pt-32 pb-20"
+        className="relative min-h-[500px] overflow-hidden pt-32"
         style={{
           background: 'linear-gradient(160deg, rgb(224, 237, 255) 0%, rgb(255, 255, 255) 50%, rgb(224, 237, 255) 100%)',
         }}
@@ -299,7 +299,7 @@ export default function SkyLoyaltyPage() {
                       className={`${benefit.color} border border-[#f3f4f6] rounded-3xl p-6`}
                     >
                       {/* Icon */}
-                      <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-black mb-4 shadow-sm">
+                      <div className="w-12 h-12 bg-[#cbff8f] rounded-xl flex items-center justify-center text-[#97c4ff] mb-4 shadow-sm">
                         {benefit.icon}
                       </div>
 
