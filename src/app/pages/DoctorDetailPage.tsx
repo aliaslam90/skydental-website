@@ -164,7 +164,7 @@ export default function DoctorDetailPage() {
                   <img
                     src={doctor.aboutImage}
                     alt={doctor.name}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-top"
                   />
                 </div>
                 {/* Decorative element */}
