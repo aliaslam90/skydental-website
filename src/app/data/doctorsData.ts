@@ -50,97 +50,121 @@ export interface DoctorDetail {
 export const doctorsData: DoctorDetail[] = [
   {
     id: 'dr-saifaldin-tawakul',
-    name: 'Dr. Saifaldin Tawakul',
-    title: 'DDS, MS',
-    specialty: 'Orthodontist',
+    name: 'Dr. Saif Eldin Tawakul',
+    title: 'Specialist Oral Surgeon & Implantologist',
+    specialty: 'Sky Dental Center',
     image: imgImage,
     aboutImage: imgImage,
-    description: 'Dr. Saifaldin Tawakul is a distinguished orthodontist with over 15 years of experience in transforming smiles through advanced orthodontic techniques. Specializing in both traditional braces and clear aligner therapy, Dr. Tawakul combines precision with artistry to create beautiful, functional smiles. His patient-centered approach and commitment to excellence have made him a trusted name in orthodontic care.',
+    description: 'Dr. Saif Eldin Tawakul is a distinguished Specialist Oral Surgeon and Implantologist with more than 20 years of international clinical experience in Germany and the UAE. Renowned for his advanced surgical expertise and precision-driven treatment approach, Dr. Saif is one of the region\'s most respected oral surgery practitioners. He completed his German Board Certification in Oral Surgery in Bremen, Germany, in 2009, and holds a certified implant privilege. He is also a registered Specialist under the Department of Health – Abu Dhabi. Dr. Saif began his professional journey in Germany, practising Oral Surgery and Implantology from 2004 to 2010, before relocating to the UAE, where he spent over a decade practicing general dentistry and oral surgery in Al Ain. In 2020, he co-founded Sky Dental Center, where he continues to provide exceptional surgical care and plays an integral role in shaping the centre\'s clinical excellence and patient-focused philosophy. His core expertise includes dental implant surgery, ridge augmentation, sinus lift procedures, removal of impacted and wisdom teeth, exposure of impacted teeth for orthodontic purposes, apicoectomy, and cyst removal. His extensive experience across both simple and highly complex surgical procedures enables him to deliver safe, predictable, and life-changing outcomes for patients.',
     stats: [
-      { label: 'Years of Experience', value: '15+' },
-      { label: 'Happy Patients', value: '4,500+' },
-      { label: 'Successful Cases', value: '9,000+' }
+      { label: 'Years of Experience', value: '20+' },
+      { label: 'International Experience', value: 'Germany & UAE' },
+      { label: 'Co-Founder', value: 'Sky Dental Center' }
     ],
     education: [
       {
         icon: '🎓',
-        degree: 'Master of Science in Orthodontics',
-        institution: 'New York University College of Dentistry',
-        year: '2010'
-      },
-      {
-        icon: '🎓',
-        degree: 'Doctor of Dental Surgery (DDS)',
-        institution: 'University of Pennsylvania',
-        year: '2007'
+        degree: 'German Board Certification in Oral Surgery',
+        institution: 'Bremen, Germany',
+        year: '2009'
       },
       {
         icon: '📜',
-        degree: 'Board Certification',
-        institution: 'American Board of Orthodontics',
-        year: '2011'
+        degree: 'Certified Implant Privilege',
+        institution: 'Germany',
+        year: '2009'
       },
       {
-        icon: '🏆',
-        degree: 'Advanced Invisalign Certification',
-        institution: 'Align Technology',
-        year: '2013'
+        icon: '🏥',
+        degree: 'Registered Specialist',
+        institution: 'Department of Health – Abu Dhabi',
+        year: 'Current'
+      },
+      {
+        icon: '🌍',
+        degree: 'International Clinical Experience',
+        institution: 'Germany (2004-2010) & UAE',
+        year: '2004-Present'
       }
     ],
     experience: {
-      title: 'Comprehensive Orthodontic Experience',
-      description: 'With extensive training in the latest orthodontic technologies, Dr. Tawakul has successfully treated thousands of patients, from children to adults. His expertise in complex cases and commitment to continuing education ensures optimal results for every patient.',
+      title: 'International Surgical Excellence',
+      description: 'Dr. Saif brings over 20 years of international clinical experience, having practiced Oral Surgery and Implantology in Germany from 2004 to 2010, followed by over a decade in the UAE. In 2020, he co-founded Sky Dental Center, where he continues to provide exceptional surgical care and shape the centre\'s clinical excellence.',
       highlights: [
-        'Invisalign Diamond Provider with 9,000+ cases',
-        'Specialist in accelerated orthodontic treatment',
-        'Expert in surgical orthodontics and complex cases',
-        'Published researcher in orthodontic journals',
-        'International speaker at orthodontic conferences'
+        '20+ years of international clinical experience in Germany and UAE',
+        'German Board Certified in Oral Surgery (2009)',
+        'Certified implant privilege holder',
+        'Co-founder of Sky Dental Center (2020)',
+        'Registered Specialist under Department of Health – Abu Dhabi',
+        'Expert in complex surgical procedures and implantology'
       ]
     },
     expertise: [
       {
-        category: 'Clear Aligner Therapy',
+        category: 'Evaluation & Diagnosis',
         items: [
-          'Invisalign treatment',
-          'Teen aligner programs',
-          'Adult orthodontics',
-          'Accelerated treatment options',
-          'Retention protocols'
+          'Comprehensive dental and medical evaluation',
+          'Oral cancer screening and assessment of TMJ, salivary glands, and facial structures',
+          'CBCT and advanced radiographic interpretation',
+          'Diagnosis of cysts, tumours, oral pathologies, and orofacial pain',
+          'Multidisciplinary treatment planning in collaboration with orthodontic, prosthodontic, periodontal, and restorative teams'
         ]
       },
       {
-        category: 'Traditional Orthodontics',
+        category: 'Emergency & Trauma Care',
         items: [
-          'Metal and ceramic braces',
-          'Self-ligating braces',
-          'Lingual braces',
-          'Early intervention',
-          'Surgical orthodontics'
+          'Management of dental emergencies and oral infections',
+          'Treatment of dental trauma, including fractures and lacerations',
+          'TMJ dislocation management and abscess drainage'
         ]
       },
       {
-        category: 'Specialized Treatments',
+        category: 'Surgical Procedures',
         items: [
-          'TMJ disorder treatment',
-          'Sleep apnea appliances',
-          'Interceptive orthodontics',
-          'Complex bite corrections',
-          'Aesthetic smile design'
+          'Simple and complex tooth extractions, including impacted and wisdom teeth',
+          'Surgical management of oral cysts, tumours, and soft tissue lesions',
+          'Pre-prosthetic surgeries such as ridge augmentation and alveoloplasty',
+          'Bone grafting and sinus lift procedures',
+          'Surgical exposure of impacted teeth for orthodontic treatment'
+        ]
+      },
+      {
+        category: 'Implantology',
+        items: [
+          'Surgical placement of dental implants',
+          'Advanced implant procedures including All-on-X and ridge preservation techniques',
+          'Management of peri-implantitis and implant-related complications'
+        ]
+      },
+      {
+        category: 'Preventive & Supportive Care',
+        items: [
+          'Oral hygiene counselling and disease prevention guidance',
+          'Pre- and post-operative care for medically compromised patients',
+          'Fabrication of custom dental appliances for surgical planning and protection'
+        ]
+      },
+      {
+        category: 'Restorative & Endodontic Support',
+        items: [
+          'Minor restorative procedures required before or after surgical treatment',
+          'Collaboration on implant-supported prosthetics including crowns and bridges',
+          'Performing uncomplicated root canal treatments',
+          'Pulp therapy for both primary and permanent teeth'
         ]
       }
     ],
     philosophy: {
-      title: 'Patient-Centric Philosophy',
-      description: 'Dr. Tawakul believes in creating personalized treatment plans that consider each patient\'s unique facial features, dental health, and lifestyle preferences.',
+      title: 'Precision-Driven Surgical Excellence',
+      description: 'Dr. Saif believes that successful surgical dentistry is built on meticulous planning, advanced clinical skill, and complete transparency with patients. His treatment philosophy focuses on safety, accuracy, and long-term stability, ensuring every patient receives the highest standards of personalised care.',
       principles: [
-        'Comprehensive diagnostic evaluation',
-        'Clear communication and treatment planning',
-        'Latest technology for optimal results',
-        'Comfortable and efficient treatment',
-        'Long-term stability and retention'
+        'Meticulous planning and advanced clinical skill',
+        'Complete transparency with patients',
+        'Safety, accuracy, and long-term stability',
+        'Highest standards of personalised care',
+        'Life-changing outcomes through precision-driven treatment'
       ],
-      quote: 'Every smile tells a story. My mission is to help my patients write their best chapter through expert orthodontic care.'
+      quote: 'Dr. Saif Eldin Tawakul welcomes patients seeking advanced surgical and implant solutions and is committed to providing exceptional care that restores health, function, and confidence.'
     },
     clinicImages: [
       'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&h=600&fit=crop',

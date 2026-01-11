@@ -10,9 +10,9 @@ import BookingFormSidebar from '../components/BookingFormSidebar'
 const doctorsData = [
   {
     id: 'dr-saifaldin-tawakul',
-    name: 'Dr. Saifaldin Tawakul',
+    name: 'Dr. Saif Eldin Tawakul',
     specialty: 'Specialist Oral Surgeon',
-    experience: '15+ years',
+    experience: '20+ years',
     image: '/doctor1.png',
     available: true
   },

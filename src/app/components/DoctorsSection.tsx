@@ -10,7 +10,7 @@ export default function DoctorsSection() {
   const shouldReduceMotion = useReducedMotion()
 
   const doctors = [
-    { name: 'Dr. Saifaldin Tawakul', specialty: 'Specialist Oral Surgeon', image: '/doctor1.png' },
+    { name: 'Dr. Saif Eldin Tawakul', specialty: 'Specialist Oral Surgeon', image: '/doctor1.png' },
     { name: 'Dr. Basma Al Rawi', specialty: 'Oral Surgery', image: '/doctor2.png' },
     { name: 'Dr. Claude Istanbouli', specialty: 'Master of Implant Dentistry', image: '/doctor3.png' },
     { name: 'Dr. Elias Daoud Hanna', specialty: 'Prosthodontist', image: '/doctor4.png' }

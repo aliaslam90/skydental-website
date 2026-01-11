@@ -20,16 +20,16 @@ const services = [
 
 // Service to Doctor mapping (based on actual doctors in DoctorsSection)
 const serviceToDoctors: Record<string, string[]> = {
-  'Tooth extraction': ['Dr. Saifaldin Tawakul', 'Dr. Basma Al Rawi'],
+  'Tooth extraction': ['Dr. Saif Eldin Tawakul', 'Dr. Basma Al Rawi'],
   'Dental prosthetics': ['Dr. Claude Istanbouli', 'Dr. Elias Daoud Hanna'],
   'Root canal treatment': ['Dr. Elias Daoud Hanna'],
-  '3D research Panoramic shot': ['Dr. Saifaldin Tawakul', 'Dr. Basma Al Rawi', 'Dr. Claude Istanbouli', 'Dr. Elias Daoud Hanna'],
-  'Gum treatment': ['Dr. Saifaldin Tawakul', 'Dr. Basma Al Rawi'],
-  'Braces, Teeth straightening': ['Dr. Saifaldin Tawakul'],
+  '3D research Panoramic shot': ['Dr. Saif Eldin Tawakul', 'Dr. Basma Al Rawi', 'Dr. Claude Istanbouli', 'Dr. Elias Daoud Hanna'],
+  'Gum treatment': ['Dr. Saif Eldin Tawakul', 'Dr. Basma Al Rawi'],
+  'Braces, Teeth straightening': ['Dr. Saif Eldin Tawakul'],
   'Cosmetic dentistry': ['Dr. Basma Al Rawi', 'Dr. Claude Istanbouli'],
   'Children\'s Dentistry': ['Dr. Basma Al Rawi'],
-  'Your Health Care': ['Dr. Saifaldin Tawakul', 'Dr. Basma Al Rawi', 'Dr. Claude Istanbouli', 'Dr. Elias Daoud Hanna'],
-  'Dental Hygiene': ['Dr. Saifaldin Tawakul', 'Dr. Basma Al Rawi', 'Dr. Claude Istanbouli', 'Dr. Elias Daoud Hanna']
+  'Your Health Care': ['Dr. Saif Eldin Tawakul', 'Dr. Basma Al Rawi', 'Dr. Claude Istanbouli', 'Dr. Elias Daoud Hanna'],
+  'Dental Hygiene': ['Dr. Saif Eldin Tawakul', 'Dr. Basma Al Rawi', 'Dr. Claude Istanbouli', 'Dr. Elias Daoud Hanna']
 }
 
 // Country codes
