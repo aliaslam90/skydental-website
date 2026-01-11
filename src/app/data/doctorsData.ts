@@ -302,6 +302,135 @@ export const doctorsData: DoctorDetail[] = [
     ]
   },
   {
+    id: 'dr-claude-istanbouli',
+    name: 'Dr. Claude Istanbouli',
+    title: 'Master of Implant Dentistry & Full Mouth Rehabilitation | Sky Dental Center',
+    specialty: 'A Legacy of Excellence Spanning Three Decades',
+    image: '/doctor3.png',
+    aboutImage: '/doctor3.png',
+    description: 'With more than 30 years of transformative experience in restorative, surgical, and cosmetic dentistry, Dr. Claude Istanbouli stands as one of the region\'s foremost authorities in dental implants and full-mouth rehabilitation. Since graduating from Damascus University in 1988 and completing advanced training in cosmetic and restorative dentistry at UCLA, California in 1999, Dr. Istanbouli has built a distinguished international career across the United States and the UAE. His professional journey includes key positions at ADNOC Medical Services and Mubadala Health\'s Healthpoint Hospital, where he contributed to elevating clinical standards and delivering life-changing results. Today, as a leading specialist at Sky Dental Center in Khalifa City A, part of CMC Medical, he continues to redefine modern implant dentistry with unparalleled expertise and innovation. What truly sets Dr. Istanbouli apart is his pioneering role in bringing regenerative dental techniques to Abu Dhabi. He was among the first to introduce stem cell–based biological management and Platelet-Rich Fibrin (PRF) therapy, leveraging the patient\'s own blood to accelerate healing, optimise implant integration, and enhance surgical outcomes. His gentle clinical approach, combined with meticulous attention to detail, has enabled him to successfully rehabilitate even the most complex cases—restoring full oral function, confidence, and quality of life for thousands of patients.',
+    stats: [
+      { label: 'Years of Experience', value: '30+' },
+      { label: 'International Career', value: 'USA & UAE' },
+      { label: 'Pioneering Innovation', value: 'Regenerative Dentistry' }
+    ],
+    education: [
+      {
+        icon: '🎓',
+        degree: 'Dental Degree',
+        institution: 'Damascus University',
+        year: '1988'
+      },
+      {
+        icon: '🎓',
+        degree: 'Advanced Training in Cosmetic and Restorative Dentistry',
+        institution: 'UCLA, California',
+        year: '1999'
+      },
+      {
+        icon: '📜',
+        degree: 'American National Board Certification',
+        institution: 'American Dental Association (ADA)',
+        year: '1999'
+      },
+      {
+        icon: '🏆',
+        degree: 'Fellowship in Implant Dentistry',
+        institution: 'American Academy of Implant Dentistry (AAID)',
+        year: '2013'
+      },
+      {
+        icon: '💉',
+        degree: 'Fellowship in Anti-Aging Medicine',
+        institution: 'American Academy of Anti-Aging Medicine (A4M)',
+        year: '2018'
+      },
+      {
+        icon: '🦷',
+        degree: 'UAE Department of Health Implant Privileges',
+        institution: 'Abu Dhabi DOH Examination Panel',
+        year: 'Current'
+      }
+    ],
+    experience: {
+      title: 'A Legacy of Excellence Spanning Three Decades',
+      description: 'Dr. Claude Istanbouli has built a distinguished international career across the United States and the UAE. His professional journey includes key positions at ADNOC Medical Services and Mubadala Health\'s Healthpoint Hospital, where he contributed to elevating clinical standards and delivering life-changing results. Today, as a leading specialist at Sky Dental Center in Khalifa City A, part of CMC Medical, he continues to redefine modern implant dentistry with unparalleled expertise and innovation.',
+      highlights: [
+        '30+ years of transformative experience in restorative, surgical, and cosmetic dentistry',
+        'Pioneering role in bringing regenerative dental techniques to Abu Dhabi',
+        'First to introduce stem cell–based biological management and PRF therapy',
+        'Key positions at ADNOC Medical Services and Mubadala Health\'s Healthpoint Hospital',
+        'Leading specialist at Sky Dental Center in Khalifa City A',
+        'Active member of American Dental Association (ADA) since 1999',
+        'Service on Abu Dhabi DOH Examination Panel for Implant Privilege assessments'
+      ]
+    },
+    expertise: [
+      {
+        category: 'Dental Implants & Full Mouth Rehabilitation',
+        items: [
+          'Specialised in complete oral reconstructions and full-mouth implant solutions',
+          'Expert in treating medically compromised patients requiring advanced implant therapy',
+          'Utilises cutting-edge technology and biological enhancement methods for predictable, long-lasting results'
+        ]
+      },
+      {
+        category: 'Restorative & Cosmetic Dentistry',
+        items: [
+          'Precision crowns, onlays, veneers, and full smile design',
+          'Aesthetic restorations that harmonise facial proportions with optimal occlusal function',
+          'Blends artistic craftsmanship with evidence-based restorative science'
+        ]
+      },
+      {
+        category: 'Advanced Surgical Procedures',
+        items: [
+          'Skilled in multiple extractions, lesion removal, and pre-implant surgical preparation',
+          'Three decades of refined surgical expertise ensuring safe and predictable outcomes'
+        ]
+      },
+      {
+        category: 'Comprehensive Dental Management',
+        items: [
+          'Provides root canal therapy and tailored dental maintenance programmes',
+          'Trains patients in post-implant care and long-term oral hygiene for treatment longevity'
+        ]
+      },
+      {
+        category: 'Specialised Aesthetic Treatments',
+        items: [
+          'Functional Botox for gummy smile correction and bruxism management',
+          'Minimally invasive techniques that improve comfort, function, and facial aesthetics'
+        ]
+      },
+      {
+        category: 'Regenerative Techniques',
+        items: [
+          'Stem cell–based biological management',
+          'Platelet-Rich Fibrin (PRF) therapy',
+          'Biological enhancement methods for accelerated healing and optimal implant integration'
+        ]
+      }
+    ],
+    philosophy: {
+      title: 'Commitment to Excellence',
+      description: 'Beyond his extensive clinical achievements, Dr. Claude Istanbouli is deeply committed to the advancement of the dental profession. He regularly participates in continuing education, mentors aspiring clinicians, and contributes to shaping the future of implant dentistry through training and scientific knowledge-sharing. His legacy is reflected not only in the thousands of patients whose lives he has transformed, but also in the next generation of dental professionals whose careers he continues to inspire.',
+      principles: [
+        'Regular participation in continuing education',
+        'Mentoring aspiring clinicians',
+        'Contributing to shaping the future of implant dentistry',
+        'Training and scientific knowledge-sharing',
+        'Precise, compassionate, and transformative care'
+      ],
+      quote: 'Dr. Claude Istanbouli welcomes patients seeking world-class implant, surgical, and restorative solutions and remains dedicated to delivering care that is precise, compassionate, and transformative.'
+    },
+    clinicImages: [
+      'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800&h=600&fit=crop'
+    ]
+  },
+  {
     id: 'dr-elias-daoud-hanna',
     name: 'Dr. Elias Daoud Hanna',
     title: 'DDS, MD',
