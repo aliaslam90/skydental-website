@@ -37,97 +37,89 @@ export interface DoctorDetail {
 export const doctorsData: DoctorDetail[] = [
   {
     id: 'dr-saifaldin-tawakul',
-    name: 'Dr. Saifaldin Tawakul',
-    title: 'DDS, MS',
-    specialty: 'Orthodontist',
+    name: 'Dr. Saif Eldin Tawakul',
+    title: 'Specialist Oral Surgeon & Implantologist',
+    specialty: 'Specialist Oral Surgeon & Implantologist',
     image: '/doctor1.png',
     aboutImage: '/doctor1.png',
-    description: 'Dr. Saifaldin Tawakul is a distinguished orthodontist with over 15 years of experience in transforming smiles through advanced orthodontic techniques. Specializing in both traditional braces and clear aligner therapy, Dr. Tawakul combines precision with artistry to create beautiful, functional smiles. His patient-centered approach and commitment to excellence have made him a trusted name in orthodontic care.',
+    description: 'Dr. Saif Eldin Tawakul is a distinguished Specialist Oral Surgeon and Implantologist with more than 20 years of international clinical experience in Germany and the UAE. Renowned for his advanced surgical expertise and precision-driven treatment approach, Dr. Saif is one of the region\'s most respected oral surgery practitioners. He completed his German Board Certification in Oral Surgery in Bremen, Germany, in 2009, and holds a certified implant privilege. He is also a registered Specialist under the Department of Health – Abu Dhabi. Dr. Saif began his professional journey in Germany, practising Oral Surgery and Implantology from 2004 to 2010, before relocating to the UAE, where he spent over a decade practicing general dentistry and oral surgery in Al Ain. In 2020, he co-founded Sky Dental Center, where he continues to provide exceptional surgical care and plays an integral role in shaping the centre\'s clinical excellence and patient-focused philosophy.',
     stats: [
-      { label: 'Years of Experience', value: '15+' },
-      { label: 'Happy Patients', value: '4,500+' },
-      { label: 'Successful Cases', value: '9,000+' }
+      { label: 'Years of Experience', value: '20+' },
+      { label: 'International Experience', value: 'Germany & UAE' },
+      { label: 'Co-Founder', value: 'Sky Dental Center' }
     ],
     education: [
       {
-        icon: '🎓',
-        degree: 'Master of Science in Orthodontics',
-        institution: 'New York University College of Dentistry',
-        year: '2010'
-      },
-      {
-        icon: '🎓',
-        degree: 'Doctor of Dental Surgery (DDS)',
-        institution: 'University of Pennsylvania',
-        year: '2007'
-      },
-      {
         icon: '📜',
-        degree: 'Board Certification',
-        institution: 'American Board of Orthodontics',
-        year: '2011'
+        degree: 'German Board Certification in Oral Surgery',
+        institution: 'Bremen, Germany',
+        year: '2009'
       },
       {
         icon: '🏆',
-        degree: 'Advanced Invisalign Certification',
-        institution: 'Align Technology',
-        year: '2013'
+        degree: 'Certified Implant Privilege',
+        institution: 'Department of Health – Abu Dhabi',
+        year: ''
+      },
+      {
+        icon: '📜',
+        degree: 'Registered Specialist',
+        institution: 'Department of Health – Abu Dhabi',
+        year: ''
       }
     ],
     experience: {
-      title: 'Comprehensive Orthodontic Experience',
-      description: 'With extensive training in the latest orthodontic technologies, Dr. Tawakul has successfully treated thousands of patients, from children to adults. His expertise in complex cases and commitment to continuing education ensures optimal results for every patient.',
+      title: 'International Clinical Excellence',
+      description: 'His core expertise includes dental implant surgery, ridge augmentation, sinus lift procedures, removal of impacted and wisdom teeth, exposure of impacted teeth for orthodontic purposes, apicoectomy, and cyst removal. His extensive experience across both simple and highly complex surgical procedures enables him to deliver safe, predictable, and life-changing outcomes for patients.',
       highlights: [
-        'Invisalign Diamond Provider with 9,000+ cases',
-        'Specialist in accelerated orthodontic treatment',
-        'Expert in surgical orthodontics and complex cases',
-        'Published researcher in orthodontic journals',
-        'International speaker at orthodontic conferences'
+        '20+ years of international clinical experience in Germany and UAE',
+        'Practised Oral Surgery and Implantology in Germany (2004-2010)',
+        'Over a decade practicing in Al Ain, UAE',
+        'Co-founded Sky Dental Center in 2020',
+        'Expert in complex surgical procedures and implantology'
       ]
     },
     expertise: [
       {
-        category: 'Clear Aligner Therapy',
+        category: 'Evaluation & Diagnosis',
         items: [
-          'Invisalign treatment',
-          'Teen aligner programs',
-          'Adult orthodontics',
-          'Accelerated treatment options',
-          'Retention protocols'
+          'Comprehensive dental and medical evaluation',
+          'Oral cancer screening and assessment of TMJ, salivary glands, and facial structures',
+          'CBCT and advanced radiographic interpretation',
+          'Diagnosis of cysts, tumours, oral pathologies, and orofacial pain',
+          'Multidisciplinary treatment planning in collaboration with orthodontic, prosthodontic, periodontal, and restorative teams'
         ]
       },
       {
-        category: 'Traditional Orthodontics',
+        category: 'Surgical Procedures',
         items: [
-          'Metal and ceramic braces',
-          'Self-ligating braces',
-          'Lingual braces',
-          'Early intervention',
-          'Surgical orthodontics'
+          'Simple and complex tooth extractions, including impacted and wisdom teeth',
+          'Surgical management of oral cysts, tumours, and soft tissue lesions',
+          'Pre-prosthetic surgeries such as ridge augmentation and alveoloplasty',
+          'Bone grafting and sinus lift procedures',
+          'Surgical exposure of impacted teeth for orthodontic treatment'
         ]
       },
       {
-        category: 'Specialized Treatments',
+        category: 'Implantology',
         items: [
-          'TMJ disorder treatment',
-          'Sleep apnea appliances',
-          'Interceptive orthodontics',
-          'Complex bite corrections',
-          'Aesthetic smile design'
+          'Surgical placement of dental implants',
+          'Advanced implant procedures including All-on-X and ridge preservation techniques',
+          'Management of peri-implantitis and implant-related complications'
         ]
       }
     ],
     philosophy: {
-      title: 'Patient-Centric Philosophy',
-      description: 'Dr. Tawakul believes in creating personalized treatment plans that consider each patient\'s unique facial features, dental health, and lifestyle preferences.',
+      title: 'Professional Philosophy',
+      description: 'Dr. Saif believes that successful surgical dentistry is built on meticulous planning, advanced clinical skill, and complete transparency with patients. His treatment philosophy focuses on safety, accuracy, and long-term stability, ensuring every patient receives the highest standards of personalised care. Through his leadership and expertise, he continues to elevate the quality of oral surgical services within Sky Dental Center.',
       principles: [
-        'Comprehensive diagnostic evaluation',
-        'Clear communication and treatment planning',
-        'Latest technology for optimal results',
-        'Comfortable and efficient treatment',
-        'Long-term stability and retention'
+        'Meticulous planning and advanced clinical skill',
+        'Complete transparency with patients',
+        'Safety, accuracy, and long-term stability',
+        'Highest standards of personalised care',
+        'Leadership in clinical excellence'
       ],
-      quote: 'Every smile tells a story. My mission is to help my patients write their best chapter through expert orthodontic care.'
+      quote: 'Dr. Saif Eldin Tawakul welcomes patients seeking advanced surgical and implant solutions and is committed to providing exceptional care that restores health, function, and confidence.'
     },
     clinicImages: [
       'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&h=600&fit=crop',
@@ -137,97 +129,70 @@ export const doctorsData: DoctorDetail[] = [
   },
   {
     id: 'dr-basma-al-rawi',
-    name: 'Dr. Basma Al Rawi',
-    title: 'DDS, FACD',
-    specialty: 'Cosmetic Dentistry',
+    name: 'Dr. Basma Alrawi',
+    title: 'Specialist Oral Surgeon',
+    specialty: 'Specialist Oral Surgeon',
     image: '/doctor2.png',
     aboutImage: '/doctor2.png',
-    description: 'Dr. Basma Al Rawi is a renowned cosmetic dentist with a passion for creating stunning smiles. With over 12 years of experience, she specializes in smile makeovers, porcelain veneers, and advanced whitening techniques. Dr. Al Rawi\'s artistic eye and meticulous attention to detail have transformed countless smiles, boosting her patients\' confidence and quality of life.',
+    description: 'Dr. Basma Alrawi is a highly accomplished Specialist Oral Surgeon renowned for her advanced surgical expertise, precision-driven clinical approach, and unwavering commitment to patient safety and wellbeing. With implant privileges and extensive experience managing complex oral and maxillofacial conditions, she brings exceptional skill and a calm, reassuring presence to every treatment journey. Her practice integrates evidence-based surgery, modern diagnostic technologies, and a multidisciplinary philosophy—ensuring that patients receive comprehensive, safe, and predictable surgical outcomes.',
     stats: [
-      { label: 'Years of Experience', value: '12+' },
-      { label: 'Smile Makeovers', value: '2,000+' },
-      { label: 'Procedures Performed', value: '8,500+' }
+      { label: 'Specialist', value: 'Oral Surgeon' },
+      { label: 'Implant Privileges', value: 'Yes' },
+      { label: 'Approach', value: 'Evidence-Based' }
     ],
-    education: [
-      {
-        icon: '🎓',
-        degree: 'Advanced Cosmetic Dentistry',
-        institution: 'Las Vegas Institute for Advanced Dental Studies',
-        year: '2014'
-      },
-      {
-        icon: '🎓',
-        degree: 'Doctor of Dental Surgery (DDS)',
-        institution: 'University of Southern California',
-        year: '2011'
-      },
-      {
-        icon: '📜',
-        degree: 'Fellowship in Cosmetic Dentistry',
-        institution: 'American Academy of Cosmetic Dentistry',
-        year: '2015'
-      },
-      {
-        icon: '🏆',
-        degree: 'Master Ceramist Certification',
-        institution: 'European Academy of Esthetic Dentistry',
-        year: '2017'
-      }
-    ],
+    education: [],
     experience: {
-      title: 'Comprehensive Cosmetic Experience',
-      description: 'Dr. Al Rawi has dedicated her career to the art and science of cosmetic dentistry. Her expertise in smile design, combined with cutting-edge technology, allows her to create natural-looking, beautiful smiles that exceed patient expectations.',
+      title: 'Excellence in Oral Surgery, Compassion in Care',
+      description: 'Dr. Basma Alrawi brings exceptional skill and a calm, reassuring presence to every treatment journey. Her practice integrates evidence-based surgery, modern diagnostic technologies, and a multidisciplinary philosophy—ensuring that patients receive comprehensive, safe, and predictable surgical outcomes.',
       highlights: [
-        'Specialist in full smile makeovers',
-        'Expert in porcelain veneer placement',
-        'Advanced training in digital smile design',
-        'Featured in cosmetic dentistry publications',
-        'Regular instructor at aesthetic dentistry courses'
+        'Advanced surgical expertise and precision-driven clinical approach',
+        'Unwavering commitment to patient safety and wellbeing',
+        'Implant privileges and extensive experience',
+        'Evidence-based surgery with modern diagnostic technologies',
+        'Multidisciplinary philosophy for comprehensive outcomes'
       ]
     },
     expertise: [
       {
-        category: 'Smile Design',
+        category: 'Evaluation & Diagnosis',
         items: [
-          'Digital smile design',
-          'Full smile makeovers',
-          'Gum contouring',
-          'Smile line optimization',
-          'Facial aesthetics integration'
+          'Comprehensive dental and medical evaluations',
+          'Oral cancer screening and assessment of TMJ, salivary glands, and facial structures',
+          'CBCT and radiographic interpretation (intraoral & extraoral)',
+          'Diagnosis of cysts, tumours, orofacial pain, and oral pathologies',
+          'Collaborative treatment planning with multidisciplinary medical teams'
         ]
       },
       {
-        category: 'Cosmetic Restorations',
+        category: 'Surgical Procedures',
         items: [
-          'Porcelain veneers',
-          'Composite bonding',
-          'All-ceramic crowns',
-          'Teeth whitening',
-          'Minimally invasive dentistry'
+          'Simple and complex tooth extractions',
+          'Removal of impacted and wisdom teeth',
+          'Management of oral cysts, tumours, and soft-tissue lesions',
+          'Pre-prosthetic surgeries including ridge augmentation and alveoloplasty',
+          'Bone grafting, sinus lift procedures, and surgical exposure of teeth'
         ]
       },
       {
-        category: 'Advanced Procedures',
+        category: 'Implantology',
         items: [
-          'Laser dentistry',
-          'Gum recontouring',
-          'Bite reconstruction',
-          'Esthetic implant restoration',
-          'Anti-aging facial treatments'
+          'Surgical placement of dental implants',
+          'Advanced implant solutions, including All-On-X and ridge-preservation techniques',
+          'Management of implant complications and peri-implantitis'
         ]
       }
     ],
     philosophy: {
-      title: 'Artistry Meets Science',
-      description: 'Dr. Al Rawi believes that every smile is unique and deserves a personalized approach that harmonizes facial aesthetics with dental function.',
+      title: 'A Patient-Centred Surgical Philosophy',
+      description: 'Dr. Basma Alrawi believes that exceptional surgical care requires not only technical expertise but also empathy, communication, and trust. She prioritises clear explanation of procedures and treatment expectations, gentle patient-focused surgical delivery, multidisciplinary collaboration for comprehensive outcomes, and individualised treatment plans tailored to each patient\'s clinical needs and personal comfort.',
       principles: [
-        'Comprehensive smile analysis and planning',
-        'Natural-looking aesthetic results',
-        'Minimal tooth preparation techniques',
-        'High-quality materials and craftsmanship',
-        'Patient comfort and satisfaction first'
+        'Clear explanation of procedures and treatment expectations',
+        'Gentle, patient-focused surgical delivery',
+        'Multidisciplinary collaboration for comprehensive outcomes',
+        'Individualised treatment plans tailored to each patient\'s clinical needs and personal comfort',
+        'Professionalism, skill, and dedication to highest standards'
       ],
-      quote: 'A beautiful smile is more than just straight white teeth—it\'s about creating harmony between your facial features, personality, and dental aesthetics.'
+      quote: 'Dr. Basma Alrawi looks forward to continuing her mission of elevating oral surgical care at Sky Dental Center, ensuring every patient experiences safe, advanced, and transformative treatment.'
     },
     clinicImages: [
       'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&h=600&fit=crop',
@@ -238,96 +203,108 @@ export const doctorsData: DoctorDetail[] = [
   {
     id: 'dr-claude-istanbouli',
     name: 'Dr. Claude Istanbouli',
-    title: 'DDS, MS',
-    specialty: 'Master of Implant Dentistry',
+    title: 'Master of Implant Dentistry & Full Mouth Rehabilitation',
+    specialty: 'Master of Implant Dentistry & Full Mouth Rehabilitation',
     image: '/doctor3.png',
     aboutImage: '/doctor3.png',
-    description: 'Dr. Claude Istanbouli is a renowned implant dentistry specialist with over 10 years of experience in advanced dental implant procedures. His expertise in full-mouth rehabilitation, bone grafting, and immediate implant placement has restored smiles and confidence for thousands of patients. Dr. Istanbouli combines surgical precision with aesthetic excellence to deliver exceptional results.',
+    description: 'With more than 30 years of transformative experience in restorative, surgical, and cosmetic dentistry, Dr. Claude Istanbouli stands as one of the region\'s foremost authorities in dental implants and full-mouth rehabilitation. Since graduating from Damascus University in 1988 and completing advanced training in cosmetic and restorative dentistry at UCLA, California in 1999, Dr. Istanbouli has built a distinguished international career across the United States and the UAE. His professional journey includes key positions at ADNOC Medical Services and Mubadala Health\'s Healthpoint Hospital, where he contributed to elevating clinical standards and delivering life-changing results. Today, as a leading specialist at Sky Dental Center in Khalifa City A, part of CMC Medical, he continues to redefine modern implant dentistry with unparalleled expertise and innovation.',
     stats: [
-      { label: 'Years of Experience', value: '10+' },
-      { label: 'Implants Placed', value: '5,000+' },
-      { label: 'Happy Patients', value: '3,500+' }
+      { label: 'Years of Experience', value: '30+' },
+      { label: 'International Career', value: 'USA & UAE' },
+      { label: 'Pioneering Innovation', value: 'Stem Cell & PRF Therapy' }
     ],
     education: [
       {
         icon: '🎓',
-        degree: 'Master of Science in Implant Dentistry',
-        institution: 'Harvard School of Dental Medicine',
-        year: '2014'
+        degree: 'Graduated',
+        institution: 'Damascus University',
+        year: '1988'
       },
       {
         icon: '🎓',
-        degree: 'Doctor of Dental Surgery (DDS)',
-        institution: 'Boston University',
-        year: '2011'
+        degree: 'Advanced Training in Cosmetic and Restorative Dentistry',
+        institution: 'UCLA, California',
+        year: '1999'
       },
       {
         icon: '📜',
-        degree: 'Board Certification',
-        institution: 'International Congress of Oral Implantologists',
-        year: '2015'
+        degree: 'American National Board Certification',
+        institution: 'American Dental Association (ADA)',
+        year: '1999'
       },
       {
         icon: '🏆',
-        degree: 'Advanced Bone Grafting Certification',
-        institution: 'Misch International Implant Institute',
-        year: '2016'
+        degree: 'Fellowship',
+        institution: 'American Academy of Implant Dentistry (AAID)',
+        year: '2013'
+      },
+      {
+        icon: '🏆',
+        degree: 'Fellowship',
+        institution: 'American Academy of Anti-Aging Medicine (A4M)',
+        year: '2018'
+      },
+      {
+        icon: '📜',
+        degree: 'UAE Department of Health Implant Privileges',
+        institution: 'Abu Dhabi DOH Examination Panel',
+        year: ''
       }
     ],
     experience: {
-      title: 'Comprehensive Implant Experience',
-      description: 'Dr. Istanbouli specializes in complex implant cases including full-mouth rehabilitation, immediate loading protocols, and advanced bone regeneration techniques. His commitment to continuing education ensures patients receive the most current and effective implant solutions.',
+      title: 'A Legacy of Excellence Spanning Three Decades',
+      description: 'What truly sets Dr. Istanbouli apart is his pioneering role in bringing regenerative dental techniques to Abu Dhabi. He was among the first to introduce stem cell–based biological management and Platelet-Rich Fibrin (PRF) therapy, leveraging the patient\'s own blood to accelerate healing, optimise implant integration, and enhance surgical outcomes. His gentle clinical approach, combined with meticulous attention to detail, has enabled him to successfully rehabilitate even the most complex cases—restoring full oral function, confidence, and quality of life for thousands of patients.',
       highlights: [
-        'Specialist in immediate implant placement',
-        'Expert in full-mouth reconstruction',
-        'Advanced training in bone augmentation',
-        'Published researcher in implant dentistry',
-        'International lecturer on implant techniques'
+        '30+ years of transformative experience in restorative, surgical, and cosmetic dentistry',
+        'Key positions at ADNOC Medical Services and Mubadala Health\'s Healthpoint Hospital',
+        'Pioneer in stem cell–based biological management and PRF therapy in Abu Dhabi',
+        'Active member of American Dental Association (ADA) since 1999',
+        'Service on Abu Dhabi DOH Examination Panel for Implant Privilege assessments'
       ]
     },
     expertise: [
       {
-        category: 'Dental Implants',
+        category: 'Dental Implants & Full Mouth Rehabilitation',
         items: [
-          'Single and multiple implants',
-          'Full arch reconstruction',
-          'Immediate implant placement',
-          'All-on-4 and All-on-6 protocols',
-          'Implant-supported dentures'
+          'Specialised in complete oral reconstructions and full-mouth implant solutions',
+          'Expert in treating medically compromised patients requiring advanced implant therapy',
+          'Utilises cutting-edge technology and biological enhancement methods for predictable, long-lasting results'
         ]
       },
       {
-        category: 'Bone Regeneration',
+        category: 'Restorative & Cosmetic Dentistry',
         items: [
-          'Bone grafting procedures',
-          'Sinus lift surgery',
-          'Ridge augmentation',
-          'Guided bone regeneration',
-          'Socket preservation'
+          'Precision crowns, onlays, veneers, and full smile design',
+          'Aesthetic restorations that harmonise facial proportions with optimal occlusal function',
+          'Blends artistic craftsmanship with evidence-based restorative science'
         ]
       },
       {
-        category: 'Advanced Procedures',
+        category: 'Advanced Surgical Procedures',
         items: [
-          'Zygomatic implants',
-          'Computer-guided surgery',
-          '3D planning and navigation',
-          'Aesthetic implant restoration',
-          'Complex case management'
+          'Skilled in multiple extractions, lesion removal, and pre-implant surgical preparation',
+          'Three decades of refined surgical expertise ensuring safe and predictable outcomes'
+        ]
+      },
+      {
+        category: 'Specialised Aesthetic Treatments',
+        items: [
+          'Functional Botox for gummy smile correction and bruxism management',
+          'Minimally invasive techniques that improve comfort, function, and facial aesthetics'
         ]
       }
     ],
     philosophy: {
-      title: 'Excellence in Implant Dentistry',
-      description: 'Dr. Istanbouli believes that dental implants should restore not just function, but also confidence and quality of life. He approaches each case with meticulous planning and personalized care.',
+      title: 'Commitment to Excellence',
+      description: 'Beyond his extensive clinical achievements, Dr. Claude Istanbouli is deeply committed to the advancement of the dental profession. He regularly participates in continuing education, mentors aspiring clinicians, and contributes to shaping the future of implant dentistry through training and scientific knowledge-sharing. His legacy is reflected not only in the thousands of patients whose lives he has transformed, but also in the next generation of dental professionals whose careers he continues to inspire.',
       principles: [
-        'Comprehensive treatment planning',
-        'State-of-the-art technology',
-        'Minimally invasive techniques',
-        'Long-term success focus',
-        'Patient-centered approach'
+        'Pioneering innovation in regenerative dental techniques',
+        'Gentle clinical approach with meticulous attention to detail',
+        'Continuing education and mentorship',
+        'Scientific knowledge-sharing and training',
+        'Transforming lives through exceptional care'
       ],
-      quote: 'Dental implants are not just about replacing teeth—they\'re about restoring lives. Every patient deserves a solution that looks, feels, and functions like natural teeth.'
+      quote: 'Dr. Claude Istanbouli welcomes patients seeking world-class implant, surgical, and restorative solutions and remains dedicated to delivering care that is precise, compassionate, and transformative.'
     },
     clinicImages: [
       'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&h=600&fit=crop',
@@ -337,97 +314,69 @@ export const doctorsData: DoctorDetail[] = [
   },
   {
     id: 'dr-elias-daoud-hanna',
-    name: 'Dr. Elias Daoud Hanna',
-    title: 'DDS, MD',
-    specialty: 'Oral Surgeon',
+    name: 'Dr. Elias Hanna',
+    title: 'Specialist Prosthodontist',
+    specialty: 'Specialist Prosthodontist',
     image: '/doctor4.png',
     aboutImage: '/doctor4.png',
-    description: 'Dr. Elias Daoud Hanna is a board-certified oral and maxillofacial surgeon with over 20 years of experience. His expertise encompasses complex tooth extractions, dental implants, jaw surgery, and facial trauma reconstruction. Known for his surgical precision and compassionate care, Dr. Hanna has helped thousands of patients achieve optimal oral health and function.',
+    description: 'Dr. Elias Hanna is a distinguished Specialist Prosthodontist with advanced expertise in the restoration and replacement of missing or damaged teeth, functional rehabilitation, and aesthetic smile enhancement. With implant privileges and extensive training in prosthodontic sciences, he offers patients comprehensive restorative solutions grounded in precision, craftsmanship, and evidence-based excellence. His clinical philosophy focuses on restoring harmony, comfort, and confidence—ensuring that every patient receives personalised, functional, and naturally aesthetic outcomes.',
     stats: [
-      { label: 'Years of Experience', value: '20+' },
-      { label: 'Successful Surgeries', value: '12,000+' },
-      { label: 'Happy Patients', value: '6,500+' }
+      { label: 'Specialist', value: 'Prosthodontist' },
+      { label: 'Implant Privileges', value: 'Yes' },
+      { label: 'Focus', value: 'Restoration & Aesthetics' }
     ],
-    education: [
-      {
-        icon: '🎓',
-        degree: 'Medical Degree (MD)',
-        institution: 'Johns Hopkins School of Medicine',
-        year: '2003'
-      },
-      {
-        icon: '🎓',
-        degree: 'Oral & Maxillofacial Surgery Residency',
-        institution: 'Massachusetts General Hospital',
-        year: '2007'
-      },
-      {
-        icon: '🎓',
-        degree: 'Doctor of Dental Surgery (DDS)',
-        institution: 'Columbia University',
-        year: '1999'
-      },
-      {
-        icon: '📜',
-        degree: 'Board Certification',
-        institution: 'American Board of Oral & Maxillofacial Surgery',
-        year: '2008'
-      }
-    ],
+    education: [],
     experience: {
-      title: 'Comprehensive Surgical Experience',
-      description: 'With dual training in dentistry and medicine, Dr. Hanna brings unparalleled expertise to complex oral and maxillofacial procedures. His extensive surgical experience and commitment to advanced techniques ensure optimal outcomes for even the most challenging cases.',
+      title: 'Restoring Function, Refining Aesthetics, Redefining Confidence',
+      description: 'Dr. Elias Hanna offers patients comprehensive restorative solutions grounded in precision, craftsmanship, and evidence-based excellence. His clinical philosophy focuses on restoring harmony, comfort, and confidence—ensuring that every patient receives personalised, functional, and naturally aesthetic outcomes.',
       highlights: [
-        'Over 12,000 successful surgical procedures',
-        'Specialist in complex implant surgery',
-        'Expert in orthognathic (jaw) surgery',
-        'Facial trauma and reconstruction specialist',
-        'Published researcher and educator'
+        'Advanced expertise in restoration and replacement of missing or damaged teeth',
+        'Functional rehabilitation and aesthetic smile enhancement',
+        'Implant privileges and extensive training in prosthodontic sciences',
+        'Precision, craftsmanship, and evidence-based excellence',
+        'Personalised, functional, and naturally aesthetic outcomes'
       ]
     },
     expertise: [
       {
-        category: 'Dental Implants',
+        category: 'Evaluation & Diagnostic Services',
         items: [
-          'Single and multiple implant placement',
-          'Full arch reconstruction',
-          'Bone grafting and augmentation',
-          'Sinus lift procedures',
-          'Immediate implant placement'
+          'Comprehensive assessment of oral health, occlusion, TMJ function, and soft tissues',
+          'Diagnosis of conditions affecting chewing efficiency, phonetics, and facial aesthetics',
+          'Taking and interpreting diagnostic radiographs, including intraoral and panoramic imaging',
+          'Risk assessment and personalised treatment planning tailored to functional and aesthetic goals'
         ]
       },
       {
-        category: 'Oral Surgery',
+        category: 'Prosthodontic Rehabilitation',
         items: [
-          'Wisdom teeth removal',
-          'Complex tooth extractions',
-          'Pre-prosthetic surgery',
-          'Biopsy and pathology',
-          'Oral cancer screening'
+          'Fabrication and fitting of full and partial dentures',
+          'Crown and bridge restorations for individual or multiple tooth replacement',
+          'Veneers for aesthetic enhancements and minor alignment corrections',
+          'Restoration of missing teeth using tooth-supported or implant-supported fixed prostheses',
+          'Fabrication and restoration of implant-supported crowns, bridges, and overdentures'
         ]
       },
       {
-        category: 'Maxillofacial Surgery',
+        category: 'Implantology',
         items: [
-          'Corrective jaw surgery',
-          'TMJ surgery',
-          'Facial trauma reconstruction',
-          'Cleft lip and palate repair',
-          'Sleep apnea surgery'
+          'Surgical placement of dental implants',
+          'Restoration of implant-supported prostheses including crowns, bridges, and hybrid solutions',
+          'Occlusal rehabilitation and bite correction for functional and aesthetic optimisation'
         ]
       }
     ],
     philosophy: {
-      title: 'Precision and Compassion',
-      description: 'Dr. Hanna believes in combining surgical excellence with empathetic patient care, ensuring every patient feels informed, comfortable, and confident throughout their treatment journey.',
+      title: 'Patient-Centred Philosophy',
+      description: 'Dr. Elias believes that exceptional prosthodontic care requires a holistic understanding of patient needs—balancing function, aesthetics, comfort, and long-term health. He provides clear communication and detailed explanations, personalised treatment planning, and a gentle, reassuring approach that supports patient confidence.',
       principles: [
-        'Thorough preoperative planning and consultation',
-        'Minimally invasive surgical techniques',
-        'Advanced pain management protocols',
-        'Collaborative multidisciplinary care',
-        'Comprehensive postoperative support'
+        'Holistic understanding of patient needs',
+        'Clear communication and detailed explanations',
+        'Personalised treatment planning',
+        'Gentle, reassuring approach that supports patient confidence',
+        'Commitment to excellence and refined clinical skillset'
       ],
-      quote: 'Surgery is both an art and a science. My goal is to provide exceptional surgical care while ensuring my patients feel safe, informed, and cared for every step of the way.'
+      quote: 'Dr. Elias Hanna looks forward to welcoming patients seeking advanced restorative, prosthodontic, and implant solutions—delivering care defined by precision, artistry, and trust.'
     },
     clinicImages: [
       'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800&h=600&fit=crop',
@@ -438,96 +387,105 @@ export const doctorsData: DoctorDetail[] = [
   {
     id: 'dr-amr-husson',
     name: 'Dr. Amr Husson',
-    title: 'DDS, MS',
-    specialty: 'Periodontist',
+    title: 'Orthodontic Specialist',
+    specialty: 'Orthodontic Specialist',
     image: '/doctor5.png',
     aboutImage: '/doctor5.png',
-    description: 'Dr. Amr Husson is a dedicated periodontist specializing in the prevention, diagnosis, and treatment of periodontal disease. With 8 years of experience and advanced training in dental implants and regenerative procedures, Dr. Husson helps patients achieve and maintain healthy gums and supporting structures for optimal oral health.',
+    description: 'Dr. Amr Husson is an accomplished Orthodontic Specialist with more than nine years of advanced clinical expertise dedicated to diagnosing, correcting, and preventing dental and facial irregularities. At Sky Dental Center, he combines cutting-edge orthodontic technologies with a compassionate, patient-focused approach to create healthy, aesthetically refined smiles for children, teens, and adults alike. His commitment to excellence, meticulous attention to detail, and reliance on evidence-based practice ensure that every treatment delivers optimal functional stability and exceptional cosmetic results.',
     stats: [
-      { label: 'Years of Experience', value: '8+' },
-      { label: 'Happy Patients', value: '2,800+' },
-      { label: 'Procedures Performed', value: '5,500+' }
+      { label: 'Years of Experience', value: '9+' },
+      { label: 'Specialist', value: 'Orthodontics' },
+      { label: 'Registered', value: 'UAE & Syria' }
     ],
     education: [
       {
         icon: '🎓',
-        degree: 'Master of Science in Periodontics',
-        institution: 'University of California, San Francisco',
-        year: '2017'
+        degree: 'Master\'s Degree in Orthodontics',
+        institution: 'Damascus University',
+        year: '2016'
       },
       {
         icon: '🎓',
-        degree: 'Doctor of Dental Surgery (DDS)',
-        institution: 'University of Michigan',
-        year: '2014'
-      },
-      {
-        icon: '📜',
-        degree: 'Board Certification',
-        institution: 'American Board of Periodontology',
-        year: '2018'
+        degree: 'Bachelor\'s Degree in Dental Surgery',
+        institution: 'Damascus University',
+        year: '2010'
       },
       {
         icon: '🏆',
-        degree: 'Implant Dentistry Fellowship',
-        institution: 'International Congress of Oral Implantologists',
-        year: '2019'
+        degree: 'Invisalign Certification',
+        institution: '',
+        year: ''
+      },
+      {
+        icon: '🏆',
+        degree: 'Temporary Anchorage Devices (TADs) Training',
+        institution: '',
+        year: ''
+      },
+      {
+        icon: '📜',
+        degree: 'Licensed Member',
+        institution: 'Syrian Dental Association',
+        year: '2010'
       }
     ],
     experience: {
-      title: 'Comprehensive Periodontal Experience',
-      description: 'Dr. Husson stays at the forefront of periodontal care through continuous education and adoption of the latest treatment modalities. His gentle approach and expertise in minimally invasive techniques ensure comfortable, effective treatment for all patients.',
+      title: 'Clinical Excellence Across Continents',
+      description: 'Dr. Husson\'s professional journey demonstrates steady growth, diverse experience, and a commitment to continuous development. His early clinical training at the Faculty of Dentistry, Damascus University provided him with invaluable exposure to complex orthodontic cases. Between 2014 and 2021, he practiced in leading polyclinics across Syria, treating a wide variety of patient populations and refining his approach to comprehensive orthodontic care. After relocating to the UAE, he joined Safe Care Dental Centre, Abu Dhabi (2022–2023), where he adapted his clinical expertise to serve the region\'s multicultural community. Since June 2023, Dr. Husson has been an essential part of Sky Dental Center in Khalifa City A, continuing to deliver outstanding orthodontic outcomes with precision and consistency.',
       highlights: [
-        'Specialist in laser periodontal therapy',
-        'Expert in soft tissue grafting',
-        'Advanced training in regenerative procedures',
-        'Implant placement and maintenance specialist',
-        'Active member of periodontal study clubs'
+        'More than nine years of advanced clinical expertise',
+        'Served as supervisor in Orthodontics Department during postgraduate studies',
+        'Practiced in leading polyclinics across Syria (2014-2021)',
+        'Safe Care Dental Centre, Abu Dhabi (2022–2023)',
+        'Sky Dental Center, Khalifa City A (June 2023 – Present)'
       ]
     },
     expertise: [
       {
-        category: 'Periodontal Treatment',
+        category: 'Management of Malocclusions',
         items: [
-          'Scaling and root planing',
-          'Laser gum therapy',
-          'Pocket reduction surgery',
-          'Gum grafting',
-          'Periodontal maintenance'
+          'Crowding and spacing',
+          'Deep bite and open bite',
+          'All Angle classifications: Class I, II, and III',
+          'Correction of functional habits (thumb-sucking, tongue thrust)'
         ]
       },
       {
-        category: 'Implant Dentistry',
+        category: 'Full Spectrum of Orthodontic Treatment Modalities',
         items: [
-          'Dental implant placement',
-          'Bone grafting',
-          'Sinus augmentation',
-          'Ridge preservation',
-          'Implant maintenance'
+          'Traditional metal braces',
+          'Aesthetic ceramic braces',
+          'Self-ligating systems',
+          'Clear aligner therapy (including Invisalign)'
         ]
       },
       {
-        category: 'Regenerative Procedures',
+        category: 'Paediatric Orthodontics',
         items: [
-          'Guided tissue regeneration',
-          'Bone regeneration',
-          'Platelet-rich fibrin therapy',
-          'Soft tissue grafting',
-          'Crown lengthening'
+          'Preventive and interceptive orthodontics',
+          'Space maintainers',
+          'Functional appliances guiding proper jaw development'
+        ]
+      },
+      {
+        category: 'Advanced Biomechanics & TADs',
+        items: [
+          'Temporary Anchorage Devices enabling precise control in complex movements',
+          'Customised treatment mechanics for challenging orthodontic cases'
         ]
       }
     ],
     philosophy: {
-      title: 'Prevention and Education',
-      description: 'Dr. Husson believes that healthy gums are the foundation of a healthy smile. He emphasizes patient education and preventive care to help patients maintain optimal periodontal health throughout their lives.',
+      title: 'Technology-Driven, Patient-Centred Care',
+      description: 'At Sky Dental Center, Dr. Husson integrates a fully digital orthodontic workflow through 3D intraoral scanning, digital treatment simulations, and precision-designed appliances. This technology enables highly accurate planning, improved patient comfort, and the ability for patients to preview their future smiles even before treatment begins. His approach emphasises patient education, comfort, and clear communication. He collaborates with restorative, prosthodontic, and periodontal specialists when interdisciplinary care is required, ensuring holistic treatment outcomes. Through consistent monitoring and long-term follow-up, he ensures stability, functionality, and lasting satisfaction.',
       principles: [
-        'Early detection and prevention',
-        'Minimally invasive treatment approaches',
-        'Patient education and empowerment',
-        'Collaborative care with referring dentists',
-        'Long-term periodontal health maintenance'
+        'Fully digital orthodontic workflow',
+        'Patient education, comfort, and clear communication',
+        'Collaboration with multidisciplinary specialists',
+        'Consistent monitoring and long-term follow-up',
+        'Evidence-based practice for optimal results'
       ],
-      quote: 'Healthy gums don\'t just support your teeth—they support your overall health and wellbeing. Prevention and early intervention are key to lifelong oral health.'
+      quote: 'Dr. Amr Husson welcomes patients of all ages and is committed to creating confident, naturally beautiful smiles through advanced orthodontic care rooted in precision, expertise, and compassion.'
     },
     clinicImages: [
       'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&h=600&fit=crop',
@@ -538,96 +496,95 @@ export const doctorsData: DoctorDetail[] = [
   {
     id: 'dr-shridhar-munje',
     name: 'Dr. Shridhar Munje',
-    title: 'DDS',
-    specialty: 'General Dentistry',
+    title: 'Specialist Orthodontist',
+    specialty: 'Specialist Orthodontist',
     image: '/doctor6.png',
     aboutImage: '/doctor6.png',
-    description: 'Dr. Shridhar Munje is an experienced general dentist with 18 years of providing comprehensive dental care to patients of all ages. His gentle chairside manner and commitment to patient comfort have made him a favorite among families. Dr. Munje believes in preventive care and patient education to help his patients achieve lifelong oral health.',
+    description: 'Dr. Shridhar Munje is a distinguished Specialist Orthodontist with more than 16 years of combined academic and clinical excellence, offering patients an advanced and comprehensive approach to orthodontic care. His career reflects a rare balance between high-level clinical expertise and a deep commitment to dental education, having mentored future dental professionals while continuously refining his mastery of modern orthodontic systems. With a professional journey that spans traditional mechanotherapy, cutting-edge aligner technologies, and interdisciplinary treatment planning, Dr. Munje provides tailored orthodontic solutions designed to achieve functional, aesthetic, and long-lasting results. His patient-centred philosophy emphasises precision, clarity, and comfort—ensuring that every individual receives a customised treatment pathway aligned with their unique dental needs and goals.',
     stats: [
-      { label: 'Years of Experience', value: '18+' },
-      { label: 'Happy Patients', value: '5,500+' },
-      { label: 'Procedures Performed', value: '15,000+' }
+      { label: 'Years of Experience', value: '16+' },
+      { label: 'Academic Experience', value: '9 Years' },
+      { label: 'Licensed', value: 'UAE & India' }
     ],
     education: [
       {
         icon: '🎓',
-        degree: 'Doctor of Dental Surgery (DDS)',
-        institution: 'University of California, Los Angeles',
-        year: '2005'
-      },
-      {
-        icon: '📜',
-        degree: 'Advanced General Dentistry Residency',
-        institution: 'Veterans Affairs Medical Center',
-        year: '2006'
-      },
-      {
-        icon: '🏆',
-        degree: 'Sedation Dentistry Certification',
-        institution: 'Dental Organization for Conscious Sedation',
-        year: '2010'
+        degree: 'Master of Dental Surgery (MDS) – Orthodontics',
+        institution: 'Sharad Pawar Dental College, Datta Meghe University of Medical Sciences',
+        year: '2009'
       },
       {
         icon: '🎓',
-        degree: 'Implant Dentistry Certificate',
-        institution: 'American Academy of Implant Dentistry',
-        year: '2012'
+        degree: 'Bachelor of Dental Surgery (BDS)',
+        institution: 'VSPM Dental College, Maharashtra University of Health Sciences',
+        year: '2006'
+      },
+      {
+        icon: '📜',
+        degree: 'Member',
+        institution: 'Maharashtra State Dental Council of India',
+        year: '2005'
       }
     ],
     experience: {
-      title: 'Comprehensive General Dentistry Experience',
-      description: 'With nearly two decades of experience, Dr. Munje provides a full range of dental services from routine cleanings to complex restorative procedures. His focus on patient education and preventive care has helped thousands of families maintain healthy smiles.',
+      title: 'Career Journey',
+      description: 'Dr. Munje\'s professional path reflects extensive international expertise and a steadfast dedication to clinical excellence: Sky Dental Center, UAE (2018 – Present) as Specialist Orthodontist; Bhaskar Orthodontics & Oral Care Centre, Nagpur (2009 – 2018) as Consultant Orthodontist; Academic Positions – India (9 Years) where he served as Assistant and Associate Professor in recognised dental colleges, integrating clinical practice with academic teaching, research, and administrative leadership. His transition from academia to full-time clinical practice demonstrates his enduring commitment to evidence-based orthodontics, patient education, and collaborative treatment planning.',
       highlights: [
-        'Experienced in treating patients of all ages',
-        'Specialist in sedation dentistry for anxious patients',
-        'Expert in comprehensive treatment planning',
-        'Skilled in cosmetic and restorative dentistry',
-        'Community volunteer providing free dental care'
+        'More than 16 years of combined academic and clinical excellence',
+        'Sky Dental Center, UAE (2018 – Present)',
+        'Bhaskar Orthodontics & Oral Care Centre, Nagpur (2009 – 2018)',
+        '9 years as Assistant and Associate Professor in recognised dental colleges',
+        'Licensed Orthodontic Specialist – UAE and India'
       ]
     },
     expertise: [
       {
-        category: 'Preventive Care',
+        category: 'Traditional & Advanced Braces Systems',
         items: [
-          'Comprehensive exams',
-          'Professional cleanings',
-          'Fluoride treatments',
-          'Sealants',
-          'Oral cancer screenings'
+          'Fixed orthodontic therapy: Beggs, Edgewise, and Pre-adjusted Edgewise systems (MBT, Roth prescriptions)',
+          'Ceramic braces for aesthetic alignment',
+          'Self-ligating braces for enhanced comfort and efficiency',
+          'Lingual orthodontics for discreet, invisible correction',
+          'Removable and semi-fixed appliances'
         ]
       },
       {
-        category: 'Restorative Dentistry',
+        category: 'Modern Aligner Technology',
         items: [
-          'Fillings and restorations',
-          'Crowns and bridges',
-          'Root canal therapy',
-          'Dentures and partials',
-          'Dental implant restoration'
+          'Invisalign and Smartee clear aligner systems',
+          'Customised aligner treatment planning for subtle, aesthetic smile transformation'
         ]
       },
       {
-        category: 'Cosmetic Services',
+        category: 'Specialised Orthodontic Approaches',
         items: [
-          'Teeth whitening',
-          'Composite bonding',
-          'Porcelain veneers',
-          'Smile makeovers',
-          'Gum contouring'
+          'Myofunctional orthodontics with removable and fixed functional appliances',
+          'Preventive and interceptive orthodontics for early developmental intervention',
+          'Surgical orthodontics for complex skeletal discrepancies',
+          'Adult orthodontic treatments tailored to mature patient needs',
+          'TMJ disorder assessment and management'
+        ]
+      },
+      {
+        category: 'Advanced Techniques & Interdisciplinary Care',
+        items: [
+          'Temporary anchorage devices (TADs/micro-implants) for precise tooth movement',
+          'Interdisciplinary collaboration with periodontists, prosthodontists, endodontists, and oral surgeons',
+          'Comprehensive planning for complex full-mouth rehabilitation and aesthetic cases'
         ]
       }
     ],
     philosophy: {
-      title: 'Family-Centered Care',
-      description: 'Dr. Munje treats each patient like family, providing personalized care in a comfortable, welcoming environment. He believes in building long-term relationships based on trust, communication, and exceptional dental care.',
+      title: 'Professional Philosophy',
+      description: 'Dr. Munje believes that orthodontic care is both a science and an art—requiring technical precision, thoughtful diagnosis, and individualised attention to each patient\'s functional and cosmetic goals. His approach prioritises patient comfort, informed decision-making, and treatment outcomes that enhance both oral health and confidence.',
       principles: [
-        'Preventive care as the foundation',
-        'Patient education and empowerment',
-        'Gentle, compassionate treatment',
-        'Conservative treatment approach',
-        'Comprehensive family dentistry'
+        'Technical precision and thoughtful diagnosis',
+        'Individualised attention to each patient\'s functional and cosmetic goals',
+        'Patient comfort and informed decision-making',
+        'Treatment outcomes that enhance both oral health and confidence',
+        'Evidence-based orthodontics and collaborative treatment planning'
       ],
-      quote: 'I believe that a healthy smile is a happy smile. My goal is to help every patient achieve optimal oral health through preventive care, education, and personalized treatment.'
+      quote: 'Dr. Shridhar Munje welcomes patients of all ages and looks forward to creating beautifully aligned, healthy smiles that stand the test of time.'
     },
     clinicImages: [
       'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&h=600&fit=crop',
@@ -638,96 +595,90 @@ export const doctorsData: DoctorDetail[] = [
   {
     id: 'dr-mohammad-abdulrazak',
     name: 'Dr. Mohammad Abdulrazak',
-    title: 'DDS, MS',
+    title: 'Specialist Periodontist',
     specialty: 'Specialist Periodontist',
     image: '/doctor7.png',
     aboutImage: '/doctor7.png',
-    description: 'Dr. Mohammad Abdulrazak is a dedicated periodontist with over 14 years of experience in treating gum disease and placing dental implants. His expertise in regenerative periodontal therapy and advanced surgical techniques has helped thousands of patients achieve optimal oral health. Dr. Abdulrazak is committed to providing compassionate, evidence-based periodontal care.',
+    description: 'Dr. Mohammad Abdulrazak is a highly accomplished Specialist Periodontist with more than a decade of advanced clinical experience dedicated to preserving periodontal health and restoring the structural foundations of the smile. Recognising that healthy gums are essential for long-term oral function and aesthetics, he integrates preventive care with sophisticated surgical techniques to deliver effective and sustainable outcomes for every patient. His refined clinical approach, supported by years of specialised training and international experience, positions him as one of the region\'s leading experts in periodontal therapy and gum-related surgical procedures.',
     stats: [
-      { label: 'Years of Experience', value: '14+' },
-      { label: 'Happy Patients', value: '4,200+' },
-      { label: 'Procedures Performed', value: '8,000+' }
+      { label: 'Years of Experience', value: '10+' },
+      { label: 'Registered', value: 'UAE, Oman & Syria' },
+      { label: 'Academic Role', value: '2 Years Supervisor' }
     ],
     education: [
       {
         icon: '🎓',
-        degree: 'Master of Science in Periodontics',
-        institution: 'University of North Carolina',
-        year: '2010'
-      },
-      {
-        icon: '🎓',
-        degree: 'Doctor of Dental Surgery (DDS)',
-        institution: 'University of Maryland',
-        year: '2007'
+        degree: 'Postgraduate Training in Periodontology',
+        institution: 'Damascus University',
+        year: '2017'
       },
       {
         icon: '📜',
-        degree: 'Board Certification',
-        institution: 'American Board of Periodontology',
-        year: '2011'
-      },
-      {
-        icon: '🏆',
-        degree: 'Laser Periodontal Therapy Certification',
-        institution: 'Academy of Laser Dentistry',
-        year: '2012'
+        degree: 'Syrian Board in Periodontology',
+        institution: 'National Centre for Medical Specialties, Damascus, Syria',
+        year: ''
       }
     ],
     experience: {
-      title: 'Comprehensive Periodontal Experience',
-      description: 'Dr. Abdulrazak combines traditional periodontal techniques with cutting-edge technology to provide effective, comfortable treatment. His expertise in regenerative procedures and implant dentistry ensures optimal outcomes for complex cases.',
+      title: 'A Decade of Clinical Excellence',
+      description: 'With more than 10 years of clinical experience across multiple regions, Dr. Abdulrazak has developed extensive expertise in diagnosing and managing complex periodontal conditions for diverse patient populations. He spent six years in Oman as a periodontal specialist, where he managed challenging and advanced cases with precision and consistency. Prior to that, he served for four years in Syria across several medical centres, gaining invaluable experience working in high-volume, multidisciplinary environments. Beyond his clinical work, Dr. Abdulrazak contributed to training the next generation of dental professionals. He served for two years as a practical supervisor in periodontology, supporting students in both clinical and laboratory settings. This academic role strengthened his ability to simplify complex concepts and reinforced his dedication to evidence-based practice. Since joining Sky Dental Center in 2025, he continues to uphold the exceptional standard of care that defines his professional legacy.',
       highlights: [
-        'Specialist in laser periodontal therapy',
-        'Expert in soft and hard tissue regeneration',
-        'Advanced training in implant placement',
-        'Active member of periodontal research groups',
-        'Regular contributor to periodontal journals'
+        'More than 10 years of clinical experience across multiple regions',
+        'Six years in Oman as a periodontal specialist',
+        'Four years in Syria across several medical centres',
+        'Two years as practical supervisor in periodontology',
+        'Sky Dental Center (2025 – Present)'
       ]
     },
     expertise: [
       {
-        category: 'Periodontal Treatment',
+        category: 'Non-Surgical Periodontal Therapy',
         items: [
-          'Scaling and root planing',
-          'Laser gum therapy',
-          'Pocket reduction surgery',
-          'Gum grafting procedures',
-          'Periodontal maintenance'
+          'Scaling and root planing (deep cleaning)',
+          'Periodontal maintenance programmes',
+          'Management of early and moderate gum disease'
         ]
       },
       {
-        category: 'Regenerative Procedures',
+        category: 'Advanced Surgical Procedures',
         items: [
-          'Bone regeneration',
+          'Treatment of advanced periodontitis',
+          'Periodontal flap surgery',
+          'Bone grafting and regenerative procedures',
           'Guided tissue regeneration',
-          'Soft tissue augmentation',
-          'Crown lengthening',
-          'Ridge augmentation'
+          'Soft tissue grafting for gum recession',
+          'Crown lengthening (functional & aesthetic)'
         ]
       },
       {
-        category: 'Implant Dentistry',
+        category: 'Dental Implants & Surgical Support',
         items: [
-          'Dental implant placement',
-          'Bone grafting for implants',
-          'Sinus augmentation',
-          'Implant maintenance',
-          'Peri-implantitis treatment'
+          'Surgical placement of dental implants',
+          'Ridge preservation and bone augmentation',
+          'Management of peri-implant disease',
+          'Exposure and management of impacted teeth'
+        ]
+      },
+      {
+        category: 'Laser-Assisted Periodontal Therapy',
+        items: [
+          'Minimally invasive laser treatments',
+          'Reduced discomfort and faster healing',
+          'Enhanced precision for soft tissue procedures'
         ]
       }
     ],
     philosophy: {
-      title: 'Foundation of Oral Health',
-      description: 'Dr. Abdulrazak believes that healthy gums are the foundation of a healthy smile. He emphasizes prevention, early intervention, and patient education to maintain optimal periodontal health.',
+      title: 'A Patient-Centred Philosophy',
+      description: 'What truly distinguishes Dr. Abdulrazak is his unwavering commitment to patient education and empowerment. He believes that informed patients are better equipped to make decisions that support their long-term oral health. During consultations, he takes the time to explain diagnoses clearly and thoroughly, discuss treatment options in detail, provide practical oral hygiene guidance, and ensure patients feel confident and supported throughout their care. His compassionate, collaborative approach allows patients to feel relaxed and assured, whether they are receiving routine gum treatment or complex surgical interventions.',
       principles: [
-        'Early detection and prevention',
-        'Evidence-based treatment approaches',
-        'Minimally invasive techniques',
-        'Patient education and empowerment',
-        'Long-term periodontal health'
+        'Unwavering commitment to patient education and empowerment',
+        'Clear and thorough explanation of diagnoses',
+        'Detailed discussion of treatment options',
+        'Practical oral hygiene guidance',
+        'Compassionate, collaborative approach'
       ],
-      quote: 'Healthy gums are the foundation of a beautiful smile. My goal is to help patients achieve and maintain optimal periodontal health through expert care and education.'
+      quote: 'Dr. Mohammad Abdulrazak remains committed to advancing periodontal health, protecting the foundations of every smile, and delivering specialist care with precision, empathy, and excellence.'
     },
     clinicImages: [
       'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&h=600&fit=crop',
@@ -738,96 +689,81 @@ export const doctorsData: DoctorDetail[] = [
   {
     id: 'dr-hazem-reslan',
     name: 'Dr. Hazem Reslan',
-    title: 'DDS, MS',
-    specialty: 'Orthodontist',
+    title: 'Specialist Pedodontist',
+    specialty: 'Specialist Pedodontist',
     image: '/doctor8.png',
     aboutImage: '/doctor8.png',
-    description: 'Dr. Hazem Reslan is a skilled orthodontist with 11 years of experience creating beautiful, healthy smiles. Specializing in both traditional braces and Invisalign clear aligners, Dr. Reslan uses the latest technology to provide efficient, comfortable orthodontic treatment for patients of all ages.',
+    description: 'Dr. Hazem Reslan is a distinguished Specialist Pedodontist dedicated to delivering exceptional dental care to infants, children, and adolescents. With advanced expertise in paediatric oral health, behavioural management, preventive dentistry, and minimally invasive treatment techniques, he ensures that every child receives compassionate, safe, and personalised care in a comfortable environment. With a deep understanding of the unique dental and emotional needs of young patients, Dr. Hazem combines clinical excellence with a gentle, reassuring approach that builds trust and confidence—laying the foundation for a lifetime of healthy smiles.',
     stats: [
-      { label: 'Years of Experience', value: '11+' },
-      { label: 'Happy Patients', value: '3,200+' },
-      { label: 'Successful Cases', value: '6,800+' }
+      { label: 'Specialist', value: 'Pedodontist' },
+      { label: 'Focus', value: 'Infants, Children & Adolescents' },
+      { label: 'Approach', value: 'Compassionate & Safe' }
     ],
-    education: [
-      {
-        icon: '🎓',
-        degree: 'Master of Science in Orthodontics',
-        institution: 'University of the Pacific',
-        year: '2014'
-      },
-      {
-        icon: '🎓',
-        degree: 'Doctor of Dental Surgery (DDS)',
-        institution: 'University of California, San Francisco',
-        year: '2011'
-      },
-      {
-        icon: '📜',
-        degree: 'Board Certification',
-        institution: 'American Board of Orthodontics',
-        year: '2015'
-      },
-      {
-        icon: '🏆',
-        degree: 'Invisalign Platinum Provider',
-        institution: 'Align Technology',
-        year: '2017'
-      }
-    ],
+    education: [],
     experience: {
-      title: 'Comprehensive Orthodontic Experience',
-      description: 'Dr. Reslan has transformed thousands of smiles using both traditional and modern orthodontic techniques. His expertise in digital treatment planning and 3D imaging ensures precise, predictable results for every patient.',
+      title: 'Compassionate, Expert Care for Growing Smiles',
+      description: 'Dr. Hazem Reslan is a distinguished Specialist Pedodontist dedicated to delivering exceptional dental care to infants, children, and adolescents. With advanced expertise in paediatric oral health, behavioural management, preventive dentistry, and minimally invasive treatment techniques, he ensures that every child receives compassionate, safe, and personalised care in a comfortable environment.',
       highlights: [
-        'Invisalign Platinum Provider',
-        'Specialist in adult orthodontics',
-        'Expert in accelerated treatment options',
-        'Advanced training in digital orthodontics',
-        'Active member of orthodontic associations'
+        'Advanced expertise in paediatric oral health',
+        'Behavioural management and preventive dentistry',
+        'Minimally invasive treatment techniques',
+        'Compassionate, safe, and personalised care',
+        'Gentle, reassuring approach that builds trust and confidence'
       ]
     },
     expertise: [
       {
-        category: 'Clear Aligner Therapy',
+        category: 'Evaluation & Diagnosis',
         items: [
-          'Invisalign treatment',
-          'Teen aligner programs',
-          'Adult clear aligners',
-          'Refinement treatments',
-          'Retention protocols'
+          'Comprehensive oral evaluations for infants, children, and adolescents',
+          'Detection of oral and systemic health conditions',
+          'Diagnosis of developmental abnormalities',
+          'Taking and interpreting intraoral and extraoral radiographs'
         ]
       },
       {
-        category: 'Traditional Orthodontics',
+        category: 'Preventive Care',
         items: [
-          'Metal and ceramic braces',
-          'Self-ligating systems',
-          'Early intervention',
-          'Bite correction',
-          'Space management'
+          'Professional fluoride applications and dental sealants',
+          'Oral hygiene treatments and personalised education for children and parents',
+          'Dietary and oral habit counselling',
+          'Risk-based prevention planning',
+          'Custom mouthguards for sports and trauma prevention'
         ]
       },
       {
-        category: 'Advanced Treatments',
+        category: 'Restorative Treatments',
         items: [
-          'Digital treatment planning',
-          '3D smile visualization',
-          'Accelerated orthodontics',
-          'Surgical orthodontics',
-          'TMJ treatment'
+          'Management of dental caries in primary and mixed dentition',
+          'Minimally invasive restorations, including aesthetic composites',
+          'Temporary and permanent restorations for paediatric cases'
+        ]
+      },
+      {
+        category: 'Surgical Procedures',
+        items: [
+          'Simple extractions of erupted teeth or roots',
+          'Uncomplicated surgical extractions of fractured or residual roots',
+          'Frenectomy and tongue-tie release',
+          'Mucocele removal',
+          'Foreign body removal',
+          'Surgical exposure of impacted teeth in children',
+          'Removal of supernumerary teeth',
+          'Decoronation of ankylosed teeth'
         ]
       }
     ],
     philosophy: {
-      title: 'Technology-Driven Excellence',
-      description: 'Dr. Reslan combines cutting-edge orthodontic technology with personalized care to deliver exceptional results. He believes every patient deserves a treatment plan tailored to their unique needs and goals.',
+      title: 'A Patient-Centred Paediatric Philosophy',
+      description: 'Dr. Hazem believes that paediatric dentistry goes far beyond treating teeth—it is about nurturing trust, reducing anxiety, and creating a positive dental experience from the very first visit. His calm, empathetic manner helps children feel safe and supported, while his expert communication style ensures parents remain informed and confident throughout every step of their child\'s care.',
       principles: [
-        'Advanced digital treatment planning',
-        'Clear communication and transparency',
-        'Comfortable, efficient treatment',
-        'Aesthetic-focused results',
-        'Long-term stability emphasis'
+        'Nurturing trust and reducing anxiety',
+        'Creating a positive dental experience from the very first visit',
+        'Calm, empathetic manner that helps children feel safe and supported',
+        'Expert communication with parents',
+        'Promoting lifelong oral health through exceptional paediatric dental care'
       ],
-      quote: 'Modern orthodontics is about more than just straightening teeth—it\'s about creating healthy, beautiful smiles that last a lifetime through precise, personalized care.'
+      quote: 'From early childhood visits to complex restorative and surgical procedures, Dr. Hazem is committed to promoting lifelong oral health through exceptional paediatric dental care rooted in precision, empathy, and excellence.'
     },
     clinicImages: [
       'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800&h=600&fit=crop',
@@ -838,96 +774,78 @@ export const doctorsData: DoctorDetail[] = [
   {
     id: 'dr-nasrin-badreldin',
     name: 'Dr. Nasrin Badreldin Mahgoub',
-    title: 'DDS, MS',
+    title: 'Specialist Endodontist',
     specialty: 'Specialist Endodontist',
     image: '/doctor9.png',
     aboutImage: '/doctor9.png',
-    description: 'Dr. Nasrin Badreldin Mahgoub is a skilled endodontist with 9 years of experience specializing in root canal therapy and endodontic surgery. Her gentle approach and use of advanced technology, including operating microscopes, ensure comfortable and successful treatment outcomes. Dr. Mahgoub is dedicated to saving natural teeth and relieving dental pain.',
+    description: 'Dr. Nasrin Badreldin Mahgoub is a passionate, patient-centred Endodontic Specialist with more than 15 years of clinical experience across Sudan, China, Egypt, and the UAE. Her practice is defined by precision, deep clinical insight, and mastery of advanced root canal therapies that restore comfort, function, and confidence to every patient she treats. With a reputation for delivering meticulous endodontic care using modern, evidence-based techniques, Dr. Nasrin provides exceptional treatment outcomes even in the most complex and challenging cases.',
     stats: [
-      { label: 'Years of Experience', value: '9+' },
-      { label: 'Root Canals Performed', value: '6,500+' },
-      { label: 'Success Rate', value: '97%' }
+      { label: 'Years of Experience', value: '15+' },
+      { label: 'International Experience', value: 'Sudan, China, Egypt & UAE' },
+      { label: 'Status', value: 'UAE Golden Visa Holder' }
     ],
     education: [
       {
         icon: '🎓',
-        degree: 'Master of Science in Endodontics',
-        institution: 'University of Toronto',
-        year: '2016'
+        degree: 'Master\'s Degree in Endodontics',
+        institution: 'Xi\'an Jiaotong University, China',
+        year: ''
       },
       {
         icon: '🎓',
-        degree: 'Doctor of Dental Surgery (DDS)',
-        institution: 'McGill University',
-        year: '2013'
-      },
-      {
-        icon: '📜',
-        degree: 'Board Certification',
-        institution: 'American Board of Endodontics',
-        year: '2017'
+        degree: 'Bachelor of Dental Surgery (BDS)',
+        institution: 'University of Science & Technology, Omdurman',
+        year: ''
       },
       {
         icon: '🏆',
-        degree: 'Advanced Microsurgery Certificate',
-        institution: 'Foundation for Endodontics',
-        year: '2018'
+        degree: 'Specialised Certifications',
+        institution: 'Advanced Endodontics, Implantology, Composite Restoration, Cosmetic Bleaching, Periodontal Surgery',
+        year: ''
+      },
+      {
+        icon: '📜',
+        degree: 'Licensed Specialist',
+        institution: 'Department of Health – Abu Dhabi (DOH)',
+        year: ''
       }
     ],
     experience: {
-      title: 'Comprehensive Endodontic Experience',
-      description: 'Dr. Mahgoub uses state-of-the-art technology including operating microscopes and digital imaging to provide the highest level of endodontic care. Her expertise in complex cases and retreatments has saved countless teeth.',
+      title: 'Extensive International Experience',
+      description: 'Currently based in Abu Dhabi, Dr. Nasrin serves as an Endodontist at Sky Dental Center, bringing with her an impressive background shaped by roles at Melody Medical Centre, Lefort Dental Centre, Cairo, and Davinci Dental Center, Khartoum. Her diverse clinical journey has strengthened her diagnostic expertise and expanded her ability to manage intricate endodontic cases using a technologically advanced approach. During her postgraduate studies, she gained invaluable hands-on clinical experience as a Registrar at The 1st Affiliated Hospital. A published researcher, Dr. Nasrin has contributed to the Journal of the International Society of Preventive and Community Dentistry, co-authoring a peer-reviewed study on modern pulp-capping materials—demonstrating her commitment to scientific innovation and evidence-based practice.',
       highlights: [
-        'Specialist in microscope-enhanced endodontics',
-        'Expert in endodontic retreatments',
-        'Advanced training in apicoectomy procedures',
-        'Leader in pain-free root canal therapy',
-        'Active researcher in endodontic innovations'
+        'More than 15 years of clinical experience across Sudan, China, Egypt, and the UAE',
+        'Sky Dental Center, Abu Dhabi (Current)',
+        'Melody Medical Centre, Lefort Dental Centre (Cairo), Davinci Dental Center (Khartoum)',
+        'Registrar at The 1st Affiliated Hospital during postgraduate studies',
+        'Published researcher in peer-reviewed journals',
+        'UAE Golden Visa holder'
       ]
     },
     expertise: [
       {
-        category: 'Root Canal Therapy',
+        category: 'Clinical Expertise',
         items: [
-          'Routine root canal treatment',
-          'Complex canal anatomy',
-          'Calcified canals',
-          'Retreatment procedures',
-          'Emergency treatment'
-        ]
-      },
-      {
-        category: 'Endodontic Surgery',
-        items: [
-          'Apicoectomy',
-          'Root amputation',
-          'Perforation repair',
-          'Resorption treatment',
-          'Surgical retreatment'
-        ]
-      },
-      {
-        category: 'Advanced Procedures',
-        items: [
-          'Microscope-enhanced treatment',
-          'Digital imaging and diagnostics',
-          'Regenerative endodontics',
-          'Traumatic injury treatment',
-          'Cracked tooth diagnosis'
+          'Advanced root canal therapy',
+          'Retreatment of failed root canals',
+          'Management of complex endodontic infections',
+          'Treatment of traumatic dental injuries',
+          'Aesthetic and functional restoration using high-precision techniques',
+          'Collaboration with multidisciplinary teams in prosthodontics, periodontics, and orthodontics'
         ]
       }
     ],
     philosophy: {
-      title: 'Preserving Natural Teeth',
-      description: 'Dr. Mahgoub is passionate about saving natural teeth through expert endodontic care. She believes that with proper treatment, most teeth can be preserved for a lifetime.',
+      title: 'A Patient-Centred Philosophy',
+      description: 'Dr. Nasrin believes that successful endodontic care extends beyond technical accuracy—it requires empathy, communication, and trust. She takes time to explain conditions and treatment options clearly, address patient concerns with understanding and patience, build confidence through transparency and reassurance, and tailor every treatment plan to the patient\'s needs and goals. Her warm, compassionate approach allows her to support patients throughout their healing journey and deliver outcomes that restore both oral health and peace of mind.',
       principles: [
-        'Thorough diagnosis and treatment planning',
-        'Gentle, pain-free procedures',
-        'Advanced technology for optimal results',
-        'Clear patient communication',
-        'Long-term tooth preservation'
+        'Empathy, communication, and trust',
+        'Clear explanation of conditions and treatment options',
+        'Understanding and patience in addressing patient concerns',
+        'Transparency and reassurance to build confidence',
+        'Tailored treatment plans to patient\'s needs and goals'
       ],
-      quote: 'My mission is to save natural teeth and eliminate dental pain through compassionate, expert endodontic care using the most advanced techniques available.'
+      quote: 'Dr. Nasrin Badreldin Mahgoub continues to elevate endodontic care at Sky Dental Center through scientific excellence, clinical mastery, and an unwavering dedication to patient wellbeing.'
     },
     clinicImages: [
       'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&h=600&fit=crop',
@@ -937,97 +855,90 @@ export const doctorsData: DoctorDetail[] = [
   },
   {
     id: 'dr-kinan-mohammed',
-    name: 'Dr. Kinan Mohammed Mohdi',
-    title: 'DDS',
-    specialty: 'General Dentistry',
+    name: 'Dr. Kinan Mohammed Mohdi, DDS',
+    title: 'General Dental Practitioner',
+    specialty: 'General Dental Practitioner',
     image: '/doctor10.png',
     aboutImage: '/doctor10.png',
-    description: 'Dr. Kinan Mohammed Mohdi is a compassionate general dentist with 7 years of experience providing comprehensive dental care. His gentle approach and commitment to patient comfort make dental visits stress-free. Dr. Mohdi focuses on preventive care and patient education to help families maintain optimal oral health.',
+    description: 'With more than 15 years of dedicated clinical experience in general and prosthodontic dentistry, Dr. Kinan Mohammed Mohdi brings a distinguished level of expertise and an exceptional commitment to patient-focused care. His professional journey—beginning with the establishment of his own private clinic in Syria and extending into a longstanding career in the UAE—reflects a deep dedication to clinical excellence, continuous development, and restorative dentistry that restores both function and aesthetic confidence. Through his extensive international experience, Dr. Kinan has become known for his meticulous approach, advanced restorative skills, and his ability to manage complex dental cases with precision, artistry, and a compassionate patient-centred philosophy.',
     stats: [
-      { label: 'Years of Experience', value: '7+' },
-      { label: 'Happy Patients', value: '2,100+' },
-      { label: 'Procedures Performed', value: '6,000+' }
+      { label: 'Years of Experience', value: '15+' },
+      { label: 'Sky Dental Center', value: '2015 – Present' },
+      { label: 'Focus', value: 'General & Prosthodontic Dentistry' }
     ],
     education: [
       {
         icon: '🎓',
         degree: 'Doctor of Dental Surgery (DDS)',
-        institution: 'University of Washington',
-        year: '2016'
-      },
-      {
-        icon: '📜',
-        degree: 'General Practice Residency',
-        institution: 'Harbor-UCLA Medical Center',
-        year: '2017'
+        institution: 'University of Aleppo, Syria',
+        year: '2007'
       },
       {
         icon: '🏆',
-        degree: 'Cosmetic Dentistry Certificate',
-        institution: 'American Academy of Cosmetic Dentistry',
-        year: '2019'
+        degree: 'Fixed Prosthodontics Certificate',
+        institution: 'University of Aleppo',
+        year: '2008–2011'
       },
       {
-        icon: '🎓',
-        degree: 'Endodontic Therapy Certification',
-        institution: 'American Association of Endodontists',
-        year: '2020'
+        icon: '🏆',
+        degree: 'Fixed Prosthodontics Certificate',
+        institution: 'University of Damascus',
+        year: '2011–2012'
       }
     ],
     experience: {
-      title: 'Comprehensive General Dentistry Experience',
-      description: 'Dr. Mohdi provides high-quality dental care with a focus on patient comfort and satisfaction. His expertise spans preventive, restorative, and cosmetic dentistry, allowing him to address all aspects of his patients\' oral health needs.',
+      title: 'Professional Journey',
+      description: 'Dr. Kinan has built a robust and respected career across both Syria and the UAE: Sky Dental Center, UAE (2015 – Present) as General Practice Dentist; Private Practice & Clinical Roles, UAE (2013 – 2015) as General Practice Dentist; Private Dental Clinic, Syria (2008 – 2013) as Founder & General Practice Dentist. His long-standing role at Sky Dental Center exemplifies his loyalty, reliability, and the trust he has earned from patients and colleagues alike.',
       highlights: [
-        'Experienced in treating anxious patients',
-        'Skilled in cosmetic dentistry procedures',
-        'Expert in same-day emergency care',
-        'Committed to continuing education',
-        'Multilingual practitioner'
+        'More than 15 years of dedicated clinical experience',
+        'Sky Dental Center, UAE (2015 – Present)',
+        'Private Practice & Clinical Roles, UAE (2013 – 2015)',
+        'Private Dental Clinic, Syria (2008 – 2013) - Founder',
+        'Advanced training in prosthodontics'
       ]
     },
     expertise: [
       {
-        category: 'Preventive Dentistry',
+        category: 'Comprehensive General Dentistry',
         items: [
-          'Comprehensive examinations',
-          'Professional cleanings',
-          'Periodontal therapy',
-          'Fluoride treatments',
-          'Oral health education'
+          'Full oral examinations and personalised treatment planning',
+          'Preventive care and patient education',
+          'Restorative treatments, including fillings and decay management',
+          'Prompt and effective emergency dental care',
+          'Routine cleaning and periodontal maintenance'
         ]
       },
       {
-        category: 'Restorative Care',
+        category: 'Advanced Prosthodontic Services',
         items: [
-          'Tooth-colored fillings',
-          'Crowns and bridges',
-          'Root canal therapy',
-          'Tooth extractions',
-          'Dentures'
+          'Crown and bridge design, fabrication, and placement',
+          'Full-mouth rehabilitation for complex restorative needs',
+          'Cosmetic veneers and smile enhancement',
+          'Complete and partial denture solutions',
+          'Implant-supported prosthetic restorations',
+          'Precision restorations integrating aesthetics and function'
         ]
       },
       {
-        category: 'Cosmetic Dentistry',
+        category: 'Aesthetic & Functional Restoration',
         items: [
-          'Professional whitening',
-          'Composite bonding',
-          'Porcelain veneers',
-          'Smile design',
-          'Esthetic restorations'
+          'Comprehensive smile makeover treatments',
+          'Tooth-coloured restorative solutions',
+          'Bite correction and occlusal adjustment therapies'
         ]
       }
     ],
     philosophy: {
-      title: 'Compassionate, Patient-Centered Care',
-      description: 'Dr. Mohdi believes in treating each patient with kindness, respect, and personalized attention. He takes time to listen to concerns and explain treatment options, ensuring patients feel comfortable and informed.',
+      title: 'A Decade of Excellence in the UAE',
+      description: 'Since joining Sky Dental Center in 2015, Dr. Kinan has become an essential member of the medical team. His consistency, clinical excellence, and patient-first philosophy have earned him long-term trust within the community. His tenure reflects not only professional expertise but also a genuine commitment to serving patients with integrity, precision, and compassion.',
       principles: [
-        'Gentle, compassionate treatment approach',
-        'Clear communication and education',
-        'Conservative treatment planning',
-        'Focus on prevention',
-        'Patient comfort as priority'
+        'Consistency and clinical excellence',
+        'Patient-first philosophy',
+        'Long-term trust within the community',
+        'Genuine commitment to serving patients',
+        'Integrity, precision, and compassion'
       ],
-      quote: 'Dentistry is about more than just teeth—it\'s about people. I strive to create a welcoming environment where patients feel valued, heard, and cared for.'
+      quote: 'Dr. Kinan Mohammed Mohdi welcomes new patients and looks forward to supporting them in achieving optimal dental health and a confident, beautiful smile.'
     },
     clinicImages: [
       'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&h=600&fit=crop',
@@ -1038,96 +949,73 @@ export const doctorsData: DoctorDetail[] = [
   {
     id: 'dr-mohanned-albasha',
     name: 'Dr. Mohanned Albasha',
-    title: 'DDS',
-    specialty: 'General dentist',
+    title: 'General Dental Practitioner',
+    specialty: 'General Dental Practitioner',
     image: '/doctor11.png',
     aboutImage: '/doctor11.png',
-    description: 'Dr. Mohanned Albasha is an experienced general dentist with 13 years of providing comprehensive dental care to patients of all ages. His gentle approach and commitment to patient comfort have made him a trusted practitioner. Dr. Albasha focuses on preventive care and patient education to help his patients achieve lifelong oral health.',
+    description: 'Dr. Mohanned Albasha is a dedicated General Dentist who delivers high-quality, patient-centred dental care with precision, compassion, and a commitment to long-term oral health. With extensive experience across the full spectrum of general dentistry, he ensures that every patient receives personalised treatment tailored to their unique needs, whether for prevention, restoration, or urgent care. His approach is grounded in clinical excellence, evidence-based practice, and clear communication—providing patients with confidence and comfort throughout their dental journey.',
     stats: [
-      { label: 'Years of Experience', value: '13+' },
-      { label: 'Happy Patients', value: '4,800+' },
-      { label: 'Procedures Performed', value: '12,000+' }
+      { label: 'Specialist', value: 'General Dentist' },
+      { label: 'Approach', value: 'Patient-Centred' },
+      { label: 'Focus', value: 'Precision & Compassion' }
     ],
-    education: [
-      {
-        icon: '🎓',
-        degree: 'Doctor of Dental Surgery (DDS)',
-        institution: 'University of Damascus',
-        year: '2011'
-      },
-      {
-        icon: '📜',
-        degree: 'Advanced General Dentistry Residency',
-        institution: 'Damascus University Hospital',
-        year: '2012'
-      },
-      {
-        icon: '🏆',
-        degree: 'Cosmetic Dentistry Certificate',
-        institution: 'American Academy of Cosmetic Dentistry',
-        year: '2015'
-      },
-      {
-        icon: '🎓',
-        degree: 'Implant Dentistry Certificate',
-        institution: 'International Congress of Oral Implantologists',
-        year: '2017'
-      }
-    ],
+    education: [],
     experience: {
-      title: 'Comprehensive General Dentistry Experience',
-      description: 'With over a decade of experience, Dr. Albasha provides a full range of dental services from routine cleanings to complex restorative procedures. His focus on patient education and preventive care has helped thousands of patients maintain healthy smiles.',
+      title: 'Committed to Precision, Comfort, and Comprehensive Dental Care',
+      description: 'Dr. Mohanned Albasha is a dedicated General Dentist who delivers high-quality, patient-centred dental care with precision, compassion, and a commitment to long-term oral health. With extensive experience across the full spectrum of general dentistry, he ensures that every patient receives personalised treatment tailored to their unique needs, whether for prevention, restoration, or urgent care.',
       highlights: [
-        'Experienced in treating patients of all ages',
-        'Specialist in cosmetic dentistry procedures',
-        'Expert in comprehensive treatment planning',
-        'Skilled in restorative and preventive dentistry',
-        'Multilingual practitioner'
+        'High-quality, patient-centred dental care',
+        'Precision, compassion, and commitment to long-term oral health',
+        'Extensive experience across the full spectrum of general dentistry',
+        'Personalised treatment tailored to unique needs',
+        'Clinical excellence, evidence-based practice, and clear communication'
       ]
     },
     expertise: [
       {
-        category: 'Preventive Care',
+        category: 'General Dentistry',
         items: [
-          'Comprehensive exams',
-          'Professional cleanings',
-          'Fluoride treatments',
-          'Sealants',
-          'Oral cancer screenings'
+          'Comprehensive oral examinations and development of personalised treatment plans',
+          'Capture, processing, and interpretation of dental radiographs',
+          'Immediate management of common dental emergencies',
+          'Routine oral hygiene care, including professional scaling and polishing'
+        ]
+      },
+      {
+        category: 'Preventive Dentistry',
+        items: [
+          'Fluoride treatments and application of dental sealants',
+          'Education on oral hygiene practices and preventive strategies'
         ]
       },
       {
         category: 'Restorative Dentistry',
         items: [
-          'Fillings and restorations',
-          'Crowns and bridges',
-          'Root canal therapy',
-          'Dentures and partials',
-          'Dental implant restoration'
+          'Direct restorations for decayed or damaged teeth',
+          'Aesthetic fillings designed to restore function and natural appearance'
         ]
       },
       {
-        category: 'Cosmetic Services',
+        category: 'Prosthodontics',
         items: [
-          'Teeth whitening',
-          'Composite bonding',
-          'Porcelain veneers',
-          'Smile makeovers',
-          'Gum contouring'
+          'Management of simple prosthodontic cases, including crowns and bridges',
+          'Dentures and removable partial dentures (RPDs)',
+          'Onlays, inlays, and veneers',
+          'Restoration of functional and aesthetic balance through customised prosthetic solutions'
         ]
       }
     ],
     philosophy: {
-      title: 'Patient-Centered Care',
-      description: 'Dr. Albasha treats each patient with personalized attention and care. He believes in building long-term relationships based on trust, communication, and exceptional dental care.',
+      title: 'Patient-Centred Philosophy',
+      description: 'Dr. Mohanned Albasha believes that exceptional dental care is built on trust, clarity, and comfort. He prioritises patient education, taking the time to explain treatment options and ensure individuals feel informed and relaxed throughout their care. With a gentle clinical approach and dedication to excellence, he strives to create positive dental experiences and long-lasting oral health outcomes for patients of all ages.',
       principles: [
-        'Preventive care as the foundation',
-        'Patient education and empowerment',
-        'Gentle, compassionate treatment',
-        'Conservative treatment approach',
-        'Comprehensive family dentistry'
+        'Trust, clarity, and comfort',
+        'Patient education and clear explanations',
+        'Gentle clinical approach',
+        'Dedication to excellence',
+        'Positive dental experiences and long-lasting oral health outcomes'
       ],
-      quote: 'I believe that a healthy smile is a happy smile. My goal is to help every patient achieve optimal oral health through preventive care, education, and personalized treatment.'
+      quote: 'Dr. Mohanned Albasha looks forward to welcoming new patients and supporting them in achieving healthy, confident, and beautiful smiles through high-quality general dentistry.'
     },
     clinicImages: [
       'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&h=600&fit=crop',
@@ -1138,96 +1026,95 @@ export const doctorsData: DoctorDetail[] = [
   {
     id: 'dr-arwa-rashed',
     name: 'Dr. Arwa Rashed Almarshoodi',
-    title: 'DDS, MS',
-    specialty: 'Cosmetic Dentistry',
+    title: 'General Dental Practitioner',
+    specialty: 'General Dental Practitioner',
     image: '/doctor12.png',
     aboutImage: '/doctor12.png',
-    description: 'Dr. Arwa Rashed Almarshoodi is a highly skilled cosmetic dentist with 10 years of experience in aesthetic smile transformations. Her artistic vision and technical precision have made her a sought-after specialist for porcelain veneers, smile makeovers, and advanced cosmetic procedures. Dr. Almarshoodi\'s dedication to natural-looking results and patient satisfaction sets her apart in the field of cosmetic dentistry.',
+    description: 'Dr. Arwa Rashed Almarshoodi is a distinguished Prosthodontic Specialist who transforms lives by restoring oral function, comfort, and aesthetics with exceptional precision. Through her advanced training and meticulous approach to comprehensive restorative care, she empowers patients to regain their confidence, rediscover their smiles, and achieve long-term oral health. Her clinical philosophy is grounded in the belief that every patient deserves a personalised, functional, and aesthetically harmonious smile—crafted through evidence-based practice and artistic attention to detail.',
     stats: [
-      { label: 'Years of Experience', value: '10+' },
-      { label: 'Smile Makeovers', value: '1,800+' },
-      { label: 'Happy Patients', value: '3,500+' }
+      { label: 'Specialist', value: 'Prosthodontic Specialist' },
+      { label: 'Residency', value: '3 Years (2021-2024)' },
+      { label: 'Certifications', value: 'Triple Certification' }
     ],
     education: [
       {
         icon: '🎓',
-        degree: 'Master of Science in Cosmetic Dentistry',
-        institution: 'New York University',
-        year: '2015'
-      },
-      {
-        icon: '🎓',
         degree: 'Doctor of Dental Surgery (DDS)',
-        institution: 'University of California, Los Angeles',
-        year: '2012'
+        institution: 'Ajman University of Science and Technology',
+        year: '2017'
       },
       {
         icon: '📜',
-        degree: 'Accreditation in Cosmetic Dentistry',
-        institution: 'American Academy of Cosmetic Dentistry',
-        year: '2016'
+        degree: 'Triple Certification',
+        institution: 'Jordan Medical Council, Arab Board Certification, ACGME-I',
+        year: '2024'
       },
       {
-        icon: '🏆',
-        degree: 'Digital Smile Design Certification',
-        institution: 'DSD Planning Center',
-        year: '2018'
+        icon: '🎓',
+        degree: 'Three-Year Residency in Prosthodontics',
+        institution: 'Ambulatory Health Services – Al Ain Dental Centre',
+        year: '2021-2024'
       }
     ],
     experience: {
-      title: 'Comprehensive Cosmetic Experience',
-      description: 'Dr. Almarshoodi combines artistry with advanced technology to create stunning, natural-looking smiles. Her expertise in digital smile design and minimally invasive techniques ensures beautiful results that enhance both appearance and function.',
+      title: 'Comprehensive Clinical Experience',
+      description: 'Dr. Arwa completed an intensive three-year residency in Prosthodontics at Ambulatory Health Services – Al Ain Dental Centre from 2021 to 2024. During this period, she gained extensive hands-on experience in managing complex cases involving missing or compromised teeth, treating damaged oral structures, planning and executing full-mouth rehabilitation cases, and working within multidisciplinary teams to deliver comprehensive care. Her residency nurtured both the advanced technical expertise required for prosthodontic precision and the interpersonal skills essential for guiding patients through transformative restorative journeys.',
       highlights: [
-        'Specialist in porcelain veneer artistry',
-        'Expert in digital smile design',
-        'Advanced training in minimally invasive dentistry',
-        'Featured in cosmetic dentistry case studies',
-        'Regular lecturer at aesthetic dentistry seminars'
+        'Intensive three-year residency in Prosthodontics (2021-2024)',
+        'Ambulatory Health Services – Al Ain Dental Centre',
+        'Extensive hands-on experience in complex cases',
+        'Full-mouth rehabilitation expertise',
+        'Multidisciplinary team collaboration'
       ]
     },
     expertise: [
       {
-        category: 'Smile Makeovers',
+        category: 'Preventive & Supportive Care',
         items: [
-          'Full smile transformations',
-          'Digital smile design',
-          'Facial aesthetic analysis',
-          'Color and shape optimization',
-          'Comprehensive treatment planning'
+          'Professional cleaning and fluoride applications',
+          'Sealants and preventive treatments',
+          'Comprehensive patient education on oral hygiene and nutrition'
         ]
       },
       {
-        category: 'Cosmetic Restorations',
+        category: 'Restorative Dentistry',
         items: [
-          'Porcelain veneers',
-          'Composite bonding',
-          'All-ceramic crowns',
-          'Teeth whitening',
-          'Gum recontouring'
+          'Direct and indirect fillings',
+          'Inlays and onlays',
+          'Crowns, bridges, and post–core restorations',
+          'Selection of ideal restorative materials based on functional and aesthetic needs'
         ]
       },
       {
-        category: 'Advanced Aesthetics',
+        category: 'Fixed & Removable Prosthodontics',
         items: [
-          'Minimally invasive preparations',
-          'No-prep veneers',
-          'Esthetic implant restoration',
-          'Bite reconstruction',
-          'Anti-aging smile design'
+          'Implant–supported restorations',
+          'Full and partial dentures',
+          'Complex prosthodontic rehabilitation',
+          'Restoring oral function and aesthetics with lifelike, durable prostheses'
+        ]
+      },
+      {
+        category: 'Aesthetic Excellence',
+        items: [
+          'Bespoke smile makeover planning',
+          'Veneers crafted with artistic precision',
+          'Professional teeth-whitening techniques',
+          'Seamless blend of beauty with function'
         ]
       }
     ],
     philosophy: {
-      title: 'Natural Beauty Through Dentistry',
-      description: 'Dr. Almarshoodi believes that the best cosmetic dentistry looks completely natural. She focuses on creating smiles that complement each patient\'s unique facial features and personality.',
+      title: 'Patient-Centred Philosophy',
+      description: 'Dr. Arwa believes that exceptional prosthodontic care extends beyond technical skill—it requires empathy, collaboration, and a deep understanding of each patient\'s goals. She takes the time to listen carefully to patient concerns, explain treatment options clearly, develop personalised care plans, and provide supportive guidance throughout each stage of treatment. Her gentle manner, transparent communication, and commitment to patient comfort foster trust and long-lasting relationships.',
       principles: [
-        'Comprehensive aesthetic evaluation',
-        'Natural-looking, harmonious results',
-        'Minimal tooth preparation when possible',
-        'Highest quality materials and techniques',
-        'Patient involvement in treatment planning'
+        'Empathy, collaboration, and deep understanding of patient goals',
+        'Listen carefully to patient concerns',
+        'Clear explanation of treatment options',
+        'Personalised care plans',
+        'Supportive guidance throughout each stage of treatment'
       ],
-      quote: 'True beauty in dentistry comes from creating smiles that look and feel natural—smiles that enhance your confidence and reflect your unique personality.'
+      quote: 'Whether restoring a single tooth or rehabilitating an entire smile, Dr. Arwa blends clinical mastery, artistic vision, and compassionate care to deliver transformative results.'
     },
     clinicImages: [
       'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&h=600&fit=crop',
@@ -1238,96 +1125,94 @@ export const doctorsData: DoctorDetail[] = [
   {
     id: 'dr-reem-al-hammadi',
     name: 'Dr. Reem Al-Hammadi',
-    title: 'DDS, MS',
-    specialty: 'Endodontist',
+    title: 'General Dental Practitioner',
+    specialty: 'General Dental Practitioner',
     image: '/doctor13.png',
     aboutImage: '/doctor13.png',
-    description: 'Dr. Reem Al-Hammadi is a dedicated endodontist with 6 years of experience specializing in root canal therapy and endodontic surgery. Her gentle technique and use of advanced technology make even the most complex root canal treatments comfortable and successful. Dr. Al-Hammadi is committed to saving natural teeth and relieving dental pain.',
+    description: 'Dr. Reem Al-Hammadi is a highly committed general practice dentist who delivers comprehensive, patient-focused dental care grounded in precision, empathy, and evidence-based practice. With a solid academic foundation and extensive clinical exposure across leading healthcare institutions in Abu Dhabi, she has built a reputation as a trusted dental professional who blends technical excellence with genuine dedication to patient wellbeing. Her approach reflects the highest standards of modern dentistry—combining meticulous diagnostic skill, refined clinical techniques, and a warm, reassuring patient experience.',
     stats: [
-      { label: 'Years of Experience', value: '6+' },
-      { label: 'Root Canals Performed', value: '4,500+' },
-      { label: 'Success Rate', value: '98%' }
+      { label: 'Education', value: 'DMD, Gulf Medical University' },
+      { label: 'Internship', value: 'Healthpoint Hospital, 2021' },
+      { label: 'Registered', value: 'UAE Health Authority' }
     ],
     education: [
       {
         icon: '🎓',
-        degree: 'Master of Science in Endodontics',
-        institution: 'University of Pennsylvania',
+        degree: 'Doctor of Dental Medicine (DMD)',
+        institution: 'Gulf Medical University',
         year: '2019'
       },
       {
         icon: '🎓',
-        degree: 'Doctor of Dental Surgery (DDS)',
-        institution: 'University of Southern California',
-        year: '2016'
+        degree: 'Clinical Internship',
+        institution: 'Healthpoint Hospital',
+        year: '2021'
       },
       {
         icon: '📜',
-        degree: 'Board Certification',
-        institution: 'American Board of Endodontics',
-        year: '2020'
-      },
-      {
-        icon: '🏆',
-        degree: 'Advanced Microsurgery Certificate',
-        institution: 'Foundation for Endodontics',
-        year: '2021'
+        degree: 'Licensed General Dentist',
+        institution: 'UAE Health Authority',
+        year: ''
       }
     ],
     experience: {
-      title: 'Comprehensive Endodontic Experience',
-      description: 'Dr. Al-Hammadi uses state-of-the-art technology including operating microscopes and digital imaging to provide the highest level of endodontic care. Her expertise in complex cases and retreatments has saved countless teeth.',
+      title: 'Professional Experience',
+      description: 'Throughout her career, Dr. Reem has developed well-rounded clinical expertise through her work with respected private healthcare providers in Abu Dhabi: Sky Dental Center (2024 – Present) as General Practice Dentist; French Dental Centre (2021 – 2023) as General Practice Dentist; Lazard Medical Centre (2023) as General Practice Dentist. Since commencing her professional practice in 2021, she has consistently expanded her clinical capabilities while upholding the highest standards of safety, accuracy, and patient care.',
       highlights: [
-        'Specialist in microscope-enhanced endodontics',
-        'Expert in endodontic retreatments',
-        'Advanced training in apicoectomy procedures',
-        'Leader in pain-free root canal therapy',
-        'Active researcher in endodontic innovations'
+        'Sky Dental Center (2024 – Present)',
+        'French Dental Centre (2021 – 2023)',
+        'Lazard Medical Centre (2023)',
+        'Professional practice since 2021',
+        'Consistently expanded clinical capabilities'
       ]
     },
     expertise: [
       {
-        category: 'Root Canal Therapy',
+        category: 'Diagnostic & Preventive Care',
         items: [
-          'Routine root canal treatment',
-          'Complex canal anatomy',
-          'Calcified canals',
-          'Retreatment procedures',
-          'Emergency treatment'
+          'Comprehensive oral examinations and diagnostic evaluations',
+          'Personalised treatment planning',
+          'Preventive dentistry and oral hygiene education',
+          'Prompt management of dental emergencies'
         ]
       },
       {
-        category: 'Endodontic Surgery',
+        category: 'Restorative Dentistry',
         items: [
-          'Apicoectomy',
-          'Root amputation',
-          'Perforation repair',
-          'Resorption treatment',
-          'Surgical retreatment'
+          'Aesthetic and functional restorative treatments',
+          'Tooth-coloured fillings and advanced reconstructions',
+          'Simple endodontic procedures (root canal therapy)'
         ]
       },
       {
-        category: 'Advanced Procedures',
+        category: 'Prosthodontics',
         items: [
-          'Microscope-enhanced treatment',
-          'Digital imaging and diagnostics',
-          'Regenerative endodontics',
-          'Traumatic injury treatment',
-          'Cracked tooth diagnosis'
+          'Crown and bridge restorations',
+          'Cosmetic veneers and smile enhancement',
+          'Complete and partial dentures',
+          'Full-mouth rehabilitation planning and coordination'
+        ]
+      },
+      {
+        category: 'Surgical & Periodontal Care',
+        items: [
+          'Non-surgical tooth extractions',
+          'Non-surgical periodontal therapy',
+          'Gum health maintenance and disease control'
         ]
       }
     ],
     philosophy: {
-      title: 'Saving Natural Teeth',
-      description: 'Dr. Al-Hammadi is passionate about saving natural teeth through expert endodontic care. She believes that with proper treatment, most teeth can be preserved for a lifetime.',
+      title: 'Professional Philosophy',
+      description: 'Dr. Reem believes that exceptional dentistry is built on more than clinical skill—it requires trust, transparency, and a deep understanding of each patient\'s concerns and goals. She strives to create a supportive environment where patients feel informed, valued, and confident in every step of their treatment journey.',
       principles: [
-        'Thorough diagnosis and treatment planning',
-        'Gentle, pain-free procedures',
-        'Advanced technology for optimal results',
-        'Clear patient communication',
-        'Long-term tooth preservation'
+        'Trust, transparency, and deep understanding of patient concerns and goals',
+        'Supportive environment for patients',
+        'Patients feel informed, valued, and confident',
+        'Highest standards of safety, accuracy, and patient care',
+        'Technical excellence with genuine dedication to patient wellbeing'
       ],
-      quote: 'My mission is to save natural teeth and eliminate dental pain through compassionate, expert endodontic care using the most advanced techniques available.'
+      quote: 'Dr. Reem Al-Hammadi looks forward to welcoming new patients and partnering with them in achieving lasting oral health and confident, beautiful smiles.'
     },
     clinicImages: [
       'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&h=600&fit=crop',
