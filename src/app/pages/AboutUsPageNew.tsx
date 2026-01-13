@@ -264,6 +264,57 @@ export default function AboutUsPageNew() {
         </div>
       </section>
 
+      {/* Core Values Section */}
+      <section 
+        ref={valuesRef}
+        className="py-24"
+        style={{
+          background: 'linear-gradient(180deg, rgb(237, 248, 255) 0%, rgb(255, 255, 255) 100%)'
+        }}
+      >
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
+            animate={valuesInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-['Gilda_Display'] text-black mb-4 tracking-tight">
+              Our Core Values
+            </h2>
+            <p className="text-base text-black/60 font-['Arial'] max-w-3xl mx-auto">
+              These principles guide our actions and shape the culture of care we provide to our community every single day.
+            </p>
+          </motion.div>
+
+          {/* Values Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {coreValues.map((value, index) => {
+              const Icon = value.icon
+              return (
+                <motion.div
+                  key={index}
+                  initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
+                  animate={valuesInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="bg-white rounded-3xl p-8 text-center shadow-sm"
+                >
+                  <div className="w-16 h-16 bg-[#cbff8f] rounded-full flex items-center justify-center mx-auto mb-6">
+                    <Icon className="w-8 h-8 text-[#97c4ff]" stroke="#97c4ff" />
+                  </div>
+                  <h3 className="text-xl font-['Gilda_Display'] text-black mb-4">
+                    {value.title}
+                  </h3>
+                  <p className="text-sm text-black/70 font-['Arial'] leading-relaxed">
+                    {value.description}
+                  </p>
+                </motion.div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* Why Choose Sky Dental Center Section */}
       <section 
         ref={whyChooseRef}
@@ -341,57 +392,6 @@ export default function AboutUsPageNew() {
                 Thirteen modern dental clinics providing seamless appointment scheduling and optimised patient flow.
               </p>
             </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Core Values Section */}
-      <section 
-        ref={valuesRef}
-        className="py-24"
-        style={{
-          background: 'linear-gradient(180deg, rgb(237, 248, 255) 0%, rgb(255, 255, 255) 100%)'
-        }}
-      >
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
-            animate={valuesInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-['Gilda_Display'] text-black mb-4 tracking-tight">
-              Our Core Values
-            </h2>
-            <p className="text-base text-black/60 font-['Arial'] max-w-3xl mx-auto">
-              These principles guide our actions and shape the culture of care we provide to our community every single day.
-            </p>
-          </motion.div>
-
-          {/* Values Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {coreValues.map((value, index) => {
-              const Icon = value.icon
-              return (
-                <motion.div
-                  key={index}
-                  initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
-                  animate={valuesInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-white rounded-3xl p-8 text-center shadow-sm"
-                >
-                  <div className="w-16 h-16 bg-[#cbff8f] rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Icon className="w-8 h-8 text-[#97c4ff]" stroke="#97c4ff" />
-                  </div>
-                  <h3 className="text-xl font-['Gilda_Display'] text-black mb-4">
-                    {value.title}
-                  </h3>
-                  <p className="text-sm text-black/70 font-['Arial'] leading-relaxed">
-                    {value.description}
-                  </p>
-                </motion.div>
-              )
-            })}
           </div>
         </div>
       </section>
