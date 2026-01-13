@@ -328,7 +328,7 @@ export default function PatientGuidePage() {
                   }}
                 >
                   {/* Badge at top */}
-                  <div className="inline-flex items-center gap-3 bg-white rounded-full px-5 py-3 shadow-md border-2 border-[#cbff8f]">
+                  <div className="inline-flex items-center gap-3 bg-white rounded-full px-5 py-3 shadow-md border-2 border-[#cbff8f] mb-6 relative z-10">
                     <div className="w-10 h-10 bg-[#cbff8f] rounded-full flex items-center justify-center">
                       <Plane className="w-5 h-5 text-[#97c4ff]" stroke="#97c4ff" />
                     </div>
@@ -336,6 +336,15 @@ export default function PatientGuidePage() {
                       <p className="text-[10px] text-[#6b7280] font-['Arial'] uppercase tracking-wider">INTERNATIONAL</p>
                       <p className="text-sm text-black font-['Arial'] font-semibold">Patients Welcome</p>
                     </div>
+                  </div>
+                  
+                  {/* Image */}
+                  <div className="absolute inset-0 rounded-[48px] overflow-hidden">
+                    <img
+                      src="/placeholder-international-patients.jpg"
+                      alt="International patients at Sky Dental Center"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 </div>
               </motion.div>
