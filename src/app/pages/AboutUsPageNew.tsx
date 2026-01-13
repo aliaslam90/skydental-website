@@ -7,27 +7,15 @@ import { Heart, Target, Users, Award, Zap, Shield, Clock, CheckCircle } from 'lu
 // Core Values Data
 const coreValues = [
   {
-    icon: Heart,
-    title: 'Compassion is Key',
-    description: "We listen and understand each patient's unique needs and fears, creating a nurturing environment where patients feel comfortable.",
-    bgColor: '#cbff8f'
-  },
-  {
-    icon: Target,
-    title: 'Integrity & Trust',
-    description: 'Honesty and transparency in all our actions, building lifelong relationships based on mutual respect and reliability.',
-    bgColor: '#cbff8f'
-  },
-  {
-    icon: Users,
-    title: 'Patient-Led Care',
-    description: 'Care tailored to the individual. We involve our patients in decision-making and honor their preferences and concerns.',
-    bgColor: '#cbff8f'
-  },
-  {
     icon: Award,
-    title: 'Pursuit of Excellence',
-    description: 'Delivering the highest standard of dental care through continuous learning, advanced technology, and best practices.',
+    title: 'Excellence',
+    description: 'We strive for the highest standards in every aspect of clinical practice to ensure unparalleled quality and remarkable results.',
+    bgColor: '#cbff8f'
+  },
+  {
+    icon: Shield,
+    title: 'Trust',
+    description: 'We foster long-term relationships with our patients based on honesty, transparency, and uncompromising professional ethics.',
     bgColor: '#cbff8f'
   }
 ]
@@ -36,23 +24,23 @@ const coreValues = [
 const innovationFeatures = [
   {
     icon: Zap,
-    title: 'Advanced diagnostic imaging',
-    description: 'State-of-the-art 3D imaging technology for precise diagnosis'
+    title: '3D imaging systems',
+    description: 'Cutting-edge 3D imaging for precise diagnosis and treatment planning'
   },
   {
     icon: Shield,
-    title: 'Sterilization',
-    description: 'Hospital-grade sterilization protocols for your safety'
+    title: 'High-resolution digital X-rays',
+    description: 'Advanced digital X-ray technology for accurate diagnostics'
   },
   {
     icon: Clock,
-    title: 'Digital patient management systems',
-    description: 'Seamless appointment scheduling and records management'
+    title: 'Advanced treatment equipment',
+    description: 'State-of-the-art equipment designed to minimise discomfort'
   },
   {
     icon: Heart,
-    title: 'Comfortable treatment rooms',
-    description: 'Relaxing environment designed for your comfort'
+    title: 'International-standard sterilisation systems',
+    description: 'Hospital-grade sterilisation ensuring the highest safety standards'
   }
 ]
 
@@ -115,6 +103,7 @@ export default function AboutUsPageNew() {
   
   const heroRef = useRef(null)
   const visionRef = useRef(null)
+  const whyChooseRef = useRef(null)
   const valuesRef = useRef(null)
   const innovationRef = useRef(null)
   const journeyRef = useRef(null)
@@ -123,6 +112,7 @@ export default function AboutUsPageNew() {
 
   const heroInView = useInView(heroRef, { once: true })
   const visionInView = useInView(visionRef, { once: true })
+  const whyChooseInView = useInView(whyChooseRef, { once: true })
   const valuesInView = useInView(valuesRef, { once: true })
   const innovationInView = useInView(innovationRef, { once: true })
   const journeyInView = useInView(journeyRef, { once: true })
@@ -162,13 +152,30 @@ export default function AboutUsPageNew() {
 
             {/* Main Heading */}
             <h1 className="text-5xl md:text-6xl font-['Gilda_Display'] text-black mb-6 tracking-tight leading-tight">
-              Caring for You, Every Step of the Way
+              Our Story
             </h1>
 
             {/* Description */}
-            <p className="text-lg text-black/70 font-['Arial'] leading-relaxed max-w-3xl mx-auto">
-              Our commitment is to deliver world-class dental care in a welcoming and comfortable environment, where every smile matters and every patient feels like family.
-            </p>
+            <div className="text-lg text-black/70 font-['Arial'] leading-relaxed max-w-4xl mx-auto space-y-4 text-left">
+              <p>
+                Sky Dental Center stands as one of the leading and most trusted dental facilities in Abu Dhabi, offering a distinguished clinical experience that unites more than 10 years of expertise with state-of-the-art dental technologies.
+              </p>
+              <p>
+                Sky Dental Center is a distinguished, patient-centred dental institution renowned for its unwavering commitment to clinical excellence and exceptional standards of care. Over the course of more than a decade of dedicated service, the center has earned a reputation as one of Abu Dhabi most trusted destinations for comprehensive dental treatment, seamlessly combining advanced medical expertise with a refined and welcoming environment.
+              </p>
+              <p>
+                Crafted to meet the highest international healthcare standards, Sky Dental Center features 13 state-of-the-art clinics, each thoughtfully designed to ensure a superior treatment experience. Every clinic is equipped with the latest digital technologies, enabling precise diagnostics, minimally invasive procedures, and consistently outstanding clinical outcomes. This modern infrastructure reflects our belief that exceptional dental care begins with precision, comfort, and an atmosphere that instils confidence and ease.
+              </p>
+              <p>
+                At the heart of Sky Dental Center is our multidisciplinary team of highly qualified specialists. Each member of our medical team brings extensive clinical expertise, global certifications, and a profound dedication to excellence in patient care. Their collective experience covers the full spectrum of dental disciplines—from general dentistry and restorative treatments to orthodontics, paediatric care, and advanced cosmetic solutions.
+              </p>
+              <p>
+                What truly sets our team apart is not only their technical skill, but their genuine commitment to personalised, compassionate care tailored to the unique needs of each patient.
+              </p>
+              <p>
+                Sky Dental Center continues to elevate the standards of modern dentistry in Abu Dhabi by embracing innovation, investing in continuous professional development, and maintaining an unwavering focus on patient safety and wellbeing. Through this commitment, we aim to create an experience that transcends traditional dental treatment—one that delivers lasting oral health, aesthetic confidence, and a journey defined by trust, comfort, and excellence.
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -187,7 +194,7 @@ export default function AboutUsPageNew() {
                 Our Vision & Mission
               </h2>
               <p className="text-base text-black/60 font-['Arial'] max-w-2xl mx-auto">
-                Driven by compassion and a commitment to excellence, we strive to transform lives one smile at a time.
+                Our commitment to excellence and patient care drives everything we do.
               </p>
             </motion.div>
 
@@ -204,7 +211,7 @@ export default function AboutUsPageNew() {
                 </div>
                 <h3 className="text-2xl font-['Gilda_Display'] text-black mb-4">Mission</h3>
                 <p className="text-base text-black/70 font-['Arial'] leading-relaxed">
-                  To provide comprehensive, compassionate dental care using the most advanced technology, techniques, and evidence-based practices. We believe in building trust through transparency, education, and personalized treatment plans that prioritize patient comfort and long-term oral health.
+                  To deliver comprehensive, high-quality dental care using advanced technology and evidence-based clinical practices. We are committed to creating healthy, confident smiles through personalised, safe, and comfortable treatment experiences.
                 </p>
               </motion.div>
 
@@ -220,7 +227,7 @@ export default function AboutUsPageNew() {
                 </div>
                 <h3 className="text-2xl font-['Gilda_Display'] text-black mb-4">Vision</h3>
                 <p className="text-base text-black/70 font-['Arial'] leading-relaxed">
-                  To be recognized as a leader in dental excellence, setting the standard for patient-centered care in our community. We envision a future where every individual has access to the highest quality dental services and feels empowered to achieve optimal oral health.
+                  To be the UAE's most trusted and distinguished dental centre, recognised for excellence in patient care, medical innovation, and superior treatment outcomes.
                 </p>
               </motion.div>
 
@@ -253,6 +260,87 @@ export default function AboutUsPageNew() {
         </div>
       </section>
 
+      {/* Why Choose Sky Dental Center Section */}
+      <section 
+        ref={whyChooseRef}
+        className="py-24 bg-white"
+      >
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
+            animate={whyChooseInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-['Gilda_Display'] text-black mb-4 tracking-tight">
+              Why Choose Sky Dental Center?
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+            <motion.div
+              initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
+              animate={whyChooseInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0 * 0.1 }}
+              className="bg-white border border-gray-100 rounded-3xl p-6 shadow-sm"
+            >
+              <CheckCircle className="w-6 h-6 text-[#97c4ff] mb-4" />
+              <p className="text-base text-black/70 font-['Arial'] leading-relaxed">
+                Luxurious, patient-centred care with a focus on comfort and wellbeing.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
+              animate={whyChooseInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 1 * 0.1 }}
+              className="bg-white border border-gray-100 rounded-3xl p-6 shadow-sm"
+            >
+              <CheckCircle className="w-6 h-6 text-[#97c4ff] mb-4" />
+              <p className="text-base text-black/70 font-['Arial'] leading-relaxed">
+                Advanced digital systems ensuring precise diagnosis and efficient treatment.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
+              animate={whyChooseInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 2 * 0.1 }}
+              className="bg-white border border-gray-100 rounded-3xl p-6 shadow-sm"
+            >
+              <CheckCircle className="w-6 h-6 text-[#97c4ff] mb-4" />
+              <p className="text-base text-black/70 font-['Arial'] leading-relaxed">
+                A multidisciplinary team of experienced dental specialists.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
+              animate={whyChooseInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 3 * 0.1 }}
+              className="bg-white border border-gray-100 rounded-3xl p-6 shadow-sm"
+            >
+              <CheckCircle className="w-6 h-6 text-[#97c4ff] mb-4" />
+              <p className="text-base text-black/70 font-['Arial'] leading-relaxed">
+                World-class sterilisation and safety protocols.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
+              animate={whyChooseInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 4 * 0.1 }}
+              className="bg-white border border-gray-100 rounded-3xl p-6 shadow-sm md:col-span-2 lg:col-span-1"
+            >
+              <CheckCircle className="w-6 h-6 text-[#97c4ff] mb-4" />
+              <p className="text-base text-black/70 font-['Arial'] leading-relaxed">
+                Thirteen modern dental clinics providing seamless appointment scheduling and optimised patient flow.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Core Values Section */}
       <section 
         ref={valuesRef}
@@ -277,78 +365,29 @@ export default function AboutUsPageNew() {
           </motion.div>
 
           {/* Values Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-            {/* Compassion First */}
-            <motion.div
-              initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
-              animate={valuesInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0 * 0.1 }}
-              className="bg-white rounded-3xl p-8 text-center shadow-sm"
-            >
-              <div className="w-16 h-16 bg-[#cbff8f] rounded-full flex items-center justify-center mx-auto mb-6">
-                <Heart className="w-8 h-8 text-[#97c4ff]" stroke="#97c4ff" />
-              </div>
-              <h3 className="text-xl font-['Gilda_Display'] text-black mb-4">
-                Compassion First
-              </h3>
-              <p className="text-sm text-black/70 font-['Arial'] leading-relaxed">
-                We treat every patient with the same kindness and care we would want for our own families.
-              </p>
-            </motion.div>
-
-            {/* Integrity & Trust */}
-            <motion.div
-              initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
-              animate={valuesInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 1 * 0.1 }}
-              className="bg-white rounded-3xl p-8 text-center shadow-sm"
-            >
-              <div className="w-16 h-16 bg-[#cbff8f] rounded-full flex items-center justify-center mx-auto mb-6">
-                <Shield className="w-8 h-8 text-[#97c4ff]" stroke="#97c4ff" />
-              </div>
-              <h3 className="text-xl font-['Gilda_Display'] text-black mb-4">
-                Integrity & Trust
-              </h3>
-              <p className="text-sm text-black/70 font-['Arial'] leading-relaxed">
-                Honesty and transparency are at the core of every medical decision we make.
-              </p>
-            </motion.div>
-
-            {/* Always Available */}
-            <motion.div
-              initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
-              animate={valuesInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 2 * 0.1 }}
-              className="bg-white rounded-3xl p-8 text-center shadow-sm"
-            >
-              <div className="w-16 h-16 bg-[#cbff8f] rounded-full flex items-center justify-center mx-auto mb-6">
-                <Clock className="w-8 h-8 text-[#97c4ff]" stroke="#97c4ff" />
-              </div>
-              <h3 className="text-xl font-['Gilda_Display'] text-black mb-4">
-                Always Available
-              </h3>
-              <p className="text-sm text-black/70 font-['Arial'] leading-relaxed">
-                24/7 emergency care and support because health concerns don't watch the clock.
-              </p>
-            </motion.div>
-
-            {/* Patient-Centric */}
-            <motion.div
-              initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
-              animate={valuesInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 3 * 0.1 }}
-              className="bg-white rounded-3xl p-8 text-center shadow-sm"
-            >
-              <div className="w-16 h-16 bg-[#cbff8f] rounded-full flex items-center justify-center mx-auto mb-6">
-                <Users className="w-8 h-8 text-[#97c4ff]" stroke="#97c4ff" />
-              </div>
-              <h3 className="text-xl font-['Gilda_Display'] text-black mb-4">
-                Patient-Centric
-              </h3>
-              <p className="text-sm text-black/70 font-['Arial'] leading-relaxed">
-                Your needs, comfort, and recovery are the primary focus of our entire team.
-              </p>
-            </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {coreValues.map((value, index) => {
+              const Icon = value.icon
+              return (
+                <motion.div
+                  key={index}
+                  initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
+                  animate={valuesInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="bg-white rounded-3xl p-8 text-center shadow-sm"
+                >
+                  <div className="w-16 h-16 bg-[#cbff8f] rounded-full flex items-center justify-center mx-auto mb-6">
+                    <Icon className="w-8 h-8 text-[#97c4ff]" stroke="#97c4ff" />
+                  </div>
+                  <h3 className="text-xl font-['Gilda_Display'] text-black mb-4">
+                    {value.title}
+                  </h3>
+                  <p className="text-sm text-black/70 font-['Arial'] leading-relaxed">
+                    {value.description}
+                  </p>
+                </motion.div>
+              )
+            })}
           </div>
         </div>
       </section>
@@ -370,10 +409,13 @@ export default function AboutUsPageNew() {
               className="text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-['Gilda_Display'] text-black mb-4 tracking-tight">
-                Powered by Innovation
+                Technology & Innovation
               </h2>
-              <p className="text-base text-black/60 font-['Arial'] max-w-2xl mx-auto">
-                Leveraging cutting-edge technology to deliver the best outcomes and patient experiences.
+              <p className="text-base text-black/60 font-['Arial'] max-w-2xl mx-auto mb-6">
+                Sky Dental Center is equipped with cutting-edge technology that enhances clinical accuracy and improves patient comfort, including:
+              </p>
+              <p className="text-base text-black/70 font-['Arial'] max-w-2xl mx-auto">
+                Technology is at the heart of our excellence—it ensures safer procedures, superior outcomes, and an elevated patient experience.
               </p>
             </motion.div>
 
@@ -456,135 +498,87 @@ export default function AboutUsPageNew() {
         </div>
       </section>
 
-      {/* Journey of Compassion & Care Section */}
+      {/* Future Vision Section */}
       <section ref={journeyRef} className="py-24 bg-white">
         <div className="container mx-auto px-6">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              {/* Left Side - Image with Quote */}
+            <motion.div
+              initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
+              animate={journeyInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-['Gilda_Display'] text-black mb-4 tracking-tight">
+                Future Vision
+              </h2>
+              <p className="text-base text-black/70 font-['Arial'] max-w-3xl mx-auto leading-relaxed mb-8">
+                We are committed to continuous growth and innovation through:
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
               <motion.div
-                initial={shouldReduceMotion ? {} : { opacity: 0, x: -30 }}
-                animate={journeyInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.8 }}
-                className="relative"
+                initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
+                animate={journeyInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0 * 0.1 }}
+                className="bg-white border border-gray-100 rounded-3xl p-6 shadow-sm text-center"
               >
-                <div className="relative rounded-3xl overflow-hidden">
-                  <img
-                    src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&h=900&fit=crop"
-                    alt="Patient care"
-                    className="w-full h-[500px] md:h-[600px] object-cover"
-                  />
-                  {/* Quote Overlay */}
-                  <div className="absolute bottom-8 left-8 right-8 bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
-                    <p className="text-lg md:text-xl font-['Arial'] text-black mb-2">
-                      "Healing with heart, leading with science."
-                    </p>
-                    <p className="text-sm text-black/60 font-['Arial']">
-                      - Dr. Sarah Mitchell, Founder
-                    </p>
-                  </div>
-                </div>
+                <CheckCircle className="w-6 h-6 text-[#97c4ff] mx-auto mb-4" />
+                <p className="text-base text-black/70 font-['Arial'] leading-relaxed">
+                  Expanding our clinical facilities.
+                </p>
               </motion.div>
 
-              {/* Right Side - Timeline */}
               <motion.div
-                initial={shouldReduceMotion ? {} : { opacity: 0, x: 30 }}
-                animate={journeyInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.8 }}
+                initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
+                animate={journeyInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 1 * 0.1 }}
+                className="bg-white border border-gray-100 rounded-3xl p-6 shadow-sm text-center"
               >
-                {/* Header */}
-                <div className="mb-12">
-                  <h2 className="text-4xl md:text-5xl font-['Gilda_Display'] text-black mb-4 tracking-tight leading-tight">
-                    Our Journey of Compassion & Care
-                  </h2>
-                  <p className="text-base text-black/70 font-['Arial'] leading-relaxed">
-                    From a small community clinic to a leading multi-specialty hospital, our story is defined by the lives we've touched and the trust we've built over the years.
-                  </p>
-                </div>
+                <CheckCircle className="w-6 h-6 text-[#97c4ff] mx-auto mb-4" />
+                <p className="text-base text-black/70 font-['Arial'] leading-relaxed">
+                  Attracting top-tier dental specialists.
+                </p>
+              </motion.div>
 
-                {/* Timeline Items */}
-                <div className="space-y-8">
-                  {/* 2010 - The Beginning */}
-                  <motion.div
-                    initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
-                    animate={journeyInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                    className="flex gap-4"
-                  >
-                    <div className="w-14 h-14 bg-[#cbff8f] rounded-full flex items-center justify-center shrink-0">
-                      <svg className="w-6 h-6 text-[#97c4ff]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                        <polyline points="9 22 9 12 15 12 15 22" />
-                      </svg>
-                    </div>
-                    <div className="flex-1">
-                      <p className="text-sm text-[#97c4ff] font-['Arial'] font-semibold mb-1">2010</p>
-                      <h3 className="text-xl font-['Gilda_Display'] text-black mb-2">
-                        The Beginning
-                      </h3>
-                      <p className="text-sm text-black/70 font-['Arial'] leading-relaxed">
-                        Founded with a vision to provide accessible healthcare to everyone in our community.
-                      </p>
-                    </div>
-                  </motion.div>
+              <motion.div
+                initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
+                animate={journeyInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 2 * 0.1 }}
+                className="bg-white border border-gray-100 rounded-3xl p-6 shadow-sm text-center"
+              >
+                <CheckCircle className="w-6 h-6 text-[#97c4ff] mx-auto mb-4" />
+                <p className="text-base text-black/70 font-['Arial'] leading-relaxed">
+                  Adopting the latest digital technologies.
+                </p>
+              </motion.div>
 
-                  {/* 2015 - Expansion */}
-                  <motion.div
-                    initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
-                    animate={journeyInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.6, delay: 0.3 }}
-                    className="flex gap-4"
-                  >
-                    <div className="w-14 h-14 bg-[#cbff8f] rounded-full flex items-center justify-center shrink-0">
-                      <svg className="w-6 h-6 text-[#97c4ff]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <rect x="3" y="3" width="7" height="7" />
-                        <rect x="14" y="3" width="7" height="7" />
-                        <rect x="14" y="14" width="7" height="7" />
-                        <rect x="3" y="14" width="7" height="7" />
-                      </svg>
-                    </div>
-                    <div className="flex-1">
-                      <p className="text-sm text-[#97c4ff] font-['Arial'] font-semibold mb-1">2015</p>
-                      <h3 className="text-xl font-['Gilda_Display'] text-black mb-2">
-                        Expansion
-                      </h3>
-                      <p className="text-sm text-black/70 font-['Arial'] leading-relaxed">
-                        Opened two new specialized wings for cardiology and pediatrics.
-                      </p>
-                    </div>
-                  </motion.div>
-
-                  {/* 2023 - Excellence Award */}
-                  <motion.div
-                    initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
-                    animate={journeyInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.6, delay: 0.4 }}
-                    className="flex gap-4"
-                  >
-                    <div className="w-14 h-14 bg-[#cbff8f] rounded-full flex items-center justify-center shrink-0">
-                      <svg className="w-6 h-6 text-[#97c4ff]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <circle cx="12" cy="8" r="7" />
-                        <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
-                      </svg>
-                    </div>
-                    <div className="flex-1">
-                      <p className="text-sm text-[#97c4ff] font-['Arial'] font-semibold mb-1">2023</p>
-                      <h3 className="text-xl font-['Gilda_Display'] text-black mb-2">
-                        Excellence Award
-                      </h3>
-                      <p className="text-sm text-black/70 font-['Arial'] leading-relaxed">
-                        Recognized as the top regional healthcare provider for patient safety.
-                      </p>
-                    </div>
-                  </motion.div>
-                </div>
+              <motion.div
+                initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
+                animate={journeyInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 3 * 0.1 }}
+                className="bg-white border border-gray-100 rounded-3xl p-6 shadow-sm text-center"
+              >
+                <CheckCircle className="w-6 h-6 text-[#97c4ff] mx-auto mb-4" />
+                <p className="text-base text-black/70 font-['Arial'] leading-relaxed">
+                  Enhancing and diversifying our specialised services
+                </p>
               </motion.div>
             </div>
+
+            <motion.p
+              initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
+              animate={journeyInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="text-center text-2xl md:text-3xl font-['Gilda_Display'] text-black mt-16"
+            >
+              Sky Dental Center… Where healthy, confident, and radiant smiles begin.
+            </motion.p>
           </div>
         </div>
       </section>
 
-      {/* Your Journey With Us Section */}
+      {/* Patient Experience Section */}
       <section 
         ref={patientJourneyRef}
         className="py-24 bg-white"
@@ -597,124 +591,72 @@ export default function AboutUsPageNew() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-['Gilda_Display'] text-black mb-4 tracking-tight">
-              Your Journey With Us
+              Patient Experience
             </h2>
-            <p className="text-base text-black/60 font-['Arial'] max-w-3xl mx-auto">
-              We've streamlined our process to ensure your experience is as comfortable and stress-free as possible.
+            <p className="text-base text-black/70 font-['Arial'] max-w-3xl mx-auto leading-relaxed mb-8">
+              Your journey at Sky Dental Center begins with a warm, professional welcome and continues with a service experience designed around your comfort and expectations. We pride ourselves on:
             </p>
           </motion.div>
 
-          {/* Journey Steps Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-            {/* Step 1 - Easy Booking */}
+          {/* Patient Experience Features */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             <motion.div
               initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
               animate={patientJourneyInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0 * 0.15 }}
-              className="text-center"
+              transition={{ duration: 0.6, delay: 0 * 0.1 }}
+              className="bg-white border border-gray-100 rounded-3xl p-6 shadow-sm"
             >
-              <div className="relative inline-flex items-center justify-center mb-6">
-                <div className="w-24 h-24 bg-[#edf8ff] rounded-full flex items-center justify-center">
-                  <svg className="w-10 h-10 text-[#97c4ff]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-                    <line x1="16" y1="2" x2="16" y2="6" />
-                    <line x1="8" y1="2" x2="8" y2="6" />
-                    <line x1="3" y1="10" x2="21" y2="10" />
-                  </svg>
-                </div>
-                <div className="absolute -top-1 -right-1 w-8 h-8 bg-[#cbff8f] rounded-full flex items-center justify-center">
-                  <span className="text-sm font-semibold text-black">1</span>
-                </div>
-              </div>
-              <h3 className="text-xl font-['Gilda_Display'] text-black mb-3">
-                Easy Booking
-              </h3>
-              <p className="text-sm text-black/70 font-['Arial']">
-                Schedule online or via phone in minutes.
+              <CheckCircle className="w-6 h-6 text-[#97c4ff] mb-4" />
+              <p className="text-base text-black/70 font-['Arial'] leading-relaxed">
+                Smooth and organised appointment management
               </p>
             </motion.div>
 
-            {/* Step 2 - Expert Diagnosis */}
             <motion.div
               initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
               animate={patientJourneyInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 1 * 0.15 }}
-              className="text-center"
+              transition={{ duration: 0.6, delay: 1 * 0.1 }}
+              className="bg-white border border-gray-100 rounded-3xl p-6 shadow-sm"
             >
-              <div className="relative inline-flex items-center justify-center mb-6">
-                <div className="w-24 h-24 bg-[#edf8ff] rounded-full flex items-center justify-center">
-                  <svg className="w-10 h-10 text-[#97c4ff]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 2a6 6 0 0 0-6 6v3H4v10h16V11h-2V8a6 6 0 0 0-6-6z" />
-                    <circle cx="12" cy="17" r="1" />
-                  </svg>
-                </div>
-                <div className="absolute -top-1 -right-1 w-8 h-8 bg-[#cbff8f] rounded-full flex items-center justify-center">
-                  <span className="text-sm font-semibold text-black">2</span>
-                </div>
-              </div>
-              <h3 className="text-xl font-['Gilda_Display'] text-black mb-3">
-                Expert Diagnosis
-              </h3>
-              <p className="text-sm text-black/70 font-['Arial']">
-                Thorough check-up by specialists.
+              <CheckCircle className="w-6 h-6 text-[#97c4ff] mb-4" />
+              <p className="text-base text-black/70 font-['Arial'] leading-relaxed">
+                Clear explanation of every treatment plan
               </p>
             </motion.div>
 
-            {/* Step 3 - Personalized Care */}
             <motion.div
               initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
               animate={patientJourneyInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 2 * 0.15 }}
-              className="text-center"
+              transition={{ duration: 0.6, delay: 2 * 0.1 }}
+              className="bg-white border border-gray-100 rounded-3xl p-6 shadow-sm"
             >
-              <div className="relative inline-flex items-center justify-center mb-6">
-                <div className="w-24 h-24 bg-[#edf8ff] rounded-full flex items-center justify-center">
-                  <svg className="w-10 h-10 text-[#97c4ff]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-                    <path d="M12 9v6" />
-                    <path d="M9 12h6" />
-                  </svg>
-                </div>
-                <div className="absolute -top-1 -right-1 w-8 h-8 bg-[#cbff8f] rounded-full flex items-center justify-center">
-                  <span className="text-sm font-semibold text-black">3</span>
-                </div>
-              </div>
-              <h3 className="text-xl font-['Gilda_Display'] text-black mb-3">
-                Personalized Care
-              </h3>
-              <p className="text-sm text-black/70 font-['Arial']">
-                Treatment tailored just for you.
+              <CheckCircle className="w-6 h-6 text-[#97c4ff] mb-4" />
+              <p className="text-base text-black/70 font-['Arial'] leading-relaxed">
+                Comprehensive pre- and post-treatment follow-up
               </p>
             </motion.div>
 
-            {/* Step 4 - Ongoing Support */}
             <motion.div
               initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
               animate={patientJourneyInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 3 * 0.15 }}
-              className="text-center"
+              transition={{ duration: 0.6, delay: 3 * 0.1 }}
+              className="bg-white border border-gray-100 rounded-3xl p-6 shadow-sm"
             >
-              <div className="relative inline-flex items-center justify-center mb-6">
-                <div className="w-24 h-24 bg-[#edf8ff] rounded-full flex items-center justify-center">
-                  <svg className="w-10 h-10 text-[#97c4ff]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="12" r="10" />
-                    <path d="M8 14s1.5 2 4 2 4-2 4-2" />
-                    <line x1="9" y1="9" x2="9.01" y2="9" />
-                    <line x1="15" y1="9" x2="15.01" y2="9" />
-                  </svg>
-                </div>
-                <div className="absolute -top-1 -right-1 w-8 h-8 bg-[#cbff8f] rounded-full flex items-center justify-center">
-                  <span className="text-sm font-semibold text-black">4</span>
-                </div>
-              </div>
-              <h3 className="text-xl font-['Gilda_Display'] text-black mb-3">
-                Ongoing Support
-              </h3>
-              <p className="text-sm text-black/70 font-['Arial']">
-                Follow-ups to ensure full recovery.
+              <CheckCircle className="w-6 h-6 text-[#97c4ff] mb-4" />
+              <p className="text-base text-black/70 font-['Arial'] leading-relaxed">
+                A relaxing environment that fosters trust and comfort
               </p>
             </motion.div>
           </div>
+
+          <motion.p
+            initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
+            animate={patientJourneyInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="text-center text-base text-black/70 font-['Arial'] max-w-3xl mx-auto mt-12"
+          >
+            Every detail is crafted to deliver an exceptional, world-class experience.
+          </motion.p>
         </div>
       </section>
 
