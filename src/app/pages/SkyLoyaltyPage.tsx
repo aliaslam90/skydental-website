@@ -90,29 +90,36 @@ const benefits: Benefit[] = [
   {
     id: 'rewards',
     icon: <Gift className="w-6 h-6 text-[#97c4ff]" stroke="#97c4ff" />,
-    title: 'Save with Rewards',
-    description: 'Earn points with every visit and procedure that can be redeemed for discounts on future treatments.',
+    title: 'Reward Your Trust',
+    description: 'Reward your trust with meaningful, high-value benefits.',
     color: 'bg-white',
   },
   {
     id: 'support',
     icon: <Zap className="w-6 h-6 text-[#97c4ff]" stroke="#97c4ff" />,
     title: 'Long-Term Support',
-    description: 'Enjoy continuous care and ongoing support with personalized treatment plans designed specifically for you.',
+    description: 'Provide long-term support for your oral and aesthetic goals.',
     color: 'bg-white',
   },
   {
-    id: 'priority',
+    id: 'premium',
     icon: <Star className="w-6 h-6 text-[#97c4ff]" stroke="#97c4ff" />,
-    title: 'Priority Appointment',
-    description: 'Members gain priority access to appointment slots, ensuring you receive care when you need it most.',
+    title: 'Premium Experience',
+    description: 'Transform every dental visit into a premium experience.',
     color: 'bg-white',
   },
   {
-    id: 'trial',
+    id: 'peace',
+    icon: <Shield className="w-6 h-6 text-[#97c4ff]" stroke="#97c4ff" />,
+    title: 'Peace of Mind',
+    description: 'Offer peace of mind through priority care and exclusive privileges.',
+    color: 'bg-white',
+  },
+  {
+    id: 'relationship',
     icon: <Award className="w-6 h-6 text-[#97c4ff]" stroke="#97c4ff" />,
-    title: 'Priority & Free of Trial',
-    description: 'Get complimentary trials of new treatments and technologies before they become available to the general public.',
+    title: 'Excellence & Respect',
+    description: 'Create a relationship built on excellence, comfort, and respect.',
     color: 'bg-white',
   },
 ]
@@ -274,11 +281,14 @@ export default function SkyLoyaltyPage() {
             initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
             animate={benefitsInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-12"
           >
-            <h2 className="text-5xl font-['Gilda_Display'] text-black tracking-tight">
+            <h2 className="text-5xl font-['Gilda_Display'] text-black tracking-tight mb-6">
               Why Join the Sky Loyalty<br />Program?
             </h2>
+            <p className="text-lg text-black/70 font-['Arial'] leading-relaxed max-w-3xl mx-auto">
+              Because exceptional dental care should feel effortless, personalised, and luxurious. Our programme is designed to:
+            </p>
           </motion.div>
 
           <div className="max-w-7xl mx-auto">

@@ -3,6 +3,7 @@
 import { motion, useReducedMotion, useInView } from 'motion/react'
 import { useRef, useEffect } from 'react'
 import { Heart, Target, Users, Award, Zap, Shield, Clock, CheckCircle } from 'lucide-react'
+import { useBooking } from '../context/BookingContext'
 
 // Core Values Data
 const coreValues = [
@@ -100,6 +101,7 @@ const guestExperiences = [
 
 export default function AboutUsPageNew() {
   const shouldReduceMotion = useReducedMotion()
+  const { openBookingSidebar } = useBooking()
   
   const heroRef = useRef(null)
   const visionRef = useRef(null)
@@ -109,6 +111,7 @@ export default function AboutUsPageNew() {
   const journeyRef = useRef(null)
   const patientJourneyRef = useRef(null)
   const galleryRef = useRef(null)
+  const ctaRef = useRef(null)
 
   const heroInView = useInView(heroRef, { once: true })
   const visionInView = useInView(visionRef, { once: true })
@@ -118,6 +121,7 @@ export default function AboutUsPageNew() {
   const journeyInView = useInView(journeyRef, { once: true })
   const patientJourneyInView = useInView(patientJourneyRef, { once: true })
   const galleryInView = useInView(galleryRef, { once: true })
+  const ctaInView = useInView(ctaRef, { once: true })
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -198,19 +202,19 @@ export default function AboutUsPageNew() {
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* Mission Card */}
               <motion.div
                 initial={shouldReduceMotion ? {} : { opacity: 0, x: -30 }}
                 animate={visionInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.8 }}
-                className="bg-white border border-gray-100 rounded-3xl p-8 shadow-sm"
+                className="bg-white border border-gray-100 rounded-3xl p-8 shadow-sm h-full flex flex-col"
               >
                 <div className="w-12 h-12 bg-[#cbff8f] rounded-xl flex items-center justify-center mb-6">
                   <Target className="w-6 h-6 text-[#97c4ff]" />
                 </div>
                 <h3 className="text-2xl font-['Gilda_Display'] text-black mb-4">Mission</h3>
-                <p className="text-base text-black/70 font-['Arial'] leading-relaxed">
+                <p className="text-base text-black/70 font-['Arial'] leading-relaxed flex-grow">
                   To deliver comprehensive, high-quality dental care using advanced technology and evidence-based clinical practices. We are committed to creating healthy, confident smiles through personalised, safe, and comfortable treatment experiences.
                 </p>
               </motion.div>
@@ -220,13 +224,13 @@ export default function AboutUsPageNew() {
                 initial={shouldReduceMotion ? {} : { opacity: 0, x: 30 }}
                 animate={visionInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.8 }}
-                className="bg-white border border-gray-100 rounded-3xl p-8 shadow-sm"
+                className="bg-white border border-gray-100 rounded-3xl p-8 shadow-sm h-full flex flex-col"
               >
                 <div className="w-12 h-12 bg-[#cbff8f] rounded-xl flex items-center justify-center mb-6">
                   <Award className="w-6 h-6 text-[#97c4ff]" />
                 </div>
                 <h3 className="text-2xl font-['Gilda_Display'] text-black mb-4">Vision</h3>
-                <p className="text-base text-black/70 font-['Arial'] leading-relaxed">
+                <p className="text-base text-black/70 font-['Arial'] leading-relaxed flex-grow">
                   To be the UAE's most trusted and distinguished dental centre, recognised for excellence in patient care, medical innovation, and superior treatment outcomes.
                 </p>
               </motion.div>
@@ -566,14 +570,6 @@ export default function AboutUsPageNew() {
               </motion.div>
             </div>
 
-            <motion.p
-              initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
-              animate={journeyInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-center text-2xl md:text-3xl font-['Gilda_Display'] text-black mt-16"
-            >
-              Sky Dental Center… Where healthy, confident, and radiant smiles begin.
-            </motion.p>
           </div>
         </div>
       </section>
@@ -693,6 +689,31 @@ export default function AboutUsPageNew() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section 
+        ref={ctaRef}
+        className="py-20 bg-[#cbff8f]"
+      >
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
+            animate={ctaInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8 }}
+            className="max-w-4xl mx-auto text-center"
+          >
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-['Gilda_Display'] text-black mb-8 tracking-tight leading-tight">
+              Sky Dental Center… Where healthy, confident, and radiant smiles begin.
+            </h2>
+            <button
+              onClick={() => openBookingSidebar()}
+              className="bg-[#97c4ff] text-white px-8 py-4 rounded-full font-['Arial'] font-semibold text-lg hover:bg-[#7ab3ff] transition-colors shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform duration-200"
+            >
+              Book Appointment
+            </button>
+          </motion.div>
         </div>
       </section>
     </div>
