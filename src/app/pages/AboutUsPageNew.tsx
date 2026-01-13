@@ -574,6 +574,31 @@ export default function AboutUsPageNew() {
         </div>
       </section>
 
+      {/* CTA Section */}
+      <section 
+        ref={ctaRef}
+        className="py-20 bg-[#cbff8f]"
+      >
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
+            animate={ctaInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8 }}
+            className="max-w-4xl mx-auto text-center"
+          >
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-['Gilda_Display'] text-black mb-8 tracking-tight leading-tight">
+              Sky Dental Center… Where healthy, confident, and radiant smiles begin.
+            </h2>
+            <button
+              onClick={() => openBookingSidebar()}
+              className="bg-[#97c4ff] text-white px-8 py-4 rounded-full font-['Arial'] font-semibold text-lg hover:bg-[#7ab3ff] transition-colors shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform duration-200"
+            >
+              Book Appointment
+            </button>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Patient Experience Section */}
       <section 
         ref={patientJourneyRef}
@@ -689,31 +714,6 @@ export default function AboutUsPageNew() {
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section 
-        ref={ctaRef}
-        className="py-20 bg-[#cbff8f]"
-      >
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
-            animate={ctaInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto text-center"
-          >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-['Gilda_Display'] text-black mb-8 tracking-tight leading-tight">
-              Sky Dental Center… Where healthy, confident, and radiant smiles begin.
-            </h2>
-            <button
-              onClick={() => openBookingSidebar()}
-              className="bg-[#97c4ff] text-white px-8 py-4 rounded-full font-['Arial'] font-semibold text-lg hover:bg-[#7ab3ff] transition-colors shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform duration-200"
-            >
-              Book Appointment
-            </button>
-          </motion.div>
         </div>
       </section>
     </div>
