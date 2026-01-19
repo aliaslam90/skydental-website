@@ -241,63 +241,65 @@ export default function DoctorDetailPage() {
       </section>
 
       {/* Clinical Experience Section */}
-      <section ref={experienceRef} className="py-24 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              {/* Image First */}
-              <motion.div
-                initial={shouldReduceMotion ? {} : { opacity: 0, x: -30 }}
-                animate={experienceInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.8 }}
-                className="relative order-2 lg:order-1"
-              >
-                <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
-                  <img
-                    src={doctor.clinicImages[0]}
-                    alt="Clinical experience"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                {/* Decorative element */}
-                <div className="absolute -top-6 -right-6 w-40 h-40 bg-[#e0edff] rounded-3xl -z-10" />
-              </motion.div>
+      {doctor.experience && (
+        <section ref={experienceRef} className="py-24 bg-white">
+          <div className="container mx-auto px-6">
+            <div className="max-w-7xl mx-auto">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                {/* Image First */}
+                <motion.div
+                  initial={shouldReduceMotion ? {} : { opacity: 0, x: -30 }}
+                  animate={experienceInView ? { opacity: 1, x: 0 } : {}}
+                  transition={{ duration: 0.8 }}
+                  className="relative order-2 lg:order-1"
+                >
+                  <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
+                    <img
+                      src={doctor.clinicImages[0]}
+                      alt="Clinical experience"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  {/* Decorative element */}
+                  <div className="absolute -top-6 -right-6 w-40 h-40 bg-[#e0edff] rounded-3xl -z-10" />
+                </motion.div>
 
-              {/* Content */}
-              <motion.div
-                initial={shouldReduceMotion ? {} : { opacity: 0, x: 30 }}
-                animate={experienceInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.8 }}
-                className="order-1 lg:order-2"
-              >
-                <h2 className="text-4xl md:text-5xl font-['Gilda_Display'] text-black mb-6 tracking-tight">
-                  {doctor.experience.title}
-                </h2>
-                <p className="text-base text-black/70 font-['Arial'] leading-relaxed mb-8">
-                  {doctor.experience.description}
-                </p>
+                {/* Content */}
+                <motion.div
+                  initial={shouldReduceMotion ? {} : { opacity: 0, x: 30 }}
+                  animate={experienceInView ? { opacity: 1, x: 0 } : {}}
+                  transition={{ duration: 0.8 }}
+                  className="order-1 lg:order-2"
+                >
+                  <h2 className="text-4xl md:text-5xl font-['Gilda_Display'] text-black mb-6 tracking-tight">
+                    {doctor.experience.title}
+                  </h2>
+                  <p className="text-base text-black/70 font-['Arial'] leading-relaxed mb-8">
+                    {doctor.experience.description}
+                  </p>
 
-                <ul className="space-y-4">
-                  {doctor.experience.highlights.map((highlight, index) => (
-                    <motion.li
-                      key={index}
-                      initial={shouldReduceMotion ? {} : { opacity: 0, x: 20 }}
-                      animate={experienceInView ? { opacity: 1, x: 0 } : {}}
-                      transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-                      className="flex items-start gap-3"
-                    >
-                      <CheckCircle className="w-6 h-6 text-[#cbff8f] shrink-0 mt-0.5" />
-                      <span className="text-base text-black/80 font-['Arial']">
-                        {highlight}
-                      </span>
-                    </motion.li>
-                  ))}
-                </ul>
-              </motion.div>
+                  <ul className="space-y-4">
+                    {doctor.experience.highlights.map((highlight, index) => (
+                      <motion.li
+                        key={index}
+                        initial={shouldReduceMotion ? {} : { opacity: 0, x: 20 }}
+                        animate={experienceInView ? { opacity: 1, x: 0 } : {}}
+                        transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
+                        className="flex items-start gap-3"
+                      >
+                        <CheckCircle className="w-6 h-6 text-[#cbff8f] shrink-0 mt-0.5" />
+                        <span className="text-base text-black/80 font-['Arial']">
+                          {highlight}
+                        </span>
+                      </motion.li>
+                    ))}
+                  </ul>
+                </motion.div>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Specialized Expertise Section */}
       <section 

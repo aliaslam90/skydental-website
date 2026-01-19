@@ -20,7 +20,7 @@ export interface DoctorDetail {
     title: string
     description: string
     highlights: string[]
-  }
+  } | null
   expertise: {
     category: string
     items: string[]
@@ -68,17 +68,7 @@ export const doctorsData: DoctorDetail[] = [
         year: ''
       }
     ],
-    experience: {
-      title: 'International Clinical Excellence',
-      description: 'His core expertise includes dental implant surgery, ridge augmentation, sinus lift procedures, removal of impacted and wisdom teeth, exposure of impacted teeth for orthodontic purposes, apicoectomy, and cyst removal. His extensive experience across both simple and highly complex surgical procedures enables him to deliver safe, predictable, and life-changing outcomes for patients.',
-      highlights: [
-        '20+ years of international clinical experience in Germany and UAE',
-        'Practised Oral Surgery and Implantology in Germany (2004-2010)',
-        'Over a decade practicing in Al Ain, UAE',
-        'Co-founded Sky Dental Center in 2020',
-        'Expert in complex surgical procedures and implantology'
-      ]
-    },
+    experience: null,
     expertise: [
       {
         category: 'Evaluation & Diagnosis',
@@ -141,17 +131,7 @@ export const doctorsData: DoctorDetail[] = [
       { label: 'Approach', value: 'Evidence-Based' }
     ],
     education: [],
-    experience: {
-      title: 'Excellence in Oral Surgery, Compassion in Care',
-      description: 'Dr. Basma Alrawi brings exceptional skill and a calm, reassuring presence to every treatment journey. Her practice integrates evidence-based surgery, modern diagnostic technologies, and a multidisciplinary philosophy—ensuring that patients receive comprehensive, safe, and predictable surgical outcomes.',
-      highlights: [
-        'Advanced surgical expertise and precision-driven clinical approach',
-        'Unwavering commitment to patient safety and wellbeing',
-        'Implant privileges and extensive experience',
-        'Evidence-based surgery with modern diagnostic technologies',
-        'Multidisciplinary philosophy for comprehensive outcomes'
-      ]
-    },
+    experience: null,
     expertise: [
       {
         category: 'Evaluation & Diagnosis',
@@ -210,8 +190,7 @@ export const doctorsData: DoctorDetail[] = [
     description: 'With more than 30 years of transformative experience in restorative, surgical, and cosmetic dentistry, Dr. Claude Istanbouli stands as one of the region\'s foremost authorities in dental implants and full-mouth rehabilitation. Since graduating from Damascus University in 1988 and completing advanced training in cosmetic and restorative dentistry at UCLA, California in 1999, Dr. Istanbouli has built a distinguished international career across the United States and the UAE. His professional journey includes key positions at ADNOC Medical Services and Mubadala Health\'s Healthpoint Hospital, where he contributed to elevating clinical standards and delivering life-changing results. Today, as a leading specialist at Sky Dental Center in Khalifa City A, part of CMC Medical, he continues to redefine modern implant dentistry with unparalleled expertise and innovation.',
     stats: [
       { label: 'Years of Experience', value: '30+' },
-      { label: 'International Career', value: 'USA & UAE' },
-      { label: 'Pioneering Innovation', value: 'Stem Cell & PRF Therapy' }
+      { label: 'International Career', value: 'USA & UAE' }
     ],
     education: [
       {
@@ -251,17 +230,7 @@ export const doctorsData: DoctorDetail[] = [
         year: ''
       }
     ],
-    experience: {
-      title: 'A Legacy of Excellence Spanning Three Decades',
-      description: 'What truly sets Dr. Istanbouli apart is his pioneering role in bringing regenerative dental techniques to Abu Dhabi. He was among the first to introduce stem cell–based biological management and Platelet-Rich Fibrin (PRF) therapy, leveraging the patient\'s own blood to accelerate healing, optimise implant integration, and enhance surgical outcomes. His gentle clinical approach, combined with meticulous attention to detail, has enabled him to successfully rehabilitate even the most complex cases—restoring full oral function, confidence, and quality of life for thousands of patients.',
-      highlights: [
-        '30+ years of transformative experience in restorative, surgical, and cosmetic dentistry',
-        'Key positions at ADNOC Medical Services and Mubadala Health\'s Healthpoint Hospital',
-        'Pioneer in stem cell–based biological management and PRF therapy in Abu Dhabi',
-        'Active member of American Dental Association (ADA) since 1999',
-        'Service on Abu Dhabi DOH Examination Panel for Implant Privilege assessments'
-      ]
-    },
+    experience: null,
     expertise: [
       {
         category: 'Dental Implants & Full Mouth Rehabilitation',
@@ -326,17 +295,7 @@ export const doctorsData: DoctorDetail[] = [
       { label: 'Focus', value: 'Restoration & Aesthetics' }
     ],
     education: [],
-    experience: {
-      title: 'Restoring Function, Refining Aesthetics, Redefining Confidence',
-      description: 'Dr. Elias Hanna offers patients comprehensive restorative solutions grounded in precision, craftsmanship, and evidence-based excellence. His clinical philosophy focuses on restoring harmony, comfort, and confidence—ensuring that every patient receives personalised, functional, and naturally aesthetic outcomes.',
-      highlights: [
-        'Advanced expertise in restoration and replacement of missing or damaged teeth',
-        'Functional rehabilitation and aesthetic smile enhancement',
-        'Implant privileges and extensive training in prosthodontic sciences',
-        'Precision, craftsmanship, and evidence-based excellence',
-        'Personalised, functional, and naturally aesthetic outcomes'
-      ]
-    },
+    experience: null,
     expertise: [
       {
         category: 'Evaluation & Diagnostic Services',
@@ -429,17 +388,7 @@ export const doctorsData: DoctorDetail[] = [
         year: '2010'
       }
     ],
-    experience: {
-      title: 'Clinical Excellence Across Continents',
-      description: 'Dr. Husson\'s professional journey demonstrates steady growth, diverse experience, and a commitment to continuous development. His early clinical training at the Faculty of Dentistry, Damascus University provided him with invaluable exposure to complex orthodontic cases. Between 2014 and 2021, he practiced in leading polyclinics across Syria, treating a wide variety of patient populations and refining his approach to comprehensive orthodontic care. After relocating to the UAE, he joined Safe Care Dental Centre, Abu Dhabi (2022–2023), where he adapted his clinical expertise to serve the region\'s multicultural community. Since June 2023, Dr. Husson has been an essential part of Sky Dental Center in Khalifa City A, continuing to deliver outstanding orthodontic outcomes with precision and consistency.',
-      highlights: [
-        'More than nine years of advanced clinical expertise',
-        'Served as supervisor in Orthodontics Department during postgraduate studies',
-        'Practiced in leading polyclinics across Syria (2014-2021)',
-        'Safe Care Dental Centre, Abu Dhabi (2022–2023)',
-        'Sky Dental Center, Khalifa City A (June 2023 – Present)'
-      ]
-    },
+    experience: null,
     expertise: [
       {
         category: 'Management of Malocclusions',
@@ -526,17 +475,7 @@ export const doctorsData: DoctorDetail[] = [
         year: '2005'
       }
     ],
-    experience: {
-      title: 'Career Journey',
-      description: 'Dr. Munje\'s professional path reflects extensive international expertise and a steadfast dedication to clinical excellence: Sky Dental Center, UAE (2018 – Present) as Specialist Orthodontist; Bhaskar Orthodontics & Oral Care Centre, Nagpur (2009 – 2018) as Consultant Orthodontist; Academic Positions – India (9 Years) where he served as Assistant and Associate Professor in recognised dental colleges, integrating clinical practice with academic teaching, research, and administrative leadership. His transition from academia to full-time clinical practice demonstrates his enduring commitment to evidence-based orthodontics, patient education, and collaborative treatment planning.',
-      highlights: [
-        'More than 16 years of combined academic and clinical excellence',
-        'Sky Dental Center, UAE (2018 – Present)',
-        'Bhaskar Orthodontics & Oral Care Centre, Nagpur (2009 – 2018)',
-        '9 years as Assistant and Associate Professor in recognised dental colleges',
-        'Licensed Orthodontic Specialist – UAE and India'
-      ]
-    },
+    experience: null,
     expertise: [
       {
         category: 'Traditional & Advanced Braces Systems',
@@ -619,17 +558,7 @@ export const doctorsData: DoctorDetail[] = [
         year: ''
       }
     ],
-    experience: {
-      title: 'A Decade of Clinical Excellence',
-      description: 'With more than 10 years of clinical experience across multiple regions, Dr. Abdulrazak has developed extensive expertise in diagnosing and managing complex periodontal conditions for diverse patient populations. He spent six years in Oman as a periodontal specialist, where he managed challenging and advanced cases with precision and consistency. Prior to that, he served for four years in Syria across several medical centres, gaining invaluable experience working in high-volume, multidisciplinary environments. Beyond his clinical work, Dr. Abdulrazak contributed to training the next generation of dental professionals. He served for two years as a practical supervisor in periodontology, supporting students in both clinical and laboratory settings. This academic role strengthened his ability to simplify complex concepts and reinforced his dedication to evidence-based practice. Since joining Sky Dental Center in 2025, he continues to uphold the exceptional standard of care that defines his professional legacy.',
-      highlights: [
-        'More than 10 years of clinical experience across multiple regions',
-        'Six years in Oman as a periodontal specialist',
-        'Four years in Syria across several medical centres',
-        'Two years as practical supervisor in periodontology',
-        'Sky Dental Center (2025 – Present)'
-      ]
-    },
+    experience: null,
     expertise: [
       {
         category: 'Non-Surgical Periodontal Therapy',
@@ -700,17 +629,7 @@ export const doctorsData: DoctorDetail[] = [
       { label: 'Approach', value: 'Compassionate & Safe' }
     ],
     education: [],
-    experience: {
-      title: 'Compassionate, Expert Care for Growing Smiles',
-      description: 'Dr. Hazem Reslan is a distinguished Specialist Pedodontist dedicated to delivering exceptional dental care to infants, children, and adolescents. With advanced expertise in paediatric oral health, behavioural management, preventive dentistry, and minimally invasive treatment techniques, he ensures that every child receives compassionate, safe, and personalised care in a comfortable environment.',
-      highlights: [
-        'Advanced expertise in paediatric oral health',
-        'Behavioural management and preventive dentistry',
-        'Minimally invasive treatment techniques',
-        'Compassionate, safe, and personalised care',
-        'Gentle, reassuring approach that builds trust and confidence'
-      ]
-    },
+    experience: null,
     expertise: [
       {
         category: 'Evaluation & Diagnosis',
@@ -781,8 +700,7 @@ export const doctorsData: DoctorDetail[] = [
     description: 'Dr. Nasrin Badreldin Mahgoub is a passionate, patient-centred Endodontic Specialist with more than 15 years of clinical experience across Sudan, China, Egypt, and the UAE. Her practice is defined by precision, deep clinical insight, and mastery of advanced root canal therapies that restore comfort, function, and confidence to every patient she treats. With a reputation for delivering meticulous endodontic care using modern, evidence-based techniques, Dr. Nasrin provides exceptional treatment outcomes even in the most complex and challenging cases.',
     stats: [
       { label: 'Years of Experience', value: '15+' },
-      { label: 'International Experience', value: 'Sudan, China, Egypt & UAE' },
-      { label: 'Status', value: 'UAE Golden Visa Holder' }
+      { label: 'International Experience', value: 'Sudan, China, Egypt & UAE' }
     ],
     education: [
       {
@@ -810,18 +728,7 @@ export const doctorsData: DoctorDetail[] = [
         year: ''
       }
     ],
-    experience: {
-      title: 'Extensive International Experience',
-      description: 'Currently based in Abu Dhabi, Dr. Nasrin serves as an Endodontist at Sky Dental Center, bringing with her an impressive background shaped by roles at Melody Medical Centre, Lefort Dental Centre, Cairo, and Davinci Dental Center, Khartoum. Her diverse clinical journey has strengthened her diagnostic expertise and expanded her ability to manage intricate endodontic cases using a technologically advanced approach. During her postgraduate studies, she gained invaluable hands-on clinical experience as a Registrar at The 1st Affiliated Hospital. A published researcher, Dr. Nasrin has contributed to the Journal of the International Society of Preventive and Community Dentistry, co-authoring a peer-reviewed study on modern pulp-capping materials—demonstrating her commitment to scientific innovation and evidence-based practice.',
-      highlights: [
-        'More than 15 years of clinical experience across Sudan, China, Egypt, and the UAE',
-        'Sky Dental Center, Abu Dhabi (Current)',
-        'Melody Medical Centre, Lefort Dental Centre (Cairo), Davinci Dental Center (Khartoum)',
-        'Registrar at The 1st Affiliated Hospital during postgraduate studies',
-        'Published researcher in peer-reviewed journals',
-        'UAE Golden Visa holder'
-      ]
-    },
+    experience: null,
     expertise: [
       {
         category: 'Clinical Expertise',
@@ -886,17 +793,7 @@ export const doctorsData: DoctorDetail[] = [
         year: '2011–2012'
       }
     ],
-    experience: {
-      title: 'Professional Journey',
-      description: 'Dr. Kinan has built a robust and respected career across both Syria and the UAE: Sky Dental Center, UAE (2015 – Present) as General Practice Dentist; Private Practice & Clinical Roles, UAE (2013 – 2015) as General Practice Dentist; Private Dental Clinic, Syria (2008 – 2013) as Founder & General Practice Dentist. His long-standing role at Sky Dental Center exemplifies his loyalty, reliability, and the trust he has earned from patients and colleagues alike.',
-      highlights: [
-        'More than 15 years of dedicated clinical experience',
-        'Sky Dental Center, UAE (2015 – Present)',
-        'Private Practice & Clinical Roles, UAE (2013 – 2015)',
-        'Private Dental Clinic, Syria (2008 – 2013) - Founder',
-        'Advanced training in prosthodontics'
-      ]
-    },
+    experience: null,
     expertise: [
       {
         category: 'Comprehensive General Dentistry',
@@ -960,17 +857,7 @@ export const doctorsData: DoctorDetail[] = [
       { label: 'Focus', value: 'Precision & Compassion' }
     ],
     education: [],
-    experience: {
-      title: 'Committed to Precision, Comfort, and Comprehensive Dental Care',
-      description: 'Dr. Mohanned Albasha is a dedicated General Dentist who delivers high-quality, patient-centred dental care with precision, compassion, and a commitment to long-term oral health. With extensive experience across the full spectrum of general dentistry, he ensures that every patient receives personalised treatment tailored to their unique needs, whether for prevention, restoration, or urgent care.',
-      highlights: [
-        'High-quality, patient-centred dental care',
-        'Precision, compassion, and commitment to long-term oral health',
-        'Extensive experience across the full spectrum of general dentistry',
-        'Personalised treatment tailored to unique needs',
-        'Clinical excellence, evidence-based practice, and clear communication'
-      ]
-    },
+    experience: null,
     expertise: [
       {
         category: 'General Dentistry',
@@ -1056,17 +943,7 @@ export const doctorsData: DoctorDetail[] = [
         year: '2021-2024'
       }
     ],
-    experience: {
-      title: 'Comprehensive Clinical Experience',
-      description: 'Dr. Arwa completed an intensive three-year residency in Prosthodontics at Ambulatory Health Services – Al Ain Dental Centre from 2021 to 2024. During this period, she gained extensive hands-on experience in managing complex cases involving missing or compromised teeth, treating damaged oral structures, planning and executing full-mouth rehabilitation cases, and working within multidisciplinary teams to deliver comprehensive care. Her residency nurtured both the advanced technical expertise required for prosthodontic precision and the interpersonal skills essential for guiding patients through transformative restorative journeys.',
-      highlights: [
-        'Intensive three-year residency in Prosthodontics (2021-2024)',
-        'Ambulatory Health Services – Al Ain Dental Centre',
-        'Extensive hands-on experience in complex cases',
-        'Full-mouth rehabilitation expertise',
-        'Multidisciplinary team collaboration'
-      ]
-    },
+    experience: null,
     expertise: [
       {
         category: 'Preventive & Supportive Care',
@@ -1155,17 +1032,7 @@ export const doctorsData: DoctorDetail[] = [
         year: ''
       }
     ],
-    experience: {
-      title: 'Professional Experience',
-      description: 'Throughout her career, Dr. Reem has developed well-rounded clinical expertise through her work with respected private healthcare providers in Abu Dhabi: Sky Dental Center (2024 – Present) as General Practice Dentist; French Dental Centre (2021 – 2023) as General Practice Dentist; Lazard Medical Centre (2023) as General Practice Dentist. Since commencing her professional practice in 2021, she has consistently expanded her clinical capabilities while upholding the highest standards of safety, accuracy, and patient care.',
-      highlights: [
-        'Sky Dental Center (2024 – Present)',
-        'French Dental Centre (2021 – 2023)',
-        'Lazard Medical Centre (2023)',
-        'Professional practice since 2021',
-        'Consistently expanded clinical capabilities'
-      ]
-    },
+    experience: null,
     expertise: [
       {
         category: 'Diagnostic & Preventive Care',
