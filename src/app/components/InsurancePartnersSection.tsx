@@ -22,7 +22,7 @@ function PartnerCard({ partner }: { partner: typeof insurancePartners[0] }) {
   const isBiggerLogo = partner.name === 'AXA GIG' || partner.name === 'MedNet' || partner.name === 'SAICO'
   
   return (
-    <div className="bg-white rounded-2xl px-12 py-8 flex items-center justify-center min-w-[200px] shrink-0 h-[128px]">
+    <div className="bg-white rounded-2xl px-12 py-8 flex items-center justify-center w-[230px] shrink-0 h-[128px]">
       {!imageError ? (
         <img
           src={partner.logo}
