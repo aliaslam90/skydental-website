@@ -41,7 +41,7 @@ const innovationFeatures = [
   {
     icon: Heart,
     title: 'International-standard sterilisation systems',
-    description: 'Hospital-grade sterilisation ensuring the highest safety standards'
+    description: 'High-standard clinical sterilisation for safe care environments'
   }
 ]
 

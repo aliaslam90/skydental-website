@@ -308,7 +308,7 @@ export default function PatientGuidePage() {
         ref={insuranceRef}
         className="py-24 overflow-hidden"
         style={{
-          background: 'rgb(224, 237, 255)',
+          background: '#CBFF8F',
         }}
       >
         <div className="container mx-auto px-6">
