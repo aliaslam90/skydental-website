@@ -708,7 +708,7 @@ function Container11() {
   return (
     <div className="content-stretch flex flex-col items-center relative shrink-0 w-full" data-name="Container">
       <div className="flex flex-col font-['Arial:Bold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#0c0060] text-[16px] text-center text-nowrap">
-        <p className="leading-[28px]">Sky Dental Center</p>
+        <p className="leading-[28px]">Villa 45 , Alforsan street , Khalifa city , Abu Dhabi , UAE</p>
       </div>
     </div>
   );
@@ -718,7 +718,7 @@ function Container12() {
   return (
     <div className="content-stretch flex flex-col items-center relative shrink-0 w-full" data-name="Container">
       <div className="flex flex-col font-['Arial:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[12px] text-black text-center text-nowrap">
-        <p className="leading-[20px]">Abu Dhabi, United Arab Emirates</p>
+        <p className="leading-[20px]">Villa 45 , Alforsan street , Khalifa city , Abu Dhabi , UAE</p>
       </div>
     </div>
   );
@@ -826,7 +826,7 @@ function Container15() {
   return (
     <div className="content-stretch flex flex-col items-center relative shrink-0 w-full" data-name="Container">
       <div className="flex flex-col font-['Arial:Bold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#0c0060] text-[16px] text-center text-nowrap">
-        <p className="leading-[28px]">Sat - Thu: 9:00 AM - 8:00 PM</p>
+        <p className="leading-[28px]">10am - 10pm, 7 Days a week</p>
       </div>
     </div>
   );
@@ -844,9 +844,8 @@ function Container16() {
 
 function Container17() {
   return (
-    <div className="content-stretch flex flex-col gap-[4px] h-[80px] items-start relative shrink-0 w-full" data-name="Container">
+    <div className="content-stretch flex flex-col gap-[4px] items-start relative shrink-0 w-full" data-name="Container">
       <Container15 />
-      <Container16 />
     </div>
   );
 }
@@ -1355,9 +1354,7 @@ function Container34() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Container">
       <div className="flex flex-col font-['Arial:Bold',sans-serif] justify-center leading-[29.25px] not-italic relative shrink-0 text-[18px] text-black w-full">
-        <p className="mb-0">Sky Dental Center</p>
-        <p className="font-['Arial:Regular',sans-serif] mb-0">Abu Dhabi</p>
-        <p className="font-['Arial:Regular',sans-serif]">United Arab Emirates</p>
+        <p className="mb-0">Villa 45 , Alforsan street , Khalifa city , Abu Dhabi , UAE</p>
       </div>
     </div>
   );
@@ -1729,7 +1726,7 @@ function Container52() {
   return (
     <div className="absolute content-stretch flex flex-col items-center left-[32px] right-[32px] top-[200px]" data-name="Container">
       <div className="flex flex-col font-['Arial:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[18px] text-black text-center text-nowrap">
-        <p className="leading-[28px]">Abu Dhabi, UAE</p>
+        <p className="leading-[28px]">Villa 45 , Alforsan street , Khalifa city , Abu Dhabi , UAE</p>
       </div>
     </div>
   );

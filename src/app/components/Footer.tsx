@@ -105,7 +105,7 @@ export default function Footer() {
                 <div className="flex flex-col gap-3 md:gap-4">
                   <ContactItem icon={<PhoneIcon />} text="600 527626" />
                   <ContactItem icon={<EmailIcon />} text="Info@Skydc.Ae" />
-                  <ContactItem icon={<ClockIcon />} text="Saturday - Friday | 10:00 AM - 10:00 PM" />
+                  <ContactItem icon={<ClockIcon />} text="10am - 10pm, 7 Days a week" />
                 </div>
               </div>
             </div>

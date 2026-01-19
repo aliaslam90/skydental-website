@@ -506,7 +506,7 @@ export default function PrivacyPolicyPage() {
                 <p>
                   <strong className="text-black">Sky Dental Center</strong>
                 </p>
-                <p>Abu Dhabi, United Arab Emirates</p>
+                <p>Villa 45 , Alforsan street , Khalifa city , Abu Dhabi , UAE</p>
                 <p>
                   <strong className="text-black">Phone:</strong> +971 2 123 4567
                 </p>

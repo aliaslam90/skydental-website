@@ -170,8 +170,8 @@ export default function ContactUsPage() {
                 <MapPin className="w-8 h-8 text-[#0C0060]" />
               </div>
               <h3 className="text-2xl font-['Gilda_Display'] text-black mb-4">Location</h3>
-              <p className="text-base font-['Arial'] font-bold text-[#0c0060] mb-1">Sky Dental Center</p>
-              <p className="text-xs font-['Arial'] text-black mb-4">Abu Dhabi, United Arab Emirates</p>
+              <p className="text-base font-['Arial'] font-bold text-[#0c0060] mb-1">Villa 45 , Alforsan street , Khalifa city , Abu Dhabi , UAE</p>
+              <p className="text-xs font-['Arial'] text-black mb-4"></p>
               <p className="text-xs font-['Arial'] text-black opacity-70">
                 Visit us for in-person consultations
               </p>
@@ -188,10 +188,10 @@ export default function ContactUsPage() {
                 <Clock className="w-8 h-8 text-[#0C0060]" />
               </div>
               <h3 className="text-2xl font-['Gilda_Display'] text-black mb-4">Working Hours</h3>
-              <p className="text-base font-['Arial'] font-bold text-[#0c0060] mb-1">Sat - Wed: 9 AM - 9 PM</p>
-              <p className="text-xs font-['Arial'] text-black mb-4">Thu: 9 AM - 6 PM</p>
+              <p className="text-base font-['Arial'] font-bold text-[#0c0060] mb-1">10am - 10pm</p>
+              <p className="text-xs font-['Arial'] text-black mb-4">7 Days a week</p>
               <p className="text-xs font-['Arial'] text-black opacity-70">
-                Friday Closed
+                Open every day
               </p>
             </motion.div>
           </div>
@@ -374,9 +374,7 @@ export default function ContactUsPage() {
                   </div>
                   <div>
                     <h3 className="text-2xl font-['Gilda_Display'] text-black mb-2">Our Address</h3>
-                    <p className="text-base font-['Arial'] text-black font-bold">Sky Dental Center</p>
-                    <p className="text-sm font-['Arial'] text-black">Abu Dhabi</p>
-                    <p className="text-sm font-['Arial'] text-black">United Arab Emirates</p>
+                    <p className="text-base font-['Arial'] text-black font-bold">Villa 45 , Alforsan street , Khalifa city , Abu Dhabi , UAE</p>
                   </div>
                 </div>
               </div>
@@ -393,25 +391,13 @@ export default function ContactUsPage() {
                       <div className="flex items-center gap-2">
                         <div className="w-2 h-2 bg-[#cbff8f] rounded-full"></div>
                         <p className="text-sm font-['Arial'] text-black">
-                          <span className="font-bold">Sat - Wed:</span> Open 9:00 AM - 9:00 PM
+                          <span className="font-bold">10am - 10pm</span>
                         </p>
                       </div>
                       <div className="flex items-center gap-2">
                         <div className="w-2 h-2 bg-[#cbff8f] rounded-full"></div>
                         <p className="text-sm font-['Arial'] text-black">
-                          <span className="font-bold">Thursday:</span> Open 9:00 AM - 6:00 PM
-                        </p>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
-                        <p className="text-sm font-['Arial'] text-black">
-                          <span className="font-bold">Friday:</span> Closed
-                        </p>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <div className="w-2 h-2 bg-[#cbff8f] rounded-full"></div>
-                        <p className="text-sm font-['Arial'] text-black">
-                          <span className="font-bold">Weekends:</span> Available on request
+                          <span className="font-bold">7 Days a week</span>
                         </p>
                       </div>
                     </div>
@@ -433,7 +419,7 @@ export default function ContactUsPage() {
                   <MapPin className="w-10 h-10 text-[#0C0060]" />
                 </div>
                 <h3 className="text-2xl font-['Gilda_Display'] text-black mb-4">Sky Dental Center</h3>
-                <p className="text-base font-['Arial'] text-black mb-6">Abu Dhabi, UAE</p>
+                <p className="text-base font-['Arial'] text-black mb-6">Villa 45 , Alforsan street , Khalifa city , Abu Dhabi , UAE</p>
                 <a
                   href="https://maps.google.com"
                   target="_blank"

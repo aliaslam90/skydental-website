@@ -1,9 +1,9 @@
 'use client'
 
 import { motion, useReducedMotion, useInView } from 'motion/react'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Mail, MessageCircle, ArrowUpRight } from 'lucide-react'
+import { Mail, MessageCircle, ArrowUpRight, Upload, Send } from 'lucide-react'
 import imgImage from "../../assets/e2295a1a1a2bc348414dcc117de577c691164137.png"
 import imgImage1 from "../../assets/c5fbf2bb2ed01ea6f6ce38835da33519e2db95fe.png"
 import imgImage2 from "../../assets/27cea6501d6677b5b8f9f08502ce76c7a193f7f8.png"
@@ -63,6 +63,13 @@ const jobCategories: JobCategory[] = [
 
 export default function CareersPage() {
   const shouldReduceMotion = useReducedMotion()
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    address: '',
+    cvFile: null as File | null
+  })
+  const [formSubmitted, setFormSubmitted] = useState(false)
 
   const heroRef = useRef(null)
   const whyJoinRef = useRef(null)
@@ -75,6 +82,32 @@ export default function CareersPage() {
   const opportunitiesInView = useInView(opportunitiesRef, { once: true })
   const applyInView = useInView(applyRef, { once: true })
   const galleryInView = useInView(galleryRef, { once: true })
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target
+    setFormData(prev => ({ ...prev, [name]: value }))
+  }
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      setFormData(prev => ({ ...prev, cvFile: e.target.files![0] }))
+    }
+  }
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    setFormSubmitted(true)
+    // Reset form after 3 seconds
+    setTimeout(() => {
+      setFormData({
+        name: '',
+        email: '',
+        address: '',
+        cvFile: null
+      })
+      setFormSubmitted(false)
+    }, 3000)
+  }
 
   return (
     <div className="bg-white">
@@ -256,89 +289,136 @@ export default function CareersPage() {
             initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
             animate={applyInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto text-center"
+            className="max-w-3xl mx-auto"
           >
-            {/* Email Icon */}
-            <div className="mb-8 flex justify-center">
-              <div className="w-20 h-20 bg-white/50 rounded-full flex items-center justify-center">
-                <Mail className="w-10 h-10 text-[#0C0060]" />
-              </div>
-            </div>
-
             {/* Title */}
-            <h2 className="text-5xl md:text-6xl font-['Gilda_Display'] text-black mb-6 tracking-tight">
-              Apply Now
-            </h2>
-
-            {/* Description */}
-            <p className="text-base text-black font-['Arial'] leading-relaxed mb-8">
-              Send your CV and cover letter to
-            </p>
-
-            {/* Email */}
-            <a
-              href="mailto:careers@skydental.ae"
-              className="text-2xl font-['Arial'] font-semibold text-black hover:text-[#0C0060] transition-colors inline-block mb-12"
-            >
-              careers@skydental.ae
-            </a>
-
-            {/* WhatsApp Contact */}
-            <div className="mb-10">
-              <p className="text-base text-black font-['Arial'] mb-4">
-                Get The Right Job Guidance: WhatsApp Link/Contact Form
+            <div className="text-center mb-8">
+              <h2 className="text-5xl md:text-6xl font-['Gilda_Display'] text-black mb-6 tracking-tight">
+                Apply Now
+              </h2>
+              <p className="text-base text-black font-['Arial'] leading-relaxed mb-4">
+                Send your CV and cover letter to
               </p>
               <a
-                href="https://wa.me/971501234567"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-3 bg-white rounded-full text-[15px] font-['Arial'] font-medium text-black hover:shadow-lg transition-shadow"
+                href="mailto:careers@skydental.ae"
+                className="text-2xl font-['Arial'] font-semibold text-black hover:text-[#0C0060] transition-colors inline-block"
               >
-                <MessageCircle className="w-5 h-5 text-[#25D366]" />
-                <span>WhatsApp Us</span>
-                <ArrowUpRight className="w-4 h-4" />
+                careers@skydental.ae
               </a>
             </div>
 
-            {/* Social Media */}
-            <div className="flex items-center justify-center gap-4">
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-12 h-12 bg-white/50 rounded-full flex items-center justify-center hover:bg-white transition-colors"
-              >
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                </svg>
-              </a>
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-12 h-12 bg-white/50 rounded-full flex items-center justify-center hover:bg-white transition-colors"
-              >
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                </svg>
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-12 h-12 bg-white/50 rounded-full flex items-center justify-center hover:bg-white transition-colors"
-              >
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
-                </svg>
-              </a>
-            </div>
+            {/* Application Form */}
+            {formSubmitted ? (
+              <div className="bg-white rounded-3xl p-12 text-center">
+                <div className="w-20 h-20 bg-[#cbff8f] rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Send className="w-10 h-10 text-[#0C0060]" />
+                </div>
+                <h3 className="text-3xl font-['Gilda_Display'] text-black mb-4">Application Submitted!</h3>
+                <p className="text-base font-['Arial'] text-black">
+                  Thank you for your interest. We'll review your application and get back to you shortly.
+                </p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="bg-white rounded-3xl p-8 md:p-12 shadow-lg">
+                {/* Name Field */}
+                <div className="mb-6">
+                  <label htmlFor="name" className="block text-sm font-['Arial'] text-black mb-2">
+                    Full Name *
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#0C0060] font-['Arial'] text-black bg-[#f9fafb]"
+                    placeholder="Enter your full name"
+                  />
+                </div>
 
-            {/* Footer Note */}
-            <p className="text-sm text-black/70 font-['Arial'] mt-8">
-              WE HELP BY UNDERSTANDING THROUGH CONTINUOUS BUSINESS ACTIVITIES.<br />
-              WE BELIEVE WE CAN MAKE PERFECT COLLECTION.
-            </p>
+                {/* Email Field */}
+                <div className="mb-6">
+                  <label htmlFor="email" className="block text-sm font-['Arial'] text-black mb-2">
+                    Email Address *
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#0C0060] font-['Arial'] text-black bg-[#f9fafb]"
+                    placeholder="Enter your email address"
+                  />
+                </div>
+
+                {/* Address Field */}
+                <div className="mb-6">
+                  <label htmlFor="address" className="block text-sm font-['Arial'] text-black mb-2">
+                    Address *
+                  </label>
+                  <textarea
+                    id="address"
+                    name="address"
+                    value={formData.address}
+                    onChange={handleInputChange}
+                    required
+                    rows={3}
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#0C0060] font-['Arial'] text-black bg-[#f9fafb] resize-none"
+                    placeholder="Enter your address"
+                  />
+                </div>
+
+                {/* CV Upload Field */}
+                <div className="mb-8">
+                  <label htmlFor="cvFile" className="block text-sm font-['Arial'] text-black mb-2">
+                    Upload CV *
+                  </label>
+                  <div className="relative">
+                    <input
+                      type="file"
+                      id="cvFile"
+                      name="cvFile"
+                      onChange={handleFileChange}
+                      accept=".pdf,.doc,.docx"
+                      required
+                      className="hidden"
+                    />
+                    <label
+                      htmlFor="cvFile"
+                      className="flex items-center gap-3 px-4 py-3 rounded-xl border border-gray-200 bg-[#f9fafb] cursor-pointer hover:bg-[#e0edff] transition-colors"
+                    >
+                      <Upload className="w-5 h-5 text-[#0C0060]" />
+                      <span className="text-sm font-['Arial'] text-black">
+                        {formData.cvFile ? formData.cvFile.name : 'Choose file (PDF, DOC, DOCX)'}
+                      </span>
+                    </label>
+                  </div>
+                  {formData.cvFile && (
+                    <p className="text-xs text-gray-500 font-['Arial'] mt-2">
+                      Selected: {formData.cvFile.name}
+                    </p>
+                  )}
+                </div>
+
+                {/* Submit Button */}
+                <button
+                  type="submit"
+                  className="w-full bg-[#cbff8f] hover:bg-[#b8e680] text-[#0C0060] font-['Arial'] font-bold py-4 px-6 rounded-full flex items-center justify-center gap-3 transition-all duration-300 group"
+                >
+                  <span className="text-base">Submit Application</span>
+                  <div className="w-8 h-8 bg-[#0C0060] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Send className="w-4 h-4 text-[#cbff8f]" />
+                  </div>
+                </button>
+
+                <p className="text-xs font-['Arial'] text-gray-500 text-center mt-4">
+                  * Required fields
+                </p>
+              </form>
+            )}
           </motion.div>
         </div>
       </section>
