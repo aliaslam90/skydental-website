@@ -85,6 +85,27 @@ const insurancePartners: InsurancePartner[] = [
   { id: '10', name: 'SAICO', logo: '/logos/saico.png' },
 ]
 
+function PatientGuidePartnerCard({ partner }: { partner: InsurancePartner }) {
+  const [imageError, setImageError] = useState(false)
+  
+  return (
+    <div className="bg-white rounded-2xl px-12 py-8 flex items-center justify-center min-w-[200px] shrink-0 h-[128px]">
+      {!imageError ? (
+        <img
+          src={partner.logo}
+          alt={`${partner.name} logo`}
+          className="max-w-[180px] max-h-[60px] object-contain"
+          onError={() => setImageError(true)}
+        />
+      ) : (
+        <p className="text-base text-[#9ca3af] font-['Arial'] font-semibold whitespace-nowrap">
+          {partner.name}
+        </p>
+      )}
+    </div>
+  )
+}
+
 export default function PatientGuidePage() {
   const shouldReduceMotion = useReducedMotion()
   const { openBookingSidebar } = useBooking()
@@ -354,11 +375,11 @@ export default function PatientGuidePage() {
               >
                 {/* First set of partners */}
                 {insurancePartners.map((partner) => (
-                  <InsurancePartnerCard key={`first-${partner.id}`} partner={partner} />
+                  <PatientGuidePartnerCard key={`first-${partner.id}`} partner={partner} />
                 ))}
                 {/* Duplicate set for infinite scroll */}
                 {insurancePartners.map((partner) => (
-                  <InsurancePartnerCard key={`second-${partner.id}`} partner={partner} />
+                  <PatientGuidePartnerCard key={`second-${partner.id}`} partner={partner} />
                 ))}
               </motion.div>
             </div>
@@ -408,27 +429,6 @@ export default function PatientGuidePage() {
         </div>
       </section>
 
-    </div>
-  )
-}
-
-function InsurancePartnerCard({ partner }: { partner: InsurancePartner }) {
-  const [imageError, setImageError] = useState(false)
-
-  return (
-    <div className="bg-white rounded-2xl px-12 py-8 flex items-center justify-center w-[230px] shrink-0 h-[128px]">
-      {!imageError ? (
-        <img
-          src={partner.logo}
-          alt={`${partner.name} logo`}
-          className="max-w-[180px] max-h-[80px] object-contain"
-          onError={() => setImageError(true)}
-        />
-      ) : (
-        <p className="text-base text-[#9ca3af] font-['Arial'] font-semibold whitespace-nowrap">
-          {partner.name}
-        </p>
-      )}
     </div>
   )
 }

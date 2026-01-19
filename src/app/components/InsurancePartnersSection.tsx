@@ -17,6 +17,27 @@ const insurancePartners = [
   { id: '10', name: 'SAICO', logo: '/logos/saico.png' },
 ]
 
+function PartnerCard({ partner }: { partner: typeof insurancePartners[0] }) {
+  const [imageError, setImageError] = useState(false)
+  
+  return (
+    <div className="bg-white rounded-2xl px-12 py-8 flex items-center justify-center min-w-[200px] shrink-0 h-[128px]">
+      {!imageError ? (
+        <img
+          src={partner.logo}
+          alt={`${partner.name} logo`}
+          className="max-w-[180px] max-h-[60px] object-contain"
+          onError={() => setImageError(true)}
+        />
+      ) : (
+        <p className="text-base text-[#9ca3af] font-['Arial'] font-semibold whitespace-nowrap">
+          {partner.name}
+        </p>
+      )}
+    </div>
+  )
+}
+
 export default function InsurancePartnersSection() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
@@ -72,37 +93,16 @@ export default function InsurancePartnersSection() {
             >
               {/* First set of partners */}
               {insurancePartners.map((partner) => (
-                <InsurancePartnerCard key={`first-${partner.id}`} partner={partner} />
+                <PartnerCard key={`first-${partner.id}`} partner={partner} />
               ))}
               {/* Duplicate set for infinite scroll */}
               {insurancePartners.map((partner) => (
-                <InsurancePartnerCard key={`second-${partner.id}`} partner={partner} />
+                <PartnerCard key={`second-${partner.id}`} partner={partner} />
               ))}
             </motion.div>
           </div>
         </div>
       </div>
     </section>
-  )
-}
-
-function InsurancePartnerCard({ partner }: { partner: { id: string; name: string; logo: string } }) {
-  const [imageError, setImageError] = useState(false)
-
-  return (
-    <div className="bg-white rounded-2xl px-12 py-8 flex items-center justify-center w-[230px] shrink-0 h-[128px]">
-      {!imageError ? (
-        <img
-          src={partner.logo}
-          alt={`${partner.name} logo`}
-          className="max-w-[180px] max-h-[80px] object-contain"
-          onError={() => setImageError(true)}
-        />
-      ) : (
-        <p className="text-base text-[#9ca3af] font-['Arial'] font-semibold whitespace-nowrap">
-          {partner.name}
-        </p>
-      )}
-    </div>
   )
 }
