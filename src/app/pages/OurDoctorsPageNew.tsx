@@ -3,7 +3,7 @@
 import { motion, useReducedMotion } from 'motion/react'
 import { useState, useEffect, useMemo } from 'react'
 import { Link } from 'react-router-dom'
-import { Search, ChevronDown, Heart, Target, Users, Award } from 'lucide-react'
+import { Search, ChevronDown, Award, Shield } from 'lucide-react'
 import { useBooking } from '../context/BookingContext'
 
 // Doctor data - First 4 match homepage, rest can be added later
@@ -131,24 +131,16 @@ const specialties = [
 
 const coreValues = [
   {
-    icon: Heart,
-    title: 'Compassion First',
-    description: 'We treat every patient with the same kindness and care we would want for our own families.'
-  },
-  {
-    icon: Target,
-    title: 'Integrity & Trust',
-    description: 'Honesty and transparency are at the core of every medical decision we make.'
-  },
-  {
-    icon: Users,
-    title: 'Always Available',
-    description: '24/7 emergency care and support because health concerns don\'t watch the clock.'
-  },
-  {
     icon: Award,
-    title: 'Patient-Centric',
-    description: 'Your needs, comfort, and recovery are the primary focus of our entire team.'
+    title: 'Excellence',
+    description: 'We strive for the highest standards in every aspect of clinical practice to ensure unparalleled quality and remarkable results.',
+    bgColor: '#cbff8f'
+  },
+  {
+    icon: Shield,
+    title: 'Trust',
+    description: 'We foster long-term relationships with our patients based on honesty, transparency, and uncompromising professional ethics.',
+    bgColor: '#cbff8f'
   }
 ]
 
@@ -381,7 +373,7 @@ export default function OurDoctorsPageNew() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {coreValues.map((value, index) => {
               const Icon = value.icon
               return (
@@ -394,7 +386,7 @@ export default function OurDoctorsPageNew() {
                   className="bg-white rounded-3xl p-8 text-center shadow-sm"
                 >
                   <div className="w-16 h-16 bg-[#cbff8f] rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Icon className="w-8 h-8 text-white" />
+                    <Icon className="w-8 h-8 text-[#0C0060]" stroke="#0C0060" />
                   </div>
                   <h3 className="text-xl font-['Gilda_Display'] text-black mb-4">
                     {value.title}

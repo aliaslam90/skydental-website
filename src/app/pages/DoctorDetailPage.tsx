@@ -178,67 +178,69 @@ export default function DoctorDetailPage() {
       </section>
 
       {/* Education & Certification Section */}
-      <section 
-        ref={educationRef}
-        className="py-24"
-        style={{
-          background: 'linear-gradient(160deg, rgb(237, 248, 255) 0%, rgb(255, 255, 255) 100%)'
-        }}
-      >
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
-            animate={educationInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-['Gilda_Display'] text-black mb-4 tracking-tight">
-              Distinguished Education & Certification
-            </h2>
-            <p className="text-lg text-black/70 font-['Arial'] max-w-3xl mx-auto">
-              Credentials that reflect years of rigorous training and a commitment to excellence in dental care.
-            </p>
-          </motion.div>
+      {doctor.id !== 'dr-basma-al-rawi' && doctor.id !== 'dr-elias-daoud-hanna' && doctor.id !== 'dr-hazem-reslan' && doctor.id !== 'dr-mohanned-albasha' && doctor.education.length > 0 && (
+        <section 
+          ref={educationRef}
+          className="py-24"
+          style={{
+            background: 'linear-gradient(160deg, rgb(237, 248, 255) 0%, rgb(255, 255, 255) 100%)'
+          }}
+        >
+          <div className="container mx-auto px-6">
+            <motion.div
+              initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
+              animate={educationInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-['Gilda_Display'] text-black mb-4 tracking-tight">
+                Distinguished Education & Certification
+              </h2>
+              <p className="text-lg text-black/70 font-['Arial'] max-w-3xl mx-auto">
+                Credentials that reflect years of rigorous training and a commitment to excellence in dental care.
+              </p>
+            </motion.div>
 
-          {/* Education Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
-            {doctor.education.map((edu, index) => {
-              const ref = useRef(null)
-              const isInView = useInView(ref, { once: true, margin: "-100px" })
-              
-              return (
-                <motion.div
-                  key={index}
-                  ref={ref}
-                  initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100"
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="w-14 h-14 bg-[#cbff8f] rounded-2xl flex items-center justify-center shrink-0">
-                      <span className="text-2xl">{edu.icon}</span>
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-['Gilda_Display'] text-black mb-2">
-                        {edu.degree}
-                      </h3>
-                      <p className="text-base text-black/70 font-['Arial'] mb-1">
-                        {edu.institution}
-                      </p>
-                      {edu.year && (
-                        <p className="text-sm text-[#0C0060] font-['Arial']">
-                          {edu.year}
+            {/* Education Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+              {doctor.education.map((edu, index) => {
+                const ref = useRef(null)
+                const isInView = useInView(ref, { once: true, margin: "-100px" })
+                
+                return (
+                  <motion.div
+                    key={index}
+                    ref={ref}
+                    initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100"
+                  >
+                    <div className="flex items-start gap-4">
+                      <div className="w-14 h-14 bg-[#cbff8f] rounded-2xl flex items-center justify-center shrink-0">
+                        <span className="text-2xl">{edu.icon}</span>
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-xl font-['Gilda_Display'] text-black mb-2">
+                          {edu.degree}
+                        </h3>
+                        <p className="text-base text-black/70 font-['Arial'] mb-1">
+                          {edu.institution}
                         </p>
-                      )}
+                        {edu.year && (
+                          <p className="text-sm text-[#0C0060] font-['Arial']">
+                            {edu.year}
+                          </p>
+                        )}
+                      </div>
                     </div>
-                  </div>
-                </motion.div>
-              )
-            })}
+                  </motion.div>
+                )
+              })}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Clinical Experience Section */}
       {doctor.experience && (

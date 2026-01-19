@@ -3,7 +3,7 @@
 import { motion, useReducedMotion, useInView } from 'motion/react'
 import { useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { Home, ChevronRight, Check, FileText, ClipboardList, Plane, Shield, DollarSign, MapPin } from 'lucide-react'
+import { Home, ChevronRight, Check, FileText, ClipboardList, Shield, DollarSign, MapPin } from 'lucide-react'
 import { useBooking } from '../context/BookingContext'
 import imgDentalCare from "../../assets/7e26eb0c35bbd0356cd593caf48b0b5a702f7753.png"
 import imgImage from "../../assets/e2295a1a1a2bc348414dcc117de577c691164137.png"
@@ -91,14 +91,12 @@ export default function PatientGuidePage() {
   const heroRef = useRef(null)
   const firstVisitRef = useRef(null)
   const secondOpinionRef = useRef(null)
-  const dentalTourismRef = useRef(null)
   const insuranceRef = useRef(null)
   const galleryRef = useRef(null)
 
   const heroInView = useInView(heroRef, { once: true })
   const firstVisitInView = useInView(firstVisitRef, { once: true })
   const secondOpinionInView = useInView(secondOpinionRef, { once: true })
-  const dentalTourismInView = useInView(dentalTourismRef, { once: true })
   const insuranceInView = useInView(insuranceRef, { once: true })
   const galleryInView = useInView(galleryRef, { once: true })
 
@@ -304,123 +302,6 @@ export default function PatientGuidePage() {
         </div>
       </section>
 
-      {/* Dental Tourism Section */}
-      <section
-        ref={dentalTourismRef}
-        className="py-24 bg-white"
-      >
-        <div className="container mx-auto px-6">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              {/* Left - Visual Card */}
-              <motion.div
-                initial={shouldReduceMotion ? {} : { opacity: 0, x: -30 }}
-                animate={dentalTourismInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.8 }}
-                className="relative"
-              >
-                {/* Large Background Card */}
-                <div 
-                  className="rounded-[48px] p-12 min-h-[500px] relative overflow-hidden"
-                  style={{
-                    background: 'linear-gradient(135deg, rgba(224, 237, 255, 0.6) 0%, rgba(230, 220, 255, 0.6) 100%)',
-                    border: '2px solid rgba(151, 196, 255, 0.3)',
-                  }}
-                >
-                  {/* Badge at top */}
-                  <div className="inline-flex items-center gap-3 bg-white rounded-full px-5 py-3 shadow-md border-2 border-[#cbff8f] mb-6 relative z-10">
-                    <div className="w-10 h-10 bg-[#cbff8f] rounded-full flex items-center justify-center">
-                      <Plane className="w-5 h-5 text-[#0C0060]" stroke="#0C0060" />
-                    </div>
-                    <div className="text-left">
-                      <p className="text-[10px] text-[#6b7280] font-['Arial'] uppercase tracking-wider">INTERNATIONAL</p>
-                      <p className="text-sm text-black font-['Arial'] font-semibold">Patients Welcome</p>
-                    </div>
-                  </div>
-                  
-                  {/* Image */}
-                  <div className="absolute inset-0 rounded-[48px] overflow-hidden">
-                    <img
-                      src="/placeholder-international-patients.jpg"
-                      alt="International patients at Sky Dental Center"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Right - Content */}
-              <motion.div
-                initial={shouldReduceMotion ? {} : { opacity: 0, x: 30 }}
-                animate={dentalTourismInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.8 }}
-              >
-                <h2 className="text-4xl md:text-5xl font-['Gilda_Display'] text-black tracking-tight mb-6">
-                  Dental Tourism
-                </h2>
-                
-                <p className="text-[15px] text-[#1b1b1b] font-['Arial'] leading-relaxed mb-4">
-                  Sky Dental Center proudly welcomes international patients seeking premium dental care in the UAE. Our Dental Tourism program offers a luxurious experience that blends world-class dentistry with the exceptional hospitality of Abu Dhabi.
-                </p>
-
-                <p className="text-[15px] text-[#1b1b1b] font-['Arial'] leading-relaxed mb-8">
-                  We assist with everything—from treatment planning to scheduling appointments around your stay, allowing you to enjoy the beauty and culture of the Emirates.
-                </p>
-
-                {/* Service Cards Grid */}
-                <div className="grid grid-cols-2 gap-4 mb-8">
-                  <div className="bg-gradient-to-br from-[#e0edff] to-[#f0f4ff] rounded-2xl px-5 py-4 flex items-center gap-3">
-                    <div className="w-10 h-10 bg-[#cbff8f] rounded-xl flex items-center justify-center shrink-0">
-                      <Plane className="w-5 h-5 text-[#0C0060]" stroke="#0C0060" />
-                    </div>
-                    <p className="text-sm text-black font-['Arial'] font-semibold">Pre-Travel Coordination</p>
-                  </div>
-
-                  <div className="bg-gradient-to-br from-[#e0edff] to-[#f0f4ff] rounded-2xl px-5 py-4 flex items-center gap-3">
-                    <div className="w-10 h-10 bg-[#cbff8f] rounded-xl flex items-center justify-center shrink-0">
-                      <svg className="w-5 h-5 text-[#0C0060]" fill="none" stroke="#0C0060" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                      </svg>
-                    </div>
-                    <p className="text-sm text-black font-['Arial'] font-semibold">Hotel Recommendations</p>
-                  </div>
-
-                  <div className="bg-gradient-to-br from-[#e0edff] to-[#f0f4ff] rounded-2xl px-5 py-4 flex items-center gap-3">
-                    <div className="w-10 h-10 bg-[#cbff8f] rounded-xl flex items-center justify-center shrink-0">
-                      <MapPin className="w-5 h-5 text-[#0C0060]" stroke="#0C0060" />
-                    </div>
-                    <p className="text-sm text-black font-['Arial'] font-semibold">Airport Guidance</p>
-                  </div>
-
-                  <div className="bg-gradient-to-br from-[#e0edff] to-[#f0f4ff] rounded-2xl px-5 py-4 flex items-center gap-3">
-                    <div className="w-10 h-10 bg-[#cbff8f] rounded-xl flex items-center justify-center shrink-0">
-                      <svg className="w-5 h-5 text-[#0C0060]" fill="none" stroke="#0C0060" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                      </svg>
-                    </div>
-                    <p className="text-sm text-black font-['Arial'] font-semibold">Concierge Scheduling</p>
-                  </div>
-                </div>
-
-                {/* CTA Button */}
-                <motion.button
-                  whileHover={shouldReduceMotion ? {} : { scale: 1.05 }}
-                  whileTap={shouldReduceMotion ? {} : { scale: 0.95 }}
-                  onClick={() => openBookingSidebar()}
-                  className="bg-[#cbff8f] text-[#0C0060] font-bold px-8 py-4 rounded-full inline-flex items-center gap-3 hover:bg-[#b8ff6d] transition-colors font-['Arial'] text-[15px]"
-                >
-                  <span>Plan Your Visit</span>
-                  <div className="w-8 h-8 bg-[#0C0060] rounded-full flex items-center justify-center">
-                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </div>
-                </motion.button>
-              </motion.div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Insurance Partners Section */}
       <section
