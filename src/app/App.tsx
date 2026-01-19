@@ -12,7 +12,6 @@ import DoctorDetailPage from './pages/DoctorDetailPage'
 import ServicesPage from './pages/ServicesPage'
 import ServiceDetailPage from './pages/ServiceDetailPage'
 import PackagesPage from './pages/PackagesPage'
-import SkyLoyaltyPage from './pages/SkyLoyaltyPage'
 import PatientGuidePage from './pages/PatientGuidePage'
 import FAQsPage from './pages/FAQsPage'
 import CareersPage from './pages/CareersPage'
@@ -51,7 +50,6 @@ export default function App() {
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/services/:serviceId" element={<ServiceDetailPage />} />
             <Route path="/packages" element={<PackagesPage />} />
-            <Route path="/sky-loyalty" element={<SkyLoyaltyPage />} />
             <Route path="/patient-guide" element={<PatientGuidePage />} />
             <Route path="/faqs" element={<FAQsPage />} />
             <Route path="/careers" element={<CareersPage />} />

@@ -39,7 +39,6 @@ const categories: Category[] = [
   { id: 'oral-surgery', label: 'Oral Surgery', icon: '⚕️', color: 'bg-[#e8f4ff]' },
   { id: 'dental-tourism', label: 'Dental Tourism', icon: '✈️', color: 'bg-[#e8f4ff]' },
   { id: 'insurance', label: 'Insurance', icon: '🛡️', color: 'bg-[#ffe8f5]' },
-  { id: 'loyalty', label: 'Loyalty Program', icon: '⭐', color: 'bg-[#fff9e6]' },
   { id: 'appointments', label: 'Appointments & Clinic', icon: '📅', color: 'bg-[#e8f4ff]' },
 ]
 
@@ -236,23 +235,6 @@ const faqCategories: FAQCategory[] = [
         id: 'insurance-2',
         question: 'How do I know what my insurance covers?',
         answer: 'Simply share your insurance details with our reception team—we will explain your benefits clearly and guide you through all covered services.',
-      },
-    ],
-  },
-  {
-    id: 'loyalty',
-    title: 'Sky Loyalty Program',
-    icon: '⭐',
-    faqs: [
-      {
-        id: 'loyalty-1',
-        question: 'How can I join the Sky Loyalty Program?',
-        answer: 'Membership is open to all patients. Simply register during your visit and enjoy exclusive discounts, benefits, and reward points.',
-      },
-      {
-        id: 'loyalty-2',
-        question: 'What are the differences between Silver, Gold, and Platinum tiers?',
-        answer: 'Each tier offers increasing levels of luxury, privileges, and rewards—from basic discounts in Silver to VIP access and exclusive benefits in Platinum.',
       },
     ],
   },

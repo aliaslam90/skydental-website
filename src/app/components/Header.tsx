@@ -186,16 +186,6 @@ export default function Header() {
                 Packages & Offers
               </Link>
               
-              <Link
-                to="/sky-loyalty"
-                className={`px-[14px] py-[4px] rounded-full text-[14px] transition-all whitespace-nowrap ${
-                  location.pathname === '/sky-loyalty'
-                    ? 'bg-[#cbff8f] text-[#0C0060] font-bold'
-                    : 'text-black hover:text-[#0C0060]'
-                }`}
-              >
-                Sky Loyalty Program
-              </Link>
               <button
                 onClick={handleContactClick}
                 className={`px-[14px] py-[4px] rounded-full text-[14px] transition-all whitespace-nowrap ${
@@ -408,16 +398,6 @@ export default function Header() {
                   }`}
                 >
                   Packages & Offers
-                </Link>
-                <Link
-                  to="/sky-loyalty"
-                  className={`px-[20px] py-[12px] rounded-full text-[16px] transition-all text-left ${
-                    location.pathname === '/sky-loyalty'
-                      ? 'bg-[#cbff8f] text-[#0C0060] font-bold'
-                      : 'text-black hover:text-[#0C0060]'
-                  }`}
-                >
-                  Sky Loyalty Program
                 </Link>
                 <button
                   onClick={handleContactClick}

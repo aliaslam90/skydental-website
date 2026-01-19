@@ -132,7 +132,6 @@ function Frame9() {
       <Program />
       <Program1 />
       <Program2 />
-      <p className="font-['Arial:Regular',sans-serif] leading-[1.55] not-italic relative shrink-0 text-[14px] text-black text-nowrap">{`Sky Loyalty Program `}</p>
       <p className="font-['Arial:Regular',sans-serif] leading-[1.55] not-italic relative shrink-0 text-[14px] text-black text-nowrap">Contact</p>
       <Program3 />
     </div>
@@ -705,7 +704,6 @@ function Frame38() {
   return (
     <div className="content-stretch flex gap-[10px] items-center relative shrink-0">
       <Button9 />
-      <Button10 />
       <Button11 />
     </div>
   );

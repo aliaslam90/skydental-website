@@ -132,7 +132,6 @@ function Frame9() {
       <Program />
       <Program1 />
       <Program2 />
-      <p className="font-['Arial:Regular',sans-serif] leading-[1.55] not-italic relative shrink-0 text-[14px] text-black text-nowrap">{`Sky Loyalty Program `}</p>
       <Frame18 />
       <Program3 />
     </div>

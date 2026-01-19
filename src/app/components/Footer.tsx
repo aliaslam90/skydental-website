@@ -69,7 +69,6 @@ export default function Footer() {
                   <FooterLink href="/our-doctors">Our Doctors</FooterLink>
                   <FooterLink href="/services">Services</FooterLink>
                   <FooterLink href="/packages">Packages & Offers</FooterLink>
-                  <FooterLink href="/sky-loyalty">Sky Loyalty Program</FooterLink>
                   <FooterLink href="/patient-guide">Patient Guide</FooterLink>
                   <FooterLink href="/faqs">FAQs</FooterLink>
                   <FooterLink href="/careers">Careers</FooterLink>
