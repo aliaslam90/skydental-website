@@ -413,7 +413,7 @@ export default function ContactUsPage() {
               style={{ minHeight: '400px' }}
             >
               <iframe
-                src="https://www.google.com/maps?q=Villa+45,+Alforsan+street,+Khalifa+city,+Abu+Dhabi,+UAE&output=embed&zoom=16"
+                src="https://www.google.com/maps?q=Sky+Dental+Center,+Villa+45,+Alforsan+street,+Khalifa+city,+Abu+Dhabi,+UAE&output=embed&zoom=16"
                 width="100%"
                 height="100%"
                 style={{ border: 0, minHeight: '400px' }}
