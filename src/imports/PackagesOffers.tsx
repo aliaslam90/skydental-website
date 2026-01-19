@@ -612,7 +612,7 @@ function Btn1() {
     <div className="bg-[#cbff8f] relative rounded-[35px] shrink-0 w-full" data-name="Btn">
       <div className="flex flex-row items-center size-full">
         <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-between pl-[24px] pr-[10px] py-[8px] relative w-full">
-          <p className="font-['Arial:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#0C0060] text-[16px] text-nowrap">Book Now</p>
+          <p className="font-['Arial:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#0C0060] text-[16px] text-nowrap">Request Now</p>
           <Square1 />
         </div>
       </div>
@@ -804,7 +804,7 @@ function Btn2() {
     <div className="bg-[#cbff8f] relative rounded-[35px] shrink-0 w-full" data-name="Btn">
       <div className="flex flex-row items-center size-full">
         <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-between pl-[24px] pr-[10px] py-[8px] relative w-full">
-          <p className="font-['Arial:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#0C0060] text-[16px] text-nowrap">Book Now</p>
+          <p className="font-['Arial:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#0C0060] text-[16px] text-nowrap">Request Now</p>
           <Square2 />
         </div>
       </div>
@@ -1010,7 +1010,7 @@ function Btn3() {
     <div className="bg-[#cbff8f] relative rounded-[35px] shrink-0 w-full" data-name="Btn">
       <div className="flex flex-row items-center size-full">
         <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-between pl-[24px] pr-[10px] py-[8px] relative w-full">
-          <p className="font-['Arial:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#0C0060] text-[16px] text-nowrap">Book Now</p>
+          <p className="font-['Arial:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#0C0060] text-[16px] text-nowrap">Request Now</p>
           <Square3 />
         </div>
       </div>
@@ -1224,7 +1224,7 @@ function Btn4() {
     <div className="bg-[#cbff8f] relative rounded-[35px] shrink-0 w-full" data-name="Btn">
       <div className="flex flex-row items-center size-full">
         <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-between pl-[24px] pr-[10px] py-[8px] relative w-full">
-          <p className="font-['Arial:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#0C0060] text-[16px] text-nowrap">Book Now</p>
+          <p className="font-['Arial:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#0C0060] text-[16px] text-nowrap">Request Now</p>
           <Square4 />
         </div>
       </div>
@@ -1421,7 +1421,7 @@ function Btn5() {
     <div className="bg-[#cbff8f] relative rounded-[35px] shrink-0 w-full" data-name="Btn">
       <div className="flex flex-row items-center size-full">
         <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-between pl-[24px] pr-[10px] py-[8px] relative w-full">
-          <p className="font-['Arial:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#0C0060] text-[16px] text-nowrap">Book Now</p>
+          <p className="font-['Arial:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#0C0060] text-[16px] text-nowrap">Request Now</p>
           <Square5 />
         </div>
       </div>
@@ -1627,7 +1627,7 @@ function Btn6() {
     <div className="bg-[#cbff8f] relative rounded-[35px] shrink-0 w-full" data-name="Btn">
       <div className="flex flex-row items-center size-full">
         <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-between pl-[24px] pr-[10px] py-[8px] relative w-full">
-          <p className="font-['Arial:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#0C0060] text-[16px] text-nowrap">Book Now</p>
+          <p className="font-['Arial:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#0C0060] text-[16px] text-nowrap">Request Now</p>
           <Square6 />
         </div>
       </div>

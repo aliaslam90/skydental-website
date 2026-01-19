@@ -1116,7 +1116,7 @@ function Square2() {
 function Btn7() {
   return (
     <div className="absolute bg-[#cbff8f] content-stretch flex gap-[24px] items-center justify-center left-[1099.5px] pl-[24px] pr-[10px] py-[8px] rounded-[35px] top-[533px] w-[200px]" data-name="Btn">
-      <p className="font-['Arial:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#0C0060] text-[16px] text-nowrap">Book Now</p>
+      <p className="font-['Arial:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#0C0060] text-[16px] text-nowrap">Request Now</p>
       <Square2 />
     </div>
   );

@@ -211,7 +211,7 @@ export default function PackagesPage() {
                   initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-white border-[#f3f4f6] border rounded-[32px] p-8 hover:shadow-xl hover:bg-[#0C0060] transition-all duration-300 flex flex-col h-full"
+                  className="bg-white border-[#f3f4f6] border rounded-[32px] p-8 flex flex-col h-full"
                 >
                   {/* Icon */}
                   <div className="w-14 h-14 bg-[#cbff8f] rounded-[18px] flex items-center justify-center text-2xl mb-5">
@@ -244,7 +244,7 @@ export default function PackagesPage() {
                     whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
                     className="bg-[#cbff8f] text-[#0C0060] font-bold px-6 py-3.5 rounded-full w-full inline-flex items-center justify-between hover:bg-[#b8ff6d] transition-colors font-['Arial'] text-[15px]"
                   >
-                    <span>Book Now</span>
+                    <span>Request Now</span>
                     <div className="w-8 h-8 bg-[#0C0060] rounded-full flex items-center justify-center">
                       <ArrowUpRight className="w-[18px] h-[18px] text-[#cbff8f]" />
                     </div>
