@@ -12,9 +12,9 @@ const insurancePartners = [
   { id: '5', name: 'Neuron', logo: '/logos/neuron.webp' },
   { id: '6', name: 'AXA GIG', logo: '/logos/axagig.png' },
   { id: '7', name: 'NextCare', logo: '/logos/nextcare.png' },
-  { id: '8', name: 'MedNet', logo: '/logos/mednet.webp' },
+  { id: '8', name: 'MedNet', logo: '/logos/mednet.png' },
   { id: '9', name: 'Cigna', logo: '/logos/cigna.png' },
-  { id: '10', name: 'SAICO', logo: '/logos/saico.jpg' },
+  { id: '10', name: 'SAICO', logo: '/logos/saico.png' },
 ]
 
 export default function InsurancePartnersSection() {
