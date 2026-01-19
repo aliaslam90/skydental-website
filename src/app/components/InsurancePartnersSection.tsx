@@ -88,6 +88,7 @@ export default function InsurancePartnersSection() {
 
 function InsurancePartnerCard({ partner }: { partner: { id: string; name: string; logo: string } }) {
   const [imageError, setImageError] = useState(false)
+  const isLargeLogo = partner.id === '8' || partner.id === '10' // MedNet or SAICO
 
   return (
     <div className="bg-white rounded-2xl px-12 py-8 flex items-center justify-center w-[230px] shrink-0 h-[128px]">
@@ -95,7 +96,7 @@ function InsurancePartnerCard({ partner }: { partner: { id: string; name: string
         <img
           src={partner.logo}
           alt={`${partner.name} logo`}
-          className="max-w-[200px] max-h-[90px] w-auto h-auto object-contain"
+          className={`w-auto h-auto object-contain ${isLargeLogo ? 'max-w-[200px] max-h-[90px]' : 'max-w-[180px] max-h-[80px]'}`}
           onError={() => setImageError(true)}
         />
       ) : (
