@@ -3,7 +3,7 @@
 import { motion, useReducedMotion } from 'motion/react'
 import { useState, useEffect, useMemo } from 'react'
 import { Link } from 'react-router-dom'
-import { Search, ChevronDown, Award, Shield } from 'lucide-react'
+import { Search, ChevronDown, Heart, Award, Shield } from 'lucide-react'
 import { useBooking } from '../context/BookingContext'
 
 // Doctor data - First 4 match homepage, rest can be added later
