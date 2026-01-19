@@ -319,7 +319,7 @@ export default function OurDoctorsPageNew() {
                   <div className="flex flex-col sm:flex-row gap-[8px] sm:gap-[12px] items-center justify-center">
                     <Link 
                       to={`/our-doctors/${doctor.id}`}
-                      className="bg-white border border-[#0C0060] text-[#0C0060] text-[13px] md:text-[14px] font-medium py-[10px] px-[20px] rounded-[12px] hover:bg-[#0C0060] hover:text-white transition-colors text-center whitespace-nowrap"
+                      className="bg-white text-[#0C0060] text-[13px] md:text-[14px] font-medium py-[10px] px-[20px] rounded-[12px] hover:bg-[#0C0060] hover:text-white transition-colors text-center whitespace-nowrap"
                     >
                       View Profile
                     </Link>
