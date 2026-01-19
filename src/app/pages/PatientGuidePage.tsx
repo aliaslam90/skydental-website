@@ -416,12 +416,12 @@ function InsurancePartnerCard({ partner }: { partner: InsurancePartner }) {
   const [imageError, setImageError] = useState(false)
 
   return (
-    <div className="bg-white rounded-2xl px-12 py-8 flex items-center justify-center min-w-[200px] shrink-0 h-[128px]">
+    <div className="bg-white rounded-2xl px-12 py-8 flex items-center justify-center w-[230px] shrink-0 h-[128px]">
       {!imageError ? (
         <img
           src={partner.logo}
           alt={`${partner.name} logo`}
-          className="max-w-[180px] max-h-[80px] object-contain"
+          className="max-w-[200px] max-h-[90px] w-auto h-auto object-contain"
           onError={() => setImageError(true)}
         />
       ) : (
