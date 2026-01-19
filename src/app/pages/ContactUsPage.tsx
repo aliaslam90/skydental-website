@@ -404,29 +404,25 @@ export default function ContactUsPage() {
               </div>
             </motion.div>
 
-            {/* Map Placeholder */}
+            {/* Google Maps Embed */}
             <motion.div
               initial={shouldReduceMotion ? {} : { opacity: 0, x: 20 }}
               animate={visitClinicInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="bg-[#e0edff] rounded-3xl overflow-hidden flex items-center justify-center relative group"
+              className="bg-[#e0edff] rounded-3xl overflow-hidden relative group"
               style={{ minHeight: '400px' }}
             >
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
-                <div className="w-20 h-20 bg-[#cbff8f] rounded-full flex items-center justify-center mb-6">
-                  <MapPin className="w-10 h-10 text-[#0C0060]" />
-                </div>
-                <h3 className="text-2xl font-['Gilda_Display'] text-black mb-4">Sky Dental Center</h3>
-                <p className="text-base font-['Arial'] text-black mb-6">Villa 45 , Alforsan street , Khalifa city , Abu Dhabi , UAE</p>
-                <a
-                  href="https://maps.google.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-[#cbff8f] hover:bg-[#b8e680] text-[#0C0060] font-['Arial'] font-bold py-3 px-8 rounded-full transition-all duration-300"
-                >
-                  Get Directions
-                </a>
-              </div>
+              <iframe
+                src="https://www.google.com/maps?q=Villa+45,+Alforsan+street,+Khalifa+city,+Abu+Dhabi,+UAE&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0, minHeight: '400px' }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="absolute inset-0 w-full h-full"
+                title="Sky Dental Center Location"
+              />
             </motion.div>
           </div>
         </div>
