@@ -87,6 +87,7 @@ const insurancePartners: InsurancePartner[] = [
 
 function PatientGuidePartnerCard({ partner }: { partner: InsurancePartner }) {
   const [imageError, setImageError] = useState(false)
+  const isBiggerLogo = partner.name === 'AXA GIG' || partner.name === 'MedNet' || partner.name === 'SAICO'
   
   return (
     <div className="bg-white rounded-2xl px-12 py-8 flex items-center justify-center min-w-[200px] shrink-0 h-[128px]">
@@ -94,7 +95,7 @@ function PatientGuidePartnerCard({ partner }: { partner: InsurancePartner }) {
         <img
           src={partner.logo}
           alt={`${partner.name} logo`}
-          className="max-w-[180px] max-h-[60px] object-contain"
+          className={isBiggerLogo ? "max-w-[240px] max-h-[80px] object-contain" : "max-w-[180px] max-h-[60px] object-contain"}
           onError={() => setImageError(true)}
         />
       ) : (
