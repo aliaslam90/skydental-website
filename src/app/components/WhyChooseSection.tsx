@@ -2,12 +2,15 @@
 
 import { motion, useReducedMotion, useInView } from 'motion/react'
 import { useRef } from 'react'
-import imgImage1 from '../../assets/52ff6087aa6a907ff79e465a1810ea7bc978284f.png'
+import { useBooking } from '../context/BookingContext'
+// Image is in public folder, using direct path
+const imgImage1 = '/woman-patient-in-dental-clinic-being-examined-by-a-2025-04-01-13-09-56-utc.png'
 
 export default function WhyChooseSection() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
   const shouldReduceMotion = useReducedMotion()
+  const { openBookingSidebar } = useBooking()
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -61,22 +64,14 @@ export default function WhyChooseSection() {
               <ReasonItem number="4" text="World-class sterilisation and safety protocols." />
               <ReasonItem number="5" text="Thirteen modern dental clinics providing seamless appointment scheduling and optimised patient flow." />
             </div>
-          </motion.div>
 
-          {/* Right Image */}
-          <motion.div variants={imageVariants} className="relative w-full lg:w-[721px] h-[400px] md:h-[500px] lg:h-[599px] rounded-[20px] overflow-hidden">
-            <img
-              src={imgImage1}
-              alt="Dental team"
-              className="w-full h-full object-cover"
-            />
-            
-            {/* Floating CTA Button - positioned over the image */}
+            {/* Request Now Button */}
             <motion.button
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
               transition={{ delay: 0.8, duration: shouldReduceMotion ? 0 : 0.5 }}
-              className="absolute bottom-[30px] right-[30px] bg-[#cbff8f] flex items-center gap-4 md:gap-6 pl-4 md:pl-6 pr-[8px] md:pr-[10px] py-2 rounded-[35px] hover:bg-[#B1FF57] transition-colors z-10"
+              onClick={() => openBookingSidebar()}
+              className="bg-[#cbff8f] flex items-center gap-4 md:gap-6 pl-4 md:pl-6 pr-[8px] md:pr-[10px] py-2 rounded-[35px] hover:bg-[#B1FF57] transition-colors z-10 w-fit"
             >
               <span className="text-[#0C0060] font-bold text-[14px] md:text-[16px] whitespace-nowrap">Request Now</span>
               <div className="bg-[#0C0060] w-[32px] h-[32px] md:w-[34px] md:h-[34px] rounded-full flex items-center justify-center flex-shrink-0">
@@ -98,6 +93,15 @@ export default function WhyChooseSection() {
                 </svg>
               </div>
             </motion.button>
+          </motion.div>
+
+          {/* Right Image */}
+          <motion.div variants={imageVariants} className="relative w-full lg:w-[721px] h-[400px] md:h-[500px] lg:h-[599px] rounded-[20px] overflow-hidden">
+            <img
+              src={imgImage1}
+              alt="Dental team"
+              className="w-full h-full object-cover"
+            />
           </motion.div>
         </div>
       </motion.div>
