@@ -97,28 +97,28 @@ const paymentCards = [
     id: 'homat-al-watan',
     name: 'Homat Al Watan',
     description: 'We proudly accept Homat Al Watan cards, offering exclusive benefits and discounts to UAE Armed Forces members, veterans, and their families.',
-    logo: '/logos/homat-al-watan.png', // Placeholder - to be added later
+    logo: '/logos/homatalwatan.png',
     color: '#0C0060'
   },
   {
     id: 'tabby',
     name: 'Tabby',
     description: 'Split your dental treatment costs into interest-free installments with Tabby. Buy now, pay later with flexible payment options.',
-    logo: '/logos/tabby.png', // Placeholder - to be added later
+    logo: '/logos/tabby.svg',
     color: '#000000'
   },
   {
     id: 'tamara',
     name: 'Tamara',
     description: 'Enjoy flexible payment plans with Tamara. Pay for your dental care in convenient installments with no hidden fees.',
-    logo: '/logos/tamara.png', // Placeholder - to be added later
+    logo: '/logos/tamara.png',
     color: '#000000'
   },
   {
     id: 'faza',
     name: 'Faza',
     description: 'Faza cardholders receive special discounts and benefits on all our dental services. Present your card to enjoy exclusive savings.',
-    logo: '/logos/faza.png', // Placeholder - to be added later
+    logo: '/logos/fazaa.svg',
     color: '#0C0060'
   }
 ]
