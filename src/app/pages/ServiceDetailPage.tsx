@@ -47,7 +47,7 @@ function ServiceCard({ service, index }: { service: any; index: number }) {
       <ul className="space-y-2">
         {service.features.map((feature: string, idx: number) => (
           <li key={idx} className="flex items-start gap-2 text-sm text-black/70 font-['Arial']">
-            <span className="text-[#97c4ff] mt-1">✓</span>
+            <span className="text-[#0C0060] mt-1">✓</span>
             <span>{feature}</span>
           </li>
         ))}
@@ -80,7 +80,7 @@ export default function ServiceDetailPage() {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-['Gilda_Display'] text-black mb-4">Service Not Found</h1>
-          <Link to="/services" className="text-[#97c4ff] hover:underline">
+          <Link to="/services" className="text-[#0C0060] hover:underline">
             Back to Services
           </Link>
         </div>
@@ -125,10 +125,10 @@ export default function ServiceDetailPage() {
                 whileHover={shouldReduceMotion ? {} : { scale: 1.05 }}
                 whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
                 onClick={() => openBookingSidebar()}
-                className="bg-[#cbff8f] text-[#97c4ff] font-bold px-8 py-4 rounded-full inline-flex items-center gap-3 hover:bg-[#b8ff6d] transition-colors font-['Arial']"
+                className="bg-[#cbff8f] text-[#0C0060] font-bold px-8 py-4 rounded-full inline-flex items-center gap-3 hover:bg-[#b8ff6d] transition-colors font-['Arial']"
               >
                 <span>Book Appointment</span>
-                <div className="w-9 h-9 bg-[#97c4ff] rounded-full flex items-center justify-center">
+                <div className="w-9 h-9 bg-[#0C0060] rounded-full flex items-center justify-center">
                   <ArrowUpRight className="w-5 h-5 text-[#cbff8f]" />
                 </div>
               </motion.button>
@@ -136,11 +136,11 @@ export default function ServiceDetailPage() {
               <motion.button
                 whileHover={shouldReduceMotion ? {} : { scale: 1.05 }}
                 whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
-                className="bg-white text-[#97c4ff] font-bold px-8 py-4 rounded-full inline-flex items-center gap-3 hover:bg-gray-50 transition-colors font-['Arial']"
+                className="bg-white text-[#0C0060] font-bold px-8 py-4 rounded-full inline-flex items-center gap-3 hover:bg-gray-50 transition-colors font-['Arial']"
               >
                 <span>Call Us Now</span>
                 <div className="w-9 h-9 bg-[#cbff8f] rounded-full flex items-center justify-center">
-                  <ArrowUpRight className="w-5 h-5 text-[#97c4ff]" />
+                  <ArrowUpRight className="w-5 h-5 text-[#0C0060]" />
                 </div>
               </motion.button>
             </div>
@@ -156,7 +156,7 @@ export default function ServiceDetailPage() {
                 Services
               </Link>
               <ChevronRight className="w-4 h-4 text-gray-400" />
-              <span className="text-[#97c4ff] font-['Arial']">{service.title}</span>
+              <span className="text-[#0C0060] font-['Arial']">{service.title}</span>
             </div>
           </motion.div>
         </div>
@@ -194,7 +194,7 @@ export default function ServiceDetailPage() {
                   transition={{ duration: 0.6, delay: index * 0.15 }}
                   className="bg-[#cbff8f] rounded-3xl p-8 text-center"
                 >
-                  <div className="w-16 h-16 bg-[#97c4ff] rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <div className="w-16 h-16 bg-[#0C0060] rounded-2xl flex items-center justify-center mx-auto mb-6">
                     <span className="text-3xl">{benefit.icon}</span>
                   </div>
                   <h3 className="text-2xl font-['Gilda_Display'] text-black mb-3">
@@ -264,7 +264,7 @@ export default function ServiceDetailPage() {
                       className="flex items-start gap-3"
                     >
                       <div className="w-6 h-6 bg-[#cbff8f] rounded-full flex items-center justify-center mt-1 shrink-0">
-                        <span className="text-[#97c4ff] text-sm">✓</span>
+                        <span className="text-[#0C0060] text-sm">✓</span>
                       </div>
                       <span className="text-base text-black/80 font-['Arial'] leading-relaxed">
                         {feature}
@@ -324,10 +324,10 @@ export default function ServiceDetailPage() {
             <motion.button
               whileHover={shouldReduceMotion ? {} : { scale: 1.05 }}
               whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
-              className="bg-[#cbff8f] text-[#97c4ff] font-bold px-10 py-5 rounded-full inline-flex items-center gap-3 hover:bg-[#b8ff6d] transition-colors font-['Arial'] text-lg"
+              className="bg-[#cbff8f] text-[#0C0060] font-bold px-10 py-5 rounded-full inline-flex items-center gap-3 hover:bg-[#b8ff6d] transition-colors font-['Arial'] text-lg"
             >
               <span>Book Your Appointment</span>
-              <div className="w-10 h-10 bg-[#97c4ff] rounded-full flex items-center justify-center">
+              <div className="w-10 h-10 bg-[#0C0060] rounded-full flex items-center justify-center">
                 <ArrowUpRight className="w-5 h-5 text-[#cbff8f]" />
               </div>
             </motion.button>

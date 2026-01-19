@@ -133,7 +133,7 @@ function Frame22() {
 function MaskGroup() {
   return (
     <div className="[grid-area:1_/_1] grid-cols-[max-content] grid-rows-[max-content] inline-grid ml-[14px] mt-[12px] place-items-start relative" data-name="Mask group">
-      <div className="[grid-area:1_/_1] bg-[#97c4ff] h-[48.058px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[12.048px_3.837px] mask-size-[26.048px_28px] ml-[-12.05px] mt-[-3.84px] w-[50.75px]" style={{ maskImage: `url('${imgRectangle161125373}')` }} />
+      <div className="[grid-area:1_/_1] bg-[#0C0060] h-[48.058px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[12.048px_3.837px] mask-size-[26.048px_28px] ml-[-12.05px] mt-[-3.84px] w-[50.75px]" style={{ maskImage: `url('${imgRectangle161125373}')` }} />
     </div>
   );
 }
@@ -150,7 +150,7 @@ function Group21() {
 function Frame39() {
   return (
     <div className="bg-[#cbff8f] content-stretch flex items-center justify-center px-[14px] py-[4px] relative rounded-[100px] shrink-0">
-      <div className="flex flex-col font-['Arial:Bold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#97c4ff] text-[14px] text-nowrap">
+      <div className="flex flex-col font-['Arial:Bold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#0C0060] text-[14px] text-nowrap">
         <p className="leading-[1.55]">Home</p>
       </div>
     </div>
@@ -262,7 +262,7 @@ function ArrowUpRight() {
 
 function Square() {
   return (
-    <div className="bg-[#97c4ff] relative rounded-[100px] shrink-0 size-[34px]" data-name="Square">
+    <div className="bg-[#0C0060] relative rounded-[100px] shrink-0 size-[34px]" data-name="Square">
       <ArrowUpRight />
     </div>
   );
@@ -271,7 +271,7 @@ function Square() {
 function Btn() {
   return (
     <div className="bg-[#cbff8f] content-stretch flex gap-[24px] items-center justify-center pl-[24px] pr-[10px] py-[8px] relative rounded-[35px] shrink-0" data-name="Btn">
-      <p className="font-['Arial:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#97c4ff] text-[16px] text-nowrap">Book Appointment</p>
+      <p className="font-['Arial:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#0C0060] text-[16px] text-nowrap">Book Appointment</p>
       <Square />
     </div>
   );
@@ -403,10 +403,10 @@ function Group() {
     <div className="absolute inset-[2.29%_0]" data-name="Group">
       <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 22.9004">
         <g id="Group">
-          <path d={svgPaths.pa3a5000} fill="var(--fill-0, #97C4FF)" id="Vector" />
-          <path d={svgPaths.p3489ba80} fill="var(--fill-0, #97C4FF)" id="Vector_2" />
-          <path d={svgPaths.p99b4f00} fill="var(--fill-0, #97C4FF)" id="Vector_3" />
-          <path d={svgPaths.p3c163100} fill="var(--fill-0, #97C4FF)" id="Vector_4" />
+          <path d={svgPaths.pa3a5000} fill="var(--fill-0, #0C0060)" id="Vector" />
+          <path d={svgPaths.p3489ba80} fill="var(--fill-0, #0C0060)" id="Vector_2" />
+          <path d={svgPaths.p99b4f00} fill="var(--fill-0, #0C0060)" id="Vector_3" />
+          <path d={svgPaths.p3c163100} fill="var(--fill-0, #0C0060)" id="Vector_4" />
         </g>
       </svg>
     </div>
@@ -432,9 +432,9 @@ function Component016CleanTooth() {
 function Btn1() {
   return (
     <div className="bg-[#cbff8f] content-stretch flex gap-[8px] h-[50px] items-center justify-center px-[18px] py-[15px] relative rounded-[35px] shrink-0" data-name="Btn">
-      <div aria-hidden="true" className="absolute border border-[#97c4ff] border-solid inset-0 pointer-events-none rounded-[35px]" />
+      <div aria-hidden="true" className="absolute border border-[#0C0060] border-solid inset-0 pointer-events-none rounded-[35px]" />
       <Component016CleanTooth />
-      <p className="font-['Arial:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#97c4ff] text-[16px] text-nowrap">{`General Dentistry `}</p>
+      <p className="font-['Arial:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#0C0060] text-[16px] text-nowrap">{`General Dentistry `}</p>
     </div>
   );
 }
@@ -765,8 +765,8 @@ function ArrowUpRight1() {
       <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 20 20">
         <g clipPath="url(#clip0_1_619)" id="ArrowUpRight">
           <g id="Vector"></g>
-          <path d="M5 15L15 5" id="Vector_2" stroke="var(--stroke-0, #97C4FF)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
-          <path d="M6.875 5H15V13.125" id="Vector_3" stroke="var(--stroke-0, #97C4FF)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
+          <path d="M5 15L15 5" id="Vector_2" stroke="var(--stroke-0, #0C0060)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
+          <path d="M6.875 5H15V13.125" id="Vector_3" stroke="var(--stroke-0, #0C0060)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
         </g>
         <defs>
           <clipPath id="clip0_1_619">
@@ -789,7 +789,7 @@ function Square1() {
 function Btn6() {
   return (
     <div className="bg-white content-stretch flex gap-[24px] items-center justify-center pl-[24px] pr-[10px] py-[8px] relative rounded-[35px] shrink-0" data-name="Btn">
-      <p className="font-['Arial:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#97c4ff] text-[16px] text-nowrap">Request Appointment</p>
+      <p className="font-['Arial:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#0C0060] text-[16px] text-nowrap">Request Appointment</p>
       <Square1 />
     </div>
   );
@@ -1107,7 +1107,7 @@ function ArrowUpRight2() {
 
 function Square2() {
   return (
-    <div className="bg-[#97c4ff] relative rounded-[100px] shrink-0 size-[34px]" data-name="Square">
+    <div className="bg-[#0C0060] relative rounded-[100px] shrink-0 size-[34px]" data-name="Square">
       <ArrowUpRight2 />
     </div>
   );
@@ -1116,7 +1116,7 @@ function Square2() {
 function Btn7() {
   return (
     <div className="absolute bg-[#cbff8f] content-stretch flex gap-[24px] items-center justify-center left-[1099.5px] pl-[24px] pr-[10px] py-[8px] rounded-[35px] top-[533px] w-[200px]" data-name="Btn">
-      <p className="font-['Arial:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#97c4ff] text-[16px] text-nowrap">Book Now</p>
+      <p className="font-['Arial:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#0C0060] text-[16px] text-nowrap">Book Now</p>
       <Square2 />
     </div>
   );
@@ -1141,7 +1141,7 @@ function ArrowLeft() {
         <g id="ArrowLeft">
           <rect fill="var(--fill-0, white)" height="52.3875" rx="26.1938" width="52.3875" />
           <g id="Vector"></g>
-          <path d={svgPaths.p260c3480} fill="var(--fill-0, #97C4FF)" id="Polygon 1" />
+          <path d={svgPaths.p260c3480} fill="var(--fill-0, #0C0060)" id="Polygon 1" />
         </g>
       </svg>
     </div>
@@ -1195,7 +1195,7 @@ function ArrowUpRight3() {
 
 function Square3() {
   return (
-    <div className="bg-[#97c4ff] relative rounded-[100px] shrink-0 size-[34px]" data-name="Square">
+    <div className="bg-[#0C0060] relative rounded-[100px] shrink-0 size-[34px]" data-name="Square">
       <ArrowUpRight3 />
     </div>
   );
@@ -1204,7 +1204,7 @@ function Square3() {
 function Btn8() {
   return (
     <div className="bg-[#cbff8f] content-stretch flex gap-[24px] items-center justify-center pl-[24px] pr-[10px] py-[8px] relative rounded-[35px] shrink-0" data-name="Btn">
-      <p className="font-['Arial:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#97c4ff] text-[16px] text-nowrap">Request Appointment</p>
+      <p className="font-['Arial:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#0C0060] text-[16px] text-nowrap">Request Appointment</p>
       <Square3 />
     </div>
   );
@@ -1393,7 +1393,7 @@ function ArrowUpRight4() {
 
 function Square6() {
   return (
-    <div className="bg-[#97c4ff] relative rounded-[100px] shrink-0 size-[34px]" data-name="Square">
+    <div className="bg-[#0C0060] relative rounded-[100px] shrink-0 size-[34px]" data-name="Square">
       <ArrowUpRight4 />
     </div>
   );
@@ -1402,7 +1402,7 @@ function Square6() {
 function Btn9() {
   return (
     <div className="bg-[#cbff8f] content-stretch flex gap-[24px] items-center justify-center pl-[24px] pr-[10px] py-[8px] relative rounded-[35px] shrink-0" data-name="Btn">
-      <p className="font-['Arial:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#97c4ff] text-[16px] text-nowrap">Request Appointment</p>
+      <p className="font-['Arial:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#0C0060] text-[16px] text-nowrap">Request Appointment</p>
       <Square6 />
     </div>
   );
@@ -1515,7 +1515,7 @@ function ArrowUpRight5() {
 
 function Square9() {
   return (
-    <div className="bg-[#97c4ff] relative rounded-[100px] shrink-0 size-[34px]" data-name="Square">
+    <div className="bg-[#0C0060] relative rounded-[100px] shrink-0 size-[34px]" data-name="Square">
       <ArrowUpRight5 />
     </div>
   );
@@ -1524,7 +1524,7 @@ function Square9() {
 function Btn10() {
   return (
     <div className="bg-[#cbff8f] content-stretch flex gap-[24px] items-center justify-center pl-[24px] pr-[10px] py-[8px] relative rounded-[35px] shrink-0" data-name="Btn">
-      <p className="font-['Arial:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#97c4ff] text-[16px] text-nowrap">Learn More</p>
+      <p className="font-['Arial:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#0C0060] text-[16px] text-nowrap">Learn More</p>
       <Square9 />
     </div>
   );
@@ -1736,7 +1736,7 @@ function ArrowUpRight6() {
 
 function Square10() {
   return (
-    <div className="bg-[#97c4ff] relative rounded-[100px] shrink-0 size-[34px]" data-name="Square">
+    <div className="bg-[#0C0060] relative rounded-[100px] shrink-0 size-[34px]" data-name="Square">
       <ArrowUpRight6 />
     </div>
   );
@@ -1745,7 +1745,7 @@ function Square10() {
 function Btn11() {
   return (
     <div className="bg-[#cbff8f] content-stretch flex gap-[24px] items-center justify-center pl-[24px] pr-[10px] py-[8px] relative rounded-[35px] shrink-0" data-name="Btn">
-      <p className="font-['Arial:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#97c4ff] text-[16px] text-nowrap">View All Team</p>
+      <p className="font-['Arial:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#0C0060] text-[16px] text-nowrap">View All Team</p>
       <Square10 />
     </div>
   );
@@ -2223,7 +2223,7 @@ function ArrowUpRight7() {
 
 function Square11() {
   return (
-    <div className="bg-[#97c4ff] relative rounded-[100px] shrink-0 size-[34px]" data-name="Square">
+    <div className="bg-[#0C0060] relative rounded-[100px] shrink-0 size-[34px]" data-name="Square">
       <ArrowUpRight7 />
     </div>
   );
@@ -2232,7 +2232,7 @@ function Square11() {
 function Btn12() {
   return (
     <div className="bg-[#cbff8f] content-stretch flex gap-[24px] items-center justify-center pl-[24px] pr-[10px] py-[8px] relative rounded-[35px] shrink-0" data-name="Btn">
-      <p className="font-['Arial:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#97c4ff] text-[16px] text-nowrap">Request Appointment</p>
+      <p className="font-['Arial:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#0C0060] text-[16px] text-nowrap">Request Appointment</p>
       <Square11 />
     </div>
   );
@@ -2295,7 +2295,7 @@ function Frame55() {
 function MaskGroup1() {
   return (
     <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-name="Mask group">
-      <div className="[grid-area:1_/_1] bg-[#97c4ff] h-[91.833px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[1.415px_7.33px] mask-size-[93.633px_80px] ml-[-1.41px] mt-[-7.33px] w-[96.592px]" style={{ maskImage: `url('${imgRectangle161125374}')` }} />
+      <div className="[grid-area:1_/_1] bg-[#0C0060] h-[91.833px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[1.415px_7.33px] mask-size-[93.633px_80px] ml-[-1.41px] mt-[-7.33px] w-[96.592px]" style={{ maskImage: `url('${imgRectangle161125374}')` }} />
     </div>
   );
 }
@@ -2305,7 +2305,7 @@ function IconFacebook1() {
     <div className="h-[23px] relative shrink-0 w-[24px]" data-name="Icon / Facebook">
       <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 23">
         <g id="Icon / Facebook">
-          <path d={svgPaths.p1c786b00} fill="var(--fill-0, #97C4FF)" id="Vector" />
+          <path d={svgPaths.p1c786b00} fill="var(--fill-0, #0C0060)" id="Vector" />
         </g>
       </svg>
     </div>
@@ -2317,7 +2317,7 @@ function IconInstagram1() {
     <div className="relative shrink-0 size-[24px]" data-name="Icon / Instagram">
       <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
         <g id="Icon / Instagram">
-          <path clipRule="evenodd" d={svgPaths.p3f3f55f0} fill="var(--fill-0, #97C4FF)" fillRule="evenodd" id="Vector" />
+          <path clipRule="evenodd" d={svgPaths.p3f3f55f0} fill="var(--fill-0, #0C0060)" fillRule="evenodd" id="Vector" />
         </g>
       </svg>
     </div>
@@ -2329,7 +2329,7 @@ function IconX1() {
     <div className="relative shrink-0 size-[24px]" data-name="Icon / X">
       <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
         <g id="Icon / X">
-          <path d={svgPaths.p214d7500} fill="var(--fill-0, #97C4FF)" id="Vector" />
+          <path d={svgPaths.p214d7500} fill="var(--fill-0, #0C0060)" id="Vector" />
         </g>
       </svg>
     </div>
@@ -2341,7 +2341,7 @@ function IconLinkedIn1() {
     <div className="relative shrink-0 size-[24px]" data-name="Icon / LinkedIn">
       <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
         <g id="Icon / LinkedIn">
-          <path clipRule="evenodd" d={svgPaths.p2b170900} fill="var(--fill-0, #97C4FF)" fillRule="evenodd" id="Vector" />
+          <path clipRule="evenodd" d={svgPaths.p2b170900} fill="var(--fill-0, #0C0060)" fillRule="evenodd" id="Vector" />
         </g>
       </svg>
     </div>

@@ -488,7 +488,7 @@ export default function ContactSection() {
                     initial={{ y: 30, opacity: 0 }}
                     animate={isInView ? { y: 0, opacity: 1 } : { y: 30, opacity: 0 }}
                     transition={{ delay: shouldReduceMotion ? 0 : 0.5, duration: shouldReduceMotion ? 0 : 0.6 }}
-                    className="w-full bg-[#cbff8f] h-[50px] px-[24px] py-[16px] rounded-[12px] text-[14px] font-medium text-[#97c4ff] hover:bg-[#B1FF57] transition-colors"
+                    className="w-full bg-[#cbff8f] h-[50px] px-[24px] py-[16px] rounded-[12px] text-[14px] font-medium text-[#0C0060] hover:bg-[#B1FF57] transition-colors"
                   >
                     Book Appointment
                   </motion.button>
@@ -675,14 +675,14 @@ function DatePicker({
                 disabled={!isCurrentMonth || isPast}
                 className={`h-10 rounded-lg text-[14px] font-medium transition-all ${
                   isSelected
-                    ? 'bg-[#97c4ff] text-white shadow-md'
+                    ? 'bg-[#0C0060] text-white shadow-md'
                     : isToday
-                    ? 'bg-[#e0edff] text-[#97c4ff] font-bold border-2 border-[#97c4ff]'
+                    ? 'bg-[#e0edff] text-[#0C0060] font-bold border-2 border-[#0C0060]'
                     : !isCurrentMonth
                     ? 'text-gray-300 cursor-not-allowed'
                     : isPast
                     ? 'text-gray-300 cursor-not-allowed'
-                    : 'text-black hover:bg-[#e0edff] hover:text-[#97c4ff]'
+                    : 'text-black hover:bg-[#e0edff] hover:text-[#0C0060]'
                 }`}
               >
                 {day}
@@ -720,8 +720,8 @@ function TimePicker({
               onClick={() => onTimeSelect(time)}
               className={`w-full px-4 py-3 rounded-lg text-[14px] font-medium text-left transition-all ${
                 selectedTime === time
-                  ? 'bg-[#97c4ff] text-white shadow-md'
-                  : 'bg-[#f5f5f5] text-black hover:bg-[#e0edff] hover:text-[#97c4ff]'
+                  ? 'bg-[#0C0060] text-white shadow-md'
+                  : 'bg-[#f5f5f5] text-black hover:bg-[#e0edff] hover:text-[#0C0060]'
               }`}
             >
               {time}
@@ -850,7 +850,7 @@ function OTPVerificationModal({
             {/* Booking Confirmation Step */}
             <div className="mb-6">
               <div className="w-16 h-16 bg-[#cbff8f] rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-[#97c4ff]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-8 h-8 text-[#0C0060]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
@@ -893,7 +893,7 @@ function OTPVerificationModal({
 
             <button
               onClick={onClose}
-              className="w-full bg-[#97c4ff] h-[50px] px-[24px] py-[16px] rounded-[12px] text-[14px] font-medium text-white hover:bg-[#7db3ff] transition-colors"
+              className="w-full bg-[#0C0060] h-[50px] px-[24px] py-[16px] rounded-[12px] text-[14px] font-medium text-white hover:bg-[#7db3ff] transition-colors"
             >
               Close
             </button>

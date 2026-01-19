@@ -199,7 +199,7 @@ export default function OurDoctorsPageNew() {
           >
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-[rgba(203,255,143,0.3)] px-5 py-2 rounded-full mb-6">
-              <Heart className="w-4 h-4 text-[#97c4ff]" />
+              <Heart className="w-4 h-4 text-[#0C0060]" />
               <span className="text-sm text-black font-['Arial']">Our Doctors</span>
             </div>
 
@@ -229,7 +229,7 @@ export default function OurDoctorsPageNew() {
                   placeholder="Search Doctors"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-12 pr-4 py-3 border border-gray-200 rounded-full font-['Arial'] text-sm focus:outline-none focus:border-[#97c4ff] transition-colors"
+                  className="w-full pl-12 pr-4 py-3 border border-gray-200 rounded-full font-['Arial'] text-sm focus:outline-none focus:border-[#0C0060] transition-colors"
                 />
               </div>
 
@@ -237,7 +237,7 @@ export default function OurDoctorsPageNew() {
               <div className="relative md:w-64">
                 <button
                   onClick={() => setIsSpecialtyOpen(!isSpecialtyOpen)}
-                  className="w-full flex items-center justify-between px-4 py-3 border border-gray-200 rounded-full font-['Arial'] text-sm hover:border-[#97c4ff] transition-colors bg-white"
+                  className="w-full flex items-center justify-between px-4 py-3 border border-gray-200 rounded-full font-['Arial'] text-sm hover:border-[#0C0060] transition-colors bg-white"
                 >
                   <span className="text-black">{selectedSpecialty}</span>
                   <ChevronDown className={`w-4 h-4 text-black/60 transition-transform ${isSpecialtyOpen ? 'rotate-180' : ''}`} />
@@ -253,7 +253,7 @@ export default function OurDoctorsPageNew() {
                           setIsSpecialtyOpen(false)
                         }}
                         className={`w-full text-left px-4 py-3 font-['Arial'] text-sm hover:bg-gray-50 transition-colors ${
-                          selectedSpecialty === specialty ? 'bg-[#edf8ff] text-[#97c4ff]' : 'text-black'
+                          selectedSpecialty === specialty ? 'bg-[#edf8ff] text-[#0C0060]' : 'text-black'
                         }`}
                       >
                         {specialty}
@@ -319,13 +319,13 @@ export default function OurDoctorsPageNew() {
                   <div className="flex flex-col sm:flex-row gap-[8px] sm:gap-[12px] items-center justify-center">
                     <Link 
                       to={`/our-doctors/${doctor.id}`}
-                      className="bg-white border border-[#97c4ff] text-[#97c4ff] text-[13px] md:text-[14px] font-medium py-[10px] px-[20px] rounded-[12px] hover:bg-[#97c4ff] hover:text-white transition-colors text-center whitespace-nowrap"
+                      className="bg-white border border-[#0C0060] text-[#0C0060] text-[13px] md:text-[14px] font-medium py-[10px] px-[20px] rounded-[12px] hover:bg-[#0C0060] hover:text-white transition-colors text-center whitespace-nowrap"
                     >
                       View Profile
                     </Link>
                     <button
                       onClick={() => openBookingSidebar(doctor.name)}
-                      className="flex-1 sm:flex-1 bg-[#cbff8f] text-[#97c4ff] text-[13px] md:text-[14px] font-medium py-[10px] px-[16px] rounded-[12px] hover:bg-[#B1FF57] transition-colors text-center"
+                      className="flex-1 sm:flex-1 bg-[#cbff8f] text-[#0C0060] text-[13px] md:text-[14px] font-medium py-[10px] px-[16px] rounded-[12px] hover:bg-[#B1FF57] transition-colors text-center"
                     >
                       Book Appointment
                     </button>
@@ -346,7 +346,7 @@ export default function OurDoctorsPageNew() {
                   setSearchQuery('')
                   setSelectedSpecialty('All Specialties')
                 }}
-                className="mt-4 text-[#97c4ff] font-['Arial'] text-sm hover:underline"
+                className="mt-4 text-[#0C0060] font-['Arial'] text-sm hover:underline"
               >
                 Clear filters
               </button>

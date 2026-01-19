@@ -36,7 +36,7 @@ export default function DoctorDetailPage() {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-['Gilda_Display'] text-black mb-4">Doctor Not Found</h1>
-          <Link to="/our-doctors" className="text-[#97c4ff] hover:underline">
+          <Link to="/our-doctors" className="text-[#0C0060] hover:underline">
             Back to Our Doctors
           </Link>
         </div>
@@ -81,11 +81,11 @@ export default function DoctorDetailPage() {
                 whileHover={shouldReduceMotion ? {} : { scale: 1.05 }}
                 whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
                 onClick={() => openBookingSidebar(doctor.name)}
-                className="bg-[#cbff8f] text-[#97c4ff] font-bold px-8 py-4 rounded-full inline-flex items-center gap-3 hover:bg-[#b8ff6d] transition-colors font-['Arial']"
+                className="bg-[#cbff8f] text-[#0C0060] font-bold px-8 py-4 rounded-full inline-flex items-center gap-3 hover:bg-[#b8ff6d] transition-colors font-['Arial']"
               >
                 <Calendar className="w-5 h-5" />
                 <span>Book Appointment</span>
-                <div className="w-9 h-9 bg-[#97c4ff] rounded-full flex items-center justify-center">
+                <div className="w-9 h-9 bg-[#0C0060] rounded-full flex items-center justify-center">
                   <ArrowUpRight className="w-5 h-5 text-[#cbff8f]" />
                 </div>
               </motion.button>
@@ -93,7 +93,7 @@ export default function DoctorDetailPage() {
               <motion.button
                 whileHover={shouldReduceMotion ? {} : { scale: 1.05 }}
                 whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
-                className="bg-white text-[#97c4ff] font-bold px-8 py-4 rounded-full inline-flex items-center gap-3 hover:bg-gray-50 transition-colors font-['Arial']"
+                className="bg-white text-[#0C0060] font-bold px-8 py-4 rounded-full inline-flex items-center gap-3 hover:bg-gray-50 transition-colors font-['Arial']"
               >
                 <Phone className="w-5 h-5" />
                 <span>Contact Now</span>
@@ -111,7 +111,7 @@ export default function DoctorDetailPage() {
                 Our Doctors
               </Link>
               <ChevronRight className="w-4 h-4 text-gray-400" />
-              <span className="text-[#97c4ff] font-['Arial']">{doctor.name}</span>
+              <span className="text-[#0C0060] font-['Arial']">{doctor.name}</span>
             </div>
           </motion.div>
         </div>
@@ -145,7 +145,7 @@ export default function DoctorDetailPage() {
                       transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
                       className="text-center"
                     >
-                      <div className="text-xl md:text-xl font-['Gilda_Display'] text-[#97c4ff] mb-2">
+                      <div className="text-xl md:text-xl font-['Gilda_Display'] text-[#0C0060] mb-2">
                         {stat.value}
                       </div>
                       <div className="text-sm text-black/60 font-['Arial']">
@@ -227,7 +227,7 @@ export default function DoctorDetailPage() {
                         {edu.institution}
                       </p>
                       {edu.year && (
-                        <p className="text-sm text-[#97c4ff] font-['Arial']">
+                        <p className="text-sm text-[#0C0060] font-['Arial']">
                           {edu.year}
                         </p>
                       )}
@@ -338,7 +338,7 @@ export default function DoctorDetailPage() {
                   className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100"
                 >
                   <div className="w-12 h-12 bg-[#cbff8f] rounded-xl flex items-center justify-center mb-6">
-                    <CheckCircle className="w-6 h-6 text-[#97c4ff]" />
+                    <CheckCircle className="w-6 h-6 text-[#0C0060]" />
                   </div>
                   <h3 className="text-2xl font-['Gilda_Display'] text-black mb-6">
                     {category.category}
@@ -346,7 +346,7 @@ export default function DoctorDetailPage() {
                   <ul className="space-y-3">
                     {category.items.map((item, idx) => (
                       <li key={idx} className="flex items-start gap-2 text-sm text-black/70 font-['Arial']">
-                        <span className="text-[#97c4ff] mt-1">✓</span>
+                        <span className="text-[#0C0060] mt-1">✓</span>
                         <span>{item}</span>
                       </li>
                     ))}
@@ -386,7 +386,7 @@ export default function DoctorDetailPage() {
                       className="flex items-start gap-3"
                     >
                       <div className="w-6 h-6 bg-[#cbff8f] rounded-full flex items-center justify-center mt-0.5 shrink-0">
-                        <span className="text-[#97c4ff] text-xs">✓</span>
+                        <span className="text-[#0C0060] text-xs">✓</span>
                       </div>
                       <span className="text-base text-black/80 font-['Arial']">
                         {principle}
@@ -396,7 +396,7 @@ export default function DoctorDetailPage() {
                 </ul>
 
                 {/* Quote */}
-                <div className="bg-[#cbff8f] rounded-2xl p-6 border-l-4 border-[#97c4ff]">
+                <div className="bg-[#cbff8f] rounded-2xl p-6 border-l-4 border-[#0C0060]">
                   <p className="text-base text-black/80 font-['Arial'] italic leading-relaxed">
                     "{doctor.philosophy.quote}"
                   </p>
@@ -454,11 +454,11 @@ export default function DoctorDetailPage() {
                 </p>
                 <div className="space-y-3 text-sm text-black/70 font-['Arial']">
                   <div className="flex items-center gap-2">
-                    <Phone className="w-4 h-4 text-[#97c4ff]" />
+                    <Phone className="w-4 h-4 text-[#0C0060]" />
                     <span>Phone: +1 (555) 123-4567</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Calendar className="w-4 h-4 text-[#97c4ff]" />
+                    <Calendar className="w-4 h-4 text-[#0C0060]" />
                     <span>Mon - Fri: 9:00 AM - 6:00 PM</span>
                   </div>
                 </div>
@@ -470,7 +470,7 @@ export default function DoctorDetailPage() {
                   whileHover={shouldReduceMotion ? {} : { scale: 1.05 }}
                   whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
                   onClick={() => openBookingSidebar(doctor.name)}
-                  className="bg-[#97c4ff] text-white font-bold px-8 py-5 rounded-full inline-flex items-center justify-center gap-3 hover:bg-[#7db4ff] transition-colors font-['Arial'] text-lg w-full"
+                  className="bg-[#0C0060] text-white font-bold px-8 py-5 rounded-full inline-flex items-center justify-center gap-3 hover:bg-[#7db4ff] transition-colors font-['Arial'] text-lg w-full"
                 >
                   <Calendar className="w-5 h-5" />
                   <span>Book Appointment Now</span>
@@ -479,7 +479,7 @@ export default function DoctorDetailPage() {
                 <motion.button
                   whileHover={shouldReduceMotion ? {} : { scale: 1.05 }}
                   whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
-                  className="bg-white text-[#97c4ff] font-bold px-8 py-5 rounded-full inline-flex items-center justify-center gap-3 hover:bg-gray-50 transition-colors font-['Arial'] text-lg w-full"
+                  className="bg-white text-[#0C0060] font-bold px-8 py-5 rounded-full inline-flex items-center justify-center gap-3 hover:bg-gray-50 transition-colors font-['Arial'] text-lg w-full"
                 >
                   <Phone className="w-5 h-5" />
                   <span>Call Us Now</span>

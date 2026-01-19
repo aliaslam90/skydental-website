@@ -88,16 +88,16 @@ export default function ContactUsPage() {
             {/* Feature Pills */}
             <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
               <div className="bg-[#cbff8f] px-6 py-3 rounded-full flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#97c4ff]" />
-                <span className="text-sm font-['Arial'] font-bold text-[#97c4ff]">Quick Response</span>
+                <CheckCircle2 className="w-4 h-4 text-[#0C0060]" />
+                <span className="text-sm font-['Arial'] font-bold text-[#0C0060]">Quick Response</span>
               </div>
               <div className="bg-[#cbff8f] px-6 py-3 rounded-full flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#97c4ff]" />
-                <span className="text-sm font-['Arial'] font-bold text-[#97c4ff]">Professional Support</span>
+                <CheckCircle2 className="w-4 h-4 text-[#0C0060]" />
+                <span className="text-sm font-['Arial'] font-bold text-[#0C0060]">Professional Support</span>
               </div>
               <div className="bg-[#cbff8f] px-6 py-3 rounded-full flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#97c4ff]" />
-                <span className="text-sm font-['Arial'] font-bold text-[#97c4ff]">Easy Booking</span>
+                <CheckCircle2 className="w-4 h-4 text-[#0C0060]" />
+                <span className="text-sm font-['Arial'] font-bold text-[#0C0060]">Easy Booking</span>
               </div>
             </div>
           </motion.div>
@@ -131,7 +131,7 @@ export default function ContactUsPage() {
               className="bg-[#e0edff] rounded-3xl p-8 flex flex-col items-center text-center"
             >
               <div className="w-16 h-16 bg-[#cbff8f] rounded-2xl flex items-center justify-center mb-6">
-                <Phone className="w-8 h-8 text-[#97c4ff]" />
+                <Phone className="w-8 h-8 text-[#0C0060]" />
               </div>
               <h3 className="text-2xl font-['Gilda_Display'] text-black mb-4">Phone</h3>
               <p className="text-base font-['Arial'] font-bold text-[#0c0060] mb-1">+971 2 123 4567</p>
@@ -149,7 +149,7 @@ export default function ContactUsPage() {
               className="bg-[#e0edff] rounded-3xl p-8 flex flex-col items-center text-center"
             >
               <div className="w-16 h-16 bg-[#cbff8f] rounded-2xl flex items-center justify-center mb-6">
-                <Mail className="w-8 h-8 text-[#97c4ff]" />
+                <Mail className="w-8 h-8 text-[#0C0060]" />
               </div>
               <h3 className="text-2xl font-['Gilda_Display'] text-black mb-4">Email</h3>
               <p className="text-base font-['Arial'] font-bold text-[#0c0060] mb-1">info@skydental.ae</p>
@@ -167,7 +167,7 @@ export default function ContactUsPage() {
               className="bg-[#e0edff] rounded-3xl p-8 flex flex-col items-center text-center"
             >
               <div className="w-16 h-16 bg-[#cbff8f] rounded-2xl flex items-center justify-center mb-6">
-                <MapPin className="w-8 h-8 text-[#97c4ff]" />
+                <MapPin className="w-8 h-8 text-[#0C0060]" />
               </div>
               <h3 className="text-2xl font-['Gilda_Display'] text-black mb-4">Location</h3>
               <p className="text-base font-['Arial'] font-bold text-[#0c0060] mb-1">Sky Dental Center</p>
@@ -185,7 +185,7 @@ export default function ContactUsPage() {
               className="bg-[#e0edff] rounded-3xl p-8 flex flex-col items-center text-center"
             >
               <div className="w-16 h-16 bg-[#cbff8f] rounded-2xl flex items-center justify-center mb-6">
-                <Clock className="w-8 h-8 text-[#97c4ff]" />
+                <Clock className="w-8 h-8 text-[#0C0060]" />
               </div>
               <h3 className="text-2xl font-['Gilda_Display'] text-black mb-4">Working Hours</h3>
               <p className="text-base font-['Arial'] font-bold text-[#0c0060] mb-1">Sat - Wed: 9 AM - 9 PM</p>
@@ -224,7 +224,7 @@ export default function ContactUsPage() {
             {formSubmitted ? (
               <div className="bg-[#cbff8f] rounded-3xl p-12 text-center">
                 <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-6">
-                  <CheckCircle2 className="w-10 h-10 text-[#97c4ff]" />
+                  <CheckCircle2 className="w-10 h-10 text-[#0C0060]" />
                 </div>
                 <h3 className="text-3xl font-['Gilda_Display'] text-black mb-4">Message Sent Successfully!</h3>
                 <p className="text-base font-['Arial'] text-black">
@@ -246,7 +246,7 @@ export default function ContactUsPage() {
                       value={formData.fullName}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#97c4ff] font-['Arial'] text-black bg-[#f9fafb]"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#0C0060] font-['Arial'] text-black bg-[#f9fafb]"
                       placeholder="Enter your full name"
                     />
                   </div>
@@ -263,7 +263,7 @@ export default function ContactUsPage() {
                       value={formData.emailAddress}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#97c4ff] font-['Arial'] text-black bg-[#f9fafb]"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#0C0060] font-['Arial'] text-black bg-[#f9fafb]"
                       placeholder="Enter your email"
                     />
                   </div>
@@ -281,7 +281,7 @@ export default function ContactUsPage() {
                       name="phoneNumber"
                       value={formData.phoneNumber}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#97c4ff] font-['Arial'] text-black bg-[#f9fafb]"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#0C0060] font-['Arial'] text-black bg-[#f9fafb]"
                       placeholder="Enter your phone number"
                     />
                   </div>
@@ -298,7 +298,7 @@ export default function ContactUsPage() {
                       value={formData.subject}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#97c4ff] font-['Arial'] text-black bg-[#f9fafb]"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#0C0060] font-['Arial'] text-black bg-[#f9fafb]"
                       placeholder="What is this about?"
                     />
                   </div>
@@ -316,7 +316,7 @@ export default function ContactUsPage() {
                     onChange={handleInputChange}
                     required
                     rows={6}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#97c4ff] font-['Arial'] text-black bg-[#f9fafb] resize-none"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#0C0060] font-['Arial'] text-black bg-[#f9fafb] resize-none"
                     placeholder="Type your message here..."
                   />
                 </div>
@@ -324,10 +324,10 @@ export default function ContactUsPage() {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="w-full bg-[#cbff8f] hover:bg-[#b8e680] text-[#97c4ff] font-['Arial'] font-bold py-4 px-6 rounded-full flex items-center justify-center gap-3 transition-all duration-300 group"
+                  className="w-full bg-[#cbff8f] hover:bg-[#b8e680] text-[#0C0060] font-['Arial'] font-bold py-4 px-6 rounded-full flex items-center justify-center gap-3 transition-all duration-300 group"
                 >
                   <span className="text-base">Send Message</span>
-                  <div className="w-8 h-8 bg-[#97c4ff] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <div className="w-8 h-8 bg-[#0C0060] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
                     <Send className="w-4 h-4 text-[#cbff8f]" />
                   </div>
                 </button>
@@ -370,7 +370,7 @@ export default function ContactUsPage() {
               <div className="mb-8">
                 <div className="flex items-start gap-4 mb-4">
                   <div className="w-12 h-12 bg-[#cbff8f] rounded-2xl flex items-center justify-center shrink-0">
-                    <MapPin className="w-6 h-6 text-[#97c4ff]" />
+                    <MapPin className="w-6 h-6 text-[#0C0060]" />
                   </div>
                   <div>
                     <h3 className="text-2xl font-['Gilda_Display'] text-black mb-2">Our Address</h3>
@@ -385,7 +385,7 @@ export default function ContactUsPage() {
               <div>
                 <div className="flex items-start gap-4 mb-4">
                   <div className="w-12 h-12 bg-[#cbff8f] rounded-2xl flex items-center justify-center shrink-0">
-                    <Clock className="w-6 h-6 text-[#97c4ff]" />
+                    <Clock className="w-6 h-6 text-[#0C0060]" />
                   </div>
                   <div>
                     <h3 className="text-2xl font-['Gilda_Display'] text-black mb-3">Opening Hours</h3>
@@ -430,7 +430,7 @@ export default function ContactUsPage() {
             >
               <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
                 <div className="w-20 h-20 bg-[#cbff8f] rounded-full flex items-center justify-center mb-6">
-                  <MapPin className="w-10 h-10 text-[#97c4ff]" />
+                  <MapPin className="w-10 h-10 text-[#0C0060]" />
                 </div>
                 <h3 className="text-2xl font-['Gilda_Display'] text-black mb-4">Sky Dental Center</h3>
                 <p className="text-base font-['Arial'] text-black mb-6">Abu Dhabi, UAE</p>
@@ -438,7 +438,7 @@ export default function ContactUsPage() {
                   href="https://maps.google.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-[#cbff8f] hover:bg-[#b8e680] text-[#97c4ff] font-['Arial'] font-bold py-3 px-8 rounded-full transition-all duration-300"
+                  className="bg-[#cbff8f] hover:bg-[#b8e680] text-[#0C0060] font-['Arial'] font-bold py-3 px-8 rounded-full transition-all duration-300"
                 >
                   Get Directions
                 </a>

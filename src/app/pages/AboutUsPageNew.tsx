@@ -150,7 +150,7 @@ export default function AboutUsPageNew() {
           >
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-[rgba(203,255,143,0.3)] px-5 py-2 rounded-full mb-6">
-              <Heart className="w-4 h-4 text-[#97c4ff]" />
+              <Heart className="w-4 h-4 text-[#0C0060]" />
               <span className="text-sm text-black font-['Arial']">About Us</span>
             </div>
 
@@ -211,7 +211,7 @@ export default function AboutUsPageNew() {
                 className="bg-white border border-gray-100 rounded-3xl p-8 shadow-sm h-full flex flex-col"
               >
                 <div className="w-12 h-12 bg-[#cbff8f] rounded-xl flex items-center justify-center mb-6">
-                  <Target className="w-6 h-6 text-[#97c4ff]" />
+                  <Target className="w-6 h-6 text-[#0C0060]" />
                 </div>
                 <h3 className="text-2xl font-['Gilda_Display'] text-black mb-4">Mission</h3>
                 <p className="text-base text-black/70 font-['Arial'] leading-relaxed flex-grow">
@@ -227,7 +227,7 @@ export default function AboutUsPageNew() {
                 className="bg-white border border-gray-100 rounded-3xl p-8 shadow-sm h-full flex flex-col"
               >
                 <div className="w-12 h-12 bg-[#cbff8f] rounded-xl flex items-center justify-center mb-6">
-                  <Award className="w-6 h-6 text-[#97c4ff]" />
+                  <Award className="w-6 h-6 text-[#0C0060]" />
                 </div>
                 <h3 className="text-2xl font-['Gilda_Display'] text-black mb-4">Vision</h3>
                 <p className="text-base text-black/70 font-['Arial'] leading-relaxed flex-grow">
@@ -300,7 +300,7 @@ export default function AboutUsPageNew() {
                   className="bg-white rounded-3xl p-8 text-center shadow-sm"
                 >
                   <div className="w-16 h-16 bg-[#cbff8f] rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Icon className="w-8 h-8 text-[#97c4ff]" stroke="#97c4ff" />
+                    <Icon className="w-8 h-8 text-[#0C0060]" stroke="#0C0060" />
                   </div>
                   <h3 className="text-xl font-['Gilda_Display'] text-black mb-4">
                     {value.title}
@@ -339,7 +339,7 @@ export default function AboutUsPageNew() {
               transition={{ duration: 0.6, delay: 0 * 0.1 }}
               className="bg-white border border-gray-100 rounded-3xl p-6 shadow-sm"
             >
-              <CheckCircle className="w-6 h-6 text-[#97c4ff] mb-4" />
+              <CheckCircle className="w-6 h-6 text-[#0C0060] mb-4" />
               <p className="text-base text-black/70 font-['Arial'] leading-relaxed">
                 Luxurious, patient-centred care with a focus on comfort and wellbeing.
               </p>
@@ -351,7 +351,7 @@ export default function AboutUsPageNew() {
               transition={{ duration: 0.6, delay: 1 * 0.1 }}
               className="bg-white border border-gray-100 rounded-3xl p-6 shadow-sm"
             >
-              <CheckCircle className="w-6 h-6 text-[#97c4ff] mb-4" />
+              <CheckCircle className="w-6 h-6 text-[#0C0060] mb-4" />
               <p className="text-base text-black/70 font-['Arial'] leading-relaxed">
                 Advanced digital systems ensuring precise diagnosis and efficient treatment.
               </p>
@@ -363,7 +363,7 @@ export default function AboutUsPageNew() {
               transition={{ duration: 0.6, delay: 2 * 0.1 }}
               className="bg-white border border-gray-100 rounded-3xl p-6 shadow-sm"
             >
-              <CheckCircle className="w-6 h-6 text-[#97c4ff] mb-4" />
+              <CheckCircle className="w-6 h-6 text-[#0C0060] mb-4" />
               <p className="text-base text-black/70 font-['Arial'] leading-relaxed">
                 A multidisciplinary team of experienced dental specialists.
               </p>
@@ -375,7 +375,7 @@ export default function AboutUsPageNew() {
               transition={{ duration: 0.6, delay: 3 * 0.1 }}
               className="bg-white border border-gray-100 rounded-3xl p-6 shadow-sm"
             >
-              <CheckCircle className="w-6 h-6 text-[#97c4ff] mb-4" />
+              <CheckCircle className="w-6 h-6 text-[#0C0060] mb-4" />
               <p className="text-base text-black/70 font-['Arial'] leading-relaxed">
                 World-class sterilisation and safety protocols.
               </p>
@@ -387,7 +387,7 @@ export default function AboutUsPageNew() {
               transition={{ duration: 0.6, delay: 4 * 0.1 }}
               className="bg-white border border-gray-100 rounded-3xl p-6 shadow-sm md:col-span-2 lg:col-span-1"
             >
-              <CheckCircle className="w-6 h-6 text-[#97c4ff] mb-4" />
+              <CheckCircle className="w-6 h-6 text-[#0C0060] mb-4" />
               <p className="text-base text-black/70 font-['Arial'] leading-relaxed">
                 Thirteen modern dental clinics providing seamless appointment scheduling and optimised patient flow.
               </p>
@@ -442,7 +442,7 @@ export default function AboutUsPageNew() {
                       className="flex items-start gap-4 bg-white rounded-2xl p-6 border border-gray-100 shadow-sm"
                     >
                       <div className="w-12 h-12 bg-[#cbff8f] rounded-xl flex items-center justify-center shrink-0">
-                        <Icon className="w-6 h-6 text-[#97c4ff]" />
+                        <Icon className="w-6 h-6 text-[#0C0060]" />
                       </div>
                       <div>
                         <h4 className="text-lg font-['Gilda_Display'] text-black mb-2">
@@ -527,7 +527,7 @@ export default function AboutUsPageNew() {
                 transition={{ duration: 0.6, delay: 0 * 0.1 }}
                 className="bg-white border border-gray-100 rounded-3xl p-6 shadow-sm text-center"
               >
-                <CheckCircle className="w-6 h-6 text-[#97c4ff] mx-auto mb-4" />
+                <CheckCircle className="w-6 h-6 text-[#0C0060] mx-auto mb-4" />
                 <p className="text-base text-black/70 font-['Arial'] leading-relaxed">
                   Expanding our clinical facilities.
                 </p>
@@ -539,7 +539,7 @@ export default function AboutUsPageNew() {
                 transition={{ duration: 0.6, delay: 1 * 0.1 }}
                 className="bg-white border border-gray-100 rounded-3xl p-6 shadow-sm text-center"
               >
-                <CheckCircle className="w-6 h-6 text-[#97c4ff] mx-auto mb-4" />
+                <CheckCircle className="w-6 h-6 text-[#0C0060] mx-auto mb-4" />
                 <p className="text-base text-black/70 font-['Arial'] leading-relaxed">
                   Attracting top-tier dental specialists.
                 </p>
@@ -551,7 +551,7 @@ export default function AboutUsPageNew() {
                 transition={{ duration: 0.6, delay: 2 * 0.1 }}
                 className="bg-white border border-gray-100 rounded-3xl p-6 shadow-sm text-center"
               >
-                <CheckCircle className="w-6 h-6 text-[#97c4ff] mx-auto mb-4" />
+                <CheckCircle className="w-6 h-6 text-[#0C0060] mx-auto mb-4" />
                 <p className="text-base text-black/70 font-['Arial'] leading-relaxed">
                   Adopting the latest digital technologies.
                 </p>
@@ -563,7 +563,7 @@ export default function AboutUsPageNew() {
                 transition={{ duration: 0.6, delay: 3 * 0.1 }}
                 className="bg-white border border-gray-100 rounded-3xl p-6 shadow-sm text-center"
               >
-                <CheckCircle className="w-6 h-6 text-[#97c4ff] mx-auto mb-4" />
+                <CheckCircle className="w-6 h-6 text-[#0C0060] mx-auto mb-4" />
                 <p className="text-base text-black/70 font-['Arial'] leading-relaxed">
                   Enhancing and diversifying our specialised services
                 </p>
@@ -591,7 +591,7 @@ export default function AboutUsPageNew() {
             </h2>
             <button
               onClick={() => openBookingSidebar()}
-              className="bg-[#97c4ff] text-white px-8 py-4 rounded-full font-['Arial'] font-semibold text-lg hover:bg-[#7ab3ff] transition-colors shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform duration-200"
+              className="bg-[#0C0060] text-white px-8 py-4 rounded-full font-['Arial'] font-semibold text-lg hover:bg-[#7ab3ff] transition-colors shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform duration-200"
             >
               Book Appointment
             </button>
@@ -627,7 +627,7 @@ export default function AboutUsPageNew() {
               transition={{ duration: 0.6, delay: 0 * 0.1 }}
               className="bg-white border border-gray-100 rounded-3xl p-6 shadow-sm"
             >
-              <CheckCircle className="w-6 h-6 text-[#97c4ff] mb-4" />
+              <CheckCircle className="w-6 h-6 text-[#0C0060] mb-4" />
               <p className="text-base text-black/70 font-['Arial'] leading-relaxed">
                 Smooth and organised appointment management
               </p>
@@ -639,7 +639,7 @@ export default function AboutUsPageNew() {
               transition={{ duration: 0.6, delay: 1 * 0.1 }}
               className="bg-white border border-gray-100 rounded-3xl p-6 shadow-sm"
             >
-              <CheckCircle className="w-6 h-6 text-[#97c4ff] mb-4" />
+              <CheckCircle className="w-6 h-6 text-[#0C0060] mb-4" />
               <p className="text-base text-black/70 font-['Arial'] leading-relaxed">
                 Clear explanation of every treatment plan
               </p>
@@ -651,7 +651,7 @@ export default function AboutUsPageNew() {
               transition={{ duration: 0.6, delay: 2 * 0.1 }}
               className="bg-white border border-gray-100 rounded-3xl p-6 shadow-sm"
             >
-              <CheckCircle className="w-6 h-6 text-[#97c4ff] mb-4" />
+              <CheckCircle className="w-6 h-6 text-[#0C0060] mb-4" />
               <p className="text-base text-black/70 font-['Arial'] leading-relaxed">
                 Comprehensive pre- and post-treatment follow-up
               </p>
@@ -663,7 +663,7 @@ export default function AboutUsPageNew() {
               transition={{ duration: 0.6, delay: 3 * 0.1 }}
               className="bg-white border border-gray-100 rounded-3xl p-6 shadow-sm"
             >
-              <CheckCircle className="w-6 h-6 text-[#97c4ff] mb-4" />
+              <CheckCircle className="w-6 h-6 text-[#0C0060] mb-4" />
               <p className="text-base text-black/70 font-['Arial'] leading-relaxed">
                 A relaxing environment that fosters trust and comfort
               </p>

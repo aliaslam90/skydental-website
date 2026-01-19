@@ -334,16 +334,16 @@ export default function FAQsPage() {
 
             {/* Tabs - Static Design Elements */}
             <div className="flex items-center justify-center gap-4 mb-10">
-              <div className="px-6 py-2.5 rounded-full text-[14px] font-['Arial'] font-medium flex items-center gap-2 bg-[#cbff8f] text-[#97c4ff] shadow-sm">
-                <div className="w-2 h-2 rounded-full bg-[#97c4ff]" />
+              <div className="px-6 py-2.5 rounded-full text-[14px] font-['Arial'] font-medium flex items-center gap-2 bg-[#cbff8f] text-[#0C0060] shadow-sm">
+                <div className="w-2 h-2 rounded-full bg-[#0C0060]" />
                 <span>Expert Answers</span>
               </div>
-              <div className="px-6 py-2.5 rounded-full text-[14px] font-['Arial'] font-medium flex items-center gap-2 bg-[#cbff8f] text-[#97c4ff] shadow-sm">
-                <div className="w-2 h-2 rounded-full bg-[#97c4ff]" />
+              <div className="px-6 py-2.5 rounded-full text-[14px] font-['Arial'] font-medium flex items-center gap-2 bg-[#cbff8f] text-[#0C0060] shadow-sm">
+                <div className="w-2 h-2 rounded-full bg-[#0C0060]" />
                 <span>Comprehensive Guide</span>
               </div>
-              <div className="px-6 py-2.5 rounded-full text-[14px] font-['Arial'] font-medium flex items-center gap-2 bg-[#cbff8f] text-[#97c4ff] shadow-sm">
-                <div className="w-2 h-2 rounded-full bg-[#97c4ff]" />
+              <div className="px-6 py-2.5 rounded-full text-[14px] font-['Arial'] font-medium flex items-center gap-2 bg-[#cbff8f] text-[#0C0060] shadow-sm">
+                <div className="w-2 h-2 rounded-full bg-[#0C0060]" />
                 <span>Always Here to Help</span>
               </div>
             </div>
@@ -357,7 +357,7 @@ export default function FAQsPage() {
               <ChevronRight className="w-4 h-4 text-gray-400" />
               <span className="text-gray-500 font-['Arial']">More</span>
               <ChevronRight className="w-4 h-4 text-gray-400" />
-              <span className="text-[#97c4ff] font-['Arial']">FAQ</span>
+              <span className="text-[#0C0060] font-['Arial']">FAQ</span>
             </div>
           </motion.div>
         </div>
@@ -432,7 +432,7 @@ export default function FAQsPage() {
                           <span className="text-base md:text-lg font-['Arial'] font-semibold text-black pr-4">
                             {faq.question}
                           </span>
-                          <div className="shrink-0 w-8 h-8 rounded-full bg-[#97c4ff] flex items-center justify-center text-white">
+                          <div className="shrink-0 w-8 h-8 rounded-full bg-[#0C0060] flex items-center justify-center text-white">
                             {isExpanded ? (
                               <Minus className="w-4 h-4" />
                             ) : (

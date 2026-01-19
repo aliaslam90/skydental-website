@@ -61,8 +61,8 @@ export default function DoctorsSection() {
           </h2>
           
           <Link to="/our-doctors" className="bg-[#cbff8f] flex items-center gap-4 md:gap-6 pl-4 md:pl-6 pr-[8px] md:pr-[10px] py-2 rounded-[35px] hover:bg-[#B1FF57] transition-colors">
-            <span className="text-[#97c4ff] font-bold text-[14px] md:text-[16px] whitespace-nowrap">View All Team</span>
-            <div className="bg-[#97c4ff] w-[32px] h-[32px] md:w-[34px] md:h-[34px] rounded-full flex items-center justify-center flex-shrink-0">
+            <span className="text-[#0C0060] font-bold text-[14px] md:text-[16px] whitespace-nowrap">View All Team</span>
+            <div className="bg-[#0C0060] w-[32px] h-[32px] md:w-[34px] md:h-[34px] rounded-full flex items-center justify-center flex-shrink-0">
               <svg className="w-5 h-5" fill="none" viewBox="0 0 20 20">
                 <path 
                   d="M5 15L15 5" 
@@ -132,7 +132,7 @@ function DoctorCard({ doctor, variants }: { doctor: { id: string; name: string; 
         </h3>
         <Link 
           to={`/our-doctors/${doctor.id}`}
-          className="text-[#97c4ff] text-[14px] md:text-[15px] hover:underline"
+          className="text-[#0C0060] text-[14px] md:text-[15px] hover:underline"
         >
           View Details
         </Link>

@@ -113,7 +113,7 @@ export default function CareersPage() {
                 initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
                 animate={heroInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="px-6 py-2.5 bg-[#cbff8f] rounded-full text-[14px] font-['Arial'] font-medium text-[#97c4ff]"
+                className="px-6 py-2.5 bg-[#cbff8f] rounded-full text-[14px] font-['Arial'] font-medium text-[#0C0060]"
               >
                 Dynamic Environment
               </motion.div>
@@ -121,7 +121,7 @@ export default function CareersPage() {
                 initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
                 animate={heroInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="px-6 py-2.5 bg-[#cbff8f] rounded-full text-[14px] font-['Arial'] font-medium text-[#97c4ff]"
+                className="px-6 py-2.5 bg-[#cbff8f] rounded-full text-[14px] font-['Arial'] font-medium text-[#0C0060]"
               >
                 Professional Growth
               </motion.div>
@@ -129,7 +129,7 @@ export default function CareersPage() {
                 initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
                 animate={heroInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="px-6 py-2.5 bg-[#cbff8f] rounded-full text-[14px] font-['Arial'] font-medium text-[#97c4ff]"
+                className="px-6 py-2.5 bg-[#cbff8f] rounded-full text-[14px] font-['Arial'] font-medium text-[#0C0060]"
               >
                 Rewarding Career
               </motion.div>
@@ -261,7 +261,7 @@ export default function CareersPage() {
             {/* Email Icon */}
             <div className="mb-8 flex justify-center">
               <div className="w-20 h-20 bg-white/50 rounded-full flex items-center justify-center">
-                <Mail className="w-10 h-10 text-[#97c4ff]" />
+                <Mail className="w-10 h-10 text-[#0C0060]" />
               </div>
             </div>
 
@@ -278,7 +278,7 @@ export default function CareersPage() {
             {/* Email */}
             <a
               href="mailto:careers@skydental.ae"
-              className="text-2xl font-['Arial'] font-semibold text-black hover:text-[#97c4ff] transition-colors inline-block mb-12"
+              className="text-2xl font-['Arial'] font-semibold text-black hover:text-[#0C0060] transition-colors inline-block mb-12"
             >
               careers@skydental.ae
             </a>

@@ -53,19 +53,19 @@ const firstVisitSteps: FirstVisitStep[] = [
 const secondOpinionCards: SecondOpinionCard[] = [
   {
     id: 'assessment',
-    icon: <ClipboardList className="w-6 h-6 text-[#97c4ff]" stroke="#97c4ff" />,
+    icon: <ClipboardList className="w-6 h-6 text-[#0C0060]" stroke="#0C0060" />,
     title: 'Thorough Assessment',
     description: 'Our specialists conduct a detailed review of your records and current condition.',
   },
   {
     id: 'explanation',
-    icon: <FileText className="w-6 h-6 text-[#97c4ff]" stroke="#97c4ff" />,
+    icon: <FileText className="w-6 h-6 text-[#0C0060]" stroke="#0C0060" />,
     title: 'Honest Explanation',
     description: 'We provide a transparent, detailed explanation of all available treatment options.',
   },
   {
     id: 'peace',
-    icon: <Shield className="w-6 h-6 text-[#97c4ff]" stroke="#97c4ff" />,
+    icon: <Shield className="w-6 h-6 text-[#0C0060]" stroke="#0C0060" />,
     title: 'Peace of Mind',
     description: 'Empowering you to make informed decisions with complete confidence and trust.',
   },
@@ -140,7 +140,7 @@ export default function PatientGuidePage() {
                 <span className="font-['Arial']">Home</span>
               </Link>
               <ChevronRight className="w-4 h-4 text-gray-400" />
-              <span className="text-[#97c4ff] font-['Arial']">Patient Guide</span>
+              <span className="text-[#0C0060] font-['Arial']">Patient Guide</span>
             </div>
           </motion.div>
         </div>
@@ -175,7 +175,7 @@ export default function PatientGuidePage() {
                       className="flex items-start gap-4"
                     >
                       <div className={`${step.color} w-12 h-12 rounded-2xl flex items-center justify-center shrink-0`}>
-                        <Check className="w-6 h-6 text-[#97c4ff]" stroke="#97c4ff" />
+                        <Check className="w-6 h-6 text-[#0C0060]" stroke="#0C0060" />
                       </div>
                       <div>
                         <h3 className="text-lg font-['Arial'] font-bold text-black mb-2">
@@ -206,7 +206,7 @@ export default function PatientGuidePage() {
                 <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm rounded-2xl p-5 shadow-xl">
                   <div className="flex items-start gap-3">
                     <div className="bg-[#cbff8f] w-10 h-10 rounded-xl flex items-center justify-center shrink-0">
-                      <Check className="w-5 h-5 text-[#97c4ff]" stroke="#97c4ff" />
+                      <Check className="w-5 h-5 text-[#0C0060]" stroke="#0C0060" />
                     </div>
                     <div>
                       <h4 className="text-sm font-['Arial'] font-bold text-black mb-1">
@@ -262,7 +262,7 @@ export default function PatientGuidePage() {
                   className="bg-[#fefefe] rounded-[32px] p-8 hover:shadow-xl transition-shadow duration-300"
                 >
                   {/* Icon */}
-                  <div className="w-14 h-14 bg-[#cbff8f] rounded-2xl flex items-center justify-center text-[#97c4ff] mb-6 mx-auto">
+                  <div className="w-14 h-14 bg-[#cbff8f] rounded-2xl flex items-center justify-center text-[#0C0060] mb-6 mx-auto">
                     {card.icon}
                   </div>
 
@@ -291,10 +291,10 @@ export default function PatientGuidePage() {
               whileHover={shouldReduceMotion ? {} : { scale: 1.05 }}
               whileTap={shouldReduceMotion ? {} : { scale: 0.95 }}
               onClick={() => openBookingSidebar()}
-              className="bg-[#cbff8f] text-[#97c4ff] font-bold px-8 py-4 rounded-full inline-flex items-center gap-3 hover:bg-[#b8ff6d] transition-colors font-['Arial'] text-[15px]"
+              className="bg-[#cbff8f] text-[#0C0060] font-bold px-8 py-4 rounded-full inline-flex items-center gap-3 hover:bg-[#b8ff6d] transition-colors font-['Arial'] text-[15px]"
             >
               <span>Get a Second Opinion</span>
-              <div className="w-8 h-8 bg-[#97c4ff] rounded-full flex items-center justify-center">
+              <div className="w-8 h-8 bg-[#0C0060] rounded-full flex items-center justify-center">
                 <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
@@ -330,7 +330,7 @@ export default function PatientGuidePage() {
                   {/* Badge at top */}
                   <div className="inline-flex items-center gap-3 bg-white rounded-full px-5 py-3 shadow-md border-2 border-[#cbff8f] mb-6 relative z-10">
                     <div className="w-10 h-10 bg-[#cbff8f] rounded-full flex items-center justify-center">
-                      <Plane className="w-5 h-5 text-[#97c4ff]" stroke="#97c4ff" />
+                      <Plane className="w-5 h-5 text-[#0C0060]" stroke="#0C0060" />
                     </div>
                     <div className="text-left">
                       <p className="text-[10px] text-[#6b7280] font-['Arial'] uppercase tracking-wider">INTERNATIONAL</p>
@@ -371,14 +371,14 @@ export default function PatientGuidePage() {
                 <div className="grid grid-cols-2 gap-4 mb-8">
                   <div className="bg-gradient-to-br from-[#e0edff] to-[#f0f4ff] rounded-2xl px-5 py-4 flex items-center gap-3">
                     <div className="w-10 h-10 bg-[#cbff8f] rounded-xl flex items-center justify-center shrink-0">
-                      <Plane className="w-5 h-5 text-[#97c4ff]" stroke="#97c4ff" />
+                      <Plane className="w-5 h-5 text-[#0C0060]" stroke="#0C0060" />
                     </div>
                     <p className="text-sm text-black font-['Arial'] font-semibold">Pre-Travel Coordination</p>
                   </div>
 
                   <div className="bg-gradient-to-br from-[#e0edff] to-[#f0f4ff] rounded-2xl px-5 py-4 flex items-center gap-3">
                     <div className="w-10 h-10 bg-[#cbff8f] rounded-xl flex items-center justify-center shrink-0">
-                      <svg className="w-5 h-5 text-[#97c4ff]" fill="none" stroke="#97c4ff" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5 text-[#0C0060]" fill="none" stroke="#0C0060" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                       </svg>
                     </div>
@@ -387,14 +387,14 @@ export default function PatientGuidePage() {
 
                   <div className="bg-gradient-to-br from-[#e0edff] to-[#f0f4ff] rounded-2xl px-5 py-4 flex items-center gap-3">
                     <div className="w-10 h-10 bg-[#cbff8f] rounded-xl flex items-center justify-center shrink-0">
-                      <MapPin className="w-5 h-5 text-[#97c4ff]" stroke="#97c4ff" />
+                      <MapPin className="w-5 h-5 text-[#0C0060]" stroke="#0C0060" />
                     </div>
                     <p className="text-sm text-black font-['Arial'] font-semibold">Airport Guidance</p>
                   </div>
 
                   <div className="bg-gradient-to-br from-[#e0edff] to-[#f0f4ff] rounded-2xl px-5 py-4 flex items-center gap-3">
                     <div className="w-10 h-10 bg-[#cbff8f] rounded-xl flex items-center justify-center shrink-0">
-                      <svg className="w-5 h-5 text-[#97c4ff]" fill="none" stroke="#97c4ff" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5 text-[#0C0060]" fill="none" stroke="#0C0060" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                       </svg>
                     </div>
@@ -407,10 +407,10 @@ export default function PatientGuidePage() {
                   whileHover={shouldReduceMotion ? {} : { scale: 1.05 }}
                   whileTap={shouldReduceMotion ? {} : { scale: 0.95 }}
                   onClick={() => openBookingSidebar()}
-                  className="bg-[#cbff8f] text-[#97c4ff] font-bold px-8 py-4 rounded-full inline-flex items-center gap-3 hover:bg-[#b8ff6d] transition-colors font-['Arial'] text-[15px]"
+                  className="bg-[#cbff8f] text-[#0C0060] font-bold px-8 py-4 rounded-full inline-flex items-center gap-3 hover:bg-[#b8ff6d] transition-colors font-['Arial'] text-[15px]"
                 >
                   <span>Plan Your Visit</span>
-                  <div className="w-8 h-8 bg-[#97c4ff] rounded-full flex items-center justify-center">
+                  <div className="w-8 h-8 bg-[#0C0060] rounded-full flex items-center justify-center">
                     <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>

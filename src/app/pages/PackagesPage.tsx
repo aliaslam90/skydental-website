@@ -25,7 +25,7 @@ interface Privilege {
 const packages: Package[] = [
   {
     id: 'back-to-school',
-    icon: <GraduationCap className="w-6 h-6 text-[#97c4ff]" />,
+    icon: <GraduationCap className="w-6 h-6 text-[#0C0060]" />,
     title: 'Back To School',
     description: 'Give your child the perfect start to the academic year with our premium Back to School package designed to safeguard oral health, boost confidence, and support long-term wellbeing.',
     features: [
@@ -36,7 +36,7 @@ const packages: Package[] = [
   },
   {
     id: 'healthy-smiles',
-    icon: <HeartPulse className="w-6 h-6 text-[#97c4ff]" />,
+    icon: <HeartPulse className="w-6 h-6 text-[#0C0060]" />,
     title: 'Sky Healthy Smiles',
     description: 'Our signature package delivers a full-spectrum wellness experience for individuals and families committed to superior oral health.',
     features: [
@@ -47,7 +47,7 @@ const packages: Package[] = [
   },
   {
     id: 'hollywood-smile',
-    icon: <Sparkles className="w-6 h-6 text-[#97c4ff]" />,
+    icon: <Sparkles className="w-6 h-6 text-[#0C0060]" />,
     title: 'Hollywood Smile',
     description: 'Transform your smile into a work of art with our luxury Hollywood Smile package crafted using cutting-edge cosmetic dentistry and premium veneer artistry.',
     features: [
@@ -58,7 +58,7 @@ const packages: Package[] = [
   },
   {
     id: 'whitening-cleaning',
-    icon: <Smile className="w-6 h-6 text-[#97c4ff]" />,
+    icon: <Smile className="w-6 h-6 text-[#0C0060]" />,
     title: 'Whitening & Cleaning',
     description: 'Unveil the brilliance of your smile with our professional Whitening & Cleaning package. Meticulously designed treatment for immediate, luminous results.',
     features: [
@@ -69,7 +69,7 @@ const packages: Package[] = [
   },
   {
     id: 'consultation',
-    icon: <MessageCircle className="w-6 h-6 text-[#97c4ff]" />,
+    icon: <MessageCircle className="w-6 h-6 text-[#0C0060]" />,
     title: 'Free Braces Consultation',
     description: 'Begin your orthodontic transformation with absolute clarity and confidence. Your dream smile starts with a conversation free of charge.',
     features: [
@@ -80,7 +80,7 @@ const packages: Package[] = [
   },
   {
     id: 'discount',
-    icon: <Percent className="w-6 h-6 text-[#97c4ff]" />,
+    icon: <Percent className="w-6 h-6 text-[#0C0060]" />,
     title: 'Member Discount 40%',
     description: 'Sky Dental Center celebrates loyalty with an exclusive 40% discount for members on selected treatments. World-class dentistry, enhanced with exceptional value.',
     features: [
@@ -164,16 +164,16 @@ export default function PackagesPage() {
             {/* Badges */}
             <div className="flex flex-wrap items-center justify-center gap-4 mb-10">
               <div className="bg-[#cbff8f] border border-[rgba(12,0,96,0.05)] px-4 py-2 rounded-full shadow-sm inline-flex items-center gap-2">
-                <Check className="w-4 h-4 text-[#97c4ff]" />
-                <span className="text-sm text-[#97c4ff] font-['Poppins'] font-medium">Premium Care</span>
+                <Check className="w-4 h-4 text-[#0C0060]" />
+                <span className="text-sm text-[#0C0060] font-['Poppins'] font-medium">Premium Care</span>
               </div>
               <div className="bg-[#cbff8f] border border-[rgba(12,0,96,0.05)] px-4 py-2 rounded-full shadow-sm inline-flex items-center gap-2">
-                <Check className="w-4 h-4 text-[#97c4ff]" />
-                <span className="text-sm text-[#97c4ff] font-['Poppins'] font-medium">Exclusive Benefits</span>
+                <Check className="w-4 h-4 text-[#0C0060]" />
+                <span className="text-sm text-[#0C0060] font-['Poppins'] font-medium">Exclusive Benefits</span>
               </div>
               <div className="bg-[#cbff8f] border border-[rgba(12,0,96,0.05)] px-4 py-2 rounded-full shadow-sm inline-flex items-center gap-2">
-                <Check className="w-4 h-4 text-[#97c4ff]" />
-                <span className="text-sm text-[#97c4ff] font-['Poppins'] font-medium">World-Class Dentistry</span>
+                <Check className="w-4 h-4 text-[#0C0060]" />
+                <span className="text-sm text-[#0C0060] font-['Poppins'] font-medium">World-Class Dentistry</span>
               </div>
             </div>
 
@@ -211,7 +211,7 @@ export default function PackagesPage() {
                   initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-white border-[#f3f4f6] border rounded-[32px] p-8 hover:shadow-xl hover:bg-[#97c4ff] transition-all duration-300 flex flex-col h-full"
+                  className="bg-white border-[#f3f4f6] border rounded-[32px] p-8 hover:shadow-xl hover:bg-[#0C0060] transition-all duration-300 flex flex-col h-full"
                 >
                   {/* Icon */}
                   <div className="w-14 h-14 bg-[#cbff8f] rounded-[18px] flex items-center justify-center text-2xl mb-5">
@@ -242,10 +242,10 @@ export default function PackagesPage() {
                   <motion.button
                     whileHover={shouldReduceMotion ? {} : { scale: 1.02 }}
                     whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
-                    className="bg-[#cbff8f] text-[#97c4ff] font-bold px-6 py-3.5 rounded-full w-full inline-flex items-center justify-between hover:bg-[#b8ff6d] transition-colors font-['Arial'] text-[15px]"
+                    className="bg-[#cbff8f] text-[#0C0060] font-bold px-6 py-3.5 rounded-full w-full inline-flex items-center justify-between hover:bg-[#b8ff6d] transition-colors font-['Arial'] text-[15px]"
                   >
                     <span>Book Now</span>
-                    <div className="w-8 h-8 bg-[#97c4ff] rounded-full flex items-center justify-center">
+                    <div className="w-8 h-8 bg-[#0C0060] rounded-full flex items-center justify-center">
                       <ArrowUpRight className="w-[18px] h-[18px] text-[#cbff8f]" />
                     </div>
                   </motion.button>
@@ -313,10 +313,10 @@ export default function PackagesPage() {
                   <motion.button
                     whileHover={shouldReduceMotion ? {} : { scale: 1.02 }}
                     whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
-                    className="bg-[#cbff8f] text-[#97c4ff] font-bold px-6 py-3 rounded-full w-full inline-flex items-center justify-between hover:bg-[#b8ff6d] transition-colors font-['Arial']"
+                    className="bg-[#cbff8f] text-[#0C0060] font-bold px-6 py-3 rounded-full w-full inline-flex items-center justify-between hover:bg-[#b8ff6d] transition-colors font-['Arial']"
                   >
                     <span>Learn More</span>
-                    <div className="w-9 h-9 bg-[#97c4ff] rounded-full flex items-center justify-center">
+                    <div className="w-9 h-9 bg-[#0C0060] rounded-full flex items-center justify-center">
                       <ArrowUpRight className="w-5 h-5 text-[#cbff8f]" />
                     </div>
                   </motion.button>

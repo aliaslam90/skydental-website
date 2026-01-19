@@ -59,7 +59,7 @@ export default function PrivacyPolicyPage() {
               <ChevronRight className="w-4 h-4 text-gray-400" />
               <span className="text-gray-500 font-['Arial']">More</span>
               <ChevronRight className="w-4 h-4 text-gray-400" />
-              <span className="text-[#97c4ff] font-['Arial']">Privacy Policy</span>
+              <span className="text-[#0C0060] font-['Arial']">Privacy Policy</span>
             </div>
           </motion.div>
         </div>
@@ -76,7 +76,7 @@ export default function PrivacyPolicyPage() {
               transition={{ duration: 0.6 }}
               className="bg-[#cbff8f] p-8 rounded-3xl mb-12"
             >
-              <p className="text-[15px] text-[#97c4ff] font-['Arial'] leading-relaxed text-center">
+              <p className="text-[15px] text-[#0C0060] font-['Arial'] leading-relaxed text-center">
                 <strong>Important:</strong> By accessing or using the services of Sky Dental Center (referred to as "the Clinic," "we," or "us"), you acknowledge that you have read, understood, and agree to be bound by this Privacy Policy, Terms of Use, Medical Disclaimer, and compliance statements. If you do not agree with any part of these policies, please do not use our services or share your personal information.
               </p>
             </motion.div>
@@ -89,7 +89,7 @@ export default function PrivacyPolicyPage() {
               className="mb-12"
             >
               <div className="flex items-center gap-3 mb-8">
-                <div className="w-12 h-12 bg-[#cbff8f] rounded-2xl flex items-center justify-center text-2xl font-['Gilda_Display'] text-[#97c4ff]">
+                <div className="w-12 h-12 bg-[#cbff8f] rounded-2xl flex items-center justify-center text-2xl font-['Gilda_Display'] text-[#0C0060]">
                   1
                 </div>
                 <h2 className="text-3xl md:text-4xl font-['Gilda_Display'] text-black">
@@ -123,7 +123,7 @@ export default function PrivacyPolicyPage() {
                     ].map((item, index) => (
                       <li key={index} className="flex items-start gap-3">
                         <div className="shrink-0 w-5 h-5 bg-[#cbff8f] rounded-full flex items-center justify-center mt-0.5">
-                          <Check className="w-3 h-3 text-[#97c4ff]" />
+                          <Check className="w-3 h-3 text-[#0C0060]" />
                         </div>
                         <span className="text-[15px] text-[#4b5563] font-['Arial'] leading-relaxed">
                           {item}
@@ -152,7 +152,7 @@ export default function PrivacyPolicyPage() {
                     ].map((item, index) => (
                       <li key={index} className="flex items-start gap-3">
                         <div className="shrink-0 w-5 h-5 bg-[#cbff8f] rounded-full flex items-center justify-center mt-0.5">
-                          <Check className="w-3 h-3 text-[#97c4ff]" />
+                          <Check className="w-3 h-3 text-[#0C0060]" />
                         </div>
                         <span className="text-[15px] text-[#4b5563] font-['Arial'] leading-relaxed">
                           {item}
@@ -180,7 +180,7 @@ export default function PrivacyPolicyPage() {
                     ].map((item, index) => (
                       <li key={index} className="flex items-start gap-3">
                         <div className="shrink-0 w-5 h-5 bg-[#cbff8f] rounded-full flex items-center justify-center mt-0.5">
-                          <Check className="w-3 h-3 text-[#97c4ff]" />
+                          <Check className="w-3 h-3 text-[#0C0060]" />
                         </div>
                         <span className="text-[15px] text-[#4b5563] font-['Arial'] leading-relaxed">
                           {item}
@@ -207,7 +207,7 @@ export default function PrivacyPolicyPage() {
                     ].map((item, index) => (
                       <li key={index} className="flex items-start gap-3">
                         <div className="shrink-0 w-5 h-5 bg-[#cbff8f] rounded-full flex items-center justify-center mt-0.5">
-                          <Check className="w-3 h-3 text-[#97c4ff]" />
+                          <Check className="w-3 h-3 text-[#0C0060]" />
                         </div>
                         <span className="text-[15px] text-[#4b5563] font-['Arial'] leading-relaxed">
                           {item}
@@ -234,7 +234,7 @@ export default function PrivacyPolicyPage() {
                     ].map((item, index) => (
                       <li key={index} className="flex items-start gap-3">
                         <div className="shrink-0 w-5 h-5 bg-[#cbff8f] rounded-full flex items-center justify-center mt-0.5">
-                          <Check className="w-3 h-3 text-[#97c4ff]" />
+                          <Check className="w-3 h-3 text-[#0C0060]" />
                         </div>
                         <span className="text-[15px] text-[#4b5563] font-['Arial'] leading-relaxed">
                           {item}
@@ -254,7 +254,7 @@ export default function PrivacyPolicyPage() {
               className="mb-12"
             >
               <div className="flex items-center gap-3 mb-8">
-                <div className="w-12 h-12 bg-[#cbff8f] rounded-2xl flex items-center justify-center text-2xl font-['Gilda_Display'] text-[#97c4ff]">
+                <div className="w-12 h-12 bg-[#cbff8f] rounded-2xl flex items-center justify-center text-2xl font-['Gilda_Display'] text-[#0C0060]">
                   2
                 </div>
                 <h2 className="text-3xl md:text-4xl font-['Gilda_Display'] text-black">
@@ -282,7 +282,7 @@ export default function PrivacyPolicyPage() {
                     ].map((item, index) => (
                       <li key={index} className="flex items-start gap-3">
                         <div className="shrink-0 w-5 h-5 bg-[#cbff8f] rounded-full flex items-center justify-center mt-0.5">
-                          <Check className="w-3 h-3 text-[#97c4ff]" />
+                          <Check className="w-3 h-3 text-[#0C0060]" />
                         </div>
                         <span className="text-[15px] text-[#4b5563] font-['Arial'] leading-relaxed">
                           {item}
@@ -310,7 +310,7 @@ export default function PrivacyPolicyPage() {
                     ].map((item, index) => (
                       <li key={index} className="flex items-start gap-3">
                         <div className="shrink-0 w-5 h-5 bg-[#cbff8f] rounded-full flex items-center justify-center mt-0.5">
-                          <Check className="w-3 h-3 text-[#97c4ff]" />
+                          <Check className="w-3 h-3 text-[#0C0060]" />
                         </div>
                         <span className="text-[15px] text-[#4b5563] font-['Arial'] leading-relaxed">
                           {item}
@@ -335,7 +335,7 @@ export default function PrivacyPolicyPage() {
                     ].map((item, index) => (
                       <li key={index} className="flex items-start gap-3">
                         <div className="shrink-0 w-5 h-5 bg-[#cbff8f] rounded-full flex items-center justify-center mt-0.5">
-                          <Check className="w-3 h-3 text-[#97c4ff]" />
+                          <Check className="w-3 h-3 text-[#0C0060]" />
                         </div>
                         <span className="text-[15px] text-[#4b5563] font-['Arial'] leading-relaxed">
                           {item}
@@ -358,7 +358,7 @@ export default function PrivacyPolicyPage() {
                     ].map((item, index) => (
                       <li key={index} className="flex items-start gap-3">
                         <div className="shrink-0 w-5 h-5 bg-[#cbff8f] rounded-full flex items-center justify-center mt-0.5">
-                          <Check className="w-3 h-3 text-[#97c4ff]" />
+                          <Check className="w-3 h-3 text-[#0C0060]" />
                         </div>
                         <span className="text-[15px] text-[#4b5563] font-['Arial'] leading-relaxed">
                           {item}
@@ -378,7 +378,7 @@ export default function PrivacyPolicyPage() {
               className="mb-12"
             >
               <div className="flex items-center gap-3 mb-8">
-                <div className="w-12 h-12 bg-[#cbff8f] rounded-2xl flex items-center justify-center text-2xl font-['Gilda_Display'] text-[#97c4ff]">
+                <div className="w-12 h-12 bg-[#cbff8f] rounded-2xl flex items-center justify-center text-2xl font-['Gilda_Display'] text-[#0C0060]">
                   3
                 </div>
                 <h2 className="text-3xl md:text-4xl font-['Gilda_Display'] text-black">
@@ -406,7 +406,7 @@ export default function PrivacyPolicyPage() {
                     ].map((item, index) => (
                       <li key={index} className="flex items-start gap-3">
                         <div className="shrink-0 w-5 h-5 bg-[#cbff8f] rounded-full flex items-center justify-center mt-0.5">
-                          <Check className="w-3 h-3 text-[#97c4ff]" />
+                          <Check className="w-3 h-3 text-[#0C0060]" />
                         </div>
                         <span className="text-[15px] text-[#4b5563] font-['Arial'] leading-relaxed">
                           {item}
@@ -446,7 +446,7 @@ export default function PrivacyPolicyPage() {
               className="mb-12"
             >
               <div className="flex items-center gap-3 mb-8">
-                <div className="w-12 h-12 bg-[#cbff8f] rounded-2xl flex items-center justify-center text-2xl font-['Gilda_Display'] text-[#97c4ff]">
+                <div className="w-12 h-12 bg-[#cbff8f] rounded-2xl flex items-center justify-center text-2xl font-['Gilda_Display'] text-[#0C0060]">
                   4
                 </div>
                 <h2 className="text-3xl md:text-4xl font-['Gilda_Display'] text-black">
@@ -468,7 +468,7 @@ export default function PrivacyPolicyPage() {
                   ].map((item, index) => (
                     <li key={index} className="flex items-start gap-3">
                       <div className="shrink-0 w-5 h-5 bg-[#cbff8f] rounded-full flex items-center justify-center mt-0.5">
-                        <Check className="w-3 h-3 text-[#97c4ff]" />
+                        <Check className="w-3 h-3 text-[#0C0060]" />
                       </div>
                       <span className="text-[15px] text-[#4b5563] font-['Arial'] leading-relaxed">
                         {item}
@@ -490,7 +490,7 @@ export default function PrivacyPolicyPage() {
               className="bg-[#e0edff] p-10 rounded-3xl"
             >
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-[#cbff8f] rounded-2xl flex items-center justify-center text-2xl font-['Gilda_Display'] text-[#97c4ff]">
+                <div className="w-12 h-12 bg-[#cbff8f] rounded-2xl flex items-center justify-center text-2xl font-['Gilda_Display'] text-[#0C0060]">
                   5
                 </div>
                 <h2 className="text-3xl md:text-4xl font-['Gilda_Display'] text-black">
@@ -512,13 +512,13 @@ export default function PrivacyPolicyPage() {
                 </p>
                 <p>
                   <strong className="text-black">Email:</strong>{' '}
-                  <a href="mailto:info@skydentalcenter.ae" className="text-[#97c4ff] hover:underline">
+                  <a href="mailto:info@skydentalcenter.ae" className="text-[#0C0060] hover:underline">
                     info@skydentalcenter.ae
                   </a>
                 </p>
                 <p>
                   <strong className="text-black">Website:</strong>{' '}
-                  <a href="https://skydentalcenter.ae" className="text-[#97c4ff] hover:underline" target="_blank" rel="noopener noreferrer">
+                  <a href="https://skydentalcenter.ae" className="text-[#0C0060] hover:underline" target="_blank" rel="noopener noreferrer">
                     www.skydentalcenter.ae
                   </a>
                 </p>

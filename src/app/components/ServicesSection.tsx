@@ -152,8 +152,8 @@ export default function ServicesSection() {
               <button 
                 onClick={() => openBookingSidebar()}
                 className="bg-[#cbff8f] flex items-center gap-4 md:gap-6 pl-4 md:pl-6 pr-[8px] md:pr-[10px] py-2 rounded-[35px] self-start hover:bg-[#B1FF57] transition-colors">
-                <span className="text-[#97c4ff] font-bold text-[14px] md:text-[16px] whitespace-nowrap">Request Appointment</span>
-                <div className="bg-[#97c4ff] w-[32px] h-[32px] md:w-[34px] md:h-[34px] rounded-full flex items-center justify-center flex-shrink-0">
+                <span className="text-[#0C0060] font-bold text-[14px] md:text-[16px] whitespace-nowrap">Request Appointment</span>
+                <div className="bg-[#0C0060] w-[32px] h-[32px] md:w-[34px] md:h-[34px] rounded-full flex items-center justify-center flex-shrink-0">
                   <ArrowIcon />
                 </div>
               </button>
@@ -193,14 +193,14 @@ function ServiceButton({ icon, label, isActive, onClick }: { icon: any; label: s
       onClick={onClick}
       className={`flex items-center gap-[8px] h-[44px] md:h-[50px] px-[14px] md:px-[18px] py-[12px] md:py-[15px] rounded-[35px] transition-colors flex-shrink-0 ${
         isActive 
-          ? 'bg-[#cbff8f] border border-[#97c4ff] hover:bg-[#B1FF57]' 
-          : 'border-[0.7px] border-black hover:bg-[#e0edff] hover:border-[#97c4ff]'
+          ? 'bg-[#cbff8f] border border-[#0C0060] hover:bg-[#B1FF57]' 
+          : 'border-[0.7px] border-black hover:bg-[#e0edff] hover:border-[#0C0060]'
       }`}
     >
-      <div className={isActive ? '[&_path]:!fill-[#97c4ff]' : '[&_path]:!fill-black'}>
+      <div className={isActive ? '[&_path]:!fill-[#0C0060]' : '[&_path]:!fill-black'}>
         {icon}
       </div>
-      <span className={`${isActive ? 'text-[#97c4ff] font-bold' : 'text-black'} text-[14px] md:text-[16px] whitespace-nowrap`}>
+      <span className={`${isActive ? 'text-[#0C0060] font-bold' : 'text-black'} text-[14px] md:text-[16px] whitespace-nowrap`}>
         {label}
       </span>
     </button>
@@ -223,10 +223,10 @@ function ToothIcon() {
   return (
     <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24">
       <g>
-        <path d={svgPaths.pa3a5000} fill="#97C4FF" />
-        <path d={svgPaths.p3489ba80} fill="#97C4FF" />
-        <path d={svgPaths.p99b4f00} fill="#97C4FF" />
-        <path d={svgPaths.p3c163100} fill="#97C4FF" />
+        <path d={svgPaths.pa3a5000} fill="#0C0060" />
+        <path d={svgPaths.p3489ba80} fill="#0C0060" />
+        <path d={svgPaths.p99b4f00} fill="#0C0060" />
+        <path d={svgPaths.p3c163100} fill="#0C0060" />
       </g>
     </svg>
   )

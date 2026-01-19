@@ -89,35 +89,35 @@ const membershipTiers: MembershipTier[] = [
 const benefits: Benefit[] = [
   {
     id: 'rewards',
-    icon: <Gift className="w-6 h-6 text-[#97c4ff]" stroke="#97c4ff" />,
+    icon: <Gift className="w-6 h-6 text-[#0C0060]" stroke="#0C0060" />,
     title: 'Reward Your Trust',
     description: 'Reward your trust with meaningful, high-value benefits.',
     color: 'bg-white',
   },
   {
     id: 'support',
-    icon: <Zap className="w-6 h-6 text-[#97c4ff]" stroke="#97c4ff" />,
+    icon: <Zap className="w-6 h-6 text-[#0C0060]" stroke="#0C0060" />,
     title: 'Long-Term Support',
     description: 'Provide long-term support for your oral and aesthetic goals.',
     color: 'bg-white',
   },
   {
     id: 'premium',
-    icon: <Star className="w-6 h-6 text-[#97c4ff]" stroke="#97c4ff" />,
+    icon: <Star className="w-6 h-6 text-[#0C0060]" stroke="#0C0060" />,
     title: 'Premium Experience',
     description: 'Transform every dental visit into a premium experience.',
     color: 'bg-white',
   },
   {
     id: 'peace',
-    icon: <Shield className="w-6 h-6 text-[#97c4ff]" stroke="#97c4ff" />,
+    icon: <Shield className="w-6 h-6 text-[#0C0060]" stroke="#0C0060" />,
     title: 'Peace of Mind',
     description: 'Offer peace of mind through priority care and exclusive privileges.',
     color: 'bg-white',
   },
   {
     id: 'relationship',
-    icon: <Award className="w-6 h-6 text-[#97c4ff]" stroke="#97c4ff" />,
+    icon: <Award className="w-6 h-6 text-[#0C0060]" stroke="#0C0060" />,
     title: 'Excellence & Respect',
     description: 'Create a relationship built on excellence, comfort, and respect.',
     color: 'bg-white',
@@ -173,13 +173,13 @@ export default function SkyLoyaltyPage() {
             {/* Badges */}
             <div className="flex flex-wrap items-center justify-center gap-4 mb-10">
               <div className="bg-[#cbff8f] px-5 py-2.5 rounded-full inline-flex items-center gap-2">
-                <span className="text-sm text-[#97c4ff] font-['Arial'] font-medium">Exclusive Benefits</span>
+                <span className="text-sm text-[#0C0060] font-['Arial'] font-medium">Exclusive Benefits</span>
               </div>
               <div className="bg-[#cbff8f] px-5 py-2.5 rounded-full inline-flex items-center gap-2">
-                <span className="text-sm text-[#97c4ff] font-['Arial'] font-medium">Member Rewards</span>
+                <span className="text-sm text-[#0C0060] font-['Arial'] font-medium">Member Rewards</span>
               </div>
               <div className="bg-[#cbff8f] px-5 py-2.5 rounded-full inline-flex items-center gap-2">
-                <span className="text-sm text-[#97c4ff] font-['Arial'] font-medium">Premium Experience</span>
+                <span className="text-sm text-[#0C0060] font-['Arial'] font-medium">Premium Experience</span>
               </div>
             </div>
 
@@ -254,10 +254,10 @@ export default function SkyLoyaltyPage() {
                   <motion.button
                     whileHover={shouldReduceMotion ? {} : { scale: 1.02 }}
                     whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
-                    className="bg-[#cbff8f] text-[#97c4ff] font-bold px-6 py-3.5 rounded-full w-full inline-flex items-center justify-between hover:bg-[#b8ff6d] transition-colors font-['Arial'] text-[15px]"
+                    className="bg-[#cbff8f] text-[#0C0060] font-bold px-6 py-3.5 rounded-full w-full inline-flex items-center justify-between hover:bg-[#b8ff6d] transition-colors font-['Arial'] text-[15px]"
                   >
                     <span>{tier.buttonText}</span>
-                    <div className="w-8 h-8 bg-[#97c4ff] rounded-full flex items-center justify-center">
+                    <div className="w-8 h-8 bg-[#0C0060] rounded-full flex items-center justify-center">
                       <ArrowUpRight className="w-[18px] h-[18px] text-[#cbff8f]" />
                     </div>
                   </motion.button>
@@ -309,7 +309,7 @@ export default function SkyLoyaltyPage() {
                       className={`${benefit.color} border border-[#f3f4f6] rounded-3xl p-6`}
                     >
                       {/* Icon */}
-                      <div className="w-12 h-12 bg-[#cbff8f] rounded-xl flex items-center justify-center text-[#97c4ff] mb-4 shadow-sm">
+                      <div className="w-12 h-12 bg-[#cbff8f] rounded-xl flex items-center justify-center text-[#0C0060] mb-4 shadow-sm">
                         {benefit.icon}
                       </div>
 
@@ -372,7 +372,7 @@ export default function SkyLoyaltyPage() {
               className="bg-white text-black font-bold px-8 py-4 rounded-full inline-flex items-center gap-4 hover:shadow-xl transition-all font-['Arial'] text-base"
             >
               <span>Become a Member Today</span>
-              <div className="w-10 h-10 bg-[#97c4ff] rounded-full flex items-center justify-center">
+              <div className="w-10 h-10 bg-[#0C0060] rounded-full flex items-center justify-center">
                 <ArrowUpRight className="w-5 h-5 text-white" />
               </div>
             </motion.button>

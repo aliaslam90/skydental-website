@@ -9,7 +9,7 @@ import imgRectangle161125374 from "../assets/0279a12caadec65ec1eff7a13c4a4eb8aa3
 function MaskGroup() {
   return (
     <div className="[grid-area:1_/_1] grid-cols-[max-content] grid-rows-[max-content] inline-grid ml-[14px] mt-[12px] place-items-start relative" data-name="Mask group">
-      <div className="[grid-area:1_/_1] bg-[#97c4ff] h-[48.058px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[12.048px_3.837px] mask-size-[26.048px_28px] ml-[-12.05px] mt-[-3.84px] w-[50.75px]" style={{ maskImage: `url('${imgRectangle161125373}')` }} />
+      <div className="[grid-area:1_/_1] bg-[#0C0060] h-[48.058px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[12.048px_3.837px] mask-size-[26.048px_28px] ml-[-12.05px] mt-[-3.84px] w-[50.75px]" style={{ maskImage: `url('${imgRectangle161125373}')` }} />
     </div>
   );
 }
@@ -95,13 +95,13 @@ function Program2() {
 function Frame14() {
   return (
     <div className="bg-[#cbff8f] content-stretch flex gap-[10px] items-center justify-center px-[14px] py-[4px] relative rounded-[100px] shrink-0">
-      <div className="flex flex-col font-['Arial:Bold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#97c4ff] text-[14px] text-nowrap">
+      <div className="flex flex-col font-['Arial:Bold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#0C0060] text-[14px] text-nowrap">
         <p className="leading-[1.55]">{`Sky Loyalty Program `}</p>
       </div>
       <div className="h-[3px] relative shrink-0 w-[6px]" data-name="Vector">
         <div className="absolute inset-[-20%_-10%]">
           <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 7.2 4.2">
-            <path d="M0.6 0.6L3.6 3.6L6.6 0.6" id="Vector" stroke="var(--stroke-0, #97C4FF)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.2" />
+            <path d="M0.6 0.6L3.6 3.6L6.6 0.6" id="Vector" stroke="var(--stroke-0, #0C0060)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.2" />
           </svg>
         </div>
       </div>
@@ -184,7 +184,7 @@ function ArrowUpRight() {
 
 function Square() {
   return (
-    <div className="bg-[#97c4ff] relative rounded-[100px] shrink-0 size-[34px]" data-name="Square">
+    <div className="bg-[#0C0060] relative rounded-[100px] shrink-0 size-[34px]" data-name="Square">
       <ArrowUpRight />
     </div>
   );
@@ -193,7 +193,7 @@ function Square() {
 function Btn() {
   return (
     <div className="bg-[#cbff8f] content-stretch flex gap-[24px] items-center justify-center pl-[24px] pr-[10px] py-[8px] relative rounded-[35px] shrink-0" data-name="Btn">
-      <p className="font-['Arial:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#97c4ff] text-[16px] text-nowrap">Book Appointment</p>
+      <p className="font-['Arial:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#0C0060] text-[16px] text-nowrap">Book Appointment</p>
       <Square />
     </div>
   );
@@ -237,7 +237,7 @@ function Frame28() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-center justify-center relative shrink-0 w-full">
       <Frame24 />
-      <div className="flex flex-col font-['Arial:Italic',sans-serif] italic justify-center leading-[0] relative shrink-0 text-[#97c4ff] text-[18px] text-nowrap">
+      <div className="flex flex-col font-['Arial:Italic',sans-serif] italic justify-center leading-[0] relative shrink-0 text-[#0C0060] text-[18px] text-nowrap">
         <p className="leading-[normal]">{`"Designed for Those Who Believe Their Smile Deserves the Extraordinary"`}</p>
       </div>
       <p className="font-['Arial:Regular',sans-serif] leading-[28px] min-w-full not-italic relative shrink-0 text-[#1b1b1b] text-[16px] text-center w-[min-content]">Welcome to an elite membership crafted exclusively for patients who appreciate refined dental care. At Sky Dental Center, your loyalty reflects your commitment to superior oral health and in return, we elevate your experience with privileges, rewards, and bespoke benefits tailored to your lifestyle.</p>
@@ -250,7 +250,7 @@ function Svg() {
     <div className="relative shrink-0 size-[16px]" data-name="SVG">
       <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 16 16">
         <g id="SVG">
-          <path d={svgPaths.p17f48400} fill="var(--fill-0, #97C4FF)" id="Vector" stroke="var(--stroke-0, #97C4FF)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.33333" />
+          <path d={svgPaths.p17f48400} fill="var(--fill-0, #0C0060)" id="Vector" stroke="var(--stroke-0, #0C0060)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.33333" />
         </g>
       </svg>
     </div>
@@ -261,7 +261,7 @@ function BackgroundShadow() {
   return (
     <div className="bg-[#cbff8f] content-stretch flex gap-[8px] h-full items-center overflow-clip px-[24px] py-[12px] relative rounded-[9999px] shrink-0" data-name="Background+Shadow">
       <Svg />
-      <div className="flex flex-col font-['Arial:Bold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#97c4ff] text-[14px] text-center text-nowrap">
+      <div className="flex flex-col font-['Arial:Bold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#0C0060] text-[14px] text-center text-nowrap">
         <p className="leading-[20px]">Elite Privileges</p>
       </div>
     </div>
@@ -273,7 +273,7 @@ function Svg1() {
     <div className="relative shrink-0 size-[16px]" data-name="SVG">
       <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 16 16">
         <g id="SVG">
-          <path d={svgPaths.p17f48400} fill="var(--fill-0, #97C4FF)" id="Vector" stroke="var(--stroke-0, #97C4FF)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.33333" />
+          <path d={svgPaths.p17f48400} fill="var(--fill-0, #0C0060)" id="Vector" stroke="var(--stroke-0, #0C0060)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.33333" />
         </g>
       </svg>
     </div>
@@ -284,7 +284,7 @@ function BackgroundShadow1() {
   return (
     <div className="bg-[#cbff8f] content-stretch flex gap-[8px] h-full items-center overflow-clip px-[24px] py-[12px] relative rounded-[9999px] shrink-0" data-name="Background+Shadow">
       <Svg1 />
-      <div className="flex flex-col font-['Arial:Bold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#97c4ff] text-[14px] text-center text-nowrap">
+      <div className="flex flex-col font-['Arial:Bold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#0C0060] text-[14px] text-center text-nowrap">
         <p className="leading-[20px]">Bespoke Benefits</p>
       </div>
     </div>
@@ -296,7 +296,7 @@ function Svg2() {
     <div className="relative shrink-0 size-[16px]" data-name="SVG">
       <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 16 16">
         <g id="SVG">
-          <path d={svgPaths.p17f48400} fill="var(--fill-0, #97C4FF)" id="Vector" stroke="var(--stroke-0, #97C4FF)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.33333" />
+          <path d={svgPaths.p17f48400} fill="var(--fill-0, #0C0060)" id="Vector" stroke="var(--stroke-0, #0C0060)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.33333" />
         </g>
       </svg>
     </div>
@@ -307,7 +307,7 @@ function BackgroundShadow2() {
   return (
     <div className="bg-[#cbff8f] content-stretch flex gap-[8px] h-full items-center overflow-clip px-[24px] py-[12px] relative rounded-[9999px] shrink-0" data-name="Background+Shadow">
       <Svg2 />
-      <div className="flex flex-col font-['Arial:Bold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#97c4ff] text-[14px] text-center text-nowrap">
+      <div className="flex flex-col font-['Arial:Bold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#0C0060] text-[14px] text-center text-nowrap">
         <p className="leading-[20px]">Elevated Experience</p>
       </div>
     </div>
@@ -364,7 +364,7 @@ function Container1() {
   return (
     <div className="content-stretch flex gap-[4px] items-center relative shrink-0" data-name="Container">
       <Frame1 />
-      <div className="flex flex-col font-['Arial:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#97c4ff] text-[12px] text-nowrap">
+      <div className="flex flex-col font-['Arial:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#0C0060] text-[12px] text-nowrap">
         <p className="leading-[20px]">{`Packages & Offers`}</p>
       </div>
     </div>
@@ -715,7 +715,7 @@ function ArrowUpRight1() {
 
 function Square1() {
   return (
-    <div className="bg-[#97c4ff] relative rounded-[100px] shrink-0 size-[34px]" data-name="Square">
+    <div className="bg-[#0C0060] relative rounded-[100px] shrink-0 size-[34px]" data-name="Square">
       <ArrowUpRight1 />
     </div>
   );
@@ -726,7 +726,7 @@ function Btn1() {
     <div className="bg-[#cbff8f] relative rounded-[35px] shrink-0 w-full" data-name="Btn">
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center justify-between pl-[24px] pr-[10px] py-[8px] relative w-full">
-          <p className="font-['Arial:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#97c4ff] text-[16px] text-nowrap">Join Silver Tier</p>
+          <p className="font-['Arial:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#0C0060] text-[16px] text-nowrap">Join Silver Tier</p>
           <Square1 />
         </div>
       </div>
@@ -1052,7 +1052,7 @@ function ArrowUpRight2() {
 
 function Square2() {
   return (
-    <div className="bg-[#97c4ff] relative rounded-[100px] shrink-0 size-[34px]" data-name="Square">
+    <div className="bg-[#0C0060] relative rounded-[100px] shrink-0 size-[34px]" data-name="Square">
       <ArrowUpRight2 />
     </div>
   );
@@ -1063,7 +1063,7 @@ function Btn2() {
     <div className="bg-[#cbff8f] relative rounded-[35px] shrink-0 w-full" data-name="Btn">
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center justify-between pl-[24px] pr-[10px] py-[8px] relative w-full">
-          <p className="font-['Arial:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#97c4ff] text-[16px] text-nowrap">Join gold Tier</p>
+          <p className="font-['Arial:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#0C0060] text-[16px] text-nowrap">Join gold Tier</p>
           <Square2 />
         </div>
       </div>
@@ -1440,7 +1440,7 @@ function ArrowUpRight3() {
 
 function Square3() {
   return (
-    <div className="bg-[#97c4ff] relative rounded-[100px] shrink-0 size-[34px]" data-name="Square">
+    <div className="bg-[#0C0060] relative rounded-[100px] shrink-0 size-[34px]" data-name="Square">
       <ArrowUpRight3 />
     </div>
   );
@@ -1451,7 +1451,7 @@ function Btn3() {
     <div className="bg-[#cbff8f] relative rounded-[35px] shrink-0 w-full" data-name="Btn">
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center justify-between pl-[24px] pr-[10px] py-[8px] relative w-full">
-          <p className="font-['Arial:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#97c4ff] text-[16px] text-nowrap">Join Platinum Tier</p>
+          <p className="font-['Arial:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#0C0060] text-[16px] text-nowrap">Join Platinum Tier</p>
           <Square3 />
         </div>
       </div>
@@ -1534,10 +1534,10 @@ function Svg24() {
     <div className="relative shrink-0 size-[28px]" data-name="SVG">
       <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 28 28">
         <g id="SVG">
-          <path d={svgPaths.p1e4bec00} id="Vector" stroke="var(--stroke-0, #97C4FF)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.33333" />
-          <path d="M14 9.33333V24.5" id="Vector_2" stroke="var(--stroke-0, #97C4FF)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.33333" />
-          <path d={svgPaths.p281fe780} id="Vector_3" stroke="var(--stroke-0, #97C4FF)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.33333" />
-          <path d={svgPaths.p376f4d00} id="Vector_4" stroke="var(--stroke-0, #97C4FF)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.33333" />
+          <path d={svgPaths.p1e4bec00} id="Vector" stroke="var(--stroke-0, #0C0060)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.33333" />
+          <path d="M14 9.33333V24.5" id="Vector_2" stroke="var(--stroke-0, #0C0060)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.33333" />
+          <path d={svgPaths.p281fe780} id="Vector_3" stroke="var(--stroke-0, #0C0060)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.33333" />
+          <path d={svgPaths.p376f4d00} id="Vector_4" stroke="var(--stroke-0, #0C0060)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.33333" />
         </g>
       </svg>
     </div>
@@ -1600,7 +1600,7 @@ function Svg25() {
     <div className="relative shrink-0 size-[28px]" data-name="SVG">
       <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 28 28">
         <g id="SVG">
-          <path d={svgPaths.p1dcc0100} id="Vector" stroke="var(--stroke-0, #97C4FF)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.33333" />
+          <path d={svgPaths.p1dcc0100} id="Vector" stroke="var(--stroke-0, #0C0060)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.33333" />
         </g>
       </svg>
     </div>
@@ -1655,11 +1655,11 @@ function Svg26() {
     <div className="relative shrink-0 size-[28px]" data-name="SVG">
       <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 28 28">
         <g id="SVG">
-          <path d={svgPaths.p3ff84700} id="Vector" stroke="var(--stroke-0, #97C4FF)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.33333" />
-          <path d="M23.3333 3.5V8.16667" id="Vector_2" stroke="var(--stroke-0, #97C4FF)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.33333" />
-          <path d="M25.6667 5.83333H21" id="Vector_3" stroke="var(--stroke-0, #97C4FF)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.33333" />
-          <path d="M4.66667 19.8333V22.1667" id="Vector_4" stroke="var(--stroke-0, #97C4FF)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.33333" />
-          <path d="M5.83333 21H3.5" id="Vector_5" stroke="var(--stroke-0, #97C4FF)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.33333" />
+          <path d={svgPaths.p3ff84700} id="Vector" stroke="var(--stroke-0, #0C0060)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.33333" />
+          <path d="M23.3333 3.5V8.16667" id="Vector_2" stroke="var(--stroke-0, #0C0060)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.33333" />
+          <path d="M25.6667 5.83333H21" id="Vector_3" stroke="var(--stroke-0, #0C0060)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.33333" />
+          <path d="M4.66667 19.8333V22.1667" id="Vector_4" stroke="var(--stroke-0, #0C0060)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.33333" />
+          <path d="M5.83333 21H3.5" id="Vector_5" stroke="var(--stroke-0, #0C0060)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.33333" />
         </g>
       </svg>
     </div>
@@ -1722,7 +1722,7 @@ function Svg27() {
     <div className="relative shrink-0 size-[28px]" data-name="SVG">
       <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 28 28">
         <g id="SVG">
-          <path d={svgPaths.p1b228440} id="Vector" stroke="var(--stroke-0, #97C4FF)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.33333" />
+          <path d={svgPaths.p1b228440} id="Vector" stroke="var(--stroke-0, #0C0060)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.33333" />
         </g>
       </svg>
     </div>
@@ -1828,8 +1828,8 @@ function Svg28() {
     <div className="relative shrink-0 size-[19px]" data-name="SVG">
       <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 19 19">
         <g id="SVG">
-          <path d={svgPaths.p3fb21b80} id="Vector" stroke="var(--stroke-0, #97C4FF)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.58333" />
-          <path d="M3.95811 16.625H15.0414" id="Vector_2" stroke="var(--stroke-0, #97C4FF)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.58333" />
+          <path d={svgPaths.p3fb21b80} id="Vector" stroke="var(--stroke-0, #0C0060)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.58333" />
+          <path d="M3.95811 16.625H15.0414" id="Vector_2" stroke="var(--stroke-0, #0C0060)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.58333" />
         </g>
       </svg>
     </div>
@@ -1948,7 +1948,7 @@ function ArrowUpRight4() {
 
 function Square4() {
   return (
-    <div className="bg-[#97c4ff] relative rounded-[100px] shrink-0 size-[34px]" data-name="Square">
+    <div className="bg-[#0C0060] relative rounded-[100px] shrink-0 size-[34px]" data-name="Square">
       <ArrowUpRight4 />
     </div>
   );
@@ -1957,7 +1957,7 @@ function Square4() {
 function Btn4() {
   return (
     <div className="bg-white content-stretch flex gap-[24px] items-center pl-[24px] pr-[10px] py-[8px] relative rounded-[35px] shrink-0" data-name="Btn">
-      <p className="font-['Arial:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#97c4ff] text-[16px] text-nowrap">Join Program Today</p>
+      <p className="font-['Arial:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#0C0060] text-[16px] text-nowrap">Join Program Today</p>
       <Square4 />
     </div>
   );
@@ -2039,7 +2039,7 @@ function Frame34() {
 function MaskGroup1() {
   return (
     <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-name="Mask group">
-      <div className="[grid-area:1_/_1] bg-[#97c4ff] h-[91.833px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[1.414px_7.33px] mask-size-[93.634px_80px] ml-[-1.41px] mt-[-7.33px] w-[96.592px]" style={{ maskImage: `url('${imgRectangle161125374}')` }} />
+      <div className="[grid-area:1_/_1] bg-[#0C0060] h-[91.833px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[1.414px_7.33px] mask-size-[93.634px_80px] ml-[-1.41px] mt-[-7.33px] w-[96.592px]" style={{ maskImage: `url('${imgRectangle161125374}')` }} />
     </div>
   );
 }
@@ -2049,7 +2049,7 @@ function IconFacebook() {
     <div className="h-[23px] relative shrink-0 w-[24px]" data-name="Icon / Facebook">
       <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 23">
         <g id="Icon / Facebook">
-          <path d={svgPaths.p1c786b00} fill="var(--fill-0, #97C4FF)" id="Vector" />
+          <path d={svgPaths.p1c786b00} fill="var(--fill-0, #0C0060)" id="Vector" />
         </g>
       </svg>
     </div>
@@ -2061,7 +2061,7 @@ function IconInstagram() {
     <div className="relative shrink-0 size-[24px]" data-name="Icon / Instagram">
       <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
         <g id="Icon / Instagram">
-          <path clipRule="evenodd" d={svgPaths.p3f3f55f0} fill="var(--fill-0, #97C4FF)" fillRule="evenodd" id="Vector" />
+          <path clipRule="evenodd" d={svgPaths.p3f3f55f0} fill="var(--fill-0, #0C0060)" fillRule="evenodd" id="Vector" />
         </g>
       </svg>
     </div>
@@ -2073,7 +2073,7 @@ function IconX() {
     <div className="relative shrink-0 size-[24px]" data-name="Icon / X">
       <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
         <g id="Icon / X">
-          <path d={svgPaths.p214d7500} fill="var(--fill-0, #97C4FF)" id="Vector" />
+          <path d={svgPaths.p214d7500} fill="var(--fill-0, #0C0060)" id="Vector" />
         </g>
       </svg>
     </div>
@@ -2085,7 +2085,7 @@ function IconLinkedIn() {
     <div className="relative shrink-0 size-[24px]" data-name="Icon / LinkedIn">
       <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
         <g id="Icon / LinkedIn">
-          <path clipRule="evenodd" d={svgPaths.p2b170900} fill="var(--fill-0, #97C4FF)" fillRule="evenodd" id="Vector" />
+          <path clipRule="evenodd" d={svgPaths.p2b170900} fill="var(--fill-0, #0C0060)" fillRule="evenodd" id="Vector" />
         </g>
       </svg>
     </div>
