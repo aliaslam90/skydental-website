@@ -413,7 +413,7 @@ export default function ContactUsPage() {
               style={{ minHeight: '400px' }}
             >
               <iframe
-                src="https://www.google.com/maps?q=Villa+45,+Alforsan+street,+Khalifa+city,+Abu+Dhabi,+UAE&output=embed"
+                src="https://www.google.com/maps?q=Villa+45,+Alforsan+street,+Khalifa+city,+Abu+Dhabi,+UAE&output=embed&zoom=16"
                 width="100%"
                 height="100%"
                 style={{ border: 0, minHeight: '400px' }}
@@ -423,6 +423,18 @@ export default function ContactUsPage() {
                 className="absolute inset-0 w-full h-full"
                 title="Sky Dental Center Location"
               />
+              {/* Open in Google Maps Button */}
+              <div className="absolute bottom-4 right-4 z-10">
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Villa+45,+Alforsan+street,+Khalifa+city,+Abu+Dhabi,+UAE"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white hover:bg-[#f9fafb] text-[#0C0060] font-['Arial'] font-bold py-2 px-4 rounded-full shadow-lg flex items-center gap-2 transition-all duration-300 hover:shadow-xl"
+                >
+                  <MapPin className="w-4 h-4" />
+                  <span>Open in Google Maps</span>
+                </a>
+              </div>
             </motion.div>
           </div>
         </div>
