@@ -136,7 +136,7 @@ export const doctorsData: DoctorDetail[] = [
     aboutImage: '/doctor2.png',
     description: 'Dr. Basma Alrawi is a highly accomplished Specialist Oral Surgeon renowned for her advanced surgical expertise, precision-driven clinical approach, and unwavering commitment to patient safety and wellbeing. With implant privileges and extensive experience managing complex oral and maxillofacial conditions, she brings exceptional skill and a calm, reassuring presence to every treatment journey. Her practice integrates evidence-based surgery, modern diagnostic technologies, and a multidisciplinary philosophy—ensuring that patients receive comprehensive, safe, and predictable surgical outcomes.',
     stats: [
-      { label: 'Specialist', value: 'Oral Surgeon' },
+      { label: 'Specialist', value: 'Specialist Oral Surgeon' },
       { label: 'Implant Privileges', value: 'Yes' },
       { label: 'Approach', value: 'Evidence-Based' }
     ],
@@ -203,8 +203,8 @@ export const doctorsData: DoctorDetail[] = [
   {
     id: 'dr-claude-istanbouli',
     name: 'Dr. Claude Istanbouli',
-    title: 'Master of Implant Dentistry & Full Mouth Rehabilitation',
-    specialty: 'Master of Implant Dentistry & Full Mouth Rehabilitation',
+    title: 'General Dental Practitioner & Implantologist',
+    specialty: 'General Dental Practitioner & Implantologist',
     image: '/doctor3.png',
     aboutImage: '/doctor3.png',
     description: 'With more than 30 years of transformative experience in restorative, surgical, and cosmetic dentistry, Dr. Claude Istanbouli stands as one of the region\'s foremost authorities in dental implants and full-mouth rehabilitation. Since graduating from Damascus University in 1988 and completing advanced training in cosmetic and restorative dentistry at UCLA, California in 1999, Dr. Istanbouli has built a distinguished international career across the United States and the UAE. His professional journey includes key positions at ADNOC Medical Services and Mubadala Health\'s Healthpoint Hospital, where he contributed to elevating clinical standards and delivering life-changing results. Today, as a leading specialist at Sky Dental Center in Khalifa City A, part of CMC Medical, he continues to redefine modern implant dentistry with unparalleled expertise and innovation.',
@@ -315,13 +315,13 @@ export const doctorsData: DoctorDetail[] = [
   {
     id: 'dr-elias-daoud-hanna',
     name: 'Dr. Elias Hanna',
-    title: 'Specialist Prosthodontist',
-    specialty: 'Specialist Prosthodontist',
+    title: 'Specialist Pedodontist',
+    specialty: 'Specialist Pedodontist',
     image: '/doctor4.png',
     aboutImage: '/doctor4.png',
     description: 'Dr. Elias Hanna is a distinguished Specialist Prosthodontist with advanced expertise in the restoration and replacement of missing or damaged teeth, functional rehabilitation, and aesthetic smile enhancement. With implant privileges and extensive training in prosthodontic sciences, he offers patients comprehensive restorative solutions grounded in precision, craftsmanship, and evidence-based excellence. His clinical philosophy focuses on restoring harmony, comfort, and confidence—ensuring that every patient receives personalised, functional, and naturally aesthetic outcomes.',
     stats: [
-      { label: 'Specialist', value: 'Prosthodontist' },
+      { label: 'Specialist', value: 'Specialist Pedodontist' },
       { label: 'Implant Privileges', value: 'Yes' },
       { label: 'Focus', value: 'Restoration & Aesthetics' }
     ],
@@ -387,8 +387,8 @@ export const doctorsData: DoctorDetail[] = [
   {
     id: 'dr-amr-husson',
     name: 'Dr. Amr Husson',
-    title: 'Orthodontic Specialist',
-    specialty: 'Orthodontic Specialist',
+    title: 'Specialist Orthodontist',
+    specialty: 'Specialist Orthodontist',
     image: '/doctor5.png',
     aboutImage: '/doctor5.png',
     description: 'Dr. Amr Husson is an accomplished Orthodontic Specialist with more than nine years of advanced clinical expertise dedicated to diagnosing, correcting, and preventing dental and facial irregularities. At Sky Dental Center, he combines cutting-edge orthodontic technologies with a compassionate, patient-focused approach to create healthy, aesthetically refined smiles for children, teens, and adults alike. His commitment to excellence, meticulous attention to detail, and reliance on evidence-based practice ensure that every treatment delivers optimal functional stability and exceptional cosmetic results.',
@@ -955,7 +955,7 @@ export const doctorsData: DoctorDetail[] = [
     aboutImage: '/doctor11.png',
     description: 'Dr. Mohanned Albasha is a dedicated General Dentist who delivers high-quality, patient-centred dental care with precision, compassion, and a commitment to long-term oral health. With extensive experience across the full spectrum of general dentistry, he ensures that every patient receives personalised treatment tailored to their unique needs, whether for prevention, restoration, or urgent care. His approach is grounded in clinical excellence, evidence-based practice, and clear communication—providing patients with confidence and comfort throughout their dental journey.',
     stats: [
-      { label: 'Specialist', value: 'General Dentist' },
+      { label: 'Specialist', value: 'General Dental Practitioner' },
       { label: 'Approach', value: 'Patient-Centred' },
       { label: 'Focus', value: 'Precision & Compassion' }
     ],

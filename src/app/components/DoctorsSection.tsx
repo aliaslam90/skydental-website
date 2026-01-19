@@ -11,9 +11,9 @@ export default function DoctorsSection() {
 
   const doctors = [
     { id: 'dr-saifaldin-tawakul', name: 'Dr. Saif Eldin Tawakul', specialty: 'Specialist Oral Surgeon', image: '/doctor1.png' },
-    { id: 'dr-basma-al-rawi', name: 'Dr. Basma Alrawi', specialty: 'Oral Surgery', image: '/doctor2.png' },
-    { id: 'dr-claude-istanbouli', name: 'Dr. Claude Istanbouli', specialty: 'Master of Implant Dentistry', image: '/doctor3.png' },
-    { id: 'dr-elias-daoud-hanna', name: 'Dr. Elias Hanna', specialty: 'Prosthodontist', image: '/doctor4.png' }
+    { id: 'dr-basma-al-rawi', name: 'Dr. Basma Alrawi', specialty: 'Specialist Oral Surgeon', image: '/doctor2.png' },
+    { id: 'dr-claude-istanbouli', name: 'Dr. Claude Istanbouli', specialty: 'General Dental Practitioner & Implantologist', image: '/doctor3.png' },
+    { id: 'dr-elias-daoud-hanna', name: 'Dr. Elias Hanna', specialty: 'Specialist Pedodontist', image: '/doctor4.png' }
   ]
 
   const containerVariants = {

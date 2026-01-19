@@ -19,7 +19,7 @@ const doctorsData = [
   {
     id: 'dr-basma-al-rawi',
     name: 'Dr. Basma Alrawi',
-    specialty: 'Oral Surgery',
+    specialty: 'Specialist Oral Surgeon',
     experience: '12+ years',
     image: '/doctor2.png',
     available: true
@@ -27,7 +27,7 @@ const doctorsData = [
   {
     id: 'dr-claude-istanbouli',
     name: 'Dr. Claude Istanbouli',
-    specialty: 'Master of Implant Dentistry',
+    specialty: 'General Dental Practitioner & Implantologist',
     experience: '10+ years',
     image: '/doctor3.png',
     available: true
@@ -35,7 +35,7 @@ const doctorsData = [
   {
     id: 'dr-elias-daoud-hanna',
     name: 'Dr. Elias Hanna',
-    specialty: 'Prosthodontist',
+    specialty: 'Specialist Pedodontist',
     experience: '20+ years',
     image: '/doctor4.png',
     available: true
@@ -43,7 +43,7 @@ const doctorsData = [
   {
     id: 'dr-amr-husson',
     name: 'Dr. Amr Husson',
-    specialty: 'Orthodontist',
+    specialty: 'Specialist Orthodontist',
     experience: '8+ years',
     image: '/doctor5.png',
     available: true
@@ -51,7 +51,7 @@ const doctorsData = [
   {
     id: 'dr-shridhar-munje',
     name: 'Dr. Shridhar Munje',
-    specialty: 'Orthodontist',
+    specialty: 'Specialist Orthodontist',
     experience: '18+ years',
     image: '/doctor6.png',
     available: true
@@ -83,7 +83,7 @@ const doctorsData = [
   {
     id: 'dr-kinan-mohammed',
     name: 'Dr. Kinan Mohammed Mohdi',
-    specialty: 'Prosthodontist',
+    specialty: 'General Dental Practitioner',
     experience: '7+ years',
     image: '/doctor10.png',
     available: true
@@ -91,7 +91,7 @@ const doctorsData = [
   {
     id: 'dr-mohanned-albasha',
     name: 'Dr. Mohanned Albasha',
-    specialty: 'General dentist',
+    specialty: 'General Dental Practitioner',
     experience: '13+ years',
     image: '/doctor11.png',
     available: true
@@ -107,7 +107,7 @@ const doctorsData = [
   {
     id: 'dr-reem-al-hammadi',
     name: 'Dr. Reem Al-Hammadi',
-    specialty: 'General Dentist',
+    specialty: 'General Dental Practitioner',
     experience: '6+ years',
     image: '/doctor13.png',
     available: true
@@ -116,13 +116,16 @@ const doctorsData = [
 
 const specialties = [
   'All Specialties',
-  'Orthodontist',
+  'Specialist Orthodontist',
   'Cosmetic Dentistry',
   'Endodontist',
-  'Oral Surgeon',
+  'Specialist Oral Surgeon',
   'Periodontist',
   'General Dentistry',
+  'General Dental Practitioner',
+  'General Dental Practitioner & Implantologist',
   'Prosthodontist',
+  'Specialist Pedodontist',
   'Pediatric Dentistry'
 ]
 
