@@ -490,7 +490,7 @@ export default function ContactSection() {
                     transition={{ delay: shouldReduceMotion ? 0 : 0.5, duration: shouldReduceMotion ? 0 : 0.6 }}
                     className="w-full bg-[#cbff8f] h-[50px] px-[24px] py-[16px] rounded-[12px] text-[14px] font-medium text-[#0C0060] hover:bg-[#B1FF57] transition-colors"
                   >
-                    Book Appointment
+                    Request Appointment
                   </motion.button>
                 </div>
               </form>

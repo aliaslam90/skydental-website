@@ -172,7 +172,7 @@ function Square() {
 function Btn() {
   return (
     <div className="bg-[#cbff8f] content-stretch flex gap-[24px] items-center justify-center pl-[24px] pr-[10px] py-[8px] relative rounded-[35px] shrink-0" data-name="Btn">
-      <p className="font-['Arial:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#0C0060] text-[16px] text-nowrap">Book Appointment</p>
+      <p className="font-['Arial:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#0C0060] text-[16px] text-nowrap">Request Appointment</p>
       <Square />
     </div>
   );
@@ -333,7 +333,7 @@ function Square1() {
 function Btn1() {
   return (
     <div className="bg-[#cbff8f] content-stretch flex gap-[24px] items-center justify-center pl-[24px] pr-[10px] py-[8px] relative rounded-[35px] shrink-0" data-name="Btn">
-      <p className="font-['Arial:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#0C0060] text-[16px] text-nowrap">Book Appointment</p>
+      <p className="font-['Arial:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#0C0060] text-[16px] text-nowrap">Request Appointment</p>
       <Square1 />
     </div>
   );
@@ -999,7 +999,7 @@ function Heading4() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Heading 3">
       <div className="flex flex-col font-['Gilda_Display:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[24px] text-black w-full">
-        <p className="leading-[32px]">{`Advanced & Restorative`}</p>
+        <p className="leading-[32px]">{`Implant & Advanced Care`}</p>
       </div>
     </div>
   );

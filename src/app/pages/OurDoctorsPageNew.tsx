@@ -327,7 +327,7 @@ export default function OurDoctorsPageNew() {
                       onClick={() => openBookingSidebar(doctor.name)}
                       className="flex-1 sm:flex-1 bg-[#cbff8f] text-[#0C0060] text-[13px] md:text-[14px] font-medium py-[10px] px-[16px] rounded-[12px] hover:bg-[#B1FF57] transition-colors text-center"
                     >
-                      Book Appointment
+                      Request Appointment
                     </button>
                   </div>
                 </div>

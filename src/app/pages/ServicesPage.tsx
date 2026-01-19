@@ -40,7 +40,7 @@ const services = [
   {
     id: 'advanced-restorative',
     icon: '🔬',
-    title: 'Advanced & Restorative',
+    title: 'Implant & Advanced Care',
     description: 'Complex treatments for structural and functional restoration including implants and full-mouth restoration.',
     bgColor: '#edfede'
   }
@@ -162,7 +162,7 @@ export default function ServicesPage() {
                 onClick={() => openBookingSidebar()}
                 className="bg-[#cbff8f] text-[#0C0060] font-bold px-8 py-4 rounded-full inline-flex items-center gap-3 hover:bg-[#b8ff6d] transition-colors font-['Arial']"
               >
-                <span>Book Appointment</span>
+                <span>Request Appointment</span>
                 <div className="w-9 h-9 bg-[#0C0060] rounded-full flex items-center justify-center">
                   <ArrowUpRight className="w-5 h-5 text-[#cbff8f]" />
                 </div>

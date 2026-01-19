@@ -271,7 +271,7 @@ function Square() {
 function Btn() {
   return (
     <div className="bg-[#cbff8f] content-stretch flex gap-[24px] items-center justify-center pl-[24px] pr-[10px] py-[8px] relative rounded-[35px] shrink-0" data-name="Btn">
-      <p className="font-['Arial:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#0C0060] text-[16px] text-nowrap">Book Appointment</p>
+      <p className="font-['Arial:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[#0C0060] text-[16px] text-nowrap">Request Appointment</p>
       <Square />
     </div>
   );
@@ -680,7 +680,7 @@ function Btn5() {
     <div className="content-stretch flex gap-[8px] h-[50px] items-center justify-center px-[18px] py-[15px] relative rounded-[35px] shrink-0" data-name="Btn">
       <div aria-hidden="true" className="absolute border-[0.7px] border-black border-solid inset-0 pointer-events-none rounded-[35px]" />
       <Component028DentalFloss />
-      <p className="font-['Arial:Regular',sans-serif] leading-[normal] not-italic relative shrink-0 text-[16px] text-black text-nowrap">{`Advanced & Restorative Care `}</p>
+      <p className="font-['Arial:Regular',sans-serif] leading-[normal] not-italic relative shrink-0 text-[16px] text-black text-nowrap">{`Implant & Advanced Care Care `}</p>
     </div>
   );
 }

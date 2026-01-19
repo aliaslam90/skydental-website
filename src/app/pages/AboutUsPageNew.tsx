@@ -593,7 +593,7 @@ export default function AboutUsPageNew() {
               onClick={() => openBookingSidebar()}
               className="bg-[#0C0060] text-white px-8 py-4 rounded-full font-['Arial'] font-semibold text-lg hover:bg-[#7ab3ff] transition-colors shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform duration-200"
             >
-              Book Appointment
+              Request Appointment
             </button>
           </motion.div>
         </div>

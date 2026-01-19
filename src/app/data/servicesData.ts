@@ -427,12 +427,12 @@ export const servicesData: ServiceDetail[] = [
   },
   {
     id: 'advanced-restorative',
-    title: 'Advanced & Restorative',
+    title: 'Implant & Advanced Care',
     icon: '🔬',
     shortDescription: 'Complex treatments for structural and functional restoration including implants and full-mouth restoration.',
     bgColor: '#edfede',
     hero: {
-      title: 'Advanced & Restorative Dentistry',
+      title: 'Implant & Advanced Care Dentistry',
       subtitle: 'Restore function and beauty to your smile',
       description: 'Advanced restorative dentistry combines cutting-edge technology with expertise to repair, replace, and restore damaged or missing teeth.'
     },
@@ -500,7 +500,7 @@ export const servicesData: ServiceDetail[] = [
       }
     ],
     whyChoose: {
-      title: 'Why Choose Our Advanced & Restorative Services?',
+      title: 'Why Choose Our Implant & Advanced Care Services?',
       description: 'We use the latest technology and techniques to deliver complex restorative treatments with exceptional results.',
       features: [
         'Board-certified specialists',
