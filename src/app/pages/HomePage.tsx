@@ -7,6 +7,7 @@ import AboutSection from '../components/AboutSection'
 import ServicesSection from '../components/ServicesSection'
 import WhyChooseSection from '../components/WhyChooseSection'
 import TechnologySection from '../components/TechnologySection'
+import InsurancePartnersSection from '../components/InsurancePartnersSection'
 import ResultsSection from '../components/ResultsSection'
 import TestimonialsSection from '../components/TestimonialsSection'
 import DoctorsSection from '../components/DoctorsSection'
@@ -31,6 +32,7 @@ export default function HomePage() {
       <ServicesSection />
       <WhyChooseSection />
       <TechnologySection />
+      <InsurancePartnersSection />
       <ResultsSection />
       <TestimonialsSection />
       <DoctorsSection />
