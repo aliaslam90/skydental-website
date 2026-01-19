@@ -508,12 +508,12 @@ export default function PrivacyPolicyPage() {
                 </p>
                 <p>Villa 45 , Alforsan street , Khalifa city , Abu Dhabi , UAE</p>
                 <p>
-                  <strong className="text-black">Phone:</strong> +971 2 123 4567
+                  <strong className="text-black">Phone:</strong> 026677448
                 </p>
                 <p>
                   <strong className="text-black">Email:</strong>{' '}
-                  <a href="mailto:info@skydentalcenter.ae" className="text-[#0C0060] hover:underline">
-                    info@skydentalcenter.ae
+                  <a href="mailto:info@skydc.ae" className="text-[#0C0060] hover:underline">
+                    info@skydc.ae
                   </a>
                 </p>
                 <p>

@@ -66,7 +66,6 @@ export default function CareersPage() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    address: '',
     cvFile: null as File | null
   })
   const [formSubmitted, setFormSubmitted] = useState(false)
@@ -102,7 +101,6 @@ export default function CareersPage() {
       setFormData({
         name: '',
         email: '',
-        address: '',
         cvFile: null
       })
       setFormSubmitted(false)
@@ -300,10 +298,10 @@ export default function CareersPage() {
                 Send your CV and cover letter to
               </p>
               <a
-                href="mailto:careers@skydental.ae"
+                href="mailto:info@skydc.ae"
                 className="text-2xl font-['Arial'] font-semibold text-black hover:text-[#0C0060] transition-colors inline-block"
               >
-                careers@skydental.ae
+                info@skydc.ae
               </a>
             </div>
 
@@ -351,23 +349,6 @@ export default function CareersPage() {
                     required
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#0C0060] font-['Arial'] text-black bg-[#f9fafb]"
                     placeholder="Enter your email address"
-                  />
-                </div>
-
-                {/* Address Field */}
-                <div className="mb-6">
-                  <label htmlFor="address" className="block text-sm font-['Arial'] text-black mb-2">
-                    Address *
-                  </label>
-                  <textarea
-                    id="address"
-                    name="address"
-                    value={formData.address}
-                    onChange={handleInputChange}
-                    required
-                    rows={3}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#0C0060] font-['Arial'] text-black bg-[#f9fafb] resize-none"
-                    placeholder="Enter your address"
                   />
                 </div>
 

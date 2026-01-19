@@ -103,8 +103,8 @@ export default function Footer() {
                   Contact Information
                 </h3>
                 <div className="flex flex-col gap-3 md:gap-4">
-                  <ContactItem icon={<PhoneIcon />} text="600 527626" />
-                  <ContactItem icon={<EmailIcon />} text="Info@Skydc.Ae" />
+                  <ContactItem icon={<PhoneIcon />} text="026677448" />
+                  <ContactItem icon={<EmailIcon />} text="info@skydc.ae" />
                   <ContactItem icon={<ClockIcon />} text="10am - 10pm, 7 Days a week" />
                 </div>
               </div>
