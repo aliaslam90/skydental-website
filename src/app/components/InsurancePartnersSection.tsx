@@ -1,20 +1,20 @@
 'use client'
 
 import { motion, useReducedMotion, useInView } from 'motion/react'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { Shield } from 'lucide-react'
 
 const insurancePartners = [
-  { id: '1', name: 'NextCare' },
-  { id: '2', name: 'NAS' },
-  { id: '3', name: 'NAS' },
-  { id: '4', name: 'Mednet' },
-  { id: '5', name: 'MetLife' },
-  { id: '6', name: 'Cigna' },
-  { id: '7', name: 'DAMAN' },
-  { id: '8', name: 'AXA GULF' },
-  { id: '9', name: 'Neuron' },
-  { id: '10', name: 'ALIAR' },
+  { id: '1', name: 'Thiqa', logo: '/logos/thiqa.webp' },
+  { id: '2', name: 'Daman', logo: '/logos/daman.webp' },
+  { id: '3', name: 'ADNIC', logo: '/logos/adnic.png' },
+  { id: '4', name: 'NAS', logo: '/logos/nas.png' },
+  { id: '5', name: 'Neuron', logo: '/logos/neuron.webp' },
+  { id: '6', name: 'AXA GIG', logo: '/logos/axagig.png' },
+  { id: '7', name: 'NextCare', logo: '/logos/nextcare.png' },
+  { id: '8', name: 'MedNet', logo: '/logos/mednet.webp' },
+  { id: '9', name: 'Cigna', logo: '/logos/cigna.png' },
+  { id: '10', name: 'SAICO', logo: '/logos/saico.jpg' },
 ]
 
 export default function InsurancePartnersSection() {
@@ -72,30 +72,37 @@ export default function InsurancePartnersSection() {
             >
               {/* First set of partners */}
               {insurancePartners.map((partner) => (
-                <div
-                  key={`first-${partner.id}`}
-                  className="bg-white rounded-2xl px-12 py-8 flex items-center justify-center min-w-[200px] shrink-0"
-                >
-                  <p className="text-base text-[#9ca3af] font-['Arial'] font-semibold whitespace-nowrap">
-                    {partner.name}
-                  </p>
-                </div>
+                <InsurancePartnerCard key={`first-${partner.id}`} partner={partner} />
               ))}
               {/* Duplicate set for infinite scroll */}
               {insurancePartners.map((partner) => (
-                <div
-                  key={`second-${partner.id}`}
-                  className="bg-white rounded-2xl px-12 py-8 flex items-center justify-center min-w-[200px] shrink-0"
-                >
-                  <p className="text-base text-[#9ca3af] font-['Arial'] font-semibold whitespace-nowrap">
-                    {partner.name}
-                  </p>
-                </div>
+                <InsurancePartnerCard key={`second-${partner.id}`} partner={partner} />
               ))}
             </motion.div>
           </div>
         </div>
       </div>
     </section>
+  )
+}
+
+function InsurancePartnerCard({ partner }: { partner: { id: string; name: string; logo: string } }) {
+  const [imageError, setImageError] = useState(false)
+
+  return (
+    <div className="bg-white rounded-2xl px-12 py-8 flex items-center justify-center min-w-[200px] shrink-0 h-[128px]">
+      {!imageError ? (
+        <img
+          src={partner.logo}
+          alt={`${partner.name} logo`}
+          className="max-w-[180px] max-h-[80px] object-contain"
+          onError={() => setImageError(true)}
+        />
+      ) : (
+        <p className="text-base text-[#9ca3af] font-['Arial'] font-semibold whitespace-nowrap">
+          {partner.name}
+        </p>
+      )}
+    </div>
   )
 }
