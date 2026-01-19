@@ -32,10 +32,10 @@ export default function HomePage() {
       <ServicesSection />
       <WhyChooseSection />
       <TechnologySection />
-      <InsurancePartnersSection />
       <ResultsSection />
       <TestimonialsSection />
       <DoctorsSection />
+      <InsurancePartnersSection />
       <ContactSection />
     </main>
   )

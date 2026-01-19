@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, useReducedMotion, useInView } from 'motion/react'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { ArrowUpRight, Check, GraduationCap, HeartPulse, Sparkles, Smile, MessageCircle, Percent } from 'lucide-react'
 import imgImage from "../../assets/e2295a1a1a2bc348414dcc117de577c691164137.png"
 import imgImage1 from "../../assets/c5fbf2bb2ed01ea6f6ce38835da33519e2db95fe.png"
@@ -15,11 +15,12 @@ interface Package {
   features: string[]
 }
 
-interface Privilege {
+interface PaymentCard {
   id: string
-  icon: string
-  title: string
+  name: string
   description: string
+  logo: string
+  color: string
 }
 
 const packages: Package[] = [
@@ -91,24 +92,34 @@ const packages: Package[] = [
   }
 ]
 
-const privileges: Privilege[] = [
+const paymentCards = [
   {
-    id: 'loyalty',
-    icon: '🎁',
-    title: 'Free Holidays',
-    description: 'Sky members enjoy complimentary holidays as a token of appreciation for their trust and continued patronage—granting exclusive access to some of the world\'s most sought-after destinations.'
+    id: 'homat-al-watan',
+    name: 'Homat Al Watan',
+    description: 'We proudly accept Homat Al Watan cards, offering exclusive benefits and discounts to UAE Armed Forces members, veterans, and their families.',
+    logo: '/logos/homat-al-watan.png', // Placeholder - to be added later
+    color: '#0C0060'
   },
   {
-    id: 'priority',
-    icon: '⭐',
-    title: 'Dental At Home',
-    description: 'Embrace the future of dentistry by welcoming premium dental services directly into the comfort and privacy of your home, tailored to your schedule and delivered with impeccable professionalism.'
+    id: 'tabby',
+    name: 'Tabby',
+    description: 'Split your dental treatment costs into interest-free installments with Tabby. Buy now, pay later with flexible payment options.',
+    logo: '/logos/tabby.png', // Placeholder - to be added later
+    color: '#000000'
   },
   {
-    id: 'treatments',
-    icon: '💼',
-    title: 'Corporate/Business Meetings',
-    description: 'Elevate productivity in an ideal environment tailored for executive meetings and business gatherings—combining premium hospitality with cutting-edge facilities designed for success.'
+    id: 'tamara',
+    name: 'Tamara',
+    description: 'Enjoy flexible payment plans with Tamara. Pay for your dental care in convenient installments with no hidden fees.',
+    logo: '/logos/tamara.png', // Placeholder - to be added later
+    color: '#000000'
+  },
+  {
+    id: 'faza',
+    name: 'Faza',
+    description: 'Faza cardholders receive special discounts and benefits on all our dental services. Present your card to enjoy exclusive savings.',
+    logo: '/logos/faza.png', // Placeholder - to be added later
+    color: '#0C0060'
   }
 ]
 
@@ -256,7 +267,7 @@ export default function PackagesPage() {
         </div>
       </section>
 
-      {/* Exclusive Member Privileges Section */}
+      {/* Accepted Payment Cards Section */}
       <section 
         ref={privilegesRef}
         className="py-24"
@@ -272,68 +283,68 @@ export default function PackagesPage() {
             className="text-center mb-16"
           >
             <h2 className="text-5xl font-['Gilda_Display'] text-black mb-6 tracking-tight">
-              Exclusive Member Privileges
+              Accepted Payment Cards
             </h2>
             <p className="text-lg text-[#1b1b1b] font-['Arial'] leading-relaxed max-w-3xl mx-auto">
-              We proudly extend special privileges to our esteemed, specially selected members who have entrusted us at Sky Dental Center with their oral health and aesthetics.
+              We accept a variety of payment methods and cards to make your dental care more accessible and convenient. Choose the payment option that works best for you.
             </p>
           </motion.div>
 
-          {/* Privileges Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
-            {privileges.map((privilege, index) => {
+          {/* Payment Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+            {paymentCards.map((card, index) => {
               const ref = useRef(null)
               const isInView = useInView(ref, { once: true, margin: "-100px" })
+              const [imageError, setImageError] = useState(false)
               
               return (
                 <motion.div
-                  key={privilege.id}
+                  key={card.id}
                   ref={ref}
                   initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: index * 0.15 }}
-                  className="bg-white border border-[#f3f4f6] rounded-3xl p-8 hover:shadow-xl transition-shadow duration-300"
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="bg-white border border-[#f3f4f6] rounded-3xl p-8 hover:shadow-xl transition-all duration-300 flex flex-col"
                 >
-                  {/* Icon */}
-                  <div className="w-16 h-16 bg-[#cbff8f] rounded-2xl flex items-center justify-center text-3xl mb-6">
-                    {privilege.icon}
+                  {/* Logo Container */}
+                  <div className="w-full h-24 bg-gradient-to-br from-[#e0edff] to-[#f0f4ff] rounded-2xl flex items-center justify-center mb-6 relative overflow-hidden">
+                    {!imageError ? (
+                      <img 
+                        src={card.logo} 
+                        alt={`${card.name} logo`}
+                        className="max-w-[140px] max-h-[60px] object-contain"
+                        onError={() => setImageError(true)}
+                      />
+                    ) : (
+                      <span className="text-xl font-bold text-[#0C0060]">
+                        {card.name}
+                      </span>
+                    )}
                   </div>
 
-                  {/* Title */}
-                  <h3 className="text-2xl font-['Gilda_Display'] text-black mb-4">
-                    {privilege.title}
+                  {/* Card Name */}
+                  <h3 className="text-xl font-['Gilda_Display'] text-black mb-3 text-center">
+                    {card.name}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-base text-[#4b5563] font-['Arial'] leading-relaxed mb-8">
-                    {privilege.description}
+                  <p className="text-sm text-[#4b5563] font-['Arial'] leading-relaxed text-center flex-grow">
+                    {card.description}
                   </p>
-
-                  {/* CTA Button */}
-                  <motion.button
-                    whileHover={shouldReduceMotion ? {} : { scale: 1.02 }}
-                    whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
-                    className="bg-[#cbff8f] text-[#0C0060] font-bold px-6 py-3 rounded-full w-full inline-flex items-center justify-between hover:bg-[#b8ff6d] transition-colors font-['Arial']"
-                  >
-                    <span>Learn More</span>
-                    <div className="w-9 h-9 bg-[#0C0060] rounded-full flex items-center justify-center">
-                      <ArrowUpRight className="w-5 h-5 text-[#cbff8f]" />
-                    </div>
-                  </motion.button>
                 </motion.div>
               )
             })}
           </div>
 
-          {/* Disclaimer */}
+          {/* Additional Info */}
           <motion.div
             initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
             animate={privilegesInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.6 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
             className="text-center mt-12"
           >
-            <p className="text-sm text-gray-600 font-['Arial'] italic">
-              *Terms and conditions apply. Please present valid identification to redeem offers.
+            <p className="text-sm text-gray-600 font-['Arial']">
+              For more information about payment options and eligibility, please contact our reception team.
             </p>
           </motion.div>
         </div>
