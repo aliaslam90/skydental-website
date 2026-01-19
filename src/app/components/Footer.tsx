@@ -91,7 +91,7 @@ export default function Footer() {
                   <FooterLink href="/services/cosmetic-dentistry">Cosmetic Dentistry</FooterLink>
                   <FooterLink href="/services/orthodontics">Orthodontics</FooterLink>
                   <FooterLink href="/services/pediatric-dentistry">Pediatric Dentistry</FooterLink>
-                  <FooterLink href="/services/advanced-restorative">Implant & Advanced Care Care</FooterLink>
+                  <FooterLink href="/services/advanced-restorative">Implant & Advanced Care</FooterLink>
                 </div>
               </div>
 

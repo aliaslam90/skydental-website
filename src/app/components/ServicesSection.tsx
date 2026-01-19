@@ -26,8 +26,8 @@ const servicesData = {
     description: 'Our paediatric dentistry services provide gentle, child-friendly care that supports healthy dental development in a comfortable, reassuring environment. We focus on prevention, early diagnosis, and building positive dental habits that last a lifetime. Your child\'s wellbeing and confidence are our top priorities.',
     image: '/PediatricDentistry.jpg'
   },
-  'Implant & Advanced Care Care': {
-    title: 'Implant & Advanced Care Care',
+  'Implant & Advanced Care': {
+    title: 'Implant & Advanced Care',
     description: 'Our advanced restorative services combine high-level clinical expertise with innovative technology to rebuild oral health and restore complete functionality. These treatments address complex conditions with precision, comfort, and long-lasting outcomes. We aim to revitalise your smile with solutions tailored to your unique needs.',
     image: '/AdvancedRestorativeCare.jpg'
   }
@@ -128,9 +128,9 @@ export default function ServicesSection() {
             />
             <ServiceButton 
               icon={<FlossIcon />} 
-              label="Implant & Advanced Care Care" 
-              isActive={selectedService === 'Implant & Advanced Care Care'}
-              onClick={() => setSelectedService('Implant & Advanced Care Care')}
+              label="Implant & Advanced Care" 
+              isActive={selectedService === 'Implant & Advanced Care'}
+              onClick={() => setSelectedService('Implant & Advanced Care')}
             />
           </motion.div>
 

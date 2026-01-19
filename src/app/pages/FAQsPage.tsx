@@ -33,7 +33,7 @@ const categories: Category[] = [
   { id: 'cosmetic', label: 'Cosmetic Dentistry', icon: '✨', color: 'bg-[#e0edff]' },
   { id: 'orthodontics', label: 'Orthodontics', icon: '🦷', color: 'bg-[#e8f4ff]' },
   { id: 'pediatric', label: 'Pediatric Dentistry', icon: '👶', color: 'bg-[#fff9e6]' },
-  { id: 'advanced', label: 'Implant & Advanced Care Care', icon: '🔬', color: 'bg-[#e8efff]' },
+  { id: 'advanced', label: 'Implant & Advanced Care', icon: '🔬', color: 'bg-[#e8efff]' },
   { id: 'endodontics', label: 'Endodontics', icon: '🦷', color: 'bg-[#ffe8f5]' },
   { id: 'prosthodontics', label: 'Prosthodontics', icon: '🦷', color: 'bg-[#e8f4ff]' },
   { id: 'oral-surgery', label: 'Oral Surgery', icon: '⚕️', color: 'bg-[#e8f4ff]' },
@@ -134,7 +134,7 @@ const faqCategories: FAQCategory[] = [
   },
   {
     id: 'advanced',
-    title: 'Implant & Advanced Care Care',
+    title: 'Implant & Advanced Care',
     icon: '🔬',
     faqs: [
       {

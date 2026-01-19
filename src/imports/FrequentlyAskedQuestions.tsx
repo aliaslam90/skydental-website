@@ -544,7 +544,7 @@ function Button4() {
     <div className="bg-[#e0edff] content-stretch flex gap-[8px] items-center px-[24px] py-[12px] relative rounded-[9999px] shrink-0" data-name="Button">
       <Container8 />
       <div className="flex flex-col font-['Arial:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[14px] text-black text-center text-nowrap">
-        <p className="leading-[20px]">{`Implant & Advanced Care Care`}</p>
+        <p className="leading-[20px]">{`Implant & Advanced Care`}</p>
       </div>
     </div>
   );
