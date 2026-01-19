@@ -304,10 +304,10 @@ export default function PackagesPage() {
                   initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-white border border-[#f3f4f6] rounded-3xl p-8 hover:shadow-xl transition-all duration-300 flex flex-col"
+                  className="bg-gradient-to-br from-[#e0edff] to-[#f0f4ff] border border-[#f3f4f6] rounded-3xl p-8 hover:shadow-xl transition-all duration-300 flex flex-col"
                 >
                   {/* Logo Container */}
-                  <div className="w-full h-24 bg-gradient-to-br from-[#e0edff] to-[#f0f4ff] rounded-2xl flex items-center justify-center mb-6 relative overflow-hidden">
+                  <div className="w-full h-24 bg-white rounded-2xl flex items-center justify-center mb-6 relative overflow-hidden">
                     {!imageError ? (
                       <img 
                         src={card.logo} 
