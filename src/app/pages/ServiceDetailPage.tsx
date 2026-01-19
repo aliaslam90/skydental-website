@@ -194,7 +194,7 @@ export default function ServiceDetailPage() {
                   transition={{ duration: 0.6, delay: index * 0.15 }}
                   className="bg-[#cbff8f] rounded-3xl p-8 text-center"
                 >
-                  <div className="w-16 h-16 bg-[#0C0060] rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <div className="w-16 h-16 bg-[#E0EDFF] rounded-2xl flex items-center justify-center mx-auto mb-6">
                     <span className="text-3xl">{benefit.icon}</span>
                   </div>
                   <h3 className="text-2xl font-['Gilda_Display'] text-black mb-3">
