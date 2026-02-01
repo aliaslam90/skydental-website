@@ -74,7 +74,7 @@ export default function ServicesSection() {
   }
 
   return (
-    <section id="services" className="py-[70px] px-[25px] md:py-[70px] py-[50px] px-[16px] md:px-[25px]">
+    <section id="services" className="pt-[30px] pb-[50px] md:pt-[40px] md:pb-[70px] px-[16px] md:px-[25px]">
       <motion.div
         ref={ref}
         variants={containerVariants}
