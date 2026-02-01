@@ -1,53 +1,12 @@
 'use client'
 
 import { motion, useReducedMotion, useInView } from 'motion/react'
-import { useRef, useState, useEffect } from 'react'
+import { useRef } from 'react'
 
 export default function AboutSection() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
   const shouldReduceMotion = useReducedMotion()
-
-  const [count1, setCount1] = useState(0)
-  const [count2, setCount2] = useState(0)
-  const [count3, setCount3] = useState(0)
-
-  useEffect(() => {
-    if (!isInView) return
-
-    const duration = shouldReduceMotion ? 0 : 2000
-    const startTime = Date.now()
-
-    const animateCount = () => {
-      const elapsed = Date.now() - startTime
-      const progress = Math.min(elapsed / duration, 1)
-
-      // Easing function for smooth animation
-      const easeOut = (t: number) => 1 - Math.pow(1 - t, 3)
-      const easedProgress = easeOut(progress)
-
-      setCount1(Math.floor(easedProgress * 10))
-      setCount2(Math.floor(easedProgress * 50))
-      setCount3(Math.floor(easedProgress * 10000))
-
-      if (progress < 1) {
-        requestAnimationFrame(animateCount)
-      } else {
-        // Ensure we hit exact final values
-        setCount1(10)
-        setCount2(50)
-        setCount3(10000)
-      }
-    }
-
-    if (duration === 0) {
-      setCount1(10)
-      setCount2(50)
-      setCount3(10000)
-    } else {
-      requestAnimationFrame(animateCount)
-    }
-  }, [isInView, shouldReduceMotion])
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -65,15 +24,6 @@ export default function AboutSection() {
       y: 0,
       opacity: 1,
       transition: { duration: shouldReduceMotion ? 0 : 0.6, ease: 'easeOut' }
-    }
-  }
-
-  const statsVariants = {
-    hidden: { scale: 0.8, opacity: 0 },
-    visible: {
-      scale: 1,
-      opacity: 1,
-      transition: { duration: shouldReduceMotion ? 0 : 0.5, ease: 'easeOut' }
     }
   }
 
@@ -110,46 +60,10 @@ export default function AboutSection() {
         </div>
 
         {/* Divider */}
-        <motion.div variants={itemVariants} className="w-full max-w-[1390px] mx-auto mb-[40px] md:mb-[50px] lg:mb-[60px]">
+        <motion.div variants={itemVariants} className="w-full max-w-[1390px] mx-auto">
           <svg className="w-full h-[0.6px]" viewBox="0 0 1390 0.6" preserveAspectRatio="none">
             <path d="M0 0.3H1390" stroke="#6D669F" strokeWidth="0.6" />
           </svg>
-        </motion.div>
-
-        {/* Stats */}
-        <motion.div
-          variants={containerVariants}
-          className="grid grid-cols-1 md:grid-cols-3 gap-[32px] md:gap-[24px] lg:gap-0 lg:flex lg:items-center lg:justify-between max-w-[1356px] mx-auto"
-        >
-          <motion.div variants={statsVariants} className="flex items-center gap-[16px] md:gap-[20px] justify-center md:justify-start">
-            <h2 
-              className="text-black text-[40px] md:text-[48px] lg:text-[55px] leading-[1.15] tracking-[-1.65px] capitalize"
-              style={{ fontFamily: "'Gilda Display', serif" }}
-            >
-              {count1}+
-            </h2>
-            <p className="text-black text-[14px] md:text-[16px] leading-[1.55] whitespace-nowrap">Years of Excellence</p>
-          </motion.div>
-
-          <motion.div variants={statsVariants} className="flex items-center gap-[16px] md:gap-[20px] justify-center md:justify-start">
-            <h2 
-              className="text-black text-[40px] md:text-[48px] lg:text-[55px] leading-[1.15] tracking-[-1.65px] capitalize"
-              style={{ fontFamily: "'Gilda Display', serif" }}
-            >
-              {count2}+
-            </h2>
-            <p className="text-black text-[14px] md:text-[16px] leading-[1.55] whitespace-nowrap">Amazing Team</p>
-          </motion.div>
-
-          <motion.div variants={statsVariants} className="flex items-center gap-[16px] md:gap-[20px] justify-center md:justify-start">
-            <h2 
-              className="text-black text-[40px] md:text-[48px] lg:text-[55px] leading-[1.15] tracking-[-1.65px] capitalize"
-              style={{ fontFamily: "'Gilda Display', serif" }}
-            >
-              {count3} +
-            </h2>
-            <p className="text-black text-[14px] md:text-[16px] leading-[1.55] whitespace-nowrap">Lovely clients</p>
-          </motion.div>
         </motion.div>
       </motion.div>
     </section>
