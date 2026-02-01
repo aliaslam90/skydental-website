@@ -1,13 +1,11 @@
 'use client'
 
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState } from 'react'
 import { useReducedMotion } from 'motion/react'
 
 export default function CustomCursor() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [isVisible, setIsVisible] = useState(false)
-  const cursorRef = useRef<HTMLDivElement>(null)
-  const animationFrameRef = useRef<number>()
   const shouldReduceMotion = useReducedMotion()
 
   useEffect(() => {
@@ -16,29 +14,8 @@ export default function CustomCursor() {
       return
     }
 
-    let currentX = 0
-    let currentY = 0
-    let targetX = 0
-    let targetY = 0
-
-    const animate = () => {
-      // Smooth interpolation for following effect
-      currentX += (targetX - currentX) * 0.15
-      currentY += (targetY - currentY) * 0.15
-
-      if (cursorRef.current) {
-        cursorRef.current.style.left = `${currentX}px`
-        cursorRef.current.style.top = `${currentY}px`
-      }
-
-      animationFrameRef.current = requestAnimationFrame(animate)
-    }
-
-    animate()
-
     const handleMouseMove = (e: MouseEvent) => {
-      targetX = e.clientX
-      targetY = e.clientY
+      setMousePosition({ x: e.clientX, y: e.clientY })
       setIsVisible(true)
     }
 
@@ -68,9 +45,8 @@ export default function CustomCursor() {
       document.removeEventListener('mousemove', handleMouseMove)
       document.removeEventListener('mouseleave', handleMouseLeave)
       document.body.removeEventListener('mouseenter', handleMouseEnter)
-      document.head.removeChild(style)
-      if (animationFrameRef.current) {
-        cancelAnimationFrame(animationFrameRef.current)
+      if (document.head.contains(style)) {
+        document.head.removeChild(style)
       }
     }
   }, [shouldReduceMotion])
@@ -82,19 +58,17 @@ export default function CustomCursor() {
 
   return (
     <div
-      ref={cursorRef}
       className="fixed pointer-events-none z-[9999]"
       style={{
+        left: `${mousePosition.x}px`,
+        top: `${mousePosition.y}px`,
         transform: 'translate(-50%, -50%)',
         opacity: isVisible ? 1 : 0,
-        transition: 'opacity 0.3s ease-out',
-        willChange: 'transform',
+        transition: 'opacity 0.2s ease-out',
       }}
     >
-      <div className="flex items-center justify-center">
-        <div className="w-12 h-12 md:w-14 md:h-14">
-          <ToothLogo />
-        </div>
+      <div className="w-10 h-10 md:w-12 md:h-12">
+        <ToothLogo />
       </div>
     </div>
   )
@@ -108,29 +82,32 @@ function ToothLogo() {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      {/* Stylized tooth with intertwining lines - two continuous dark blue lines */}
-      <g stroke="#0C0060" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none">
-        {/* First line: bottom left root -> up to crown -> intertwines -> down to bottom right root */}
-        <path 
-          d="M30 90 
-             C25 85, 20 75, 25 60
-             C30 45, 35 35, 40 30
-             C42 28, 45 26, 50 25
-             C55 26, 58 28, 60 30
-             C65 35, 70 45, 75 60
-             C80 75, 75 85, 70 90" 
-        />
-        {/* Second line: bottom right root -> up to crown -> intertwines -> down to bottom left root */}
-        <path 
-          d="M70 90 
-             C75 85, 80 75, 75 60
-             C70 45, 65 35, 60 30
-             C58 28, 55 26, 50 25
-             C45 26, 42 28, 40 30
-             C35 35, 30 45, 25 60
-             C20 75, 25 85, 30 90" 
-        />
-      </g>
+      {/* Single continuous dark blue line - starts bottom left, curves up to crown, intertwines in middle, forms roots */}
+      <path 
+        stroke="#0C0060" 
+        strokeWidth="3" 
+        strokeLinecap="round" 
+        strokeLinejoin="round" 
+        fill="none"
+        d="M28 92 
+           Q22 88, 20 82
+           Q18 72, 22 58
+           Q26 44, 32 34
+           Q36 28, 42 25
+           Q45 23, 48 22
+           Q50 21, 52 22
+           Q55 23, 58 25
+           Q64 28, 68 34
+           Q74 44, 78 58
+           Q82 72, 80 82
+           Q78 88, 72 92
+           Q68 90, 64 92
+           Q60 90, 56 92
+           Q52 90, 48 92
+           Q44 90, 40 92
+           Q36 90, 32 92
+           Q30 92, 28 92"
+      />
     </svg>
   )
 }
