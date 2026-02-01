@@ -5,6 +5,7 @@ import { useReducedMotion } from 'motion/react'
 
 export default function CustomCursor() {
   const [isVisible, setIsVisible] = useState(false)
+  const [isOverClickable, setIsOverClickable] = useState(false)
   const cursorRef = useRef<HTMLDivElement>(null)
   const animationFrameRef = useRef<number>()
   const shouldReduceMotion = useReducedMotion()
@@ -35,14 +36,47 @@ export default function CustomCursor() {
 
     animate()
 
+    const checkIfClickable = (element: Element | null): boolean => {
+      if (!element) return false
+      
+      // Check if element is clickable
+      const tagName = element.tagName.toLowerCase()
+      if (tagName === 'a' || tagName === 'button' || tagName === 'input' || tagName === 'textarea' || tagName === 'select') {
+        return true
+      }
+      
+      // Check if element has click handler or role
+      if (element.hasAttribute('onclick') || 
+          element.getAttribute('role') === 'button' ||
+          element.getAttribute('tabindex') !== null) {
+        return true
+      }
+      
+      // Check computed cursor style
+      const computedStyle = window.getComputedStyle(element)
+      const cursor = computedStyle.cursor
+      if (cursor === 'pointer' || cursor === 'grab' || cursor === 'grabbing') {
+        return true
+      }
+      
+      return false
+    }
+
     const handleMouseMove = (e: MouseEvent) => {
       targetX = e.clientX
       targetY = e.clientY
+      
+      // Check if we're over a clickable element
+      const elementUnderMouse = document.elementFromPoint(e.clientX, e.clientY)
+      const clickable = checkIfClickable(elementUnderMouse)
+      setIsOverClickable(clickable)
+      
       setIsVisible(true)
     }
 
     const handleMouseLeave = () => {
       setIsVisible(false)
+      setIsOverClickable(false)
     }
 
     const handleMouseEnter = () => {
@@ -75,8 +109,8 @@ export default function CustomCursor() {
       className="fixed pointer-events-none z-[9999]"
       style={{
         transform: 'translate(-50%, -50%)',
-        opacity: isVisible ? 1 : 0,
-        transition: 'opacity 0.3s ease-out',
+        opacity: isVisible && !isOverClickable ? 1 : 0,
+        transition: 'opacity 0.2s ease-out',
         willChange: 'transform',
       }}
     >
