@@ -7,11 +7,19 @@ import { Home, ChevronRight, Plus, Minus } from 'lucide-react'
 import imgImage from "../../assets/e2295a1a1a2bc348414dcc117de577c691164137.png"
 import imgImage1 from "../../assets/c5fbf2bb2ed01ea6f6ce38835da33519e2db95fe.png"
 import imgImage2 from "../../assets/27cea6501d6677b5b8f9f08502ce76c7a193f7f8.png"
+import { 
+  GeneralDentistryIcon, 
+  CosmeticDentistryIcon, 
+  OrthodonticsIcon, 
+  PediatricDentistryIcon, 
+  ImplantAdvancedCareIcon 
+} from '../components/ServiceIcons'
 
 interface Category {
   id: string
   label: string
-  icon: string
+  Icon?: React.ComponentType<{ className?: string }>
+  icon?: string
   color: string
 }
 
@@ -24,16 +32,17 @@ interface FAQ {
 interface FAQCategory {
   id: string
   title: string
-  icon: string
+  Icon?: React.ComponentType<{ className?: string }>
+  icon?: string
   faqs: FAQ[]
 }
 
 const categories: Category[] = [
-  { id: 'general', label: 'General Dentistry', icon: '🦷', color: 'bg-[#cbff8f]' },
-  { id: 'cosmetic', label: 'Cosmetic Dentistry', icon: '✨', color: 'bg-[#e0edff]' },
-  { id: 'orthodontics', label: 'Orthodontics', icon: '🦷', color: 'bg-[#e8f4ff]' },
-  { id: 'pediatric', label: 'Pediatric Dentistry', icon: '👶', color: 'bg-[#fff9e6]' },
-  { id: 'advanced', label: 'Implant & Advanced Care', icon: '🔬', color: 'bg-[#e8efff]' },
+  { id: 'general', label: 'General Dentistry', Icon: GeneralDentistryIcon, color: 'bg-[#cbff8f]' },
+  { id: 'cosmetic', label: 'Cosmetic Dentistry', Icon: CosmeticDentistryIcon, color: 'bg-[#e0edff]' },
+  { id: 'orthodontics', label: 'Orthodontics', Icon: OrthodonticsIcon, color: 'bg-[#e8f4ff]' },
+  { id: 'pediatric', label: 'Pediatric Dentistry', Icon: PediatricDentistryIcon, color: 'bg-[#fff9e6]' },
+  { id: 'advanced', label: 'Implant & Advanced Care', Icon: ImplantAdvancedCareIcon, color: 'bg-[#e8efff]' },
   { id: 'endodontics', label: 'Endodontics', icon: '🦷', color: 'bg-[#ffe8f5]' },
   { id: 'prosthodontics', label: 'Prosthodontics', icon: '🦷', color: 'bg-[#e8f4ff]' },
   { id: 'oral-surgery', label: 'Oral Surgery', icon: '⚕️', color: 'bg-[#e8f4ff]' },
@@ -46,7 +55,7 @@ const faqCategories: FAQCategory[] = [
   {
     id: 'general',
     title: 'General Dentistry',
-    icon: '🦷',
+    Icon: GeneralDentistryIcon,
     faqs: [
       {
         id: 'general-1',
@@ -68,7 +77,7 @@ const faqCategories: FAQCategory[] = [
   {
     id: 'cosmetic',
     title: 'Cosmetic Dentistry',
-    icon: '✨',
+    Icon: CosmeticDentistryIcon,
     faqs: [
       {
         id: 'cosmetic-1',
@@ -90,7 +99,7 @@ const faqCategories: FAQCategory[] = [
   {
     id: 'orthodontics',
     title: 'Orthodontics',
-    icon: '🦷',
+    Icon: OrthodonticsIcon,
     faqs: [
       {
         id: 'orthodontics-1',
@@ -112,7 +121,7 @@ const faqCategories: FAQCategory[] = [
   {
     id: 'pediatric',
     title: 'Pediatric Dentistry',
-    icon: '👶',
+    Icon: PediatricDentistryIcon,
     faqs: [
       {
         id: 'pediatric-1',
@@ -134,7 +143,7 @@ const faqCategories: FAQCategory[] = [
   {
     id: 'advanced',
     title: 'Implant & Advanced Care',
-    icon: '🔬',
+    Icon: ImplantAdvancedCareIcon,
     faqs: [
       {
         id: 'advanced-1',
@@ -367,7 +376,11 @@ export default function FAQsPage() {
                     selectedCategory === category.id ? category.color : 'bg-white border border-[#e5e7eb]'
                   } px-5 py-2.5 rounded-full text-[14px] font-['Arial'] font-medium text-black hover:shadow-md transition-all flex items-center gap-2`}
                 >
-                  <span>{category.icon}</span>
+                  {category.Icon ? (
+                    <category.Icon className="w-5 h-5" />
+                  ) : (
+                    <span>{category.icon}</span>
+                  )}
                   <span>{category.label}</span>
                 </motion.button>
               ))}
@@ -388,7 +401,11 @@ export default function FAQsPage() {
               >
                 {/* Category Title */}
                 <div className="flex items-center gap-3 mb-8">
-                  <span className="text-3xl">{activeCategoryData.icon}</span>
+                  {activeCategoryData.Icon ? (
+                    <activeCategoryData.Icon className="w-8 h-8 text-black" />
+                  ) : (
+                    <span className="text-3xl">{activeCategoryData.icon}</span>
+                  )}
                   <h2 className="text-3xl md:text-4xl font-['Gilda_Display'] text-black">
                     {activeCategoryData.title}
                   </h2>

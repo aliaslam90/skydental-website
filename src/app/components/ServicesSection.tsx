@@ -4,40 +4,47 @@ import { motion, useReducedMotion, useInView } from 'motion/react'
 import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowUpRight } from 'lucide-react'
+import { 
+  GeneralDentistryIcon, 
+  CosmeticDentistryIcon, 
+  OrthodonticsIcon, 
+  PediatricDentistryIcon, 
+  ImplantAdvancedCareIcon 
+} from './ServiceIcons'
 
 // Services data matching ServicesPage
 const services = [
   {
     id: 'general-dentistry',
-    icon: '🦷',
+    Icon: GeneralDentistryIcon,
     title: 'General Dentistry',
     description: 'Comprehensive dental care for healthy teeth and gums, including checkups, cleanings, and preventive treatments.',
     bgColor: '#edfede'
   },
   {
     id: 'cosmetic-dentistry',
-    icon: '✨',
+    Icon: CosmeticDentistryIcon,
     title: 'Cosmetic Dentistry',
     description: 'Transform your smile with advanced aesthetic treatments including whitening, veneers, and smile design.',
     bgColor: '#edfede'
   },
   {
     id: 'orthodontics',
-    icon: '🦷',
+    Icon: OrthodonticsIcon,
     title: 'Orthodontics',
     description: 'Straighten your teeth and correct misalignments with braces, Invisalign, and modern orthodontic solutions.',
     bgColor: '#edfede'
   },
   {
     id: 'pediatric-dentistry',
-    icon: '👶',
+    Icon: PediatricDentistryIcon,
     title: 'Pediatric Dentistry',
     description: 'Gentle, specialized dental care for children and teens in a welcoming and comfortable environment.',
     bgColor: '#edfede'
   },
   {
     id: 'advanced-restorative',
-    icon: '🔬',
+    Icon: ImplantAdvancedCareIcon,
     title: 'Implant & Advanced Care',
     description: 'Complex treatments for structural and functional restoration including implants and full-mouth restoration.',
     bgColor: '#edfede'
@@ -68,7 +75,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
         className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 relative z-10"
         style={{ backgroundColor: service.bgColor }}
       >
-        <span className="text-3xl">{service.icon}</span>
+        <service.Icon className="w-8 h-8 text-black" />
       </div>
 
       {/* Content */}

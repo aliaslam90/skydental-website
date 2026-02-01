@@ -6,6 +6,7 @@ import { useParams, Link } from 'react-router-dom'
 import { ArrowUpRight, Home, ChevronRight } from 'lucide-react'
 import { getServiceById } from '../data/servicesData'
 import { useBooking } from '../context/BookingContext'
+import { serviceIcons } from '../components/ServiceIcons'
 
 // Guest experience images
 const guestExperiences = [
