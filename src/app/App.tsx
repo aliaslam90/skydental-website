@@ -19,6 +19,7 @@ import PrivacyPolicyPage from './pages/PrivacyPolicyPage'
 import ContactUsPage from './pages/ContactUsPage'
 import Footer from './components/Footer'
 import { BookingProvider } from './context/BookingContext'
+import CustomCursor from './components/CustomCursor'
 
 export default function App() {
   const [mounted, setMounted] = useState(false)
@@ -40,6 +41,7 @@ export default function App() {
     <BrowserRouter>
       <BookingProvider>
         <ScrollToTop />
+        <CustomCursor />
         <div className="bg-white min-h-screen">
           <Header />
           <Routes>
