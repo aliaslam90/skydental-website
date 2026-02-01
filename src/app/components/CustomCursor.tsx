@@ -92,15 +92,45 @@ export default function CustomCursor() {
       }}
     >
       <div className="flex items-center justify-center">
-        <div className="bg-[#cbff8f] rounded-full px-3 py-1.5 flex items-center gap-2 shadow-lg border border-[#0C0060]/10">
-          <span 
-            className="text-[#0C0060] font-bold text-xs md:text-sm whitespace-nowrap tracking-tight"
-            style={{ fontFamily: "'Gilda Display', serif" }}
-          >
-            Sky Dental
-          </span>
+        <div className="w-12 h-12 md:w-14 md:h-14">
+          <ToothLogo />
         </div>
       </div>
     </div>
+  )
+}
+
+function ToothLogo() {
+  return (
+    <svg 
+      viewBox="0 0 100 100" 
+      className="w-full h-full"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      {/* Stylized tooth with intertwining lines - two continuous dark blue lines */}
+      <g stroke="#0C0060" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none">
+        {/* First line: bottom left root -> up to crown -> intertwines -> down to bottom right root */}
+        <path 
+          d="M30 90 
+             C25 85, 20 75, 25 60
+             C30 45, 35 35, 40 30
+             C42 28, 45 26, 50 25
+             C55 26, 58 28, 60 30
+             C65 35, 70 45, 75 60
+             C80 75, 75 85, 70 90" 
+        />
+        {/* Second line: bottom right root -> up to crown -> intertwines -> down to bottom left root */}
+        <path 
+          d="M70 90 
+             C75 85, 80 75, 75 60
+             C70 45, 65 35, 60 30
+             C58 28, 55 26, 50 25
+             C45 26, 42 28, 40 30
+             C35 35, 30 45, 25 60
+             C20 75, 25 85, 30 90" 
+        />
+      </g>
+    </svg>
   )
 }
