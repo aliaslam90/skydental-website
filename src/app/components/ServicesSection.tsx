@@ -1,49 +1,97 @@
 'use client'
 
 import { motion, useReducedMotion, useInView } from 'motion/react'
-import { useRef, useState } from 'react'
-import svgPaths from '../../imports/svg-p4rwj0t9df'
-import { useBooking } from '../context/BookingContext'
+import { useRef } from 'react'
+import { Link } from 'react-router-dom'
+import { ArrowUpRight } from 'lucide-react'
 
-const servicesData = {
-  'General Dentistry': {
+// Services data matching ServicesPage
+const services = [
+  {
+    id: 'general-dentistry',
+    icon: '🦷',
     title: 'General Dentistry',
-    description: 'General Dentistry forms the foundation of lifelong oral health, focusing on early diagnosis, prevention, and treatment of common dental concerns. Our team provides precise, comfortable care designed to protect your smile and maintain healthy teeth and gums. We adopt modern techniques to ensure accurate results and an exceptional patient journey.',
-    image: '/GeneralDentistry.jpg'
+    description: 'Comprehensive dental care for healthy teeth and gums, including checkups, cleanings, and preventive treatments.',
+    bgColor: '#edfede'
   },
-  'Cosmetic Dentistry': {
+  {
+    id: 'cosmetic-dentistry',
+    icon: '✨',
     title: 'Cosmetic Dentistry',
-    description: 'Our cosmetic dentistry services focus on enhancing the beauty, balance, and harmony of your smile. Using modern aesthetic techniques and personalized planning, we create naturally stunning results that elevate confidence. Each treatment is tailored to your unique facial profile and smile goals.',
-    image: '/CosmeticDentistry.jpg'
+    description: 'Transform your smile with advanced aesthetic treatments including whitening, veneers, and smile design.',
+    bgColor: '#edfede'
   },
-  'Orthodontics': {
+  {
+    id: 'orthodontics',
+    icon: '🦷',
     title: 'Orthodontics',
-    description: 'Our orthodontic services deliver functional and aesthetic improvements by straightening teeth and aligning the bite. We offer modern solutions suitable for all ages, ensuring comfortable treatment and precise results. Every plan is individually crafted to create a healthy, beautifully aligned smile.',
-    image: '/Orthodontics.jpg'
+    description: 'Straighten your teeth and correct misalignments with braces, Invisalign, and modern orthodontic solutions.',
+    bgColor: '#edfede'
   },
-  'Pediatric Dentistry': {
+  {
+    id: 'pediatric-dentistry',
+    icon: '👶',
     title: 'Pediatric Dentistry',
-    description: 'Our paediatric dentistry services provide gentle, child-friendly care that supports healthy dental development in a comfortable, reassuring environment. We focus on prevention, early diagnosis, and building positive dental habits that last a lifetime. Your child\'s wellbeing and confidence are our top priorities.',
-    image: '/PediatricDentistry.jpg'
+    description: 'Gentle, specialized dental care for children and teens in a welcoming and comfortable environment.',
+    bgColor: '#edfede'
   },
-  'Implant & Advanced Care': {
+  {
+    id: 'advanced-restorative',
+    icon: '🔬',
     title: 'Implant & Advanced Care',
-    description: 'Our advanced restorative services combine high-level clinical expertise with innovative technology to rebuild oral health and restore complete functionality. These treatments address complex conditions with precision, comfort, and long-lasting outcomes. We aim to revitalise your smile with solutions tailored to your unique needs.',
-    image: '/AdvancedRestorativeCare.jpg'
+    description: 'Complex treatments for structural and functional restoration including implants and full-mouth restoration.',
+    bgColor: '#edfede'
   }
+]
+
+function ServiceCard({ service, index }: { service: typeof services[0]; index: number }) {
+  const cardRef = useRef(null)
+  const isInView = useInView(cardRef, { once: true, margin: "-100px" })
+  const shouldReduceMotion = useReducedMotion()
+
+  return (
+    <motion.div
+      ref={cardRef}
+      initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
+      className="bg-white border border-gray-100 rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden group"
+    >
+      {/* Decorative overlay */}
+      <div 
+        className="absolute -top-8 -right-8 w-32 h-32 rounded-full opacity-30"
+        style={{ backgroundColor: 'rgba(224, 237, 255, 0.5)' }}
+      />
+      
+      {/* Icon */}
+      <div 
+        className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 relative z-10"
+        style={{ backgroundColor: service.bgColor }}
+      >
+        <span className="text-3xl">{service.icon}</span>
+      </div>
+
+      {/* Content */}
+      <h3 className="text-2xl font-['Gilda_Display'] text-black mb-4">
+        {service.title}
+      </h3>
+      <p className="text-base text-black/80 font-['Arial'] leading-relaxed mb-8">
+        {service.description}
+      </p>
+
+      {/* Learn More Link */}
+      <Link to={`/services/${service.id}`} className="flex items-center gap-2 text-black font-['Poppins'] font-semibold group-hover:gap-3 transition-all">
+        <span>Learn More</span>
+        <ArrowUpRight className="w-4 h-4" />
+      </Link>
+    </motion.div>
+  )
 }
 
 export default function ServicesSection() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
   const shouldReduceMotion = useReducedMotion()
-  const [selectedService, setSelectedService] = useState('General Dentistry')
-  const { openBookingSidebar } = useBooking()
-  
-  const currentService = servicesData[selectedService as keyof typeof servicesData]
-  
-  // Debug: Log the image path
-  console.log('Current service image path:', currentService.image)
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -62,15 +110,6 @@ export default function ServicesSection() {
       opacity: 1,
       transition: { duration: shouldReduceMotion ? 0 : 0.6, ease: 'easeOut' }
     }
-  }
-
-  const buttonVariants = {
-    hover: { 
-      scale: shouldReduceMotion ? 1 : 1.05,
-      y: shouldReduceMotion ? 0 : -2,
-      boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.1)'
-    },
-    tap: { scale: shouldReduceMotion ? 1 : 0.98 }
   }
 
   return (
@@ -94,92 +133,24 @@ export default function ServicesSection() {
 
           {/* Title */}
           <h2
-            className="text-black text-[32px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-1.44px] text-center mb-[24px] md:mb-[32px] relative z-10"
+            className="text-black text-[32px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-1.44px] text-center mb-[32px] md:mb-[48px] relative z-10"
             style={{ fontFamily: "'Gilda Display', serif" }}
           >
             Our Services
           </h2>
 
-          {/* Tabs Menu */}
-          <motion.div variants={containerVariants} className="flex items-center justify-center gap-[12px] md:gap-[16px] mb-[32px] md:mb-[48px] relative z-10 overflow-x-auto scrollbar-hide pb-2">
-            <ServiceButton 
-              icon={<ToothIcon />} 
-              label="General Dentistry" 
-              isActive={selectedService === 'General Dentistry'}
-              onClick={() => setSelectedService('General Dentistry')}
-            />
-            <ServiceButton 
-              icon={<HappyToothIcon />} 
-              label="Cosmetic Dentistry" 
-              isActive={selectedService === 'Cosmetic Dentistry'}
-              onClick={() => setSelectedService('Cosmetic Dentistry')}
-            />
-            <ServiceButton 
-              icon={<BracketsIcon />} 
-              label="Orthodontics" 
-              isActive={selectedService === 'Orthodontics'}
-              onClick={() => setSelectedService('Orthodontics')}
-            />
-            <ServiceButton 
-              icon={<ToothacheIcon />} 
-              label="Pediatric Dentistry" 
-              isActive={selectedService === 'Pediatric Dentistry'}
-              onClick={() => setSelectedService('Pediatric Dentistry')}
-            />
-            <ServiceButton 
-              icon={<FlossIcon />} 
-              label="Implant & Advanced Care" 
-              isActive={selectedService === 'Implant & Advanced Care'}
-              onClick={() => setSelectedService('Implant & Advanced Care')}
-            />
-          </motion.div>
-
-          <div className="flex flex-col lg:flex-row items-start lg:items-center gap-[32px] md:gap-[40px] lg:gap-[48px] relative z-10">
-            {/* Left Content */}
-            <div className="flex flex-col gap-[32px] md:gap-[40px] lg:gap-[48px] w-full lg:max-w-[494px]">
-              <div className="flex flex-col gap-[16px] md:gap-[20px]">
-                <h3
-                  className="text-black text-[28px] md:text-[34px] lg:text-[40px] leading-[1.2] tracking-[-1.2px]"
-                  style={{ fontFamily: "'Gilda Display', serif" }}
-                >
-                  {currentService.title}
-                </h3>
-                <p className="text-black text-[15px] md:text-[16px] leading-[1.55] text-justify">
-                  {currentService.description}
-                </p>
-              </div>
-
-              <button 
-                onClick={() => openBookingSidebar()}
-                className="bg-[#cbff8f] flex items-center gap-4 md:gap-6 pl-4 md:pl-6 pr-[8px] md:pr-[10px] py-2 rounded-[35px] self-start hover:bg-[#B1FF57] transition-colors">
-                <span className="text-[#0C0060] font-bold text-[14px] md:text-[16px] whitespace-nowrap">Request Appointment</span>
-                <div className="bg-[#0C0060] w-[32px] h-[32px] md:w-[34px] md:h-[34px] rounded-full flex items-center justify-center flex-shrink-0">
-                  <ArrowIcon />
-                </div>
-              </button>
-            </div>
-
-            {/* Right Content - Image */}
-            <div className="flex-1 w-full">
-              <div className="relative rounded-[20px] overflow-hidden w-full h-[350px]">
-                <div className="absolute inset-0 bg-[#c4c4c4]" />
-                <img
-                  key={selectedService}
-                  src={currentService.image}
-                  alt={`${currentService.title} procedure`}
-                  className="absolute inset-0 w-full h-full object-cover"
-                  loading="eager"
-                  onLoad={() => {
-                    console.log('Image loaded successfully:', currentService.image)
-                  }}
-                  onError={(e) => {
-                    console.error('Image failed to load:', currentService.image)
-                    console.error('Full path attempted:', window.location.origin + currentService.image)
-                    console.error('Error:', e)
-                  }}
-                />
-              </div>
-            </div>
+          {/* Services Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
+            {services.slice(0, 3).map((service, index) => (
+              <ServiceCard key={service.id} service={service} index={index} />
+            ))}
+          </div>
+          
+          {/* Second Row - 2 cards centered */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mt-6 relative z-10">
+            {services.slice(3).map((service, index) => (
+              <ServiceCard key={service.id} service={service} index={index + 3} />
+            ))}
           </div>
         </motion.div>
       </motion.div>
@@ -187,135 +158,15 @@ export default function ServicesSection() {
   )
 }
 
-function ServiceButton({ icon, label, isActive, onClick }: { icon: any; label: string; isActive?: boolean; onClick?: () => void }) {
-  return (
-    <button 
-      onClick={onClick}
-      className={`flex items-center gap-[8px] h-[44px] md:h-[50px] px-[14px] md:px-[18px] py-[12px] md:py-[15px] rounded-[35px] transition-colors flex-shrink-0 ${
-        isActive 
-          ? 'bg-[#cbff8f] border border-[#0C0060] hover:bg-[#B1FF57]' 
-          : 'border-[0.7px] border-black hover:bg-[#e0edff] hover:border-[#0C0060]'
-      }`}
-    >
-      <div className={isActive ? '[&_path]:!fill-[#0C0060]' : '[&_path]:!fill-black'}>
-        {icon}
-      </div>
-      <span className={`${isActive ? 'text-[#0C0060] font-bold' : 'text-black'} text-[14px] md:text-[16px] whitespace-nowrap`}>
-        {label}
-      </span>
-    </button>
-  )
-}
-
-function CheckItem({ text }: { text: string }) {
-  return (
-    <div className="flex items-start gap-[10px]">
-      <svg className="w-[25px] h-[25px] flex-shrink-0" fill="none" viewBox="0 0 25 25">
-        <circle cx="12.5" cy="12.5" r="8.5" stroke="black" strokeWidth="1" fill="none" />
-        <path d="M7.41 12.58L11.5 16.67L17.59 10.58" fill="black" />
-      </svg>
-      <p className="text-black text-[16px] leading-[1.55] flex-1">{text}</p>
-    </div>
-  )
-}
-
-function ToothIcon() {
-  return (
-    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24">
-      <g>
-        <path d={svgPaths.pa3a5000} fill="#0C0060" />
-        <path d={svgPaths.p3489ba80} fill="#0C0060" />
-        <path d={svgPaths.p99b4f00} fill="#0C0060" />
-        <path d={svgPaths.p3c163100} fill="#0C0060" />
-      </g>
-    </svg>
-  )
-}
-
-function HappyToothIcon() {
-  return (
-    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24">
-      <g>
-        <path d={svgPaths.p114e7e00} fill="black" />
-        <path d={svgPaths.p36b80570} fill="black" />
-        <path d={svgPaths.p53b900} fill="black" />
-        <path d={svgPaths.p99b4f00} fill="black" />
-        <path d={svgPaths.p3c163100} fill="black" />
-        <path d={svgPaths.p398361ea} fill="black" />
-        <path d={svgPaths.pd448400} fill="black" />
-      </g>
-    </svg>
-  )
-}
-
-function BracketsIcon() {
-  return (
-    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24">
-      <g>
-        <path d={svgPaths.p524cff1} fill="black" />
-        <path d={svgPaths.p1b06b780} fill="black" />
-        <path d={svgPaths.p2263d900} fill="black" />
-      </g>
-    </svg>
-  )
-}
-
-function ToothacheIcon() {
-  return (
-    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24">
-      <g>
-        <path d={svgPaths.p9acb240} fill="black" />
-        <path d={svgPaths.p686dcf0} fill="black" />
-        <path d={svgPaths.p3f2b9400} fill="black" />
-        <path d={svgPaths.p3d5ee200} fill="black" />
-        <path d={svgPaths.p1d301000} fill="black" />
-      </g>
-    </svg>
-  )
-}
-
-function FlossIcon() {
-  return (
-    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24">
-      <g>
-        <path d={svgPaths.p16c99000} fill="black" />
-        <path d={svgPaths.p2f0d7e00} fill="black" />
-        <path d={svgPaths.pe518300} fill="black" />
-      </g>
-    </svg>
-  )
-}
-
 function BigToothIcon() {
   return (
     <svg className="w-full h-full" fill="none" viewBox="0 0 641.997 612.581">
       <g>
-        <path d={svgPaths.p5a95e80} fill="black" />
-        <path d={svgPaths.p1270ad00} fill="black" />
-        <path d={svgPaths.p319fbf00} fill="black" />
-        <path d={svgPaths.p6e11200} fill="black" />
+        <path d="M320.999 0C144.5 0 0 137.29 0 306.291C0 475.291 144.5 612.581 320.999 612.581C497.499 612.581 641.997 475.291 641.997 306.291C641.997 137.29 497.499 0 320.999 0Z" fill="black" />
+        <path d="M320.999 122.516C220.5 122.516 140.5 202.516 140.5 303.016C140.5 403.516 220.5 483.516 320.999 483.516C421.499 483.516 501.499 403.516 501.499 303.016C501.499 202.516 421.499 122.516 320.999 122.516Z" fill="black" />
+        <path d="M320.999 183.774C253.5 183.774 201.75 235.524 201.75 303.024C201.75 370.524 253.5 422.274 320.999 422.274C388.499 422.274 440.249 370.524 440.249 303.024C440.249 235.524 388.499 183.774 320.999 183.774Z" fill="black" />
+        <path d="M320.999 244.032C286.5 244.032 263 267.532 263 302.032C263 336.532 286.5 360.032 320.999 360.032C355.499 360.032 378.999 336.532 378.999 302.032C378.999 267.532 355.499 244.032 320.999 244.032Z" fill="black" />
       </g>
-    </svg>
-  )
-}
-
-function ArrowIcon() {
-  return (
-    <svg className="w-5 h-5" fill="none" viewBox="0 0 20 20">
-      <path 
-        d="M5 15L15 5" 
-        stroke="white" 
-        strokeWidth="1.5" 
-        strokeLinecap="round" 
-        strokeLinejoin="round" 
-      />
-      <path 
-        d="M6.875 5H15V13.125" 
-        stroke="white" 
-        strokeWidth="1.5" 
-        strokeLinecap="round" 
-        strokeLinejoin="round" 
-      />
     </svg>
   )
 }
