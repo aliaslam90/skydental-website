@@ -58,13 +58,6 @@ export default function AboutSection() {
             Sky Dental Center stands as one of the leading and most trusted dental facilities in Abu Dhabi, offering a distinguished clinical experience that unites more than 10 years of expertise with state-of-the-art dental technologies.
           </motion.p>
         </div>
-
-        {/* Divider */}
-        <motion.div variants={itemVariants} className="w-full max-w-[1390px] mx-auto">
-          <svg className="w-full h-[0.6px]" viewBox="0 0 1390 0.6" preserveAspectRatio="none">
-            <path d="M0 0.3H1390" stroke="#6D669F" strokeWidth="0.6" />
-          </svg>
-        </motion.div>
       </motion.div>
     </section>
   )

@@ -28,8 +28,8 @@ export default function HomePage() {
   return (
     <main>
       <HeroSection />
-      <AboutSection />
       <ServicesSection />
+      <AboutSection />
       <WhyChooseSection />
       <TechnologySection />
       <ResultsSection />
