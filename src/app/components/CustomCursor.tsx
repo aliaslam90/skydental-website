@@ -1,11 +1,12 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { useReducedMotion } from 'motion/react'
 
 export default function CustomCursor() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [isVisible, setIsVisible] = useState(false)
+  const cursorRef = useRef<HTMLDivElement>(null)
+  const animationFrameRef = useRef<number>()
   const shouldReduceMotion = useReducedMotion()
 
   useEffect(() => {
@@ -14,8 +15,29 @@ export default function CustomCursor() {
       return
     }
 
+    let currentX = 0
+    let currentY = 0
+    let targetX = 0
+    let targetY = 0
+
+    const animate = () => {
+      // Smooth interpolation for trailing effect
+      currentX += (targetX - currentX) * 0.1
+      currentY += (targetY - currentY) * 0.1
+
+      if (cursorRef.current) {
+        cursorRef.current.style.left = `${currentX}px`
+        cursorRef.current.style.top = `${currentY}px`
+      }
+
+      animationFrameRef.current = requestAnimationFrame(animate)
+    }
+
+    animate()
+
     const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY })
+      targetX = e.clientX
+      targetY = e.clientY
       setIsVisible(true)
     }
 
@@ -32,21 +54,12 @@ export default function CustomCursor() {
     document.addEventListener('mouseleave', handleMouseLeave)
     document.body.addEventListener('mouseenter', handleMouseEnter)
 
-    // Hide default cursor
-    const style = document.createElement('style')
-    style.textContent = `
-      * {
-        cursor: none !important;
-      }
-    `
-    document.head.appendChild(style)
-
     return () => {
       document.removeEventListener('mousemove', handleMouseMove)
       document.removeEventListener('mouseleave', handleMouseLeave)
       document.body.removeEventListener('mouseenter', handleMouseEnter)
-      if (document.head.contains(style)) {
-        document.head.removeChild(style)
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current)
       }
     }
   }, [shouldReduceMotion])
@@ -58,13 +71,13 @@ export default function CustomCursor() {
 
   return (
     <div
+      ref={cursorRef}
       className="fixed pointer-events-none z-[9999]"
       style={{
-        left: `${mousePosition.x}px`,
-        top: `${mousePosition.y}px`,
         transform: 'translate(-50%, -50%)',
         opacity: isVisible ? 1 : 0,
-        transition: 'opacity 0.2s ease-out',
+        transition: 'opacity 0.3s ease-out',
+        willChange: 'transform',
       }}
     >
       <div className="w-10 h-10 md:w-12 md:h-12">
