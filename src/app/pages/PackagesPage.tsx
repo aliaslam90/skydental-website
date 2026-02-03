@@ -2,7 +2,7 @@
 
 import { motion, useReducedMotion, useInView } from 'motion/react'
 import { useRef, useState } from 'react'
-import { ArrowUpRight, Check, GraduationCap, HeartPulse, Sparkles, Smile, Percent } from 'lucide-react'
+import { ArrowUpRight, Check, GraduationCap, HeartPulse, Sparkles, Smile, Percent, Sparkle } from 'lucide-react'
 import imgImage from "../../assets/e2295a1a1a2bc348414dcc117de577c691164137.png"
 import imgImage1 from "../../assets/c5fbf2bb2ed01ea6f6ce38835da33519e2db95fe.png"
 import imgImage2 from "../../assets/27cea6501d6677b5b8f9f08502ce76c7a193f7f8.png"
@@ -59,7 +59,7 @@ const packages: Package[] = [
   },
   {
     id: 'whitening-cleaning',
-    icon: <Smile className="w-6 h-6 text-[#0C0060]" />,
+    icon: <Sparkle className="w-6 h-6 text-[#0C0060]" />,
     title: 'Whitening & Cleaning',
     description: 'Unveil the brilliance of your smile with our professional Whitening & Cleaning package. Meticulously designed treatment for immediate, luminous results.',
     features: [
