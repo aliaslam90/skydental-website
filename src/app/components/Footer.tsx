@@ -17,11 +17,11 @@ export default function Footer() {
           transition={{ duration: shouldReduceMotion ? 0 : 0.8 }}
           className="max-w-[1390px] mx-auto"
         >
-          <div className="flex flex-col gap-8 md:gap-12 lg:gap-16">
+          <div className="flex flex-col gap-6 md:gap-8 lg:gap-10">
             {/* Main Footer Content */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-8 lg:gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-6 lg:gap-4">
               {/* Logo and Description */}
-              <div className="flex flex-col gap-4 md:gap-6">
+              <div className="flex flex-col gap-3 md:gap-4">
                 <div className="flex items-center">
                   <div className="w-[64px] h-[60px]">
                     <MaskGroup />
@@ -33,7 +33,7 @@ export default function Footer() {
               </div>
 
               {/* Quick Links - First Column */}
-              <div className="flex flex-col gap-4 md:gap-5">
+              <div className="flex flex-col gap-3 md:gap-4">
                 <h3
                   className="text-black text-[16px] md:text-[18px] font-bold leading-[1.15]"
                   style={{ fontFamily: "'Gilda Display', serif" }}
@@ -50,7 +50,7 @@ export default function Footer() {
               </div>
 
               {/* Quick Links - Second Column */}
-              <div className="flex flex-col gap-4 md:gap-5">
+              <div className="flex flex-col gap-3 md:gap-4">
                 <h3
                   className="text-black text-[16px] md:text-[18px] font-bold leading-[1.15] invisible"
                   style={{ fontFamily: "'Gilda Display', serif" }}
@@ -67,7 +67,7 @@ export default function Footer() {
               </div>
 
               {/* All Services */}
-              <div className="flex flex-col gap-4 md:gap-5">
+              <div className="flex flex-col gap-3 md:gap-4">
                 <h3
                   className="text-black text-[16px] md:text-[18px] font-bold leading-[1.15]"
                   style={{ fontFamily: "'Gilda Display', serif" }}
@@ -84,20 +84,20 @@ export default function Footer() {
               </div>
 
               {/* Contact Information */}
-              <div className="flex flex-col gap-4 md:gap-5">
+              <div className="flex flex-col gap-3 md:gap-4">
                 <h3
                   className="text-black text-[16px] md:text-[18px] font-bold leading-[1.15]"
                   style={{ fontFamily: "'Gilda Display', serif" }}
                 >
                   Contact Information
                 </h3>
-                <div className="flex flex-col gap-3 md:gap-4">
+                <div className="flex flex-col gap-2 md:gap-3">
                   <ContactItem icon={<PhoneIcon />} text="026677448" />
                   <ContactItem icon={<EmailIcon />} text="info@skydc.ae" />
                   <ContactItem icon={<ClockIcon />} text="10am - 10pm, 7 Days a week" />
                 </div>
                 {/* Social Icons */}
-                <div className="flex gap-3 md:gap-4 mt-2">
+                <div className="flex gap-3 md:gap-4 mt-1">
                   <SocialIcon href="#">
                     <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
                       <path d="M12 2C6.477 2 2 6.477 2 12C2 16.991 5.657 21.128 10.438 21.878V14.891H7.898V12H10.438V9.797C10.438 7.291 11.93 5.907 14.215 5.907C15.309 5.907 16.453 6.102 16.453 6.102V8.562H15.193C13.95 8.562 13.563 9.333 13.563 10.124V12H16.336L15.893 14.89H13.563V21.878C18.343 21.128 22 16.991 22 12C22 6.477 17.523 2 12 2Z" fill="#0C0060" />
@@ -123,7 +123,7 @@ export default function Footer() {
             </div>
 
             {/* Bottom Bar */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-6 md:pt-8 border-t border-black/10">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-4 md:pt-6 border-t border-black/10">
               <p className="text-black text-[11px] md:text-[12px] break-words">MOHAP APPROVAL LICENSE: RE6YF8UV-101224</p>
               <p className="text-black text-[11px] md:text-[12px] whitespace-nowrap">Copyright © 2025 Sky Dental Center. All rights reserved.</p>
             </div>
