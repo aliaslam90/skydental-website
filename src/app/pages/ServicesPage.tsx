@@ -21,35 +21,35 @@ const services = [
     Icon: GeneralDentistryIcon,
     title: 'General Dentistry',
     description: 'Comprehensive dental care for healthy teeth and gums, including checkups, cleanings, and preventive treatments.',
-    bgColor: '#56FC8A'
+    bgColor: '#CBFF8F'
   },
   {
     id: 'cosmetic-dentistry',
     Icon: CosmeticDentistryIcon,
     title: 'Cosmetic Dentistry',
     description: 'Transform your smile with advanced aesthetic treatments including whitening, veneers, and smile design.',
-    bgColor: '#56FC8A'
+    bgColor: '#CBFF8F'
   },
   {
     id: 'orthodontics',
     Icon: OrthodonticsIcon,
     title: 'Orthodontics',
     description: 'Straighten your teeth and correct misalignments with braces, Invisalign, and modern orthodontic solutions.',
-    bgColor: '#56FC8A'
+    bgColor: '#CBFF8F'
   },
   {
     id: 'pediatric-dentistry',
     Icon: PediatricDentistryIcon,
     title: 'Pediatric Dentistry',
     description: 'Gentle, specialized dental care for children and teens in a welcoming and comfortable environment.',
-    bgColor: '#56FC8A'
+    bgColor: '#CBFF8F'
   },
   {
     id: 'advanced-restorative',
     Icon: ImplantAdvancedCareIcon,
     title: 'Implant & Advanced Care',
     description: 'Complex treatments for structural and functional restoration including implants and full-mouth restoration.',
-    bgColor: '#56FC8A'
+    bgColor: '#CBFF8F'
   }
 ]
 
@@ -90,7 +90,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
       
       {/* Icon */}
       <div 
-        className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 relative z-10 bg-[#56FC8A]"
+        className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 relative z-10 bg-[#CBFF8F]"
       >
         <service.Icon className="w-[70px] h-[70px]" />
       </div>
@@ -166,11 +166,11 @@ export default function ServicesPage() {
                 whileHover={shouldReduceMotion ? {} : { scale: 1.05 }}
                 whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
                 onClick={() => openBookingSidebar()}
-                className="bg-[#56FC8A] text-[#0C0060] font-bold px-8 py-4 rounded-full inline-flex items-center gap-3 hover:bg-[#b8ff6d] transition-colors font-['Arial']"
+                className="bg-[#CBFF8F] text-[#0C0060] font-bold px-8 py-4 rounded-full inline-flex items-center gap-3 hover:bg-[#b8ff6d] transition-colors font-['Arial']"
               >
                 <span>Request Appointment</span>
                 <div className="w-9 h-9 bg-[#0C0060] rounded-full flex items-center justify-center">
-                  <ArrowUpRight className="w-5 h-5 text-[#56FC8A]" />
+                  <ArrowUpRight className="w-5 h-5 text-[#CBFF8F]" />
                 </div>
               </motion.button>
 

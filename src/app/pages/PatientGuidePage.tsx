@@ -35,19 +35,19 @@ const firstVisitSteps: FirstVisitStep[] = [
     id: 'step1',
     title: 'Book Welcome Consultation',
     description: 'Choose the date and time that suits you with our online appointment system',
-    color: 'bg-[#56FC8A]',
+    color: 'bg-[#CBFF8F]',
   },
   {
     id: 'step2',
     title: 'Comprehensive Exam',
     description: 'Our dentists will examine your teeth, gums and overall oral health to identify any issues',
-    color: 'bg-[#56FC8A]',
+    color: 'bg-[#CBFF8F]',
   },
   {
     id: 'step3',
     title: 'Care plan & Plan',
     description: "We'll discuss findings with you and create a personalized treatment plan tailored to your needs",
-    color: 'bg-[#56FC8A]',
+    color: 'bg-[#CBFF8F]',
   },
 ]
 
@@ -226,7 +226,7 @@ export default function PatientGuidePage() {
                 {/* Overlay Card */}
                 <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm rounded-2xl p-5 shadow-xl">
                   <div className="flex items-start gap-3">
-                    <div className="bg-[#56FC8A] w-10 h-10 rounded-xl flex items-center justify-center shrink-0">
+                    <div className="bg-[#CBFF8F] w-10 h-10 rounded-xl flex items-center justify-center shrink-0">
                       <Check className="w-5 h-5 text-[#0C0060]" stroke="#0C0060" />
                     </div>
                     <div>
@@ -283,7 +283,7 @@ export default function PatientGuidePage() {
                   className="bg-[#fefefe] rounded-[32px] p-8 hover:shadow-xl transition-shadow duration-300"
                 >
                   {/* Icon */}
-                  <div className="w-14 h-14 bg-[#56FC8A] rounded-2xl flex items-center justify-center text-[#0C0060] mb-6 mx-auto">
+                  <div className="w-14 h-14 bg-[#CBFF8F] rounded-2xl flex items-center justify-center text-[#0C0060] mb-6 mx-auto">
                     {card.icon}
                   </div>
 
@@ -312,7 +312,7 @@ export default function PatientGuidePage() {
               whileHover={shouldReduceMotion ? {} : { scale: 1.05 }}
               whileTap={shouldReduceMotion ? {} : { scale: 0.95 }}
               onClick={() => openBookingSidebar()}
-              className="bg-[#56FC8A] text-[#0C0060] font-bold px-8 py-4 rounded-full inline-flex items-center gap-3 hover:bg-[#b8ff6d] transition-colors font-['Arial'] text-[15px]"
+              className="bg-[#CBFF8F] text-[#0C0060] font-bold px-8 py-4 rounded-full inline-flex items-center gap-3 hover:bg-[#b8ff6d] transition-colors font-['Arial'] text-[15px]"
             >
               <span>Get a Second Opinion</span>
               <div className="w-8 h-8 bg-[#0C0060] rounded-full flex items-center justify-center">
@@ -331,7 +331,7 @@ export default function PatientGuidePage() {
         ref={insuranceRef}
         className="py-24 overflow-hidden"
         style={{
-          background: '#56FC8A',
+          background: '#CBFF8F',
         }}
       >
         <div className="container mx-auto px-6">

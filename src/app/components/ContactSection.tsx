@@ -488,7 +488,7 @@ export default function ContactSection() {
                     initial={{ y: 30, opacity: 0 }}
                     animate={isInView ? { y: 0, opacity: 1 } : { y: 30, opacity: 0 }}
                     transition={{ delay: shouldReduceMotion ? 0 : 0.5, duration: shouldReduceMotion ? 0 : 0.6 }}
-                    className="w-full bg-[#56FC8A] h-[50px] px-[24px] py-[16px] rounded-[12px] text-[14px] font-medium text-[#0C0060] hover:bg-[#B1FF57] transition-colors"
+                    className="w-full bg-[#CBFF8F] h-[50px] px-[24px] py-[16px] rounded-[12px] text-[14px] font-medium text-[#0C0060] hover:bg-[#B1FF57] transition-colors"
                   >
                     Request Appointment
                   </motion.button>
@@ -839,7 +839,7 @@ function OTPVerificationModal({
               <button
                 onClick={onVerify}
                 disabled={otp.length !== 6}
-                className="w-full bg-[#56FC8A] h-[50px] px-[24px] py-[16px] rounded-[12px] text-[14px] font-medium text-black hover:bg-[#B1FF57] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-[#CBFF8F] h-[50px] px-[24px] py-[16px] rounded-[12px] text-[14px] font-medium text-black hover:bg-[#B1FF57] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 Verify OTP
               </button>
@@ -849,7 +849,7 @@ function OTPVerificationModal({
           <>
             {/* Booking Confirmation Step */}
             <div className="mb-6">
-              <div className="w-16 h-16 bg-[#56FC8A] rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-[#CBFF8F] rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg className="w-8 h-8 text-[#0C0060]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>

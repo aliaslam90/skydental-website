@@ -81,12 +81,12 @@ export default function DoctorDetailPage() {
                 whileHover={shouldReduceMotion ? {} : { scale: 1.05 }}
                 whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
                 onClick={() => openBookingSidebar(doctor.name)}
-                className="bg-[#56FC8A] text-[#0C0060] font-bold px-8 py-4 rounded-full inline-flex items-center gap-3 hover:bg-[#b8ff6d] transition-colors font-['Arial']"
+                className="bg-[#CBFF8F] text-[#0C0060] font-bold px-8 py-4 rounded-full inline-flex items-center gap-3 hover:bg-[#b8ff6d] transition-colors font-['Arial']"
               >
                 <Calendar className="w-5 h-5" />
                 <span>Request Appointment</span>
                 <div className="w-9 h-9 bg-[#0C0060] rounded-full flex items-center justify-center">
-                  <ArrowUpRight className="w-5 h-5 text-[#56FC8A]" />
+                  <ArrowUpRight className="w-5 h-5 text-[#CBFF8F]" />
                 </div>
               </motion.button>
 
@@ -217,7 +217,7 @@ export default function DoctorDetailPage() {
                     className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100"
                   >
                     <div className="flex items-start gap-4">
-                      <div className="w-14 h-14 bg-[#56FC8A] rounded-2xl flex items-center justify-center shrink-0">
+                      <div className="w-14 h-14 bg-[#CBFF8F] rounded-2xl flex items-center justify-center shrink-0">
                         <span className="text-2xl">{edu.icon}</span>
                       </div>
                       <div className="flex-1">
@@ -289,7 +289,7 @@ export default function DoctorDetailPage() {
                         transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
                         className="flex items-start gap-3"
                       >
-                        <CheckCircle className="w-6 h-6 text-[#56FC8A] shrink-0 mt-0.5" />
+                        <CheckCircle className="w-6 h-6 text-[#CBFF8F] shrink-0 mt-0.5" />
                         <span className="text-base text-black/80 font-['Arial']">
                           {highlight}
                         </span>
@@ -341,7 +341,7 @@ export default function DoctorDetailPage() {
                   transition={{ duration: 0.6, delay: index * 0.15 }}
                   className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100"
                 >
-                  <div className="w-12 h-12 bg-[#56FC8A] rounded-xl flex items-center justify-center mb-6">
+                  <div className="w-12 h-12 bg-[#CBFF8F] rounded-xl flex items-center justify-center mb-6">
                     <CheckCircle className="w-6 h-6 text-[#0C0060]" />
                   </div>
                   <h3 className="text-2xl font-['Gilda_Display'] text-black mb-6">
@@ -389,7 +389,7 @@ export default function DoctorDetailPage() {
                       transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
                       className="flex items-start gap-3"
                     >
-                      <div className="w-6 h-6 bg-[#56FC8A] rounded-full flex items-center justify-center mt-0.5 shrink-0">
+                      <div className="w-6 h-6 bg-[#CBFF8F] rounded-full flex items-center justify-center mt-0.5 shrink-0">
                         <span className="text-[#0C0060] text-xs">✓</span>
                       </div>
                       <span className="text-base text-black/80 font-['Arial']">
@@ -400,7 +400,7 @@ export default function DoctorDetailPage() {
                 </ul>
 
                 {/* Quote */}
-                <div className="bg-[#56FC8A] rounded-2xl p-6 border-l-4 border-[#0C0060]">
+                <div className="bg-[#CBFF8F] rounded-2xl p-6 border-l-4 border-[#0C0060]">
                   <p className="text-base text-black/80 font-['Arial'] italic leading-relaxed">
                     "{doctor.philosophy.quote}"
                   </p>

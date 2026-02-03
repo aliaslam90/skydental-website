@@ -11,13 +11,13 @@ const coreValues = [
     icon: Award,
     title: 'Excellence',
     description: 'We strive for the highest standards in every aspect of clinical practice to ensure unparalleled quality and remarkable results.',
-    bgColor: '#56FC8A'
+    bgColor: '#CBFF8F'
   },
   {
     icon: Shield,
     title: 'Trust',
     description: 'We foster long-term relationships with our patients based on honesty, transparency, and uncompromising professional ethics.',
-    bgColor: '#56FC8A'
+    bgColor: '#CBFF8F'
   }
 ]
 
@@ -210,7 +210,7 @@ export default function AboutUsPageNew() {
                 transition={{ duration: 0.8 }}
                 className="bg-white border border-gray-100 rounded-3xl p-8 shadow-sm h-full flex flex-col"
               >
-                <div className="w-12 h-12 bg-[#56FC8A] rounded-xl flex items-center justify-center mb-6">
+                <div className="w-12 h-12 bg-[#CBFF8F] rounded-xl flex items-center justify-center mb-6">
                   <Target className="w-6 h-6 text-[#0C0060]" />
                 </div>
                 <h3 className="text-2xl font-['Gilda_Display'] text-black mb-4">Mission</h3>
@@ -226,7 +226,7 @@ export default function AboutUsPageNew() {
                 transition={{ duration: 0.8 }}
                 className="bg-white border border-gray-100 rounded-3xl p-8 shadow-sm h-full flex flex-col"
               >
-                <div className="w-12 h-12 bg-[#56FC8A] rounded-xl flex items-center justify-center mb-6">
+                <div className="w-12 h-12 bg-[#CBFF8F] rounded-xl flex items-center justify-center mb-6">
                   <Award className="w-6 h-6 text-[#0C0060]" />
                 </div>
                 <h3 className="text-2xl font-['Gilda_Display'] text-black mb-4">Vision</h3>
@@ -299,7 +299,7 @@ export default function AboutUsPageNew() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="bg-white rounded-3xl p-8 text-center shadow-sm"
                 >
-                  <div className="w-16 h-16 bg-[#56FC8A] rounded-full flex items-center justify-center mx-auto mb-6">
+                  <div className="w-16 h-16 bg-[#CBFF8F] rounded-full flex items-center justify-center mx-auto mb-6">
                     <Icon className="w-8 h-8 text-[#0C0060]" stroke="#0C0060" />
                   </div>
                   <h3 className="text-xl font-['Gilda_Display'] text-black mb-4">
@@ -441,7 +441,7 @@ export default function AboutUsPageNew() {
                       transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
                       className="flex items-start gap-4 bg-white rounded-2xl p-6 border border-gray-100 shadow-sm"
                     >
-                      <div className="w-12 h-12 bg-[#56FC8A] rounded-xl flex items-center justify-center shrink-0">
+                      <div className="w-12 h-12 bg-[#CBFF8F] rounded-xl flex items-center justify-center shrink-0">
                         <Icon className="w-6 h-6 text-[#0C0060]" />
                       </div>
                       <div>
@@ -577,7 +577,7 @@ export default function AboutUsPageNew() {
       {/* CTA Section */}
       <section 
         ref={ctaRef}
-        className="py-20 bg-[#56FC8A]"
+        className="py-20 bg-[#CBFF8F]"
       >
         <div className="container mx-auto px-6">
           <motion.div

@@ -134,13 +134,13 @@ const coreValues = [
     icon: Award,
     title: 'Excellence',
     description: 'We strive for the highest standards in every aspect of clinical practice to ensure unparalleled quality and remarkable results.',
-    bgColor: '#56FC8A'
+    bgColor: '#CBFF8F'
   },
   {
     icon: Shield,
     title: 'Trust',
     description: 'We foster long-term relationships with our patients based on honesty, transparency, and uncompromising professional ethics.',
-    bgColor: '#56FC8A'
+    bgColor: '#CBFF8F'
   }
 ]
 
@@ -320,7 +320,7 @@ export default function OurDoctorsPageNew() {
                     </Link>
                     <button
                       onClick={() => openBookingSidebar(doctor.name)}
-                      className="flex-1 sm:flex-1 bg-[#56FC8A] text-[#0C0060] text-[13px] md:text-[14px] font-medium py-[10px] px-[16px] rounded-[12px] hover:bg-[#B1FF57] transition-colors text-center"
+                      className="flex-1 sm:flex-1 bg-[#CBFF8F] text-[#0C0060] text-[13px] md:text-[14px] font-medium py-[10px] px-[16px] rounded-[12px] hover:bg-[#B1FF57] transition-colors text-center"
                     >
                       Request Appointment
                     </button>
@@ -385,7 +385,7 @@ export default function OurDoctorsPageNew() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="bg-white rounded-3xl p-8 text-center shadow-sm"
                 >
-                  <div className="w-16 h-16 bg-[#56FC8A] rounded-full flex items-center justify-center mx-auto mb-6">
+                  <div className="w-16 h-16 bg-[#CBFF8F] rounded-full flex items-center justify-center mx-auto mb-6">
                     <Icon className="w-8 h-8 text-[#0C0060]" stroke="#0C0060" />
                   </div>
                   <h3 className="text-xl font-['Gilda_Display'] text-black mb-4">

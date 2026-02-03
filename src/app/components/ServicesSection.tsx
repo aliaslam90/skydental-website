@@ -19,35 +19,35 @@ const services = [
     Icon: GeneralDentistryIcon,
     title: 'General Dentistry',
     description: 'Comprehensive dental care for healthy teeth and gums, including checkups, cleanings, and preventive treatments.',
-    bgColor: '#56FC8A'
+    bgColor: '#CBFF8F'
   },
   {
     id: 'cosmetic-dentistry',
     Icon: CosmeticDentistryIcon,
     title: 'Cosmetic Dentistry',
     description: 'Transform your smile with advanced aesthetic treatments including whitening, veneers, and smile design.',
-    bgColor: '#56FC8A'
+    bgColor: '#CBFF8F'
   },
   {
     id: 'orthodontics',
     Icon: OrthodonticsIcon,
     title: 'Orthodontics',
     description: 'Straighten your teeth and correct misalignments with braces, Invisalign, and modern orthodontic solutions.',
-    bgColor: '#56FC8A'
+    bgColor: '#CBFF8F'
   },
   {
     id: 'pediatric-dentistry',
     Icon: PediatricDentistryIcon,
     title: 'Pediatric Dentistry',
     description: 'Gentle, specialized dental care for children and teens in a welcoming and comfortable environment.',
-    bgColor: '#56FC8A'
+    bgColor: '#CBFF8F'
   },
   {
     id: 'advanced-restorative',
     Icon: ImplantAdvancedCareIcon,
     title: 'Implant & Advanced Care',
     description: 'Complex treatments for structural and functional restoration including implants and full-mouth restoration.',
-    bgColor: '#56FC8A'
+    bgColor: '#CBFF8F'
   }
 ]
 
@@ -72,7 +72,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
       
       {/* Icon */}
       <div 
-        className="w-14 h-14 rounded-2xl flex items-center justify-center mb-4 relative z-10 flex-shrink-0 bg-[#56FC8A]"
+        className="w-14 h-14 rounded-2xl flex items-center justify-center mb-4 relative z-10 flex-shrink-0 bg-[#CBFF8F]"
       >
         <service.Icon className="w-[60px] h-[60px]" />
       </div>

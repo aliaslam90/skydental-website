@@ -28,7 +28,7 @@ const whyJoinCards: WhyJoinCard[] = [
   {
     title: 'Advanced Technology',
     description: 'Work with cutting-edge dental technology and modern equipment. We invest in the latest innovations to ensure you have the best tools for exceptional patient care.',
-    bgColor: 'bg-[#56FC8A]',
+    bgColor: 'bg-[#CBFF8F]',
   },
   {
     title: 'Career Development',
@@ -38,7 +38,7 @@ const whyJoinCards: WhyJoinCard[] = [
   {
     title: 'Meaningful Impact',
     description: 'Make a real difference in people\'s lives every day. Your work directly contributes to improving oral health and creating confident, beautiful smiles in our community.',
-    bgColor: 'bg-[#56FC8A]',
+    bgColor: 'bg-[#CBFF8F]',
   },
 ]
 
@@ -144,7 +144,7 @@ export default function CareersPage() {
                 initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
                 animate={heroInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="px-6 py-2.5 bg-[#56FC8A] rounded-full text-[14px] font-['Arial'] font-medium text-[#0C0060]"
+                className="px-6 py-2.5 bg-[#CBFF8F] rounded-full text-[14px] font-['Arial'] font-medium text-[#0C0060]"
               >
                 Dynamic Environment
               </motion.div>
@@ -152,7 +152,7 @@ export default function CareersPage() {
                 initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
                 animate={heroInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="px-6 py-2.5 bg-[#56FC8A] rounded-full text-[14px] font-['Arial'] font-medium text-[#0C0060]"
+                className="px-6 py-2.5 bg-[#CBFF8F] rounded-full text-[14px] font-['Arial'] font-medium text-[#0C0060]"
               >
                 Professional Growth
               </motion.div>
@@ -160,7 +160,7 @@ export default function CareersPage() {
                 initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
                 animate={heroInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="px-6 py-2.5 bg-[#56FC8A] rounded-full text-[14px] font-['Arial'] font-medium text-[#0C0060]"
+                className="px-6 py-2.5 bg-[#CBFF8F] rounded-full text-[14px] font-['Arial'] font-medium text-[#0C0060]"
               >
                 Rewarding Career
               </motion.div>
@@ -246,7 +246,7 @@ export default function CareersPage() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="bg-white p-6 rounded-2xl flex items-center gap-4"
                 >
-                  <div className="w-12 h-12 bg-[#56FC8A] rounded-full flex items-center justify-center shrink-0 overflow-hidden p-2">
+                  <div className="w-12 h-12 bg-[#CBFF8F] rounded-full flex items-center justify-center shrink-0 overflow-hidden p-2">
                     <img 
                       src={job.icon} 
                       alt={job.title}
@@ -313,7 +313,7 @@ export default function CareersPage() {
             {/* Application Form */}
             {formSubmitted ? (
               <div className="bg-white rounded-3xl p-12 text-center">
-                <div className="w-20 h-20 bg-[#56FC8A] rounded-full flex items-center justify-center mx-auto mb-6">
+                <div className="w-20 h-20 bg-[#CBFF8F] rounded-full flex items-center justify-center mx-auto mb-6">
                   <Send className="w-10 h-10 text-[#0C0060]" />
                 </div>
                 <h3 className="text-3xl font-['Gilda_Display'] text-black mb-4">Application Submitted!</h3>
@@ -392,11 +392,11 @@ export default function CareersPage() {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="w-full bg-[#56FC8A] hover:bg-[#b8e680] text-[#0C0060] font-['Arial'] font-bold py-4 px-6 rounded-full flex items-center justify-center gap-3 transition-all duration-300 group"
+                  className="w-full bg-[#CBFF8F] hover:bg-[#b8e680] text-[#0C0060] font-['Arial'] font-bold py-4 px-6 rounded-full flex items-center justify-center gap-3 transition-all duration-300 group"
                 >
                   <span className="text-base">Submit Application</span>
                   <div className="w-8 h-8 bg-[#0C0060] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Send className="w-4 h-4 text-[#56FC8A]" />
+                    <Send className="w-4 h-4 text-[#CBFF8F]" />
                   </div>
                 </button>
 
