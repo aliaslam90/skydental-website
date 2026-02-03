@@ -62,7 +62,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
       initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="bg-white border border-gray-100 rounded-3xl p-5 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden group"
+      className="bg-white border border-gray-100 rounded-3xl p-5 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden group flex flex-col h-full"
     >
       {/* Decorative overlay */}
       <div 
@@ -82,12 +82,12 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
       <h3 className="text-xl md:text-xl font-['Gilda_Display'] text-black mb-3">
         {service.title}
       </h3>
-      <p className="text-sm md:text-sm text-black/80 font-['Arial'] leading-relaxed mb-6">
+      <p className="text-sm md:text-sm text-black/80 font-['Arial'] leading-relaxed mb-6 flex-grow">
         {service.description}
       </p>
 
-      {/* Learn More Link */}
-      <Link to={`/services/${service.id}`} className="flex items-center gap-2 text-black font-['Poppins'] font-semibold text-sm group-hover:gap-3 transition-all">
+      {/* Learn More Link - Pushed to bottom */}
+      <Link to={`/services/${service.id}`} className="flex items-center gap-2 text-black font-['Poppins'] font-semibold text-sm group-hover:gap-3 transition-all mt-auto">
         <span>Learn More</span>
         <ArrowUpRight className="w-4 h-4" />
       </Link>
