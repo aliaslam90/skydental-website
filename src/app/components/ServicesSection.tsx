@@ -19,35 +19,35 @@ const services = [
     Icon: GeneralDentistryIcon,
     title: 'General Dentistry',
     description: 'Comprehensive dental care for healthy teeth and gums, including checkups, cleanings, and preventive treatments.',
-    bgColor: '#edfede'
+    bgColor: '#56FC8A'
   },
   {
     id: 'cosmetic-dentistry',
     Icon: CosmeticDentistryIcon,
     title: 'Cosmetic Dentistry',
     description: 'Transform your smile with advanced aesthetic treatments including whitening, veneers, and smile design.',
-    bgColor: '#edfede'
+    bgColor: '#56FC8A'
   },
   {
     id: 'orthodontics',
     Icon: OrthodonticsIcon,
     title: 'Orthodontics',
     description: 'Straighten your teeth and correct misalignments with braces, Invisalign, and modern orthodontic solutions.',
-    bgColor: '#edfede'
+    bgColor: '#56FC8A'
   },
   {
     id: 'pediatric-dentistry',
     Icon: PediatricDentistryIcon,
     title: 'Pediatric Dentistry',
     description: 'Gentle, specialized dental care for children and teens in a welcoming and comfortable environment.',
-    bgColor: '#edfede'
+    bgColor: '#56FC8A'
   },
   {
     id: 'advanced-restorative',
     Icon: ImplantAdvancedCareIcon,
     title: 'Implant & Advanced Care',
     description: 'Complex treatments for structural and functional restoration including implants and full-mouth restoration.',
-    bgColor: '#edfede'
+    bgColor: '#56FC8A'
   }
 ]
 
