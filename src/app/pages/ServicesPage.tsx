@@ -90,10 +90,10 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
       
       {/* Icon */}
       <div 
-        className="w-20 h-20 rounded-2xl flex items-center justify-center mb-6 relative z-10"
+        className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 relative z-10"
         style={{ backgroundColor: service.bgColor }}
       >
-        <service.Icon className="w-16 h-16" />
+        <service.Icon className="w-14 h-14" />
       </div>
 
       {/* Content */}
