@@ -1,3 +1,6 @@
+import { Calendar, Award, Users } from 'lucide-react'
+import { LucideIcon } from 'lucide-react'
+
 export interface ServiceDetail {
   id: string
   title: string
@@ -10,7 +13,7 @@ export interface ServiceDetail {
     description: string
   }
   benefits: {
-    icon: string
+    icon: LucideIcon
     title: string
     description: string
   }[]
@@ -42,17 +45,17 @@ export const servicesData: ServiceDetail[] = [
     },
     benefits: [
       {
-        icon: '⏰',
+        icon: Calendar,
         title: 'Same-Day Appointments',
         description: 'Flexible scheduling to fit your busy lifestyle'
       },
       {
-        icon: '👨‍⚕️',
+        icon: Award,
         title: 'Expert Care',
         description: 'Experienced professionals using latest techniques'
       },
       {
-        icon: '👨‍👩‍👧‍👦',
+        icon: Users,
         title: 'Family-Friendly',
         description: 'Comprehensive care for all ages'
       }
