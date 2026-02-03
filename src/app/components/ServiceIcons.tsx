@@ -6,7 +6,13 @@ export function GeneralDentistryIcon({ className = "w-6 h-6" }: { className?: st
       src="/GeneralDentistry.png" 
       alt="General Dentistry" 
       className={className}
-      style={{ objectFit: 'contain', display: 'block' }}
+      style={{ 
+        objectFit: 'contain', 
+        display: 'block',
+        width: '100%',
+        height: '100%'
+      }}
+      loading="eager"
     />
   )
 }
@@ -17,7 +23,13 @@ export function CosmeticDentistryIcon({ className = "w-6 h-6" }: { className?: s
       src="/CosmeticDentistry.png" 
       alt="Cosmetic Dentistry" 
       className={className}
-      style={{ objectFit: 'contain', display: 'block' }}
+      style={{ 
+        objectFit: 'contain', 
+        display: 'block',
+        width: '100%',
+        height: '100%'
+      }}
+      loading="eager"
     />
   )
 }
@@ -28,7 +40,13 @@ export function OrthodonticsIcon({ className = "w-6 h-6" }: { className?: string
       src="/Orthodontics.png" 
       alt="Orthodontics" 
       className={className}
-      style={{ objectFit: 'contain', display: 'block' }}
+      style={{ 
+        objectFit: 'contain', 
+        display: 'block',
+        width: '100%',
+        height: '100%'
+      }}
+      loading="eager"
     />
   )
 }
@@ -39,7 +57,13 @@ export function PediatricDentistryIcon({ className = "w-6 h-6" }: { className?: 
       src="/PediatricDentistry.png" 
       alt="Pediatric Dentistry" 
       className={className}
-      style={{ objectFit: 'contain', display: 'block' }}
+      style={{ 
+        objectFit: 'contain', 
+        display: 'block',
+        width: '100%',
+        height: '100%'
+      }}
+      loading="eager"
     />
   )
 }
@@ -50,7 +74,13 @@ export function ImplantAdvancedCareIcon({ className = "w-6 h-6" }: { className?:
       src="/ImplantAdvancedCare.png" 
       alt="Implant & Advanced Care" 
       className={className}
-      style={{ objectFit: 'contain', display: 'block' }}
+      style={{ 
+        objectFit: 'contain', 
+        display: 'block',
+        width: '100%',
+        height: '100%'
+      }}
+      loading="eager"
     />
   )
 }
