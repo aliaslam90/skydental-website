@@ -72,8 +72,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
       
       {/* Icon */}
       <div 
-        className="w-14 h-14 rounded-2xl flex items-center justify-center mb-4 relative z-10 flex-shrink-0"
-        style={{ backgroundColor: '#56FC8A' }}
+        className="w-14 h-14 rounded-2xl flex items-center justify-center mb-4 relative z-10 flex-shrink-0 bg-[#56FC8A]"
       >
         <service.Icon className="w-[60px] h-[60px]" />
       </div>
