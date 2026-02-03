@@ -29,9 +29,9 @@ const solutionTabs = [
     id: 'none',
     title: 'No Teeth at all',
     description: 'While having no teeth may seem overwhelming, it\'s a condition that requires expert planning and care. Living without teeth can greatly impact daily life, but there are advanced solutions beyond traditional dentures. Our team is here to guide you toward a permanent, reliable solution that brings back both the function and beauty of your smile, helping you feel confident once again.',
-    icon: undefined,
-    beforeImage: '/before-treatment.jp.png',
-    afterImage: '/after-treatment.jpg.jpg'
+    icon: '/download-2-1.svg',
+    beforeImage: '/No-Teeth-at-all-before-1.webp',
+    afterImage: '/No-Teeth-at-all-after-1.webp'
   },
   {
     id: 'single',
