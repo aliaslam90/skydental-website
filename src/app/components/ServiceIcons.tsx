@@ -1,67 +1,56 @@
-// Line icons for services - inspired by modern dental clinic designs
+// Line icons for services - using images from public folder
 
 export function GeneralDentistryIcon({ className = "w-6 h-6" }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      {/* Simple tooth icon */}
-      <path d="M12 2C10 2 8 3 8 5C8 7 9 9 12 9C15 9 16 7 16 5C16 3 14 2 12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      <path d="M12 9V18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      <path d="M8 15H16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-    </svg>
+    <img 
+      src="/General Dentistry.png" 
+      alt="General Dentistry" 
+      className={`${className} object-contain`}
+    />
   )
 }
 
 export function CosmeticDentistryIcon({ className = "w-6 h-6" }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      {/* Sparkle/star for cosmetic */}
-      <path d="M12 2L13.5 8.5L20 10L13.5 11.5L12 18L10.5 11.5L4 10L10.5 8.5L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-    </svg>
+    <img 
+      src="/Cosmetic Dentistry.png" 
+      alt="Cosmetic Dentistry" 
+      className={`${className} object-contain`}
+    />
   )
 }
 
 export function OrthodonticsIcon({ className = "w-6 h-6" }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      {/* Tooth with bracket/brace */}
-      <path d="M12 2C10 2 8 3 8 5C8 7 9 9 12 9C15 9 16 7 16 5C16 3 14 2 12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      <path d="M7 7L9 9L7 11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      <path d="M17 7L15 9L17 11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      <path d="M9 7H15" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-      <path d="M12 9V18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      <path d="M8 15H16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-    </svg>
+    <img 
+      src="/Orthodontics.png" 
+      alt="Orthodontics" 
+      className={`${className} object-contain`}
+    />
   )
 }
 
 export function PediatricDentistryIcon({ className = "w-6 h-6" }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      {/* Smaller tooth for pediatric */}
-      <path d="M12 4C10.5 4 9 5 9 6.5C9 8 10 9.5 12 9.5C14 9.5 15 8 15 6.5C15 5 13.5 4 12 4Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      <path d="M12 9.5V16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      <path d="M9 13.5H15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      {/* Smile */}
-      <path d="M9 7C9 7 10 8 12 8C14 8 15 7 15 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-    </svg>
+    <img 
+      src="/Pediatric Dentistry.png" 
+      alt="Pediatric Dentistry" 
+      className={`${className} object-contain`}
+    />
   )
 }
 
 export function ImplantAdvancedCareIcon({ className = "w-6 h-6" }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      {/* Tooth with screw/implant */}
-      <path d="M12 2C10 2 8 3 8 5C8 7 9 9 12 9C15 9 16 7 16 5C16 3 14 2 12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      <path d="M12 9V20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      <path d="M8 16H16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      {/* Screw threads */}
-      <path d="M12 11C12 11 13 12 12 13C11 12 12 11 12 11Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      <path d="M12 14C12 14 13 15 12 16C11 15 12 14 12 14Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-    </svg>
+    <img 
+      src="/Implant & Advanced Care.png" 
+      alt="Implant & Advanced Care" 
+      className={`${className} object-contain`}
+    />
   )
 }
 
-// Additional icons for sub-services
+// Additional icons for sub-services - keeping SVG for now, can be updated later
 export function RootCanalIcon({ className = "w-6 h-6" }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
