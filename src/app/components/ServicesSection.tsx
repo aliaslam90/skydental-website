@@ -154,10 +154,12 @@ export default function ServicesSection() {
           </div>
           
           {/* Second Row - 2 cards centered */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mt-6 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6 relative z-10">
             {services.slice(3).map((service, index) => (
               <ServiceCard key={service.id} service={service} index={index + 3} />
             ))}
+            {/* Empty div to maintain grid alignment on lg screens */}
+            <div className="hidden lg:block"></div>
           </div>
         </motion.div>
       </motion.div>
