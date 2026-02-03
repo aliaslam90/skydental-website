@@ -19,7 +19,7 @@ export default function Footer() {
         >
           <div className="flex flex-col gap-8 md:gap-12 lg:gap-16">
             {/* Main Footer Content */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-8 lg:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-8 lg:gap-6">
               {/* Logo and Description */}
               <div className="flex flex-col gap-4 md:gap-6">
                 <div className="flex items-center">
@@ -55,7 +55,7 @@ export default function Footer() {
                 </div>
               </div>
 
-              {/* Quick Links */}
+              {/* Quick Links - First Column */}
               <div className="flex flex-col gap-4 md:gap-5">
                 <h3
                   className="text-black text-[16px] md:text-[18px] font-bold leading-[1.15]"
@@ -69,6 +69,18 @@ export default function Footer() {
                   <FooterLink href="/our-doctors">Our Doctors</FooterLink>
                   <FooterLink href="/services">Services</FooterLink>
                   <FooterLink href="/packages">Packages & Offers</FooterLink>
+                </div>
+              </div>
+
+              {/* Quick Links - Second Column */}
+              <div className="flex flex-col gap-4 md:gap-5">
+                <h3
+                  className="text-black text-[16px] md:text-[18px] font-bold leading-[1.15] opacity-0"
+                  style={{ fontFamily: "'Gilda Display', serif" }}
+                >
+                  Quick Links
+                </h3>
+                <div className="flex flex-col gap-2 md:gap-3 mt-0 md:mt-[41px] lg:mt-[41px]">
                   <FooterLink href="/patient-guide">Patient Guide</FooterLink>
                   <FooterLink href="/faqs">FAQs</FooterLink>
                   <FooterLink href="/careers">Careers</FooterLink>
