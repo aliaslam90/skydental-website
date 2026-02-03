@@ -1,4 +1,4 @@
-import { Calendar, Award, Users, CalendarCheck, Sparkles, Scissors, Sprout, Bandage, Shield, Sparkle, Palette, Zap, Gem, Crown, Target, Search, UserCheck, Smile, Square, Eye, ClipboardCheck } from 'lucide-react'
+import { Calendar, Award, Users, CalendarCheck, Sparkles, Scissors, Sprout, Bandage, Shield, Sparkle, Palette, Zap, Gem, Crown, Target, Search, UserCheck, Smile, Square, Eye, ClipboardCheck, Heart, GraduationCap, BookOpen, Lock, Microscope, ShieldCheck, RefreshCw, Camera, AlertCircle } from 'lucide-react'
 import { LucideIcon } from 'lucide-react'
 
 export interface ServiceDetail {
@@ -342,24 +342,24 @@ export const servicesData: ServiceDetail[] = [
     },
     benefits: [
       {
-        icon: '🎈',
+        icon: Heart,
         title: 'Child-Friendly',
         description: 'Fun, comfortable environment designed for kids'
       },
       {
-        icon: '👨‍⚕️',
+        icon: UserCheck,
         title: 'Specialized Care',
         description: 'Dentists trained in pediatric dentistry'
       },
       {
-        icon: '🎓',
+        icon: GraduationCap,
         title: 'Education Focus',
         description: 'Teaching kids healthy habits for life'
       }
     ],
     services: [
       {
-        icon: '👶',
+        icon: Heart,
         title: 'Gentle Dental Care for Kids',
         description: 'Soft, comforting care that helps children feel relaxed during dental visits. We create positive experiences that encourage lifelong oral health.',
         features: [
@@ -370,7 +370,7 @@ export const servicesData: ServiceDetail[] = [
         ]
       },
       {
-        icon: '🛡️',
+        icon: Shield,
         title: 'Fluoride Treatment',
         description: 'A preventive treatment that strengthens enamel and reduces the risk of decay—especially beneficial for growing children.',
         features: [
@@ -381,7 +381,7 @@ export const servicesData: ServiceDetail[] = [
         ]
       },
       {
-        icon: '🔒',
+        icon: Lock,
         title: 'Dental Sealant',
         description: 'A protective coating applied to molars to prevent cavities. One of the most effective long-term methods for paediatric decay prevention.',
         features: [
@@ -392,7 +392,7 @@ export const servicesData: ServiceDetail[] = [
         ]
       },
       {
-        icon: '🔍',
+        icon: Search,
         title: 'Early Orthodontic Evaluation',
         description: 'Early assessment that identifies developmental issues in the teeth and jaws, ensuring timely guidance and intervention.',
         features: [
@@ -403,7 +403,7 @@ export const servicesData: ServiceDetail[] = [
         ]
       },
       {
-        icon: '📚',
+        icon: BookOpen,
         title: 'Education on Oral Hygiene Habits',
         description: 'Engaging instruction that teaches children proper brushing, flossing, and healthy habits to support long-term dental wellness.',
         features: [
@@ -441,24 +441,24 @@ export const servicesData: ServiceDetail[] = [
     },
     benefits: [
       {
-        icon: '🔬',
+        icon: Microscope,
         title: 'Advanced Technology',
         description: 'State-of-the-art equipment and techniques'
       },
       {
-        icon: '💪',
+        icon: ShieldCheck,
         title: 'Durable Results',
         description: 'Long-lasting solutions that stand the test of time'
       },
       {
-        icon: '🎯',
+        icon: Target,
         title: 'Comprehensive Care',
         description: 'Full-mouth restoration capabilities'
       }
     ],
     services: [
       {
-        icon: '🦷',
+        icon: Scissors,
         title: 'Dental Implants',
         description: 'State-of-the-art implant solutions designed to replace missing teeth with exceptional stability and natural appearance.',
         features: [
@@ -469,7 +469,7 @@ export const servicesData: ServiceDetail[] = [
         ]
       },
       {
-        icon: '😬',
+        icon: RefreshCw,
         title: 'Full Mouth Rehabilitation',
         description: 'A comprehensive approach that restores function, aesthetics, and oral harmony through personalised, multi-disciplinary treatment planning.',
         features: [
@@ -480,7 +480,7 @@ export const servicesData: ServiceDetail[] = [
         ]
       },
       {
-        icon: '📸',
+        icon: Camera,
         title: 'Digital X-rays & 3D Imaging',
         description: 'Advanced diagnostic technology providing highly detailed images that guide precise and efficient treatment.',
         features: [
@@ -491,7 +491,7 @@ export const servicesData: ServiceDetail[] = [
         ]
       },
       {
-        icon: '🚨',
+        icon: AlertCircle,
         title: 'Emergency Dental Treatment',
         description: 'Immediate care for urgent situations involving pain, trauma, or dental injury—ensuring fast relief and stabilisation.',
         features: [
