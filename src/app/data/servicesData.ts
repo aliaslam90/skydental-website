@@ -1,4 +1,4 @@
-import { Calendar, Award, Users, CalendarCheck, Sparkles, Scissors, Sprout, Bandage, Shield, Sparkle, Palette, Zap } from 'lucide-react'
+import { Calendar, Award, Users, CalendarCheck, Sparkles, Scissors, Sprout, Bandage, Shield, Sparkle, Palette, Zap, Gem, Crown, Target } from 'lucide-react'
 import { LucideIcon } from 'lucide-react'
 
 export interface ServiceDetail {
@@ -172,7 +172,7 @@ export const servicesData: ServiceDetail[] = [
     ],
     services: [
       {
-        icon: '✨',
+        icon: Sparkles,
         title: 'Teeth Whitening',
         description: 'A safe and effective whitening treatment that brightens your smile and removes deep stains. Enjoy noticeable, long-lasting results in a single session.',
         features: [
@@ -183,7 +183,7 @@ export const servicesData: ServiceDetail[] = [
         ]
       },
       {
-        icon: '💎',
+        icon: Gem,
         title: 'Veneers & Hollywood Smile',
         description: 'Ultra-thin cosmetic veneers designed to perfect your smile by enhancing colour, shape, and symmetry. Achieve a natural yet glamorous Hollywood Smile.',
         features: [
@@ -194,7 +194,7 @@ export const servicesData: ServiceDetail[] = [
         ]
       },
       {
-        icon: '👑',
+        icon: Crown,
         title: 'Dental Crowns & Bridge',
         description: 'Durable and aesthetic restorations that replace or strengthen damaged or missing teeth. Custom-made to restore natural function and appearance.',
         features: [
@@ -205,7 +205,7 @@ export const servicesData: ServiceDetail[] = [
         ]
       },
       {
-        icon: '🎨',
+        icon: Palette,
         title: 'Smile Design',
         description: 'A digital design process that plans your ideal smile based on your facial features. Preview your results before treatment begins for full confidence in your transformation.',
         features: [
@@ -216,7 +216,7 @@ export const servicesData: ServiceDetail[] = [
         ]
       },
       {
-        icon: '🎯',
+        icon: Target,
         title: 'Composite Bonding',
         description: 'A quick and minimally invasive solution that reshapes and corrects minor imperfections. Achieve refined, aesthetic enhancements without extensive procedures.',
         features: [
