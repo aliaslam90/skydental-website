@@ -75,12 +75,12 @@ export default function Footer() {
               {/* Quick Links - Second Column */}
               <div className="flex flex-col gap-4 md:gap-5">
                 <h3
-                  className="text-black text-[16px] md:text-[18px] font-bold leading-[1.15] opacity-0"
+                  className="text-black text-[16px] md:text-[18px] font-bold leading-[1.15] invisible"
                   style={{ fontFamily: "'Gilda Display', serif" }}
                 >
                   Quick Links
                 </h3>
-                <div className="flex flex-col gap-2 md:gap-3 mt-0 md:mt-[41px] lg:mt-[41px]">
+                <div className="flex flex-col gap-2 md:gap-3">
                   <FooterLink href="/patient-guide">Patient Guide</FooterLink>
                   <FooterLink href="/faqs">FAQs</FooterLink>
                   <FooterLink href="/careers">Careers</FooterLink>
