@@ -120,7 +120,7 @@ export default function ServicesSection() {
   }
 
   return (
-    <section id="services" className="pt-[30px] pb-[50px] md:pt-[40px] md:pb-[70px] px-0">
+    <section id="services" className="pt-[30px] pb-[50px] md:pt-[40px] md:pb-[70px] w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
       <motion.div
         ref={ref}
         variants={containerVariants}
@@ -131,7 +131,7 @@ export default function ServicesSection() {
         {/* Service Detail Card */}
         <motion.div
           variants={itemVariants}
-          className="bg-[#e0edff] rounded-[25px] p-[24px] md:p-[36px] lg:p-[48px] relative overflow-hidden w-full"
+          className="bg-[#e0edff] rounded-none p-[24px] md:p-[36px] lg:p-[48px] relative overflow-hidden w-full"
         >
           {/* Background Tooth Icon */}
           <div className="absolute left-[-163px] top-[-97px] w-[642px] h-[642px] opacity-5 hidden lg:block">
