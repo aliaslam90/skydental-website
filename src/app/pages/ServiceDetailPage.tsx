@@ -29,15 +29,17 @@ const solutionTabs = [
     id: 'none',
     title: 'No Teeth at all',
     description: 'While having no teeth may seem overwhelming, it\'s a condition that requires expert planning and care. Living without teeth can greatly impact daily life, but there are advanced solutions beyond traditional dentures. Our team is here to guide you toward a permanent, reliable solution that brings back both the function and beauty of your smile, helping you feel confident once again.',
-    beforeImage: 'https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=800&h=600&fit=crop',
-    afterImage: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&h=600&fit=crop'
+    icon: undefined,
+    beforeImage: '/before-treatment.jp.png',
+    afterImage: '/after-treatment.jpg.jpg'
   },
   {
     id: 'single',
     title: 'One missing Tooth',
     description: 'Did you crack a tooth biting something hard? Is there bleeding? Suffer an injury during sports? Our expert team can help restore your smile with a single dental implant that looks and feels just like your natural tooth.',
-    beforeImage: 'https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=800&h=600&fit=crop',
-    afterImage: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&h=600&fit=crop'
+    icon: undefined,
+    beforeImage: '/before-treatment.jp.png',
+    afterImage: '/after-treatment.jpg.jpg'
   }
 ]
 
@@ -389,11 +391,18 @@ export default function ServiceDetailPage() {
                         <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${
                           activeTab === tab.id ? 'bg-white/20' : 'bg-white'
                         }`}>
-                          <span className="text-2xl">
-                            {tab.id === 'multiple' && '🦷'}
-                            {tab.id === 'none' && '😬'}
-                            {tab.id === 'single' && '🦷'}
-                          </span>
+                          {tab.icon ? (
+                            <img 
+                              src={tab.icon} 
+                              alt={tab.title}
+                              className="w-8 h-8 object-contain"
+                            />
+                          ) : (
+                            <span className="text-2xl">
+                              {tab.id === 'none' && '😬'}
+                              {tab.id === 'single' && '🦷'}
+                            </span>
+                          )}
                         </div>
                         <span className="font-['Arial'] font-semibold text-lg">
                           {tab.title}
