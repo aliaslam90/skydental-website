@@ -1,4 +1,4 @@
-import { Calendar, Award, Users, CalendarCheck, Sparkles, Tooth, Sprout, Bandage, Shield } from 'lucide-react'
+import { Calendar, Award, Users, CalendarCheck, Sparkles, Scissors, Sprout, Bandage, Shield } from 'lucide-react'
 import { LucideIcon } from 'lucide-react'
 
 export interface ServiceDetail {
@@ -84,7 +84,7 @@ export const servicesData: ServiceDetail[] = [
         ]
       },
       {
-        icon: Tooth,
+        icon: Scissors,
         title: 'Tooth Extraction',
         description: 'Gentle and precise removal of damaged or non-restorable teeth with a focus on patient comfort and fast healing. Our approach minimises discomfort and supports ongoing oral health.',
         features: [
