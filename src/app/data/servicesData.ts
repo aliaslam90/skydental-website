@@ -34,7 +34,7 @@ export const servicesData: ServiceDetail[] = [
     title: 'General Dentistry',
     icon: '🦷',
     shortDescription: 'Comprehensive dental care for healthy teeth and gums, including checkups, cleanings, and preventive treatments.',
-    bgColor: '#edfede',
+    bgColor: '#56FC8A',
     hero: {
       title: 'General Dentistry',
       subtitle: 'General Dentistry forms the foundation of lifelong oral health',
@@ -144,7 +144,7 @@ export const servicesData: ServiceDetail[] = [
     title: 'Cosmetic Dentistry',
     icon: '✨',
     shortDescription: 'Transform your smile with advanced aesthetic treatments including whitening, veneers, and smile design.',
-    bgColor: '#edfede',
+    bgColor: '#56FC8A',
     hero: {
       title: 'Cosmetic Dentistry',
       subtitle: 'Transform your smile and boost your confidence',
@@ -243,7 +243,7 @@ export const servicesData: ServiceDetail[] = [
     title: 'Orthodontics',
     icon: '🦷',
     shortDescription: 'Straighten your teeth and correct misalignments with braces, Invisalign, and modern orthodontic solutions.',
-    bgColor: '#edfede',
+    bgColor: '#56FC8A',
     hero: {
       title: 'Orthodontics',
       subtitle: 'Straighten your smile with confidence',
@@ -331,7 +331,7 @@ export const servicesData: ServiceDetail[] = [
     title: 'Pediatric Dentistry',
     icon: '👶',
     shortDescription: 'Gentle, specialized dental care for children and teens in a welcoming and comfortable environment.',
-    bgColor: '#edfede',
+    bgColor: '#56FC8A',
     hero: {
       title: 'Pediatric Dentistry',
       subtitle: 'Creating healthy smiles for kids',
@@ -430,7 +430,7 @@ export const servicesData: ServiceDetail[] = [
     title: 'Implant & Advanced Care',
     icon: '🔬',
     shortDescription: 'Complex treatments for structural and functional restoration including implants and full-mouth restoration.',
-    bgColor: '#edfede',
+    bgColor: '#56FC8A',
     hero: {
       title: 'Implant & Advanced Care Dentistry',
       subtitle: 'Restore function and beauty to your smile',
