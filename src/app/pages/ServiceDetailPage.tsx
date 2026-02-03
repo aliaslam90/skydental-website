@@ -22,8 +22,8 @@ const solutionTabs = [
     title: 'Multiple missing Teeth',
     description: 'Losing three teeth doesn\'t always mean you\'ll need three separate implants. Schedule a consultation with our specialist to explore the best solutions available to restore your smile.',
     icon: '/multiple-missing-teeth-icon.svg',
-    beforeImage: '/before-treatment.jp.png',
-    afterImage: '/after-treatment.jpg.jpg'
+    beforeImage: '/Multiple-missing-Teeth-before-2.webp',
+    afterImage: '/Multiple-missing-Teeth-after-2.webp'
   },
   {
     id: 'none',
