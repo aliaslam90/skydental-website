@@ -5,7 +5,8 @@ export function GeneralDentistryIcon({ className = "w-6 h-6" }: { className?: st
     <img 
       src="/General Dentistry.png" 
       alt="General Dentistry" 
-      className={`${className} object-contain`}
+      className={className}
+      style={{ objectFit: 'contain', display: 'block' }}
     />
   )
 }
@@ -15,7 +16,8 @@ export function CosmeticDentistryIcon({ className = "w-6 h-6" }: { className?: s
     <img 
       src="/Cosmetic Dentistry.png" 
       alt="Cosmetic Dentistry" 
-      className={`${className} object-contain`}
+      className={className}
+      style={{ objectFit: 'contain', display: 'block' }}
     />
   )
 }
@@ -25,7 +27,8 @@ export function OrthodonticsIcon({ className = "w-6 h-6" }: { className?: string
     <img 
       src="/Orthodontics.png" 
       alt="Orthodontics" 
-      className={`${className} object-contain`}
+      className={className}
+      style={{ objectFit: 'contain', display: 'block' }}
     />
   )
 }
@@ -35,7 +38,8 @@ export function PediatricDentistryIcon({ className = "w-6 h-6" }: { className?: 
     <img 
       src="/Pediatric Dentistry.png" 
       alt="Pediatric Dentistry" 
-      className={`${className} object-contain`}
+      className={className}
+      style={{ objectFit: 'contain', display: 'block' }}
     />
   )
 }
@@ -45,7 +49,8 @@ export function ImplantAdvancedCareIcon({ className = "w-6 h-6" }: { className?:
     <img 
       src="/Implant & Advanced Care.png" 
       alt="Implant & Advanced Care" 
-      className={`${className} object-contain`}
+      className={className}
+      style={{ objectFit: 'contain', display: 'block' }}
     />
   )
 }
