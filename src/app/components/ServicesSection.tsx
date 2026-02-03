@@ -62,32 +62,32 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
       initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="bg-white border border-gray-100 rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden group"
+      className="bg-white border border-gray-100 rounded-3xl p-5 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden group"
     >
       {/* Decorative overlay */}
       <div 
-        className="absolute -top-8 -right-8 w-32 h-32 rounded-full opacity-30"
+        className="absolute -top-6 -right-6 w-24 h-24 rounded-full opacity-30"
         style={{ backgroundColor: 'rgba(224, 237, 255, 0.5)' }}
       />
       
       {/* Icon */}
       <div 
-        className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 relative z-10"
+        className="w-14 h-14 rounded-2xl flex items-center justify-center mb-4 relative z-10"
         style={{ backgroundColor: service.bgColor }}
       >
-        <service.Icon className="w-[70px] h-[70px]" />
+        <service.Icon className="w-[60px] h-[60px]" />
       </div>
 
       {/* Content */}
-      <h3 className="text-2xl font-['Gilda_Display'] text-black mb-4">
+      <h3 className="text-xl md:text-xl font-['Gilda_Display'] text-black mb-3">
         {service.title}
       </h3>
-      <p className="text-base text-black/80 font-['Arial'] leading-relaxed mb-8">
+      <p className="text-sm md:text-sm text-black/80 font-['Arial'] leading-relaxed mb-6">
         {service.description}
       </p>
 
       {/* Learn More Link */}
-      <Link to={`/services/${service.id}`} className="flex items-center gap-2 text-black font-['Poppins'] font-semibold group-hover:gap-3 transition-all">
+      <Link to={`/services/${service.id}`} className="flex items-center gap-2 text-black font-['Poppins'] font-semibold text-sm group-hover:gap-3 transition-all">
         <span>Learn More</span>
         <ArrowUpRight className="w-4 h-4" />
       </Link>
@@ -120,18 +120,18 @@ export default function ServicesSection() {
   }
 
   return (
-    <section id="services" className="pt-[30px] pb-[50px] md:pt-[40px] md:pb-[70px] px-[16px] md:px-[25px]">
+    <section id="services" className="pt-[30px] pb-[50px] md:pt-[40px] md:pb-[70px] px-0">
       <motion.div
         ref={ref}
         variants={containerVariants}
         initial="hidden"
         animate={isInView ? 'visible' : 'hidden'}
-        className="max-w-[1390px] mx-auto"
+        className="w-full"
       >
         {/* Service Detail Card */}
         <motion.div
           variants={itemVariants}
-          className="bg-[#e0edff] rounded-[25px] p-[24px] md:p-[36px] lg:p-[48px] relative overflow-hidden"
+          className="bg-[#e0edff] rounded-[25px] p-[24px] md:p-[36px] lg:p-[48px] relative overflow-hidden w-full"
         >
           {/* Background Tooth Icon */}
           <div className="absolute left-[-163px] top-[-97px] w-[642px] h-[642px] opacity-5 hidden lg:block">
@@ -146,20 +146,11 @@ export default function ServicesSection() {
             Our Services
           </h2>
 
-          {/* Services Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
-            {services.slice(0, 3).map((service, index) => (
+          {/* Services Grid - All 5 cards in one row */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-4 lg:gap-4 relative z-10 max-w-[1390px] mx-auto">
+            {services.map((service, index) => (
               <ServiceCard key={service.id} service={service} index={index} />
             ))}
-          </div>
-          
-          {/* Second Row - 2 cards centered */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6 relative z-10">
-            {services.slice(3).map((service, index) => (
-              <ServiceCard key={service.id} service={service} index={index + 3} />
-            ))}
-            {/* Empty div to maintain grid alignment on lg screens */}
-            <div className="hidden lg:block"></div>
           </div>
         </motion.div>
       </motion.div>
