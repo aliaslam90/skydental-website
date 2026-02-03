@@ -138,7 +138,7 @@ export default function Header() {
                 onClick={handleHomeClick}
                 className={`px-[14px] py-[4px] rounded-full text-[14px] transition-all whitespace-nowrap ${
                   location.pathname === '/'
-                    ? 'bg-[#cbff8f] text-[#0C0060] font-bold'
+                    ? 'bg-[#56FC8A] text-[#0C0060] font-bold'
                     : 'text-black hover:text-[#0C0060]'
                 }`}
               >
@@ -148,7 +148,7 @@ export default function Header() {
                 onClick={handleAboutUsClick}
                 className={`px-[14px] py-[4px] rounded-full text-[14px] transition-all whitespace-nowrap ${
                   location.pathname === '/about-us'
-                    ? 'bg-[#cbff8f] text-[#0C0060] font-bold'
+                    ? 'bg-[#56FC8A] text-[#0C0060] font-bold'
                     : 'text-black hover:text-[#0C0060]'
                 }`}
               >
@@ -159,7 +159,7 @@ export default function Header() {
                 onClick={handleOurDoctorsClick}
                 className={`px-[14px] py-[4px] rounded-full text-[14px] transition-all whitespace-nowrap ${
                   location.pathname.startsWith('/our-doctors')
-                    ? 'bg-[#cbff8f] text-[#0C0060] font-bold'
+                    ? 'bg-[#56FC8A] text-[#0C0060] font-bold'
                     : 'text-black hover:text-[#0C0060]'
                 }`}
               >
@@ -169,7 +169,7 @@ export default function Header() {
                 onClick={handleServicesClick}
                 className={`px-[14px] py-[4px] rounded-full text-[14px] transition-all whitespace-nowrap ${
                   location.pathname.startsWith('/services')
-                    ? 'bg-[#cbff8f] text-[#0C0060] font-bold'
+                    ? 'bg-[#56FC8A] text-[#0C0060] font-bold'
                     : 'text-black hover:text-[#0C0060]'
                 }`}
               >
@@ -179,7 +179,7 @@ export default function Header() {
                 to="/packages"
                 className={`px-[14px] py-[4px] rounded-full text-[14px] transition-all whitespace-nowrap ${
                   location.pathname === '/packages'
-                    ? 'bg-[#cbff8f] text-[#0C0060] font-bold'
+                    ? 'bg-[#56FC8A] text-[#0C0060] font-bold'
                     : 'text-black hover:text-[#0C0060]'
                 }`}
               >
@@ -190,7 +190,7 @@ export default function Header() {
                 onClick={handleContactClick}
                 className={`px-[14px] py-[4px] rounded-full text-[14px] transition-all whitespace-nowrap ${
                   location.pathname === '/contact'
-                    ? 'bg-[#cbff8f] text-[#0C0060] font-bold'
+                    ? 'bg-[#56FC8A] text-[#0C0060] font-bold'
                     : 'text-black hover:text-[#0C0060]'
                 }`}
               >
@@ -221,7 +221,7 @@ export default function Header() {
                         onClick={() => setMoreDropdownOpen(false)}
                         className={`block px-5 py-3 text-[14px] rounded-full transition-colors ${
                           location.pathname === '/patient-guide'
-                            ? 'bg-[#cbff8f] text-[#0C0060] font-bold'
+                            ? 'bg-[#56FC8A] text-[#0C0060] font-bold'
                             : 'text-black hover:bg-[#f8f9fa] hover:text-[#0C0060]'
                         }`}
                       >
@@ -232,7 +232,7 @@ export default function Header() {
                         onClick={() => setMoreDropdownOpen(false)}
                         className={`block px-5 py-3 text-[14px] rounded-full transition-colors ${
                           location.pathname === '/careers'
-                            ? 'bg-[#cbff8f] text-[#0C0060] font-bold'
+                            ? 'bg-[#56FC8A] text-[#0C0060] font-bold'
                             : 'text-black hover:bg-[#f8f9fa] hover:text-[#0C0060]'
                         }`}
                       >
@@ -243,7 +243,7 @@ export default function Header() {
                         onClick={() => setMoreDropdownOpen(false)}
                         className={`block px-5 py-3 text-[14px] rounded-full transition-colors ${
                           location.pathname === '/faqs'
-                            ? 'bg-[#cbff8f] text-[#0C0060] font-bold'
+                            ? 'bg-[#56FC8A] text-[#0C0060] font-bold'
                             : 'text-black hover:bg-[#f8f9fa] hover:text-[#0C0060]'
                         }`}
                       >
@@ -254,7 +254,7 @@ export default function Header() {
                         onClick={() => setMoreDropdownOpen(false)}
                         className={`block px-5 py-3 text-[14px] rounded-full transition-colors ${
                           location.pathname === '/privacy-policy'
-                            ? 'bg-[#cbff8f] text-[#0C0060] font-bold'
+                            ? 'bg-[#56FC8A] text-[#0C0060] font-bold'
                             : 'text-black hover:bg-[#f8f9fa] hover:text-[#0C0060]'
                         }`}
                       >
@@ -271,20 +271,20 @@ export default function Header() {
               {/* CTA Button - Always visible */}
               <button 
                 onClick={() => openBookingSidebar()}
-                className="bg-[#cbff8f] flex items-center gap-3 xl:gap-6 pl-4 xl:pl-6 pr-[10px] py-2 rounded-[35px] group hover:bg-[#B1FF57] transition-colors">
+                className="bg-[#56FC8A] flex items-center gap-3 xl:gap-6 pl-4 xl:pl-6 pr-[10px] py-2 rounded-[35px] group hover:bg-[#B1FF57] transition-colors">
                 <span className="text-[#0C0060] font-bold text-[14px] xl:text-[16px] whitespace-nowrap">Request Appointment</span>
                 <div className="bg-[#0C0060] w-[34px] h-[34px] rounded-full flex items-center justify-center shrink-0">
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 20 20">
                     <path 
                       d="M5 15L15 5" 
-                      stroke="#CBFF8F" 
+                      stroke="#56FC8A" 
                       strokeWidth="1.5" 
                       strokeLinecap="round" 
                       strokeLinejoin="round" 
                     />
                     <path 
                       d="M6.875 5H15V13.125" 
-                      stroke="#CBFF8F" 
+                      stroke="#56FC8A" 
                       strokeWidth="1.5" 
                       strokeLinecap="round" 
                       strokeLinejoin="round" 
@@ -353,7 +353,7 @@ export default function Header() {
                   onClick={handleHomeClick}
                   className={`px-[20px] py-[12px] rounded-full text-[16px] transition-all text-left ${
                     location.pathname === '/' || activeSection === 'home'
-                      ? 'bg-[#cbff8f] text-[#0C0060] font-bold'
+                      ? 'bg-[#56FC8A] text-[#0C0060] font-bold'
                       : 'text-black hover:text-[#0C0060]'
                   }`}
                 >
@@ -363,7 +363,7 @@ export default function Header() {
                   onClick={handleAboutUsClick}
                   className={`px-[20px] py-[12px] rounded-full text-[16px] transition-all text-left ${
                     location.pathname === '/about-us'
-                      ? 'bg-[#cbff8f] text-[#0C0060] font-bold'
+                      ? 'bg-[#56FC8A] text-[#0C0060] font-bold'
                       : 'text-black hover:text-[#0C0060]'
                   }`}
                 >
@@ -373,7 +373,7 @@ export default function Header() {
                   onClick={handleOurDoctorsClick}
                   className={`px-[20px] py-[12px] rounded-full text-[16px] transition-all text-left ${
                     location.pathname.startsWith('/our-doctors')
-                      ? 'bg-[#cbff8f] text-[#0C0060] font-bold'
+                      ? 'bg-[#56FC8A] text-[#0C0060] font-bold'
                       : 'text-black hover:text-[#0C0060]'
                   }`}
                 >
@@ -383,7 +383,7 @@ export default function Header() {
                   onClick={handleServicesClick}
                   className={`px-[20px] py-[12px] rounded-full text-[16px] transition-all text-left ${
                     location.pathname.startsWith('/services')
-                      ? 'bg-[#cbff8f] text-[#0C0060] font-bold'
+                      ? 'bg-[#56FC8A] text-[#0C0060] font-bold'
                       : 'text-black hover:text-[#0C0060]'
                   }`}
                 >
@@ -393,7 +393,7 @@ export default function Header() {
                   to="/packages"
                   className={`px-[20px] py-[12px] rounded-full text-[16px] transition-all text-left ${
                     location.pathname === '/packages'
-                      ? 'bg-[#cbff8f] text-[#0C0060] font-bold'
+                      ? 'bg-[#56FC8A] text-[#0C0060] font-bold'
                       : 'text-black hover:text-[#0C0060]'
                   }`}
                 >
@@ -403,7 +403,7 @@ export default function Header() {
                   onClick={handleContactClick}
                   className={`px-[20px] py-[12px] rounded-full text-[16px] transition-all text-left ${
                     location.pathname === '/contact'
-                      ? 'bg-[#cbff8f] text-[#0C0060] font-bold'
+                      ? 'bg-[#56FC8A] text-[#0C0060] font-bold'
                       : 'text-black hover:text-[#0C0060]'
                   }`}
                 >
@@ -418,7 +418,7 @@ export default function Header() {
                     onClick={() => setMobileMenuOpen(false)}
                     className={`block px-[20px] py-[10px] rounded-full text-[15px] transition-all ${
                       location.pathname === '/patient-guide'
-                        ? 'bg-[#cbff8f] text-[#0C0060] font-bold'
+                        ? 'bg-[#56FC8A] text-[#0C0060] font-bold'
                         : 'text-black hover:text-[#0C0060]'
                     }`}
                   >
@@ -429,7 +429,7 @@ export default function Header() {
                     onClick={() => setMobileMenuOpen(false)}
                     className={`block px-[20px] py-[10px] rounded-full text-[15px] transition-all ${
                       location.pathname === '/careers'
-                        ? 'bg-[#cbff8f] text-[#0C0060] font-bold'
+                        ? 'bg-[#56FC8A] text-[#0C0060] font-bold'
                         : 'text-black hover:text-[#0C0060]'
                     }`}
                   >
@@ -440,7 +440,7 @@ export default function Header() {
                     onClick={() => setMobileMenuOpen(false)}
                     className={`block px-[20px] py-[10px] rounded-full text-[15px] transition-all ${
                       location.pathname === '/faqs'
-                        ? 'bg-[#cbff8f] text-[#0C0060] font-bold'
+                        ? 'bg-[#56FC8A] text-[#0C0060] font-bold'
                         : 'text-black hover:text-[#0C0060]'
                     }`}
                   >
@@ -451,7 +451,7 @@ export default function Header() {
                     onClick={() => setMobileMenuOpen(false)}
                     className={`block px-[20px] py-[10px] rounded-full text-[15px] transition-all ${
                       location.pathname === '/privacy-policy'
-                        ? 'bg-[#cbff8f] text-[#0C0060] font-bold'
+                        ? 'bg-[#56FC8A] text-[#0C0060] font-bold'
                         : 'text-black hover:text-[#0C0060]'
                     }`}
                   >
@@ -465,20 +465,20 @@ export default function Header() {
                     openBookingSidebar()
                     setMobileMenuOpen(false)
                   }}
-                  className="bg-[#cbff8f] flex items-center justify-center gap-4 px-6 py-4 rounded-[35px] mt-6 hover:bg-[#B1FF57] transition-colors">
+                  className="bg-[#56FC8A] flex items-center justify-center gap-4 px-6 py-4 rounded-[35px] mt-6 hover:bg-[#B1FF57] transition-colors">
                   <span className="text-[#0C0060] font-bold text-[16px]">Request Appointment</span>
                   <div className="bg-[#0C0060] w-[34px] h-[34px] rounded-full flex items-center justify-center">
                     <svg className="w-5 h-5" fill="none" viewBox="0 0 20 20">
                       <path 
                         d="M5 15L15 5" 
-                        stroke="#CBFF8F" 
+                        stroke="#56FC8A" 
                         strokeWidth="1.5" 
                         strokeLinecap="round" 
                         strokeLinejoin="round" 
                       />
                       <path 
                         d="M6.875 5H15V13.125" 
-                        stroke="#CBFF8F" 
+                        stroke="#56FC8A" 
                         strokeWidth="1.5" 
                         strokeLinecap="round" 
                         strokeLinejoin="round" 
@@ -500,7 +500,7 @@ function NavDropdown({ label, active, onClick }: { label: string; active: boolea
     <button
       onClick={onClick}
       className={`flex items-center gap-[5px] px-[14px] py-[4px] rounded-full text-[14px] transition-all whitespace-nowrap ${
-        active ? 'bg-[#cbff8f] text-[#0C0060] font-bold' : 'text-black hover:text-[#0C0060]'
+        active ? 'bg-[#56FC8A] text-[#0C0060] font-bold' : 'text-black hover:text-[#0C0060]'
       }`}
     >
       <span>{label}</span>

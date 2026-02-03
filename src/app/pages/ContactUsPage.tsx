@@ -87,15 +87,15 @@ export default function ContactUsPage() {
 
             {/* Feature Pills */}
             <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
-              <div className="bg-[#cbff8f] px-6 py-3 rounded-full flex items-center gap-2">
+              <div className="bg-[#56FC8A] px-6 py-3 rounded-full flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#0C0060]" />
                 <span className="text-sm font-['Arial'] font-bold text-[#0C0060]">Quick Response</span>
               </div>
-              <div className="bg-[#cbff8f] px-6 py-3 rounded-full flex items-center gap-2">
+              <div className="bg-[#56FC8A] px-6 py-3 rounded-full flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#0C0060]" />
                 <span className="text-sm font-['Arial'] font-bold text-[#0C0060]">Professional Support</span>
               </div>
-              <div className="bg-[#cbff8f] px-6 py-3 rounded-full flex items-center gap-2">
+              <div className="bg-[#56FC8A] px-6 py-3 rounded-full flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#0C0060]" />
                 <span className="text-sm font-['Arial'] font-bold text-[#0C0060]">Easy Booking</span>
               </div>
@@ -130,7 +130,7 @@ export default function ContactUsPage() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="bg-[#e0edff] rounded-3xl p-8 flex flex-col items-center text-center"
             >
-              <div className="w-16 h-16 bg-[#cbff8f] rounded-2xl flex items-center justify-center mb-6">
+              <div className="w-16 h-16 bg-[#56FC8A] rounded-2xl flex items-center justify-center mb-6">
                 <Phone className="w-8 h-8 text-[#0C0060]" />
               </div>
               <h3 className="text-2xl font-['Gilda_Display'] text-black mb-4">Phone</h3>
@@ -147,7 +147,7 @@ export default function ContactUsPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="bg-[#e0edff] rounded-3xl p-8 flex flex-col items-center text-center"
             >
-              <div className="w-16 h-16 bg-[#cbff8f] rounded-2xl flex items-center justify-center mb-6">
+              <div className="w-16 h-16 bg-[#56FC8A] rounded-2xl flex items-center justify-center mb-6">
                 <Mail className="w-8 h-8 text-[#0C0060]" />
               </div>
               <h3 className="text-2xl font-['Gilda_Display'] text-black mb-4">Email</h3>
@@ -164,7 +164,7 @@ export default function ContactUsPage() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="bg-[#e0edff] rounded-3xl p-8 flex flex-col items-center text-center"
             >
-              <div className="w-16 h-16 bg-[#cbff8f] rounded-2xl flex items-center justify-center mb-6">
+              <div className="w-16 h-16 bg-[#56FC8A] rounded-2xl flex items-center justify-center mb-6">
                 <MapPin className="w-8 h-8 text-[#0C0060]" />
               </div>
               <h3 className="text-2xl font-['Gilda_Display'] text-black mb-4">Location</h3>
@@ -182,7 +182,7 @@ export default function ContactUsPage() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="bg-[#e0edff] rounded-3xl p-8 flex flex-col items-center text-center"
             >
-              <div className="w-16 h-16 bg-[#cbff8f] rounded-2xl flex items-center justify-center mb-6">
+              <div className="w-16 h-16 bg-[#56FC8A] rounded-2xl flex items-center justify-center mb-6">
                 <Clock className="w-8 h-8 text-[#0C0060]" />
               </div>
               <h3 className="text-2xl font-['Gilda_Display'] text-black mb-4">Working Hours</h3>
@@ -220,7 +220,7 @@ export default function ContactUsPage() {
             className="max-w-3xl mx-auto"
           >
             {formSubmitted ? (
-              <div className="bg-[#cbff8f] rounded-3xl p-12 text-center">
+              <div className="bg-[#56FC8A] rounded-3xl p-12 text-center">
                 <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-6">
                   <CheckCircle2 className="w-10 h-10 text-[#0C0060]" />
                 </div>
@@ -322,11 +322,11 @@ export default function ContactUsPage() {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="w-full bg-[#cbff8f] hover:bg-[#b8e680] text-[#0C0060] font-['Arial'] font-bold py-4 px-6 rounded-full flex items-center justify-center gap-3 transition-all duration-300 group"
+                  className="w-full bg-[#56FC8A] hover:bg-[#b8e680] text-[#0C0060] font-['Arial'] font-bold py-4 px-6 rounded-full flex items-center justify-center gap-3 transition-all duration-300 group"
                 >
                   <span className="text-base">Send Message</span>
                   <div className="w-8 h-8 bg-[#0C0060] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Send className="w-4 h-4 text-[#cbff8f]" />
+                    <Send className="w-4 h-4 text-[#56FC8A]" />
                   </div>
                 </button>
 
@@ -367,7 +367,7 @@ export default function ContactUsPage() {
               {/* Our Address */}
               <div className="mb-8">
                 <div className="flex items-start gap-4 mb-4">
-                  <div className="w-12 h-12 bg-[#cbff8f] rounded-2xl flex items-center justify-center shrink-0">
+                  <div className="w-12 h-12 bg-[#56FC8A] rounded-2xl flex items-center justify-center shrink-0">
                     <MapPin className="w-6 h-6 text-[#0C0060]" />
                   </div>
                   <div>
@@ -380,20 +380,20 @@ export default function ContactUsPage() {
               {/* Opening Hours */}
               <div>
                 <div className="flex items-start gap-4 mb-4">
-                  <div className="w-12 h-12 bg-[#cbff8f] rounded-2xl flex items-center justify-center shrink-0">
+                  <div className="w-12 h-12 bg-[#56FC8A] rounded-2xl flex items-center justify-center shrink-0">
                     <Clock className="w-6 h-6 text-[#0C0060]" />
                   </div>
                   <div>
                     <h3 className="text-2xl font-['Gilda_Display'] text-black mb-3">Opening Hours</h3>
                     <div className="space-y-2">
                       <div className="flex items-center gap-2">
-                        <div className="w-2 h-2 bg-[#cbff8f] rounded-full"></div>
+                        <div className="w-2 h-2 bg-[#56FC8A] rounded-full"></div>
                         <p className="text-sm font-['Arial'] text-black">
                           <span className="font-bold">10am - 10pm</span>
                         </p>
                       </div>
                       <div className="flex items-center gap-2">
-                        <div className="w-2 h-2 bg-[#cbff8f] rounded-full"></div>
+                        <div className="w-2 h-2 bg-[#56FC8A] rounded-full"></div>
                         <p className="text-sm font-['Arial'] text-black">
                           <span className="font-bold">7 Days a week</span>
                         </p>

@@ -104,20 +104,20 @@ export default function TestimonialsSection() {
               </h2>
 
               {/* Learn More Button */}
-              <Link to="/about-us" className="bg-[#cbff8f] flex items-center gap-4 md:gap-6 pl-4 md:pl-6 pr-[8px] md:pr-[10px] py-2 rounded-[35px] self-start hover:bg-[#B1FF57] transition-colors mt-[8px] md:mt-[16px]">
+              <Link to="/about-us" className="bg-[#56FC8A] flex items-center gap-4 md:gap-6 pl-4 md:pl-6 pr-[8px] md:pr-[10px] py-2 rounded-[35px] self-start hover:bg-[#B1FF57] transition-colors mt-[8px] md:mt-[16px]">
                 <span className="text-[#0C0060] font-bold text-[14px] md:text-[16px] whitespace-nowrap">Learn More</span>
                 <div className="bg-[#0C0060] w-[32px] h-[32px] md:w-[34px] md:h-[34px] rounded-full flex items-center justify-center flex-shrink-0">
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 20 20">
                     <path 
                       d="M5 15L15 5" 
-                      stroke="#CBFF8F" 
+                      stroke="#56FC8A" 
                       strokeWidth="1.5" 
                       strokeLinecap="round" 
                       strokeLinejoin="round" 
                     />
                     <path 
                       d="M6.875 5H15V13.125" 
-                      stroke="#CBFF8F" 
+                      stroke="#56FC8A" 
                       strokeWidth="1.5" 
                       strokeLinecap="round" 
                       strokeLinejoin="round" 
@@ -150,7 +150,7 @@ export default function TestimonialsSection() {
                       duration: shouldReduceMotion ? 0 : 0.5,
                       ease: "easeInOut"
                     }}
-                    className="bg-[#cbff8f] rounded-[20px] p-[20px] md:p-[24px] flex gap-[16px] md:gap-[20px]"
+                    className="bg-[#56FC8A] rounded-[20px] p-[20px] md:p-[24px] flex gap-[16px] md:gap-[20px]"
                   >
                     <div className="flex-1 flex flex-col gap-[12px] md:gap-[16px]">
                       <p className="text-black text-[14px] md:text-[15px] leading-[1.5]">

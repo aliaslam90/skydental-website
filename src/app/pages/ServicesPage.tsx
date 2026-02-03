@@ -166,11 +166,11 @@ export default function ServicesPage() {
                 whileHover={shouldReduceMotion ? {} : { scale: 1.05 }}
                 whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
                 onClick={() => openBookingSidebar()}
-                className="bg-[#cbff8f] text-[#0C0060] font-bold px-8 py-4 rounded-full inline-flex items-center gap-3 hover:bg-[#b8ff6d] transition-colors font-['Arial']"
+                className="bg-[#56FC8A] text-[#0C0060] font-bold px-8 py-4 rounded-full inline-flex items-center gap-3 hover:bg-[#b8ff6d] transition-colors font-['Arial']"
               >
                 <span>Request Appointment</span>
                 <div className="w-9 h-9 bg-[#0C0060] rounded-full flex items-center justify-center">
-                  <ArrowUpRight className="w-5 h-5 text-[#cbff8f]" />
+                  <ArrowUpRight className="w-5 h-5 text-[#56FC8A]" />
                 </div>
               </motion.button>
 

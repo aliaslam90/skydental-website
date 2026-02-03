@@ -175,15 +175,15 @@ export default function PackagesPage() {
 
             {/* Badges */}
             <div className="flex flex-wrap items-center justify-center gap-4 mb-10">
-              <div className="bg-[#cbff8f] border border-[rgba(12,0,96,0.05)] px-4 py-2 rounded-full shadow-sm inline-flex items-center gap-2">
+              <div className="bg-[#56FC8A] border border-[rgba(12,0,96,0.05)] px-4 py-2 rounded-full shadow-sm inline-flex items-center gap-2">
                 <Check className="w-4 h-4 text-[#0C0060]" />
                 <span className="text-sm text-[#0C0060] font-['Poppins'] font-medium">Premium Care</span>
               </div>
-              <div className="bg-[#cbff8f] border border-[rgba(12,0,96,0.05)] px-4 py-2 rounded-full shadow-sm inline-flex items-center gap-2">
+              <div className="bg-[#56FC8A] border border-[rgba(12,0,96,0.05)] px-4 py-2 rounded-full shadow-sm inline-flex items-center gap-2">
                 <Check className="w-4 h-4 text-[#0C0060]" />
                 <span className="text-sm text-[#0C0060] font-['Poppins'] font-medium">Exclusive Benefits</span>
               </div>
-              <div className="bg-[#cbff8f] border border-[rgba(12,0,96,0.05)] px-4 py-2 rounded-full shadow-sm inline-flex items-center gap-2">
+              <div className="bg-[#56FC8A] border border-[rgba(12,0,96,0.05)] px-4 py-2 rounded-full shadow-sm inline-flex items-center gap-2">
                 <Check className="w-4 h-4 text-[#0C0060]" />
                 <span className="text-sm text-[#0C0060] font-['Poppins'] font-medium">World-Class Dentistry</span>
               </div>
@@ -226,7 +226,7 @@ export default function PackagesPage() {
                   className="bg-white border-[#f3f4f6] border rounded-[32px] p-8 flex flex-col h-full"
                 >
                   {/* Icon */}
-                  <div className="w-14 h-14 bg-[#cbff8f] rounded-[18px] flex items-center justify-center mb-5">
+                  <div className="w-14 h-14 bg-[#56FC8A] rounded-[18px] flex items-center justify-center mb-5">
                     <div className="text-[#0C0060]">
                       {pkg.icon}
                     </div>
@@ -256,11 +256,11 @@ export default function PackagesPage() {
                   <motion.button
                     whileHover={shouldReduceMotion ? {} : { scale: 1.02 }}
                     whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
-                    className="bg-[#cbff8f] text-[#0C0060] font-bold px-6 py-3.5 rounded-full w-full inline-flex items-center justify-between hover:bg-[#b8ff6d] transition-colors font-['Arial'] text-[15px]"
+                    className="bg-[#56FC8A] text-[#0C0060] font-bold px-6 py-3.5 rounded-full w-full inline-flex items-center justify-between hover:bg-[#b8ff6d] transition-colors font-['Arial'] text-[15px]"
                   >
                     <span>Request Now</span>
                     <div className="w-8 h-8 bg-[#0C0060] rounded-full flex items-center justify-center">
-                      <ArrowUpRight className="w-[18px] h-[18px] text-[#cbff8f]" />
+                      <ArrowUpRight className="w-[18px] h-[18px] text-[#56FC8A]" />
                     </div>
                   </motion.button>
                 </motion.div>

@@ -38,7 +38,7 @@ interface FAQCategory {
 }
 
 const categories: Category[] = [
-  { id: 'general', label: 'General Dentistry', Icon: GeneralDentistryIcon, color: 'bg-[#cbff8f]' },
+  { id: 'general', label: 'General Dentistry', Icon: GeneralDentistryIcon, color: 'bg-[#56FC8A]' },
   { id: 'cosmetic', label: 'Cosmetic Dentistry', Icon: CosmeticDentistryIcon, color: 'bg-[#e0edff]' },
   { id: 'orthodontics', label: 'Orthodontics', Icon: OrthodonticsIcon, color: 'bg-[#e8f4ff]' },
   { id: 'pediatric', label: 'Pediatric Dentistry', Icon: PediatricDentistryIcon, color: 'bg-[#fff9e6]' },
@@ -325,15 +325,15 @@ export default function FAQsPage() {
 
             {/* Tabs - Static Design Elements */}
             <div className="flex items-center justify-center gap-4 mb-10">
-              <div className="px-6 py-2.5 rounded-full text-[14px] font-['Arial'] font-medium flex items-center gap-2 bg-[#cbff8f] text-[#0C0060] shadow-sm">
+              <div className="px-6 py-2.5 rounded-full text-[14px] font-['Arial'] font-medium flex items-center gap-2 bg-[#56FC8A] text-[#0C0060] shadow-sm">
                 <div className="w-2 h-2 rounded-full bg-[#0C0060]" />
                 <span>Expert Answers</span>
               </div>
-              <div className="px-6 py-2.5 rounded-full text-[14px] font-['Arial'] font-medium flex items-center gap-2 bg-[#cbff8f] text-[#0C0060] shadow-sm">
+              <div className="px-6 py-2.5 rounded-full text-[14px] font-['Arial'] font-medium flex items-center gap-2 bg-[#56FC8A] text-[#0C0060] shadow-sm">
                 <div className="w-2 h-2 rounded-full bg-[#0C0060]" />
                 <span>Comprehensive Guide</span>
               </div>
-              <div className="px-6 py-2.5 rounded-full text-[14px] font-['Arial'] font-medium flex items-center gap-2 bg-[#cbff8f] text-[#0C0060] shadow-sm">
+              <div className="px-6 py-2.5 rounded-full text-[14px] font-['Arial'] font-medium flex items-center gap-2 bg-[#56FC8A] text-[#0C0060] shadow-sm">
                 <div className="w-2 h-2 rounded-full bg-[#0C0060]" />
                 <span>Always Here to Help</span>
               </div>
