@@ -2,7 +2,8 @@
 
 import { motion, useReducedMotion, useInView } from 'motion/react'
 import { useRef, useState } from 'react'
-import { ArrowUpRight, Check, GraduationCap, HeartPulse, Sparkles, Smile, MessageCircle, Percent } from 'lucide-react'
+import { ArrowUpRight, Check, GraduationCap, HeartPulse, Sparkles, Smile, Percent } from 'lucide-react'
+import { OrthodonticsIcon } from '../components/ServiceIcons'
 import imgImage from "../../assets/e2295a1a1a2bc348414dcc117de577c691164137.png"
 import imgImage1 from "../../assets/c5fbf2bb2ed01ea6f6ce38835da33519e2db95fe.png"
 import imgImage2 from "../../assets/27cea6501d6677b5b8f9f08502ce76c7a193f7f8.png"
@@ -70,7 +71,7 @@ const packages: Package[] = [
   },
   {
     id: 'consultation',
-    icon: <MessageCircle className="w-6 h-6 text-[#0C0060]" />,
+    icon: <OrthodonticsIcon className="w-6 h-6" />,
     title: 'Free Braces Consultation',
     description: 'Begin your orthodontic transformation with absolute clarity and confidence. Your dream smile starts with a conversation free of charge.',
     features: [
@@ -225,8 +226,10 @@ export default function PackagesPage() {
                   className="bg-white border-[#f3f4f6] border rounded-[32px] p-8 flex flex-col h-full"
                 >
                   {/* Icon */}
-                  <div className="w-14 h-14 bg-[#cbff8f] rounded-[18px] flex items-center justify-center text-2xl mb-5">
-                    {pkg.icon}
+                  <div className="w-14 h-14 bg-[#cbff8f] rounded-[18px] flex items-center justify-center mb-5">
+                    <div className="text-[#0C0060]">
+                      {pkg.icon}
+                    </div>
                   </div>
 
                   {/* Title */}
