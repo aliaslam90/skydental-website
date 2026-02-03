@@ -8,7 +8,11 @@ export function GeneralDentistryIcon({ className = "w-6 h-6" }: { className?: st
       className={className}
       style={{ 
         objectFit: 'contain', 
-        display: 'block'
+        display: 'block',
+        maxWidth: '100%',
+        maxHeight: '100%',
+        width: 'auto',
+        height: 'auto'
       }}
       loading="eager"
     />
@@ -23,7 +27,11 @@ export function CosmeticDentistryIcon({ className = "w-6 h-6" }: { className?: s
       className={className}
       style={{ 
         objectFit: 'contain', 
-        display: 'block'
+        display: 'block',
+        maxWidth: '100%',
+        maxHeight: '100%',
+        width: 'auto',
+        height: 'auto'
       }}
       loading="eager"
     />
@@ -38,7 +46,11 @@ export function OrthodonticsIcon({ className = "w-6 h-6" }: { className?: string
       className={className}
       style={{ 
         objectFit: 'contain', 
-        display: 'block'
+        display: 'block',
+        maxWidth: '100%',
+        maxHeight: '100%',
+        width: 'auto',
+        height: 'auto'
       }}
       loading="eager"
     />
@@ -53,7 +65,11 @@ export function PediatricDentistryIcon({ className = "w-6 h-6" }: { className?: 
       className={className}
       style={{ 
         objectFit: 'contain', 
-        display: 'block'
+        display: 'block',
+        maxWidth: '100%',
+        maxHeight: '100%',
+        width: 'auto',
+        height: 'auto'
       }}
       loading="eager"
     />
@@ -68,7 +84,11 @@ export function ImplantAdvancedCareIcon({ className = "w-6 h-6" }: { className?:
       className={className}
       style={{ 
         objectFit: 'contain', 
-        display: 'block'
+        display: 'block',
+        maxWidth: '100%',
+        maxHeight: '100%',
+        width: 'auto',
+        height: 'auto'
       }}
       loading="eager"
     />
