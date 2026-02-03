@@ -448,17 +448,18 @@ export default function ServiceDetailPage() {
                           alt="Before"
                           className="w-full h-full object-cover"
                           style={{ minHeight: '100%', minWidth: '100%' }}
+                          loading="eager"
                           onError={(e) => {
-                            console.error('Error loading before image:', activeTabData.beforeImage);
+                            console.error('Error loading before image:', activeTabData.beforeImage, 'Full path:', window.location.origin + activeTabData.beforeImage);
                             const target = e.target as HTMLImageElement;
                             target.style.display = 'none';
                             // Show error message
                             const errorDiv = document.createElement('div');
-                            errorDiv.className = 'absolute inset-0 flex items-center justify-center bg-red-100 text-red-600';
-                            errorDiv.textContent = `Failed to load: ${activeTabData.beforeImage}`;
+                            errorDiv.className = 'absolute inset-0 flex items-center justify-center bg-red-100 text-red-600 p-4 text-center';
+                            errorDiv.textContent = `Failed to load image. Check console for details.`;
                             target.parentElement?.appendChild(errorDiv);
                           }}
-                          onLoad={() => console.log('Before image loaded:', activeTabData.beforeImage)}
+                          onLoad={() => console.log('Before image loaded successfully:', activeTabData.beforeImage)}
                         />
                         <div className="absolute bottom-4 left-4 bg-[#8B4513] text-white px-4 py-2 rounded-lg font-['Arial'] font-medium">
                           Before
@@ -475,17 +476,18 @@ export default function ServiceDetailPage() {
                           alt="After"
                           className="w-full h-full object-cover"
                           style={{ minHeight: '100%', minWidth: '100%' }}
+                          loading="eager"
                           onError={(e) => {
-                            console.error('Error loading after image:', activeTabData.afterImage);
+                            console.error('Error loading after image:', activeTabData.afterImage, 'Full path:', window.location.origin + activeTabData.afterImage);
                             const target = e.target as HTMLImageElement;
                             target.style.display = 'none';
                             // Show error message
                             const errorDiv = document.createElement('div');
-                            errorDiv.className = 'absolute inset-0 flex items-center justify-center bg-red-100 text-red-600';
-                            errorDiv.textContent = `Failed to load: ${activeTabData.afterImage}`;
+                            errorDiv.className = 'absolute inset-0 flex items-center justify-center bg-red-100 text-red-600 p-4 text-center';
+                            errorDiv.textContent = `Failed to load image. Check console for details.`;
                             target.parentElement?.appendChild(errorDiv);
                           }}
-                          onLoad={() => console.log('After image loaded:', activeTabData.afterImage)}
+                          onLoad={() => console.log('After image loaded successfully:', activeTabData.afterImage)}
                         />
                         <div className="absolute bottom-4 right-4 bg-[#8B4513] text-white px-4 py-2 rounded-lg font-['Arial'] font-medium">
                           After
