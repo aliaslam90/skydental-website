@@ -45,19 +45,19 @@ const whyJoinCards: WhyJoinCard[] = [
 const jobCategories: JobCategory[] = [
   {
     title: 'General & Specialist Dentists',
-    icon: '🦷',
+    icon: '/GeneralSpecialistDentists.png',
   },
   {
     title: 'Dental Assistants & Nurses',
-    icon: '👨‍⚕️',
+    icon: '/DentalAssistantsNurses.png',
   },
   {
     title: 'Front Desk & Patient Relations',
-    icon: '💼',
+    icon: '/FrontDeskPatientRelations.png',
   },
   {
     title: 'Administrative/Support Roles',
-    icon: '📋',
+    icon: '/Support%20Roles.png',
   },
 ]
 
@@ -246,8 +246,12 @@ export default function CareersPage() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="bg-white p-6 rounded-2xl flex items-center gap-4"
                 >
-                  <div className="w-12 h-12 bg-[#cbff8f] rounded-full flex items-center justify-center text-2xl shrink-0">
-                    {job.icon}
+                  <div className="w-12 h-12 bg-[#cbff8f] rounded-full flex items-center justify-center shrink-0 overflow-hidden">
+                    <img 
+                      src={job.icon} 
+                      alt={job.title}
+                      className="w-8 h-8 object-contain"
+                    />
                   </div>
                   <h3 className="text-lg font-['Arial'] font-semibold text-black">
                     {job.title}
