@@ -57,7 +57,7 @@ const jobCategories: JobCategory[] = [
   },
   {
     title: 'Administrative/Support Roles',
-    icon: '/Support%20Roles.png',
+    icon: '/SupportRoles.png',
   },
 ]
 
@@ -246,11 +246,12 @@ export default function CareersPage() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="bg-white p-6 rounded-2xl flex items-center gap-4"
                 >
-                  <div className="w-12 h-12 bg-[#cbff8f] rounded-full flex items-center justify-center shrink-0 overflow-hidden">
+                  <div className="w-12 h-12 bg-[#cbff8f] rounded-full flex items-center justify-center shrink-0 overflow-hidden p-2">
                     <img 
                       src={job.icon} 
                       alt={job.title}
-                      className="w-8 h-8 object-contain"
+                      className="w-full h-full object-contain"
+                      style={{ display: 'block' }}
                     />
                   </div>
                   <h3 className="text-lg font-['Arial'] font-semibold text-black">
