@@ -508,6 +508,16 @@ export default function ServiceDetailPage() {
                         </div>
                       </div>
                     </div>
+                    
+                    {/* Title and Description Below Image */}
+                    <div className="px-6 pt-6 pb-6">
+                      <h3 className="text-3xl font-['Gilda_Display'] text-black mb-4">
+                        {activeTabData.title}
+                      </h3>
+                      <p className="text-base text-black/70 font-['Arial'] leading-relaxed">
+                        {activeTabData.description}
+                      </p>
+                    </div>
                   </div>
                 </motion.div>
               </div>
