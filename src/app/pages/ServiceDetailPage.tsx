@@ -113,20 +113,27 @@ export default function ServiceDetailPage() {
   
   const [isDragging, setIsDragging] = useState(false)
   
-  const handleSliderMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!isDragging) return
-    const rect = e.currentTarget.getBoundingClientRect()
-    const x = e.clientX - rect.left
+  const updateSliderPosition = (clientX: number, element: HTMLElement) => {
+    const rect = element.getBoundingClientRect()
+    const x = clientX - rect.left
     const percentage = (x / rect.width) * 100
     setSliderPosition(Math.max(0, Math.min(100, percentage)))
   }
   
+  const handleSliderMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (isDragging) {
+      updateSliderPosition(e.clientX, e.currentTarget)
+    }
+  }
+  
+  const handleSliderClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    updateSliderPosition(e.clientX, e.currentTarget)
+  }
+  
   const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
-    if (!isDragging) return
-    const rect = e.currentTarget.getBoundingClientRect()
-    const x = e.touches[0].clientX - rect.left
-    const percentage = (x / rect.width) * 100
-    setSliderPosition(Math.max(0, Math.min(100, percentage)))
+    if (isDragging) {
+      updateSliderPosition(e.touches[0].clientX, e.currentTarget)
+    }
   }
 
   if (!service) {
@@ -433,12 +440,12 @@ export default function ServiceDetailPage() {
                     {/* Before/After Image Slider */}
                     <div
                       className="relative w-full aspect-[4/3] cursor-col-resize select-none"
+                      onClick={handleSliderClick}
                       onMouseMove={handleSliderMove}
                       onMouseDown={() => setIsDragging(true)}
                       onMouseUp={() => setIsDragging(false)}
                       onMouseLeave={() => {
                         setIsDragging(false)
-                        setSliderPosition(50)
                       }}
                       onTouchStart={() => setIsDragging(true)}
                       onTouchMove={handleTouchMove}
