@@ -1,4 +1,4 @@
-import { Calendar, Award, Users, CalendarCheck, Sparkles, Scissors, Sprout, Bandage, Shield } from 'lucide-react'
+import { Calendar, Award, Users, CalendarCheck, Sparkles, Scissors, Sprout, Bandage, Shield, Sparkle, Palette, Zap } from 'lucide-react'
 import { LucideIcon } from 'lucide-react'
 
 export interface ServiceDetail {
@@ -155,17 +155,17 @@ export const servicesData: ServiceDetail[] = [
     },
     benefits: [
       {
-        icon: '✨',
+        icon: Sparkle,
         title: 'Beautiful Results',
         description: 'Natural-looking enhancements that transform your smile'
       },
       {
-        icon: '🎨',
+        icon: Palette,
         title: 'Custom Design',
         description: 'Personalized treatment plans for your unique smile'
       },
       {
-        icon: '⚡',
+        icon: Zap,
         title: 'Quick Transformation',
         description: 'See dramatic improvements in just a few visits'
       }
