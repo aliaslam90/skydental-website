@@ -395,22 +395,19 @@ export default function ServiceDetailPage() {
                       whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
                     >
                       <div className="flex items-center gap-4">
-                        <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${
-                          activeTab === tab.id ? 'bg-white/20' : 'bg-white'
-                        }`}>
-                          {tab.icon ? (
-                            <img 
-                              src={tab.icon} 
-                              alt={tab.title}
-                              className="w-8 h-8 object-contain"
-                            />
-                          ) : (
-                            <span className="text-2xl">
-                              {tab.id === 'none' && '😬'}
-                              {tab.id === 'single' && '🦷'}
-                            </span>
-                          )}
-                        </div>
+                        {tab.icon && (
+                          <img 
+                            src={tab.icon} 
+                            alt={tab.title}
+                            className="w-16 h-16 object-contain flex-shrink-0"
+                          />
+                        )}
+                        {!tab.icon && (
+                          <span className="text-4xl flex-shrink-0">
+                            {tab.id === 'none' && '😬'}
+                            {tab.id === 'single' && '🦷'}
+                          </span>
+                        )}
                         <span className="font-['Arial'] font-semibold text-lg">
                           {tab.title}
                         </span>
