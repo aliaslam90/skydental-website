@@ -1,4 +1,4 @@
-import { Calendar, Award, Users, CalendarCheck, Sparkles, Scissors, Sprout, Bandage, Shield, Sparkle, Palette, Zap, Gem, Crown, Target } from 'lucide-react'
+import { Calendar, Award, Users, CalendarCheck, Sparkles, Scissors, Sprout, Bandage, Shield, Sparkle, Palette, Zap, Gem, Crown, Target, Search, UserCheck, Smile, Square, Eye, ClipboardCheck } from 'lucide-react'
 import { LucideIcon } from 'lucide-react'
 
 export interface ServiceDetail {
@@ -254,24 +254,24 @@ export const servicesData: ServiceDetail[] = [
     },
     benefits: [
       {
-        icon: '🔍',
+        icon: Search,
         title: 'Advanced Technology',
         description: '3D imaging and digital treatment planning'
       },
       {
-        icon: '👨‍⚕️',
+        icon: UserCheck,
         title: 'Expert Orthodontists',
         description: 'Board-certified specialists with years of experience'
       },
       {
-        icon: '😊',
+        icon: Smile,
         title: 'Comfortable Treatment',
         description: 'Modern techniques for minimal discomfort'
       }
     ],
     services: [
       {
-        icon: '🔲',
+        icon: Square,
         title: 'Metal & Ceramic Braces',
         description: 'Effective orthodontic systems designed to correct a wide range of alignment issues. Both options provide excellent results, with ceramic braces offering a more discreet appearance.',
         features: [
@@ -282,7 +282,7 @@ export const servicesData: ServiceDetail[] = [
         ]
       },
       {
-        icon: '👻',
+        icon: Eye,
         title: 'Invisalign, Sparks & Smarter',
         description: 'Clear aligner systems that gently and discreetly align teeth using advanced digital planning. Comfortable, removable, and highly effective for everyday lifestyles.',
         features: [
@@ -293,7 +293,7 @@ export const servicesData: ServiceDetail[] = [
         ]
       },
       {
-        icon: '🛡️',
+        icon: Shield,
         title: 'Retainers and Smile Correction',
         description: 'Custom retainers designed to maintain treatment results and prevent teeth from shifting. Supports long-term smile stability.',
         features: [
@@ -304,7 +304,7 @@ export const servicesData: ServiceDetail[] = [
         ]
       },
       {
-        icon: '🔍',
+        icon: ClipboardCheck,
         title: 'Orthodontic Check-up',
         description: 'A detailed orthodontic assessment to evaluate dental alignment and bite concerns, allowing us to plan or adjust treatment as needed.',
         features: [
