@@ -33,7 +33,7 @@ function ServiceCard({ service, index }: { service: any; index: number }) {
         className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6"
         style={{ backgroundColor: '#CBFF8F' }}
       >
-        <span className="text-3xl">{service.icon}</span>
+        <service.icon className="w-8 h-8 text-[#0C0060]" />
       </div>
 
       {/* Content */}
