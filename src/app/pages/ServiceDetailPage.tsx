@@ -430,16 +430,9 @@ export default function ServiceDetailPage() {
                   className="relative"
                 >
                   <div className="bg-gray-200 rounded-3xl overflow-hidden shadow-2xl">
-                    <h3 className="text-3xl font-['Gilda_Display'] text-black mb-6 px-6 pt-6">
-                      {activeTabData.title}
-                    </h3>
-                    <p className="text-base text-black/70 font-['Arial'] leading-relaxed mb-6 px-6">
-                      {activeTabData.description}
-                    </p>
-                    
                     {/* Before/After Image Slider */}
                     <div
-                      className="relative w-full aspect-[4/3] cursor-col-resize select-none"
+                      className="relative w-full aspect-[4/3] cursor-col-resize select-none bg-gray-200"
                       onClick={handleSliderClick}
                       onMouseMove={handleSliderMove}
                       onMouseDown={() => setIsDragging(true)}
@@ -457,6 +450,18 @@ export default function ServiceDetailPage() {
                           src={activeTabData.beforeImage}
                           alt="Before"
                           className="w-full h-full object-cover"
+                          style={{ minHeight: '100%', minWidth: '100%' }}
+                          onError={(e) => {
+                            console.error('Error loading before image:', activeTabData.beforeImage);
+                            const target = e.target as HTMLImageElement;
+                            target.style.display = 'none';
+                            // Show error message
+                            const errorDiv = document.createElement('div');
+                            errorDiv.className = 'absolute inset-0 flex items-center justify-center bg-red-100 text-red-600';
+                            errorDiv.textContent = `Failed to load: ${activeTabData.beforeImage}`;
+                            target.parentElement?.appendChild(errorDiv);
+                          }}
+                          onLoad={() => console.log('Before image loaded:', activeTabData.beforeImage)}
                         />
                         <div className="absolute bottom-4 left-4 bg-[#8B4513] text-white px-4 py-2 rounded-lg font-['Arial'] font-medium">
                           Before
@@ -472,6 +477,18 @@ export default function ServiceDetailPage() {
                           src={activeTabData.afterImage}
                           alt="After"
                           className="w-full h-full object-cover"
+                          style={{ minHeight: '100%', minWidth: '100%' }}
+                          onError={(e) => {
+                            console.error('Error loading after image:', activeTabData.afterImage);
+                            const target = e.target as HTMLImageElement;
+                            target.style.display = 'none';
+                            // Show error message
+                            const errorDiv = document.createElement('div');
+                            errorDiv.className = 'absolute inset-0 flex items-center justify-center bg-red-100 text-red-600';
+                            errorDiv.textContent = `Failed to load: ${activeTabData.afterImage}`;
+                            target.parentElement?.appendChild(errorDiv);
+                          }}
+                          onLoad={() => console.log('After image loaded:', activeTabData.afterImage)}
                         />
                         <div className="absolute bottom-4 right-4 bg-[#8B4513] text-white px-4 py-2 rounded-lg font-['Arial'] font-medium">
                           After
