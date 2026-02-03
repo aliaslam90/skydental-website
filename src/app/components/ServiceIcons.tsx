@@ -1,6 +1,10 @@
 // Line icons for services - using images from public folder
 
 export function GeneralDentistryIcon({ className = "w-6 h-6" }: { className?: string }) {
+  // Extract size from className or use default
+  const sizeMatch = className.match(/w-\[(\d+)px\]|h-\[(\d+)px\]/);
+  const size = sizeMatch ? sizeMatch[1] || sizeMatch[2] : '24'; // default 24px (w-6 h-6)
+  
   return (
     <img 
       src="/GeneralDentistry.png" 
@@ -9,10 +13,9 @@ export function GeneralDentistryIcon({ className = "w-6 h-6" }: { className?: st
       style={{ 
         objectFit: 'contain', 
         display: 'block',
-        maxWidth: '100%',
-        maxHeight: '100%',
-        width: 'auto',
-        height: 'auto'
+        width: `${size}px`,
+        height: `${size}px`,
+        flexShrink: 0
       }}
       loading="eager"
     />
@@ -20,6 +23,9 @@ export function GeneralDentistryIcon({ className = "w-6 h-6" }: { className?: st
 }
 
 export function CosmeticDentistryIcon({ className = "w-6 h-6" }: { className?: string }) {
+  const sizeMatch = className.match(/w-\[(\d+)px\]|h-\[(\d+)px\]/);
+  const size = sizeMatch ? sizeMatch[1] || sizeMatch[2] : '24';
+  
   return (
     <img 
       src="/CosmeticDentistry.png" 
@@ -28,10 +34,9 @@ export function CosmeticDentistryIcon({ className = "w-6 h-6" }: { className?: s
       style={{ 
         objectFit: 'contain', 
         display: 'block',
-        maxWidth: '100%',
-        maxHeight: '100%',
-        width: 'auto',
-        height: 'auto'
+        width: `${size}px`,
+        height: `${size}px`,
+        flexShrink: 0
       }}
       loading="eager"
     />
@@ -39,6 +44,9 @@ export function CosmeticDentistryIcon({ className = "w-6 h-6" }: { className?: s
 }
 
 export function OrthodonticsIcon({ className = "w-6 h-6" }: { className?: string }) {
+  const sizeMatch = className.match(/w-\[(\d+)px\]|h-\[(\d+)px\]/);
+  const size = sizeMatch ? sizeMatch[1] || sizeMatch[2] : '24';
+  
   return (
     <img 
       src="/Orthodontics.png" 
@@ -47,10 +55,9 @@ export function OrthodonticsIcon({ className = "w-6 h-6" }: { className?: string
       style={{ 
         objectFit: 'contain', 
         display: 'block',
-        maxWidth: '100%',
-        maxHeight: '100%',
-        width: 'auto',
-        height: 'auto'
+        width: `${size}px`,
+        height: `${size}px`,
+        flexShrink: 0
       }}
       loading="eager"
     />
@@ -58,6 +65,9 @@ export function OrthodonticsIcon({ className = "w-6 h-6" }: { className?: string
 }
 
 export function PediatricDentistryIcon({ className = "w-6 h-6" }: { className?: string }) {
+  const sizeMatch = className.match(/w-\[(\d+)px\]|h-\[(\d+)px\]/);
+  const size = sizeMatch ? sizeMatch[1] || sizeMatch[2] : '24';
+  
   return (
     <img 
       src="/PediatricDentistry.png" 
@@ -66,10 +76,9 @@ export function PediatricDentistryIcon({ className = "w-6 h-6" }: { className?: 
       style={{ 
         objectFit: 'contain', 
         display: 'block',
-        maxWidth: '100%',
-        maxHeight: '100%',
-        width: 'auto',
-        height: 'auto'
+        width: `${size}px`,
+        height: `${size}px`,
+        flexShrink: 0
       }}
       loading="eager"
     />
@@ -77,6 +86,9 @@ export function PediatricDentistryIcon({ className = "w-6 h-6" }: { className?: 
 }
 
 export function ImplantAdvancedCareIcon({ className = "w-6 h-6" }: { className?: string }) {
+  const sizeMatch = className.match(/w-\[(\d+)px\]|h-\[(\d+)px\]/);
+  const size = sizeMatch ? sizeMatch[1] || sizeMatch[2] : '24';
+  
   return (
     <img 
       src="/ImplantAdvancedCare.png" 
@@ -85,10 +97,9 @@ export function ImplantAdvancedCareIcon({ className = "w-6 h-6" }: { className?:
       style={{ 
         objectFit: 'contain', 
         display: 'block',
-        maxWidth: '100%',
-        maxHeight: '100%',
-        width: 'auto',
-        height: 'auto'
+        width: `${size}px`,
+        height: `${size}px`,
+        flexShrink: 0
       }}
       loading="eager"
     />
