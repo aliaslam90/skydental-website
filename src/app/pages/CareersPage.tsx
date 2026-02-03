@@ -3,7 +3,7 @@
 import { motion, useReducedMotion, useInView } from 'motion/react'
 import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Mail, MessageCircle, ArrowUpRight, Upload, Send } from 'lucide-react'
+import { Mail, MessageCircle, ArrowUpRight, Upload, Send, Stethoscope, Heart, Headphones, Briefcase } from 'lucide-react'
 import imgImage from "../../assets/e2295a1a1a2bc348414dcc117de577c691164137.png"
 import imgImage1 from "../../assets/c5fbf2bb2ed01ea6f6ce38835da33519e2db95fe.png"
 import imgImage2 from "../../assets/27cea6501d6677b5b8f9f08502ce76c7a193f7f8.png"
@@ -16,7 +16,7 @@ interface WhyJoinCard {
 
 interface JobCategory {
   title: string
-  icon: string
+  icon: React.ComponentType<{ className?: string }>
 }
 
 const whyJoinCards: WhyJoinCard[] = [
@@ -45,19 +45,19 @@ const whyJoinCards: WhyJoinCard[] = [
 const jobCategories: JobCategory[] = [
   {
     title: 'General & Specialist Dentists',
-    icon: '/GeneralSpecialistDentists.png',
+    icon: Stethoscope,
   },
   {
     title: 'Dental Assistants & Nurses',
-    icon: '/DentalAssistantsNurses.png',
+    icon: Heart,
   },
   {
     title: 'Front Desk & Patient Relations',
-    icon: '/FrontDeskPatientRelations.png',
+    icon: Headphones,
   },
   {
     title: 'Administrative/Support Roles',
-    icon: '/SupportRoles.png',
+    icon: Briefcase,
   },
 ]
 
@@ -246,13 +246,8 @@ export default function CareersPage() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="bg-white p-6 rounded-2xl flex items-center gap-4"
                 >
-                  <div className="w-12 h-12 bg-[#CBFF8F] rounded-full flex items-center justify-center shrink-0 overflow-hidden p-2">
-                    <img 
-                      src={job.icon} 
-                      alt={job.title}
-                      className="w-full h-full object-contain"
-                      style={{ display: 'block' }}
-                    />
+                  <div className="w-12 h-12 bg-[#CBFF8F] rounded-full flex items-center justify-center shrink-0">
+                    <job.icon className="w-6 h-6 text-[#0C0060]" />
                   </div>
                   <h3 className="text-lg font-['Arial'] font-semibold text-black">
                     {job.title}
