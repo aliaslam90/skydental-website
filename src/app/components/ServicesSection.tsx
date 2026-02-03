@@ -120,41 +120,43 @@ export default function ServicesSection() {
   }
 
   return (
-    <section id="services" className="pt-[30px] pb-[50px] md:pt-[40px] md:pb-[70px] w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
-      <motion.div
-        ref={ref}
-        variants={containerVariants}
-        initial="hidden"
-        animate={isInView ? 'visible' : 'hidden'}
-        className="w-full"
-      >
-        {/* Service Detail Card */}
+    <div className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+      <section id="services" className="pt-[30px] pb-[50px] md:pt-[40px] md:pb-[70px] w-full">
         <motion.div
-          variants={itemVariants}
-          className="bg-[#e0edff] rounded-none p-[24px] md:p-[36px] lg:p-[48px] relative overflow-hidden w-full"
+          ref={ref}
+          variants={containerVariants}
+          initial="hidden"
+          animate={isInView ? 'visible' : 'hidden'}
+          className="w-full"
         >
-          {/* Background Tooth Icon */}
-          <div className="absolute left-[-163px] top-[-97px] w-[642px] h-[642px] opacity-5 hidden lg:block">
-            <BigToothIcon />
-          </div>
-
-          {/* Title */}
-          <h2
-            className="text-black text-[32px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-1.44px] text-center mb-[32px] md:mb-[48px] relative z-10"
-            style={{ fontFamily: "'Gilda Display', serif" }}
+          {/* Service Detail Card */}
+          <motion.div
+            variants={itemVariants}
+            className="bg-[#e0edff] rounded-none p-[24px] md:p-[36px] lg:p-[48px] relative overflow-hidden w-full"
           >
-            Our Services
-          </h2>
+            {/* Background Tooth Icon */}
+            <div className="absolute left-[-163px] top-[-97px] w-[642px] h-[642px] opacity-5 hidden lg:block">
+              <BigToothIcon />
+            </div>
 
-          {/* Services Grid - All 5 cards in one row */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-4 lg:gap-4 relative z-10 max-w-[1390px] mx-auto">
-            {services.map((service, index) => (
-              <ServiceCard key={service.id} service={service} index={index} />
-            ))}
-          </div>
+            {/* Title */}
+            <h2
+              className="text-black text-[32px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-1.44px] text-center mb-[32px] md:mb-[48px] relative z-10"
+              style={{ fontFamily: "'Gilda Display', serif" }}
+            >
+              Our Services
+            </h2>
+
+            {/* Services Grid - All 5 cards in one row */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 relative z-10 px-4 md:px-6 lg:px-8">
+              {services.map((service, index) => (
+                <ServiceCard key={service.id} service={service} index={index} />
+              ))}
+            </div>
+          </motion.div>
         </motion.div>
-      </motion.div>
-    </section>
+      </section>
+    </div>
   )
 }
 
