@@ -79,15 +79,17 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
       </div>
 
       {/* Content */}
-      <h3 className="text-xl md:text-xl font-['Gilda_Display'] text-black mb-3">
-        {service.title}
-      </h3>
-      <p className="text-sm md:text-sm text-black/80 font-['Arial'] leading-relaxed mb-6 flex-grow">
-        {service.description}
-      </p>
+      <div className="flex flex-col flex-grow">
+        <h3 className="text-xl md:text-xl font-['Gilda_Display'] text-black mb-3">
+          {service.title}
+        </h3>
+        <p className="text-sm md:text-sm text-black/80 font-['Arial'] leading-relaxed flex-grow">
+          {service.description}
+        </p>
+      </div>
 
       {/* Learn More Link - Pushed to bottom */}
-      <Link to={`/services/${service.id}`} className="flex items-center gap-2 text-black font-['Poppins'] font-semibold text-sm group-hover:gap-3 transition-all mt-auto">
+      <Link to={`/services/${service.id}`} className="flex items-center gap-2 text-black font-['Poppins'] font-semibold text-sm group-hover:gap-3 transition-all mt-4">
         <span>Learn More</span>
         <ArrowUpRight className="w-4 h-4" />
       </Link>
@@ -148,7 +150,7 @@ export default function ServicesSection() {
             </h2>
 
             {/* Services Grid - All 5 cards in one row on large screens */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 relative z-10 px-4 md:px-6 lg:px-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 relative z-10 px-4 md:px-6 lg:px-8 items-stretch">
               {services.map((service, index) => (
                 <ServiceCard key={service.id} service={service} index={index} />
               ))}
