@@ -72,24 +72,24 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
       
       {/* Icon */}
       <div 
-        className="w-14 h-14 rounded-2xl flex items-center justify-center mb-4 relative z-10"
+        className="w-14 h-14 rounded-2xl flex items-center justify-center mb-4 relative z-10 flex-shrink-0"
         style={{ backgroundColor: service.bgColor }}
       >
         <service.Icon className="w-[60px] h-[60px]" />
       </div>
 
-      {/* Content */}
-      <div className="flex flex-col flex-grow">
-        <h3 className="text-xl md:text-xl font-['Gilda_Display'] text-black mb-3">
+      {/* Content - Takes up remaining space */}
+      <div className="flex flex-col flex-grow min-h-0">
+        <h3 className="text-xl md:text-xl font-['Gilda_Display'] text-black mb-3 flex-shrink-0">
           {service.title}
         </h3>
-        <p className="text-sm md:text-sm text-black/80 font-['Arial'] leading-relaxed flex-grow">
+        <p className="text-sm md:text-sm text-black/80 font-['Arial'] leading-relaxed flex-grow min-h-0">
           {service.description}
         </p>
       </div>
 
-      {/* Learn More Link - Pushed to bottom */}
-      <Link to={`/services/${service.id}`} className="flex items-center gap-2 text-black font-['Poppins'] font-semibold text-sm group-hover:gap-3 transition-all mt-4">
+      {/* Learn More Link - Always at bottom */}
+      <Link to={`/services/${service.id}`} className="flex items-center gap-2 text-black font-['Poppins'] font-semibold text-sm group-hover:gap-3 transition-all mt-4 flex-shrink-0">
         <span>Learn More</span>
         <ArrowUpRight className="w-4 h-4" />
       </Link>
