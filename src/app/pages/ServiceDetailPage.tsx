@@ -37,9 +37,9 @@ const solutionTabs = [
     id: 'single',
     title: 'One missing Tooth',
     description: 'Did you crack a tooth biting something hard? Is there bleeding? Suffer an injury during sports? Our expert team can help restore your smile with a single dental implant that looks and feels just like your natural tooth.',
-    icon: undefined,
-    beforeImage: '/before-treatment.jp.png',
-    afterImage: '/after-treatment.jpg.jpg'
+    icon: '/download-1-1.svg',
+    beforeImage: '/One-missing-Tooth-before-2.webp',
+    afterImage: '/One-missing-Tooth-after-2.webp'
   }
 ]
 
