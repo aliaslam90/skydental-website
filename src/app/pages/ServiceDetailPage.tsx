@@ -384,7 +384,7 @@ export default function ServiceDetailPage() {
                       }}
                       className={`w-full text-left p-6 rounded-2xl transition-all duration-300 ${
                         activeTab === tab.id
-                          ? 'bg-[#0C0060] text-white shadow-lg'
+                          ? 'bg-[#CBFF8F] text-black shadow-lg'
                           : 'bg-gray-100 text-black hover:bg-gray-200'
                       }`}
                       whileHover={shouldReduceMotion ? {} : { scale: 1.02 }}
