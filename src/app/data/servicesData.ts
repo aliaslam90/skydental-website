@@ -1,4 +1,35 @@
-import { Calendar, Award, Users, CalendarCheck, Sparkles, Scissors, Sprout, Bandage, Shield, Sparkle, Palette, Zap, Gem, Crown, Target, Search, UserCheck, Smile, Square, Eye, ClipboardCheck, Heart, GraduationCap, BookOpen, Lock, Microscope, ShieldCheck, RefreshCw, Camera, AlertCircle } from 'lucide-react'
+import { 
+  Calendar, 
+  Award, 
+  Users, 
+  CalendarCheck, 
+  Sparkles, 
+  Scissors, 
+  Sprout, 
+  Bandage, 
+  Shield, 
+  Sparkle, 
+  Palette, 
+  Zap, 
+  Gem, 
+  Crown, 
+  Target, 
+  Search, 
+  UserCheck, 
+  Smile, 
+  Square, 
+  Eye, 
+  ClipboardCheck, 
+  Heart, 
+  GraduationCap, 
+  BookOpen, 
+  Lock, 
+  Microscope, 
+  ShieldCheck, 
+  RefreshCw, 
+  Camera, 
+  AlertCircle 
+} from 'lucide-react'
 import { LucideIcon } from 'lucide-react'
 
 export interface ServiceDetail {
