@@ -166,10 +166,10 @@ export default function ServiceDetailPage() {
               </div>
             </div>
             <h1 className="text-5xl md:text-6xl font-['Gilda_Display'] text-white mb-6">
-              {service.name}
+              {service.hero?.title || service.title}
             </h1>
             <p className="text-xl text-white/90 font-['Arial'] leading-relaxed max-w-3xl mx-auto">
-              {service.description}
+              {service.hero?.description || service.shortDescription}
             </p>
           </motion.div>
         </div>
@@ -186,7 +186,7 @@ export default function ServiceDetailPage() {
               className="max-w-6xl mx-auto"
             >
               <h2 className="text-4xl font-['Gilda_Display'] text-[#0C0060] text-center mb-12">
-                Why Choose Our {service.name}?
+                Why Choose Our {service.title}?
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {service.benefits.map((benefit, index) => {
@@ -228,7 +228,7 @@ export default function ServiceDetailPage() {
               className="max-w-6xl mx-auto"
             >
               <h2 className="text-4xl font-['Gilda_Display'] text-[#0C0060] text-center mb-12">
-                Our {service.name} Services
+                Our {service.title} Services
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {service.services.map((serviceItem, index) => {
@@ -270,12 +270,34 @@ export default function ServiceDetailPage() {
               className="max-w-4xl mx-auto"
             >
               <h2 className="text-4xl font-['Gilda_Display'] text-[#0C0060] text-center mb-12">
-                Why Choose Our {service.name}?
+                {service.whyChoose.title}
               </h2>
-              <div className="prose prose-lg max-w-none">
-                <div className="text-base text-black/70 font-['Arial'] leading-relaxed whitespace-pre-line">
-                  {service.whyChoose}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+                <div>
+                  <p className="text-base text-black/70 font-['Arial'] leading-relaxed mb-6">
+                    {service.whyChoose.description}
+                  </p>
+                  {service.whyChoose.features?.length > 0 && (
+                    <ul className="space-y-3">
+                      {service.whyChoose.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-start gap-3 text-black/80 font-['Arial']">
+                          <span className="mt-1 w-2 h-2 rounded-full bg-[#56FC8A] flex-shrink-0" />
+                          <span className="leading-relaxed">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
+                {service.whyChoose.image && (
+                  <div className="rounded-3xl overflow-hidden shadow-lg bg-gray-100">
+                    <img
+                      src={service.whyChoose.image}
+                      alt={service.whyChoose.title}
+                      className="w-full h-80 object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                )}
               </div>
             </motion.div>
           </div>
