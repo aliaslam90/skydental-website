@@ -417,13 +417,6 @@ export default function ServiceDetailPage() {
                   className="relative"
                 >
                   <div className="bg-gray-200 rounded-3xl overflow-hidden shadow-2xl">
-                    <h3 className="text-3xl font-['Gilda_Display'] text-black mb-6 px-6 pt-6">
-                      {activeTabData.title}
-                    </h3>
-                    <p className="text-base text-black/70 font-['Arial'] leading-relaxed mb-6 px-6">
-                      {activeTabData.description}
-                    </p>
-                    
                     {/* Before/After Image Slider */}
                     <div
                       className="relative w-full aspect-[4/3] cursor-col-resize select-none"
@@ -477,6 +470,16 @@ export default function ServiceDetailPage() {
                           </div>
                         </div>
                       </div>
+                    </div>
+
+                    {/* Title and Description Below Image */}
+                    <div className="px-6 pt-6 pb-6">
+                      <h3 className="text-3xl font-['Gilda_Display'] text-black mb-4">
+                        {activeTabData.title}
+                      </h3>
+                      <p className="text-base text-black/70 font-['Arial'] leading-relaxed">
+                        {activeTabData.description}
+                      </p>
                     </div>
                   </div>
                 </motion.div>
