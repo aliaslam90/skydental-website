@@ -20,24 +20,30 @@ const solutionTabs = [
   {
     id: 'multiple',
     title: 'Multiple missing Teeth',
-    description: 'Losing three teeth doesn\'t always mean you\'ll need three separate implants. Schedule a consultation with our specialist to explore the best solutions available to restore your smile.',
-    beforeImage: 'https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=800&h=600&fit=crop',
-    afterImage: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&h=600&fit=crop'
+    description:
+      "Losing three teeth doesn't always mean you'll need three separate implants. Schedule a consultation with our specialist to explore the best solutions available to restore your smile.",
+    icon: '/Mutiplemissingteeth.svg',
+    beforeImage: '/Multiple-missing-Teeth-before-2.webp',
+    afterImage: '/Multiple-missing-Teeth-after-2.webp',
   },
   {
     id: 'none',
     title: 'No Teeth at all',
-    description: 'While having no teeth may seem overwhelming, it\'s a condition that requires expert planning and care. Living without teeth can greatly impact daily life, but there are advanced solutions beyond traditional dentures. Our team is here to guide you toward a permanent, reliable solution that brings back both the function and beauty of your smile, helping you feel confident once again.',
-    beforeImage: 'https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=800&h=600&fit=crop',
-    afterImage: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&h=600&fit=crop'
+    description:
+      "While having no teeth may seem overwhelming, it's a condition that requires expert planning and care. Living without teeth can greatly impact daily life, but there are advanced solutions beyond traditional dentures. Our team is here to guide you toward a permanent, reliable solution that brings back both the function and beauty of your smile, helping you feel confident once again.",
+    icon: '/noteethatall.svg',
+    beforeImage: '/No-Teeth-at-all-before-1.webp',
+    afterImage: '/No-Teeth-at-all-after-1.webp',
   },
   {
     id: 'single',
     title: 'One missing Tooth',
-    description: 'Did you crack a tooth biting something hard? Is there bleeding? Suffer an injury during sports? Our expert team can help restore your smile with a single dental implant that looks and feels just like your natural tooth.',
-    beforeImage: 'https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=800&h=600&fit=crop',
-    afterImage: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&h=600&fit=crop'
-  }
+    description:
+      'Did you crack a tooth biting something hard? Is there bleeding? Suffer an injury during sports? Our expert team can help restore your smile with a single dental implant that looks and feels just like your natural tooth.',
+    icon: '/onemissingtooth.svg',
+    beforeImage: '/One-missing-Tooth-before-2.webp',
+    afterImage: '/One-missing-Tooth-after-2.webp',
+  },
 ]
 
 function ServiceCard({ service, index }: { service: any; index: number }) {
@@ -385,15 +391,13 @@ export default function ServiceDetailPage() {
                       whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
                     >
                       <div className="flex items-center gap-4">
-                        <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${
-                          activeTab === tab.id ? 'bg-white/20' : 'bg-white'
-                        }`}>
-                          <span className="text-2xl">
-                            {tab.id === 'multiple' && '🦷'}
-                            {tab.id === 'none' && '😬'}
-                            {tab.id === 'single' && '🦷'}
-                          </span>
-                        </div>
+                        {tab.icon && (
+                          <img
+                            src={tab.icon}
+                            alt={tab.title}
+                            className="w-16 h-16 object-contain flex-shrink-0"
+                          />
+                        )}
                         <span className="font-['Arial'] font-semibold text-lg">
                           {tab.title}
                         </span>
