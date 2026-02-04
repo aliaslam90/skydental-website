@@ -21,25 +21,22 @@ const solutionTabs = [
     id: 'multiple',
     title: 'Multiple missing Teeth',
     description: 'Losing three teeth doesn\'t always mean you\'ll need three separate implants. Schedule a consultation with our specialist to explore the best solutions available to restore your smile.',
-    icon: '/multiple-missing-teeth-icon.svg',
-    beforeImage: '/Multiple-missing-Teeth-before-2.webp',
-    afterImage: '/Multiple-missing-Teeth-after-2.webp'
+    beforeImage: 'https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=800&h=600&fit=crop',
+    afterImage: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&h=600&fit=crop'
   },
   {
     id: 'none',
     title: 'No Teeth at all',
     description: 'While having no teeth may seem overwhelming, it\'s a condition that requires expert planning and care. Living without teeth can greatly impact daily life, but there are advanced solutions beyond traditional dentures. Our team is here to guide you toward a permanent, reliable solution that brings back both the function and beauty of your smile, helping you feel confident once again.',
-    icon: '/download-2-1.svg',
-    beforeImage: '/No-Teeth-at-all-before-1.webp',
-    afterImage: '/No-Teeth-at-all-after-1.webp'
+    beforeImage: 'https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=800&h=600&fit=crop',
+    afterImage: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&h=600&fit=crop'
   },
   {
     id: 'single',
     title: 'One missing Tooth',
     description: 'Did you crack a tooth biting something hard? Is there bleeding? Suffer an injury during sports? Our expert team can help restore your smile with a single dental implant that looks and feels just like your natural tooth.',
-    icon: '/download-1-1.svg',
-    beforeImage: '/One-missing-Tooth-before-2.webp',
-    afterImage: '/One-missing-Tooth-after-2.webp'
+    beforeImage: 'https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=800&h=600&fit=crop',
+    afterImage: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&h=600&fit=crop'
   }
 ]
 
@@ -113,27 +110,20 @@ export default function ServiceDetailPage() {
   
   const [isDragging, setIsDragging] = useState(false)
   
-  const updateSliderPosition = (clientX: number, element: HTMLElement) => {
-    const rect = element.getBoundingClientRect()
-    const x = clientX - rect.left
+  const handleSliderMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!isDragging) return
+    const rect = e.currentTarget.getBoundingClientRect()
+    const x = e.clientX - rect.left
     const percentage = (x / rect.width) * 100
     setSliderPosition(Math.max(0, Math.min(100, percentage)))
   }
   
-  const handleSliderMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (isDragging) {
-      updateSliderPosition(e.clientX, e.currentTarget)
-    }
-  }
-  
-  const handleSliderClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    updateSliderPosition(e.clientX, e.currentTarget)
-  }
-  
   const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
-    if (isDragging) {
-      updateSliderPosition(e.touches[0].clientX, e.currentTarget)
-    }
+    if (!isDragging) return
+    const rect = e.currentTarget.getBoundingClientRect()
+    const x = e.touches[0].clientX - rect.left
+    const percentage = (x / rect.width) * 100
+    setSliderPosition(Math.max(0, Math.min(100, percentage)))
   }
 
   if (!service) {
@@ -395,24 +385,20 @@ export default function ServiceDetailPage() {
                       whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
                     >
                       <div className="flex items-center gap-4">
-                        {tab.icon && (
-                          <img 
-                            src={tab.icon} 
-                            alt={tab.title}
-                            className="w-16 h-16 object-contain flex-shrink-0"
-                          />
-                        )}
-                        {!tab.icon && (
-                          <span className="text-4xl flex-shrink-0">
+                        <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${
+                          activeTab === tab.id ? 'bg-white/20' : 'bg-white'
+                        }`}>
+                          <span className="text-2xl">
+                            {tab.id === 'multiple' && '🦷'}
                             {tab.id === 'none' && '😬'}
                             {tab.id === 'single' && '🦷'}
                           </span>
-                        )}
+                        </div>
                         <span className="font-['Arial'] font-semibold text-lg">
                           {tab.title}
                         </span>
                         {activeTab === tab.id && (
-                          <ChevronRightIcon className="w-5 h-5 ml-auto" />
+                          <ChevronRightIcon className="w-5 h-5 ml-auto text-[#CBFF8F]" />
                         )}
                       </div>
                     </motion.button>
@@ -427,15 +413,22 @@ export default function ServiceDetailPage() {
                   className="relative"
                 >
                   <div className="bg-gray-200 rounded-3xl overflow-hidden shadow-2xl">
+                    <h3 className="text-3xl font-['Gilda_Display'] text-black mb-6 px-6 pt-6">
+                      {activeTabData.title}
+                    </h3>
+                    <p className="text-base text-black/70 font-['Arial'] leading-relaxed mb-6 px-6">
+                      {activeTabData.description}
+                    </p>
+                    
                     {/* Before/After Image Slider */}
                     <div
-                      className="relative w-full aspect-[4/3] cursor-col-resize select-none bg-gray-200"
-                      onClick={handleSliderClick}
+                      className="relative w-full aspect-[4/3] cursor-col-resize select-none"
                       onMouseMove={handleSliderMove}
                       onMouseDown={() => setIsDragging(true)}
                       onMouseUp={() => setIsDragging(false)}
                       onMouseLeave={() => {
                         setIsDragging(false)
+                        setSliderPosition(50)
                       }}
                       onTouchStart={() => setIsDragging(true)}
                       onTouchMove={handleTouchMove}
@@ -447,19 +440,6 @@ export default function ServiceDetailPage() {
                           src={activeTabData.beforeImage}
                           alt="Before"
                           className="w-full h-full object-cover"
-                          style={{ minHeight: '100%', minWidth: '100%' }}
-                          loading="eager"
-                          onError={(e) => {
-                            console.error('Error loading before image:', activeTabData.beforeImage, 'Full path:', window.location.origin + activeTabData.beforeImage);
-                            const target = e.target as HTMLImageElement;
-                            target.style.display = 'none';
-                            // Show error message
-                            const errorDiv = document.createElement('div');
-                            errorDiv.className = 'absolute inset-0 flex items-center justify-center bg-red-100 text-red-600 p-4 text-center';
-                            errorDiv.textContent = `Failed to load image. Check console for details.`;
-                            target.parentElement?.appendChild(errorDiv);
-                          }}
-                          onLoad={() => console.log('Before image loaded successfully:', activeTabData.beforeImage)}
                         />
                         <div className="absolute bottom-4 left-4 bg-[#8B4513] text-white px-4 py-2 rounded-lg font-['Arial'] font-medium">
                           Before
@@ -475,19 +455,6 @@ export default function ServiceDetailPage() {
                           src={activeTabData.afterImage}
                           alt="After"
                           className="w-full h-full object-cover"
-                          style={{ minHeight: '100%', minWidth: '100%' }}
-                          loading="eager"
-                          onError={(e) => {
-                            console.error('Error loading after image:', activeTabData.afterImage, 'Full path:', window.location.origin + activeTabData.afterImage);
-                            const target = e.target as HTMLImageElement;
-                            target.style.display = 'none';
-                            // Show error message
-                            const errorDiv = document.createElement('div');
-                            errorDiv.className = 'absolute inset-0 flex items-center justify-center bg-red-100 text-red-600 p-4 text-center';
-                            errorDiv.textContent = `Failed to load image. Check console for details.`;
-                            target.parentElement?.appendChild(errorDiv);
-                          }}
-                          onLoad={() => console.log('After image loaded successfully:', activeTabData.afterImage)}
                         />
                         <div className="absolute bottom-4 right-4 bg-[#8B4513] text-white px-4 py-2 rounded-lg font-['Arial'] font-medium">
                           After
@@ -506,16 +473,6 @@ export default function ServiceDetailPage() {
                           </div>
                         </div>
                       </div>
-                    </div>
-                    
-                    {/* Title and Description Below Image */}
-                    <div className="px-6 pt-6 pb-6">
-                      <h3 className="text-3xl font-['Gilda_Display'] text-black mb-4">
-                        {activeTabData.title}
-                      </h3>
-                      <p className="text-base text-black/70 font-['Arial'] leading-relaxed">
-                        {activeTabData.description}
-                      </p>
                     </div>
                   </div>
                 </motion.div>
