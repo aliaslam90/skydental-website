@@ -126,13 +126,14 @@
 
   body {
     @apply bg-background text-foreground;
+    scroll-snap-type: y mandatory;
+    scroll-padding-top: 6rem; /* clear fixed header */
   }
 
-  /*
-   * Section markers for Lenis-driven snap (JS in App.tsx).
-   * Native CSS scroll-snap is not compatible with Lenis smooth scroll.
-   */
+  /* One scroll moves to the next section (works with Lenis smooth scroll) */
   .scroll-snap-section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
     min-height: 100vh;
   }
 
@@ -144,6 +145,12 @@
   
   .scrollbar-hide::-webkit-scrollbar {
     display: none;  /* Chrome, Safari and Opera */
+  }
+
+  /* Navbar: pointer (selection) cursor on all clickable elements */
+  header button,
+  header a {
+    cursor: pointer;
   }
 
   /**
