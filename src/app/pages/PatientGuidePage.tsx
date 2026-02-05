@@ -5,6 +5,7 @@ import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Home, ChevronRight, Check, FileText, ClipboardList, Shield, DollarSign, MapPin } from 'lucide-react'
 import { useBooking } from '../context/BookingContext'
+import ScrollSection from '../components/ScrollSection'
 import imgDentalCare from "../../assets/7e26eb0c35bbd0356cd593caf48b0b5a702f7753.png"
 import imgImage from "../../assets/e2295a1a1a2bc348414dcc117de577c691164137.png"
 import imgImage1 from "../../assets/c5fbf2bb2ed01ea6f6ce38835da33519e2db95fe.png"
@@ -124,6 +125,7 @@ export default function PatientGuidePage() {
   const galleryInView = useInView(galleryRef, { once: true })
 
   return (
+    <ScrollSection>
     <div className="bg-white">
       {/* Hero Section */}
       <section
@@ -431,5 +433,6 @@ export default function PatientGuidePage() {
       </section>
 
     </div>
+    </ScrollSection>
   )
 }

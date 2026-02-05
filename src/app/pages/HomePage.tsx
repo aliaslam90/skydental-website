@@ -12,6 +12,7 @@ import ResultsSection from '../components/ResultsSection'
 import TestimonialsSection from '../components/TestimonialsSection'
 import DoctorsSection from '../components/DoctorsSection'
 import ContactSection from '../components/ContactSection'
+import ScrollSection from '../components/ScrollSection'
 
 export default function HomePage() {
   const [mounted, setMounted] = useState(false)
@@ -27,16 +28,16 @@ export default function HomePage() {
 
   return (
     <main>
-      <HeroSection />
-      <AboutSection />
-      <ServicesSection />
-      <WhyChooseSection />
-      <TechnologySection />
-      <ResultsSection />
-      <TestimonialsSection />
-      <DoctorsSection />
-      <InsurancePartnersSection />
-      <ContactSection />
+      <ScrollSection><HeroSection /></ScrollSection>
+      <ScrollSection><AboutSection /></ScrollSection>
+      <ScrollSection><ServicesSection /></ScrollSection>
+      <ScrollSection><WhyChooseSection /></ScrollSection>
+      <ScrollSection><TechnologySection /></ScrollSection>
+      <ScrollSection><ResultsSection /></ScrollSection>
+      <ScrollSection><TestimonialsSection /></ScrollSection>
+      <ScrollSection><DoctorsSection /></ScrollSection>
+      <ScrollSection><InsurancePartnersSection /></ScrollSection>
+      <ScrollSection><ContactSection /></ScrollSection>
     </main>
   )
 }

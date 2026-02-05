@@ -7,6 +7,7 @@ import { Phone, Mail, MapPin, Clock, Send, CheckCircle2 } from 'lucide-react'
 import imgImage from "../../assets/e2295a1a1a2bc348414dcc117de577c691164137.png"
 import imgImage1 from "../../assets/c5fbf2bb2ed01ea6f6ce38835da33519e2db95fe.png"
 import imgImage2 from "../../assets/27cea6501d6677b5b8f9f08502ce76c7a193f7f8.png"
+import ScrollSection from '../components/ScrollSection'
 
 export default function ContactUsPage() {
   const shouldReduceMotion = useReducedMotion()
@@ -54,6 +55,7 @@ export default function ContactUsPage() {
 
   return (
     <div className="bg-white">
+      <ScrollSection>
       {/* Hero Section */}
       <section
         ref={heroRef}
@@ -103,7 +105,9 @@ export default function ContactUsPage() {
           </motion.div>
         </div>
       </section>
+      </ScrollSection>
 
+      <ScrollSection>
       {/* Get In Touch Section */}
       <section ref={contactCardsRef} className="py-20 bg-white">
         <div className="container mx-auto px-6">
@@ -195,7 +199,9 @@ export default function ContactUsPage() {
           </div>
         </div>
       </section>
+      </ScrollSection>
 
+      <ScrollSection>
       {/* Send Us a Message Section */}
       <section ref={formRef} className="py-20" style={{ background: 'linear-gradient(to bottom, rgb(224, 237, 255) 0%, rgb(255, 255, 255) 100%)' }}>
         <div className="container mx-auto px-6">
@@ -338,7 +344,9 @@ export default function ContactUsPage() {
           </motion.div>
         </div>
       </section>
+      </ScrollSection>
 
+      <ScrollSection>
       {/* Visit Our Clinic Section */}
       <section ref={visitClinicRef} className="py-20 bg-white">
         <div className="container mx-auto px-6">
@@ -439,7 +447,9 @@ export default function ContactUsPage() {
           </div>
         </div>
       </section>
+      </ScrollSection>
 
+      <ScrollSection>
       {/* Guest Experiences Gallery Section */}
       <section ref={galleryRef} className="py-24 bg-white">
         <div className="container mx-auto px-6">
@@ -483,7 +493,7 @@ export default function ContactUsPage() {
           </div>
         </div>
       </section>
-
+      </ScrollSection>
     </div>
   )
 }

@@ -4,6 +4,7 @@ import { motion, useReducedMotion, useInView } from 'motion/react'
 import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { Home, ChevronRight, Check } from 'lucide-react'
+import ScrollSection from '../components/ScrollSection'
 import imgImage from "../../assets/e2295a1a1a2bc348414dcc117de577c691164137.png"
 import imgImage1 from "../../assets/c5fbf2bb2ed01ea6f6ce38835da33519e2db95fe.png"
 import imgImage2 from "../../assets/27cea6501d6677b5b8f9f08502ce76c7a193f7f8.png"
@@ -20,6 +21,7 @@ export default function PrivacyPolicyPage() {
   const galleryInView = useInView(galleryRef, { once: true })
 
   return (
+    <ScrollSection>
     <div className="bg-white">
       {/* Hero Section */}
       <section
@@ -581,5 +583,6 @@ export default function PrivacyPolicyPage() {
       </section>
 
     </div>
+    </ScrollSection>
   )
 }

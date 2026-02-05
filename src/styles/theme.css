@@ -126,6 +126,15 @@
 
   body {
     @apply bg-background text-foreground;
+    scroll-snap-type: y mandatory;
+    scroll-padding-top: 6rem; /* clear fixed header */
+  }
+
+  /* One scroll moves to the next section (works with Lenis smooth scroll) */
+  .scroll-snap-section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    min-height: 100vh;
   }
 
   /* Hide scrollbar for carousel tabs */

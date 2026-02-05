@@ -4,6 +4,7 @@ import { motion, useReducedMotion, useInView } from 'motion/react'
 import { useRef, useEffect } from 'react'
 import { Heart, Target, Users, Award, Zap, Shield, Clock, CheckCircle } from 'lucide-react'
 import { useBooking } from '../context/BookingContext'
+import ScrollSection from '../components/ScrollSection'
 
 // Core Values Data
 const coreValues = [
@@ -129,6 +130,7 @@ export default function AboutUsPageNew() {
 
   return (
     <div className="bg-white overflow-x-hidden">
+      <ScrollSection>
       {/* Hero Section */}
       <section 
         ref={heroRef}
@@ -183,7 +185,9 @@ export default function AboutUsPageNew() {
           </motion.div>
         </div>
       </section>
+      </ScrollSection>
 
+      <ScrollSection>
       {/* Vision & Mission Section */}
       <section ref={visionRef} className="py-24 bg-white">
         <div className="container mx-auto px-6">
@@ -263,7 +267,9 @@ export default function AboutUsPageNew() {
           </div>
         </div>
       </section>
+      </ScrollSection>
 
+      <ScrollSection>
       {/* Core Values Section */}
       <section 
         ref={valuesRef}
@@ -314,7 +320,9 @@ export default function AboutUsPageNew() {
           </div>
         </div>
       </section>
+      </ScrollSection>
 
+      <ScrollSection>
       {/* Why Choose Sky Dental Center Section */}
       <section 
         ref={whyChooseRef}
@@ -395,7 +403,9 @@ export default function AboutUsPageNew() {
           </div>
         </div>
       </section>
+      </ScrollSection>
 
+      <ScrollSection>
       {/* Powered by Innovation Section */}
       <section 
         ref={innovationRef}
@@ -501,7 +511,9 @@ export default function AboutUsPageNew() {
           </div>
         </div>
       </section>
+      </ScrollSection>
 
+      <ScrollSection>
       {/* Future Vision Section */}
       <section ref={journeyRef} className="py-24 bg-white">
         <div className="container mx-auto px-6">
@@ -573,7 +585,9 @@ export default function AboutUsPageNew() {
           </div>
         </div>
       </section>
+      </ScrollSection>
 
+      <ScrollSection>
       {/* CTA Section */}
       <section 
         ref={ctaRef}
@@ -598,7 +612,9 @@ export default function AboutUsPageNew() {
           </motion.div>
         </div>
       </section>
+      </ScrollSection>
 
+      <ScrollSection>
       {/* Patient Experience Section */}
       <section 
         ref={patientJourneyRef}
@@ -680,7 +696,9 @@ export default function AboutUsPageNew() {
           </motion.p>
         </div>
       </section>
+      </ScrollSection>
 
+      <ScrollSection>
       {/* Guest Experiences Gallery */}
       <section ref={galleryRef} className="py-24 bg-white">
         <div className="container mx-auto px-6">
@@ -716,6 +734,7 @@ export default function AboutUsPageNew() {
           </div>
         </div>
       </section>
+      </ScrollSection>
     </div>
   )
 }

@@ -6,6 +6,7 @@ import { useParams, Link } from 'react-router-dom'
 import { ArrowUpRight, Home, ChevronRight, Phone, Calendar, CheckCircle } from 'lucide-react'
 import { getDoctorById } from '../data/doctorsData'
 import { useBooking } from '../context/BookingContext'
+import ScrollSection from '../components/ScrollSection'
 
 export default function DoctorDetailPage() {
   const { doctorId } = useParams()
@@ -45,6 +46,7 @@ export default function DoctorDetailPage() {
   }
 
   return (
+    <ScrollSection>
     <div className="bg-white">
       {/* Hero Section */}
       <section 
@@ -536,5 +538,6 @@ export default function DoctorDetailPage() {
         </div>
       </section>
     </div>
+    </ScrollSection>
   )
 }

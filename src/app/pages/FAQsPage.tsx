@@ -14,6 +14,7 @@ import {
   PediatricDentistryIcon, 
   ImplantAdvancedCareIcon 
 } from '../components/ServiceIcons'
+import ScrollSection from '../components/ScrollSection'
 
 interface Category {
   id: string
@@ -293,6 +294,7 @@ export default function FAQsPage() {
   const activeCategoryData = faqCategories.find((cat) => cat.id === selectedCategory)
 
   return (
+    <ScrollSection>
     <div className="bg-white">
       {/* Hero Section */}
       <section
@@ -511,5 +513,6 @@ export default function FAQsPage() {
       </section>
 
     </div>
+    </ScrollSection>
   )
 }

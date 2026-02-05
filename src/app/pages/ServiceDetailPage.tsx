@@ -7,6 +7,7 @@ import { ArrowUpRight, Home, ChevronRight, ChevronLeft, ChevronRight as ChevronR
 import { getServiceById } from '../data/servicesData'
 import { useBooking } from '../context/BookingContext'
 import { serviceIcons } from '../components/ServiceIcons'
+import ScrollSection from '../components/ScrollSection'
 
 // Guest experience images
 const guestExperiences = [
@@ -146,6 +147,7 @@ export default function ServiceDetailPage() {
   }
 
   return (
+    <ScrollSection>
     <div className="bg-white">
       {/* Hero Section */}
       <section 
@@ -570,5 +572,6 @@ export default function ServiceDetailPage() {
         </div>
       </section>
     </div>
+    </ScrollSection>
   )
 }

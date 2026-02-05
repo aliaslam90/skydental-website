@@ -13,6 +13,7 @@ import {
   PediatricDentistryIcon, 
   ImplantAdvancedCareIcon 
 } from '../components/ServiceIcons'
+import ScrollSection from '../components/ScrollSection'
 
 // Services data with IDs for routing
 const services = [
@@ -126,6 +127,7 @@ export default function ServicesPage() {
 
   return (
     <div className="bg-white">
+      <ScrollSection>
       {/* Hero Section */}
       <section 
         ref={heroRef}
@@ -178,7 +180,9 @@ export default function ServicesPage() {
           </motion.div>
         </div>
       </section>
+      </ScrollSection>
 
+      <ScrollSection>
       {/* Our Services Section */}
       <section ref={servicesRef} className="py-24 bg-[#f8f9fa]">
         <div className="container mx-auto px-6">
@@ -218,10 +222,14 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+      </ScrollSection>
 
+      <ScrollSection>
       {/* Testimonials Section */}
       <TestimonialsSection />
+      </ScrollSection>
 
+      <ScrollSection>
       {/* Guest Experiences Section */}
       <section ref={experiencesRef} className="py-24 bg-white">
         <div className="container mx-auto px-6">
@@ -263,6 +271,7 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+      </ScrollSection>
     </div>
   )
 }

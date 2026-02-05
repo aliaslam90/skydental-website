@@ -5,6 +5,7 @@ import { useState, useEffect, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { Search, ChevronDown, Heart, Award, Shield } from 'lucide-react'
 import { useBooking } from '../context/BookingContext'
+import ScrollSection from '../components/ScrollSection'
 
 // Doctor data - First 4 match homepage, rest can be added later
 const doctorsData = [
@@ -173,6 +174,7 @@ export default function OurDoctorsPageNew() {
   }, [searchQuery, selectedSpecialty])
 
   return (
+    <ScrollSection>
     <div className="bg-white overflow-x-hidden">
       {/* Hero Section */}
       <section 
@@ -439,5 +441,6 @@ export default function OurDoctorsPageNew() {
       </section>
 
     </div>
+    </ScrollSection>
   )
 }
