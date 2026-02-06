@@ -126,14 +126,13 @@
 
   body {
     @apply bg-background text-foreground;
-    scroll-snap-type: y mandatory;
-    scroll-padding-top: 6rem; /* clear fixed header */
   }
 
-  /* One scroll moves to the next section (works with Lenis smooth scroll) */
+  /*
+   * Section markers for Lenis-driven snap (see App.tsx).
+   * Do not use native CSS scroll-snap here—Lenis hijacks scroll and is incompatible with it.
+   */
   .scroll-snap-section {
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
     min-height: 100vh;
   }
 
