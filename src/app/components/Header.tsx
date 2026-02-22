@@ -132,7 +132,7 @@ export default function Header() {
               </div>
             </button>
 
-            {/* Desktop Navigation - Hidden on tablets and mobile */}
+            {/* Desktop Navigation - Hidden on tablets and mobile: Home - Services - Doctors - Packages & Offers - About Us - Contact - More */}
             <nav className="hidden xl:flex items-center gap-4">
               <button
                 onClick={handleHomeClick}
@@ -145,16 +145,15 @@ export default function Header() {
                 Home
               </button>
               <button
-                onClick={handleAboutUsClick}
+                onClick={handleServicesClick}
                 className={`px-[14px] py-[4px] rounded-full text-[14px] transition-all whitespace-nowrap ${
-                  location.pathname === '/about-us'
+                  location.pathname.startsWith('/services')
                     ? 'bg-[#CBFF8F] text-[#0C0060] font-bold'
                     : 'text-black hover:text-[#0C0060]'
                 }`}
               >
-                About Us
+                Services
               </button>
-              
               <button
                 onClick={handleOurDoctorsClick}
                 className={`px-[14px] py-[4px] rounded-full text-[14px] transition-all whitespace-nowrap ${
@@ -164,16 +163,6 @@ export default function Header() {
                 }`}
               >
                 Doctors
-              </button>
-              <button
-                onClick={handleServicesClick}
-                className={`px-[14px] py-[4px] rounded-full text-[14px] transition-all whitespace-nowrap ${
-                  location.pathname.startsWith('/services')
-                    ? 'bg-[#CBFF8F] text-[#0C0060] font-bold'
-                    : 'text-black hover:text-[#0C0060]'
-                }`}
-              >
-                Services
               </button>
               <Link
                 to="/packages"
@@ -185,7 +174,16 @@ export default function Header() {
               >
                 Packages & Offers
               </Link>
-              
+              <button
+                onClick={handleAboutUsClick}
+                className={`px-[14px] py-[4px] rounded-full text-[14px] transition-all whitespace-nowrap ${
+                  location.pathname === '/about-us'
+                    ? 'bg-[#CBFF8F] text-[#0C0060] font-bold'
+                    : 'text-black hover:text-[#0C0060]'
+                }`}
+              >
+                About Us
+              </button>
               <button
                 onClick={handleContactClick}
                 className={`px-[14px] py-[4px] rounded-full text-[14px] transition-all whitespace-nowrap ${
@@ -196,7 +194,6 @@ export default function Header() {
               >
                 Contact
               </button>
-              
               {/* More Dropdown */}
               <div className="relative">
                 <NavDropdown 
@@ -347,7 +344,7 @@ export default function Header() {
                 </button>
               </div>
 
-              {/* Navigation Items */}
+              {/* Navigation Items: Home - Services - Doctors - Packages & Offers - About Us - Contact - More */}
               <nav className="flex flex-col gap-6 p-6">
                 <button
                   onClick={handleHomeClick}
@@ -360,14 +357,14 @@ export default function Header() {
                   Home
                 </button>
                 <button
-                  onClick={handleAboutUsClick}
+                  onClick={handleServicesClick}
                   className={`px-[20px] py-[12px] rounded-full text-[16px] transition-all text-left ${
-                    location.pathname === '/about-us'
+                    location.pathname.startsWith('/services')
                       ? 'bg-[#CBFF8F] text-[#0C0060] font-bold'
                       : 'text-black hover:text-[#0C0060]'
                   }`}
                 >
-                  About Us
+                  Services
                 </button>
                 <button
                   onClick={handleOurDoctorsClick}
@@ -378,16 +375,6 @@ export default function Header() {
                   }`}
                 >
                   Doctors
-                </button>
-                <button
-                  onClick={handleServicesClick}
-                  className={`px-[20px] py-[12px] rounded-full text-[16px] transition-all text-left ${
-                    location.pathname.startsWith('/services')
-                      ? 'bg-[#CBFF8F] text-[#0C0060] font-bold'
-                      : 'text-black hover:text-[#0C0060]'
-                  }`}
-                >
-                  Services
                 </button>
                 <Link
                   to="/packages"
@@ -400,6 +387,16 @@ export default function Header() {
                   Packages & Offers
                 </Link>
                 <button
+                  onClick={handleAboutUsClick}
+                  className={`px-[20px] py-[12px] rounded-full text-[16px] transition-all text-left ${
+                    location.pathname === '/about-us'
+                      ? 'bg-[#CBFF8F] text-[#0C0060] font-bold'
+                      : 'text-black hover:text-[#0C0060]'
+                  }`}
+                >
+                  About Us
+                </button>
+                <button
                   onClick={handleContactClick}
                   className={`px-[20px] py-[12px] rounded-full text-[16px] transition-all text-left ${
                     location.pathname === '/contact'
@@ -409,7 +406,6 @@ export default function Header() {
                 >
                   Contact
                 </button>
-                
                 {/* More Section in Mobile */}
                 <div className="border-t border-[#0061AF]/20 pt-4 mt-2">
                   <p className="px-[20px] text-[12px] text-gray-400 font-semibold uppercase tracking-wider mb-3">More</p>
