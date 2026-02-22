@@ -1,7 +1,8 @@
 'use client'
 
-import { motion, useReducedMotion, useInView, AnimatePresence } from 'motion/react'
-import { useRef, useState, useEffect } from 'react'
+import { motion, useReducedMotion } from 'motion/react'
+
+const HEADLINE_TEXT = 'Hear From Those Who Trust Us'
 
 const testimonials = [
   {
@@ -43,120 +44,92 @@ const testimonials = [
 ]
 
 export default function TestimonialsSection() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: '-100px' })
   const shouldReduceMotion = useReducedMotion()
-  
-  // Track which testimonials to show (show 3 at a time)
-  const [startIndex, setStartIndex] = useState(0)
-  
-  // Auto-rotate testimonials every 3 seconds
-  useEffect(() => {
-    if (shouldReduceMotion) return
-    
-    const interval = setInterval(() => {
-      setStartIndex((prev) => (prev + 1) % testimonials.length)
-    }, 3000)
-    
-    return () => clearInterval(interval)
-  }, [shouldReduceMotion])
-  
-  // Get current 3 visible testimonials
-  const visibleTestimonials = [
-    testimonials[startIndex % testimonials.length],
-    testimonials[(startIndex + 1) % testimonials.length],
-    testimonials[(startIndex + 2) % testimonials.length]
-  ]
+  const firstThree = testimonials.slice(0, 3)
 
   return (
     <section className="py-[80px] px-[16px] md:px-[20px] lg:px-[25px]">
       <div className="max-w-[1390px] mx-auto">
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-          transition={{ duration: shouldReduceMotion ? 0 : 0.7 }}
-          className="rounded-[24px] p-[24px] md:p-[36px] lg:p-[48px]"
-        >
-          {/* Heading - full width, continuous slow movement */}
-          <motion.h2
-            className="text-black text-[32px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-1.44px] text-center mb-10 md:mb-14"
-            style={{ fontFamily: "'Gilda Display', serif" }}
-            animate={
-              shouldReduceMotion
-                ? {}
-                : {
-                    x: [0, 10, 0],
-                    transition: {
-                      duration: 6,
-                      repeat: Infinity,
-                      ease: 'easeInOut',
-                    },
-                  }
-            }
-          >
-            Hear From Those Who Trust Us
-          </motion.h2>
-
-          {/* Testimonials grid - 3 columns on large screens, uses full width */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 relative overflow-hidden min-h-[280px] md:min-h-[260px]">
-            <AnimatePresence mode="popLayout" initial={false}>
-              {visibleTestimonials.map((testimonial) => (
-                <motion.div
-                  key={testimonial.id}
-                  layout
-                  initial={{
-                    y: shouldReduceMotion ? 0 : 60,
-                    opacity: shouldReduceMotion ? 1 : 0,
-                  }}
-                  animate={{ y: 0, opacity: 1 }}
-                  exit={{
-                    y: shouldReduceMotion ? 0 : -60,
-                    opacity: shouldReduceMotion ? 1 : 0,
-                  }}
-                  transition={{
-                    duration: shouldReduceMotion ? 0 : 0.45,
-                    ease: "easeInOut",
-                  }}
-                  className="bg-[#CBFF8F] rounded-[20px] p-[20px] md:p-[24px] flex flex-col sm:flex-row gap-4 sm:gap-5"
+        <div className="rounded-[24px] p-[24px] md:p-[36px] lg:p-[48px]">
+          {/* Carousel headline – continuous horizontal scroll (marquee) */}
+          <div className="overflow-hidden mb-10 md:mb-14 w-full">
+            {shouldReduceMotion ? (
+              <h2
+                className="text-black text-[32px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-1.44px] text-center"
+                style={{ fontFamily: "'Gilda Display', serif" }}
+              >
+                {HEADLINE_TEXT}
+              </h2>
+            ) : (
+              <motion.div
+                className="flex whitespace-nowrap"
+                style={{ width: 'max-content' }}
+                animate={{ x: ['0%', '-50%'] }}
+                transition={{
+                  duration: 22,
+                  repeat: Infinity,
+                  ease: 'linear',
+                }}
+              >
+                <span
+                  className="text-black text-[32px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-1.44px] pr-[2em] md:pr-[3em] inline-block"
+                  style={{ fontFamily: "'Gilda Display', serif" }}
                 >
-                  <div className="flex-1 flex flex-col gap-3 min-w-0">
-                    <p className="text-black text-[14px] md:text-[15px] leading-[1.55] line-clamp-4">
-                      {testimonial.text}
-                    </p>
-                    <div className="flex items-center justify-between gap-2 mt-auto">
-                      <span className="text-black font-semibold text-[14px] md:text-[15px] shrink-0">
-                        {testimonial.author}
-                      </span>
-                      <div className="flex gap-0.5 shrink-0">
-                        {[...Array(5)].map((_, i) => (
-                          <svg
-                            key={i}
-                            className="w-[14px] h-[14px] md:w-[16px] md:h-[16px]"
-                            viewBox="0 0 16 16"
-                            fill="none"
-                          >
-                            <path
-                              d="M8 2L9.5 6.5H14L10.5 9.5L12 14L8 11L4 14L5.5 9.5L2 6.5H6.5L8 2Z"
-                              fill="black"
-                            />
-                          </svg>
-                        ))}
-                      </div>
+                  {HEADLINE_TEXT}
+                </span>
+                <span
+                  className="text-black text-[32px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-1.44px] pr-[2em] md:pr-[3em] inline-block"
+                  style={{ fontFamily: "'Gilda Display', serif" }}
+                >
+                  {HEADLINE_TEXT}
+                </span>
+              </motion.div>
+            )}
+          </div>
+
+          {/* Static testimonial cards – no animation */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 min-h-[280px] md:min-h-[260px]">
+            {firstThree.map((testimonial) => (
+              <div
+                key={testimonial.id}
+                className="bg-[#CBFF8F] rounded-[20px] p-[20px] md:p-[24px] flex flex-col sm:flex-row gap-4 sm:gap-5"
+              >
+                <div className="flex-1 flex flex-col gap-3 min-w-0">
+                  <p className="text-black text-[14px] md:text-[15px] leading-[1.55] line-clamp-4">
+                    {testimonial.text}
+                  </p>
+                  <div className="flex items-center justify-between gap-2 mt-auto">
+                    <span className="text-black font-semibold text-[14px] md:text-[15px] shrink-0">
+                      {testimonial.author}
+                    </span>
+                    <div className="flex gap-0.5 shrink-0">
+                      {[...Array(5)].map((_, i) => (
+                        <svg
+                          key={i}
+                          className="w-[14px] h-[14px] md:w-[16px] md:h-[16px]"
+                          viewBox="0 0 16 16"
+                          fill="none"
+                        >
+                          <path
+                            d="M8 2L9.5 6.5H14L10.5 9.5L12 14L8 11L4 14L5.5 9.5L2 6.5H6.5L8 2Z"
+                            fill="black"
+                          />
+                        </svg>
+                      ))}
                     </div>
                   </div>
-                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden flex-shrink-0 border-2 border-white self-start sm:self-center">
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.author}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </motion.div>
-              ))}
-            </AnimatePresence>
+                </div>
+                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden flex-shrink-0 border-2 border-white self-start sm:self-center">
+                  <img
+                    src={testimonial.image}
+                    alt={testimonial.author}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            ))}
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   )
