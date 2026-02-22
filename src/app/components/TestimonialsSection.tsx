@@ -73,74 +73,76 @@ export default function TestimonialsSection() {
       <div className="max-w-[1390px] mx-auto">
         <motion.div
           ref={ref}
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: shouldReduceMotion ? 0 : 0.8 }}
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+          transition={{ duration: shouldReduceMotion ? 0 : 0.7 }}
           className="rounded-[24px] p-[24px] md:p-[36px] lg:p-[48px]"
         >
-          <div className="flex flex-col lg:flex-row gap-[24px] md:gap-[32px] lg:gap-[40px]">
-            {/* Left Content */}
-            <div className="flex flex-col gap-[16px] md:gap-[20px] flex-1">
-              {/* Heading */}
-              <h2
-                className="text-black text-[32px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-1.44px]"
-                style={{ fontFamily: "'Gilda Display', serif" }}
-              >
-                Hear From Those Who Trust Us
-              </h2>
-            </div>
+          {/* Heading - full width, balanced spacing below */}
+          <h2
+            className="text-black text-[32px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-1.44px] text-center mb-10 md:mb-14"
+            style={{ fontFamily: "'Gilda Display', serif" }}
+          >
+            Hear From Those Who Trust Us
+          </h2>
 
-            {/* Right Testimonials */}
-            <div className="flex flex-col gap-[16px] md:gap-[20px] flex-1 relative overflow-hidden">
-              <AnimatePresence mode="popLayout" initial={false}>
-                {visibleTestimonials.map((testimonial, index) => (
-                  <motion.div
-                    key={testimonial.id}
-                    layout
-                    initial={{ 
-                      y: shouldReduceMotion ? 0 : 100, 
-                      opacity: shouldReduceMotion ? 1 : 0 
-                    }}
-                    animate={{ 
-                      y: 0, 
-                      opacity: 1 
-                    }}
-                    exit={{ 
-                      y: shouldReduceMotion ? 0 : -100, 
-                      opacity: shouldReduceMotion ? 1 : 0 
-                    }}
-                    transition={{ 
-                      duration: shouldReduceMotion ? 0 : 0.5,
-                      ease: "easeInOut"
-                    }}
-                    className="bg-[#CBFF8F] rounded-[20px] p-[20px] md:p-[24px] flex gap-[16px] md:gap-[20px]"
-                  >
-                    <div className="flex-1 flex flex-col gap-[12px] md:gap-[16px]">
-                      <p className="text-black text-[14px] md:text-[15px] leading-[1.5]">
-                        {testimonial.text}
-                      </p>
-                      <div className="flex items-center justify-between">
-                        <span className="text-black font-semibold text-[14px] md:text-[15px]">{testimonial.author}</span>
-                        <div className="flex gap-[4px]">
-                          {[...Array(5)].map((_, i) => (
-                            <svg key={i} className="w-[14px] h-[14px] md:w-[16px] md:h-[16px]" viewBox="0 0 16 16" fill="none">
-                              <path d="M8 2L9.5 6.5H14L10.5 9.5L12 14L8 11L4 14L5.5 9.5L2 6.5H6.5L8 2Z" fill="black" />
-                            </svg>
-                          ))}
-                        </div>
+          {/* Testimonials grid - 3 columns on large screens, uses full width */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 relative overflow-hidden min-h-[280px] md:min-h-[260px]">
+            <AnimatePresence mode="popLayout" initial={false}>
+              {visibleTestimonials.map((testimonial) => (
+                <motion.div
+                  key={testimonial.id}
+                  layout
+                  initial={{
+                    y: shouldReduceMotion ? 0 : 60,
+                    opacity: shouldReduceMotion ? 1 : 0,
+                  }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{
+                    y: shouldReduceMotion ? 0 : -60,
+                    opacity: shouldReduceMotion ? 1 : 0,
+                  }}
+                  transition={{
+                    duration: shouldReduceMotion ? 0 : 0.45,
+                    ease: "easeInOut",
+                  }}
+                  className="bg-[#CBFF8F] rounded-[20px] p-[20px] md:p-[24px] flex flex-col sm:flex-row gap-4 sm:gap-5"
+                >
+                  <div className="flex-1 flex flex-col gap-3 min-w-0">
+                    <p className="text-black text-[14px] md:text-[15px] leading-[1.55] line-clamp-4">
+                      {testimonial.text}
+                    </p>
+                    <div className="flex items-center justify-between gap-2 mt-auto">
+                      <span className="text-black font-semibold text-[14px] md:text-[15px] shrink-0">
+                        {testimonial.author}
+                      </span>
+                      <div className="flex gap-0.5 shrink-0">
+                        {[...Array(5)].map((_, i) => (
+                          <svg
+                            key={i}
+                            className="w-[14px] h-[14px] md:w-[16px] md:h-[16px]"
+                            viewBox="0 0 16 16"
+                            fill="none"
+                          >
+                            <path
+                              d="M8 2L9.5 6.5H14L10.5 9.5L12 14L8 11L4 14L5.5 9.5L2 6.5H6.5L8 2Z"
+                              fill="black"
+                            />
+                          </svg>
+                        ))}
                       </div>
                     </div>
-                    <div className="w-[60px] h-[60px] md:w-[70px] md:h-[70px] rounded-full overflow-hidden flex-shrink-0 border-2 border-white">
-                      <img
-                        src={testimonial.image}
-                        alt={testimonial.author}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  </motion.div>
-                ))}
-              </AnimatePresence>
-            </div>
+                  </div>
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden flex-shrink-0 border-2 border-white self-start sm:self-center">
+                    <img
+                      src={testimonial.image}
+                      alt={testimonial.author}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </motion.div>
+              ))}
+            </AnimatePresence>
           </div>
         </motion.div>
       </div>

@@ -12,11 +12,13 @@ export interface ServiceDetail {
     subtitle: string
     description: string
   }
+  benefitsIntro?: string
   benefits: {
     icon: LucideIcon
     title: string
     description: string
   }[]
+  servicesIntro?: string
   services: {
     icon: LucideIcon
     title: string
@@ -28,6 +30,11 @@ export interface ServiceDetail {
     description: string
     features: string[]
     image: string
+  }
+  cta?: {
+    title: string
+    description: string
+    buttonText: string
   }
 }
 
@@ -43,6 +50,7 @@ export const servicesData: ServiceDetail[] = [
       subtitle: 'Foundation for Lifelong Oral Health',
       description: 'General Dentistry forms the cornerstone of healthy teeth and gums, focusing on early detection, prevention, and treatment of common dental concerns.'
     },
+    benefitsIntro: 'Our team provides thoughtful, precise care designed to protect your oral health and maintain strong, healthy teeth. Every visit is crafted for comfort, clarity, and confidence, guided by modern techniques and a patient-first approach.',
     benefits: [
       {
         icon: Calendar,
@@ -60,6 +68,7 @@ export const servicesData: ServiceDetail[] = [
         description: 'Comprehensive care for all ages'
       }
     ],
+    servicesIntro: 'From routine check-ups to targeted treatments, we deliver care that keeps your smile healthy and resilient.',
     services: [
       {
         icon: CalendarCheck,
@@ -73,47 +82,57 @@ export const servicesData: ServiceDetail[] = [
         ]
       },
       {
+        icon: Square,
+        title: 'Tooth-Coloured Fillings',
+        description: 'Discreet, natural-looking restorations that match your tooth shade while restoring strength and function — an effective solution for treating decay.',
+        features: [
+          'Shade-matched fillings',
+          'Functional and aesthetic restoration',
+          'Subtle, comfortable treatment'
+        ]
+      },
+      {
         icon: Scissors,
         title: 'Tooth Extraction',
-        description: 'Gentle and precise removal of damaged or non-restorable teeth with a focus on patient comfort and fast healing. Our approach minimises discomfort and supports ongoing oral health.',
+        description: 'Gentle removal of damaged or non-restorable teeth, prioritizing comfort and smooth healing. Our careful approach minimizes discomfort and supports ongoing oral health.',
         features: [
-          'Gentle extraction technique',
+          'Comfortable extraction techniques',
           'Pain management',
-          'Post-op care instructions',
-          'Healing monitoring'
+          'Post-treatment guidance',
+          'Healing support'
         ]
       },
       {
         icon: Sprout,
         title: 'Root Canal Treatments',
-        description: 'An advanced treatment that removes infection inside the tooth to preserve it rather than extract it. Performed using modern techniques to ensure comfort and durable outcomes.',
+        description: 'Advanced procedures to remove infection while preserving natural teeth. Performed with modern techniques for comfort and durable outcomes.',
         features: [
-          'Pain-free procedure',
-          'Advanced technology',
+          'Pain-free procedures',
           'Tooth preservation',
-          'Long-lasting results'
+          'Long-lasting results',
+          'Modern, precise techniques'
         ]
       },
       {
         icon: Bandage,
         title: 'Gum Disease Treatment',
-        description: 'Specialised care that treats inflammation, halts disease progression, and restores gum health. Early management prevents tooth loss and enhances overall oral wellbeing.',
+        description: 'Specialized care to treat inflammation, prevent disease progression, and restore gum health. Early intervention protects your teeth and overall oral wellbeing.',
         features: [
-          'Inflammation treatment',
-          'Disease progression prevention',
-          'Gum health restoration',
-          'Tooth loss prevention'
+          'Inflammation management',
+          'Disease prevention',
+          'Gum restoration',
+          'Support for long-term oral health'
         ]
       },
       {
         icon: Shield,
         title: 'Preventive Dental Care',
-        description: 'Fluoride treatments, hygiene guidance, and routine monitoring designed to protect your smile from future issues. Prevention is the key to lasting oral health.',
+        description: 'Proactive treatments and guidance to protect your smile before issues arise. Prevention is the key to lasting oral health.',
         features: [
           'Fluoride treatments',
-          'Hygiene guidance',
+          'Personalized hygiene guidance',
           'Routine monitoring',
-          'Preventive strategies'
+          'Preventive planning'
         ]
       }
     ],
@@ -127,6 +146,11 @@ export const servicesData: ServiceDetail[] = [
         'Transparent pricing and flexible payment options'
       ],
       image: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&h=600&fit=crop'
+    },
+    cta: {
+      title: 'Ready to Prioritize Your Oral Health?',
+      description: 'Schedule your appointment today and let our team help you maintain a healthy, confident smile.',
+      buttonText: 'Book Your Appointment'
     }
   },
   {

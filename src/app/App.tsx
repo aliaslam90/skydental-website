@@ -34,7 +34,7 @@ export default function App() {
     setMounted(true)
   }, [])
 
-  // Lenis smooth scroll + JS-driven section snap (native CSS scroll-snap is incompatible with Lenis)
+  // Lenis smooth scroll only (no snap — snap was causing unwanted auto-scroll to sections/footer)
   useEffect(() => {
     if (!mounted || shouldReduceMotion) return
 
@@ -47,60 +47,13 @@ export default function App() {
       touchMultiplier: 1.5,
     })
 
-    const SNAP_OFFSET_TOP = 96 // clear fixed header (6rem)
-    let snapTimeoutId: ReturnType<typeof setTimeout> | null = null
-    let isSnapping = false
-
-    const snapToNearestSection = () => {
-      const sections = document.querySelectorAll<HTMLElement>('.scroll-snap-section')
-      if (sections.length === 0) return
-      const scrollY = window.scrollY ?? document.documentElement.scrollTop
-      const viewportHeight = window.innerHeight
-      const docHeight = document.documentElement.scrollHeight
-      // Don't snap when user is in the footer / bottom of page (avoids auto-scroll back up)
-      const footerThreshold = 280
-      if (scrollY + viewportHeight >= docHeight - footerThreshold) return
-
-      let nearest = sections[0]
-      let nearestDist = Math.abs(sections[0].offsetTop - scrollY - SNAP_OFFSET_TOP)
-      for (let i = 1; i < sections.length; i++) {
-        const top = sections[i].offsetTop
-        const dist = Math.abs(top - scrollY - SNAP_OFFSET_TOP)
-        if (dist < nearestDist) {
-          nearestDist = dist
-          nearest = sections[i]
-        }
-      }
-      // Only snap if we're meaningfully away from the nearest section (avoids jitter and unwanted jumps)
-      const minSnapDistance = 60
-      if (nearestDist < minSnapDistance) return
-
-      isSnapping = true
-      lenis.scrollTo(nearest, { offset: -SNAP_OFFSET_TOP, duration: 1, onComplete: () => { isSnapping = false } })
-    }
-
-    const scheduleSnap = () => {
-      if (isSnapping) return
-      if (snapTimeoutId) clearTimeout(snapTimeoutId)
-      snapTimeoutId = setTimeout(() => {
-        snapTimeoutId = null
-        snapToNearestSection()
-      }, 150)
-    }
-
-    lenis.on('scroll', scheduleSnap)
-
     function raf(time: number) {
       lenis.raf(time)
       requestAnimationFrame(raf)
     }
     requestAnimationFrame(raf)
 
-    return () => {
-      if (snapTimeoutId) clearTimeout(snapTimeoutId)
-      lenis.off('scroll', scheduleSnap)
-      lenis.destroy()
-    }
+    return () => lenis.destroy()
   }, [mounted, shouldReduceMotion])
 
   if (!mounted) {

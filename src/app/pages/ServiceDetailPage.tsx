@@ -168,6 +168,11 @@ export default function ServiceDetailPage() {
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto text-center"
           >
+            {service.hero.subtitle && (
+              <p className="text-lg md:text-xl font-['Arial'] text-black/80 mb-3">
+                {service.hero.subtitle}
+              </p>
+            )}
             {/* Title */}
             <h1 className="text-5xl md:text-6xl font-['Gilda_Display'] text-black mb-6 tracking-tight">
               {service.hero.title}
@@ -234,7 +239,7 @@ export default function ServiceDetailPage() {
               Comprehensive Care for Your Smile
             </h2>
             <p className="text-lg text-black/70 font-['Arial'] leading-relaxed max-w-3xl mx-auto">
-              Our team provides precise, comfortable care designed to protect your smile and maintain healthy teeth and gums. We adopt modern techniques to ensure accurate results and an exceptional patient journey.
+              {service.benefitsIntro ?? 'Our team provides precise, comfortable care designed to protect your smile and maintain healthy teeth and gums. We adopt modern techniques to ensure accurate results and an exceptional patient journey.'}
             </p>
           </motion.div>
 
@@ -282,7 +287,7 @@ export default function ServiceDetailPage() {
               Our {service.title} Services
             </h2>
             <p className="text-lg text-black/70 font-['Arial'] leading-relaxed max-w-3xl mx-auto">
-              From routine checkups to specialized treatments, we offer comprehensive care for your oral health needs.
+              {service.servicesIntro ?? 'From routine checkups to specialized treatments, we offer comprehensive care for your oral health needs.'}
             </p>
           </motion.div>
 
@@ -510,18 +515,19 @@ export default function ServiceDetailPage() {
             className="text-center max-w-3xl mx-auto"
           >
             <h2 className="text-5xl font-['Gilda_Display'] text-black mb-6 tracking-tight">
-              Ready to Prioritize Your Oral Health?
+              {service.cta?.title ?? 'Ready to Prioritize Your Oral Health?'}
             </h2>
             <p className="text-lg text-black/70 font-['Arial'] leading-relaxed mb-10">
-              Schedule your appointment today! Allow our team to help create the healthy, beautiful smile you deserve.
+              {service.cta?.description ?? 'Schedule your appointment today! Allow our team to help create the healthy, beautiful smile you deserve.'}
             </p>
 
             <motion.button
               whileHover={shouldReduceMotion ? {} : { scale: 1.05 }}
               whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
+              onClick={() => openBookingSidebar()}
               className="bg-[#CBFF8F] text-[#0C0060] font-bold px-10 py-5 rounded-full inline-flex items-center gap-3 hover:bg-[#b8ff6d] transition-colors font-['Arial'] text-lg"
             >
-              <span>Book Your Appointment</span>
+              <span>{service.cta?.buttonText ?? 'Book Your Appointment'}</span>
               <div className="w-10 h-10 bg-[#0C0060] rounded-full flex items-center justify-center">
                 <ArrowUpRight className="w-5 h-5 text-[#CBFF8F]" />
               </div>
