@@ -365,6 +365,9 @@ export default function FAQsPage() {
             transition={{ duration: 0.6 }}
             className="max-w-5xl mx-auto"
           >
+            <h2 className="text-2xl md:text-3xl font-['Gilda_Display'] text-black text-center mb-8 tracking-tight">
+              Browse by Category
+            </h2>
             {/* Category Pills */}
             <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
               {categories.map((category, index) => (
