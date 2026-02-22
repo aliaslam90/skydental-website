@@ -1,4 +1,4 @@
-import { Calendar, Award, Users, CalendarCheck, Sparkles, Scissors, Sprout, Bandage, Shield, Sparkle, Palette, Zap, Gem, Crown, Target, Search, UserCheck, Smile, Square, Eye, ClipboardCheck, Heart, GraduationCap, BookOpen, Lock, Microscope, ShieldCheck, RefreshCw, Camera, AlertCircle } from 'lucide-react'
+import { Calendar, Award, Users, CalendarCheck, Sparkles, Scissors, Sprout, Bandage, Shield, Sparkle, Palette, Zap, Gem, Crown, Target, Search, UserCheck, Smile, Square, Eye, ClipboardCheck, Heart, GraduationCap, BookOpen, Lock, Microscope, ShieldCheck, RefreshCw, AlertCircle } from 'lucide-react'
 import { LucideIcon } from 'lucide-react'
 
 export interface ServiceDetail {
@@ -474,17 +474,6 @@ export const servicesData: ServiceDetail[] = [
           'Function and aesthetics restoration',
           'Oral harmony',
           'Multi-disciplinary planning'
-        ]
-      },
-      {
-        icon: Camera,
-        title: 'Digital X-rays & 3D Imaging',
-        description: 'Advanced diagnostic technology providing highly detailed images that guide precise and efficient treatment.',
-        features: [
-          'Advanced diagnostic technology',
-          'Highly detailed images',
-          'Precise treatment guidance',
-          'Efficient treatment planning'
         ]
       },
       {
