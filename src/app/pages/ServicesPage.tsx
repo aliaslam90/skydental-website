@@ -77,36 +77,40 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
   return (
     <motion.div
       ref={ref}
-      initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
+      initial={shouldReduceMotion ? {} : { opacity: 0, y: 24 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="bg-white border border-gray-100 rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden group"
+      transition={{ duration: 0.5, delay: index * 0.08 }}
+      className="group"
     >
-      {/* Decorative overlay */}
-      <div 
-        className="absolute -top-8 -right-8 w-32 h-32 rounded-full opacity-30"
-        style={{ backgroundColor: 'rgba(224, 237, 255, 0.5)' }}
-      />
-      
-      {/* Icon */}
-      <div 
-        className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 relative z-10 bg-[#CBFF8F]"
+      <Link
+        to={`/services/${service.id}`}
+        className="block h-full bg-white/90 backdrop-blur-sm rounded-[1.75rem] p-8 md:p-9 border border-black/[0.06] shadow-[0_4px_24px_-4px_rgba(0,0,0,0.06)] hover:shadow-[0_24px_48px_-12px_rgba(0,0,0,0.12)] hover:border-[#CBFF8F]/40 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden"
       >
-        <service.Icon className="w-[70px] h-[70px]" />
-      </div>
+        {/* Subtle gradient glow on hover */}
+        <div className="absolute inset-0 rounded-[1.75rem] bg-gradient-to-br from-[#CBFF8F]/5 via-transparent to-[#e0edff]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+        {/* Soft corner accent */}
+        <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-[#e0edff]/30 blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
 
-      {/* Content */}
-      <h3 className="text-2xl font-['Gilda_Display'] text-black mb-4">
-        {service.title}
-      </h3>
-      <p className="text-base text-black/80 font-['Arial'] leading-relaxed mb-8">
-        {service.description}
-      </p>
+        <div className="relative z-10">
+          {/* Icon */}
+          <div className="w-[4.5rem] h-[4.5rem] rounded-2xl flex items-center justify-center mb-6 bg-[#CBFF8F]/90 shadow-[0_4px_14px_-2px_rgba(203,255,143,0.4)] group-hover:bg-[#CBFF8F] group-hover:shadow-[0_8px_20px_-4px_rgba(203,255,143,0.35)] transition-all duration-300">
+            <service.Icon className="w-[40px] h-[40px]" />
+          </div>
 
-      {/* Learn More Link */}
-      <Link to={`/services/${service.id}`} className="flex items-center gap-2 text-black font-['Poppins'] font-semibold group-hover:gap-3 transition-all">
-        <span>Learn More</span>
-        <ArrowUpRight className="w-4 h-4" />
+          {/* Title */}
+          <h3 className="text-[1.5rem] md:text-[1.625rem] font-['Gilda_Display'] text-black mb-3 tracking-tight leading-tight">
+            {service.title}
+          </h3>
+          <p className="text-[0.9375rem] text-black/70 font-['Arial'] leading-[1.6] mb-7 max-w-[32ch]">
+            {service.description}
+          </p>
+
+          {/* Learn More - pill CTA */}
+          <span className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-['Poppins'] font-semibold text-black/80 bg-black/[0.06] group-hover:bg-[#CBFF8F] group-hover:text-black group-hover:gap-3 transition-all duration-300">
+            Learn More
+            <ArrowUpRight className="w-4 h-4 shrink-0" />
+          </span>
+        </div>
       </Link>
     </motion.div>
   )
@@ -159,22 +163,35 @@ export default function ServicesPage() {
 
       <ScrollSection>
       {/* What Do You Need Today - below banner */}
-      <section ref={servicesRef} className="py-24 bg-[#f8f9fa]">
-        <div className="container mx-auto px-6">
+      <section
+        ref={servicesRef}
+        className="relative py-28 overflow-hidden"
+        style={{
+          background: 'linear-gradient(180deg, #fafbfc 0%, #f4f6f8 35%, #f0f3f7 100%)'
+        }}
+      >
+        {/* Subtle background orbs */}
+        <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-[#CBFF8F]/[0.08] blur-3xl pointer-events-none" />
+        <div className="absolute bottom-1/4 -right-24 w-80 h-80 rounded-full bg-[#e0edff]/50 blur-3xl pointer-events-none" />
+
+        <div className="container mx-auto px-6 relative z-10">
           <motion.div
-            initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
+            initial={shouldReduceMotion ? {} : { opacity: 0, y: 16 }}
             animate={servicesInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
-            <h2 className="text-5xl md:text-6xl font-['Gilda_Display'] text-black mb-6 tracking-tight">
+            <p className="text-xs font-['Poppins'] font-semibold tracking-[0.2em] text-black/50 uppercase mb-4">
+              Our Services
+            </p>
+            <h2 className="text-4xl md:text-5xl lg:text-[3.25rem] font-['Gilda_Display'] text-black tracking-tight leading-[1.15] max-w-2xl mx-auto">
               What Do You Need Today
             </h2>
           </motion.div>
 
           {/* Services Grid - First Row (3 cards) */}
-          <div className="max-w-7xl mx-auto mb-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="max-w-6xl mx-auto mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
               {services.slice(0, 3).map((service, index) => (
                 <ServiceCard key={index} service={service} index={index} />
               ))}
@@ -182,8 +199,8 @@ export default function ServicesPage() {
           </div>
 
           {/* Services Grid - Second Row (2 cards centered) */}
-          <div className="max-w-5xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
               {services.slice(3).map((service, index) => (
                 <ServiceCard key={index + 3} service={service} index={index + 3} />
               ))}
