@@ -21,7 +21,7 @@ export default function Footer() {
             {/* Main Footer Content */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-6 lg:gap-4">
               {/* Logo and Description */}
-              <div className="flex flex-col gap-3 md:gap-4">
+              <div className="flex flex-col gap-5 md:gap-7">
                 <div className="flex items-center">
                   <div className="w-[64px] h-[60px]">
                     <MaskGroup />
