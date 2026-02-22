@@ -356,39 +356,40 @@ export default function FAQsPage() {
         </div>
       </section>
 
-      {/* Categories Section */}
-      <section ref={categoriesRef} className="py-16 bg-white">
+      {/* Categories Section - single line carousel */}
+      <section ref={categoriesRef} className="py-12 bg-white">
         <div className="container mx-auto px-6">
           <motion.div
             initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
             animate={categoriesInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="max-w-5xl mx-auto"
+            className="max-w-full"
           >
-            <h2 className="text-2xl md:text-3xl font-['Gilda_Display'] text-black text-center mb-8 tracking-tight">
+            <h2 className="text-2xl md:text-3xl font-['Gilda_Display'] text-black text-center mb-6 tracking-tight">
               Browse by Category
             </h2>
-            {/* Category Pills */}
-            <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
-              {categories.map((category, index) => (
-                <motion.button
-                  key={category.id}
-                  initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
-                  animate={categoriesInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.4, delay: index * 0.05 }}
-                  onClick={() => setSelectedCategory(category.id)}
-                  className={`${
-                    selectedCategory === category.id ? category.color : 'bg-white border border-[#e5e7eb]'
-                  } px-5 py-2.5 rounded-full text-[14px] font-['Arial'] font-medium text-black hover:shadow-md transition-all flex items-center gap-2`}
-                >
-                  {category.Icon ? (
-                    <category.Icon className="w-5 h-5" />
-                  ) : (
-                    <span>{category.icon}</span>
-                  )}
-                  <span>{category.label}</span>
-                </motion.button>
-              ))}
+            <div className="overflow-x-auto overflow-y-hidden pb-2 -mx-6 px-6 scroll-smooth">
+              <div className="flex items-stretch gap-2.5 justify-start min-w-max">
+                {categories.map((category, index) => (
+                  <motion.button
+                    key={category.id}
+                    initial={shouldReduceMotion ? {} : { opacity: 0, y: 10 }}
+                    animate={categoriesInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.35, delay: index * 0.03 }}
+                    onClick={() => setSelectedCategory(category.id)}
+                    className={`${
+                      selectedCategory === category.id ? category.color : 'bg-white border border-[#e5e7eb]'
+                    } h-10 rounded-full text-[13px] font-['Arial'] font-medium text-black hover:shadow-md transition-all flex items-center gap-2 shrink-0 px-4 whitespace-nowrap`}
+                  >
+                    {category.Icon ? (
+                      <category.Icon className="w-4 h-4 shrink-0" />
+                    ) : (
+                      <span className="text-base shrink-0">{category.icon}</span>
+                    )}
+                    <span>{category.label}</span>
+                  </motion.button>
+                ))}
+              </div>
             </div>
           </motion.div>
         </div>
