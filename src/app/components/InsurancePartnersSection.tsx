@@ -47,7 +47,7 @@ export default function InsurancePartnersSection() {
   return (
     <section
       ref={ref}
-      className="py-[28px] md:py-[36px] overflow-hidden"
+      className="py-[80px] overflow-hidden"
       style={{
         background: '#CBFF8F',
       }}

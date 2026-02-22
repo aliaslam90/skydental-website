@@ -128,13 +128,7 @@
     @apply bg-background text-foreground;
   }
 
-  /*
-   * Section markers for Lenis-driven snap (see App.tsx).
-   * Do not use native CSS scroll-snap here—Lenis hijacks scroll and is incompatible with it.
-   */
-  .scroll-snap-section {
-    min-height: 100vh;
-  }
+  /* Section markers for Lenis-driven snap (see App.tsx). No min-height; section padding (80px) defines spacing. */
 
   /* Hide scrollbar for carousel tabs */
   .scrollbar-hide {

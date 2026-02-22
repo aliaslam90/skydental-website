@@ -45,7 +45,7 @@ export default function DoctorsSection() {
   }
 
   return (
-    <section id="doctors" className="py-[28px] md:py-[36px] lg:py-[44px] px-[16px] md:px-[20px] lg:px-[25px] bg-[#e0edff]">
+    <section id="doctors" className="py-[80px] px-[16px] md:px-[20px] lg:px-[25px] bg-[#e0edff]">
       <div className="max-w-[1390px] mx-auto">
         <motion.div
           initial={{ y: 30, opacity: 0 }}

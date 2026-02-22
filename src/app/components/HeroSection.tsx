@@ -60,7 +60,11 @@ export default function HeroSection() {
               className="text-white text-[32px] md:text-[50px] lg:text-[70px] leading-[1.2] tracking-[-2.1px]"
               style={{ fontFamily: "'Gilda Display', serif" }}
             >
-              Your smile. Your confidence. Our expert care.
+              SKY Dental Center
+              <br />
+              Your smile. Your confidence.
+              <br />
+              Our expert care.
             </motion.h1>
           </div>
         </div>

@@ -122,7 +122,7 @@ export default function ServicesSection() {
 
   return (
     <div className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
-      <section id="services" className="pt-[20px] pb-[28px] md:pt-[28px] md:pb-[36px] w-full">
+      <section id="services" className="py-[80px] w-full">
         <motion.div
           ref={ref}
           variants={containerVariants}

@@ -203,7 +203,7 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="contact" className="py-[36px] md:py-[44px] px-[25px]">
+    <section id="contact" className="py-[80px] px-[25px]">
       <div className="max-w-[1390px] mx-auto">
         <motion.div
           ref={ref}

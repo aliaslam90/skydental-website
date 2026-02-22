@@ -28,7 +28,7 @@ export default function AboutSection() {
   }
 
   return (
-    <section id="about" className="py-[28px] md:py-[36px] lg:py-[44px] px-[16px] md:px-[20px] lg:px-[25px]">
+    <section id="about" className="py-[80px] px-[16px] md:px-[20px] lg:px-[25px]">
       <motion.div
         ref={ref}
         variants={containerVariants}
