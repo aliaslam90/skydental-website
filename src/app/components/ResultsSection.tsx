@@ -2,7 +2,6 @@
 
 import { motion, useReducedMotion, useInView } from 'motion/react'
 import { useRef, useState, useCallback, useEffect } from 'react'
-import { useBooking } from '../context/BookingContext'
 
 // Update these paths to your new high-quality images in the public folder
 const BEFORE_IMAGE = '/before-treatment.jp.png'
@@ -13,7 +12,6 @@ export default function ResultsSection() {
   const containerRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
   const shouldReduceMotion = useReducedMotion()
-  const { openBookingSidebar } = useBooking()
   
   // Track slider position (0-100%)
   const [sliderPosition, setSliderPosition] = useState(50)
@@ -210,36 +208,12 @@ export default function ResultsSection() {
                   className="text-black text-[32px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-1.44px] capitalize"
                   style={{ fontFamily: "'Gilda Display', serif" }}
                 >
-                  Your excellent results
+                  Excellent Results
                 </h2>
                 <p className="text-[#202020] text-[16px] leading-[1.55]">
-                  To deliver comprehensive, high-quality dental care using advanced technology and evidence-based clinical practices. We are committed to creating healthy, confident smiles through personalised, safe, and comfortable treatment experiences.
+                  Every treatment we provide reflects your individuality and our dedication to excellence. Thoughtfully planned and carefully delivered, each result balances effectiveness, comfort, and confidence — leaving you with care you can trust and outcomes that support lasting oral health and wellbeing.
                 </p>
               </div>
-
-              <button 
-                onClick={() => openBookingSidebar()}
-                className="bg-[#CBFF8F] flex items-center gap-4 md:gap-6 pl-4 md:pl-6 pr-[8px] md:pr-[10px] py-2 rounded-[35px] self-start hover:bg-[#B1FF57] transition-colors">
-                <span className="text-[#0C0060] font-bold text-[14px] md:text-[16px] whitespace-nowrap">Request Appointment</span>
-                <div className="bg-[#0C0060] w-[32px] h-[32px] md:w-[34px] md:h-[34px] rounded-full flex items-center justify-center flex-shrink-0">
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 20 20">
-                    <path 
-                      d="M5 15L15 5" 
-                      stroke="#CBFF8F" 
-                      strokeWidth="1.5" 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round" 
-                    />
-                    <path 
-                      d="M6.875 5H15V13.125" 
-                      stroke="#CBFF8F" 
-                      strokeWidth="1.5" 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round" 
-                    />
-                  </svg>
-                </div>
-              </button>
             </motion.div>
           </div>
         </motion.div>

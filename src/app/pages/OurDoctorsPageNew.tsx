@@ -197,17 +197,17 @@ export default function OurDoctorsPageNew() {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-[rgba(203,255,143,0.3)] px-5 py-2 rounded-full mb-6">
               <Heart className="w-4 h-4 text-[#0C0060]" />
-              <span className="text-sm text-black font-['Arial']">Our Doctors</span>
+              <span className="text-sm text-black font-['Arial']">Our Experts</span>
             </div>
 
             {/* Main Heading */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-['Gilda_Display'] text-black mb-6 tracking-tight leading-tight px-4">
-              Professional, Experienced Doctors Fluent in All Modern Treatment Methods
+              Expert Care You Can Trust
             </h1>
 
             {/* Description */}
             <p className="text-base md:text-lg text-black/70 font-['Arial'] leading-relaxed max-w-3xl mx-auto mb-8">
-              Meet our team of dedicated dental professionals committed to your oral health and beautiful smile.
+              Meet our team of highly trained, experienced dental professionals. Each doctor brings a blend of skill, compassion, and modern expertise to every treatment, ensuring your oral health and smile are in the best hands.
             </p>
           </motion.div>
         </div>
@@ -414,7 +414,7 @@ export default function OurDoctorsPageNew() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-['Gilda_Display'] text-black tracking-tight">
-              A Collection of Unforgettable<br />Guest Experiences
+              A Collection of Memorable Patient Experiences
             </h2>
           </motion.div>
 

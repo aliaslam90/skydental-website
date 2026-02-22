@@ -38,7 +38,7 @@ export default function DoctorDetailPage() {
         <div className="text-center">
           <h1 className="text-4xl font-['Gilda_Display'] text-black mb-4">Doctor Not Found</h1>
           <Link to="/our-doctors" className="text-[#0C0060] hover:underline">
-            Back to Our Doctors
+            Back to Doctors
           </Link>
         </div>
       </div>
@@ -110,7 +110,7 @@ export default function DoctorDetailPage() {
               </Link>
               <ChevronRight className="w-4 h-4 text-gray-400" />
               <Link to="/our-doctors" className="text-gray-500 hover:text-gray-700 font-['Arial']">
-                Our Doctors
+                Doctors
               </Link>
               <ChevronRight className="w-4 h-4 text-gray-400" />
               <span className="text-[#0C0060] font-['Arial']">{doctor.name}</span>
@@ -506,7 +506,7 @@ export default function DoctorDetailPage() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-['Gilda_Display'] text-black tracking-tight">
-              A Collection of Unforgettable<br />Patient Experiences
+              A Collection of Memorable Patient Experiences
             </h2>
           </motion.div>
 

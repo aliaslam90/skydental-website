@@ -46,7 +46,7 @@ export default function AboutSection() {
                   <circle cx="6.81372" cy="6.81372" r="4.5" fill="#0061AF" />
                 </svg>
               </div>
-              <span className="text-[#0061af] text-[14px] md:text-[16px]">About</span>
+              <span className="text-[#0061af] text-[14px] md:text-[16px]">Learn More</span>
             </div>
           </motion.div>
 
@@ -55,7 +55,7 @@ export default function AboutSection() {
             className="text-black text-[24px] md:text-[30px] lg:text-[37px] leading-[1.32] text-justify w-full lg:max-w-[835px]"
             style={{ fontFamily: "'Gilda Display', serif" }}
           >
-            Sky Dental Center stands as one of the leading and most trusted dental facilities in Abu Dhabi, offering a distinguished clinical experience that unites more than 10 years of expertise with state-of-the-art dental technologies.
+            At Sky Dental Center, every appointment is thoughtfully designed around you, combining experience, precision, and personalised care in a calm, welcoming setting.
           </motion.p>
         </div>
       </motion.div>

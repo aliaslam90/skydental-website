@@ -57,11 +57,13 @@ export default function DoctorsSection() {
             className="text-black text-[32px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-1.44px] max-w-[900px]"
             style={{ fontFamily: "'Gilda Display', serif" }}
           >
-            Professional, Experienced Doctors who are Fluent in all Modern Treatment Methods
+            Meet Our Expert Dental Team
           </h2>
-          
+          <p className="text-black/80 text-[16px] md:text-[17px] leading-[1.55] max-w-[800px]">
+            Professionally trained and highly experienced, our doctors combine skill, compassion, and thoughtful attention to guide every patient through their dental journey with ease and trust.
+          </p>
           <Link to="/our-doctors" className="bg-[#CBFF8F] flex items-center gap-4 md:gap-6 pl-4 md:pl-6 pr-[8px] md:pr-[10px] py-2 rounded-[35px] hover:bg-[#B1FF57] transition-colors">
-            <span className="text-[#0C0060] font-bold text-[14px] md:text-[16px] whitespace-nowrap">View All Team</span>
+            <span className="text-[#0C0060] font-bold text-[14px] md:text-[16px] whitespace-nowrap">Our Experts</span>
             <div className="bg-[#0C0060] w-[32px] h-[32px] md:w-[34px] md:h-[34px] rounded-full flex items-center justify-center flex-shrink-0">
               <svg className="w-5 h-5" fill="none" viewBox="0 0 20 20">
                 <path 

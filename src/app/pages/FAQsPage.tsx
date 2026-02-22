@@ -61,17 +61,17 @@ const faqCategories: FAQCategory[] = [
       {
         id: 'general-1',
         question: 'What should I expect during my first dental visit?',
-        answer: 'Your first visit includes a comprehensive oral examination, digital X-rays (if needed), and a personalised treatment plan. Our team ensures a comfortable and seamless experience so you leave with clarity and confidence about your oral health.',
+        answer: 'Your initial visit includes a thorough oral examination, digital X-rays if required, and a personalised treatment plan tailored to your needs. Our team ensures a comfortable, seamless experience, leaving you informed, confident, and in control of your oral health.',
       },
       {
         id: 'general-2',
         question: 'How often should I have a dental check-up and cleaning?',
-        answer: 'We recommend a check-up every 6 months to maintain healthy teeth and gums and prevent dental issues before they develop.',
+        answer: 'We recommend a professional check-up and cleaning every six months. Regular visits help maintain healthy teeth and gums, prevent dental issues before they arise, and keep your smile looking its best.',
       },
       {
         id: 'general-3',
         question: 'Do tooth-coloured fillings last long?',
-        answer: 'Yes. Our modern composite fillings are durable, aesthetically pleasing, and blend naturally with your tooth structure for long-lasting results.',
+        answer: 'Yes. Our advanced tooth-coloured composite fillings are durable, natural-looking, and designed to blend seamlessly with your teeth, providing long-lasting, aesthetically pleasing results.',
       },
     ],
   },
@@ -83,17 +83,17 @@ const faqCategories: FAQCategory[] = [
       {
         id: 'cosmetic-1',
         question: 'What is the difference between veneers and a Hollywood Smile?',
-        answer: 'Veneers enhance individual teeth, while a Hollywood Smile is a full smile makeover using veneers or crowns to create a dramatic transformation. Both options are customised based on your facial harmony and desired aesthetic.',
+        answer: 'Veneers enhance individual teeth for subtle improvements, while a Hollywood Smile is a complete smile transformation, often combining veneers or crowns to create a striking, harmonious result. Every treatment is fully customised to suit your facial features and desired aesthetic, ensuring a natural, confident smile.',
       },
       {
         id: 'cosmetic-2',
         question: 'Is teeth whitening safe?',
-        answer: 'Absolutely. Our professional whitening treatments are safe, effective, and designed to protect tooth enamel while delivering brighter results in a single session.',
+        answer: 'Absolutely. Our professional whitening treatments are safe, highly effective, and carefully designed to protect your enamel while delivering a brighter, radiant smile—often visible in just a single session.',
       },
       {
         id: 'cosmetic-3',
         question: 'How long does a Smile Design take?',
-        answer: 'Digital Smile Design typically takes 1–2 sessions. You\'ll preview your future smile before treatment begins.',
+        answer: 'A Digital Smile Design usually requires 1–2 sessions. During this process, you\'ll preview your future smile before any treatment begins, ensuring a personalised, precise, and confident transformation.',
       },
     ],
   },
@@ -105,17 +105,17 @@ const faqCategories: FAQCategory[] = [
       {
         id: 'orthodontics-1',
         question: 'Do braces work for adults?',
-        answer: 'Yes! Braces and clear aligners such as Invisalign and Spark are highly effective for adults seeking alignment and bite correction.',
+        answer: 'Absolutely! Modern braces and clear aligners, including Invisalign and Spark, are highly effective for adults seeking tooth alignment and bite correction—delivering precise, comfortable, and discreet results.',
       },
       {
         id: 'orthodontics-2',
         question: 'How long does orthodontic treatment take?',
-        answer: 'Treatment duration varies from 6 months to 24 months, depending on the complexity of the case and the chosen orthodontic method.',
+        answer: 'The duration of orthodontic treatment varies between 6 and 24 months, depending on the complexity of your case and the method chosen. Your orthodontist will provide a personalised timeline, ensuring precise, predictable, and lasting results.',
       },
       {
         id: 'orthodontics-3',
         question: 'Are clear aligners as effective as traditional braces?',
-        answer: 'For many cases, yes. Clear aligners offer discreet, comfortable treatment and excellent results when worn consistently.',
+        answer: 'For many cases, absolutely. Clear aligners provide discreet, comfortable treatment and deliver excellent results when worn consistently, offering a modern, convenient alternative without compromising on precision or outcomes.',
       },
     ],
   },
@@ -127,17 +127,17 @@ const faqCategories: FAQCategory[] = [
       {
         id: 'pediatric-1',
         question: 'When should my child see a dentist for the first time?',
-        answer: 'The first visit is recommended at age 1 or within 6 months of the first tooth erupting. Early care helps prevent oral issues and builds comfort.',
+        answer: 'We recommend your child\'s first dental visit by age 1, or within six months of their first tooth appearing. Early visits help prevent potential oral issues and create a positive, comfortable experience, setting the foundation for a lifetime of healthy, confident smiles.',
       },
       {
         id: 'pediatric-2',
         question: 'What are dental sealants, and do children need them?',
-        answer: 'Sealants are protective coatings placed on molars to prevent cavities. They are highly recommended for children aged 6–12.',
+        answer: 'Dental sealants are thin, protective coatings applied to the chewing surfaces of molars to prevent cavities and decay. They are highly recommended for children, particularly between the ages of 6 and 12, helping safeguard young smiles and support long-term oral health.',
       },
       {
         id: 'pediatric-3',
         question: 'How do you manage anxious children during treatment?',
-        answer: 'Our paediatric specialists use gentle communication, child-friendly techniques, and behavioural guidance to ensure a calm and pleasant experience.',
+        answer: 'Our paediatric specialists create a calm and welcoming environment using gentle communication, child-friendly techniques, and positive guidance. Every visit is designed to be stress-free and even enjoyable, helping children feel comfortable, confident, and cared for from the very first appointment.',
       },
     ],
   },
@@ -149,17 +149,17 @@ const faqCategories: FAQCategory[] = [
       {
         id: 'advanced-1',
         question: 'Who is eligible for dental implants?',
-        answer: 'Most adults with healthy gums and sufficient bone structure qualify for implants. Our specialists conduct a thorough assessment to determine suitability.',
+        answer: 'Most adults with healthy gums and sufficient bone structure are excellent candidates for dental implants. Our specialists conduct a thorough assessment to ensure each treatment is personalised and suitable for long-lasting, natural results.',
       },
       {
         id: 'advanced-2',
         question: 'What is full-mouth rehabilitation?',
-        answer: 'It is a comprehensive treatment that restores function, aesthetics, and oral health using crowns, implants, veneers, or other restorative techniques.',
+        answer: 'Full-mouth rehabilitation is a comprehensive treatment that restores both function and aesthetics. Using crowns, implants, veneers, and other advanced restorative techniques, we create a harmonious, healthy, and confident smile tailored to your individual needs.',
       },
       {
         id: 'advanced-3',
         question: 'Are digital X-rays safe?',
-        answer: 'Yes. Digital imaging uses significantly lower radiation than traditional X-rays and provides highly accurate diagnostic results.',
+        answer: 'Yes. Digital X-rays use significantly lower radiation than traditional imaging while providing highly accurate diagnostic results. This allows our team to plan treatments with precision and safety at the forefront.',
       },
     ],
   },
@@ -171,12 +171,12 @@ const faqCategories: FAQCategory[] = [
       {
         id: 'endodontics-1',
         question: 'Is root canal treatment painful?',
-        answer: 'Not at all. Thanks to modern techniques and anaesthesia, root canal therapy is comfortable and often relieves pain rather than causing it.',
+        answer: 'Not at all. Using modern techniques and effective anaesthesia, root canal treatment is comfortable and often provides relief from existing pain rather than causing it.',
       },
       {
         id: 'endodontics-2',
         question: 'How long does a root canal take?',
-        answer: 'Most treatments are completed in one visit, depending on the tooth and complexity.',
+        answer: 'Most root canal treatments are completed in a single visit, though duration can vary depending on the tooth and the complexity of the case. Your endodontist ensures every step is precise, efficient, and as comfortable as possible.',
       },
     ],
   },
@@ -188,12 +188,12 @@ const faqCategories: FAQCategory[] = [
       {
         id: 'prosthodontics-1',
         question: 'What is the difference between crowns and bridges?',
-        answer: 'A crown covers a single tooth, while a bridge replaces one or more missing teeth using neighbouring teeth for support.',
+        answer: 'A crown is a custom-made restoration that covers a single tooth to restore its shape, strength, and appearance. A bridge, on the other hand, replaces one or more missing teeth by anchoring to adjacent teeth, restoring both function and a seamless smile.',
       },
       {
         id: 'prosthodontics-2',
         question: 'Are dentures still used today?',
-        answer: 'Yes—modern dentures are far more comfortable and natural-looking. We offer removable, fixed, and implant-supported options.',
+        answer: 'Absolutely. Modern dentures are more comfortable, natural-looking, and functional than ever. We offer removable, fixed, and implant-supported options to suit individual needs and lifestyle, ensuring a confident, beautiful smile.',
       },
     ],
   },
@@ -205,12 +205,12 @@ const faqCategories: FAQCategory[] = [
       {
         id: 'oral-surgery-1',
         question: 'When is wisdom tooth removal necessary?',
-        answer: 'Extraction is recommended when wisdom teeth are impacted, causing pain, swelling, or crowding. Our oral surgeons ensure safe and smooth removal.',
+        answer: 'Wisdom tooth extraction is recommended when teeth are impacted, causing discomfort, swelling, or crowding. Our skilled oral surgeons ensure the procedure is safe, precise, and as comfortable as possible.',
       },
       {
         id: 'oral-surgery-2',
         question: 'How long is recovery after an extraction?',
-        answer: 'Most patients recover within 2–3 days with proper care.',
+        answer: 'With proper care, most patients recover within 2–3 days. Our team provides clear post-operative guidance to ensure a smooth, comfortable recovery and optimal healing.',
       },
     ],
   },
@@ -222,12 +222,12 @@ const faqCategories: FAQCategory[] = [
       {
         id: 'dental-tourism-1',
         question: 'Do you assist international patients with travel planning?',
-        answer: 'Yes. We provide full support including appointment coordination, treatment planning, hotel guidance, and follow-up care.',
+        answer: 'Absolutely. We offer comprehensive support for international patients, including appointment coordination, personalised treatment planning, hotel guidance, and seamless follow-up care—ensuring a smooth, stress-free experience from start to finish.',
       },
       {
         id: 'dental-tourism-2',
         question: 'Why choose Abu Dhabi for dental treatment?',
-        answer: 'Abu Dhabi offers world-class healthcare, luxury hospitality, and highly skilled dental specialists—all within a safe and modern environment.',
+        answer: 'Abu Dhabi combines world-class healthcare, luxury hospitality, and highly skilled dental specialists within a safe, modern, and welcoming environment. It\'s the perfect destination to receive exceptional dental care while enjoying comfort and peace of mind.',
       },
     ],
   },
@@ -256,17 +256,17 @@ const faqCategories: FAQCategory[] = [
       {
         id: 'appointments-1',
         question: 'How can I book an appointment?',
-        answer: 'You can book easily through: WhatsApp, Phone, Website booking form, Or by visiting our reception',
+        answer: 'Booking is easy and convenient. You can schedule your visit via WhatsApp, phone, our website booking form, or by visiting our reception in person.',
       },
       {
         id: 'appointments-2',
         question: 'Do you offer same-day appointments for emergencies?',
-        answer: 'Yes. We prioritise urgent cases and aim to provide same-day treatment whenever possible.',
+        answer: 'Yes. We prioritise urgent cases and strive to provide same-day treatment whenever possible, ensuring prompt relief and care when you need it most.',
       },
       {
         id: 'appointments-3',
         question: 'Is Sky Dental Center suitable for families?',
-        answer: 'Absolutely. We offer comprehensive care for adults and children, making us a leading family-friendly dental centre in Abu Dhabi.',
+        answer: 'Absolutely. We provide comprehensive care for both adults and children, making Sky Dental Center a leading family-friendly dental clinic in Abu Dhabi—where every member of your family receives expert, personalised care.',
       },
     ],
   },
@@ -322,7 +322,7 @@ export default function FAQsPage() {
 
             {/* Description */}
             <p className="text-base text-[#4b5563] font-['Arial'] leading-relaxed mb-10 max-w-2xl mx-auto">
-              Find answers to the most common questions about our services, treatments, and patient care. If you don't find what you're looking for, our team is always here to help.
+              Find answers to the most common questions about our services, treatments, and patient care. If you don't see what you're looking for, our team is always ready to assist.
             </p>
 
             {/* Tabs - Static Design Elements */}
@@ -478,9 +478,7 @@ export default function FAQsPage() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-['Gilda_Display'] text-black tracking-tight">
-              A Collection of Unforgettable
-              <br />
-              Guest Experiences
+              A Collection of Memorable Patient Experiences
             </h2>
           </motion.div>
 

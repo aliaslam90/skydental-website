@@ -57,15 +57,18 @@ export default function WhyChooseSection() {
               Why Choose Sky Dental Center?
             </h2>
 
+            <p className="text-black/80 text-[16px] leading-[1.55]">
+              Personalised care that prioritises your comfort, confidence, and smile.
+            </p>
+
             <div className="flex flex-col gap-[20px] md:gap-[24px] w-full lg:max-w-[478px]">
-              <ReasonItem number="1" text="Luxurious, patient-centred care with a focus on comfort and wellbeing." />
-              <ReasonItem number="2" text="Advanced digital systems ensuring precise diagnosis and efficient treatment." />
-              <ReasonItem number="3" text="A multidisciplinary team of experienced dental specialists." />
-              <ReasonItem number="4" text="World-class sterilisation and safety protocols." />
-              <ReasonItem number="5" text="Thirteen modern dental clinics providing seamless appointment scheduling and optimised patient flow." />
+              <ReasonItem number="1" text="Cutting-edge technology for precise, minimally invasive treatments." />
+              <ReasonItem number="2" text="Experienced specialists working together to create natural, confident results." />
+              <ReasonItem number="3" text="Highest standards of safety and hygiene." />
+              <ReasonItem number="4" text="Modern clinics designed for a smooth, stress-free experience." />
             </div>
 
-            {/* Request Now Button */}
+            {/* Request Appointment - kept here per doc */}
             <motion.button
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
@@ -73,7 +76,7 @@ export default function WhyChooseSection() {
               onClick={() => openBookingSidebar()}
               className="bg-[#CBFF8F] flex items-center gap-4 md:gap-6 pl-4 md:pl-6 pr-[8px] md:pr-[10px] py-2 rounded-[35px] hover:bg-[#B1FF57] transition-colors z-10 w-fit"
             >
-              <span className="text-[#0C0060] font-bold text-[14px] md:text-[16px] whitespace-nowrap">Request Now</span>
+              <span className="text-[#0C0060] font-bold text-[14px] md:text-[16px] whitespace-nowrap">Request Appointment</span>
               <div className="bg-[#0C0060] w-[32px] h-[32px] md:w-[34px] md:h-[34px] rounded-full flex items-center justify-center flex-shrink-0">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 20 20">
                   <path 

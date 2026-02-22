@@ -40,19 +40,19 @@ export const servicesData: ServiceDetail[] = [
     bgColor: '#CBFF8F',
     hero: {
       title: 'General Dentistry',
-      subtitle: 'General Dentistry forms the foundation of lifelong oral health',
-      description: 'General Dentistry forms the foundation of lifelong oral health, focusing on early diagnosis, prevention, and treatment of common dental concerns.'
+      subtitle: 'Foundation for Lifelong Oral Health',
+      description: 'General Dentistry forms the cornerstone of healthy teeth and gums, focusing on early detection, prevention, and treatment of common dental concerns.'
     },
     benefits: [
       {
         icon: Calendar,
         title: 'Same-Day Appointments',
-        description: 'Flexible scheduling to fit your busy lifestyle'
+        description: 'Flexible scheduling to fit your lifestyle'
       },
       {
         icon: Award,
         title: 'Expert Care',
-        description: 'Experienced professionals using latest techniques'
+        description: 'Experienced professionals delivering precise treatments'
       },
       {
         icon: Users,
@@ -63,24 +63,13 @@ export const servicesData: ServiceDetail[] = [
     services: [
       {
         icon: CalendarCheck,
-        title: 'Dental Checkup & Cleaning',
-        description: 'A comprehensive examination and professional cleaning that help detect early concerns and maintain optimal oral hygiene. This service prevents decay, reduces gum disease risk, and leaves your smile feeling fresh and healthy.',
+        title: 'Dental Check-Up & Cleaning',
+        description: 'A thorough examination and professional cleaning to detect early concerns and maintain optimal oral hygiene. Supports prevention of decay and gum disease, leaving your smile refreshed and healthy.',
         features: [
-          'Comprehensive oral examination',
-          'Professional teeth cleaning',
+          'Comprehensive oral exam',
+          'Professional cleaning',
           'Oral cancer screening',
           'Personalized care plan'
-        ]
-      },
-      {
-        icon: Sparkles,
-        title: 'Tooth-Coloured Fillings',
-        description: 'Aesthetic, natural-looking fillings that match your tooth shade while restoring function and structure. An ideal solution for treating decay discreetly and effectively.',
-        features: [
-          'Natural tooth shade matching',
-          'Aesthetic restoration',
-          'Functional repair',
-          'Discreet treatment'
         ]
       },
       {
@@ -129,14 +118,12 @@ export const servicesData: ServiceDetail[] = [
       }
     ],
     whyChoose: {
-      title: 'Why Choose Our General Dentistry Services?',
-      description: 'Our general dentistry services combine expertise, technology, and compassionate care to deliver exceptional results.',
+      title: 'Why Choose Our General Dentistry Services',
+      description: 'We combine experience, attention, and careful planning to deliver reliable, patient-focused care.',
       features: [
-        'Modern, state-of-the-art equipment for accurate diagnosis',
-        'Safe and sterilized instruments to protect patient health',
-        'Experienced dentists with certifications and expertise',
-        'Preventive approach to reduce long-term treatment needs',
-        'Focus on patient comfort and education',
+        'Experienced, certified dentists',
+        'Preventive-focused approach',
+        'Comfort and clarity at every step',
         'Transparent pricing and flexible payment options'
       ],
       image: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&h=600&fit=crop'
@@ -150,24 +137,24 @@ export const servicesData: ServiceDetail[] = [
     bgColor: '#CBFF8F',
     hero: {
       title: 'Cosmetic Dentistry',
-      subtitle: 'Transform your smile and boost your confidence',
-      description: 'Cosmetic dentistry focuses on improving the appearance of your teeth, gums, and smile using advanced aesthetic techniques and materials.'
+      subtitle: 'Enhancing Your Smile, Naturally',
+      description: 'Cosmetic dentistry focuses on improving the appearance of your teeth, gums, and smile using advanced aesthetic techniques and materials, tailored to your unique features.'
     },
     benefits: [
       {
         icon: Sparkle,
         title: 'Beautiful Results',
-        description: 'Natural-looking enhancements that transform your smile'
+        description: 'Natural-looking enhancements that elevate your smile'
       },
       {
         icon: Palette,
         title: 'Custom Design',
-        description: 'Personalized treatment plans for your unique smile'
+        description: 'Treatment plans personalized for your individual needs'
       },
       {
         icon: Zap,
-        title: 'Quick Transformation',
-        description: 'See dramatic improvements in just a few visits'
+        title: 'Efficient Transformation',
+        description: 'Noticeable improvements in just a few visits'
       }
     ],
     services: [
@@ -218,12 +205,22 @@ export const servicesData: ServiceDetail[] = [
       {
         icon: Target,
         title: 'Composite Bonding',
-        description: 'A quick and minimally invasive solution that reshapes and corrects minor imperfections. Achieve refined, aesthetic enhancements without extensive procedures.',
+        description: 'A minimally invasive solution to reshape and correct minor imperfections. Quick, precise, and effective, it refines your smile without extensive procedures.',
         features: [
-          'Quick treatment',
-          'Minimally invasive',
+          'Rapid treatment',
           'Minor imperfection correction',
-          'Refined aesthetic results'
+          'Minimally invasive',
+          'Refined, natural results'
+        ]
+      },
+      {
+        icon: Sparkles,
+        title: 'Tooth-Coloured Fillings',
+        description: 'Discreet, natural-looking restorations that match your tooth shade while restoring strength and function — an effective solution for treating decay.',
+        features: [
+          'Shade-matched fillings',
+          'Functional and aesthetic restoration',
+          'Subtle, comfortable treatment'
         ]
       }
     ],
@@ -249,24 +246,24 @@ export const servicesData: ServiceDetail[] = [
     bgColor: '#CBFF8F',
     hero: {
       title: 'Orthodontics',
-      subtitle: 'Straighten your smile with confidence',
-      description: 'Our orthodontic services use advanced technology to straighten teeth, correct bite issues, and create beautiful, healthy smiles.'
+      subtitle: 'Straightening Smiles, Naturally',
+      description: 'Our orthodontic services combine advanced techniques with thoughtful planning to straighten teeth, correct bite issues, and create healthy, confident smiles tailored to your needs.'
     },
     benefits: [
       {
         icon: Search,
         title: 'Advanced Technology',
-        description: '3D imaging and digital treatment planning'
+        description: '3D imaging and digital treatment planning for precision'
       },
       {
         icon: UserCheck,
         title: 'Expert Orthodontists',
-        description: 'Board-certified specialists with years of experience'
+        description: 'Board-certified specialists guiding each step'
       },
       {
         icon: Smile,
         title: 'Comfortable Treatment',
-        description: 'Modern techniques for minimal discomfort'
+        description: 'Modern techniques to minimize discomfort'
       }
     ],
     services: [
@@ -294,30 +291,30 @@ export const servicesData: ServiceDetail[] = [
       },
       {
         icon: Shield,
-        title: 'Retainers and Smile Correction',
-        description: 'Custom retainers designed to maintain treatment results and prevent teeth from shifting. Supports long-term smile stability.',
+        title: 'Retainers & Smile Maintenance',
+        description: 'Custom retainers designed to preserve your results and prevent teeth from shifting. Ensures your smile remains aligned long after active treatment.',
         features: [
-          'Custom retainers',
-          'Treatment result maintenance',
-          'Prevents teeth shifting',
-          'Long-term smile stability'
+          'Custom-fitted for comfort',
+          'Maintains orthodontic results',
+          'Prevents shifting',
+          'Supports long-term stability'
         ]
       },
       {
         icon: ClipboardCheck,
-        title: 'Orthodontic Check-up',
-        description: 'A detailed orthodontic assessment to evaluate dental alignment and bite concerns, allowing us to plan or adjust treatment as needed.',
+        title: 'Orthodontic Check-ups',
+        description: 'Regular assessments to monitor dental alignment, evaluate bite concerns, and adjust treatment plans as needed.',
         features: [
-          'Detailed assessment',
-          'Dental alignment evaluation',
-          'Bite concern evaluation',
-          'Treatment planning and adjustment'
+          'Comprehensive evaluation',
+          'Bite and alignment analysis',
+          'Treatment adjustments',
+          'Ensures predictable outcomes'
         ]
       }
     ],
     whyChoose: {
-      title: 'Why Choose Our Orthodontic Services?',
-      description: 'We offer the latest orthodontic treatments tailored to your lifestyle and smile goals.',
+      title: 'Why Choose Our Orthodontic Services',
+      description: 'We combine expertise, advanced technology, and thoughtful patient care to create smiles that are both beautiful and healthy.',
       features: [
         'Board-certified orthodontists',
         'Multiple treatment options',
@@ -337,36 +334,36 @@ export const servicesData: ServiceDetail[] = [
     bgColor: '#CBFF8F',
     hero: {
       title: 'Pediatric Dentistry',
-      subtitle: 'Creating healthy smiles for kids',
-      description: 'Our pediatric dentistry services provide gentle, specialized care in a fun, welcoming environment designed just for children.'
+      subtitle: 'Gentle Care for Growing Smiles',
+      description: 'Our pediatric dentistry services provide specialized, compassionate care in a welcoming environment designed just for children. Every visit is crafted to make dental care a positive, engaging experience while promoting lifelong oral health.'
     },
     benefits: [
       {
         icon: Heart,
-        title: 'Child-Friendly',
-        description: 'Fun, comfortable environment designed for kids'
+        title: 'Child-Friendly Environment',
+        description: 'Fun, relaxing spaces that put kids at ease'
       },
       {
         icon: UserCheck,
-        title: 'Specialized Care',
-        description: 'Dentists trained in pediatric dentistry'
+        title: 'Specialized Dentists',
+        description: 'Professionals trained in pediatric care'
       },
       {
         icon: GraduationCap,
-        title: 'Education Focus',
-        description: 'Teaching kids healthy habits for life'
+        title: 'Education-Focused',
+        description: 'Teaching children good oral hygiene habits early'
       }
     ],
     services: [
       {
         icon: Heart,
         title: 'Gentle Dental Care for Kids',
-        description: 'Soft, comforting care that helps children feel relaxed during dental visits. We create positive experiences that encourage lifelong oral health.',
+        description: 'Soft, comforting care that helps children feel relaxed during dental visits. Positive experiences foster healthy habits and reduce anxiety for future treatments.',
         features: [
-          'Soft and comforting care',
-          'Relaxed dental visits',
-          'Positive experiences',
-          'Lifelong oral health encouragement'
+          'Soft, reassuring techniques',
+          'Relaxed, kid-friendly visits',
+          'Encourages lifelong oral health',
+          'Builds trust and confidence'
         ]
       },
       {
@@ -404,26 +401,26 @@ export const servicesData: ServiceDetail[] = [
       },
       {
         icon: BookOpen,
-        title: 'Education on Oral Hygiene Habits',
-        description: 'Engaging instruction that teaches children proper brushing, flossing, and healthy habits to support long-term dental wellness.',
+        title: 'Oral Hygiene Education',
+        description: 'Interactive instruction to teach children proper brushing, flossing, and healthy habits, empowering them to take charge of their oral health.',
         features: [
-          'Engaging instruction',
-          'Proper brushing techniques',
-          'Flossing education',
-          'Healthy habit development'
+          'Engaging, age-appropriate teaching',
+          'Brushing and flossing guidance',
+          'Healthy habit development',
+          'Builds lifelong oral care skills'
         ]
       }
     ],
     whyChoose: {
-      title: 'Why Choose Our Pediatric Dentistry?',
-      description: 'We create positive dental experiences that help children develop healthy habits and overcome dental anxiety.',
+      title: 'Why Choose Our Pediatric Dentistry',
+      description: 'We create experiences that children enjoy while ensuring parents feel confident in the care provided.',
       features: [
         'Specialized pediatric dentists',
-        'Child-friendly office design',
-        'Gentle, patient approach',
+        'Child-friendly clinic design',
+        'Gentle, supportive approach',
         'Parent education and involvement',
-        'Prevention-focused care',
-        'Building trust and comfort'
+        'Preventive, long-term care',
+        'Builds trust, comfort, and confidence'
       ],
       image: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=800&h=600&fit=crop'
     }
@@ -436,24 +433,24 @@ export const servicesData: ServiceDetail[] = [
     bgColor: '#CBFF8F',
     hero: {
       title: 'Implant & Advanced Care Dentistry',
-      subtitle: 'Restore function and beauty to your smile',
-      description: 'Advanced restorative dentistry combines cutting-edge technology with expertise to repair, replace, and restore damaged or missing teeth.'
+      subtitle: 'Confidence and Harmony',
+      description: 'Our advanced restorative dentistry combines expert care with thoughtful planning to repair, replace, and restore damaged or missing teeth. Every treatment is designed to bring lasting results while maintaining natural function and aesthetics.'
     },
     benefits: [
       {
         icon: Microscope,
-        title: 'Advanced Technology',
-        description: 'State-of-the-art equipment and techniques'
+        title: 'Advanced Techniques',
+        description: 'Cutting-edge tools and approaches for accurate, reliable outcomes'
       },
       {
         icon: ShieldCheck,
         title: 'Durable Results',
-        description: 'Long-lasting solutions that stand the test of time'
+        description: 'Restorations built to last and function naturally'
       },
       {
         icon: Target,
-        title: 'Comprehensive Care',
-        description: 'Full-mouth restoration capabilities'
+        title: 'Comprehensive Solutions',
+        description: 'Full-mouth and multi-disciplinary care for complex needs'
       }
     ],
     services: [
@@ -503,8 +500,8 @@ export const servicesData: ServiceDetail[] = [
       }
     ],
     whyChoose: {
-      title: 'Why Choose Our Implant & Advanced Care Services?',
-      description: 'We use the latest technology and techniques to deliver complex restorative treatments with exceptional results.',
+      title: 'Why Choose Our Implant & Advanced Care',
+      description: 'We combine expertise, advanced technology, and patient-focused planning to deliver restorative solutions with confidence and care.',
       features: [
         'Board-certified specialists',
         'Advanced 3D imaging and planning',

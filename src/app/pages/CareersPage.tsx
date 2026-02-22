@@ -23,22 +23,22 @@ interface JobCategory {
 const whyJoinCards: WhyJoinCard[] = [
   {
     title: 'Supportive Work Culture',
-    description: 'Join a team that values collaboration, mutual respect, and work-life balance. We foster an environment where every member feels valued and empowered.',
+    description: 'Join a team that values collaboration, respect, and work-life balance. Here, every team member is valued, heard, and empowered.',
     bgColor: 'bg-[#e0edff]',
   },
   {
     title: 'Advanced Technology',
-    description: 'Work with cutting-edge dental technology and modern equipment. We invest in the latest innovations to ensure you have the best tools for exceptional patient care.',
+    description: 'Work with cutting-edge dental technology and modern equipment. We invest in innovation to ensure you have the best tools for delivering exceptional patient care.',
     bgColor: 'bg-[#CBFF8F]',
   },
   {
     title: 'Career Development',
-    description: 'Continuous learning and advancement opportunities are part of our culture. We support your professional growth through training, workshops, and skill development programs.',
+    description: 'Continuous learning and advancement are part of our culture. Benefit from workshops, training programs, and skill development opportunities to support your professional growth.',
     bgColor: 'bg-[#e0edff]',
   },
   {
     title: 'Meaningful Impact',
-    description: 'Make a real difference in people\'s lives every day. Your work directly contributes to improving oral health and creating confident, beautiful smiles in our community.',
+    description: 'Make a real difference every day. Your work directly contributes to improving oral health and creating confident, beautiful smiles in our community.',
     bgColor: 'bg-[#CBFF8F]',
   },
 ]
@@ -137,7 +137,7 @@ export default function CareersPage() {
 
             {/* Description */}
             <p className="text-base text-[#4b5563] font-['Arial'] leading-relaxed mb-10 max-w-3xl mx-auto">
-              At Sky Dental Center, we believe that incredible care starts with exceptional people. We are constantly seeking talented, dedicated professionals who share our vision for creating a best-in-class oral healthcare experience, are values-driven, and eager to grow with us.
+              At Sky Dental Center, we believe exceptional care begins with exceptional people. We are always seeking talented, dedicated professionals who share our vision for delivering best-in-class oral healthcare, embrace our values, and are eager to grow alongside us.
             </p>
 
             {/* Pills/Tags */}
@@ -184,7 +184,7 @@ export default function CareersPage() {
               Why Join Us?
             </h2>
             <p className="text-base text-[#4b5563] font-['Arial'] leading-relaxed max-w-3xl mx-auto">
-              We offer more than just a position—a professional home, rewarding, and fulfilling. Join us and experience the difference of working in an environment that prioritizes your growth, well-being, and the impact you make.
+              We offer more than just a role—this is a professional home where your growth, well-being, and the impact you make are our priority. Experience the difference of working in an environment designed to empower, inspire, and reward your contribution.
             </p>
           </motion.div>
 
@@ -229,7 +229,7 @@ export default function CareersPage() {
               Current Opportunities
             </h2>
             <p className="text-base text-[#4b5563] font-['Arial'] leading-relaxed max-w-2xl mx-auto">
-              We regularly look for the following positions. If your dream role isn't listed, we still encourage you to apply.
+              We regularly welcome applications for the following roles. Even if your ideal position isn't listed, we encourage you to apply.
             </p>
           </motion.div>
 
@@ -270,7 +270,7 @@ export default function CareersPage() {
               Who We're Looking For
             </h3>
             <p className="text-[15px] text-[#4b5563] font-['Arial'] leading-relaxed text-center max-w-3xl mx-auto">
-              We welcome individuals who are passionate, patient-focused, and committed to excellence. Whether you're an experienced professional or just starting your career, if you align with our values and have a genuine desire to make a positive impact, we'd love to hear from you.
+              We seek individuals who are passionate, patient-focused, and committed to excellence. Whether you are an experienced professional or starting your career, if you share our values and have a genuine desire to make a positive impact, we want to hear from you.
             </p>
           </motion.div>
         </div>
@@ -297,7 +297,7 @@ export default function CareersPage() {
                 Apply Now
               </h2>
               <p className="text-base text-black font-['Arial'] leading-relaxed mb-4">
-                Send your CV and cover letter to
+                Send your CV and cover letter to:
               </p>
               <a
                 href="mailto:info@skydc.ae"
@@ -416,9 +416,7 @@ export default function CareersPage() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-['Gilda_Display'] text-black tracking-tight">
-              A Collection of Unforgettable
-              <br />
-              Guest Experiences
+              A Collection of Memorable Patient Experiences
             </h2>
           </motion.div>
 

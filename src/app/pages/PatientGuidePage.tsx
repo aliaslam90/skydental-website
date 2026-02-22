@@ -400,7 +400,7 @@ export default function PatientGuidePage() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-['Gilda_Display'] text-black tracking-tight">
-              A Collection of Unforgettable<br />Guest Experiences
+              A Collection of Memorable Patient Experiences
             </h2>
           </motion.div>
 

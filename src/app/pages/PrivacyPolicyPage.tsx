@@ -508,7 +508,7 @@ export default function PrivacyPolicyPage() {
                 <p>
                   <strong className="text-black">Sky Dental Center</strong>
                 </p>
-                <p>Villa 45 , Alforsan street , Khalifa city , Abu Dhabi , UAE</p>
+                <p>Villa 45, Alforsan Street, Khalifa City, Abu Dhabi, UAE</p>
                 <p>
                   <strong className="text-black">Phone:</strong> 026677448
                 </p>
@@ -548,9 +548,7 @@ export default function PrivacyPolicyPage() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-['Gilda_Display'] text-black tracking-tight">
-              A Collection of Unforgettable
-              <br />
-              Guest Experiences
+              A Collection of Memorable Patient Experiences
             </h2>
           </motion.div>
 

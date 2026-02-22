@@ -43,7 +43,7 @@ export default function Footer() {
                 <div className="flex flex-col gap-2 md:gap-3">
                   <FooterLink href="/">Home</FooterLink>
                   <FooterLink href="/about-us">About Us</FooterLink>
-                  <FooterLink href="/our-doctors">Our Doctors</FooterLink>
+                  <FooterLink href="/our-doctors">Doctors</FooterLink>
                   <FooterLink href="/services">Services</FooterLink>
                   <FooterLink href="/packages">Packages & Offers</FooterLink>
                 </div>

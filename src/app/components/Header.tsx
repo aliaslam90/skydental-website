@@ -163,7 +163,7 @@ export default function Header() {
                     : 'text-black hover:text-[#0C0060]'
                 }`}
               >
-                Our Doctors
+                Doctors
               </button>
               <button
                 onClick={handleServicesClick}
@@ -377,7 +377,7 @@ export default function Header() {
                       : 'text-black hover:text-[#0C0060]'
                   }`}
                 >
-                  Our Doctors
+                  Doctors
                 </button>
                 <button
                   onClick={handleServicesClick}

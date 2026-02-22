@@ -2,9 +2,6 @@
 
 import { motion, useReducedMotion, useInView, AnimatePresence } from 'motion/react'
 import { useRef, useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import svgPaths from '../../imports/svg-p4rwj0t9df'
-import imgImage3 from '../../assets/bad2f27ff5079a0e6ec2492bdc6955e6b191903e.png'
 
 const testimonials = [
   {
@@ -84,47 +81,13 @@ export default function TestimonialsSection() {
           <div className="flex flex-col lg:flex-row gap-[32px] md:gap-[48px] lg:gap-[64px]">
             {/* Left Content */}
             <div className="flex flex-col gap-[24px] md:gap-[32px] flex-1">
-              {/* Badge */}
-              <div className="inline-flex items-center gap-[10px] h-[45px] px-[25px] py-[11px] rounded-[35px] backdrop-blur-[10px] bg-[rgba(255,255,255,0.15)] border border-[#1b1810] self-start">
-                <div className="w-[13.627px] h-[13.627px]">
-                  <svg className="block size-full" fill="none" viewBox="0 0 13.6274 13.6274">
-                    <rect fill="#1B1810" fillOpacity="0.2" width="13.6274" height="13.6274" rx="6.81372" />
-                    <circle cx="6.81372" cy="6.81372" r="4.5" fill="#1B1810" />
-                  </svg>
-                </div>
-                <span className="text-[#1b1810] text-[16px]">Testimonial</span>
-              </div>
-
               {/* Heading */}
               <h2
                 className="text-black text-[32px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-1.44px]"
                 style={{ fontFamily: "'Gilda Display', serif" }}
               >
-                Hear What Our Thrilled Clientele Have to Say
+                Hear From Those Who Trust Us
               </h2>
-
-              {/* Learn More Button */}
-              <Link to="/about-us" className="bg-[#CBFF8F] flex items-center gap-4 md:gap-6 pl-4 md:pl-6 pr-[8px] md:pr-[10px] py-2 rounded-[35px] self-start hover:bg-[#B1FF57] transition-colors mt-[8px] md:mt-[16px]">
-                <span className="text-[#0C0060] font-bold text-[14px] md:text-[16px] whitespace-nowrap">Learn More</span>
-                <div className="bg-[#0C0060] w-[32px] h-[32px] md:w-[34px] md:h-[34px] rounded-full flex items-center justify-center flex-shrink-0">
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 20 20">
-                    <path 
-                      d="M5 15L15 5" 
-                      stroke="#CBFF8F" 
-                      strokeWidth="1.5" 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round" 
-                    />
-                    <path 
-                      d="M6.875 5H15V13.125" 
-                      stroke="#CBFF8F" 
-                      strokeWidth="1.5" 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round" 
-                    />
-                  </svg>
-                </div>
-              </Link>
             </div>
 
             {/* Right Testimonials */}

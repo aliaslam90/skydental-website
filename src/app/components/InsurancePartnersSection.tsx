@@ -71,7 +71,7 @@ export default function InsurancePartnersSection() {
             Insurance Partners
           </h2>
           <p className="text-[15px] text-[#4b5563] font-['Arial'] leading-relaxed max-w-3xl mx-auto">
-            To make premium dental care more accessible, we collaborate with a wide network of trusted local and international insurance providers. Our team handles benefits verification, approvals, and claims support.
+            We work with a wide network of trusted local and international insurance providers to make premium dental care more accessible. Our team takes care of benefits verification, approvals, and claims.
           </p>
         </motion.div>
 

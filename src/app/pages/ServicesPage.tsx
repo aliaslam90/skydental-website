@@ -5,7 +5,6 @@ import { useRef } from 'react'
 import { ArrowUpRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import TestimonialsSection from '../components/TestimonialsSection'
-import { useBooking } from '../context/BookingContext'
 import { 
   GeneralDentistryIcon, 
   CosmeticDentistryIcon, 
@@ -21,35 +20,35 @@ const services = [
     id: 'general-dentistry',
     Icon: GeneralDentistryIcon,
     title: 'General Dentistry',
-    description: 'Comprehensive dental care for healthy teeth and gums, including checkups, cleanings, and preventive treatments.',
+    description: 'Care focused on prevention, early diagnosis, and maintaining healthy teeth and gums, including checkups, cleanings, and preventive treatments.',
     bgColor: '#CBFF8F'
   },
   {
     id: 'cosmetic-dentistry',
     Icon: CosmeticDentistryIcon,
     title: 'Cosmetic Dentistry',
-    description: 'Transform your smile with advanced aesthetic treatments including whitening, veneers, and smile design.',
+    description: 'Transform your smile with advanced treatments; including whitening, veneers, and smile designs tailored to enhance your natural beauty and confidence.',
     bgColor: '#CBFF8F'
   },
   {
     id: 'orthodontics',
     Icon: OrthodonticsIcon,
     title: 'Orthodontics',
-    description: 'Straighten your teeth and correct misalignments with braces, Invisalign, and modern orthodontic solutions.',
+    description: 'Straighten and align your teeth with modern orthodontic treatments, including braces, Invisalign, and tailored solutions for a confident, healthy smile.',
     bgColor: '#CBFF8F'
   },
   {
     id: 'pediatric-dentistry',
     Icon: PediatricDentistryIcon,
     title: 'Pediatric Dentistry',
-    description: 'Gentle, specialized dental care for children and teens in a welcoming and comfortable environment.',
+    description: 'Gentle, expert dental care for children and teens in a welcoming environment, designed to keep their smiles healthy and confident.',
     bgColor: '#CBFF8F'
   },
   {
     id: 'advanced-restorative',
     Icon: ImplantAdvancedCareIcon,
     title: 'Implant & Advanced Care',
-    description: 'Complex treatments for structural and functional restoration including implants and full-mouth restoration.',
+    description: 'Advanced dental treatments for restoring function, structure, and confidence, including implants and full-mouth rehabilitation.',
     bgColor: '#CBFF8F'
   }
 ]
@@ -116,7 +115,6 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
 
 export default function ServicesPage() {
   const shouldReduceMotion = useReducedMotion()
-  const { openBookingSidebar } = useBooking()
   const heroRef = useRef(null)
   const servicesRef = useRef(null)
   const experiencesRef = useRef(null)
@@ -128,63 +126,8 @@ export default function ServicesPage() {
   return (
     <div className="bg-white">
       <ScrollSection>
-      {/* Hero Section */}
-      <section 
-        ref={heroRef}
-        className="relative min-h-[500px] overflow-hidden pt-24"
-        style={{
-          background: 'linear-gradient(160.216deg, rgb(224, 237, 255) 0%, rgb(255, 255, 255) 50%, rgb(224, 237, 255) 100%)'
-        }}
-      >
-        {/* Decorative blurs */}
-        <div className="absolute -left-24 top-40 w-64 h-64 bg-[rgba(203,255,143,0.2)] rounded-full blur-[64px]" />
-        <div className="absolute right-32 top-80 w-64 h-64 bg-[rgba(12,0,96,0.1)] rounded-full blur-[64px]" />
-
-        <div className="container mx-auto px-6 py-20 relative z-10">
-          <motion.div
-            initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
-            animate={heroInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto text-center"
-          >
-            {/* Badge */}
-            <div className="mb-6 flex justify-center">
-              <SectionBadge icon="✚" text="World-Class Dental Care" />
-            </div>
-
-            {/* Title */}
-            <h1 className="text-5xl md:text-6xl font-['Gilda_Display'] text-black mb-6 tracking-tight">
-              Treatment and Restoration of Teeth
-            </h1>
-
-            {/* Description */}
-            <p className="text-lg text-black/80 font-['Arial'] leading-relaxed mb-10 max-w-3xl mx-auto">
-              We provide a full range of first-class dental services for adults and children using innovative digital equipment to ensure your comfort and perfect results.
-            </p>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              <motion.button
-                whileHover={shouldReduceMotion ? {} : { scale: 1.05 }}
-                whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
-                onClick={() => openBookingSidebar()}
-                className="bg-[#CBFF8F] text-[#0C0060] font-bold px-8 py-4 rounded-full inline-flex items-center gap-3 hover:bg-[#b8ff6d] transition-colors font-['Arial']"
-              >
-                <span>Request Appointment</span>
-                <div className="w-9 h-9 bg-[#0C0060] rounded-full flex items-center justify-center">
-                  <ArrowUpRight className="w-5 h-5 text-[#CBFF8F]" />
-                </div>
-              </motion.button>
-
-            </div>
-          </motion.div>
-        </div>
-      </section>
-      </ScrollSection>
-
-      <ScrollSection>
-      {/* Our Services Section */}
-      <section ref={servicesRef} className="py-24 bg-[#f8f9fa]">
+      {/* Services list at top - What Do You Need Today */}
+      <section ref={servicesRef} className="py-24 bg-[#f8f9fa] pt-28">
         <div className="container mx-auto px-6">
           <motion.div
             initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
@@ -192,15 +135,9 @@ export default function ServicesPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            {/* Title */}
             <h2 className="text-5xl md:text-6xl font-['Gilda_Display'] text-black mb-6 tracking-tight">
-              Our Services
+              What Do You Need Today
             </h2>
-
-            {/* Description */}
-            <p className="text-base md:text-lg text-black/70 font-['Arial'] leading-relaxed max-w-3xl mx-auto">
-              Treatment and restoration of teeth at the highest level with our experienced and kind heart team.
-            </p>
           </motion.div>
 
           {/* Services Grid - First Row (3 cards) */}
@@ -225,6 +162,38 @@ export default function ServicesPage() {
       </ScrollSection>
 
       <ScrollSection>
+      {/* Banner Section */}
+      <section
+        ref={heroRef}
+        className="relative min-h-[380px] overflow-hidden py-20"
+        style={{
+          background: 'linear-gradient(160.216deg, rgb(224, 237, 255) 0%, rgb(255, 255, 255) 50%, rgb(224, 237, 255) 100%)'
+        }}
+      >
+        <div className="absolute -left-24 top-40 w-64 h-64 bg-[rgba(203,255,143,0.2)] rounded-full blur-[64px]" />
+        <div className="absolute right-32 top-80 w-64 h-64 bg-[rgba(12,0,96,0.1)] rounded-full blur-[64px]" />
+        <div className="container mx-auto px-6 py-12 relative z-10">
+          <motion.div
+            initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
+            animate={heroInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8 }}
+            className="max-w-4xl mx-auto text-center"
+          >
+            <div className="mb-6 flex justify-center">
+              <SectionBadge icon="✚" text="Relief. Health. Confidence." />
+            </div>
+            <h1 className="text-4xl md:text-5xl font-['Gilda_Display'] text-black mb-6 tracking-tight">
+              From relieving pain to revealing your most beautiful smile
+            </h1>
+            <p className="text-lg text-black/80 font-['Arial'] leading-relaxed max-w-3xl mx-auto">
+              Fast, gentle, and complete care for urgent needs, lifelong oral health, and natural-looking cosmetic results for every stage of your life.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+      </ScrollSection>
+
+      <ScrollSection>
       {/* Testimonials Section */}
       <TestimonialsSection />
       </ScrollSection>
@@ -240,7 +209,7 @@ export default function ServicesPage() {
             className="text-center mb-16"
           >
             <h2 className="text-5xl font-['Gilda_Display'] text-black tracking-tight">
-              A Collection of Unforgettable<br />Guest Experiences
+              A Collection of Memorable Patient Experiences
             </h2>
           </motion.div>
 

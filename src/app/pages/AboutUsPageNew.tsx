@@ -11,13 +11,13 @@ const coreValues = [
   {
     icon: Award,
     title: 'Excellence',
-    description: 'We strive for the highest standards in every aspect of clinical practice to ensure unparalleled quality and remarkable results.',
+    description: 'We uphold the highest standards in dentistry, combining expertise, careful planning, and thoughtful care to deliver results you can rely on.',
     bgColor: '#CBFF8F'
   },
   {
     icon: Shield,
     title: 'Trust',
-    description: 'We foster long-term relationships with our patients based on honesty, transparency, and uncompromising professional ethics.',
+    description: 'We build lasting relationships through honesty, transparency, and compassionate attention, ensuring every patient feels confident and cared for.',
     bgColor: '#CBFF8F'
   }
 ]
@@ -26,23 +26,23 @@ const coreValues = [
 const innovationFeatures = [
   {
     icon: Zap,
-    title: '3D imaging systems',
-    description: 'Cutting-edge 3D imaging for precise diagnosis and treatment planning'
+    title: '3D Imaging Systems',
+    description: 'For precise, personalized treatment planning and beautiful results.'
   },
   {
     icon: Shield,
-    title: 'High-resolution digital X-rays',
-    description: 'Advanced digital X-ray technology for accurate diagnostics'
+    title: 'High-Resolution Digital X-Rays',
+    description: 'Accurate diagnostics with comfort in mind.'
   },
   {
     icon: Clock,
-    title: 'Advanced treatment equipment',
-    description: 'State-of-the-art equipment designed to minimise discomfort'
+    title: 'Advanced Treatment Equipment',
+    description: 'Minimally invasive procedures designed for your ease.'
   },
   {
     icon: Heart,
-    title: 'International-standard sterilisation systems',
-    description: 'High-standard clinical sterilisation for safe care environments'
+    title: 'Sterilisation Excellence',
+    description: 'Ensuring the highest safety standards for all patients.'
   }
 ]
 
@@ -158,28 +158,28 @@ export default function AboutUsPageNew() {
 
             {/* Main Heading */}
             <h1 className="text-5xl md:text-6xl font-['Gilda_Display'] text-black mb-6 tracking-tight leading-tight">
-              Our Story
+              The Sky Dental Experience
             </h1>
 
             {/* Description */}
             <div className="text-lg text-black/70 font-['Arial'] leading-relaxed max-w-4xl mx-auto space-y-4 text-left">
               <p>
-                Sky Dental Center stands as one of the leading and most trusted dental facilities in Abu Dhabi, offering a distinguished clinical experience that unites more than 10 years of expertise with state-of-the-art dental technologies.
+                At Sky Dental Center, your appointment is more than a dental visit. It is thoughtfully designed around you. From your first consultation to the final reveal of your smile, every step is handled with care and attention to detail in a calm and welcoming environment.
+              </p>
+              <h3 className="text-xl font-['Gilda_Display'] text-black pt-2">About Sky Dental Center</h3>
+              <p>
+                With over 10 years of experience, Sky Dental Center is one of Abu Dhabi's most trusted dental clinics, offering comprehensive dental care across 13 modern clinics. Each space is equipped with advanced digital technologies that support accurate planning and consistent treatment outcomes.
+              </p>
+              <h3 className="text-xl font-['Gilda_Display'] text-black pt-2">Our Approach to Care</h3>
+              <p>
+                All treatments at Sky Dental Center follow a clear approach: designing results that look natural while maintaining function and long-term comfort. Using advanced digital diagnostics and precise planning, we ensure each case is carefully considered, supporting lasting oral health, confidence, and trust.
+              </p>
+              <h3 className="text-xl font-['Gilda_Display'] text-black pt-2">Our Dental Specialists</h3>
+              <p>
+                Our team consists of globally certified dental specialists with experience across general, restorative, orthodontic, paediatric, and cosmetic dentistry. Working together, we deliver care that is thorough, personalised, and aligned with individual needs.
               </p>
               <p>
-                Sky Dental Center is a distinguished, patient-centred dental institution renowned for its unwavering commitment to clinical excellence and exceptional standards of care. Over the course of more than a decade of dedicated service, the center has earned a reputation as one of Abu Dhabi most trusted destinations for comprehensive dental treatment, seamlessly combining advanced medical expertise with a refined and welcoming environment.
-              </p>
-              <p>
-                Crafted to meet the highest international healthcare standards, Sky Dental Center features 13 state-of-the-art clinics, each thoughtfully designed to ensure a superior treatment experience. Every clinic is equipped with the latest digital technologies, enabling precise diagnostics, minimally invasive procedures, and consistently outstanding clinical outcomes. This modern infrastructure reflects our belief that exceptional dental care begins with precision, comfort, and an atmosphere that instils confidence and ease.
-              </p>
-              <p>
-                At the heart of Sky Dental Center is our multidisciplinary team of highly qualified specialists. Each member of our medical team brings extensive clinical expertise, global certifications, and a profound dedication to excellence in patient care. Their collective experience covers the full spectrum of dental disciplines—from general dentistry and restorative treatments to orthodontics, paediatric care, and advanced cosmetic solutions.
-              </p>
-              <p>
-                What truly sets our team apart is not only their technical skill, but their genuine commitment to personalised, compassionate care tailored to the unique needs of each patient.
-              </p>
-              <p>
-                Sky Dental Center continues to elevate the standards of modern dentistry in Abu Dhabi by embracing innovation, investing in continuous professional development, and maintaining an unwavering focus on patient safety and wellbeing. Through this commitment, we aim to create an experience that transcends traditional dental treatment—one that delivers lasting oral health, aesthetic confidence, and a journey defined by trust, comfort, and excellence.
+                We are committed to delivering smiles that look natural, feel comfortable, and inspire confidence.
               </p>
             </div>
           </motion.div>
@@ -198,34 +198,18 @@ export default function AboutUsPageNew() {
               transition={{ duration: 0.6 }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-['Gilda_Display'] text-black mb-4 tracking-tight">
-                Our Vision & Mission
+            <h2 className="text-4xl md:text-5xl font-['Gilda_Display'] text-black mb-4 tracking-tight">
+              Vision & Mission
               </h2>
               <p className="text-base text-black/60 font-['Arial'] max-w-2xl mx-auto">
-                Our commitment to excellence and patient care drives everything we do.
+                Our commitment to excellence and patient care guides every smile we create.
               </p>
             </motion.div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {/* Mission Card */}
+              {/* Vision Card - first to match headline order */}
               <motion.div
                 initial={shouldReduceMotion ? {} : { opacity: 0, x: -30 }}
-                animate={visionInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.8 }}
-                className="bg-white border border-gray-100 rounded-3xl p-8 shadow-sm h-full flex flex-col"
-              >
-                <div className="w-12 h-12 bg-[#CBFF8F] rounded-xl flex items-center justify-center mb-6">
-                  <Target className="w-6 h-6 text-[#0C0060]" />
-                </div>
-                <h3 className="text-2xl font-['Gilda_Display'] text-black mb-4">Mission</h3>
-                <p className="text-base text-black/70 font-['Arial'] leading-relaxed flex-grow">
-                  To deliver comprehensive, high-quality dental care using advanced technology and evidence-based clinical practices. We are committed to creating healthy, confident smiles through personalised, safe, and comfortable treatment experiences.
-                </p>
-              </motion.div>
-
-              {/* Vision Card */}
-              <motion.div
-                initial={shouldReduceMotion ? {} : { opacity: 0, x: 30 }}
                 animate={visionInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.8 }}
                 className="bg-white border border-gray-100 rounded-3xl p-8 shadow-sm h-full flex flex-col"
@@ -235,7 +219,23 @@ export default function AboutUsPageNew() {
                 </div>
                 <h3 className="text-2xl font-['Gilda_Display'] text-black mb-4">Vision</h3>
                 <p className="text-base text-black/70 font-['Arial'] leading-relaxed flex-grow">
-                  To be the UAE's most trusted and distinguished dental centre, recognised for excellence in patient care, medical innovation, and superior treatment outcomes.
+                  To be the UAE's most trusted dental Center, recognised for creating healthy, confident smiles through excellence in patient care, innovation, and outstanding results.
+                </p>
+              </motion.div>
+
+              {/* Mission Card */}
+              <motion.div
+                initial={shouldReduceMotion ? {} : { opacity: 0, x: 30 }}
+                animate={visionInView ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.8 }}
+                className="bg-white border border-gray-100 rounded-3xl p-8 shadow-sm h-full flex flex-col"
+              >
+                <div className="w-12 h-12 bg-[#CBFF8F] rounded-xl flex items-center justify-center mb-6">
+                  <Target className="w-6 h-6 text-[#0C0060]" />
+                </div>
+                <h3 className="text-2xl font-['Gilda_Display'] text-black mb-4">Mission</h3>
+                <p className="text-base text-black/70 font-['Arial'] leading-relaxed flex-grow">
+                  To deliver high-quality dental care that creates healthy, natural, and confident smiles through personalised, safe, and comfortable treatments.
                 </p>
               </motion.div>
 
@@ -425,11 +425,8 @@ export default function AboutUsPageNew() {
               <h2 className="text-4xl md:text-5xl font-['Gilda_Display'] text-black mb-4 tracking-tight">
                 Technology & Innovation
               </h2>
-              <p className="text-base text-black/60 font-['Arial'] max-w-2xl mx-auto mb-6">
-                Sky Dental Center is equipped with cutting-edge technology that enhances clinical accuracy and improves patient comfort, including:
-              </p>
               <p className="text-base text-black/70 font-['Arial'] max-w-2xl mx-auto">
-                Technology is at the heart of our excellence—it ensures safer procedures, superior outcomes, and an elevated patient experience.
+                At Sky Dental Center, advanced technology supports the smile we create. Our cutting-edge systems enhance precision, ensure safer procedures, and make your experience as comfortable and efficient as possible.
               </p>
             </motion.div>
 
@@ -528,7 +525,7 @@ export default function AboutUsPageNew() {
                 Future Vision
               </h2>
               <p className="text-base text-black/70 font-['Arial'] max-w-3xl mx-auto leading-relaxed mb-8">
-                We are committed to continuous growth and innovation through:
+                We are dedicated to growing and innovating so patients enjoy the best dental experience possible. Our plans include:
               </p>
             </motion.div>
 
@@ -601,7 +598,7 @@ export default function AboutUsPageNew() {
             className="max-w-4xl mx-auto text-center"
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-['Gilda_Display'] text-black mb-8 tracking-tight leading-tight">
-              Sky Dental Center… Where healthy, confident, and radiant smiles begin.
+              Where healthy, confident smiles begin.
             </h2>
             <button
               onClick={() => openBookingSidebar()}
@@ -631,7 +628,7 @@ export default function AboutUsPageNew() {
               Patient Experience
             </h2>
             <p className="text-base text-black/70 font-['Arial'] max-w-3xl mx-auto leading-relaxed mb-8">
-              Your journey at Sky Dental Center begins with a warm, professional welcome and continues with a service experience designed around your comfort and expectations. We pride ourselves on:
+              Your journey at Sky Dental Center begins with a warm, welcoming reception and continues with care designed around your comfort and confidence. Every step of your visit is crafted to ensure a seamless, stress-free experience. We pride ourselves on:
             </p>
           </motion.div>
 
@@ -657,7 +654,7 @@ export default function AboutUsPageNew() {
             >
               <CheckCircle className="w-6 h-6 text-[#0C0060] mb-4" />
               <p className="text-base text-black/70 font-['Arial'] leading-relaxed">
-                Clear explanation of every treatment plan
+                Clear explanation of treatment plans
               </p>
             </motion.div>
 
@@ -692,7 +689,7 @@ export default function AboutUsPageNew() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-center text-base text-black/70 font-['Arial'] max-w-3xl mx-auto mt-12"
           >
-            Every detail is crafted to deliver an exceptional, world-class experience.
+            Every detail is designed to create an unforgettable experience
           </motion.p>
         </div>
       </section>
@@ -709,7 +706,7 @@ export default function AboutUsPageNew() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-['Gilda_Display'] text-black tracking-tight">
-              A Collection of Unforgettable<br />Guest Experiences
+              A Collection of Memorable Patient Experiences
             </h2>
           </motion.div>
 

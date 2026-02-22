@@ -82,9 +82,7 @@ export default function ContactUsPage() {
 
             {/* Description */}
             <p className="text-lg text-[#1b1b1b] font-['Arial'] leading-relaxed mb-10 max-w-3xl mx-auto">
-              We're here to answer your questions and help you schedule your appointment.
-              <br />
-              Reach out to us through any of the channels below.
+              We are here to assist with your enquiries and support you in scheduling your appointment with ease. Connect with us through any of the channels below, and our team will be pleased to help.
             </p>
 
             {/* Feature Pills */}
@@ -121,7 +119,7 @@ export default function ContactUsPage() {
               Get In Touch
             </h2>
             <p className="text-base text-black font-['Arial']">
-              Choose the most convenient way to reach us. Our team is ready to assist you.
+              Choose the most convenient way to connect with us. Our team is always ready to assist and guide you.
             </p>
           </motion.div>
 
@@ -138,9 +136,9 @@ export default function ContactUsPage() {
                 <Phone className="w-8 h-8 text-[#0C0060]" />
               </div>
               <h3 className="text-2xl font-['Gilda_Display'] text-black mb-4">Phone</h3>
-              <p className="text-base font-['Arial'] font-bold text-[#0c0060] mb-1">026677448</p>
+              <p className="text-base font-['Arial'] font-bold text-[#0c0060] mb-1">026 677 448</p>
               <p className="text-xs font-['Arial'] text-black opacity-70">
-                Call us for appointments or inquiries
+                Call us to book appointments or for any enquiries.
               </p>
             </motion.div>
 
@@ -157,7 +155,7 @@ export default function ContactUsPage() {
               <h3 className="text-2xl font-['Gilda_Display'] text-black mb-4">Email</h3>
               <p className="text-base font-['Arial'] font-bold text-[#0c0060] mb-1">info@skydc.ae</p>
               <p className="text-xs font-['Arial'] text-black opacity-70">
-                Send us a message anytime
+                Reach out to us anytime—we're happy to assist.
               </p>
             </motion.div>
 
@@ -172,10 +170,9 @@ export default function ContactUsPage() {
                 <MapPin className="w-8 h-8 text-[#0C0060]" />
               </div>
               <h3 className="text-2xl font-['Gilda_Display'] text-black mb-4">Location</h3>
-              <p className="text-base font-['Arial'] font-bold text-[#0c0060] mb-1">Villa 45 , Alforsan street , Khalifa city , Abu Dhabi , UAE</p>
-              <p className="text-xs font-['Arial'] text-black mb-4"></p>
+              <p className="text-base font-['Arial'] font-bold text-[#0c0060] mb-1">Villa 45, Al Forsan Street, Khalifa City, Abu Dhabi, UAE</p>
               <p className="text-xs font-['Arial'] text-black opacity-70">
-                Visit us for in-person consultations
+                Visit us for personalised, in-person consultations.
               </p>
             </motion.div>
 
@@ -190,10 +187,10 @@ export default function ContactUsPage() {
                 <Clock className="w-8 h-8 text-[#0C0060]" />
               </div>
               <h3 className="text-2xl font-['Gilda_Display'] text-black mb-4">Working Hours</h3>
-              <p className="text-base font-['Arial'] font-bold text-[#0c0060] mb-1">10am - 10pm</p>
-              <p className="text-xs font-['Arial'] text-black mb-4">7 Days a week</p>
+              <p className="text-base font-['Arial'] font-bold text-[#0c0060] mb-1">10:00 AM – 10:00 PM</p>
+              <p className="text-xs font-['Arial'] text-black mb-4">7 days a week</p>
               <p className="text-xs font-['Arial'] text-black opacity-70">
-                Open every day
+                Open daily for your convenience.
               </p>
             </motion.div>
           </div>
@@ -215,7 +212,7 @@ export default function ContactUsPage() {
               Send Us a Message
             </h2>
             <p className="text-base text-black font-['Arial']">
-              Fill out the form below and we'll get back to you as soon as possible.
+              Complete the form below and our team will get back to you promptly.
             </p>
           </motion.div>
 
@@ -268,7 +265,7 @@ export default function ContactUsPage() {
                       onChange={handleInputChange}
                       required
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#0C0060] font-['Arial'] text-black bg-[#f9fafb]"
-                      placeholder="Enter your email"
+                      placeholder="Enter your email address"
                     />
                   </div>
                 </div>
@@ -303,7 +300,7 @@ export default function ContactUsPage() {
                       onChange={handleInputChange}
                       required
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#0C0060] font-['Arial'] text-black bg-[#f9fafb]"
-                      placeholder="What is this about?"
+                      placeholder="Let us know how we can help"
                     />
                   </div>
                 </div>
@@ -360,7 +357,7 @@ export default function ContactUsPage() {
               Visit Our Clinic
             </h2>
             <p className="text-base text-black font-['Arial']">
-              Located in the heart of Abu Dhabi, we welcome you to experience world-class dental care in a comfortable and modern setting.
+              Located in the heart of Abu Dhabi, we invite you to experience exceptional dental care in a refined, comfortable, and modern setting.
             </p>
           </motion.div>
 
@@ -380,7 +377,7 @@ export default function ContactUsPage() {
                   </div>
                   <div>
                     <h3 className="text-2xl font-['Gilda_Display'] text-black mb-2">Our Address</h3>
-                    <p className="text-base font-['Arial'] text-black font-bold">Villa 45 , Alforsan street , Khalifa city , Abu Dhabi , UAE</p>
+                    <p className="text-base font-['Arial'] text-black font-bold">Villa 45, Al Forsan Street, Khalifa City, Abu Dhabi, UAE</p>
                   </div>
                 </div>
               </div>
@@ -397,19 +394,23 @@ export default function ContactUsPage() {
                       <div className="flex items-center gap-2">
                         <div className="w-2 h-2 bg-[#CBFF8F] rounded-full"></div>
                         <p className="text-sm font-['Arial'] text-black">
-                          <span className="font-bold">10am - 10pm</span>
+                          <span className="font-bold">10:00 AM – 10:00 PM</span>
                         </p>
                       </div>
                       <div className="flex items-center gap-2">
                         <div className="w-2 h-2 bg-[#CBFF8F] rounded-full"></div>
                         <p className="text-sm font-['Arial'] text-black">
-                          <span className="font-bold">7 Days a week</span>
+                          <span className="font-bold">7 days a week</span>
                         </p>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
+
+              <p className="text-sm font-['Arial'] text-black/80 leading-relaxed mt-6">
+                Sky Dental Center is a modern, full-service dental clinic offering comprehensive care across all specialties. Our professional and experienced doctors are highly skilled in the latest treatment methods, delivering precise, advanced, and patient-focused care in a comfortable, contemporary setting.
+              </p>
             </motion.div>
 
             {/* Google Maps Embed */}
@@ -460,9 +461,7 @@ export default function ContactUsPage() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-['Gilda_Display'] text-black tracking-tight">
-              A Collection of Unforgettable
-              <br />
-              Guest Experiences
+              A Collection of Memorable Patient Experiences
             </h2>
           </motion.div>
 

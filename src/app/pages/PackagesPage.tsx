@@ -28,8 +28,8 @@ const packages: Package[] = [
   {
     id: 'back-to-school',
     icon: <GraduationCap className="w-6 h-6 text-[#0C0060]" />,
-    title: 'Back To School',
-    description: 'Give your child the perfect start to the academic year with our premium Back to School package designed to safeguard oral health, boost confidence, and support long-term wellbeing.',
+    title: 'Back to School',
+    description: 'Give your child a confident start to the academic year with our exclusive Back to School package, designed to protect oral health, enhance confidence, and support long-term wellbeing.',
     features: [
       'Advanced dental assessments',
       'Professional cleaning',
@@ -40,21 +40,21 @@ const packages: Package[] = [
     id: 'healthy-smiles',
     icon: <HeartPulse className="w-6 h-6 text-[#0C0060]" />,
     title: 'Sky Healthy Smiles',
-    description: 'Our signature package delivers a full-spectrum wellness experience for individuals and families committed to superior oral health.',
+    description: 'Our signature Sky Healthy Smiles package offers a comprehensive wellness experience for individuals and families dedicated to maintaining exceptional oral health.',
     features: [
-      'Expert examinations',
-      'Deep cleaning',
-      'Preventive guidance'
+      'Expert dental examinations',
+      'Deep professional cleaning',
+      'Preventive care guidance'
     ]
   },
   {
     id: 'hollywood-smile',
     icon: <Sparkles className="w-6 h-6 text-[#0C0060]" />,
     title: 'Hollywood Smile',
-    description: 'Transform your smile into a work of art with our luxury Hollywood Smile package crafted using cutting-edge cosmetic dentistry and premium veneer artistry.',
+    description: 'Transform your smile into a refined expression of confidence with our luxury Hollywood Smile package, crafted using advanced cosmetic dentistry and premium veneer artistry.',
     features: [
       'Digital smile design',
-      'Premium veneer artistry',
+      'Premium veneer craftsmanship',
       'Customised facial harmony'
     ]
   },
@@ -62,33 +62,33 @@ const packages: Package[] = [
     id: 'whitening-cleaning',
     icon: <Sparkle className="w-6 h-6 text-[#0C0060]" />,
     title: 'Whitening & Cleaning',
-    description: 'Unveil the brilliance of your smile with our professional Whitening & Cleaning package. Meticulously designed treatment for immediate, luminous results.',
+    description: 'Reveal the natural brilliance of your smile with our professional Whitening & Cleaning package—meticulously designed to deliver immediate, radiant results.',
     features: [
       'Advanced stain removal',
-      'Clinical whitening technology',
-      'Immediate luminous results'
+      'Clinical-grade whitening technology',
+      'Instantly luminous finish'
     ]
   },
   {
     id: 'consultation',
     icon: <Smile className="w-6 h-6 text-[#0C0060]" />,
-    title: 'Free Braces Consultation',
-    description: 'Begin your orthodontic transformation with absolute clarity and confidence. Your dream smile starts with a conversation free of charge.',
+    title: 'Braces Consultation',
+    description: 'Begin your orthodontic journey with clarity and confidence. Your path to a beautifully aligned smile starts with a complimentary consultation.',
     features: [
       'Detailed bite analysis',
-      'Orthodontic assessment',
+      'Comprehensive orthodontic assessment',
       'Personalised treatment roadmap'
     ]
   },
   {
     id: 'discount',
     icon: <Percent className="w-6 h-6 text-[#0C0060]" />,
-    title: 'Member Discount 40%',
-    description: 'Sky Dental Center celebrates loyalty with an exclusive 40% discount for members on selected treatments. World-class dentistry, enhanced with exceptional value.',
+    title: 'Member Discount – 40%',
+    description: 'At Sky Dental Center, we value loyalty. Members enjoy an exclusive 40% discount on selected treatments—exceptional care complemented by outstanding value.',
     features: [
       '40% off selected treatments',
-      'Exclusive member benefits',
-      'Consistent high-quality care'
+      'Exclusive member privileges',
+      'Consistently high standards of care'
     ]
   }
 ]
@@ -97,28 +97,28 @@ const paymentCards = [
   {
     id: 'homat-al-watan',
     name: 'Homat Al Watan',
-    description: 'We proudly accept Homat Al Watan cards, offering exclusive benefits and discounts to UAE Armed Forces members, veterans, and their families.',
+    description: 'We proudly accept Homat Al Watan cards, providing exclusive benefits for UAE Armed Forces members, veterans, and their families.',
     logo: '/logos/homatalwatan.png',
     color: '#0C0060'
   },
   {
     id: 'tabby',
     name: 'Tabby',
-    description: 'Split your dental treatment costs into interest-free installments with Tabby. Buy now, pay later with flexible payment options.',
+    description: 'Enjoy interest-free installment plans with Tabby. Receive your treatment today and pay over time with ease.',
     logo: '/logos/tabby.svg',
     color: '#000000'
   },
   {
     id: 'tamara',
     name: 'Tamara',
-    description: 'Enjoy flexible payment plans with Tamara. Pay for your dental care in convenient installments with no hidden fees.',
+    description: 'Benefit from flexible payment solutions with Tamara, allowing you to manage your dental care costs comfortably and transparently.',
     logo: '/logos/tamara.png',
     color: '#000000'
   },
   {
     id: 'faza',
     name: 'Faza',
-    description: 'Faza cardholders receive special discounts and benefits on all our dental services. Present your card to enjoy exclusive savings.',
+    description: 'Faza cardholders receive special discounts and exclusive benefits across our dental services. Simply present your card to enjoy preferred savings.',
     logo: '/logos/fazaa.svg',
     color: '#0C0060'
   }
@@ -171,7 +171,7 @@ export default function PackagesPage() {
 
             {/* Description */}
             <p className="text-lg text-[#1b1b1b] font-['Arial'] leading-relaxed mb-10 max-w-3xl mx-auto">
-              At Sky Dental Center, we curate a distinguished collection of exclusive dental packages and luxury smile offers designed to elevate every aspect of your oral health and aesthetics.
+              At Sky Dental Center, we present a carefully curated selection of exclusive dental packages and premium smile offers, thoughtfully designed to enhance both your oral health and dental aesthetics. Each offering reflects our commitment to personalised care, refined excellence, and long-lasting results—delivered within a sophisticated and welcoming environment.
             </p>
 
             {/* Badges */}
@@ -207,7 +207,7 @@ export default function PackagesPage() {
               Premium Dental Packages
             </h2>
             <p className="text-lg text-[#1b1b1b] font-['Arial'] leading-relaxed max-w-3xl mx-auto">
-              Whether you're seeking a radiant Hollywood smile, orthodontic transformation, or family wellness, our offers are tailored to meet your needs.
+              Whether you are seeking a radiant Hollywood smile, an orthodontic transformation, or comprehensive family dental care, our premium packages are thoughtfully tailored to meet your individual needs and lifestyle.
             </p>
           </motion.div>
 
@@ -290,7 +290,7 @@ export default function PackagesPage() {
               Accepted Payment Cards
             </h2>
             <p className="text-lg text-[#1b1b1b] font-['Arial'] leading-relaxed max-w-3xl mx-auto">
-              We accept a variety of payment methods and cards to make your dental care more accessible and convenient. Choose the payment option that works best for you.
+              We offer a range of flexible payment options to ensure your dental care is both accessible and convenient.
             </p>
           </motion.div>
 
@@ -348,7 +348,7 @@ export default function PackagesPage() {
             className="text-center mt-12"
           >
             <p className="text-sm text-gray-600 font-['Arial']">
-              For more information about payment options and eligibility, please contact our reception team.
+              For further details on payment options and eligibility, please contact our reception team.
             </p>
           </motion.div>
         </div>
@@ -364,7 +364,7 @@ export default function PackagesPage() {
             className="text-center mb-16"
           >
             <h2 className="text-5xl font-['Gilda_Display'] text-black tracking-tight">
-              A Collection of Unforgettable<br />Guest Experiences
+              A Collection of Memorable Patient Experiences
             </h2>
           </motion.div>
 

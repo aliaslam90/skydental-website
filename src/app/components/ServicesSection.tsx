@@ -18,35 +18,35 @@ const services = [
     id: 'general-dentistry',
     Icon: GeneralDentistryIcon,
     title: 'General Dentistry',
-    description: 'Comprehensive dental care for healthy teeth and gums, including checkups, cleanings, and preventive treatments.',
+    description: 'Care focused on prevention, early diagnosis, and maintaining healthy teeth and gums, including checkups, cleanings, and preventive treatments.',
     bgColor: '#CBFF8F'
   },
   {
     id: 'cosmetic-dentistry',
     Icon: CosmeticDentistryIcon,
     title: 'Cosmetic Dentistry',
-    description: 'Transform your smile with advanced aesthetic treatments including whitening, veneers, and smile design.',
+    description: 'Transform your smile with advanced treatments; including whitening, veneers, and smile designs tailored to enhance your natural beauty and confidence.',
     bgColor: '#CBFF8F'
   },
   {
     id: 'orthodontics',
     Icon: OrthodonticsIcon,
     title: 'Orthodontics',
-    description: 'Straighten your teeth and correct misalignments with braces, Invisalign, and modern orthodontic solutions.',
+    description: 'Straighten and align your teeth with modern orthodontic treatments, including braces, Invisalign, and tailored solutions for a confident, healthy smile.',
     bgColor: '#CBFF8F'
   },
   {
     id: 'pediatric-dentistry',
     Icon: PediatricDentistryIcon,
     title: 'Pediatric Dentistry',
-    description: 'Gentle, specialized dental care for children and teens in a welcoming and comfortable environment.',
+    description: 'Gentle, expert dental care for children and teens in a welcoming environment, designed to keep their smiles healthy and confident.',
     bgColor: '#CBFF8F'
   },
   {
     id: 'advanced-restorative',
     Icon: ImplantAdvancedCareIcon,
     title: 'Implant & Advanced Care',
-    description: 'Complex treatments for structural and functional restoration including implants and full-mouth restoration.',
+    description: 'Advanced dental treatments for restoring function, structure, and confidence, including implants and full-mouth rehabilitation.',
     bgColor: '#CBFF8F'
   }
 ]
@@ -145,7 +145,7 @@ export default function ServicesSection() {
               className="text-black text-[32px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-1.44px] text-center mb-[32px] md:mb-[48px] relative z-10"
               style={{ fontFamily: "'Gilda Display', serif" }}
             >
-              Our Services
+              What Do You Need Today
             </h2>
 
             {/* Services Grid - All 5 cards in one row on large screens */}
