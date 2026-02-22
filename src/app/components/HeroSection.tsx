@@ -39,6 +39,8 @@ export default function HeroSection() {
         >
           <source src="/hero-video.mp4" type="video/mp4" />
         </video>
+        {/* Transparent dark overlay for text readability */}
+        <div className="absolute inset-0 bg-black/35" aria-hidden />
         {/* Gradient Overlay */}
         <div 
           className="absolute inset-0 bg-gradient-to-b from-transparent from-[44.828%] to-[rgba(0,0,0,0.7)]"
@@ -60,7 +62,7 @@ export default function HeroSection() {
               className="text-white text-[32px] md:text-[50px] lg:text-[70px] leading-[1.2] tracking-[-2.1px]"
               style={{ fontFamily: "'Gilda Display', serif" }}
             >
-              SKY Dental Center
+              Sky Dental Center
               <br />
               <span className="inline-block whitespace-nowrap">Your smile. Your confidence.</span>
               <br />
