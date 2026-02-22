@@ -368,7 +368,7 @@ export default function FAQsPage() {
             <h2 className="text-2xl md:text-3xl font-['Gilda_Display'] text-black text-center mb-6 tracking-tight">
               Browse by Category
             </h2>
-            <div className="overflow-x-auto overflow-y-hidden pb-2 -mx-6 px-6 scroll-smooth">
+            <div className="overflow-x-auto overflow-y-hidden pb-2 -mx-6 px-6 scroll-smooth hide-scrollbar">
               <div className="flex items-stretch gap-2.5 justify-start min-w-max">
                 {categories.map((category, index) => (
                   <motion.button
@@ -379,13 +379,8 @@ export default function FAQsPage() {
                     onClick={() => setSelectedCategory(category.id)}
                     className={`${
                       selectedCategory === category.id ? category.color : 'bg-white border border-[#e5e7eb]'
-                    } h-10 rounded-full text-[13px] font-['Arial'] font-medium text-black hover:shadow-md transition-all flex items-center gap-2 shrink-0 px-4 whitespace-nowrap`}
+                    } h-10 rounded-full text-[13px] font-['Arial'] font-medium text-black hover:shadow-md transition-all flex items-center justify-center shrink-0 px-4 whitespace-nowrap`}
                   >
-                    {category.Icon ? (
-                      <category.Icon className="w-4 h-4 shrink-0" />
-                    ) : (
-                      <span className="text-base shrink-0">{category.icon}</span>
-                    )}
                     <span>{category.label}</span>
                   </motion.button>
                 ))}
