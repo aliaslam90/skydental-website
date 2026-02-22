@@ -126,8 +126,40 @@ export default function ServicesPage() {
   return (
     <div className="bg-white">
       <ScrollSection>
-      {/* Services list at top - What Do You Need Today */}
-      <section ref={servicesRef} className="py-24 bg-[#f8f9fa] pt-28">
+      {/* Banner Section - on top */}
+      <section
+        ref={heroRef}
+        className="relative min-h-[380px] overflow-hidden py-20 pt-28"
+        style={{
+          background: 'linear-gradient(160.216deg, rgb(224, 237, 255) 0%, rgb(255, 255, 255) 50%, rgb(224, 237, 255) 100%)'
+        }}
+      >
+        <div className="absolute -left-24 top-40 w-64 h-64 bg-[rgba(203,255,143,0.2)] rounded-full blur-[64px]" />
+        <div className="absolute right-32 top-80 w-64 h-64 bg-[rgba(12,0,96,0.1)] rounded-full blur-[64px]" />
+        <div className="container mx-auto px-6 py-12 relative z-10">
+          <motion.div
+            initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
+            animate={heroInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8 }}
+            className="max-w-4xl mx-auto text-center"
+          >
+            <div className="mb-6 flex justify-center">
+              <SectionBadge icon="✚" text="Relief. Health. Confidence." />
+            </div>
+            <h1 className="text-4xl md:text-5xl font-['Gilda_Display'] text-black mb-6 tracking-tight">
+              From relieving pain to revealing your most beautiful smile
+            </h1>
+            <p className="text-lg text-black/80 font-['Arial'] leading-relaxed max-w-3xl mx-auto">
+              Fast, gentle, and complete care for urgent needs, lifelong oral health, and natural-looking cosmetic results for every stage of your life.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+      </ScrollSection>
+
+      <ScrollSection>
+      {/* What Do You Need Today - below banner */}
+      <section ref={servicesRef} className="py-24 bg-[#f8f9fa]">
         <div className="container mx-auto px-6">
           <motion.div
             initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
@@ -157,38 +189,6 @@ export default function ServicesPage() {
               ))}
             </div>
           </div>
-        </div>
-      </section>
-      </ScrollSection>
-
-      <ScrollSection>
-      {/* Banner Section */}
-      <section
-        ref={heroRef}
-        className="relative min-h-[380px] overflow-hidden py-20"
-        style={{
-          background: 'linear-gradient(160.216deg, rgb(224, 237, 255) 0%, rgb(255, 255, 255) 50%, rgb(224, 237, 255) 100%)'
-        }}
-      >
-        <div className="absolute -left-24 top-40 w-64 h-64 bg-[rgba(203,255,143,0.2)] rounded-full blur-[64px]" />
-        <div className="absolute right-32 top-80 w-64 h-64 bg-[rgba(12,0,96,0.1)] rounded-full blur-[64px]" />
-        <div className="container mx-auto px-6 py-12 relative z-10">
-          <motion.div
-            initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
-            animate={heroInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto text-center"
-          >
-            <div className="mb-6 flex justify-center">
-              <SectionBadge icon="✚" text="Relief. Health. Confidence." />
-            </div>
-            <h1 className="text-4xl md:text-5xl font-['Gilda_Display'] text-black mb-6 tracking-tight">
-              From relieving pain to revealing your most beautiful smile
-            </h1>
-            <p className="text-lg text-black/80 font-['Arial'] leading-relaxed max-w-3xl mx-auto">
-              Fast, gentle, and complete care for urgent needs, lifelong oral health, and natural-looking cosmetic results for every stage of your life.
-            </p>
-          </motion.div>
         </div>
       </section>
       </ScrollSection>
