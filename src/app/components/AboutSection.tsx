@@ -28,7 +28,7 @@ export default function AboutSection() {
   }
 
   return (
-    <section id="about" className="py-[50px] md:py-[60px] lg:py-[70px] px-[16px] md:px-[20px] lg:px-[25px]">
+    <section id="about" className="py-[28px] md:py-[36px] lg:py-[44px] px-[16px] md:px-[20px] lg:px-[25px]">
       <motion.div
         ref={ref}
         variants={containerVariants}
@@ -37,7 +37,7 @@ export default function AboutSection() {
         className="max-w-[1390px] mx-auto"
       >
         {/* Header */}
-        <div className="flex flex-col lg:flex-row items-start justify-between gap-[24px] md:gap-[32px] lg:gap-0 mb-[40px] md:mb-[50px] lg:mb-[60px] max-w-[1294px] mx-auto">
+        <div className="flex flex-col lg:flex-row items-start justify-between gap-[16px] md:gap-[20px] lg:gap-0 max-w-[1294px] mx-auto">
           <motion.div variants={itemVariants}>
             <div className="inline-flex items-center gap-[10px] h-[40px] md:h-[45px] px-[20px] md:px-[25px] py-[9px] md:py-[11px] rounded-[35px] backdrop-blur-[10px] bg-[rgba(255,255,255,0.15)] border border-[#0061af]">
               <div className="w-[13.627px] h-[13.627px] flex-shrink-0">

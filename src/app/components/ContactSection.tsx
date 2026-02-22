@@ -203,7 +203,7 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="contact" className="py-[70px] px-[25px]">
+    <section id="contact" className="py-[36px] md:py-[44px] px-[25px]">
       <div className="max-w-[1390px] mx-auto">
         <motion.div
           ref={ref}
@@ -212,7 +212,7 @@ export default function ContactSection() {
           transition={{ duration: shouldReduceMotion ? 0 : 0.8 }}
           className="rounded-[24px] p-[48px]"
         >
-          <div className="flex flex-col lg:flex-row gap-[64px]">
+          <div className="flex flex-col lg:flex-row gap-[32px] md:gap-[40px]">
             {/* Left - Image */}
             <motion.div
               initial={{ x: -50, opacity: 0 }}

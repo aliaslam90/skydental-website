@@ -47,7 +47,7 @@ export default function InsurancePartnersSection() {
   return (
     <section
       ref={ref}
-      className="py-24 overflow-hidden"
+      className="py-[28px] md:py-[36px] overflow-hidden"
       style={{
         background: '#CBFF8F',
       }}
@@ -57,7 +57,7 @@ export default function InsurancePartnersSection() {
           initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-8"
         >
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-white rounded-full px-4 py-2 mb-6 border border-[#e5e7eb]">

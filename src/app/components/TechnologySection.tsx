@@ -20,7 +20,7 @@ export default function TechnologySection() {
   }, [isInView])
 
   return (
-    <section className="py-[50px] md:py-[60px] lg:py-[70px] px-[16px] md:px-[20px] lg:px-[25px]">
+    <section className="py-[28px] md:py-[36px] lg:py-[44px] px-[16px] md:px-[20px] lg:px-[25px]">
       <div className="max-w-[1390px] mx-auto">
         <motion.div
           ref={ref}

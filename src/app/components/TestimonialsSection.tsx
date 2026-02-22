@@ -69,7 +69,7 @@ export default function TestimonialsSection() {
   ]
 
   return (
-    <section className="py-[50px] md:py-[60px] lg:py-[70px] px-[16px] md:px-[20px] lg:px-[25px]">
+    <section className="py-[28px] md:py-[36px] lg:py-[44px] px-[16px] md:px-[20px] lg:px-[25px]">
       <div className="max-w-[1390px] mx-auto">
         <motion.div
           ref={ref}
@@ -78,9 +78,9 @@ export default function TestimonialsSection() {
           transition={{ duration: shouldReduceMotion ? 0 : 0.8 }}
           className="rounded-[24px] p-[24px] md:p-[36px] lg:p-[48px]"
         >
-          <div className="flex flex-col lg:flex-row gap-[32px] md:gap-[48px] lg:gap-[64px]">
+          <div className="flex flex-col lg:flex-row gap-[24px] md:gap-[32px] lg:gap-[40px]">
             {/* Left Content */}
-            <div className="flex flex-col gap-[24px] md:gap-[32px] flex-1">
+            <div className="flex flex-col gap-[16px] md:gap-[20px] flex-1">
               {/* Heading */}
               <h2
                 className="text-black text-[32px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-1.44px]"

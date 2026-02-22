@@ -39,7 +39,7 @@ export default function WhyChooseSection() {
   }
 
   return (
-    <section className="py-[50px] md:py-[60px] lg:py-[70px] px-[16px] md:px-[20px] lg:px-[25px]">
+    <section className="py-[28px] md:py-[36px] lg:py-[44px] px-[16px] md:px-[20px] lg:px-[25px]">
       <motion.div
         ref={ref}
         variants={containerVariants}
@@ -47,9 +47,9 @@ export default function WhyChooseSection() {
         animate={isInView ? 'visible' : 'hidden'}
         className="max-w-[1390px] mx-auto"
       >
-        <div className="flex flex-col lg:flex-row items-start gap-[32px] md:gap-[40px] lg:gap-[48px] max-w-[1299px] mx-auto relative">
+        <div className="flex flex-col lg:flex-row items-start gap-[20px] md:gap-[28px] lg:gap-[32px] max-w-[1299px] mx-auto relative">
           {/* Left Content */}
-          <motion.div variants={itemVariants} className="flex flex-col gap-[32px] md:gap-[40px] lg:gap-[48px] flex-1 w-full">
+          <motion.div variants={itemVariants} className="flex flex-col gap-[20px] md:gap-[24px] lg:gap-[28px] flex-1 w-full">
             <h2
               className="text-black text-[32px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-1.44px] capitalize"
               style={{ fontFamily: "'Gilda Display', serif" }}
@@ -61,7 +61,7 @@ export default function WhyChooseSection() {
               Personalised care that prioritises your comfort, confidence, and smile.
             </p>
 
-            <div className="flex flex-col gap-[20px] md:gap-[24px] w-full lg:max-w-[478px]">
+            <div className="flex flex-col gap-[12px] md:gap-[16px] w-full lg:max-w-[478px]">
               <ReasonItem number="1" text="Cutting-edge technology for precise, minimally invasive treatments." />
               <ReasonItem number="2" text="Experienced specialists working together to create natural, confident results." />
               <ReasonItem number="3" text="Highest standards of safety and hygiene." />

@@ -122,7 +122,7 @@ export default function ServicesSection() {
 
   return (
     <div className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
-      <section id="services" className="pt-[30px] pb-[50px] md:pt-[40px] md:pb-[70px] w-full">
+      <section id="services" className="pt-[20px] pb-[28px] md:pt-[28px] md:pb-[36px] w-full">
         <motion.div
           ref={ref}
           variants={containerVariants}
@@ -142,7 +142,7 @@ export default function ServicesSection() {
 
             {/* Title */}
             <h2
-              className="text-black text-[32px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-1.44px] text-center mb-[32px] md:mb-[48px] relative z-10"
+              className="text-black text-[32px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-1.44px] text-center mb-[20px] md:mb-[28px] relative z-10"
               style={{ fontFamily: "'Gilda Display', serif" }}
             >
               What Do You Need Today

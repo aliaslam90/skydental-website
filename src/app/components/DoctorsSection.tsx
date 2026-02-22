@@ -45,13 +45,13 @@ export default function DoctorsSection() {
   }
 
   return (
-    <section id="doctors" className="py-[50px] md:py-[60px] lg:py-[70px] px-[16px] md:px-[20px] lg:px-[25px] bg-[#e0edff]">
+    <section id="doctors" className="py-[28px] md:py-[36px] lg:py-[44px] px-[16px] md:px-[20px] lg:px-[25px] bg-[#e0edff]">
       <div className="max-w-[1390px] mx-auto">
         <motion.div
           initial={{ y: 30, opacity: 0 }}
           animate={isInView ? { y: 0, opacity: 1 } : { y: 30, opacity: 0 }}
           transition={{ duration: shouldReduceMotion ? 0 : 0.8 }}
-          className="text-center mb-[32px] md:mb-[48px] flex flex-col items-center gap-[24px] md:gap-[32px]"
+          className="text-center mb-[20px] md:mb-[28px] flex flex-col items-center gap-[16px] md:gap-[20px]"
         >
           <h2
             className="text-black text-[32px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-1.44px] max-w-[900px]"
