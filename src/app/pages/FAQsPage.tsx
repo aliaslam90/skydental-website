@@ -3,7 +3,7 @@
 import { motion, useReducedMotion, useInView } from 'motion/react'
 import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Home, ChevronRight } from 'lucide-react'
+import { Home, ChevronRight, ChevronDown } from 'lucide-react'
 import imgImage from "../../assets/e2295a1a1a2bc348414dcc117de577c691164137.png"
 import imgImage1 from "../../assets/c5fbf2bb2ed01ea6f6ce38835da33519e2db95fe.png"
 import imgImage2 from "../../assets/27cea6501d6677b5b8f9f08502ce76c7a193f7f8.png"
@@ -378,7 +378,7 @@ export default function FAQsPage() {
                     transition={{ duration: 0.35, delay: index * 0.03 }}
                     onClick={() => setSelectedCategory(category.id)}
                     className={`${
-                      selectedCategory === category.id ? category.color : 'bg-white border border-[#e5e7eb]'
+                      selectedCategory === category.id ? 'bg-[#CBFF8F] border border-[#CBFF8F]' : 'bg-white border border-[#e5e7eb]'
                     } h-10 rounded-full text-[13px] font-['Arial'] font-medium text-black hover:shadow-md transition-all flex items-center justify-center shrink-0 px-4 whitespace-nowrap`}
                   >
                     <span>{category.label}</span>
@@ -420,11 +420,15 @@ export default function FAQsPage() {
                       >
                         <button
                           onClick={() => toggleFAQ(faq.id)}
-                          className="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-gray-50 transition-colors"
+                          className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left hover:bg-gray-50 transition-colors"
                         >
-                          <span className="text-base md:text-lg font-['Arial'] font-semibold text-black">
+                          <span className="text-base md:text-lg font-['Arial'] font-semibold text-black flex-1">
                             {faq.question}
                           </span>
+                          <ChevronDown
+                            className={`w-5 h-5 shrink-0 text-[#0C0060] transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}
+                            aria-hidden
+                          />
                         </button>
 
                         {/* Answer */}
