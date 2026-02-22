@@ -128,12 +128,17 @@ export default function CareersPage() {
             initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
             animate={heroInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto text-center mt-[24px] mr-[296px] mb-[0px] ml-[296px]"
+            className="max-w-4xl mx-auto text-center"
           >
             {/* Title */}
-            <h1 className="text-5xl md:text-6xl font-['Gilda_Display'] text-black mb-6 tracking-tight leading-tight">
-              Shape Your Future with Sky Dental Center
+            <h1 className="text-5xl md:text-6xl font-['Gilda_Display'] text-black mb-3 tracking-tight leading-tight">
+              Careers
             </h1>
+
+            {/* Subtitle */}
+            <p className="text-2xl md:text-3xl font-['Gilda_Display'] text-black/90 mb-6">
+              Shape Your Future with Sky Dental Center
+            </p>
 
             {/* Description */}
             <p className="text-base text-[#4b5563] font-['Arial'] leading-relaxed mb-10 max-w-3xl mx-auto">

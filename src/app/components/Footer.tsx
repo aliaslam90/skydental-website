@@ -28,7 +28,7 @@ export default function Footer() {
                   </div>
                 </div>
                 <p className="text-black text-[13px] md:text-[14px] leading-[1.6]">
-                  Sky Dental Center is a modern full-service dental clinic. Professional, experienced doctors who perfectly know all modern methods of treatment.
+                  Sky Dental Center is a modern, full-service dental clinic offering comprehensive care across all specialties. Our professional and experienced doctors are highly skilled in the latest treatment methods, delivering precise, advanced, and patient-focused care in a comfortable, contemporary setting.
                 </p>
               </div>
 
