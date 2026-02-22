@@ -3,7 +3,7 @@
 import { motion, useReducedMotion, useInView } from 'motion/react'
 import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Home, ChevronRight, Plus, Minus } from 'lucide-react'
+import { Home, ChevronRight } from 'lucide-react'
 import imgImage from "../../assets/e2295a1a1a2bc348414dcc117de577c691164137.png"
 import imgImage1 from "../../assets/c5fbf2bb2ed01ea6f6ce38835da33519e2db95fe.png"
 import imgImage2 from "../../assets/27cea6501d6677b5b8f9f08502ce76c7a193f7f8.png"
@@ -401,16 +401,9 @@ export default function FAQsPage() {
                 transition={{ duration: 0.6 }}
               >
                 {/* Category Title */}
-                <div className="flex items-center gap-3 mb-8">
-                  {activeCategoryData.Icon ? (
-                    <activeCategoryData.Icon className="w-8 h-8 text-black" />
-                  ) : (
-                    <span className="text-3xl">{activeCategoryData.icon}</span>
-                  )}
-                  <h2 className="text-3xl md:text-4xl font-['Gilda_Display'] text-black">
-                    {activeCategoryData.title}
-                  </h2>
-                </div>
+                <h2 className="text-3xl md:text-4xl font-['Gilda_Display'] text-black mb-8">
+                  {activeCategoryData.title}
+                </h2>
 
                 {/* FAQ Accordion */}
                 <div className="space-y-4">
@@ -429,16 +422,9 @@ export default function FAQsPage() {
                           onClick={() => toggleFAQ(faq.id)}
                           className="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-gray-50 transition-colors"
                         >
-                          <span className="text-base md:text-lg font-['Arial'] font-semibold text-black pr-4">
+                          <span className="text-base md:text-lg font-['Arial'] font-semibold text-black">
                             {faq.question}
                           </span>
-                          <div className="shrink-0 w-8 h-8 rounded-full bg-[#0C0060] flex items-center justify-center text-white">
-                            {isExpanded ? (
-                              <Minus className="w-4 h-4" />
-                            ) : (
-                              <Plus className="w-4 h-4" />
-                            )}
-                          </div>
                         </button>
 
                         {/* Answer */}
