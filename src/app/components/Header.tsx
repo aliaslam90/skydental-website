@@ -127,7 +127,7 @@ export default function Header() {
           <div className="flex items-center justify-between w-full">
             {/* Logo */}
             <button onClick={() => scrollToSection('home')} className="flex items-center">
-              <div className="w-[52px] h-[48px]">
+              <div className="w-[44px] h-[40px]">
                 <MaskGroup />
               </div>
             </button>
@@ -331,7 +331,7 @@ export default function Header() {
             >
               {/* Header with Logo and Close Button */}
               <div className="flex items-center justify-between p-6 border-b border-[#0061AF]/20">
-                <div className="w-[52px] h-[48px]">
+                <div className="w-[44px] h-[40px]">
                   <MaskGroup />
                 </div>
                 <button
