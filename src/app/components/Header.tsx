@@ -5,7 +5,7 @@ import { useNavigate, useLocation } from 'react-router-dom'
 import { motion, useReducedMotion, AnimatePresence } from 'motion/react'
 import svgPaths from '../../imports/svg-p4rwj0t9df'
 import imgRectangle161125373 from '../../assets/531a2b1be40c3f390e42e72de4c6233edf51733e.png'
-import Group2147224205 from '../../imports/Group2147224205'
+import MaskGroup from '../../imports/MaskGroup'
 import { Link } from 'react-router-dom'
 import { useBooking } from '../context/BookingContext'
 
@@ -127,8 +127,8 @@ export default function Header() {
           <div className="flex items-center justify-between w-full">
             {/* Logo */}
             <button onClick={() => scrollToSection('home')} className="flex items-center">
-              <div className="relative w-[53px] h-[53px]">
-                <Group2147224205 />
+              <div className="w-[64px] h-[60px]">
+                <MaskGroup />
               </div>
             </button>
 
@@ -331,8 +331,8 @@ export default function Header() {
             >
               {/* Header with Logo and Close Button */}
               <div className="flex items-center justify-between p-6 border-b border-[#0061AF]/20">
-                <div className="relative w-[53px] h-[53px]">
-                  <Group2147224205 />
+                <div className="w-[64px] h-[60px]">
+                  <MaskGroup />
                 </div>
                 <button
                   onClick={() => setMobileMenuOpen(false)}

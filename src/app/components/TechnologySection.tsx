@@ -67,12 +67,12 @@ export default function TechnologySection() {
                 className="flex flex-col gap-[16px] md:gap-[20px] lg:gap-[24px] text-white w-full lg:max-w-[884px]"
               >
                 <h2
-                  className="text-[32px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-1.44px]"
+                  className="text-[40px] md:text-[52px] lg:text-[64px] leading-[1.2] tracking-[-1.44px]"
                   style={{ fontFamily: "'Gilda Display', serif" }}
                 >
                   Technology
                 </h2>
-                <p className="text-[14px] md:text-[15px] lg:text-[16px] leading-[1.55]">
+                <p className="text-[16px] md:text-[18px] lg:text-[20px] leading-[1.55]">
                   At Sky Dental Center, innovation meets care. Using precision dental technology and a fully digital research center, we diagnose and treat with comfort and confidence, giving every patient a modern, personalized dental experience.
                 </p>
               </motion.div>
