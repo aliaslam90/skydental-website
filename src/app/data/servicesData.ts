@@ -152,8 +152,9 @@ export const servicesData: ServiceDetail[] = [
     hero: {
       title: 'Cosmetic Dentistry',
       subtitle: 'Enhancing Your Smile, Naturally',
-      description: 'Cosmetic dentistry focuses on improving the appearance of your teeth, gums, and smile using advanced aesthetic techniques and materials, tailored to your unique features.'
+      description: 'Enhancing Your Smile, Naturally Cosmetic dentistry focuses on improving the appearance of your teeth, gums, and smile using advanced aesthetic techniques and materials, tailored to your unique features.'
     },
+    benefitsIntro: 'Our team provides thoughtful, precise care designed to maintain healthy teeth while enhancing your smile. Each treatment is delivered with attention to detail, ensuring comfort, confidence, and results that feel natural and harmonious with your face.',
     benefits: [
       {
         icon: Sparkle,
@@ -171,49 +172,50 @@ export const servicesData: ServiceDetail[] = [
         description: 'Noticeable improvements in just a few visits'
       }
     ],
+    servicesIntro: 'From subtle enhancements to full smile transformations, our services are designed to combine function, health, and aesthetics.',
     services: [
       {
         icon: Sparkles,
         title: 'Teeth Whitening',
-        description: 'A safe and effective whitening treatment that brightens your smile and removes deep stains. Enjoy noticeable, long-lasting results in a single session.',
+        description: 'A safe, effective treatment that brightens your smile and removes deep stains. Achieve noticeable, long-lasting results in a single session.',
         features: [
-          'Safe and effective treatment',
+          'Safe and effective',
           'Deep stain removal',
-          'Long-lasting results',
-          'Single session completion'
+          'Long-lasting brightness',
+          'Quick, convenient sessions'
         ]
       },
       {
         icon: Gem,
         title: 'Veneers & Hollywood Smile',
-        description: 'Ultra-thin cosmetic veneers designed to perfect your smile by enhancing colour, shape, and symmetry. Achieve a natural yet glamorous Hollywood Smile.',
+        description: 'Ultra-thin veneers that refine colour, shape, and symmetry for a naturally stunning smile. Enhance your teeth without compromising comfort or authenticity.',
         features: [
-          'Ultra-thin cosmetic veneers',
-          'Colour and shape enhancement',
-          'Symmetry perfection',
-          'Natural glamorous results'
+          'Custom ultra-thin veneers',
+          'Colour and shape refinement',
+          'Symmetry enhancement',
+          'Naturally elegant results'
         ]
       },
       {
         icon: Crown,
-        title: 'Dental Crowns & Bridge',
-        description: 'Durable and aesthetic restorations that replace or strengthen damaged or missing teeth. Custom-made to restore natural function and appearance.',
+        title: 'Dental Crowns & Bridges',
+        description: 'Durable, aesthetic restorations that replace or strengthen teeth while restoring natural function. Each crown or bridge is custom-made for a perfect fit.',
         features: [
-          'Durable restorations',
-          'Aesthetic appearance',
-          'Custom-made design',
-          'Natural function restoration'
+          'Strong and long-lasting',
+          'Restores function',
+          'Custom-crafted',
+          'Harmonious appearance'
         ]
       },
       {
         icon: Palette,
         title: 'Smile Design',
-        description: 'A digital design process that plans your ideal smile based on your facial features. Preview your results before treatment begins for full confidence in your transformation.',
+        description: 'A digital planning process that visualizes your ideal smile in harmony with your facial features. Preview your results before treatment begins, giving you full confidence in the outcome.',
         features: [
-          'Digital design process',
+          'Digital smile visualization',
           'Facial feature analysis',
-          'Result preview',
-          'Confidence in transformation'
+          'Results preview',
+          'Confident transformation'
         ]
       },
       {
@@ -239,17 +241,22 @@ export const servicesData: ServiceDetail[] = [
       }
     ],
     whyChoose: {
-      title: 'Why Choose Our Cosmetic Dentistry?',
-      description: 'We combine artistry with advanced technology to create beautiful, natural-looking smiles that boost your confidence.',
+      title: 'Why Choose Our Cosmetic Dentistry',
+      description: 'We combine artistry, expertise, and a patient-focused approach to create smiles that feel natural, balanced, and uniquely yours.',
       features: [
         'Award-winning cosmetic dentists',
         'Digital smile design technology',
         'Premium materials and techniques',
-        'Natural-looking results',
+        'Natural, harmonious results',
         'Comprehensive consultations',
         'Flexible financing options'
       ],
       image: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&h=600&fit=crop'
+    },
+    cta: {
+      title: 'Ready to Prioritize Your Oral Health?',
+      description: 'Schedule your appointment today and let our team help you maintain a healthy, confident smile.',
+      buttonText: 'Book Your Appointment'
     }
   },
   {
