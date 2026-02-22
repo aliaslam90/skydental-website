@@ -62,9 +62,7 @@ export default function HeroSection() {
             >
               SKY Dental Center
               <br />
-              Your smile. Your confidence.
-              <br />
-              Our expert care.
+              Your smile. Your confidence. Our expert care.
             </motion.h1>
           </div>
         </div>
