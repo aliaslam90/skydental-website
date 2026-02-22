@@ -268,8 +268,9 @@ export const servicesData: ServiceDetail[] = [
     hero: {
       title: 'Orthodontics',
       subtitle: 'Straightening Smiles, Naturally',
-      description: 'Our orthodontic services combine advanced techniques with thoughtful planning to straighten teeth, correct bite issues, and create healthy, confident smiles tailored to your needs.'
+      description: 'Straightening Smiles, Naturally Our orthodontic services combine advanced techniques with thoughtful planning to straighten teeth, correct bite issues, and create healthy, confident smiles tailored to your needs.'
     },
+    benefitsIntro: 'Every treatment is carefully designed to maintain oral health while improving alignment. Using modern methods, our team ensures a comfortable experience and predictable, long-lasting results.',
     benefits: [
       {
         icon: Search,
@@ -287,27 +288,28 @@ export const servicesData: ServiceDetail[] = [
         description: 'Modern techniques to minimize discomfort'
       }
     ],
+    servicesIntro: 'From early assessments to full corrective treatments, we provide comprehensive care for every stage of your orthodontic journey.',
     services: [
       {
         icon: Square,
         title: 'Metal & Ceramic Braces',
-        description: 'Effective orthodontic systems designed to correct a wide range of alignment issues. Both options provide excellent results, with ceramic braces offering a more discreet appearance.',
+        description: 'Traditional yet highly effective systems for a wide range of alignment issues. Ceramic braces offer a discreet, elegant option for those seeking subtle treatment.',
         features: [
           'Metal and ceramic options',
-          'Wide range alignment correction',
-          'Excellent results',
-          'Discreet ceramic option'
+          'Corrects diverse alignment issues',
+          'Reliable and predictable results',
+          'Discreet ceramic appearance'
         ]
       },
       {
         icon: Eye,
-        title: 'Invisalign, Sparks & Smarter',
-        description: 'Clear aligner systems that gently and discreetly align teeth using advanced digital planning. Comfortable, removable, and highly effective for everyday lifestyles.',
+        title: 'Invisalign, Sparks & Smarter Aligners',
+        description: 'Clear aligner systems that gently adjust teeth with digital precision. Comfortable, removable, and convenient for everyday life, they offer a modern alternative to traditional braces.',
         features: [
-          'Clear aligner systems',
-          'Advanced digital planning',
-          'Comfortable and removable',
-          'Highly effective'
+          'Clear, removable aligners',
+          'Advanced digital treatment planning',
+          'Comfortable for daily use',
+          'Highly effective and discreet'
         ]
       },
       {
@@ -338,13 +340,18 @@ export const servicesData: ServiceDetail[] = [
       description: 'We combine expertise, advanced technology, and thoughtful patient care to create smiles that are both beautiful and healthy.',
       features: [
         'Board-certified orthodontists',
-        'Multiple treatment options',
-        'Digital treatment planning',
-        'Flexible payment plans',
+        'Customized treatment plans',
+        'Digital planning for precision',
+        'Comfortable, patient-focused care',
         'Family-friendly environment',
-        'Proven track record of success'
+        'Proven track record of results'
       ],
       image: 'https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=800&h=600&fit=crop'
+    },
+    cta: {
+      title: 'Ready to Prioritize Your Oral Health?',
+      description: 'Schedule your appointment today and let our team help you maintain a healthy, confident smile.',
+      buttonText: 'Book Your Appointment'
     }
   },
   {

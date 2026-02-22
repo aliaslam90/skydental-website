@@ -1,9 +1,5 @@
 'use client'
 
-import { motion, useReducedMotion } from 'motion/react'
-
-const HEADLINE_TEXT = 'Hear From Those Who Trust Us'
-
 const testimonials = [
   {
     id: 1,
@@ -44,50 +40,19 @@ const testimonials = [
 ]
 
 export default function TestimonialsSection() {
-  const shouldReduceMotion = useReducedMotion()
   const firstThree = testimonials.slice(0, 3)
 
   return (
     <section className="py-[80px] px-[16px] md:px-[20px] lg:px-[25px]">
       <div className="max-w-[1390px] mx-auto">
         <div className="rounded-[24px] p-[24px] md:p-[36px] lg:p-[48px]">
-          {/* Carousel headline – continuous horizontal scroll (marquee) */}
-          <div className="overflow-hidden mb-10 md:mb-14 w-full">
-            {shouldReduceMotion ? (
-              <h2
-                className="text-black text-[32px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-1.44px] text-center"
-                style={{ fontFamily: "'Gilda Display', serif" }}
-              >
-                {HEADLINE_TEXT}
-              </h2>
-            ) : (
-              <motion.div
-                className="flex whitespace-nowrap"
-                style={{ width: 'max-content' }}
-                animate={{ x: ['0%', '-50%'] }}
-                transition={{
-                  duration: 22,
-                  repeat: Infinity,
-                  ease: 'linear',
-                }}
-              >
-                <span
-                  className="text-black text-[32px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-1.44px] pr-[2em] md:pr-[3em] inline-block"
-                  style={{ fontFamily: "'Gilda Display', serif" }}
-                >
-                  {HEADLINE_TEXT}
-                </span>
-                <span
-                  className="text-black text-[32px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-1.44px] pr-[2em] md:pr-[3em] inline-block"
-                  style={{ fontFamily: "'Gilda Display', serif" }}
-                >
-                  {HEADLINE_TEXT}
-                </span>
-              </motion.div>
-            )}
-          </div>
+          <h2
+            className="text-black text-[32px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-1.44px] text-center mb-10 md:mb-14"
+            style={{ fontFamily: "'Gilda Display', serif" }}
+          >
+            Hear From Those Who Trust Us
+          </h2>
 
-          {/* Static testimonial cards – no animation */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 min-h-[280px] md:min-h-[260px]">
             {firstThree.map((testimonial) => (
               <div
