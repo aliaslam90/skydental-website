@@ -125,10 +125,10 @@ export default function Header() {
       >
         <div className="px-6 py-4 md:py-5">
           <div className="flex items-center justify-between w-full">
-            {/* Logo - MaskGroup has fixed internal size so we scale it to get smaller header logo */}
+            {/* Logo - MaskGroup has fixed internal size so we scale it for header */}
             <button onClick={() => scrollToSection('home')} className="flex items-center">
-              <div className="w-[44px] h-[40px] flex items-center justify-center overflow-hidden">
-                <div className="origin-center" style={{ width: 96.592, height: 91.833, transform: 'scale(0.455)' }}>
+              <div className="w-[60px] h-[56px] flex items-center justify-center overflow-hidden">
+                <div className="origin-center" style={{ width: 96.592, height: 91.833, transform: 'scale(0.62)' }}>
                   <MaskGroup />
                 </div>
               </div>
@@ -333,8 +333,8 @@ export default function Header() {
             >
               {/* Header with Logo and Close Button */}
               <div className="flex items-center justify-between p-6 border-b border-[#0061AF]/20">
-                <div className="w-[44px] h-[40px] flex items-center justify-center overflow-hidden">
-                  <div className="origin-center" style={{ width: 96.592, height: 91.833, transform: 'scale(0.455)' }}>
+                <div className="w-[60px] h-[56px] flex items-center justify-center overflow-hidden">
+                  <div className="origin-center" style={{ width: 96.592, height: 91.833, transform: 'scale(0.62)' }}>
                     <MaskGroup />
                   </div>
                 </div>
