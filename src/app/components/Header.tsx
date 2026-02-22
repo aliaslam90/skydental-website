@@ -8,12 +8,16 @@ import imgRectangle161125373 from '../../assets/531a2b1be40c3f390e42e72de4c6233e
 import MaskGroup from '../../imports/MaskGroup'
 import { Link } from 'react-router-dom'
 import { useBooking } from '../context/BookingContext'
+import { servicesData } from '../data/servicesData'
+
+const serviceLinks = servicesData.map((s) => ({ id: s.id, title: s.title }))
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [activeSection, setActiveSection] = useState('home')
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [moreDropdownOpen, setMoreDropdownOpen] = useState(false)
+  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false)
   const shouldReduceMotion = useReducedMotion()
   const navigate = useNavigate()
   const location = useLocation()
@@ -97,12 +101,6 @@ export default function Header() {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
-  const handleServicesClick = () => {
-    navigate('/services')
-    setMobileMenuOpen(false)
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
-
   const handleContactClick = () => {
     navigate('/contact')
     setMobileMenuOpen(false)
@@ -146,16 +144,49 @@ export default function Header() {
               >
                 Home
               </button>
-              <button
-                onClick={handleServicesClick}
-                className={`px-[14px] py-[6px] rounded-full text-[14px] transition-all whitespace-nowrap ${
-                  location.pathname.startsWith('/services')
-                    ? 'bg-[#CBFF8F] text-[#0C0060] font-bold'
-                    : 'text-black hover:text-[#0C0060]'
-                }`}
-              >
-                Services
-              </button>
+              <div className="relative">
+                <NavDropdown
+                  label="Services"
+                  active={servicesDropdownOpen || location.pathname.startsWith('/services')}
+                  onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
+                />
+                <AnimatePresence>
+                  {servicesDropdownOpen && (
+                    <motion.div
+                      initial={shouldReduceMotion ? {} : { opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute top-full mt-2 left-0 bg-white rounded-2xl shadow-xl border border-[#0061AF]/20 py-2 min-w-[220px] z-[60]"
+                      onMouseLeave={() => setServicesDropdownOpen(false)}
+                    >
+                      {serviceLinks.map((service) => (
+                        <Link
+                          key={service.id}
+                          to={`/services/${service.id}`}
+                          onClick={() => setServicesDropdownOpen(false)}
+                          className={`block px-5 py-3 text-[14px] rounded-full transition-colors ${
+                            location.pathname === `/services/${service.id}`
+                              ? 'bg-[#CBFF8F] text-[#0C0060] font-bold'
+                              : 'text-black hover:bg-[#f8f9fa] hover:text-[#0C0060]'
+                          }`}
+                        >
+                          {service.title}
+                        </Link>
+                      ))}
+                      <div className="border-t border-[#0061AF]/20 mt-1 pt-2 px-2">
+                        <Link
+                          to="/services"
+                          onClick={() => setServicesDropdownOpen(false)}
+                          className="flex items-center justify-center w-full rounded-full bg-[#CBFF8F] text-[#0C0060] font-bold py-2.5 text-[14px] hover:bg-[#CBFF8F]/90 transition-colors"
+                        >
+                          View all services
+                        </Link>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
               <button
                 onClick={handleOurDoctorsClick}
                 className={`px-[14px] py-[6px] rounded-full text-[14px] transition-all whitespace-nowrap ${
@@ -360,16 +391,30 @@ export default function Header() {
                 >
                   Home
                 </button>
-                <button
-                  onClick={handleServicesClick}
-                  className={`px-[20px] py-[12px] rounded-full text-[16px] transition-all text-left ${
-                    location.pathname.startsWith('/services')
-                      ? 'bg-[#CBFF8F] text-[#0C0060] font-bold'
-                      : 'text-black hover:text-[#0C0060]'
-                  }`}
-                >
-                  Services
-                </button>
+                <div className="flex flex-col gap-1">
+                  <p className="px-[20px] text-[12px] text-gray-400 font-semibold uppercase tracking-wider mb-1">Services</p>
+                  {serviceLinks.map((service) => (
+                    <Link
+                      key={service.id}
+                      to={`/services/${service.id}`}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={`px-[20px] py-[10px] rounded-full text-[15px] transition-all ${
+                        location.pathname === `/services/${service.id}`
+                          ? 'bg-[#CBFF8F] text-[#0C0060] font-bold'
+                          : 'text-black hover:text-[#0C0060]'
+                      }`}
+                    >
+                      {service.title}
+                    </Link>
+                  ))}
+                  <Link
+                    to="/services"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="px-[20px] py-[10px] rounded-full text-[15px] font-bold text-[#0C0060] bg-[#CBFF8F]/30 hover:bg-[#CBFF8F]/50 transition-colors"
+                  >
+                    View all services
+                  </Link>
+                </div>
                 <button
                   onClick={handleOurDoctorsClick}
                   className={`px-[20px] py-[12px] rounded-full text-[16px] transition-all text-left ${

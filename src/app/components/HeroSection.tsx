@@ -1,27 +1,9 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
 import { motion, useReducedMotion } from 'motion/react'
-import { Link } from 'react-router-dom'
-import { ChevronDown } from 'lucide-react'
-import { servicesData } from '../data/servicesData'
-
-const serviceLinks = servicesData.map((s) => ({ id: s.id, title: s.title }))
 
 export default function HeroSection() {
   const shouldReduceMotion = useReducedMotion()
-  const [servicesOpen, setServicesOpen] = useState(false)
-  const dropdownRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setServicesOpen(false)
-      }
-    }
-    document.addEventListener('mousedown', handleClickOutside)
-    return () => document.removeEventListener('mousedown', handleClickOutside)
-  }, [])
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -87,52 +69,6 @@ export default function HeroSection() {
               Our expert care.
             </motion.h1>
           </div>
-
-          {/* Services dropdown */}
-          <motion.div ref={dropdownRef} variants={itemVariants} className="relative shrink-0">
-            <button
-              type="button"
-              onClick={() => setServicesOpen((o) => !o)}
-              className="flex items-center gap-2 rounded-full bg-white/95 backdrop-blur-sm border border-white/40 text-[#0C0060] px-5 py-3 text-[15px] font-semibold hover:bg-white transition-colors"
-              aria-expanded={servicesOpen}
-              aria-haspopup="true"
-            >
-              Services
-              <ChevronDown className={`w-4 h-4 transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
-            </button>
-            {servicesOpen && (
-              <motion.div
-                initial={{ opacity: 0, y: -8 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -8 }}
-                transition={{ duration: 0.2 }}
-                className="absolute top-full left-0 mt-2 min-w-[240px] rounded-2xl bg-white/95 backdrop-blur-md border border-white/60 shadow-xl overflow-hidden z-20"
-              >
-                <ul className="py-2">
-                  {serviceLinks.map((service) => (
-                    <li key={service.id}>
-                      <Link
-                        to={`/services/${service.id}`}
-                        onClick={() => setServicesOpen(false)}
-                        className="block px-5 py-2.5 text-[14px] font-medium text-[#0C0060] hover:bg-[#CBFF8F]/40 transition-colors"
-                      >
-                        {service.title}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-                <div className="border-t border-[#0C0060]/10 p-2">
-                  <Link
-                    to="/services"
-                    onClick={() => setServicesOpen(false)}
-                    className="flex items-center justify-center w-full rounded-full bg-[#CBFF8F] text-[#0C0060] font-bold py-2.5 text-[14px] hover:bg-[#CBFF8F]/90 transition-colors"
-                  >
-                    View all services
-                  </Link>
-                </div>
-              </motion.div>
-            )}
-          </motion.div>
         </div>
       </motion.div>
     </section>
