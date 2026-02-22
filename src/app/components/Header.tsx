@@ -123,10 +123,10 @@ export default function Header() {
           border: scrolled ? '0.2px solid #0061AF' : '0.2px solid #0061AF'
         }}
       >
-        <div className="px-6 py-4 md:py-5">
+        <div className="px-6 py-2.5 md:py-3">
           <div className="flex items-center justify-between w-full">
             {/* Logo - MaskGroup has fixed internal size so we scale it for header */}
-            <button onClick={() => scrollToSection('home')} className="flex items-center shrink-0">
+            <button onClick={() => scrollToSection('home')} className="flex items-center shrink-0 ml-4 md:ml-6">
               <div className="flex items-center justify-center overflow-hidden" style={{ width: 76, height: 70 }}>
                 <div className="origin-center flex-shrink-0" style={{ width: 96.592, height: 91.833, transform: 'scale(0.76)' }}>
                   <MaskGroup />
@@ -138,7 +138,7 @@ export default function Header() {
             <nav className="hidden xl:flex items-center gap-4">
               <button
                 onClick={handleHomeClick}
-                className={`px-[14px] py-[10px] rounded-full text-[14px] transition-all whitespace-nowrap ${
+                className={`px-[14px] py-[8px] rounded-full text-[14px] transition-all whitespace-nowrap ${
                   location.pathname === '/'
                     ? 'bg-[#CBFF8F] text-[#0C0060] font-bold'
                     : 'text-black hover:text-[#0C0060]'
@@ -148,7 +148,7 @@ export default function Header() {
               </button>
               <button
                 onClick={handleServicesClick}
-                className={`px-[14px] py-[10px] rounded-full text-[14px] transition-all whitespace-nowrap ${
+                className={`px-[14px] py-[8px] rounded-full text-[14px] transition-all whitespace-nowrap ${
                   location.pathname.startsWith('/services')
                     ? 'bg-[#CBFF8F] text-[#0C0060] font-bold'
                     : 'text-black hover:text-[#0C0060]'
@@ -158,7 +158,7 @@ export default function Header() {
               </button>
               <button
                 onClick={handleOurDoctorsClick}
-                className={`px-[14px] py-[10px] rounded-full text-[14px] transition-all whitespace-nowrap ${
+                className={`px-[14px] py-[8px] rounded-full text-[14px] transition-all whitespace-nowrap ${
                   location.pathname.startsWith('/our-doctors')
                     ? 'bg-[#CBFF8F] text-[#0C0060] font-bold'
                     : 'text-black hover:text-[#0C0060]'
@@ -168,7 +168,7 @@ export default function Header() {
               </button>
               <Link
                 to="/packages"
-                className={`px-[14px] py-[10px] rounded-full text-[14px] transition-all whitespace-nowrap ${
+                className={`px-[14px] py-[8px] rounded-full text-[14px] transition-all whitespace-nowrap ${
                   location.pathname === '/packages'
                     ? 'bg-[#CBFF8F] text-[#0C0060] font-bold'
                     : 'text-black hover:text-[#0C0060]'
@@ -178,7 +178,7 @@ export default function Header() {
               </Link>
               <button
                 onClick={handleAboutUsClick}
-                className={`px-[14px] py-[10px] rounded-full text-[14px] transition-all whitespace-nowrap ${
+                className={`px-[14px] py-[8px] rounded-full text-[14px] transition-all whitespace-nowrap ${
                   location.pathname === '/about-us'
                     ? 'bg-[#CBFF8F] text-[#0C0060] font-bold'
                     : 'text-black hover:text-[#0C0060]'
@@ -188,7 +188,7 @@ export default function Header() {
               </button>
               <button
                 onClick={handleContactClick}
-                className={`px-[14px] py-[10px] rounded-full text-[14px] transition-all whitespace-nowrap ${
+                className={`px-[14px] py-[8px] rounded-full text-[14px] transition-all whitespace-nowrap ${
                   location.pathname === '/contact'
                     ? 'bg-[#CBFF8F] text-[#0C0060] font-bold'
                     : 'text-black hover:text-[#0C0060]'
@@ -499,7 +499,7 @@ function NavDropdown({ label, active, onClick }: { label: string; active: boolea
   return (
     <button
       onClick={onClick}
-      className={`flex items-center gap-[5px] px-[14px] py-[10px] rounded-full text-[14px] transition-all whitespace-nowrap ${
+      className={`flex items-center gap-[5px] px-[14px] py-[8px] rounded-full text-[14px] transition-all whitespace-nowrap ${
         active ? 'bg-[#CBFF8F] text-[#0C0060] font-bold' : 'text-black hover:text-[#0C0060]'
       }`}
     >
