@@ -78,13 +78,25 @@ export default function TestimonialsSection() {
           transition={{ duration: shouldReduceMotion ? 0 : 0.7 }}
           className="rounded-[24px] p-[24px] md:p-[36px] lg:p-[48px]"
         >
-          {/* Heading - full width, balanced spacing below */}
-          <h2
+          {/* Heading - full width, continuous slow movement */}
+          <motion.h2
             className="text-black text-[32px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-1.44px] text-center mb-10 md:mb-14"
             style={{ fontFamily: "'Gilda Display', serif" }}
+            animate={
+              shouldReduceMotion
+                ? {}
+                : {
+                    x: [0, 10, 0],
+                    transition: {
+                      duration: 6,
+                      repeat: Infinity,
+                      ease: 'easeInOut',
+                    },
+                  }
+            }
           >
             Hear From Those Who Trust Us
-          </h2>
+          </motion.h2>
 
           {/* Testimonials grid - 3 columns on large screens, uses full width */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 relative overflow-hidden min-h-[280px] md:min-h-[260px]">
