@@ -363,8 +363,9 @@ export const servicesData: ServiceDetail[] = [
     hero: {
       title: 'Pediatric Dentistry',
       subtitle: 'Gentle Care for Growing Smiles',
-      description: 'Our pediatric dentistry services provide specialized, compassionate care in a welcoming environment designed just for children. Every visit is crafted to make dental care a positive, engaging experience while promoting lifelong oral health.'
+      description: 'Gentle Care for Growing Smiles Our pediatric dentistry services provide specialized, compassionate care in a welcoming environment designed just for children. Every visit is crafted to make dental care a positive, engaging experience while promoting lifelong oral health.'
     },
+    benefitsIntro: 'We combine expertise with a child-centered approach, ensuring treatments are gentle, educational, and supportive. From routine check-ups to preventive care, we help children build healthy habits that last a lifetime.',
     benefits: [
       {
         icon: Heart,
@@ -382,6 +383,7 @@ export const servicesData: ServiceDetail[] = [
         description: 'Teaching children good oral hygiene habits early'
       }
     ],
+    servicesIntro: 'From check-ups to preventive treatments, we deliver care tailored to each child\'s needs.',
     services: [
       {
         icon: Heart,
@@ -396,35 +398,35 @@ export const servicesData: ServiceDetail[] = [
       },
       {
         icon: Shield,
-        title: 'Fluoride Treatment',
-        description: 'A preventive treatment that strengthens enamel and reduces the risk of decay—especially beneficial for growing children.',
+        title: 'Fluoride Treatments',
+        description: 'Preventive treatments that strengthen enamel and reduce the risk of decay, especially important for growing teeth.',
         features: [
           'Enamel strengthening',
-          'Decay risk reduction',
-          'Preventive care',
-          'Beneficial for growing children'
+          'Decay prevention',
+          'Protective and proactive',
+          'Supports healthy development'
         ]
       },
       {
         icon: Lock,
-        title: 'Dental Sealant',
-        description: 'A protective coating applied to molars to prevent cavities. One of the most effective long-term methods for paediatric decay prevention.',
+        title: 'Dental Sealants',
+        description: 'A protective coating applied to molars to prevent cavities, offering one of the most effective long-term decay prevention methods for children.',
         features: [
-          'Protective coating',
           'Molar protection',
           'Cavity prevention',
-          'Long-term effectiveness'
+          'Long-term effectiveness',
+          'Easy, painless application'
         ]
       },
       {
         icon: Search,
         title: 'Early Orthodontic Evaluation',
-        description: 'Early assessment that identifies developmental issues in the teeth and jaws, ensuring timely guidance and intervention.',
+        description: 'Assessments to identify developmental issues in teeth and jaws, ensuring timely intervention and guidance for proper alignment.',
         features: [
-          'Early assessment',
-          'Developmental issue identification',
-          'Timely guidance',
-          'Intervention planning'
+          'Early developmental screening',
+          'Bite and jaw evaluation',
+          'Proactive guidance',
+          'Preventive planning for future treatments'
         ]
       },
       {
@@ -451,6 +453,11 @@ export const servicesData: ServiceDetail[] = [
         'Builds trust, comfort, and confidence'
       ],
       image: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=800&h=600&fit=crop'
+    },
+    cta: {
+      title: 'Ready to Prioritize Your Oral Health?',
+      description: 'Schedule your appointment today and let our team help you maintain a healthy, confident smile.',
+      buttonText: 'Book Your Appointment'
     }
   },
   {
@@ -462,8 +469,9 @@ export const servicesData: ServiceDetail[] = [
     hero: {
       title: 'Implant & Advanced Care Dentistry',
       subtitle: 'Confidence and Harmony',
-      description: 'Our advanced restorative dentistry combines expert care with thoughtful planning to repair, replace, and restore damaged or missing teeth. Every treatment is designed to bring lasting results while maintaining natural function and aesthetics.'
+      description: 'Confidence and Harmony Our advanced restorative dentistry combines expert care with thoughtful planning to repair, replace, and restore damaged or missing teeth. Every treatment is designed to bring lasting results while maintaining natural function and aesthetics.'
     },
+    benefitsIntro: 'We provide carefully tailored treatments that support oral health, restore confidence, and enhance comfort. From single-tooth implants to full-mouth rehabilitation, each solution is delivered with precision, attention to detail, and a focus on long-term success.',
     benefits: [
       {
         icon: Microscope,
@@ -481,38 +489,39 @@ export const servicesData: ServiceDetail[] = [
         description: 'Full-mouth and multi-disciplinary care for complex needs'
       }
     ],
+    servicesIntro: 'From routine evaluations to complex restorative procedures, we deliver solutions designed to preserve oral health and restore your smile.',
     services: [
       {
         icon: Scissors,
         title: 'Dental Implants',
-        description: 'State-of-the-art implant solutions designed to replace missing teeth with exceptional stability and natural appearance.',
+        description: 'Implants replace missing teeth with stability, function, and a natural appearance. Each case is planned to seamlessly restore your bite and smile.',
         features: [
-          'State-of-the-art solutions',
-          'Exceptional stability',
-          'Natural appearance',
-          'Missing tooth replacement'
+          'Long-lasting, reliable solutions',
+          'Natural, aesthetic results',
+          'Exceptional functional stability',
+          'Replaces single or multiple teeth'
         ]
       },
       {
         icon: RefreshCw,
-        title: 'Full Mouth Rehabilitation',
-        description: 'A comprehensive approach that restores function, aesthetics, and oral harmony through personalised, multi-disciplinary treatment planning.',
+        title: 'Full-Mouth Rehabilitation',
+        description: 'A comprehensive approach to restore oral harmony, function, and aesthetics. Treatments are customized using a multi-disciplinary strategy to achieve balanced, confident results.',
         features: [
-          'Comprehensive approach',
-          'Function and aesthetics restoration',
-          'Oral harmony',
-          'Multi-disciplinary planning'
+          'Complete oral restoration',
+          'Function and aesthetics enhancement',
+          'Holistic smile harmony',
+          'Personalized, multi-disciplinary planning'
         ]
       },
       {
         icon: AlertCircle,
         title: 'Emergency Dental Treatment',
-        description: 'Immediate care for urgent situations involving pain, trauma, or dental injury—ensuring fast relief and stabilisation.',
+        description: 'Rapid care for urgent situations such as pain, trauma, or dental injury. Our team stabilizes and treats emergencies quickly while prioritizing patient comfort.',
         features: [
-          'Immediate care',
-          'Urgent situation handling',
-          'Pain and trauma treatment',
-          'Fast relief and stabilisation'
+          'Immediate relief',
+          'Pain and trauma management',
+          'Stabilization of dental injuries',
+          'Efficient, reassuring care'
         ]
       }
     ],
@@ -520,14 +529,19 @@ export const servicesData: ServiceDetail[] = [
       title: 'Why Choose Our Implant & Advanced Care',
       description: 'We combine expertise, advanced technology, and patient-focused planning to deliver restorative solutions with confidence and care.',
       features: [
-        'Board-certified specialists',
+        'Board-certified restorative specialists',
         'Advanced 3D imaging and planning',
-        'State-of-the-art equipment',
-        'Comprehensive treatment options',
-        'Sedation dentistry available',
-        'Dedicated to your comfort'
+        'Comprehensive, tailored treatments',
+        'Sedation dentistry for comfort',
+        'Long-term, functional results',
+        'Commitment to patient wellbeing'
       ],
       image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800&h=600&fit=crop'
+    },
+    cta: {
+      title: 'Ready to Prioritize Your Oral Health?',
+      description: 'Schedule your appointment today and let our team help you maintain a healthy, confident smile.',
+      buttonText: 'Book Your Appointment'
     }
   }
 ]

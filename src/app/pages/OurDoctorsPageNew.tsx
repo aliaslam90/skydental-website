@@ -3,7 +3,7 @@
 import { motion, useReducedMotion } from 'motion/react'
 import { useState, useEffect, useMemo } from 'react'
 import { Link } from 'react-router-dom'
-import { Search, ChevronDown, Heart, Award, Shield } from 'lucide-react'
+import { Search, ChevronDown, Award, Shield } from 'lucide-react'
 import { useBooking } from '../context/BookingContext'
 import ScrollSection from '../components/ScrollSection'
 
@@ -134,13 +134,13 @@ const coreValues = [
   {
     icon: Award,
     title: 'Excellence',
-    description: 'We strive for the highest standards in every aspect of clinical practice to ensure unparalleled quality and remarkable results.',
+    description: 'We uphold the highest standards in dentistry, combining expertise, careful planning, and thoughtful care to deliver results you can rely on.',
     bgColor: '#CBFF8F'
   },
   {
     icon: Shield,
     title: 'Trust',
-    description: 'We foster long-term relationships with our patients based on honesty, transparency, and uncompromising professional ethics.',
+    description: 'We build lasting relationships through honesty, transparency, and compassionate attention, ensuring every patient feels confident and cared for.',
     bgColor: '#CBFF8F'
   }
 ]
@@ -194,16 +194,15 @@ export default function OurDoctorsPageNew() {
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto text-center"
           >
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-[rgba(203,255,143,0.3)] px-5 py-2 rounded-full mb-6">
-              <Heart className="w-4 h-4 text-[#0C0060]" />
-              <span className="text-sm text-black font-['Arial']">Our Experts</span>
-            </div>
-
             {/* Main Heading */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-['Gilda_Display'] text-black mb-6 tracking-tight leading-tight px-4">
-              Expert Care You Can Trust
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-['Gilda_Display'] text-black mb-3 tracking-tight leading-tight px-4">
+              Doctors
             </h1>
+
+            {/* Subtitle */}
+            <p className="text-xl md:text-2xl font-['Gilda_Display'] text-black/90 mb-6">
+              Expert Care You Can Trust
+            </p>
 
             {/* Description */}
             <p className="text-base md:text-lg text-black/70 font-['Arial'] leading-relaxed max-w-3xl mx-auto mb-8">
@@ -371,7 +370,7 @@ export default function OurDoctorsPageNew() {
               Our Core Values
             </h2>
             <p className="text-base text-black/60 font-['Arial'] max-w-3xl mx-auto">
-              These principles guide our actions and shape the culture of care we provide to our community every single day.
+              Guiding Every Smile, Every Day
             </p>
           </motion.div>
 
