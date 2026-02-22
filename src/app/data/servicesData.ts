@@ -82,16 +82,6 @@ export const servicesData: ServiceDetail[] = [
         ]
       },
       {
-        icon: Square,
-        title: 'Tooth-Coloured Fillings',
-        description: 'Discreet, natural-looking restorations that match your tooth shade while restoring strength and function — an effective solution for treating decay.',
-        features: [
-          'Shade-matched fillings',
-          'Functional and aesthetic restoration',
-          'Subtle, comfortable treatment'
-        ]
-      },
-      {
         icon: Scissors,
         title: 'Tooth Extraction',
         description: 'Gentle removal of damaged or non-restorable teeth, prioritizing comfort and smooth healing. Our careful approach minimizes discomfort and supports ongoing oral health.',
