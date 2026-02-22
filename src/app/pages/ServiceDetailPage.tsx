@@ -168,11 +168,6 @@ export default function ServiceDetailPage() {
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto text-center"
           >
-            {service.hero.subtitle && (
-              <p className="text-lg md:text-xl font-['Arial'] text-black/80 mb-3">
-                {service.hero.subtitle}
-              </p>
-            )}
             {/* Title */}
             <h1 className="text-5xl md:text-6xl font-['Gilda_Display'] text-black mb-6 tracking-tight">
               {service.hero.title}
