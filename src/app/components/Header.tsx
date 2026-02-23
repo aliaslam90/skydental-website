@@ -343,11 +343,11 @@ export default function Header() {
 
             {/* Right side - Language switcher + Request Appointment (desktop) + Hamburger (mobile) */}
             <div className="flex items-center gap-2 xl:gap-4">
-              {/* Language switcher - Arabic / English */}
+              {/* Language switcher - Arabic / English (hidden for now; remove "hidden" to show) */}
               <button
                 type="button"
                 onClick={() => setLocale(locale === 'ar' ? 'en' : 'ar')}
-                className="flex items-center justify-center px-3 py-1.5 xl:px-[14px] xl:py-[6px] rounded-full text-[13px] xl:text-[14px] font-medium text-[#0C0060] hover:bg-[#CBFF8F]/30 transition-colors border border-[#0C0060]/20"
+                className="hidden flex items-center justify-center px-3 py-1.5 xl:px-[14px] xl:py-[6px] rounded-full text-[13px] xl:text-[14px] font-medium text-[#0C0060] hover:bg-[#CBFF8F]/30 transition-colors border border-[#0C0060]/20"
                 aria-label={locale === 'ar' ? 'Switch to English' : 'Switch to Arabic'}
               >
                 {locale === 'ar' ? t('lang', 'switchToEnglish') : t('lang', 'switchToArabic')}
