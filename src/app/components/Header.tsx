@@ -116,20 +116,19 @@ export default function Header() {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: shouldReduceMotion ? 0 : 0.6, ease: 'easeOut' }}
-        className={`fixed top-[12px] xl:top-[25px] left-1/2 -translate-x-1/2 z-50 w-[calc(100%-24px)] xl:w-[calc(100%-50px)] max-w-[1340px] transition-all duration-300 ${
-          scrolled ? 'backdrop-blur-md bg-white/95 shadow-lg' : ''
-        }`}
-        style={{
-          borderRadius: '100px',
-          border: scrolled ? '0.2px solid #0061AF' : '0.2px solid #0061AF'
-        }}
+        className={`fixed top-[10px] xl:top-[25px] left-1/2 -translate-x-1/2 z-50 w-[calc(100%-24px)] xl:w-[calc(100%-50px)] max-w-[1340px] transition-all duration-300
+          rounded-2xl xl:rounded-[100px] border border-[#0061AF]/40 xl:border-[#0061AF]
+          backdrop-blur-md bg-white/95 shadow-md
+          xl:bg-transparent xl:backdrop-blur-none xl:shadow-none
+          ${scrolled ? 'xl:bg-white/95 xl:backdrop-blur-md xl:shadow-lg' : ''}
+        `}
       >
-        <div className="px-4 py-2.5 xl:px-6 xl:py-2.5">
-          <div className="flex items-center justify-between w-full">
-            {/* Logo - MaskGroup has fixed internal size so we scale it for header */}
-            <button onClick={() => scrollToSection('home')} className="flex items-center shrink-0 ml-0 xl:ml-6" style={{ marginTop: '1.5px' }}>
-              <div className="flex items-center justify-center overflow-hidden" style={{ width: 76, height: 70 }}>
-                <div className="origin-center flex-shrink-0" style={{ width: 96.592, height: 91.833, transform: 'scale(0.76)' }}>
+        <div className="px-3 py-2 xl:px-6 xl:py-2.5">
+          <div className="flex items-center justify-between w-full gap-2">
+            {/* Logo - compact on mobile, larger on desktop */}
+            <button onClick={() => scrollToSection('home')} className="flex items-center shrink-0 ml-0 xl:ml-6">
+              <div className="flex items-center justify-center overflow-hidden w-[58px] h-[52px] xl:w-[76px] xl:h-[70px]">
+                <div className="origin-center flex-shrink-0 scale-[0.6] xl:scale-[0.76]" style={{ width: 96.592, height: 91.833 }}>
                   <MaskGroup />
                 </div>
               </div>
