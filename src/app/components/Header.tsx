@@ -116,7 +116,7 @@ export default function Header() {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: shouldReduceMotion ? 0 : 0.6, ease: 'easeOut' }}
-        className={`fixed top-[25px] left-1/2 -translate-x-1/2 z-50 w-[calc(100%-50px)] max-w-[1340px] transition-all duration-300 ${
+        className={`fixed top-[12px] xl:top-[25px] left-1/2 -translate-x-1/2 z-50 w-[calc(100%-24px)] xl:w-[calc(100%-50px)] max-w-[1340px] transition-all duration-300 ${
           scrolled ? 'backdrop-blur-md bg-white/95 shadow-lg' : ''
         }`}
         style={{
@@ -124,10 +124,10 @@ export default function Header() {
           border: scrolled ? '0.2px solid #0061AF' : '0.2px solid #0061AF'
         }}
       >
-        <div className="px-6 py-2 md:py-2.5">
+        <div className="px-4 py-2.5 xl:px-6 xl:py-2.5">
           <div className="flex items-center justify-between w-full">
             {/* Logo - MaskGroup has fixed internal size so we scale it for header */}
-            <button onClick={() => scrollToSection('home')} className="flex items-center shrink-0 ml-4 md:ml-6" style={{ marginTop: '1.5px' }}>
+            <button onClick={() => scrollToSection('home')} className="flex items-center shrink-0 ml-0 xl:ml-6" style={{ marginTop: '1.5px' }}>
               <div className="flex items-center justify-center overflow-hidden" style={{ width: 76, height: 70 }}>
                 <div className="origin-center flex-shrink-0" style={{ width: 96.592, height: 91.833, transform: 'scale(0.76)' }}>
                   <MaskGroup />
@@ -339,12 +339,13 @@ export default function Header() {
               </div>
             </nav>
 
-            {/* Right side - Request Appointment Button + Mobile Menu */}
+            {/* Right side - Request Appointment (desktop only) + Hamburger (mobile only) */}
             <div className="flex items-center gap-4">
-              {/* CTA Button - Always visible */}
+              {/* CTA Button - Desktop only; on mobile use hamburger menu */}
               <button 
                 onClick={() => openBookingSidebar()}
-                className="bg-[#CBFF8F] flex items-center gap-3 xl:gap-6 pl-4 xl:pl-6 pr-[10px] py-2 rounded-[35px] group hover:bg-[#B1FF57] transition-colors">
+                className="hidden xl:flex bg-[#CBFF8F] items-center gap-3 xl:gap-6 pl-4 xl:pl-6 pr-[10px] py-2 rounded-[35px] group hover:bg-[#B1FF57] transition-colors"
+              >
                 <span className="text-[#0C0060] font-bold text-[14px] xl:text-[16px] whitespace-nowrap">Request Appointment</span>
                 <div className="bg-[#0C0060] w-[34px] h-[34px] rounded-full flex items-center justify-center shrink-0">
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 20 20">
@@ -366,13 +367,14 @@ export default function Header() {
                 </div>
               </button>
 
-              {/* Mobile Menu Button - Always shows hamburger icon */}
+              {/* Hamburger - Mobile/tablet: opens menu with all nav + Request Appointment */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="xl:hidden flex items-center justify-center w-[40px] h-[40px] text-[#0C0060]"
+                className="xl:hidden flex items-center justify-center w-10 h-10 min-w-[40px] min-h-[40px] text-[#0C0060] rounded-full hover:bg-[#CBFF8F]/20 transition-colors"
+                aria-label="Open menu"
               >
-                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
               </button>
             </div>
