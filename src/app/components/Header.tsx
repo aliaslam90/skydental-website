@@ -135,11 +135,11 @@ export default function Header() {
               </div>
             </button>
 
-            {/* Desktop Navigation - Hidden on tablets and mobile: Home - Services - Doctors - Packages & Offers - About Us - Contact - More */}
-            <nav className="hidden xl:flex items-center gap-4">
+            {/* Desktop Navigation - responsive text & spacing by breakpoint */}
+            <nav className="hidden xl:flex items-center gap-2 xl:gap-3 2xl:gap-4">
               <button
                 onClick={handleHomeClick}
-                className={`px-[14px] py-[6px] rounded-full text-[14px] transition-all whitespace-nowrap ${
+                className={`px-2.5 py-1.5 xl:px-3 xl:py-[6px] 2xl:px-[14px] 2xl:py-[6px] rounded-full text-[13px] xl:text-[13.5px] 2xl:text-[14px] transition-all whitespace-nowrap ${
                   location.pathname === '/'
                     ? 'bg-[#CBFF8F] text-[#0C0060] font-bold'
                     : 'text-black hover:text-[#0C0060]'
@@ -151,14 +151,14 @@ export default function Header() {
               <div className="relative">
                 <button
                   onClick={() => { setMoreDropdownOpen(false); setServicesDropdownOpen(!servicesDropdownOpen); }}
-                  className={`flex items-center gap-[5px] px-[14px] py-[6px] rounded-full text-[14px] transition-all whitespace-nowrap ${
+                  className={`flex items-center gap-[5px] px-2.5 py-1.5 xl:px-3 xl:py-[6px] 2xl:px-[14px] 2xl:py-[6px] rounded-full text-[13px] xl:text-[13.5px] 2xl:text-[14px] transition-all whitespace-nowrap ${
                     servicesDropdownOpen || location.pathname.startsWith('/services')
                       ? 'bg-[#CBFF8F] text-[#0C0060] font-bold'
                       : 'text-black hover:text-[#0C0060]'
                   }`}
                 >
                   <span>Services</span>
-                  <svg className="w-[6px] h-[3px]" fill="none" viewBox="0 0 7.2 4.2">
+                  <svg className="w-[6px] h-[3px] shrink-0" fill="none" viewBox="0 0 7.2 4.2">
                     <path d="M0.6 0.6L3.6 3.6L6.6 0.6" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </button>
@@ -232,7 +232,7 @@ export default function Header() {
               </div>
               <button
                 onClick={handleOurDoctorsClick}
-                className={`px-[14px] py-[6px] rounded-full text-[14px] transition-all whitespace-nowrap ${
+                className={`px-2.5 py-1.5 xl:px-3 xl:py-[6px] 2xl:px-[14px] 2xl:py-[6px] rounded-full text-[13px] xl:text-[13.5px] 2xl:text-[14px] transition-all whitespace-nowrap ${
                   location.pathname.startsWith('/our-doctors')
                     ? 'bg-[#CBFF8F] text-[#0C0060] font-bold'
                     : 'text-black hover:text-[#0C0060]'
@@ -242,7 +242,7 @@ export default function Header() {
               </button>
               <Link
                 to="/packages"
-                className={`px-[14px] py-[6px] rounded-full text-[14px] transition-all whitespace-nowrap ${
+                className={`px-2.5 py-1.5 xl:px-3 xl:py-[6px] 2xl:px-[14px] 2xl:py-[6px] rounded-full text-[13px] xl:text-[13.5px] 2xl:text-[14px] transition-all whitespace-nowrap ${
                   location.pathname === '/packages'
                     ? 'bg-[#CBFF8F] text-[#0C0060] font-bold'
                     : 'text-black hover:text-[#0C0060]'
@@ -252,7 +252,7 @@ export default function Header() {
               </Link>
               <button
                 onClick={handleAboutUsClick}
-                className={`px-[14px] py-[6px] rounded-full text-[14px] transition-all whitespace-nowrap ${
+                className={`px-2.5 py-1.5 xl:px-3 xl:py-[6px] 2xl:px-[14px] 2xl:py-[6px] rounded-full text-[13px] xl:text-[13.5px] 2xl:text-[14px] transition-all whitespace-nowrap ${
                   location.pathname === '/about-us'
                     ? 'bg-[#CBFF8F] text-[#0C0060] font-bold'
                     : 'text-black hover:text-[#0C0060]'
@@ -262,7 +262,7 @@ export default function Header() {
               </button>
               <button
                 onClick={handleContactClick}
-                className={`px-[14px] py-[6px] rounded-full text-[14px] transition-all whitespace-nowrap ${
+                className={`px-2.5 py-1.5 xl:px-3 xl:py-[6px] 2xl:px-[14px] 2xl:py-[6px] rounded-full text-[13px] xl:text-[13.5px] 2xl:text-[14px] transition-all whitespace-nowrap ${
                   location.pathname === '/contact'
                     ? 'bg-[#CBFF8F] text-[#0C0060] font-bold'
                     : 'text-black hover:text-[#0C0060]'
@@ -344,9 +344,9 @@ export default function Header() {
               {/* CTA Button - Desktop only; on mobile use hamburger menu */}
               <button 
                 onClick={() => openBookingSidebar()}
-                className="hidden xl:flex bg-[#CBFF8F] items-center gap-3 xl:gap-6 pl-4 xl:pl-6 pr-[10px] py-2 rounded-[35px] group hover:bg-[#B1FF57] transition-colors"
+                className="hidden xl:flex bg-[#CBFF8F] items-center gap-2 xl:gap-4 2xl:gap-6 pl-3 xl:pl-4 2xl:pl-6 pr-2 xl:pr-[10px] py-1.5 xl:py-2 rounded-[35px] group hover:bg-[#B1FF57] transition-colors"
               >
-                <span className="text-[#0C0060] font-bold text-[14px] xl:text-[16px] whitespace-nowrap">Request Appointment</span>
+                <span className="text-[#0C0060] font-bold text-[13px] xl:text-[14px] 2xl:text-[16px] whitespace-nowrap">Request Appointment</span>
                 <div className="bg-[#0C0060] w-[34px] h-[34px] rounded-full flex items-center justify-center shrink-0">
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 20 20">
                     <path 
@@ -575,12 +575,12 @@ function NavDropdown({ label, active, onClick }: { label: string; active: boolea
   return (
     <button
       onClick={onClick}
-      className={`flex items-center gap-[5px] px-[14px] py-[6px] rounded-full text-[14px] transition-all whitespace-nowrap ${
+      className={`flex items-center gap-[5px] px-2.5 py-1.5 xl:px-3 xl:py-[6px] 2xl:px-[14px] 2xl:py-[6px] rounded-full text-[13px] xl:text-[13.5px] 2xl:text-[14px] transition-all whitespace-nowrap ${
         active ? 'bg-[#CBFF8F] text-[#0C0060] font-bold' : 'text-black hover:text-[#0C0060]'
       }`}
     >
       <span>{label}</span>
-      <svg className="w-[6px] h-[3px]" fill="none" viewBox="0 0 7.2 4.2">
+      <svg className="w-[6px] h-[3px] shrink-0" fill="none" viewBox="0 0 7.2 4.2">
         <path
           d="M0.6 0.6L3.6 3.6L6.6 0.6"
           stroke="currentColor"
