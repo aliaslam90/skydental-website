@@ -47,24 +47,31 @@ export default function HeroSection() {
         />
       </div>
 
-      {/* Content - extra bottom padding on mobile so text isn't cut by browser UI */}
+      {/* Content - responsive padding and spacing by breakpoint */}
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="relative z-10 h-full flex flex-col justify-end px-5 md:px-[40px] lg:px-6 pb-14 pt-12 md:pb-[40px] lg:pb-[48px] md:pt-0 w-full max-w-[1340px] mx-auto"
+        className="relative z-10 h-full flex flex-col justify-end px-4 sm:px-5 md:px-8 lg:px-10 xl:px-6 pb-12 sm:pb-14 md:pb-[36px] lg:pb-[44px] xl:pb-[48px] pt-10 sm:pt-12 md:pt-0 w-full max-w-[1340px] mx-auto"
       >
-        <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between w-full gap-6 md:gap-[40px]">
-          {/* Left Content - main headline only for focus */}
-          <div className="flex flex-col gap-3 md:gap-[16px] max-w-full lg:max-w-[771px]">
+        <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between w-full gap-4 sm:gap-6 md:gap-[40px]">
+          {/* Left Content - headline with responsive type scale */}
+          <div className="flex flex-col gap-2 sm:gap-3 md:gap-4 lg:gap-[16px] max-w-full lg:max-w-[771px]">
             <motion.h1
               variants={itemVariants}
-              className="text-white text-[28px] leading-[1.25] md:text-[50px] lg:text-[70px] md:leading-[1.2] tracking-[-1.5px] md:tracking-[-2.1px]"
+              className="text-white leading-[1.2] tracking-tight font-serif
+                text-[26px] sm:text-[30px]
+                md:text-[44px] md:leading-[1.18]
+                lg:text-[56px] lg:leading-[1.15]
+                xl:text-[64px] 2xl:text-[70px] xl:leading-[1.12]
+                tracking-[-0.02em] md:tracking-[-0.03em]"
               style={{ fontFamily: "'Gilda Display', serif" }}
             >
               Sky Dental Center
               <br />
-              <span className="inline-block">Your smile. Your confidence.</span>
+              <span className="block sm:inline">Your smile.</span>
+              <br className="sm:hidden" />
+              <span className="inline">Your confidence.</span>
               <br />
               Our expert care.
             </motion.h1>
