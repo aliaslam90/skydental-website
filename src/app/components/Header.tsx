@@ -13,6 +13,7 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [activeSection, setActiveSection] = useState('home')
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [moreDropdownOpen, setMoreDropdownOpen] = useState(false)
   const shouldReduceMotion = useReducedMotion()
   const navigate = useNavigate()
   const location = useLocation()
@@ -195,46 +196,73 @@ export default function Header() {
               >
                 Contact
               </button>
-              <Link
-                to="/patient-guide"
-                className={`px-[14px] py-[6px] rounded-full text-[14px] transition-all whitespace-nowrap ${
-                  location.pathname === '/patient-guide'
-                    ? 'bg-[#CBFF8F] text-[#0C0060] font-bold'
-                    : 'text-black hover:text-[#0C0060]'
-                }`}
-              >
-                Patient Guide
-              </Link>
-              <Link
-                to="/careers"
-                className={`px-[14px] py-[6px] rounded-full text-[14px] transition-all whitespace-nowrap ${
-                  location.pathname === '/careers'
-                    ? 'bg-[#CBFF8F] text-[#0C0060] font-bold'
-                    : 'text-black hover:text-[#0C0060]'
-                }`}
-              >
-                Careers
-              </Link>
-              <Link
-                to="/faqs"
-                className={`px-[14px] py-[6px] rounded-full text-[14px] transition-all whitespace-nowrap ${
-                  location.pathname === '/faqs'
-                    ? 'bg-[#CBFF8F] text-[#0C0060] font-bold'
-                    : 'text-black hover:text-[#0C0060]'
-                }`}
-              >
-                FAQs
-              </Link>
-              <Link
-                to="/privacy-policy"
-                className={`px-[14px] py-[6px] rounded-full text-[14px] transition-all whitespace-nowrap ${
-                  location.pathname === '/privacy-policy'
-                    ? 'bg-[#CBFF8F] text-[#0C0060] font-bold'
-                    : 'text-black hover:text-[#0C0060]'
-                }`}
-              >
-                Privacy Policy
-              </Link>
+              {/* More Dropdown */}
+              <div className="relative">
+                <NavDropdown
+                  label="More"
+                  active={moreDropdownOpen || ['/patient-guide', '/careers', '/faqs', '/privacy-policy'].includes(location.pathname)}
+                  onClick={() => setMoreDropdownOpen(!moreDropdownOpen)}
+                />
+
+                {/* Dropdown Menu */}
+                <AnimatePresence>
+                  {moreDropdownOpen && (
+                    <motion.div
+                      initial={shouldReduceMotion ? {} : { opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute top-full mt-2 right-0 bg-white rounded-2xl shadow-xl border border-[#0061AF]/20 py-2 min-w-[200px] z-[60]"
+                      onMouseLeave={() => setMoreDropdownOpen(false)}
+                    >
+                      <Link
+                        to="/patient-guide"
+                        onClick={() => setMoreDropdownOpen(false)}
+                        className={`block px-5 py-3 text-[14px] rounded-full transition-colors ${
+                          location.pathname === '/patient-guide'
+                            ? 'bg-[#CBFF8F] text-[#0C0060] font-bold'
+                            : 'text-black hover:bg-[#f8f9fa] hover:text-[#0C0060]'
+                        }`}
+                      >
+                        Patient Guide
+                      </Link>
+                      <Link
+                        to="/careers"
+                        onClick={() => setMoreDropdownOpen(false)}
+                        className={`block px-5 py-3 text-[14px] rounded-full transition-colors ${
+                          location.pathname === '/careers'
+                            ? 'bg-[#CBFF8F] text-[#0C0060] font-bold'
+                            : 'text-black hover:bg-[#f8f9fa] hover:text-[#0C0060]'
+                        }`}
+                      >
+                        Careers
+                      </Link>
+                      <Link
+                        to="/faqs"
+                        onClick={() => setMoreDropdownOpen(false)}
+                        className={`block px-5 py-3 text-[14px] rounded-full transition-colors ${
+                          location.pathname === '/faqs'
+                            ? 'bg-[#CBFF8F] text-[#0C0060] font-bold'
+                            : 'text-black hover:bg-[#f8f9fa] hover:text-[#0C0060]'
+                        }`}
+                      >
+                        FAQs
+                      </Link>
+                      <Link
+                        to="/privacy-policy"
+                        onClick={() => setMoreDropdownOpen(false)}
+                        className={`block px-5 py-3 text-[14px] rounded-full transition-colors ${
+                          location.pathname === '/privacy-policy'
+                            ? 'bg-[#CBFF8F] text-[#0C0060] font-bold'
+                            : 'text-black hover:bg-[#f8f9fa] hover:text-[#0C0060]'
+                        }`}
+                      >
+                        Privacy Policy
+                      </Link>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
             </nav>
 
             {/* Right side - Request Appointment Button + Mobile Menu */}
@@ -464,5 +492,27 @@ export default function Header() {
         )}
       </AnimatePresence>
     </>
+  )
+}
+
+function NavDropdown({ label, active, onClick }: { label: string; active: boolean; onClick?: () => void }) {
+  return (
+    <button
+      onClick={onClick}
+      className={`flex items-center gap-[5px] px-[14px] py-[6px] rounded-full text-[14px] transition-all whitespace-nowrap ${
+        active ? 'bg-[#CBFF8F] text-[#0C0060] font-bold' : 'text-black hover:text-[#0C0060]'
+      }`}
+    >
+      <span>{label}</span>
+      <svg className="w-[6px] h-[3px]" fill="none" viewBox="0 0 7.2 4.2">
+        <path
+          d="M0.6 0.6L3.6 3.6L6.6 0.6"
+          stroke="currentColor"
+          strokeWidth="1.2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </button>
   )
 }
