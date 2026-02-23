@@ -72,9 +72,9 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
       
       {/* Icon */}
       <div 
-        className="w-16 h-16 rounded-2xl flex items-center justify-center mb-4 relative z-10 flex-shrink-0 bg-[#CBFF8F]"
+        className="w-14 h-14 rounded-2xl flex items-center justify-center mb-4 relative z-10 flex-shrink-0 bg-[#CBFF8F]"
       >
-        <service.Icon className="w-[64px] h-[64px]" />
+        <service.Icon className="w-[60px] h-[60px]" />
       </div>
 
       {/* Content - Takes up remaining space */}

@@ -94,7 +94,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
         <div className="relative z-10">
           {/* Icon */}
           <div className="w-[4.5rem] h-[4.5rem] rounded-2xl flex items-center justify-center mb-6 bg-[#CBFF8F]/90 shadow-[0_4px_14px_-2px_rgba(203,255,143,0.4)] group-hover:bg-[#CBFF8F] group-hover:shadow-[0_8px_20px_-4px_rgba(203,255,143,0.35)] transition-all duration-300">
-            <service.Icon className="w-[56px] h-[56px]" />
+            <service.Icon className="w-[60px] h-[60px]" />
           </div>
 
           {/* Title */}
