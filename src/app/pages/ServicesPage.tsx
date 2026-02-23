@@ -4,6 +4,7 @@ import { motion, useReducedMotion, useInView } from 'motion/react'
 import { useRef } from 'react'
 import { ArrowUpRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import { useLanguage } from '../context/LanguageContext'
 import TestimonialsSection from '../components/TestimonialsSection'
 import { 
   GeneralDentistryIcon, 
@@ -14,44 +15,13 @@ import {
 } from '../components/ServiceIcons'
 import ScrollSection from '../components/ScrollSection'
 
-// Services data with IDs for routing
-const services = [
-  {
-    id: 'general-dentistry',
-    Icon: GeneralDentistryIcon,
-    title: 'General Dentistry',
-    description: 'Care focused on prevention, early diagnosis, and maintaining healthy teeth and gums, including checkups, cleanings, and preventive treatments.',
-    bgColor: '#CBFF8F'
-  },
-  {
-    id: 'cosmetic-dentistry',
-    Icon: CosmeticDentistryIcon,
-    title: 'Cosmetic Dentistry',
-    description: 'Transform your smile with advanced treatments; including whitening, veneers, and smile designs tailored to enhance your natural beauty and confidence.',
-    bgColor: '#CBFF8F'
-  },
-  {
-    id: 'orthodontics',
-    Icon: OrthodonticsIcon,
-    title: 'Orthodontics',
-    description: 'Straighten and align your teeth with modern orthodontic treatments, including braces, Invisalign, and tailored solutions for a confident, healthy smile.',
-    bgColor: '#CBFF8F'
-  },
-  {
-    id: 'pediatric-dentistry',
-    Icon: PediatricDentistryIcon,
-    title: 'Pediatric Dentistry',
-    description: 'Gentle, expert dental care for children and teens in a welcoming environment, designed to keep their smiles healthy and confident.',
-    bgColor: '#CBFF8F'
-  },
-  {
-    id: 'advanced-restorative',
-    Icon: ImplantAdvancedCareIcon,
-    title: 'Implant & Advanced Care',
-    description: 'Advanced dental treatments for restoring function, structure, and confidence, including implants and full-mouth rehabilitation.',
-    bgColor: '#CBFF8F'
-  }
-]
+const serviceConfig = [
+  { id: 'general-dentistry', titleKey: 'generalDentistryTitle', descKey: 'generalDentistryDesc', Icon: GeneralDentistryIcon, bgColor: '#CBFF8F' },
+  { id: 'cosmetic-dentistry', titleKey: 'cosmeticDentistryTitle', descKey: 'cosmeticDentistryDesc', Icon: CosmeticDentistryIcon, bgColor: '#CBFF8F' },
+  { id: 'orthodontics', titleKey: 'orthodonticsTitle', descKey: 'orthodonticsDesc', Icon: OrthodonticsIcon, bgColor: '#CBFF8F' },
+  { id: 'pediatric-dentistry', titleKey: 'pediatricDentistryTitle', descKey: 'pediatricDentistryDesc', Icon: PediatricDentistryIcon, bgColor: '#CBFF8F' },
+  { id: 'advanced-restorative', titleKey: 'implantAdvancedTitle', descKey: 'implantAdvancedDesc', Icon: ImplantAdvancedCareIcon, bgColor: '#CBFF8F' },
+] as const
 
 // Guest experience images
 const guestExperiences = [
@@ -69,7 +39,7 @@ function SectionBadge({ icon, text }: { icon: string; text: string }) {
   )
 }
 
-function ServiceCard({ service, index }: { service: typeof services[0]; index: number }) {
+function ServiceCard({ service, title, description, learnMore, index }: { service: typeof serviceConfig[number]; title: string; description: string; learnMore: string; index: number }) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
   const shouldReduceMotion = useReducedMotion()
@@ -99,15 +69,15 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
 
           {/* Title */}
           <h3 className="text-[1.5rem] md:text-[1.625rem] font-['Gilda_Display'] text-black mb-3 tracking-tight leading-tight">
-            {service.title}
+            {title}
           </h3>
           <p className="text-[0.9375rem] text-black/70 font-['Arial'] leading-[1.6] mb-7 max-w-[32ch]">
-            {service.description}
+            {description}
           </p>
 
           {/* Learn More - pill CTA */}
           <span className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-['Poppins'] font-semibold text-black/80 bg-black/[0.06] group-hover:bg-[#CBFF8F] group-hover:text-black group-hover:gap-3 transition-all duration-300">
-            Learn More
+            {learnMore}
             <ArrowUpRight className="w-4 h-4 shrink-0" />
           </span>
         </div>
@@ -119,6 +89,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
 
 export default function ServicesPage() {
   const shouldReduceMotion = useReducedMotion()
+  const { t } = useLanguage()
   const heroRef = useRef(null)
   const servicesRef = useRef(null)
   const experiencesRef = useRef(null)
@@ -182,18 +153,18 @@ export default function ServicesPage() {
             className="text-center mb-20"
           >
             <p className="text-xs font-['Poppins'] font-semibold tracking-[0.2em] text-black/50 uppercase mb-4">
-              Our Services
+              {t('servicesPage', 'pageTitle')}
             </p>
             <h2 className="text-4xl md:text-5xl lg:text-[3.25rem] font-['Gilda_Display'] text-black tracking-tight leading-[1.15] max-w-2xl mx-auto">
-              What Do You Need Today
+              {t('home', 'whatDoYouNeedToday')}
             </h2>
           </motion.div>
 
           {/* Services Grid - First Row (3 cards) */}
           <div className="max-w-6xl mx-auto mb-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-              {services.slice(0, 3).map((service, index) => (
-                <ServiceCard key={index} service={service} index={index} />
+              {serviceConfig.slice(0, 3).map((service, index) => (
+                <ServiceCard key={service.id} service={service} title={t('home', service.titleKey)} description={t('home', service.descKey)} learnMore={t('common', 'learnMore')} index={index} />
               ))}
             </div>
           </div>
@@ -201,8 +172,8 @@ export default function ServicesPage() {
           {/* Services Grid - Second Row (2 cards centered) */}
           <div className="max-w-4xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-              {services.slice(3).map((service, index) => (
-                <ServiceCard key={index + 3} service={service} index={index + 3} />
+              {serviceConfig.slice(3).map((service, index) => (
+                <ServiceCard key={service.id} service={service} title={t('home', service.titleKey)} description={t('home', service.descKey)} learnMore={t('common', 'learnMore')} index={index + 3} />
               ))}
             </div>
           </div>

@@ -2,8 +2,10 @@
 
 import { motion, useReducedMotion, useInView } from 'motion/react'
 import { useRef } from 'react'
+import { useLanguage } from '../context/LanguageContext'
 
 export default function AboutSection() {
+  const { t } = useLanguage()
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
   const shouldReduceMotion = useReducedMotion()
@@ -46,7 +48,7 @@ export default function AboutSection() {
                   <circle cx="6.81372" cy="6.81372" r="4.5" fill="#0061AF" />
                 </svg>
               </div>
-              <span className="text-[#0061af] text-[14px] md:text-[16px]">Learn More</span>
+              <span className="text-[#0061af] text-[14px] md:text-[16px]">{t('common', 'learnMore')}</span>
             </div>
           </motion.div>
 
@@ -55,7 +57,7 @@ export default function AboutSection() {
             className="text-black text-[24px] md:text-[30px] lg:text-[37px] leading-[1.32] text-justify w-full lg:max-w-[835px]"
             style={{ fontFamily: "'Gilda Display', serif" }}
           >
-            At Sky Dental Center, every appointment is thoughtfully designed around you, combining experience, precision, and personalised care in a calm, welcoming setting.
+            {t('home', 'aboutParagraph')}
           </motion.p>
         </div>
       </motion.div>

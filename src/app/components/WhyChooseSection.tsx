@@ -3,6 +3,7 @@
 import { motion, useReducedMotion, useInView } from 'motion/react'
 import { useRef } from 'react'
 import { useBooking } from '../context/BookingContext'
+import { useLanguage } from '../context/LanguageContext'
 // Image is in public folder, using direct path
 const imgImage1 = '/woman-patient-in-dental-clinic-being-examined-by-a-2025-04-01-13-09-56-utc.png'
 
@@ -11,6 +12,7 @@ export default function WhyChooseSection() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
   const shouldReduceMotion = useReducedMotion()
   const { openBookingSidebar } = useBooking()
+  const { t } = useLanguage()
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -54,18 +56,18 @@ export default function WhyChooseSection() {
               className="text-black text-[32px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-1.44px] capitalize"
               style={{ fontFamily: "'Gilda Display', serif" }}
             >
-              Why Choose Sky Dental Center?
+              {t('home', 'whyChooseTitle')}
             </h2>
 
             <p className="text-black/80 text-[16px] leading-[1.55]">
-              Personalised care that prioritises your comfort, confidence, and smile.
+              {t('home', 'whyChooseSub')}
             </p>
 
             <div className="flex flex-col gap-[12px] md:gap-[16px] w-full lg:max-w-[478px]">
-              <ReasonItem number="1" text="Cutting-edge technology for precise, minimally invasive treatments." />
-              <ReasonItem number="2" text="Experienced specialists working together to create natural, confident results." />
-              <ReasonItem number="3" text="Highest standards of safety and hygiene." />
-              <ReasonItem number="4" text="Modern clinics designed for a smooth, stress-free experience." />
+              <ReasonItem number="1" text={t('home', 'reason1')} />
+              <ReasonItem number="2" text={t('home', 'reason2')} />
+              <ReasonItem number="3" text={t('home', 'reason3')} />
+              <ReasonItem number="4" text={t('home', 'reason4')} />
             </div>
 
             {/* Request Appointment - kept here per doc */}
@@ -76,7 +78,7 @@ export default function WhyChooseSection() {
               onClick={() => openBookingSidebar()}
               className="bg-[#CBFF8F] flex items-center gap-4 md:gap-6 pl-4 md:pl-6 pr-[8px] md:pr-[10px] py-2 rounded-[35px] hover:bg-[#B1FF57] transition-colors z-10 w-fit"
             >
-              <span className="text-[#0C0060] font-bold text-[14px] md:text-[16px] whitespace-nowrap">Request Appointment</span>
+              <span className="text-[#0C0060] font-bold text-[14px] md:text-[16px] whitespace-nowrap">{t('common', 'requestAppointment')}</span>
               <div className="bg-[#0C0060] w-[32px] h-[32px] md:w-[34px] md:h-[34px] rounded-full flex items-center justify-center flex-shrink-0">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 20 20">
                   <path 

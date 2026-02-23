@@ -1,6 +1,7 @@
 'use client'
 
 import { motion, useReducedMotion, useInView } from 'motion/react'
+import { useLanguage } from '../context/LanguageContext'
 import { useRef, useState, useCallback, useEffect } from 'react'
 
 // Update these paths to your new high-quality images in the public folder
@@ -12,6 +13,7 @@ export default function ResultsSection() {
   const containerRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
   const shouldReduceMotion = useReducedMotion()
+  const { t } = useLanguage()
   
   // Track slider position (0-100%)
   const [sliderPosition, setSliderPosition] = useState(50)
@@ -126,7 +128,7 @@ export default function ResultsSection() {
                 
                 {/* After Label */}
                 <div className="absolute top-[20px] right-[20px] bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full">
-                  <span className="text-[#0C0060] font-semibold text-[14px]">AFTER</span>
+                  <span className="text-[#0C0060] font-semibold text-[14px]">{t('common', 'after')}</span>
                 </div>
               </div>
 
@@ -150,7 +152,7 @@ export default function ResultsSection() {
                 
                 {/* Before Label */}
                 <div className="absolute top-[20px] left-[20px] bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full">
-                  <span className="text-[#0C0060] font-semibold text-[14px]">BEFORE</span>
+                  <span className="text-[#0C0060] font-semibold text-[14px]">{t('common', 'before')}</span>
                 </div>
               </div>
 
@@ -208,10 +210,10 @@ export default function ResultsSection() {
                   className="text-black text-[32px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-1.44px] capitalize"
                   style={{ fontFamily: "'Gilda Display', serif" }}
                 >
-                  Excellent Results
+                  {t('home', 'excellentResults')}
                 </h2>
                 <p className="text-[#202020] text-[16px] leading-[1.55]">
-                  Every treatment we provide reflects your individuality and our dedication to excellence. Thoughtfully planned and carefully delivered, each result balances effectiveness, comfort, and confidence — leaving you with care you can trust and outcomes that support lasting oral health and wellbeing.
+                  {t('home', 'excellentResultsDesc')}
                 </p>
               </div>
             </motion.div>

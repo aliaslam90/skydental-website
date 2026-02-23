@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion, useInView } from 'motion/react'
 import { useRef, useState, useEffect } from 'react'
+import { useLanguage } from '../context/LanguageContext'
 import imgImage10 from '../../assets/6b7905bb93d0f824d8be0a8badf26d7ebf6ec721.png'
 
 // Services list
@@ -59,6 +60,7 @@ export default function ContactSection() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
   const shouldReduceMotion = useReducedMotion()
+  const { t } = useLanguage()
 
   const [formData, setFormData] = useState({
     fullName: '',
@@ -225,11 +227,11 @@ export default function ContactSection() {
                   className="text-black text-[48px] leading-[1.2] tracking-[-1.44px]"
                   style={{ fontFamily: "'Gilda Display', serif" }}
                 >
-                  Schedule a Consultation Today!
+                  {t('home', 'scheduleTitle')}
                 </h2>
 
                 <p className="text-black text-[16px] leading-[1.6] max-w-[500px]">
-                  Your perfect smile starts here! Book your appointment today for expert care in a comfortable and modern setting.
+                  {t('home', 'scheduleSub')}
                 </p>
 
                 {/* Social Links */}
@@ -270,14 +272,14 @@ export default function ContactSection() {
                 <div className="flex flex-col gap-[16px] sm:gap-[20px]">
                   <div className="flex flex-col gap-[8px]">
                     <label className="text-[14px] font-medium text-black">
-                      Full Name <span className="text-red-500">*</span>
+                      {t('common', 'fullName')} <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
                       name="fullName"
                       value={formData.fullName}
                       onChange={handleInputChange}
-                      placeholder="Full name"
+                      placeholder={t('common', 'placeholderFullName')}
                       required
                       className="bg-[#f1f1f1] h-[55px] px-[16px] sm:px-[24px] py-[16px] rounded-[12px] text-[14px] text-black"
                     />
@@ -285,7 +287,7 @@ export default function ContactSection() {
 
                   <div className="flex flex-col gap-[8px]">
                     <label className="text-[14px] font-medium text-black">
-                      Phone Number <span className="text-red-500">*</span>
+                      {t('common', 'phoneNumber')} <span className="text-red-500">*</span>
                     </label>
                     <div className="flex gap-2">
                       {/* Country Code Selector */}
@@ -336,14 +338,14 @@ export default function ContactSection() {
 
                   <div className="flex flex-col gap-[8px]">
                     <label className="text-[14px] font-medium text-black">
-                      Email <span className="text-gray-500">(Optional)</span>
+                      {t('common', 'emailOptional')}
                     </label>
                     <input
                       type="email"
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      placeholder="Enter email address"
+                      placeholder={t('common', 'placeholderEmail')}
                       className="bg-[#f1f1f1] h-[55px] px-[16px] sm:px-[24px] py-[16px] rounded-[12px] text-[14px] text-black"
                     />
                   </div>
@@ -357,7 +359,7 @@ export default function ContactSection() {
                       {/* Service Input */}
                       <div className="relative flex-1 w-full">
                         <label className="text-[14px] font-medium text-black mb-[8px] block">
-                          Service <span className="text-red-500">*</span>
+                          {t('common', 'service')} <span className="text-red-500">*</span>
                         </label>
                         <select
                           name="service"
@@ -366,7 +368,7 @@ export default function ContactSection() {
                           required
                           className="bg-[#f1f1f1] h-[55px] px-[16px] sm:px-[24px] py-[16px] rounded-[12px] text-[14px] text-black appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuNDEgOC41OEwxMiAxMy4xN0wxNi41OSA4LjU4TDE4IDEwTDEyIDE2TDYgMTBMNy40MSA4LjU4WiIgZmlsbD0iYmxhY2siLz4KPC9zdmc+Cg==')] bg-no-repeat bg-[right_16px_center] sm:bg-[right_24px_center] w-full"
                         >
-                          <option value="">Select service</option>
+                          <option value="">{t('common', 'selectService')}</option>
                           {services.map(service => (
                             <option key={service} value={service}>{service}</option>
                           ))}
@@ -376,7 +378,7 @@ export default function ContactSection() {
                       {/* Doctor Input */}
                       <div className="relative flex-1 w-full">
                         <label className="text-[14px] font-medium text-black mb-[8px] block">
-                          Doctor <span className="text-red-500">*</span>
+                          {t('common', 'doctor')} <span className="text-red-500">*</span>
                         </label>
                         <select
                           name="doctor"
@@ -386,7 +388,7 @@ export default function ContactSection() {
                           disabled={!formData.service}
                           className="bg-[#f1f1f1] h-[55px] px-[16px] sm:px-[24px] py-[16px] rounded-[12px] text-[14px] text-black appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuNDEgOC41OEwxMiAxMy4xN0wxNi41OSA4LjU4TDE4IDEwTDEyIDE2TDYgMTBMNy40MSA4LjU4WiIgZmlsbD0iYmxhY2siLz4KPC9zdmc+Cg==')] bg-no-repeat bg-[right_16px_center] sm:bg-[right_24px_center] disabled:opacity-50 disabled:cursor-not-allowed w-full"
                         >
-                          <option value="">Select doctor</option>
+                          <option value="">{t('common', 'selectDoctor')}</option>
                           {formData.service && availableDoctors.map(doctor => (
                             <option key={doctor} value={doctor}>{doctor}</option>
                           ))}
@@ -401,7 +403,7 @@ export default function ContactSection() {
                       {/* Date Input */}
                       <div className="relative flex-1 w-full" ref={datePickerRef}>
                         <label className="text-[14px] font-medium text-black mb-[8px] block">
-                          Date <span className="text-red-500">*</span>
+                          {t('common', 'date')} <span className="text-red-500">*</span>
                         </label>
                         <button
                           type="button"
@@ -418,7 +420,7 @@ export default function ContactSection() {
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                             </svg>
                             <span className={`truncate ${formData.date ? 'font-semibold text-black' : 'text-gray-500'}`}>
-                              {formData.date || 'Select date'}
+                              {formData.date || t('common', 'selectDate')}
                             </span>
                           </div>
                           <svg className="w-5 h-5 text-gray-400 flex-shrink-0 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -437,7 +439,7 @@ export default function ContactSection() {
                       {/* Time Input */}
                       <div className="relative flex-1 w-full" ref={timePickerRef}>
                         <label className="text-[14px] font-medium text-black mb-[8px] block">
-                          Time <span className="text-red-500">*</span>
+                          {t('common', 'time')} <span className="text-red-500">*</span>
                         </label>
                         <button
                           type="button"
@@ -448,7 +450,7 @@ export default function ContactSection() {
                           }`}
                         >
                           <span className={`truncate flex-1 ${formData.time ? 'font-semibold text-black' : 'text-gray-500'}`}>
-                            {formData.time || 'Select time'}
+                            {formData.time || t('common', 'selectTime')}
                           </span>
                           <svg className="w-5 h-5 text-gray-400 flex-shrink-0 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -462,7 +464,7 @@ export default function ContactSection() {
                           />
                         )}
                         {!formData.date && formData.service && formData.doctor && (
-                          <p className="text-[12px] text-gray-500 mt-1">Select date first</p>
+                          <p className="text-[12px] text-gray-500 mt-1">{t('common', 'selectDateFirst')}</p>
                         )}
                       </div>
                     </div>
@@ -475,7 +477,7 @@ export default function ContactSection() {
                       name="message"
                       value={formData.message}
                       onChange={handleInputChange}
-                      placeholder="Add any special instructions or notes..."
+                      placeholder={t('common', 'placeholderMessage')}
                       rows={4}
                       className="bg-[#f1f1f1] px-[16px] sm:px-[24px] py-[16px] rounded-[12px] text-[14px] text-black resize-none"
                     />
@@ -490,7 +492,7 @@ export default function ContactSection() {
                     transition={{ delay: shouldReduceMotion ? 0 : 0.5, duration: shouldReduceMotion ? 0 : 0.6 }}
                     className="w-full bg-[#CBFF8F] h-[50px] px-[24px] py-[16px] rounded-[12px] text-[14px] font-medium text-[#0C0060] hover:bg-[#B1FF57] transition-colors"
                   >
-                    Request Appointment
+                    {t('common', 'requestAppointment')}
                   </motion.button>
                 </div>
               </form>

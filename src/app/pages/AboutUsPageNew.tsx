@@ -1,94 +1,11 @@
 'use client'
 
 import { motion, useReducedMotion, useInView } from 'motion/react'
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, useMemo } from 'react'
 import { Heart, Target, Users, Award, Zap, Shield, Clock, CheckCircle } from 'lucide-react'
 import { useBooking } from '../context/BookingContext'
+import { useLanguage } from '../context/LanguageContext'
 import ScrollSection from '../components/ScrollSection'
-
-// Core Values Data
-const coreValues = [
-  {
-    icon: Award,
-    title: 'Excellence',
-    description: 'We uphold the highest standards in dentistry, combining expertise, careful planning, and thoughtful care to deliver results you can rely on.',
-    bgColor: '#CBFF8F'
-  },
-  {
-    icon: Shield,
-    title: 'Trust',
-    description: 'We build lasting relationships through honesty, transparency, and compassionate attention, ensuring every patient feels confident and cared for.',
-    bgColor: '#CBFF8F'
-  }
-]
-
-// Innovation Features
-const innovationFeatures = [
-  {
-    icon: Zap,
-    title: '3D Imaging Systems',
-    description: 'For precise, personalized treatment planning and beautiful results.'
-  },
-  {
-    icon: Shield,
-    title: 'High-Resolution Digital X-Rays',
-    description: 'Accurate diagnostics with comfort in mind.'
-  },
-  {
-    icon: Clock,
-    title: 'Advanced Treatment Equipment',
-    description: 'Minimally invasive procedures designed for your ease.'
-  },
-  {
-    icon: Heart,
-    title: 'Sterilisation Excellence',
-    description: 'Ensuring the highest safety standards for all patients.'
-  }
-]
-
-// Journey Timeline
-const journeySteps = [
-  {
-    title: 'Initial Visit',
-    description: 'We get to know you! A thorough consultation covers your dental history, concerns, and goals.',
-    icon: '🏥'
-  },
-  {
-    title: 'Detailed Assessment',
-    description: 'Comprehensive examinations utilizing the latest technology for accurate diagnosis and treatment planning.',
-    icon: '🔍'
-  },
-  {
-    title: 'Customized Treatment',
-    description: 'Personalized care plans designed specifically for your unique needs and lifestyle.',
-    icon: '⚕️'
-  },
-  {
-    title: 'Long-Term Partnership',
-    description: 'Ongoing support and preventive care to maintain your optimal oral health for years to come.',
-    icon: '🤝'
-  }
-]
-
-// Your Journey Steps
-const patientJourneySteps = [
-  {
-    title: 'Book Booking',
-    description: 'Schedule your appointment online'
-  },
-  {
-    title: 'Expert Diagnosis',
-    description: 'Comprehensive oral examination'
-  },
-  {
-    title: 'Personalized Care',
-    description: 'Custom treatment plan just for you'
-  },
-  {
-    title: 'Long-Term Wellness',
-    description: 'Ongoing support and maintenance'
-  }
-]
 
 // Guest Experience Images
 const guestExperiences = [
@@ -103,7 +20,34 @@ const guestExperiences = [
 export default function AboutUsPageNew() {
   const shouldReduceMotion = useReducedMotion()
   const { openBookingSidebar } = useBooking()
-  
+  const { t } = useLanguage()
+
+  const coreValues = useMemo(() => [
+    { icon: Award, title: t('about', 'excellence'), description: t('about', 'excellenceDesc'), bgColor: '#CBFF8F' },
+    { icon: Shield, title: t('about', 'trust'), description: t('about', 'trustDesc'), bgColor: '#CBFF8F' }
+  ], [t])
+
+  const innovationFeatures = useMemo(() => [
+    { icon: Zap, title: t('about', 'imagingTitle'), description: t('about', 'imagingDesc') },
+    { icon: Shield, title: t('about', 'xrayTitle'), description: t('about', 'xrayDesc') },
+    { icon: Clock, title: t('about', 'equipmentTitle'), description: t('about', 'equipmentDesc') },
+    { icon: Heart, title: t('about', 'sterilisationTitle'), description: t('about', 'sterilisationDesc') }
+  ], [t])
+
+  const journeySteps = useMemo(() => [
+    { title: t('about', 'initialVisit'), description: t('about', 'initialVisitDesc'), icon: '🏥' },
+    { title: t('about', 'detailedAssessment'), description: t('about', 'detailedAssessmentDesc'), icon: '🔍' },
+    { title: t('about', 'customizedTreatment'), description: t('about', 'customizedTreatmentDesc'), icon: '⚕️' },
+    { title: t('about', 'longTermPartnership'), description: t('about', 'longTermPartnershipDesc'), icon: '🤝' }
+  ], [t])
+
+  const patientJourneySteps = useMemo(() => [
+    { title: t('about', 'bookBooking'), description: t('about', 'bookBookingDesc') },
+    { title: t('about', 'expertDiagnosis'), description: t('about', 'expertDiagnosisDesc') },
+    { title: t('about', 'personalizedCare'), description: t('about', 'personalizedCareDesc') },
+    { title: t('about', 'longTermWellness'), description: t('about', 'longTermWellnessDesc') }
+  ], [t])
+
   const heroRef = useRef(null)
   const visionRef = useRef(null)
   const whyChooseRef = useRef(null)
@@ -153,7 +97,7 @@ export default function AboutUsPageNew() {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-[rgba(203,255,143,0.3)] px-5 py-2 rounded-full mb-6">
               <Heart className="w-4 h-4 text-[#0C0060]" />
-              <span className="text-sm text-black font-['Arial']">About Us</span>
+              <span className="text-sm text-black font-['Arial']">{t('about', 'pageTitle')}</span>
             </div>
 
             {/* Main Heading */}
@@ -286,7 +230,7 @@ export default function AboutUsPageNew() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-['Gilda_Display'] text-black mb-4 tracking-tight">
-              Our Core Values
+              {t('about', 'coreValues')}
             </h2>
             <p className="text-base text-black/60 font-['Arial'] max-w-3xl mx-auto">
               These principles guide our actions and shape the culture of care we provide to our community every single day.
@@ -336,7 +280,7 @@ export default function AboutUsPageNew() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-['Gilda_Display'] text-black mb-4 tracking-tight">
-              Why Choose Sky Dental Center?
+              {t('about', 'whyChooseUs')}
             </h2>
           </motion.div>
 
@@ -423,7 +367,7 @@ export default function AboutUsPageNew() {
               className="text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-['Gilda_Display'] text-black mb-4 tracking-tight">
-                Technology & Innovation
+                {t('about', 'innovation')}
               </h2>
               <p className="text-base text-black/70 font-['Arial'] max-w-2xl mx-auto">
                 At Sky Dental Center, advanced technology supports the smile we create. Our cutting-edge systems enhance precision, ensure safer procedures, and make your experience as comfortable and efficient as possible.
@@ -604,7 +548,7 @@ export default function AboutUsPageNew() {
               onClick={() => openBookingSidebar()}
               className="bg-[#0C0060] text-white px-8 py-4 rounded-full font-['Arial'] font-semibold text-lg hover:bg-[#7ab3ff] transition-colors shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform duration-200"
             >
-              Request Appointment
+              {t('about', 'requestAppointmentCta')}
             </button>
           </motion.div>
         </div>

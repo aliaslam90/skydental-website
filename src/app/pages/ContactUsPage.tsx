@@ -4,6 +4,7 @@ import { motion, useReducedMotion, useInView } from 'motion/react'
 import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle2 } from 'lucide-react'
+import { useLanguage } from '../context/LanguageContext'
 import imgImage from "../../assets/e2295a1a1a2bc348414dcc117de577c691164137.png"
 import imgImage1 from "../../assets/c5fbf2bb2ed01ea6f6ce38835da33519e2db95fe.png"
 import imgImage2 from "../../assets/27cea6501d6677b5b8f9f08502ce76c7a193f7f8.png"
@@ -11,6 +12,7 @@ import ScrollSection from '../components/ScrollSection'
 
 export default function ContactUsPage() {
   const shouldReduceMotion = useReducedMotion()
+  const { t } = useLanguage()
   const [formData, setFormData] = useState({
     fullName: '',
     phoneNumber: '',
@@ -77,12 +79,12 @@ export default function ContactUsPage() {
           >
             {/* Title */}
             <h1 className="text-5xl md:text-6xl font-['Gilda_Display'] text-black mb-6 tracking-tight">
-              Sky Dental Center
+              {t('contactPage', 'heroTitle')}
             </h1>
 
             {/* Description */}
             <p className="text-lg text-[#1b1b1b] font-['Arial'] leading-relaxed mb-10 max-w-3xl mx-auto">
-              We are here to assist with your enquiries and support you in scheduling your appointment with ease. Connect with us through any of the channels below, and our team will be pleased to help.
+              {t('contactPage', 'heroSub')}
             </p>
 
             {/* Feature Pills */}
@@ -116,7 +118,7 @@ export default function ContactUsPage() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-['Gilda_Display'] text-black mb-4">
-              Get In Touch
+              {t('contactPage', 'getInTouch')}
             </h2>
             <p className="text-base text-black font-['Arial']">
               Choose the most convenient way to connect with us. Our team is always ready to assist and guide you.
@@ -135,7 +137,7 @@ export default function ContactUsPage() {
               <div className="w-16 h-16 bg-[#CBFF8F] rounded-2xl flex items-center justify-center mb-6">
                 <Phone className="w-8 h-8 text-[#0C0060]" />
               </div>
-              <h3 className="text-2xl font-['Gilda_Display'] text-black mb-4">Phone</h3>
+              <h3 className="text-2xl font-['Gilda_Display'] text-black mb-4">{t('contactPage', 'phone')}</h3>
               <p className="text-base font-['Arial'] font-bold text-[#0c0060] mb-1">026 677 448</p>
               <p className="text-xs font-['Arial'] text-black opacity-70">
                 Call us to book appointments or for any enquiries.
@@ -152,7 +154,7 @@ export default function ContactUsPage() {
               <div className="w-16 h-16 bg-[#CBFF8F] rounded-2xl flex items-center justify-center mb-6">
                 <Mail className="w-8 h-8 text-[#0C0060]" />
               </div>
-              <h3 className="text-2xl font-['Gilda_Display'] text-black mb-4">Email</h3>
+              <h3 className="text-2xl font-['Gilda_Display'] text-black mb-4">{t('contactPage', 'email')}</h3>
               <p className="text-base font-['Arial'] font-bold text-[#0c0060] mb-1">smile@skydc.ae</p>
               <p className="text-xs font-['Arial'] text-black opacity-70">
                 Reach out to us anytime—we're happy to assist.
@@ -169,7 +171,7 @@ export default function ContactUsPage() {
               <div className="w-16 h-16 bg-[#CBFF8F] rounded-2xl flex items-center justify-center mb-6">
                 <MapPin className="w-8 h-8 text-[#0C0060]" />
               </div>
-              <h3 className="text-2xl font-['Gilda_Display'] text-black mb-4">Location</h3>
+              <h3 className="text-2xl font-['Gilda_Display'] text-black mb-4">{t('contactPage', 'visitClinic')}</h3>
               <p className="text-base font-['Arial'] font-bold text-[#0c0060] mb-1">Villa 45, Al Forsan Street, Khalifa City, Abu Dhabi, UAE</p>
               <p className="text-xs font-['Arial'] text-black opacity-70">
                 Visit us for personalised, in-person consultations.
@@ -186,7 +188,7 @@ export default function ContactUsPage() {
               <div className="w-16 h-16 bg-[#CBFF8F] rounded-2xl flex items-center justify-center mb-6">
                 <Clock className="w-8 h-8 text-[#0C0060]" />
               </div>
-              <h3 className="text-2xl font-['Gilda_Display'] text-black mb-4">Working Hours</h3>
+              <h3 className="text-2xl font-['Gilda_Display'] text-black mb-4">{t('contactPage', 'workingHours')}</h3>
               <p className="text-base font-['Arial'] font-bold text-[#0c0060] mb-1">10:00 AM – 10:00 PM</p>
               <p className="text-xs font-['Arial'] text-black mb-4">7 days a week</p>
               <p className="text-xs font-['Arial'] text-black opacity-70">
@@ -209,7 +211,7 @@ export default function ContactUsPage() {
             className="text-center mb-12"
           >
             <h2 className="text-4xl md:text-5xl font-['Gilda_Display'] text-black mb-4">
-              Send Us a Message
+              {t('contactPage', 'sendUsMessage')}
             </h2>
             <p className="text-base text-black font-['Arial']">
               Complete the form below and our team will get back to you promptly.
@@ -227,9 +229,9 @@ export default function ContactUsPage() {
                 <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-6">
                   <CheckCircle2 className="w-10 h-10 text-[#0C0060]" />
                 </div>
-                <h3 className="text-3xl font-['Gilda_Display'] text-black mb-4">Message Sent Successfully!</h3>
+                <h3 className="text-3xl font-['Gilda_Display'] text-black mb-4">{t('contactPage', 'successTitle')}</h3>
                 <p className="text-base font-['Arial'] text-black">
-                  Thank you for contacting us. We'll get back to you shortly.
+                  {t('contactPage', 'successMessage')}
                 </p>
               </div>
             ) : (
@@ -238,7 +240,7 @@ export default function ContactUsPage() {
                   {/* Full Name */}
                   <div>
                     <label htmlFor="fullName" className="block text-sm font-['Arial'] text-black mb-2">
-                      Full Name *
+                      {t('contactPage', 'fullName')} *
                     </label>
                     <input
                       type="text"
@@ -255,7 +257,7 @@ export default function ContactUsPage() {
                   {/* Email Address */}
                   <div>
                     <label htmlFor="emailAddress" className="block text-sm font-['Arial'] text-black mb-2">
-                      Email Address *
+                      {t('contactPage', 'emailAddress')} *
                     </label>
                     <input
                       type="email"
@@ -274,7 +276,7 @@ export default function ContactUsPage() {
                   {/* Phone Number */}
                   <div>
                     <label htmlFor="phoneNumber" className="block text-sm font-['Arial'] text-black mb-2">
-                      Phone Number
+                      {t('contactPage', 'phoneNumber')}
                     </label>
                     <input
                       type="tel"
@@ -290,7 +292,7 @@ export default function ContactUsPage() {
                   {/* Subject */}
                   <div>
                     <label htmlFor="subject" className="block text-sm font-['Arial'] text-black mb-2">
-                      Subject *
+                      {t('contactPage', 'subject')} *
                     </label>
                     <input
                       type="text"
@@ -308,7 +310,7 @@ export default function ContactUsPage() {
                 {/* Message */}
                 <div className="mb-8">
                   <label htmlFor="message" className="block text-sm font-['Arial'] text-black mb-2">
-                    Message *
+                    {t('contactPage', 'message')} *
                   </label>
                   <textarea
                     id="message"
@@ -327,7 +329,7 @@ export default function ContactUsPage() {
                   type="submit"
                   className="w-full bg-[#CBFF8F] hover:bg-[#b8e680] text-[#0C0060] font-['Arial'] font-bold py-4 px-6 rounded-full flex items-center justify-center gap-3 transition-all duration-300 group"
                 >
-                  <span className="text-base">Send Message</span>
+                  <span className="text-base">{t('contactPage', 'sendMessage')}</span>
                   <div className="w-8 h-8 bg-[#0C0060] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
                     <Send className="w-4 h-4 text-[#CBFF8F]" />
                   </div>
@@ -389,7 +391,7 @@ export default function ContactUsPage() {
                     <Clock className="w-6 h-6 text-[#0C0060]" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-['Gilda_Display'] text-black mb-3">Opening Hours</h3>
+                    <h3 className="text-2xl font-['Gilda_Display'] text-black mb-3">{t('contactPage', 'hours')}</h3>
                     <div className="space-y-2">
                       <div className="flex items-center gap-2">
                         <div className="w-2 h-2 bg-[#CBFF8F] rounded-full"></div>

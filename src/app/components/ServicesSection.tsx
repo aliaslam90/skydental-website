@@ -4,6 +4,7 @@ import { motion, useReducedMotion, useInView } from 'motion/react'
 import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowUpRight } from 'lucide-react'
+import { useLanguage } from '../context/LanguageContext'
 import { 
   GeneralDentistryIcon, 
   CosmeticDentistryIcon, 
@@ -12,46 +13,15 @@ import {
   ImplantAdvancedCareIcon 
 } from './ServiceIcons'
 
-// Services data matching ServicesPage
-const services = [
-  {
-    id: 'general-dentistry',
-    Icon: GeneralDentistryIcon,
-    title: 'General Dentistry',
-    description: 'Care focused on prevention, early diagnosis, and maintaining healthy teeth and gums, including checkups, cleanings, and preventive treatments.',
-    bgColor: '#CBFF8F'
-  },
-  {
-    id: 'cosmetic-dentistry',
-    Icon: CosmeticDentistryIcon,
-    title: 'Cosmetic Dentistry',
-    description: 'Transform your smile with advanced treatments; including whitening, veneers, and smile designs tailored to enhance your natural beauty and confidence.',
-    bgColor: '#CBFF8F'
-  },
-  {
-    id: 'orthodontics',
-    Icon: OrthodonticsIcon,
-    title: 'Orthodontics',
-    description: 'Straighten and align your teeth with modern orthodontic treatments, including braces, Invisalign, and tailored solutions for a confident, healthy smile.',
-    bgColor: '#CBFF8F'
-  },
-  {
-    id: 'pediatric-dentistry',
-    Icon: PediatricDentistryIcon,
-    title: 'Pediatric Dentistry',
-    description: 'Gentle, expert dental care for children and teens in a welcoming environment, designed to keep their smiles healthy and confident.',
-    bgColor: '#CBFF8F'
-  },
-  {
-    id: 'advanced-restorative',
-    Icon: ImplantAdvancedCareIcon,
-    title: 'Implant & Advanced Care',
-    description: 'Advanced dental treatments for restoring function, structure, and confidence, including implants and full-mouth rehabilitation.',
-    bgColor: '#CBFF8F'
-  }
-]
+const serviceConfig = [
+  { id: 'general-dentistry', titleKey: 'generalDentistryTitle', descKey: 'generalDentistryDesc', Icon: GeneralDentistryIcon, bgColor: '#CBFF8F' },
+  { id: 'cosmetic-dentistry', titleKey: 'cosmeticDentistryTitle', descKey: 'cosmeticDentistryDesc', Icon: CosmeticDentistryIcon, bgColor: '#CBFF8F' },
+  { id: 'orthodontics', titleKey: 'orthodonticsTitle', descKey: 'orthodonticsDesc', Icon: OrthodonticsIcon, bgColor: '#CBFF8F' },
+  { id: 'pediatric-dentistry', titleKey: 'pediatricDentistryTitle', descKey: 'pediatricDentistryDesc', Icon: PediatricDentistryIcon, bgColor: '#CBFF8F' },
+  { id: 'advanced-restorative', titleKey: 'implantAdvancedTitle', descKey: 'implantAdvancedDesc', Icon: ImplantAdvancedCareIcon, bgColor: '#CBFF8F' },
+] as const
 
-function ServiceCard({ service, index }: { service: typeof services[0]; index: number }) {
+function ServiceCard({ service, title, description, learnMore, index }: { service: typeof serviceConfig[number]; title: string; description: string; learnMore: string; index: number }) {
   const cardRef = useRef(null)
   const isInView = useInView(cardRef, { once: true, margin: "-100px" })
   const shouldReduceMotion = useReducedMotion()
@@ -80,16 +50,16 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
       {/* Content - Takes up remaining space */}
       <div className="flex flex-col flex-grow min-h-0">
         <h3 className="text-xl md:text-xl font-['Gilda_Display'] text-black mb-3 flex-shrink-0">
-          {service.title}
+          {title}
         </h3>
         <p className="text-sm md:text-sm text-black/80 font-['Arial'] leading-relaxed flex-grow min-h-0">
-          {service.description}
+          {description}
         </p>
       </div>
 
       {/* Learn More Link - Always at bottom */}
       <Link to={`/services/${service.id}`} className="flex items-center gap-2 text-black font-['Poppins'] font-semibold text-sm group-hover:gap-3 transition-all mt-4 flex-shrink-0">
-        <span>Learn More</span>
+        <span>{learnMore}</span>
         <ArrowUpRight className="w-4 h-4" />
       </Link>
     </motion.div>
@@ -100,6 +70,7 @@ export default function ServicesSection() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
   const shouldReduceMotion = useReducedMotion()
+  const { t } = useLanguage()
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -145,13 +116,20 @@ export default function ServicesSection() {
               className="text-black text-[32px] md:text-[40px] lg:text-[48px] leading-[1.2] tracking-[-1.44px] text-center mb-[20px] md:mb-[28px] relative z-10"
               style={{ fontFamily: "'Gilda Display', serif" }}
             >
-              What Do You Need Today
+              {t('home', 'whatDoYouNeedToday')}
             </h2>
 
             {/* Services Grid - All 5 cards in one row on large screens */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 relative z-10 px-4 md:px-6 lg:px-8 items-stretch">
-              {services.map((service, index) => (
-                <ServiceCard key={service.id} service={service} index={index} />
+              {serviceConfig.map((service, index) => (
+                <ServiceCard
+                  key={service.id}
+                  service={service}
+                  title={t('home', service.titleKey)}
+                  description={t('home', service.descKey)}
+                  learnMore={t('common', 'learnMore')}
+                  index={index}
+                />
               ))}
             </div>
           </motion.div>

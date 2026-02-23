@@ -1,7 +1,7 @@
 'use client'
 
 import { createContext, useContext, useEffect, useState, useCallback } from 'react'
-import { getTranslation, type Locale } from '../data/translations'
+import { getTranslation, type Locale, type TranslationSectionKey } from '../data/translations'
 
 const STORAGE_KEY = 'skydental-locale'
 
@@ -9,7 +9,7 @@ type LanguageContextValue = {
   locale: Locale
   setLocale: (locale: Locale) => void
   isRtl: boolean
-  t: (section: 'nav' | 'hero' | 'footer' | 'lang', key: string) => string
+  t: (section: TranslationSectionKey, key: string) => string
 }
 
 const LanguageContext = createContext<LanguageContextValue | null>(null)
@@ -33,7 +33,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   }, [locale])
 
   const t = useCallback(
-    (section: 'nav' | 'hero' | 'footer' | 'lang', key: string) => getTranslation(locale, section, key),
+    (section: TranslationSectionKey, key: string) => getTranslation(locale, section, key),
     [locale]
   )
 
