@@ -14,6 +14,7 @@ export default function Header() {
   const [activeSection, setActiveSection] = useState('home')
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [moreDropdownOpen, setMoreDropdownOpen] = useState(false)
+  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false)
   const shouldReduceMotion = useReducedMotion()
   const navigate = useNavigate()
   const location = useLocation()
@@ -146,16 +147,89 @@ export default function Header() {
               >
                 Home
               </button>
-              <button
-                onClick={handleServicesClick}
-                className={`px-[14px] py-[6px] rounded-full text-[14px] transition-all whitespace-nowrap ${
-                  location.pathname.startsWith('/services')
-                    ? 'bg-[#CBFF8F] text-[#0C0060] font-bold'
-                    : 'text-black hover:text-[#0C0060]'
-                }`}
-              >
-                Services
-              </button>
+              {/* Services Dropdown */}
+              <div className="relative">
+                <button
+                  onClick={() => { setMoreDropdownOpen(false); setServicesDropdownOpen(!servicesDropdownOpen); }}
+                  className={`flex items-center gap-[5px] px-[14px] py-[6px] rounded-full text-[14px] transition-all whitespace-nowrap ${
+                    servicesDropdownOpen || location.pathname.startsWith('/services')
+                      ? 'bg-[#CBFF8F] text-[#0C0060] font-bold'
+                      : 'text-black hover:text-[#0C0060]'
+                  }`}
+                >
+                  <span>Services</span>
+                  <svg className="w-[6px] h-[3px]" fill="none" viewBox="0 0 7.2 4.2">
+                    <path d="M0.6 0.6L3.6 3.6L6.6 0.6" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+                <AnimatePresence>
+                  {servicesDropdownOpen && (
+                    <motion.div
+                      initial={shouldReduceMotion ? {} : { opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute top-full mt-2 left-0 bg-white rounded-2xl shadow-xl border border-[#0061AF]/20 py-2 min-w-[220px] z-[60]"
+                      onMouseLeave={() => setServicesDropdownOpen(false)}
+                    >
+                      <Link
+                        to="/services/general-dentistry"
+                        onClick={() => setServicesDropdownOpen(false)}
+                        className={`block px-5 py-3 text-[14px] rounded-full transition-colors ${
+                          location.pathname === '/services/general-dentistry' ? 'bg-[#CBFF8F] text-[#0C0060] font-bold' : 'text-black hover:bg-[#f8f9fa] hover:text-[#0C0060]'
+                        }`}
+                      >
+                        General Dentistry
+                      </Link>
+                      <Link
+                        to="/services/cosmetic-dentistry"
+                        onClick={() => setServicesDropdownOpen(false)}
+                        className={`block px-5 py-3 text-[14px] rounded-full transition-colors ${
+                          location.pathname === '/services/cosmetic-dentistry' ? 'bg-[#CBFF8F] text-[#0C0060] font-bold' : 'text-black hover:bg-[#f8f9fa] hover:text-[#0C0060]'
+                        }`}
+                      >
+                        Cosmetic Dentistry
+                      </Link>
+                      <Link
+                        to="/services/orthodontics"
+                        onClick={() => setServicesDropdownOpen(false)}
+                        className={`block px-5 py-3 text-[14px] rounded-full transition-colors ${
+                          location.pathname === '/services/orthodontics' ? 'bg-[#CBFF8F] text-[#0C0060] font-bold' : 'text-black hover:bg-[#f8f9fa] hover:text-[#0C0060]'
+                        }`}
+                      >
+                        Orthodontics
+                      </Link>
+                      <Link
+                        to="/services/pediatric-dentistry"
+                        onClick={() => setServicesDropdownOpen(false)}
+                        className={`block px-5 py-3 text-[14px] rounded-full transition-colors ${
+                          location.pathname === '/services/pediatric-dentistry' ? 'bg-[#CBFF8F] text-[#0C0060] font-bold' : 'text-black hover:bg-[#f8f9fa] hover:text-[#0C0060]'
+                        }`}
+                      >
+                        Pediatric Dentistry
+                      </Link>
+                      <Link
+                        to="/services/advanced-restorative"
+                        onClick={() => setServicesDropdownOpen(false)}
+                        className={`block px-5 py-3 text-[14px] rounded-full transition-colors ${
+                          location.pathname === '/services/advanced-restorative' ? 'bg-[#CBFF8F] text-[#0C0060] font-bold' : 'text-black hover:bg-[#f8f9fa] hover:text-[#0C0060]'
+                        }`}
+                      >
+                        Implant & Advanced Care
+                      </Link>
+                      <div className="border-t border-[#0061AF]/10 mt-2 pt-2 px-2">
+                        <Link
+                          to="/services"
+                          onClick={() => setServicesDropdownOpen(false)}
+                          className="block w-full text-center px-4 py-2.5 rounded-full text-[14px] font-bold bg-[#CBFF8F] text-[#0C0060] hover:bg-[#B1FF57] transition-colors"
+                        >
+                          View all services
+                        </Link>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
               <button
                 onClick={handleOurDoctorsClick}
                 className={`px-[14px] py-[6px] rounded-full text-[14px] transition-all whitespace-nowrap ${
@@ -201,7 +275,7 @@ export default function Header() {
                 <NavDropdown
                   label="More"
                   active={moreDropdownOpen || ['/patient-guide', '/careers', '/faqs', '/privacy-policy'].includes(location.pathname)}
-                  onClick={() => setMoreDropdownOpen(!moreDropdownOpen)}
+                  onClick={() => { setServicesDropdownOpen(false); setMoreDropdownOpen(!moreDropdownOpen); }}
                 />
 
                 {/* Dropdown Menu */}
