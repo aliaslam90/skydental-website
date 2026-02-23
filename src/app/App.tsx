@@ -20,6 +20,7 @@ import PrivacyPolicyPage from './pages/PrivacyPolicyPage'
 import ContactUsPage from './pages/ContactUsPage'
 import Footer from './components/Footer'
 import { BookingProvider } from './context/BookingContext'
+import { LanguageProvider } from './context/LanguageContext'
 import CustomCursor from './components/CustomCursor'
 
 export default function App() {
@@ -62,10 +63,11 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      <BookingProvider>
-        <ScrollToTop />
-        <CustomCursor />
-        <div className="bg-white min-h-screen">
+      <LanguageProvider>
+        <BookingProvider>
+          <ScrollToTop />
+          <CustomCursor />
+          <div className="bg-white min-h-screen">
           <Header />
           <Routes>
             <Route path="/" element={<HomePage />} />
@@ -83,8 +85,9 @@ export default function App() {
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
           <Footer />
-        </div>
-      </BookingProvider>
+          </div>
+        </BookingProvider>
+      </LanguageProvider>
     </BrowserRouter>
   )
 }

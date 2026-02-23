@@ -8,6 +8,7 @@ import imgRectangle161125373 from '../../assets/531a2b1be40c3f390e42e72de4c6233e
 import MaskGroup from '../../imports/MaskGroup'
 import { Link } from 'react-router-dom'
 import { useBooking } from '../context/BookingContext'
+import { useLanguage } from '../context/LanguageContext'
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
@@ -19,6 +20,7 @@ export default function Header() {
   const navigate = useNavigate()
   const location = useLocation()
   const { openBookingSidebar } = useBooking()
+  const { t, locale, setLocale } = useLanguage()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -145,7 +147,7 @@ export default function Header() {
                     : 'text-black hover:text-[#0C0060]'
                 }`}
               >
-                Home
+                {t('nav', 'home')}
               </button>
               {/* Services Dropdown */}
               <div className="relative">
@@ -157,7 +159,7 @@ export default function Header() {
                       : 'text-black hover:text-[#0C0060]'
                   }`}
                 >
-                  <span>Services</span>
+                  <span>{t('nav', 'services')}</span>
                   <svg className="w-[6px] h-[3px]" fill="none" viewBox="0 0 7.2 4.2">
                     <path d="M0.6 0.6L3.6 3.6L6.6 0.6" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
@@ -179,7 +181,7 @@ export default function Header() {
                           location.pathname === '/services/general-dentistry' ? 'bg-[#CBFF8F] text-[#0C0060] font-bold' : 'text-black hover:bg-[#f8f9fa] hover:text-[#0C0060]'
                         }`}
                       >
-                        General Dentistry
+                        {t('nav', 'generalDentistry')}
                       </Link>
                       <Link
                         to="/services/cosmetic-dentistry"
@@ -188,7 +190,7 @@ export default function Header() {
                           location.pathname === '/services/cosmetic-dentistry' ? 'bg-[#CBFF8F] text-[#0C0060] font-bold' : 'text-black hover:bg-[#f8f9fa] hover:text-[#0C0060]'
                         }`}
                       >
-                        Cosmetic Dentistry
+                        {t('nav', 'cosmeticDentistry')}
                       </Link>
                       <Link
                         to="/services/orthodontics"
@@ -197,7 +199,7 @@ export default function Header() {
                           location.pathname === '/services/orthodontics' ? 'bg-[#CBFF8F] text-[#0C0060] font-bold' : 'text-black hover:bg-[#f8f9fa] hover:text-[#0C0060]'
                         }`}
                       >
-                        Orthodontics
+                        {t('nav', 'orthodontics')}
                       </Link>
                       <Link
                         to="/services/pediatric-dentistry"
@@ -206,7 +208,7 @@ export default function Header() {
                           location.pathname === '/services/pediatric-dentistry' ? 'bg-[#CBFF8F] text-[#0C0060] font-bold' : 'text-black hover:bg-[#f8f9fa] hover:text-[#0C0060]'
                         }`}
                       >
-                        Pediatric Dentistry
+                        {t('nav', 'pediatricDentistry')}
                       </Link>
                       <Link
                         to="/services/advanced-restorative"
@@ -215,7 +217,7 @@ export default function Header() {
                           location.pathname === '/services/advanced-restorative' ? 'bg-[#CBFF8F] text-[#0C0060] font-bold' : 'text-black hover:bg-[#f8f9fa] hover:text-[#0C0060]'
                         }`}
                       >
-                        Implant & Advanced Care
+                        {t('nav', 'implantAdvanced')}
                       </Link>
                       <div className="border-t border-[#0061AF]/10 mt-2 pt-2 px-2">
                         <Link
@@ -223,7 +225,7 @@ export default function Header() {
                           onClick={() => setServicesDropdownOpen(false)}
                           className="block w-full text-center px-4 py-2.5 rounded-full text-[14px] font-bold bg-[#CBFF8F] text-[#0C0060] hover:bg-[#B1FF57] transition-colors"
                         >
-                          View all services
+                          {t('nav', 'viewAllServices')}
                         </Link>
                       </div>
                     </motion.div>
@@ -238,7 +240,7 @@ export default function Header() {
                     : 'text-black hover:text-[#0C0060]'
                 }`}
               >
-                Doctors
+                {t('nav', 'doctors')}
               </button>
               <Link
                 to="/packages"
@@ -248,7 +250,7 @@ export default function Header() {
                     : 'text-black hover:text-[#0C0060]'
                 }`}
               >
-                Packages & Offers
+                {t('nav', 'packages')}
               </Link>
               <button
                 onClick={handleAboutUsClick}
@@ -258,7 +260,7 @@ export default function Header() {
                     : 'text-black hover:text-[#0C0060]'
                 }`}
               >
-                About Us
+                {t('nav', 'aboutUs')}
               </button>
               <button
                 onClick={handleContactClick}
@@ -268,12 +270,12 @@ export default function Header() {
                     : 'text-black hover:text-[#0C0060]'
                 }`}
               >
-                Contact
+                {t('nav', 'contact')}
               </button>
               {/* More Dropdown */}
               <div className="relative">
                 <NavDropdown
-                  label="More"
+                  label={t('nav', 'more')}
                   active={moreDropdownOpen || ['/patient-guide', '/careers', '/faqs', '/privacy-policy'].includes(location.pathname)}
                   onClick={() => { setServicesDropdownOpen(false); setMoreDropdownOpen(!moreDropdownOpen); }}
                 />
@@ -298,7 +300,7 @@ export default function Header() {
                             : 'text-black hover:bg-[#f8f9fa] hover:text-[#0C0060]'
                         }`}
                       >
-                        Patient Guide
+                        {t('nav', 'patientGuide')}
                       </Link>
                       <Link
                         to="/careers"
@@ -309,7 +311,7 @@ export default function Header() {
                             : 'text-black hover:bg-[#f8f9fa] hover:text-[#0C0060]'
                         }`}
                       >
-                        Careers
+                        {t('nav', 'careers')}
                       </Link>
                       <Link
                         to="/faqs"
@@ -320,7 +322,7 @@ export default function Header() {
                             : 'text-black hover:bg-[#f8f9fa] hover:text-[#0C0060]'
                         }`}
                       >
-                        FAQs
+                        {t('nav', 'faqs')}
                       </Link>
                       <Link
                         to="/privacy-policy"
@@ -331,7 +333,7 @@ export default function Header() {
                             : 'text-black hover:bg-[#f8f9fa] hover:text-[#0C0060]'
                         }`}
                       >
-                        Privacy Policy
+                        {t('nav', 'privacyPolicy')}
                       </Link>
                     </motion.div>
                   )}
@@ -339,14 +341,23 @@ export default function Header() {
               </div>
             </nav>
 
-            {/* Right side - Request Appointment (desktop only) + Hamburger (mobile only) */}
-            <div className="flex items-center gap-4">
+            {/* Right side - Language switcher + Request Appointment (desktop) + Hamburger (mobile) */}
+            <div className="flex items-center gap-2 xl:gap-4">
+              {/* Language switcher - Arabic / English */}
+              <button
+                type="button"
+                onClick={() => setLocale(locale === 'ar' ? 'en' : 'ar')}
+                className="flex items-center justify-center px-3 py-1.5 xl:px-[14px] xl:py-[6px] rounded-full text-[13px] xl:text-[14px] font-medium text-[#0C0060] hover:bg-[#CBFF8F]/30 transition-colors border border-[#0C0060]/20"
+                aria-label={locale === 'ar' ? 'Switch to English' : 'Switch to Arabic'}
+              >
+                {locale === 'ar' ? t('lang', 'switchToEnglish') : t('lang', 'switchToArabic')}
+              </button>
               {/* CTA Button - Desktop only; on mobile use hamburger menu */}
               <button 
                 onClick={() => openBookingSidebar()}
                 className="hidden xl:flex bg-[#CBFF8F] items-center gap-3 xl:gap-6 pl-4 xl:pl-6 pr-[10px] py-2 rounded-[35px] group hover:bg-[#B1FF57] transition-colors"
               >
-                <span className="text-[#0C0060] font-bold text-[14px] xl:text-[16px] whitespace-nowrap">Request Appointment</span>
+                <span className="text-[#0C0060] font-bold text-[14px] xl:text-[16px] whitespace-nowrap">{t('nav', 'requestAppointment')}</span>
                 <div className="bg-[#0C0060] w-[34px] h-[34px] rounded-full flex items-center justify-center shrink-0">
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 20 20">
                     <path 
@@ -432,9 +443,9 @@ export default function Header() {
                     location.pathname === '/' || activeSection === 'home'
                       ? 'bg-[#CBFF8F] text-[#0C0060] font-bold'
                       : 'text-black hover:text-[#0C0060]'
-                  }`}
+                  }                  `}
                 >
-                  Home
+                  {t('nav', 'home')}
                 </button>
                 <button
                   onClick={handleServicesClick}
@@ -442,9 +453,9 @@ export default function Header() {
                     location.pathname.startsWith('/services')
                       ? 'bg-[#CBFF8F] text-[#0C0060] font-bold'
                       : 'text-black hover:text-[#0C0060]'
-                  }`}
+                  }                  `}
                 >
-                  Services
+                  {t('nav', 'services')}
                 </button>
                 <button
                   onClick={handleOurDoctorsClick}
@@ -452,9 +463,9 @@ export default function Header() {
                     location.pathname.startsWith('/our-doctors')
                       ? 'bg-[#CBFF8F] text-[#0C0060] font-bold'
                       : 'text-black hover:text-[#0C0060]'
-                  }`}
+                  }                  `}
                 >
-                  Doctors
+                  {t('nav', 'doctors')}
                 </button>
                 <Link
                   to="/packages"
@@ -462,9 +473,9 @@ export default function Header() {
                     location.pathname === '/packages'
                       ? 'bg-[#CBFF8F] text-[#0C0060] font-bold'
                       : 'text-black hover:text-[#0C0060]'
-                  }`}
+                  }                  `}
                 >
-                  Packages & Offers
+                  {t('nav', 'packages')}
                 </Link>
                 <button
                   onClick={handleAboutUsClick}
@@ -472,9 +483,9 @@ export default function Header() {
                     location.pathname === '/about-us'
                       ? 'bg-[#CBFF8F] text-[#0C0060] font-bold'
                       : 'text-black hover:text-[#0C0060]'
-                  }`}
+                  }                  `}
                 >
-                  About Us
+                  {t('nav', 'aboutUs')}
                 </button>
                 <button
                   onClick={handleContactClick}
@@ -482,13 +493,13 @@ export default function Header() {
                     location.pathname === '/contact'
                       ? 'bg-[#CBFF8F] text-[#0C0060] font-bold'
                       : 'text-black hover:text-[#0C0060]'
-                  }`}
+                  }                  `}
                 >
-                  Contact
+                  {t('nav', 'contact')}
                 </button>
                 {/* More Section in Mobile */}
                 <div className="border-t border-[#0061AF]/20 pt-4 mt-2">
-                  <p className="px-[20px] text-[12px] text-gray-400 font-semibold uppercase tracking-wider mb-3">More</p>
+                  <p className="px-[20px] text-[12px] text-gray-400 font-semibold uppercase tracking-wider mb-3">{t('nav', 'more')}</p>
                   <Link
                     to="/patient-guide"
                     onClick={() => setMobileMenuOpen(false)}
@@ -498,7 +509,7 @@ export default function Header() {
                         : 'text-black hover:text-[#0C0060]'
                     }`}
                   >
-                    Patient Guide
+                    {t('nav', 'patientGuide')}
                   </Link>
                   <Link
                     to="/careers"
@@ -509,7 +520,7 @@ export default function Header() {
                         : 'text-black hover:text-[#0C0060]'
                     }`}
                   >
-                    Careers
+                    {t('nav', 'careers')}
                   </Link>
                   <Link
                     to="/faqs"
@@ -520,7 +531,7 @@ export default function Header() {
                         : 'text-black hover:text-[#0C0060]'
                     }`}
                   >
-                    FAQs
+                    {t('nav', 'faqs')}
                   </Link>
                   <Link
                     to="/privacy-policy"
@@ -531,7 +542,7 @@ export default function Header() {
                         : 'text-black hover:text-[#0C0060]'
                     }`}
                   >
-                    Privacy Policy
+                    {t('nav', 'privacyPolicy')}
                   </Link>
                 </div>
                 
@@ -542,7 +553,7 @@ export default function Header() {
                     setMobileMenuOpen(false)
                   }}
                   className="bg-[#CBFF8F] flex items-center justify-center gap-4 px-6 py-4 rounded-[35px] mt-6 hover:bg-[#B1FF57] transition-colors">
-                  <span className="text-[#0C0060] font-bold text-[16px]">Request Appointment</span>
+                  <span className="text-[#0C0060] font-bold text-[16px]">{t('nav', 'requestAppointment')}</span>
                   <div className="bg-[#0C0060] w-[34px] h-[34px] rounded-full flex items-center justify-center">
                     <svg className="w-5 h-5" fill="none" viewBox="0 0 20 20">
                       <path 

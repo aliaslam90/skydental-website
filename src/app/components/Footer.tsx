@@ -3,9 +3,11 @@
 import { motion, useReducedMotion } from 'motion/react'
 import { Link } from 'react-router-dom'
 import MaskGroup from '../../imports/MaskGroup'
+import { useLanguage } from '../context/LanguageContext'
 
 export default function Footer() {
   const shouldReduceMotion = useReducedMotion()
+  const { t } = useLanguage()
 
   return (
     <footer className="w-full bg-[#CBFF8F]">
@@ -28,7 +30,7 @@ export default function Footer() {
                   </div>
                 </div>
                 <p className="text-black text-[13px] md:text-[14px] leading-[1.6]">
-                  Sky Dental Center is a modern, full-service dental clinic offering comprehensive care across all specialties. Our professional and experienced doctors are highly skilled in the latest treatment methods, delivering precise, advanced, and patient-focused care in a comfortable, contemporary setting.
+                  {t('footer', 'description')}
                 </p>
               </div>
 
@@ -38,14 +40,14 @@ export default function Footer() {
                   className="text-black text-[16px] md:text-[18px] font-bold leading-[1.15]"
                   style={{ fontFamily: "'Gilda Display', serif" }}
                 >
-                  Quick Links
+                  {t('footer', 'quickLinks')}
                 </h3>
                 <div className="flex flex-col gap-2 md:gap-3">
-                  <FooterLink href="/">Home</FooterLink>
-                  <FooterLink href="/about-us">About Us</FooterLink>
-                  <FooterLink href="/our-doctors">Doctors</FooterLink>
-                  <FooterLink href="/services">Services</FooterLink>
-                  <FooterLink href="/packages">Packages & Offers</FooterLink>
+                  <FooterLink href="/">{t('footer', 'home')}</FooterLink>
+                  <FooterLink href="/about-us">{t('footer', 'aboutUs')}</FooterLink>
+                  <FooterLink href="/our-doctors">{t('footer', 'doctors')}</FooterLink>
+                  <FooterLink href="/services">{t('footer', 'services')}</FooterLink>
+                  <FooterLink href="/packages">{t('footer', 'packages')}</FooterLink>
                 </div>
               </div>
 
@@ -55,14 +57,14 @@ export default function Footer() {
                   className="text-black text-[16px] md:text-[18px] font-bold leading-[1.15] invisible"
                   style={{ fontFamily: "'Gilda Display', serif" }}
                 >
-                  Quick Links
+                  {t('footer', 'quickLinks')}
                 </h3>
                 <div className="flex flex-col gap-2 md:gap-3">
-                  <FooterLink href="/patient-guide">Patient Guide</FooterLink>
-                  <FooterLink href="/faqs">FAQs</FooterLink>
-                  <FooterLink href="/careers">Careers</FooterLink>
-                  <FooterLink href="/contact">Contact Us</FooterLink>
-                  <FooterLink href="/privacy-policy">Privacy Policy</FooterLink>
+                  <FooterLink href="/patient-guide">{t('footer', 'patientGuide')}</FooterLink>
+                  <FooterLink href="/faqs">{t('footer', 'faqs')}</FooterLink>
+                  <FooterLink href="/careers">{t('footer', 'careers')}</FooterLink>
+                  <FooterLink href="/contact">{t('footer', 'contactUs')}</FooterLink>
+                  <FooterLink href="/privacy-policy">{t('footer', 'privacyPolicy')}</FooterLink>
                 </div>
               </div>
 
@@ -72,14 +74,14 @@ export default function Footer() {
                   className="text-black text-[16px] md:text-[18px] font-bold leading-[1.15]"
                   style={{ fontFamily: "'Gilda Display', serif" }}
                 >
-                  All Services
+                  {t('footer', 'allServices')}
                 </h3>
                 <div className="flex flex-col gap-2 md:gap-3">
-                  <FooterLink href="/services/general-dentistry">General Dentistry</FooterLink>
-                  <FooterLink href="/services/cosmetic-dentistry">Cosmetic Dentistry</FooterLink>
-                  <FooterLink href="/services/orthodontics">Orthodontics</FooterLink>
-                  <FooterLink href="/services/pediatric-dentistry">Pediatric Dentistry</FooterLink>
-                  <FooterLink href="/services/advanced-restorative">Implant & Advanced Care</FooterLink>
+                  <FooterLink href="/services/general-dentistry">{t('footer', 'generalDentistry')}</FooterLink>
+                  <FooterLink href="/services/cosmetic-dentistry">{t('footer', 'cosmeticDentistry')}</FooterLink>
+                  <FooterLink href="/services/orthodontics">{t('footer', 'orthodontics')}</FooterLink>
+                  <FooterLink href="/services/pediatric-dentistry">{t('footer', 'pediatricDentistry')}</FooterLink>
+                  <FooterLink href="/services/advanced-restorative">{t('footer', 'implantAdvanced')}</FooterLink>
                 </div>
               </div>
 
@@ -89,12 +91,12 @@ export default function Footer() {
                   className="text-black text-[16px] md:text-[18px] font-bold leading-[1.15]"
                   style={{ fontFamily: "'Gilda Display', serif" }}
                 >
-                  Contact Information
+                  {t('footer', 'contactInfo')}
                 </h3>
                 <div className="flex flex-col gap-2 md:gap-3">
                   <ContactItem icon={<PhoneIcon />} text="026677448" />
                   <ContactItem icon={<EmailIcon />} text="smile@skydc.ae" />
-                  <ContactItem icon={<ClockIcon />} text="10am - 10pm, 7 Days a week" />
+                  <ContactItem icon={<ClockIcon />} text={t('footer', 'hours')} />
                 </div>
                 {/* Social Icons */}
                 <div className="flex gap-3 md:gap-4 mt-1">
@@ -125,7 +127,7 @@ export default function Footer() {
             {/* Bottom Bar */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-4 md:pt-6 border-t border-black/10">
               <p className="text-black text-[11px] md:text-[12px] break-words">MOHAP APPROVAL LICENSE: RE6YF8UV-101224</p>
-              <p className="text-black text-[11px] md:text-[12px] whitespace-nowrap">Copyright © 2025 Sky Dental Center. All rights reserved.</p>
+              <p className="text-black text-[11px] md:text-[12px] whitespace-nowrap">Copyright © 2025 Sky Dental Center. {t('footer', 'rights')}</p>
             </div>
           </div>
         </motion.div>

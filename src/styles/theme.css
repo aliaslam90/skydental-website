@@ -212,3 +212,12 @@
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+/* RTL and Arabic font support */
+[dir="rtl"],
+[lang="ar"] {
+  font-family: 'Segoe UI', 'Tahoma', 'Arial', system-ui, sans-serif;
+}
+[lang="ar"] .font-\[\'Gilda_Display\'\] {
+  font-family: 'Gilda Display', 'Segoe UI', serif;
+}

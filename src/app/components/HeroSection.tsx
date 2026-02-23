@@ -1,9 +1,11 @@
 'use client'
 
 import { motion, useReducedMotion } from 'motion/react'
+import { useLanguage } from '../context/LanguageContext'
 
 export default function HeroSection() {
   const shouldReduceMotion = useReducedMotion()
+  const { t } = useLanguage()
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -67,13 +69,13 @@ export default function HeroSection() {
                 tracking-[-0.02em] md:tracking-[-0.03em]"
               style={{ fontFamily: "'Gilda Display', serif" }}
             >
-              Sky Dental Center
+              {t('hero', 'title')}
               <br />
-              <span className="block sm:inline">Your smile.</span>
+              <span className="block sm:inline">{t('hero', 'tagline1')}</span>
               <br className="sm:hidden" />
-              <span className="inline">Your confidence.</span>
+              <span className="inline">{t('hero', 'tagline2')}</span>
               <br />
-              Our expert care.
+              {t('hero', 'tagline3')}
             </motion.h1>
           </div>
         </div>
