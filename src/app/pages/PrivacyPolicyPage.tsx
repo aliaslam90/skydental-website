@@ -514,8 +514,8 @@ export default function PrivacyPolicyPage() {
                 </p>
                 <p>
                   <strong className="text-black">Email:</strong>{' '}
-                  <a href="mailto:info@skydc.ae" className="text-[#0C0060] hover:underline">
-                    info@skydc.ae
+                  <a href="mailto:smile@skydc.ae" className="text-[#0C0060] hover:underline">
+                    smile@skydc.ae
                   </a>
                 </p>
                 <p>

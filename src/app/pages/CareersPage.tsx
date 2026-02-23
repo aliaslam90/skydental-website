@@ -305,10 +305,10 @@ export default function CareersPage() {
                 Send your CV and cover letter to:
               </p>
               <a
-                href="mailto:info@skydc.ae"
+                href="mailto:smile@skydc.ae"
                 className="text-2xl font-['Arial'] font-semibold text-black hover:text-[#0C0060] transition-colors inline-block"
               >
-                info@skydc.ae
+                smile@skydc.ae
               </a>
             </div>
 

@@ -153,7 +153,7 @@ export default function ContactUsPage() {
                 <Mail className="w-8 h-8 text-[#0C0060]" />
               </div>
               <h3 className="text-2xl font-['Gilda_Display'] text-black mb-4">Email</h3>
-              <p className="text-base font-['Arial'] font-bold text-[#0c0060] mb-1">Smile@skydc.ae</p>
+              <p className="text-base font-['Arial'] font-bold text-[#0c0060] mb-1">smile@skydc.ae</p>
               <p className="text-xs font-['Arial'] text-black opacity-70">
                 Reach out to us anytime—we're happy to assist.
               </p>

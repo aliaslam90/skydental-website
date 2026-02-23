@@ -590,7 +590,7 @@ function Container7() {
   return (
     <div className="content-stretch flex flex-col items-center relative shrink-0 w-full" data-name="Container">
       <div className="flex flex-col font-['Arial:Bold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#0c0060] text-[16px] text-center text-nowrap">
-        <p className="leading-[28px]">info@skydc.ae</p>
+        <p className="leading-[28px]">smile@skydc.ae</p>
       </div>
     </div>
   );
@@ -600,7 +600,7 @@ function Container8() {
   return (
     <div className="content-stretch flex flex-col items-center relative shrink-0 w-full" data-name="Container">
       <div className="flex flex-col font-['Arial:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[12px] text-black text-center text-nowrap">
-        <p className="leading-[20px]">info@skydc.ae</p>
+        <p className="leading-[20px]">smile@skydc.ae</p>
       </div>
     </div>
   );
@@ -2088,7 +2088,7 @@ function Email() {
   return (
     <div className="content-stretch flex gap-[12px] items-center relative shrink-0" data-name="Email">
       <Frame5 />
-      <p className="font-['Arial:Regular',sans-serif] h-[29.738px] leading-[30px] not-italic relative shrink-0 text-[14px] text-black w-[223.475px]">info@skydc.ae</p>
+      <p className="font-['Arial:Regular',sans-serif] h-[29.738px] leading-[30px] not-italic relative shrink-0 text-[14px] text-black w-[223.475px]">smile@skydc.ae</p>
     </div>
   );
 }
