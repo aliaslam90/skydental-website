@@ -124,12 +124,12 @@ export default function Header() {
           border: '0.2px solid #0061AF'
         }}
       >
-        <div className="px-4 py-2.5 xl:px-6 xl:py-2.5">
+        <div className="px-3 py-2 xl:px-6 xl:py-2.5">
           <div className="flex items-center justify-between w-full">
-            {/* Logo - MaskGroup has fixed internal size so we scale it for header */}
+            {/* Logo - smaller on mobile, full size on desktop */}
             <button onClick={() => scrollToSection('home')} className="flex items-center shrink-0 ml-0 xl:ml-6" style={{ marginTop: '1.5px' }}>
-              <div className="flex items-center justify-center overflow-hidden" style={{ width: 76, height: 70 }}>
-                <div className="origin-center flex-shrink-0" style={{ width: 96.592, height: 91.833, transform: 'scale(0.76)' }}>
+              <div className="flex items-center justify-center overflow-hidden w-[50px] h-[46px] xl:w-[76px] xl:h-[70px]">
+                <div className="origin-center flex-shrink-0 scale-[0.52] xl:scale-[0.76]" style={{ width: 96.592, height: 91.833 }}>
                   <MaskGroup />
                 </div>
               </div>
